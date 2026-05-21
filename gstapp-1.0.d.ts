@@ -152,7 +152,7 @@ export namespace GstApp {
              * @since 1.20
              * @run-last
              */
-            "new-serialized-event": () => (boolean | void);
+            "new-serialized-event": () => boolean | void;
             /**
              * Signal that a new propose_allocation query is available.
              * 
@@ -162,7 +162,7 @@ export namespace GstApp {
              * @since 1.24
              * @run-last
              */
-            "propose-allocation": (arg0: Gst.Query) => (boolean | void);
+            "propose-allocation": (arg0: Gst.Query) => boolean | void;
             /**
              * Get the last preroll sample in `appsink`. This was the sample that caused the
              * appsink to preroll in the PAUSED state.
@@ -186,7 +186,7 @@ export namespace GstApp {
              * @action
              * @run-last
              */
-            "pull-preroll": () => (Gst.Sample | null);
+            "pull-preroll": () => Gst.Sample | null;
             /**
              * This function blocks until a sample or EOS becomes available or the appsink
              * element is set to the READY/NULL state.
@@ -206,7 +206,7 @@ export namespace GstApp {
              * @action
              * @run-last
              */
-            "pull-sample": () => (Gst.Sample | null);
+            "pull-sample": () => Gst.Sample | null;
             /**
              * This function blocks until a sample or an event becomes available or the appsink
              * element is set to the READY/NULL state or the timeout expires.
@@ -235,7 +235,7 @@ export namespace GstApp {
              * @action
              * @run-last
              */
-            "try-pull-object": (arg0: number) => (Gst.MiniObject | null);
+            "try-pull-object": (arg0: number) => Gst.MiniObject | null;
             /**
              * Get the last preroll sample in `appsink`. This was the sample that caused the
              * appsink to preroll in the PAUSED state.
@@ -261,7 +261,7 @@ export namespace GstApp {
              * @action
              * @run-last
              */
-            "try-pull-preroll": (arg0: number) => (Gst.Sample | null);
+            "try-pull-preroll": (arg0: number) => Gst.Sample | null;
             /**
              * This function blocks until a sample or EOS becomes available or the appsink
              * element is set to the READY/NULL state or the timeout expires.
@@ -283,7 +283,7 @@ export namespace GstApp {
              * @action
              * @run-last
              */
-            "try-pull-sample": (arg0: number) => (Gst.Sample | null);
+            "try-pull-sample": (arg0: number) => Gst.Sample | null;
             "notify::buffer-list": (pspec: GObject.ParamSpec) => void;
             "notify::caps": (pspec: GObject.ParamSpec) => void;
             "notify::drop": (pspec: GObject.ParamSpec) => void;
@@ -314,17 +314,17 @@ export namespace GstApp {
         interface ConstructorProps extends GstBase.BaseSink.ConstructorProps, Gst.URIHandler.ConstructorProps {
             buffer_list: boolean;
             bufferList: boolean;
-            caps: (Gst.Caps | null);
+            caps: Gst.Caps | null;
             drop: boolean;
             emit_signals: boolean;
             emitSignals: boolean;
-            eos: (boolean | any);
+            eos: boolean | any;
             max_buffers: number;
             maxBuffers: number;
-            max_bytes: (bigint | number);
-            maxBytes: (bigint | number);
-            max_time: (bigint | number);
-            maxTime: (bigint | number);
+            max_bytes: bigint | number;
+            maxBytes: bigint | number;
+            max_time: bigint | number;
+            maxTime: bigint | number;
             wait_on_eos: boolean;
             waitOnEos: boolean;
         }
@@ -385,8 +385,8 @@ export namespace GstApp {
         get bufferList(): boolean;
         set bufferList(val: boolean);
 
-        get caps(): (Gst.Caps | null);
-        set caps(val: (Gst.Caps | null));
+        get caps(): Gst.Caps | null;
+        set caps(val: Gst.Caps | null);
 
         /**
          * @default false
@@ -433,7 +433,7 @@ export namespace GstApp {
          * @default 0
          */
         get max_bytes(): number;
-        set max_bytes(val: (bigint | number));
+        set max_bytes(val: bigint | number);
 
         /**
          * Maximum amount of bytes in the queue (0 = unlimited)
@@ -441,7 +441,7 @@ export namespace GstApp {
          * @default 0
          */
         get maxBytes(): number;
-        set maxBytes(val: (bigint | number));
+        set maxBytes(val: bigint | number);
 
         /**
          * Maximum total duration of data in the queue (0 = unlimited)
@@ -449,7 +449,7 @@ export namespace GstApp {
          * @default 0
          */
         get max_time(): number;
-        set max_time(val: (bigint | number));
+        set max_time(val: bigint | number);
 
         /**
          * Maximum total duration of data in the queue (0 = unlimited)
@@ -457,7 +457,7 @@ export namespace GstApp {
          * @default 0
          */
         get maxTime(): number;
-        set maxTime(val: (bigint | number));
+        set maxTime(val: bigint | number);
 
         /**
          * Wait for all buffers to be processed after receiving an EOS.
@@ -548,7 +548,7 @@ export namespace GstApp {
          * element is set to the READY/NULL state.
          * @virtual
          */
-        vfunc_pull_preroll(): (Gst.Sample | null);
+        vfunc_pull_preroll(): Gst.Sample | null;
 
         /**
          * This function blocks until a sample or EOS becomes available or the appsink
@@ -564,7 +564,7 @@ export namespace GstApp {
          * `null`. Use gst_app_sink_is_eos () to check for the EOS condition.
          * @virtual
          */
-        vfunc_pull_sample(): (Gst.Sample | null);
+        vfunc_pull_sample(): Gst.Sample | null;
 
         /**
          * This function blocks until a sample or an event or EOS becomes available or the appsink
@@ -589,7 +589,7 @@ export namespace GstApp {
          * @param timeout the maximum amount of time to wait for a sample
          * @virtual
          */
-        vfunc_try_pull_object(timeout: Gst.ClockTime): (Gst.MiniObject | null);
+        vfunc_try_pull_object(timeout: Gst.ClockTime): Gst.MiniObject | null;
 
         /**
          * Get the last preroll sample in `appsink`. This was the sample that caused the
@@ -614,7 +614,7 @@ export namespace GstApp {
          * @param timeout the maximum amount of time to wait for the preroll sample
          * @virtual
          */
-        vfunc_try_pull_preroll(timeout: Gst.ClockTime): (Gst.Sample | null);
+        vfunc_try_pull_preroll(timeout: Gst.ClockTime): Gst.Sample | null;
 
         /**
          * This function blocks until a sample or EOS becomes available or the appsink
@@ -632,7 +632,7 @@ export namespace GstApp {
          * @param timeout the maximum amount of time to wait for a sample
          * @virtual
          */
-        vfunc_try_pull_sample(timeout: Gst.ClockTime): (Gst.Sample | null);
+        vfunc_try_pull_sample(timeout: Gst.ClockTime): Gst.Sample | null;
 
         // Methods
         /**
@@ -645,7 +645,7 @@ export namespace GstApp {
          * Get the configured caps on `appsink`.
          * @returns the {@link Gst.Caps} accepted by the sink. `gst_caps_unref()` after usage.
          */
-        get_caps(): (Gst.Caps | null);
+        get_caps(): Gst.Caps | null;
 
         /**
          * Check if `appsink` will drop old buffers when the maximum amount of queued
@@ -717,7 +717,7 @@ export namespace GstApp {
          * so make sure that your code is checking for the actual type it is handling.
          * @returns a {@link Gst.Sample}, or a {@link Gst.Event} or NULL when the appsink is stopped or EOS.          Call `gst_mini_object_unref()` after usage.
          */
-        pull_object(): (Gst.MiniObject | null);
+        pull_object(): Gst.MiniObject | null;
 
         /**
          * Get the last preroll sample in `appsink`. This was the sample that caused the
@@ -740,7 +740,7 @@ export namespace GstApp {
          * element is set to the READY/NULL state.
          * @returns a {@link Gst.Sample} or NULL when the appsink is stopped or EOS.          Call `gst_sample_unref()` after usage.
          */
-        pull_preroll(): (Gst.Sample | null);
+        pull_preroll(): Gst.Sample | null;
 
         /**
          * This function blocks until a sample or EOS becomes available or the appsink
@@ -756,7 +756,7 @@ export namespace GstApp {
          * `null`. Use gst_app_sink_is_eos () to check for the EOS condition.
          * @returns a {@link Gst.Sample} or NULL when the appsink is stopped or EOS.          Call `gst_sample_unref()` after usage.
          */
-        pull_sample(): (Gst.Sample | null);
+        pull_sample(): Gst.Sample | null;
 
         /**
          * Instruct `appsink` to enable or disable buffer list support.
@@ -774,7 +774,7 @@ export namespace GstApp {
          * you must check the caps on the samples to get the actual used caps.
          * @param caps caps to set
          */
-        set_caps(caps: (Gst.Caps | null)): void;
+        set_caps(caps: Gst.Caps | null): void;
 
         /**
          * Instruct `appsink` to drop old buffers when the maximum amount of queued
@@ -807,7 +807,7 @@ export namespace GstApp {
          * case new buffers will be discarded.
          * @param max the maximum total size of buffers to queue, in bytes
          */
-        set_max_bytes(max: (bigint | number)): void;
+        set_max_bytes(max: bigint | number): void;
 
         /**
          * Set the maximum total duration that can be queued in `appsink`. After this
@@ -847,7 +847,7 @@ export namespace GstApp {
          * @param timeout the maximum amount of time to wait for a sample
          * @returns a {@link Gst.Sample}, or {@link Gst.Event} or NULL when the appsink is stopped or EOS or the timeout expires. Call `gst_mini_object_unref()` after usage.
          */
-        try_pull_object(timeout: Gst.ClockTime): (Gst.MiniObject | null);
+        try_pull_object(timeout: Gst.ClockTime): Gst.MiniObject | null;
 
         /**
          * Get the last preroll sample in `appsink`. This was the sample that caused the
@@ -872,7 +872,7 @@ export namespace GstApp {
          * @param timeout the maximum amount of time to wait for the preroll sample
          * @returns a {@link Gst.Sample} or NULL when the appsink is stopped or EOS or the timeout expires.          Call `gst_sample_unref()` after usage.
          */
-        try_pull_preroll(timeout: Gst.ClockTime): (Gst.Sample | null);
+        try_pull_preroll(timeout: Gst.ClockTime): Gst.Sample | null;
 
         /**
          * This function blocks until a sample or EOS becomes available or the appsink
@@ -890,20 +890,20 @@ export namespace GstApp {
          * @param timeout the maximum amount of time to wait for a sample
          * @returns a {@link Gst.Sample} or NULL when the appsink is stopped or EOS or the timeout expires.          Call `gst_sample_unref()` after usage.
          */
-        try_pull_sample(timeout: Gst.ClockTime): (Gst.Sample | null);
+        try_pull_sample(timeout: Gst.ClockTime): Gst.Sample | null;
 
         /**
          * Gets the list of protocols supported by `handler`. This list may not be
          * modified.
          * @returns the     supported protocols.  Returns `null` if the `handler` isn't     implemented properly, or the `handler` doesn't support any     protocols.
          */
-        get_protocols(): (string[] | null);
+        get_protocols(): string[] | null;
 
         /**
          * Gets the currently handled URI.
          * @returns the URI currently handled by   the `handler`.  Returns `null` if there are no URI currently   handled. The returned string must be freed with `g_free()` when no   longer needed.
          */
-        get_uri(): (string | null);
+        get_uri(): string | null;
 
         /**
          * Gets the type of the given URI handler
@@ -922,7 +922,7 @@ export namespace GstApp {
          * Gets the currently handled URI.
          * @virtual
          */
-        vfunc_get_uri(): (string | null);
+        vfunc_get_uri(): string | null;
 
         /**
          * Tries to set the URI of the given handler.
@@ -1050,7 +1050,7 @@ export namespace GstApp {
              * @signal
              * @run-last
              */
-            "seek-data": (arg0: number) => (boolean | void);
+            "seek-data": (arg0: number) => boolean | void;
             "notify::block": (pspec: GObject.ParamSpec) => void;
             "notify::caps": (pspec: GObject.ParamSpec) => void;
             "notify::current-level-buffers": (pspec: GObject.ParamSpec) => void;
@@ -1082,36 +1082,36 @@ export namespace GstApp {
         // Constructor properties interface
         interface ConstructorProps extends GstBase.BaseSrc.ConstructorProps, Gst.URIHandler.ConstructorProps {
             block: boolean;
-            caps: (Gst.Caps | null);
-            current_level_buffers: (bigint | number);
-            currentLevelBuffers: (bigint | number);
-            current_level_bytes: (bigint | number);
-            currentLevelBytes: (bigint | number);
-            current_level_time: (bigint | number);
-            currentLevelTime: (bigint | number);
-            duration: (bigint | number);
+            caps: Gst.Caps | null;
+            current_level_buffers: bigint | number;
+            currentLevelBuffers: bigint | number;
+            current_level_bytes: bigint | number;
+            currentLevelBytes: bigint | number;
+            current_level_time: bigint | number;
+            currentLevelTime: bigint | number;
+            duration: bigint | number;
             emit_signals: boolean;
             emitSignals: boolean;
             format: Gst.Format;
             handle_segment_change: boolean;
             handleSegmentChange: boolean;
-            is_live: (boolean | any);
+            is_live: boolean | any;
             isLive: boolean;
             leaky_type: AppLeakyType;
             leakyType: AppLeakyType;
-            max_buffers: (bigint | number);
-            maxBuffers: (bigint | number);
-            max_bytes: (bigint | number);
-            maxBytes: (bigint | number);
-            max_latency: (bigint | number);
-            maxLatency: (bigint | number);
-            max_time: (bigint | number);
-            maxTime: (bigint | number);
-            min_latency: (bigint | number);
-            minLatency: (bigint | number);
+            max_buffers: bigint | number;
+            maxBuffers: bigint | number;
+            max_bytes: bigint | number;
+            maxBytes: bigint | number;
+            max_latency: bigint | number;
+            maxLatency: bigint | number;
+            max_time: bigint | number;
+            maxTime: bigint | number;
+            min_latency: bigint | number;
+            minLatency: bigint | number;
             min_percent: number;
             minPercent: number;
-            size: (bigint | number);
+            size: bigint | number;
             stream_type: AppStreamType;
             streamType: AppStreamType;
         }
@@ -1202,8 +1202,8 @@ export namespace GstApp {
          * The GstCaps that will negotiated downstream and will be put
          * on outgoing buffers.
          */
-        get caps(): (Gst.Caps | null);
-        set caps(val: (Gst.Caps | null));
+        get caps(): Gst.Caps | null;
+        set caps(val: Gst.Caps | null);
 
         /**
          * The number of currently queued buffers inside appsrc.
@@ -1260,7 +1260,7 @@ export namespace GstApp {
          * @default 18446744073709551615
          */
         get duration(): number;
-        set duration(val: (bigint | number));
+        set duration(val: bigint | number);
 
         /**
          * Make appsrc emit the "need-data", "enough-data" and "seek-data" signals.
@@ -1364,7 +1364,7 @@ export namespace GstApp {
          * @default 0
          */
         get max_buffers(): number;
-        set max_buffers(val: (bigint | number));
+        set max_buffers(val: bigint | number);
 
         /**
          * The maximum amount of buffers that can be queued internally.
@@ -1374,7 +1374,7 @@ export namespace GstApp {
          * @default 0
          */
         get maxBuffers(): number;
-        set maxBuffers(val: (bigint | number));
+        set maxBuffers(val: bigint | number);
 
         /**
          * The maximum amount of bytes that can be queued internally.
@@ -1383,7 +1383,7 @@ export namespace GstApp {
          * @default 200000
          */
         get max_bytes(): number;
-        set max_bytes(val: (bigint | number));
+        set max_bytes(val: bigint | number);
 
         /**
          * The maximum amount of bytes that can be queued internally.
@@ -1392,19 +1392,19 @@ export namespace GstApp {
          * @default 200000
          */
         get maxBytes(): number;
-        set maxBytes(val: (bigint | number));
+        set maxBytes(val: bigint | number);
 
         /**
          * @default -1
          */
         get max_latency(): number;
-        set max_latency(val: (bigint | number));
+        set max_latency(val: bigint | number);
 
         /**
          * @default -1
          */
         get maxLatency(): number;
-        set maxLatency(val: (bigint | number));
+        set maxLatency(val: bigint | number);
 
         /**
          * The maximum amount of time that can be queued internally.
@@ -1414,7 +1414,7 @@ export namespace GstApp {
          * @default 0
          */
         get max_time(): number;
-        set max_time(val: (bigint | number));
+        set max_time(val: bigint | number);
 
         /**
          * The maximum amount of time that can be queued internally.
@@ -1424,7 +1424,7 @@ export namespace GstApp {
          * @default 0
          */
         get maxTime(): number;
-        set maxTime(val: (bigint | number));
+        set maxTime(val: bigint | number);
 
         /**
          * The minimum latency of the source. A value of -1 will use the default
@@ -1432,7 +1432,7 @@ export namespace GstApp {
          * @default -1
          */
         get min_latency(): number;
-        set min_latency(val: (bigint | number));
+        set min_latency(val: bigint | number);
 
         /**
          * The minimum latency of the source. A value of -1 will use the default
@@ -1440,7 +1440,7 @@ export namespace GstApp {
          * @default -1
          */
         get minLatency(): number;
-        set minLatency(val: (bigint | number));
+        set minLatency(val: bigint | number);
 
         /**
          * Make appsrc emit the "need-data" signal when the amount of bytes in the
@@ -1464,7 +1464,7 @@ export namespace GstApp {
          * @default -1
          */
         get size(): number;
-        set size(val: (bigint | number));
+        set size(val: bigint | number);
 
         /**
          * The type of stream that this source is producing.  For seekable streams the
@@ -1588,7 +1588,7 @@ export namespace GstApp {
          * Get the configured caps on `appsrc`.
          * @returns the {@link Gst.Caps} produced by the source. `gst_caps_unref()` after usage.
          */
-        get_caps(): (Gst.Caps | null);
+        get_caps(): Gst.Caps | null;
 
         /**
          * Get the number of currently queued buffers inside `appsrc`.
@@ -1711,7 +1711,7 @@ export namespace GstApp {
          * buffers must match the caps or left NULL.
          * @param caps caps to set
          */
-        set_caps(caps: (Gst.Caps | null)): void;
+        set_caps(caps: Gst.Caps | null): void;
 
         /**
          * @param args 
@@ -1740,7 +1740,7 @@ export namespace GstApp {
          * @param min the min latency
          * @param max the max latency
          */
-        set_latency(min: (bigint | number), max: (bigint | number)): void;
+        set_latency(min: bigint | number, max: bigint | number): void;
 
         /**
          * When set to any other value than GST_APP_LEAKY_TYPE_NONE then the appsrc
@@ -1757,7 +1757,7 @@ export namespace GstApp {
          * "enough-data" signal.
          * @param max the maximum number of buffers to queue
          */
-        set_max_buffers(max: (bigint | number)): void;
+        set_max_buffers(max: bigint | number): void;
 
         /**
          * Set the maximum amount of bytes that can be queued in `appsrc`.
@@ -1765,7 +1765,7 @@ export namespace GstApp {
          * "enough-data" signal.
          * @param max the maximum number of bytes to queue
          */
-        set_max_bytes(max: (bigint | number)): void;
+        set_max_bytes(max: bigint | number): void;
 
         /**
          * Set the maximum amount of time that can be queued in `appsrc`.
@@ -1780,7 +1780,7 @@ export namespace GstApp {
          * not known.
          * @param size the size to set
          */
-        set_size(size: (bigint | number)): void;
+        set_size(size: bigint | number): void;
 
         /**
          * Set the stream type on `appsrc`. For seekable streams, the "seek" signal must
@@ -1796,13 +1796,13 @@ export namespace GstApp {
          * modified.
          * @returns the     supported protocols.  Returns `null` if the `handler` isn't     implemented properly, or the `handler` doesn't support any     protocols.
          */
-        get_protocols(): (string[] | null);
+        get_protocols(): string[] | null;
 
         /**
          * Gets the currently handled URI.
          * @returns the URI currently handled by   the `handler`.  Returns `null` if there are no URI currently   handled. The returned string must be freed with `g_free()` when no   longer needed.
          */
-        get_uri(): (string | null);
+        get_uri(): string | null;
 
         /**
          * Gets the type of the given URI handler
@@ -1821,7 +1821,7 @@ export namespace GstApp {
          * Gets the currently handled URI.
          * @virtual
          */
-        vfunc_get_uri(): (string | null);
+        vfunc_get_uri(): string | null;
 
         /**
          * Tries to set the URI of the given handler.

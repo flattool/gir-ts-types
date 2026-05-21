@@ -41,9 +41,7 @@ export namespace GstGLX11 {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstGL.GLDisplay.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstGL.GLDisplay.ConstructorProps {}
     }
 
     /**
@@ -68,7 +66,7 @@ export namespace GstGLX11 {
 
         _init(...args: any[]): void;
 
-        static ["new"](name: (string | null)): GLDisplayX11;
+        static ["new"](name: string | null): GLDisplayX11;
 
         // Conflicted with GstGL.GLDisplay.new
         static ["new"](...args: never[]): any;

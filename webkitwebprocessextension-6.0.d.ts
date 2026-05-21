@@ -386,13 +386,10 @@ export namespace WebKitWebProcessExtension {
 
     namespace ContextMenu {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -578,13 +575,10 @@ export namespace WebKitWebProcessExtension {
 
     namespace ContextMenuItem {
         // Signal signatures
-        interface SignalSignatures extends GObject.InitiallyUnowned.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.InitiallyUnowned.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.InitiallyUnowned.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.InitiallyUnowned.ConstructorProps {}
     }
 
     /**
@@ -614,7 +608,7 @@ export namespace WebKitWebProcessExtension {
 
         _init(...args: any[]): void;
 
-        static new_from_gaction(action: Gio.Action, label: string, target: (GLib.Variant | null)): ContextMenuItem;
+        static new_from_gaction(action: Gio.Action, label: string, target: GLib.Variant | null): ContextMenuItem;
 
         static new_from_stock_action(action: ContextMenuAction): ContextMenuItem;
 
@@ -648,7 +642,7 @@ export namespace WebKitWebProcessExtension {
          * Gets the target {@link GLib.Variant} associated with `item`.
          * @returns the target {@link GLib.Variant} of the {@link WebKitWebProcessExtension.ContextMenuItem},    or `null` if `item` was not created with `webkit_context_menu_item_new_from_gaction()`    or if no target was specified.
          */
-        get_gaction_target(): (GLib.Variant | null);
+        get_gaction_target(): GLib.Variant | null;
 
         /**
          * Gets the {@link WebKitWebProcessExtension.ContextMenuAction} of `item`.
@@ -686,19 +680,16 @@ export namespace WebKitWebProcessExtension {
          * submenu of `item` is removed.
          * @param submenu a {@link WebKitWebProcessExtension.ContextMenu}
          */
-        set_submenu(submenu: (ContextMenu | null)): void;
+        set_submenu(submenu: ContextMenu | null): void;
     }
 
 
     namespace Frame {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -1043,9 +1034,7 @@ export namespace WebKitWebProcessExtension {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -1203,8 +1192,8 @@ export namespace WebKitWebProcessExtension {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            content_length: (bigint | number);
-            contentLength: (bigint | number);
+            content_length: bigint | number;
+            contentLength: bigint | number;
             http_headers: Soup.MessageHeaders;
             httpHeaders: Soup.MessageHeaders;
             mime_type: string;
@@ -1393,10 +1382,10 @@ export namespace WebKitWebProcessExtension {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.InitiallyUnowned.ConstructorProps {
-            fd_list: (Gio.UnixFDList | null);
-            fdList: (Gio.UnixFDList | null);
+            fd_list: Gio.UnixFDList | null;
+            fdList: Gio.UnixFDList | null;
             name: string;
-            parameters: (GLib.Variant | null);
+            parameters: GLib.Variant | null;
         }
     }
 
@@ -1421,14 +1410,14 @@ export namespace WebKitWebProcessExtension {
          * @since 2.28
          * @construct-only
          */
-        get fd_list(): (Gio.UnixFDList | null);
+        get fd_list(): Gio.UnixFDList | null;
 
         /**
          * The UNIX file descriptors of the user message.
          * @since 2.28
          * @construct-only
          */
-        get fdList(): (Gio.UnixFDList | null);
+        get fdList(): Gio.UnixFDList | null;
 
         /**
          * The name of the user message.
@@ -1445,7 +1434,7 @@ export namespace WebKitWebProcessExtension {
          * @since 2.28
          * @construct-only
          */
-        get parameters(): (GLib.Variant | null);
+        get parameters(): GLib.Variant | null;
 
         /**
          * Compile-time signal type information.
@@ -1461,9 +1450,9 @@ export namespace WebKitWebProcessExtension {
 
         _init(...args: any[]): void;
 
-        static ["new"](name: string, parameters: (GLib.Variant | null)): UserMessage;
+        static ["new"](name: string, parameters: GLib.Variant | null): UserMessage;
 
-        static new_with_fd_list(name: string, parameters: (GLib.Variant | null), fd_list: (Gio.UnixFDList | null)): UserMessage;
+        static new_with_fd_list(name: string, parameters: GLib.Variant | null, fd_list: Gio.UnixFDList | null): UserMessage;
 
         // Signals
         /** @signal */
@@ -1489,7 +1478,7 @@ export namespace WebKitWebProcessExtension {
          * Get the `message` list of file descritpor.
          * @returns the message list of file descriptors
          */
-        get_fd_list(): (Gio.UnixFDList | null);
+        get_fd_list(): Gio.UnixFDList | null;
 
         /**
          * Get the `message` name.
@@ -1501,7 +1490,7 @@ export namespace WebKitWebProcessExtension {
          * Get the `message` parameters.
          * @returns the message parameters
          */
-        get_parameters(): (GLib.Variant | null);
+        get_parameters(): GLib.Variant | null;
 
         /**
          * Send a reply to an user message.
@@ -1530,9 +1519,7 @@ export namespace WebKitWebProcessExtension {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -1633,9 +1620,7 @@ export namespace WebKitWebProcessExtension {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -1699,13 +1684,10 @@ export namespace WebKitWebProcessExtension {
 
     namespace WebHitTestResult {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -1818,7 +1800,7 @@ export namespace WebKitWebProcessExtension {
          * @param world a {@link WebKitWebProcessExtension.ScriptWorld}, or `null` to use the default
          * @returns a {@link JavaScriptCore.Value} for the DOM node, or `null`
          */
-        get_js_node(world: (ScriptWorld | null)): (JavaScriptCore.Value | null);
+        get_js_node(world: ScriptWorld | null): JavaScriptCore.Value | null;
 
         /**
          * Obtains the label associated with the link element at the hit test position.
@@ -1872,7 +1854,7 @@ export namespace WebKitWebProcessExtension {
              * @since 2.8
              * @run-last
              */
-            "context-menu": (arg0: ContextMenu, arg1: WebHitTestResult) => (boolean | void);
+            "context-menu": (arg0: ContextMenu, arg1: WebHitTestResult) => boolean | void;
             /**
              * This signal is emitted when the DOM document of a {@link WebKitWebProcessExtension.WebPage} has been
              * loaded.
@@ -1900,7 +1882,7 @@ export namespace WebKitWebProcessExtension {
              * @signal
              * @run-last
              */
-            "send-request": (arg0: URIRequest, arg1: URIResponse) => (boolean | void);
+            "send-request": (arg0: URIRequest, arg1: URIResponse) => boolean | void;
             /**
              * This signal is emitted when a {@link WebKitWebProcessExtension.UserMessage} is received from the
              * `WebKitWebView` corresponding to `web_page`. You can reply to the message
@@ -1914,7 +1896,7 @@ export namespace WebKitWebProcessExtension {
              * @since 2.28
              * @run-last
              */
-            "user-message-received": (arg0: UserMessage) => (boolean | void);
+            "user-message-received": (arg0: UserMessage) => boolean | void;
             "notify::uri": (pspec: GObject.ParamSpec) => void;
         }
 
@@ -1978,7 +1960,7 @@ export namespace WebKitWebProcessExtension {
          * @param world a {@link WebKitWebProcessExtension.ScriptWorld}
          * @returns a {@link WebKitWebProcessExtension.WebFormManager}
          */
-        get_form_manager(world: (ScriptWorld | null)): WebFormManager;
+        get_form_manager(world: ScriptWorld | null): WebFormManager;
 
         /**
          * Get the identifier of the {@link WebKitWebProcessExtension.WebPage}
@@ -2010,7 +1992,7 @@ export namespace WebKitWebProcessExtension {
          * @param message a {@link WebKitWebProcessExtension.UserMessage}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        send_message_to_view(message: UserMessage, cancellable: (Gio.Cancellable | null)): globalThis.Promise<UserMessage>;
+        send_message_to_view(message: UserMessage, cancellable: Gio.Cancellable | null): globalThis.Promise<UserMessage>;
 
         /**
          * Send `message` to the `WebKitWebView` corresponding to `web_page`. If `message` is floating, it's consumed.
@@ -2022,7 +2004,7 @@ export namespace WebKitWebProcessExtension {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`
          */
-        send_message_to_view(message: UserMessage, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        send_message_to_view(message: UserMessage, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Send `message` to the `WebKitWebView` corresponding to `web_page`. If `message` is floating, it's consumed.
@@ -2034,7 +2016,7 @@ export namespace WebKitWebProcessExtension {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`
          */
-        send_message_to_view(message: UserMessage, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<UserMessage> | void);
+        send_message_to_view(message: UserMessage, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<UserMessage> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_web_page_send_message_to_view()`.
@@ -2069,9 +2051,7 @@ export namespace WebKitWebProcessExtension {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -2185,7 +2165,7 @@ export namespace WebKitWebProcessExtension {
          * @param page_id the identifier of the {@link WebKitWebProcessExtension.WebPage} to get
          * @returns the {@link WebKitWebProcessExtension.WebPage} for the given `page_id`, or `null` if the    identifier doesn't correspond to an existing web page.
          */
-        get_page(page_id: (bigint | number)): WebPage;
+        get_page(page_id: bigint | number): WebPage;
 
         /**
          * Send `message` to the `WebKitWebContext` corresponding to `extension`. If `message` is floating, it's consumed.
@@ -2196,19 +2176,7 @@ export namespace WebKitWebProcessExtension {
          * @param message a {@link WebKitWebProcessExtension.UserMessage}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        send_message_to_context(message: UserMessage, cancellable: (Gio.Cancellable | null)): globalThis.Promise<UserMessage>;
-
-        /**
-         * Send `message` to the `WebKitWebContext` corresponding to `extension`. If `message` is floating, it's consumed.
-         * 
-         * If you don't expect any reply, or you simply want to ignore it, you can pass `null` as `calback`.
-         * When the operation is finished, `callback` will be called. You can then call
-         * `webkit_web_process_extension_send_message_to_context_finish()` to get the message reply.
-         * @param message a {@link WebKitWebProcessExtension.UserMessage}
-         * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
-         * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`
-         */
-        send_message_to_context(message: UserMessage, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        send_message_to_context(message: UserMessage, cancellable: Gio.Cancellable | null): globalThis.Promise<UserMessage>;
 
         /**
          * Send `message` to the `WebKitWebContext` corresponding to `extension`. If `message` is floating, it's consumed.
@@ -2220,7 +2188,19 @@ export namespace WebKitWebProcessExtension {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`
          */
-        send_message_to_context(message: UserMessage, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<UserMessage> | void);
+        send_message_to_context(message: UserMessage, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Send `message` to the `WebKitWebContext` corresponding to `extension`. If `message` is floating, it's consumed.
+         * 
+         * If you don't expect any reply, or you simply want to ignore it, you can pass `null` as `calback`.
+         * When the operation is finished, `callback` will be called. You can then call
+         * `webkit_web_process_extension_send_message_to_context_finish()` to get the message reply.
+         * @param message a {@link WebKitWebProcessExtension.UserMessage}
+         * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`
+         */
+        send_message_to_context(message: UserMessage, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<UserMessage> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_web_process_extension_send_message_to_context()`.

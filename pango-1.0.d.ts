@@ -694,7 +694,7 @@ export namespace Pango {
         static MISSING_VALUE: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -1926,7 +1926,7 @@ export namespace Pango {
      * @returns a new {@link Pango.AttrList}
      * @since 1.50
      */
-    function attr_list_from_string(text: string): (AttrList | null);
+    function attr_list_from_string(text: string): AttrList | null;
 
     /**
      * Create a new overline color attribute.
@@ -2002,7 +2002,7 @@ export namespace Pango {
      * @returns the newly allocated   {@link Pango.Attribute}, which should be freed with   {@link Pango.Attribute.destroy}
      * @since 1.8
      */
-    function attr_shape_new_with_data(ink_rect: Rectangle, logical_rect: Rectangle, data: null, copy_func: (AttrDataCopyFunc | null)): Attribute;
+    function attr_shape_new_with_data(ink_rect: Rectangle, logical_rect: Rectangle, data: null, copy_func: AttrDataCopyFunc | null): Attribute;
 
     /**
      * Create a new attribute that influences how invisible
@@ -2085,7 +2085,7 @@ export namespace Pango {
      * @returns the type ID name (which   may be `null`), or `null` if `type` is a built-in Pango   attribute type or invalid.
      * @since 1.22
      */
-    function attr_type_get_name(type: AttrType): (string | null);
+    function attr_type_get_name(type: AttrType): string | null;
 
     /**
      * Allocate a new attribute type ID.
@@ -2179,7 +2179,7 @@ export namespace Pango {
      * @param length length of text in bytes (may be -1 if `text` is nul-terminated)
      * @param analysis a {@link Pango.Analysis} structure for the `text`
      */
-    function default_break(text: string, length: number, analysis: (Analysis | null)): LogAttr[];
+    function default_break(text: string, length: number, analysis: Analysis | null): LogAttr[];
 
     /**
      * Converts extents from Pango units to device units.
@@ -2327,7 +2327,7 @@ export namespace Pango {
      * @returns the gravity of `matrix`, which will never be {@link Pango.Gravity.AUTO}, or {@link Pango.Gravity.SOUTH} if `matrix` is `null`
      * @since 1.16
      */
-    function gravity_get_for_matrix(matrix: (Matrix | null)): Gravity;
+    function gravity_get_for_matrix(matrix: Matrix | null): Gravity;
 
     /**
      * Returns the gravity to use in laying out a {@link Pango.Item}.
@@ -2416,7 +2416,7 @@ export namespace Pango {
      * @param cached_iter Cached attribute iterator
      * @returns a {@link GLib.List} of   {@link Pango.Item} structures. The items should be freed using   {@link Pango.Item.free} in combination with {@link GLib.List.free_full}.
      */
-    function itemize(context: Context, text: string, start_index: number, length: number, attrs: AttrList, cached_iter: (AttrIterator | null)): Item[];
+    function itemize(context: Context, text: string, start_index: number, length: number, attrs: AttrList, cached_iter: AttrIterator | null): Item[];
 
     /**
      * Like `pango_itemize()`, but with an explicitly specified base direction.
@@ -2434,7 +2434,7 @@ export namespace Pango {
      * @returns a {@link GLib.List} of   {@link Pango.Item} structures. The items should be freed using   {@link Pango.Item.free} probably in combination with {@link GLib.List.free_full}.
      * @since 1.4
      */
-    function itemize_with_base_dir(context: Context, base_dir: Direction, text: string, start_index: number, length: number, attrs: AttrList, cached_iter: (AttrIterator | null)): Item[];
+    function itemize_with_base_dir(context: Context, base_dir: Direction, text: string, start_index: number, length: number, attrs: AttrList, cached_iter: AttrIterator | null): Item[];
 
     /**
      * Convert a language tag to a {@link Pango.Language}.
@@ -2452,7 +2452,7 @@ export namespace Pango {
      * @param language a string representing a language tag
      * @returns a {@link Pango.Language}
      */
-    function language_from_string(language: (string | null)): (Language | null);
+    function language_from_string(language: string | null): Language | null;
 
     /**
      * Returns the {@link Pango.Language} for the current locale of the process.
@@ -2506,7 +2506,7 @@ export namespace Pango {
      * @returns a `null`-terminated array   of {@link Pango.Language}*
      * @since 1.48
      */
-    function language_get_preferred(): (Language[] | null);
+    function language_get_preferred(): Language[] | null;
 
     function layout_deserialize_error_quark(): GLib.Quark;
 
@@ -2586,7 +2586,7 @@ export namespace Pango {
      * @since 1.16
      * @deprecated since 1.38
      */
-    function parse_enum(type: GObject.GType, str: (string | null), warn: boolean): [boolean, number, string];
+    function parse_enum(type: GObject.GType, str: string | null, warn: boolean): [boolean, number, string];
 
     /**
      * Parses marked-up text to create a plain-text string and an attribute list.
@@ -2797,7 +2797,7 @@ export namespace Pango {
      * @returns a {@link Pango.Language} that is representative   of the script
      * @since 1.4
      */
-    function script_get_sample_language(script: Script): (Language | null);
+    function script_get_sample_language(script: Script): Language | null;
 
     /**
      * Convert the characters in `text` into glyphs.
@@ -2853,7 +2853,7 @@ export namespace Pango {
      * @param analysis {@link Pango.Analysis} structure from {@link Pango.itemize}.
      * @since 1.32
      */
-    function shape_full(item_text: string, item_length: number, paragraph_text: (string | null), paragraph_length: number, analysis: Analysis): GlyphString;
+    function shape_full(item_text: string, item_length: number, paragraph_text: string | null, paragraph_length: number, analysis: Analysis): GlyphString;
 
     /**
      * Convert the characters in `item` into glyphs.
@@ -2876,7 +2876,7 @@ export namespace Pango {
      * @param flags flags influencing the shaping process
      * @since 1.50
      */
-    function shape_item(item: Item, paragraph_text: (string | null), paragraph_length: number, log_attrs: (LogAttr | null), flags: ShapeFlags): GlyphString;
+    function shape_item(item: Item, paragraph_text: string | null, paragraph_length: number, log_attrs: LogAttr | null, flags: ShapeFlags): GlyphString;
 
     /**
      * Convert the characters in `text` into glyphs.
@@ -2905,7 +2905,7 @@ export namespace Pango {
      * @param flags flags influencing the shaping process
      * @since 1.44
      */
-    function shape_with_flags(item_text: string, item_length: number, paragraph_text: (string | null), paragraph_length: number, analysis: Analysis, flags: ShapeFlags): GlyphString;
+    function shape_with_flags(item_text: string, item_length: number, paragraph_text: string | null, paragraph_length: number, analysis: Analysis, flags: ShapeFlags): GlyphString;
 
     /**
      * Skips 0 or more characters of white space.
@@ -2933,7 +2933,7 @@ export namespace Pango {
      * @returns a new {@link Pango.TabArray}
      * @since 1.50
      */
-    function tab_array_from_string(text: string): (TabArray | null);
+    function tab_array_from_string(text: string): TabArray | null;
 
     /**
      * Apply language-specific tailoring to the breaks in `attrs`.
@@ -3032,7 +3032,7 @@ export namespace Pango {
      * @returns `null` if the Pango library is compatible   with the given version, or a string describing the version   mismatch.  The returned string is owned by Pango and should not   be modified or freed.
      * @since 1.16
      */
-    function version_check(required_major: number, required_minor: number, required_micro: number): (string | null);
+    function version_check(required_major: number, required_minor: number, required_micro: number): string | null;
 
     /**
      * Returns the version of Pango available at run-time.
@@ -3241,13 +3241,10 @@ export namespace Pango {
 
     namespace Context {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -3325,13 +3322,13 @@ export namespace Pango {
          * Retrieve the default font description for the context.
          * @returns a pointer to the context's default font   description. This value must not be modified or freed.
          */
-        get_font_description(): (FontDescription | null);
+        get_font_description(): FontDescription | null;
 
         /**
          * Gets the {@link Pango.FontMap} used to look up fonts for this context.
          * @returns the font map for the.   {@link Pango.Context} This value is owned by Pango and should not be   unreferenced.
          */
-        get_font_map(): (FontMap | null);
+        get_font_map(): FontMap | null;
 
         /**
          * Retrieves the gravity for the context.
@@ -3365,7 +3362,7 @@ export namespace Pango {
          * See {@link Pango.Context.set_matrix}.
          * @returns the matrix, or `null` if no   matrix has been set (which is the same as the identity matrix).   The returned matrix is owned by Pango and must not be modified   or freed.
          */
-        get_matrix(): (Matrix | null);
+        get_matrix(): Matrix | null;
 
         /**
          * Get overall metric information for a particular font description.
@@ -3383,7 +3380,7 @@ export namespace Pango {
          * @param language language tag used to determine which script to get   the metrics for. `null` means that the language tag from the context   will be used. If no language tag is set on the context, metrics   for the default language (as determined by {@link Pango.Language.get_default}   will be returned.
          * @returns a {@link Pango.FontMetrics} object. The caller must call   {@link Pango.FontMetrics.unref} when finished using the object.
          */
-        get_metrics(desc: (FontDescription | null), language: (Language | null)): FontMetrics;
+        get_metrics(desc: FontDescription | null, language: Language | null): FontMetrics;
 
         /**
          * Returns whether font rendering with this context should
@@ -3419,7 +3416,7 @@ export namespace Pango {
          * @param desc a {@link Pango.FontDescription} describing the font to load
          * @returns the newly allocated {@link Pango.Font}   that was loaded, or `null` if no font matched.
          */
-        load_font(desc: FontDescription): (Font | null);
+        load_font(desc: FontDescription): Font | null;
 
         /**
          * Load a set of fonts in the context that can be used to render
@@ -3428,7 +3425,7 @@ export namespace Pango {
          * @param language a {@link Pango.Language} the fonts will be used for
          * @returns the newly allocated   {@link Pango.Fontset} loaded, or `null` if no font matched.
          */
-        load_fontset(desc: FontDescription, language: Language): (Fontset | null);
+        load_fontset(desc: FontDescription, language: Language): Fontset | null;
 
         /**
          * Sets the base direction for the context.
@@ -3466,7 +3463,7 @@ export namespace Pango {
          * suitable font map.
          * @param font_map the {@link Pango.FontMap} to set.
          */
-        set_font_map(font_map: (FontMap | null)): void;
+        set_font_map(font_map: FontMap | null): void;
 
         /**
          * Sets the gravity hint for the context.
@@ -3486,7 +3483,7 @@ export namespace Pango {
          * can be found using {@link Pango.Language.get_default}.
          * @param language the new language tag.
          */
-        set_language(language: (Language | null)): void;
+        set_language(language: Language | null): void;
 
         /**
          * Sets the transformation matrix that will be applied when rendering
@@ -3499,7 +3496,7 @@ export namespace Pango {
          * text is fit to the pixel grid.
          * @param matrix a {@link Pango.Matrix}, or `null` to unset any existing matrix. (No matrix set is the same as setting the identity matrix.)
          */
-        set_matrix(matrix: (Matrix | null)): void;
+        set_matrix(matrix: Matrix | null): void;
 
         /**
          * Sets whether font rendering with this context should
@@ -3519,13 +3516,10 @@ export namespace Pango {
 
     namespace Coverage {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -3577,7 +3571,7 @@ export namespace Pango {
          * back to a {@link Pango.Coverage}.
          * @param bytes binary data   representing a {@link Pango.Coverage}
          */
-        static from_bytes(bytes: (Uint8Array | string)): (Coverage | null);
+        static from_bytes(bytes: Uint8Array | string): Coverage | null;
 
         // Methods
         /**
@@ -3636,13 +3630,10 @@ export namespace Pango {
 
     namespace Font {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -3685,7 +3676,7 @@ export namespace Pango {
          * Frees an array of font descriptions.
          * @param descs a pointer   to an array of {@link Pango.FontDescription}, may be `null`
          */
-        static descriptions_free(descs: (FontDescription[] | null)): void;
+        static descriptions_free(descs: FontDescription[] | null): void;
 
         /**
          * Loads data previously created via {@link Pango.Font.serialize}.
@@ -3698,7 +3689,7 @@ export namespace Pango {
          * @param context a {@link Pango.Context}
          * @param bytes the bytes containing the data
          */
-        static deserialize(context: Context, bytes: (GLib.Bytes | Uint8Array)): (Font | null);
+        static deserialize(context: Context, bytes: GLib.Bytes | Uint8Array): Font | null;
 
         // Virtual methods
         /**
@@ -3754,7 +3745,7 @@ export namespace Pango {
          * as a {@link Pango.Context} holds a reference to the font map.
          * @virtual
          */
-        vfunc_get_font_map(): (FontMap | null);
+        vfunc_get_font_map(): FontMap | null;
 
         /**
          * Gets the logical and ink extents of a glyph within a font.
@@ -3785,7 +3776,7 @@ export namespace Pango {
          * @param language language tag used to determine which script   to get the metrics for, or `null` to indicate to get the metrics for   the entire font.
          * @virtual
          */
-        vfunc_get_metrics(language: (Language | null)): FontMetrics;
+        vfunc_get_metrics(language: Language | null): FontMetrics;
 
         // Methods
         /**
@@ -3820,7 +3811,7 @@ export namespace Pango {
          * where the font outlives its font map.
          * @returns the {@link Pango.FontFace}
          */
-        get_face(): (FontFace | null);
+        get_face(): FontFace | null;
 
         /**
          * Obtain the OpenType features that are provided by the font.
@@ -3848,7 +3839,7 @@ export namespace Pango {
          * as a {@link Pango.Context} holds a reference to the font map.
          * @returns the {@link Pango.FontMap}   for the font
          */
-        get_font_map(): (FontMap | null);
+        get_font_map(): FontMap | null;
 
         /**
          * Gets the logical and ink extents of a glyph within a font.
@@ -3877,7 +3868,7 @@ export namespace Pango {
          * and its fontmap are valid.
          * @returns an array of {@link Pango.Language}
          */
-        get_languages(): (Language[] | null);
+        get_languages(): Language[] | null;
 
         /**
          * Gets overall metric information for a font.
@@ -3891,7 +3882,7 @@ export namespace Pango {
          * @param language language tag used to determine which script   to get the metrics for, or `null` to indicate to get the metrics for   the entire font.
          * @returns a {@link Pango.FontMetrics} object. The caller must call   {@link Pango.FontMetrics.unref} when finished using the object.
          */
-        get_metrics(language: (Language | null)): FontMetrics;
+        get_metrics(language: Language | null): FontMetrics;
 
         /**
          * Returns whether the font provides a glyph for this character.
@@ -3918,13 +3909,10 @@ export namespace Pango {
 
     namespace FontFace {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -4198,7 +4186,7 @@ export namespace Pango {
          * @param name the name of a face. If the name is `null`,   the family's default face (fontconfig calls it "Regular")   will be returned.
          * @virtual
          */
-        vfunc_get_face(name: (string | null)): (FontFace | null);
+        vfunc_get_face(name: string | null): FontFace | null;
 
         /**
          * Gets the name of the family.
@@ -4260,7 +4248,7 @@ export namespace Pango {
          * @param name the name of a face. If the name is `null`,   the family's default face (fontconfig calls it "Regular")   will be returned.
          * @returns the {@link Pango.FontFace},   or `null` if no face with the given name exists.
          */
-        get_face(name: (string | null)): (FontFace | null);
+        get_face(name: string | null): FontFace | null;
 
         /**
          * Gets the name of the family.
@@ -4325,7 +4313,7 @@ export namespace Pango {
          * @param position the position of the item to fetch
          * @returns the object at `position`.
          */
-        get_item(position: number): (A | null);
+        get_item(position: number): A | null;
 
         /**
          * Emits the {@link Gio.ListModel.SignalSignatures.items_changed | Gio.ListModel::items-changed} signal on `list`.
@@ -4365,7 +4353,7 @@ export namespace Pango {
          * @param position the position of the item to fetch
          * @virtual
          */
-        vfunc_get_item(position: number): (A | null);
+        vfunc_get_item(position: number): A | null;
 
         /**
          * Gets the type of the items in `list`.
@@ -4495,7 +4483,7 @@ export namespace Pango {
          * @param name a family name
          * @virtual
          */
-        vfunc_get_family(name: string): (FontFamily | null);
+        vfunc_get_family(name: string): FontFamily | null;
 
         /**
          * Returns the current serial number of `fontmap`.
@@ -4531,7 +4519,7 @@ export namespace Pango {
          * @param desc a {@link Pango.FontDescription} describing the font to load
          * @virtual
          */
-        vfunc_load_font(context: Context, desc: FontDescription): (Font | null);
+        vfunc_load_font(context: Context, desc: FontDescription): Font | null;
 
         /**
          * Load a set of fonts in the fontmap that can be used to render
@@ -4541,7 +4529,7 @@ export namespace Pango {
          * @param language a {@link Pango.Language} the fonts will be used for
          * @virtual
          */
-        vfunc_load_fontset(context: Context, desc: FontDescription, language: Language): (Fontset | null);
+        vfunc_load_fontset(context: Context, desc: FontDescription, language: Language): Fontset | null;
 
         // Methods
         /**
@@ -4584,7 +4572,7 @@ export namespace Pango {
          * @param name a family name
          * @returns the {@link Pango.FontFamily}
          */
-        get_family(name: string): (FontFamily | null);
+        get_family(name: string): FontFamily | null;
 
         /**
          * Returns the current serial number of `fontmap`.
@@ -4619,7 +4607,7 @@ export namespace Pango {
          * @param desc a {@link Pango.FontDescription} describing the font to load
          * @returns the newly allocated {@link Pango.Font}   loaded, or `null` if no font matched.
          */
-        load_font(context: Context, desc: FontDescription): (Font | null);
+        load_font(context: Context, desc: FontDescription): Font | null;
 
         /**
          * Load a set of fonts in the fontmap that can be used to render
@@ -4629,7 +4617,7 @@ export namespace Pango {
          * @param language a {@link Pango.Language} the fonts will be used for
          * @returns the newly allocated   {@link Pango.Fontset} loaded, or `null` if no font matched.
          */
-        load_fontset(context: Context, desc: FontDescription, language: Language): (Fontset | null);
+        load_fontset(context: Context, desc: FontDescription, language: Language): Fontset | null;
 
         /**
          * Returns a new font that is like `font`, except that it is scaled
@@ -4646,7 +4634,7 @@ export namespace Pango {
          * @param variations font variations to use
          * @returns the modified font
          */
-        reload_font(font: Font, scale: number, context: (Context | null), variations: (string | null)): Font;
+        reload_font(font: Font, scale: number, context: Context | null, variations: string | null): Font;
 
         /**
          * Gets the type of the items in `list`.
@@ -4687,7 +4675,7 @@ export namespace Pango {
          * @param position the position of the item to fetch
          * @returns the object at `position`.
          */
-        get_item(position: number): (A | null);
+        get_item(position: number): A | null;
 
         /**
          * Emits the {@link Gio.ListModel.SignalSignatures.items_changed | Gio.ListModel::items-changed} signal on `list`.
@@ -4727,7 +4715,7 @@ export namespace Pango {
          * @param position the position of the item to fetch
          * @virtual
          */
-        vfunc_get_item(position: number): (A | null);
+        vfunc_get_item(position: number): A | null;
 
         /**
          * Gets the type of the items in `list`.
@@ -4756,13 +4744,10 @@ export namespace Pango {
 
     namespace Fontset {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -4863,13 +4848,10 @@ export namespace Pango {
 
     namespace FontsetSimple {
         // Signal signatures
-        interface SignalSignatures extends Fontset.SignalSignatures {
-        }
+        interface SignalSignatures extends Fontset.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends Fontset.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Fontset.ConstructorProps {}
     }
 
     /**
@@ -4931,13 +4913,10 @@ export namespace Pango {
 
     namespace Layout {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -5026,7 +5005,7 @@ export namespace Pango {
          * @param bytes the bytes containing the data
          * @param flags {@link Pango.LayoutDeserializeFlags}
          */
-        static deserialize(context: Context, bytes: (GLib.Bytes | Uint8Array), flags: LayoutDeserializeFlags): (Layout | null);
+        static deserialize(context: Context, bytes: GLib.Bytes | Uint8Array, flags: LayoutDeserializeFlags): Layout | null;
 
         // Methods
         /**
@@ -5058,7 +5037,7 @@ export namespace Pango {
          * Gets the attribute list for the layout, if any.
          * @returns a {@link Pango.AttrList}
          */
-        get_attributes(): (AttrList | null);
+        get_attributes(): AttrList | null;
 
         /**
          * Gets whether to calculate the base direction for the layout
@@ -5172,7 +5151,7 @@ export namespace Pango {
          * Gets the font description for the layout, if any.
          * @returns a pointer to the   layout's font description, or `null` if the font description   from the layout's context is inherited.
          */
-        get_font_description(): (FontDescription | null);
+        get_font_description(): FontDescription | null;
 
         /**
          * Gets the height of layout used for ellipsization.
@@ -5218,7 +5197,7 @@ export namespace Pango {
          * @param line the index of a line, which must be between 0 and   `pango_layout_get_line_count(layout) - 1`, inclusive.
          * @returns the requested {@link Pango.LayoutLine},   or `null` if the index is out of range. This layout line can be ref'ed   and retained, but will become invalid if changes are made to the   {@link Pango.Layout}.
          */
-        get_line(line: number): (LayoutLine | null);
+        get_line(line: number): LayoutLine | null;
 
         /**
          * Retrieves the count of lines for the `layout`.
@@ -5235,7 +5214,7 @@ export namespace Pango {
          * @param line the index of a line, which must be between 0 and   `pango_layout_get_line_count(layout) - 1`, inclusive.
          * @returns the requested {@link Pango.LayoutLine},   or `null` if the index is out of range. This layout line can be ref'ed   and retained, but will become invalid if changes are made to the   {@link Pango.Layout}. No changes should be made to the line.
          */
-        get_line_readonly(line: number): (LayoutLine | null);
+        get_line_readonly(line: number): LayoutLine | null;
 
         /**
          * Gets the line spacing factor of `layout`.
@@ -5353,7 +5332,7 @@ export namespace Pango {
          * The return value should be freed with {@link Pango.TabArray.free}.
          * @returns a copy of the tabs for this layout
          */
-        get_tabs(): (TabArray | null);
+        get_tabs(): TabArray | null;
 
         /**
          * Gets the text in the layout.
@@ -5483,7 +5462,7 @@ export namespace Pango {
          * References `attrs`, so the caller can unref its reference.
          * @param attrs a {@link Pango.AttrList}
          */
-        set_attributes(attrs: (AttrList | null)): void;
+        set_attributes(attrs: AttrList | null): void;
 
         /**
          * Sets whether to calculate the base direction
@@ -5533,7 +5512,7 @@ export namespace Pango {
          * font description from the layout's context is used.
          * @param desc the new {@link Pango.FontDescription}   to unset the current font description
          */
-        set_font_description(desc: (FontDescription | null)): void;
+        set_font_description(desc: FontDescription | null): void;
 
         /**
          * Sets the height to which the {@link Pango.Layout} should be ellipsized at.
@@ -5719,7 +5698,7 @@ export namespace Pango {
          * {@link Pango.Alignment.LEFT}.
          * @param tabs a {@link Pango.TabArray}
          */
-        set_tabs(tabs: (TabArray | null)): void;
+        set_tabs(tabs: TabArray | null): void;
 
         /**
          * Sets the text of the layout.
@@ -5794,13 +5773,10 @@ export namespace Pango {
 
     namespace Renderer {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -5906,7 +5882,7 @@ export namespace Pango {
          * @param y Y position of left edge of baseline, in user space coordinates   in Pango units
          * @virtual
          */
-        vfunc_draw_glyph_item(text: (string | null), glyph_item: GlyphItem, x: number, y: number): void;
+        vfunc_draw_glyph_item(text: string | null, glyph_item: GlyphItem, x: number, y: number): void;
 
         /**
          * Draws the glyphs in `glyphs` with the specified {@link Pango.Renderer}.
@@ -6063,7 +6039,7 @@ export namespace Pango {
          * @param x X position of left edge of baseline, in user space coordinates   in Pango units
          * @param y Y position of left edge of baseline, in user space coordinates   in Pango units
          */
-        draw_glyph_item(text: (string | null), glyph_item: GlyphItem, x: number, y: number): void;
+        draw_glyph_item(text: string | null, glyph_item: GlyphItem, x: number, y: number): void;
 
         /**
          * Draws the glyphs in `glyphs` with the specified {@link Pango.Renderer}.
@@ -6136,7 +6112,7 @@ export namespace Pango {
          * @param part the part to get the color for
          * @returns the color for the   specified part, or `null` if it hasn't been set and should be   inherited from the environment.
          */
-        get_color(part: RenderPart): (Color | null);
+        get_color(part: RenderPart): Color | null;
 
         /**
          * Gets the layout currently being rendered using `renderer`.
@@ -6148,7 +6124,7 @@ export namespace Pango {
          * rendered.
          * @returns the layout, or `null` if   no layout is being rendered using `renderer` at this time.
          */
-        get_layout(): (Layout | null);
+        get_layout(): Layout | null;
 
         /**
          * Gets the layout line currently being rendered using `renderer`.
@@ -6160,7 +6136,7 @@ export namespace Pango {
          * rendered.
          * @returns the layout line, or `null`   if no layout line is being rendered using `renderer` at this time.
          */
-        get_layout_line(): (LayoutLine | null);
+        get_layout_line(): LayoutLine | null;
 
         /**
          * Gets the transformation matrix that will be applied when
@@ -6169,7 +6145,7 @@ export namespace Pango {
          * See {@link Pango.Renderer.set_matrix}.
          * @returns the matrix, or `null` if no matrix has   been set (which is the same as the identity matrix). The returned   matrix is owned by Pango and must not be modified or freed.
          */
-        get_matrix(): (Matrix | null);
+        get_matrix(): Matrix | null;
 
         /**
          * Informs Pango that the way that the rendering is done
@@ -6208,13 +6184,13 @@ export namespace Pango {
          * @param part the part to change the color of
          * @param color the new color or `null` to unset the current color
          */
-        set_color(part: RenderPart, color: (Color | null)): void;
+        set_color(part: RenderPart, color: Color | null): void;
 
         /**
          * Sets the transformation matrix that will be applied when rendering.
          * @param matrix a {@link Pango.Matrix}, or `null` to unset any existing matrix  (No matrix set is the same as setting the identity matrix.)
          */
-        set_matrix(matrix: (Matrix | null)): void;
+        set_matrix(matrix: Matrix | null): void;
     }
 
 
@@ -6379,7 +6355,7 @@ export namespace Pango {
          * @param type the type of attribute to find
          * @returns the current   attribute of the given type, or `null` if no attribute   of that type applies to the current location.
          */
-        get(type: AttrType): (Attribute | null);
+        get(type: AttrType): Attribute | null;
 
         /**
          * Gets a list of all attributes at the current position of the
@@ -6448,10 +6424,7 @@ export namespace Pango {
         static $gtype: GObject.GType<AttrList>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): AttrList;
 
@@ -6463,7 +6436,7 @@ export namespace Pango {
          * See that functions for details about the format.
          * @param text a string
          */
-        static from_string(text: string): (AttrList | null);
+        static from_string(text: string): AttrList | null;
 
         // Methods
         /**
@@ -6487,7 +6460,7 @@ export namespace Pango {
          * Copy `list` and return an identical new list.
          * @returns the newly allocated   {@link Pango.AttrList}, with a reference count of one,   which should be freed with {@link Pango.AttrList.unref}.   Returns `null` if `list` was `null`.
          */
-        copy(): (AttrList | null);
+        copy(): AttrList | null;
 
         /**
          * Checks whether `list` and `other_list` contain the same
@@ -6508,7 +6481,7 @@ export namespace Pango {
          * @param func callback function;   returns `true` if an attribute should be filtered out
          * @returns the new   {@link Pango.AttrList} or `null` if no attributes of the   given types were found
          */
-        filter(func: AttrFilterFunc): (AttrList | null);
+        filter(func: AttrFilterFunc): AttrList | null;
 
         /**
          * Gets a list of all attributes in `list`.
@@ -6688,7 +6661,7 @@ export namespace Pango {
          * @param data user data pointer
          * @param copy_func function to copy `data` when the   attribute is copied. If `null`, `data` is simply copied   as a pointer
          */
-        static new_with_data(ink_rect: Rectangle, logical_rect: Rectangle, data: null, copy_func: (AttrDataCopyFunc | null)): Attribute;
+        static new_with_data(ink_rect: Rectangle, logical_rect: Rectangle, data: null, copy_func: AttrDataCopyFunc | null): Attribute;
     }
 
 
@@ -6759,7 +6732,7 @@ export namespace Pango {
          * This is mainly useful for language bindings.
          * @returns The attribute as {@link Pango.AttrColor},   or `null` if it's not a color attribute
          */
-        as_color(): (AttrColor | null);
+        as_color(): AttrColor | null;
 
         /**
          * Returns the attribute cast to {@link Pango.AttrFloat}.
@@ -6767,7 +6740,7 @@ export namespace Pango {
          * This is mainly useful for language bindings.
          * @returns The attribute as {@link Pango.AttrFloat},   or `null` if it's not a floating point attribute
          */
-        as_float(): (AttrFloat | null);
+        as_float(): AttrFloat | null;
 
         /**
          * Returns the attribute cast to {@link Pango.AttrFontDesc}.
@@ -6775,7 +6748,7 @@ export namespace Pango {
          * This is mainly useful for language bindings.
          * @returns The attribute as {@link Pango.AttrFontDesc},   or `null` if it's not a font description attribute
          */
-        as_font_desc(): (AttrFontDesc | null);
+        as_font_desc(): AttrFontDesc | null;
 
         /**
          * Returns the attribute cast to {@link Pango.AttrFontFeatures}.
@@ -6783,7 +6756,7 @@ export namespace Pango {
          * This is mainly useful for language bindings.
          * @returns The attribute as {@link Pango.AttrFontFeatures},   or `null` if it's not a font features attribute
          */
-        as_font_features(): (AttrFontFeatures | null);
+        as_font_features(): AttrFontFeatures | null;
 
         /**
          * Returns the attribute cast to {@link Pango.AttrInt}.
@@ -6791,7 +6764,7 @@ export namespace Pango {
          * This is mainly useful for language bindings.
          * @returns The attribute as {@link Pango.AttrInt},   or `null` if it's not an integer attribute
          */
-        as_int(): (AttrInt | null);
+        as_int(): AttrInt | null;
 
         /**
          * Returns the attribute cast to {@link Pango.AttrLanguage}.
@@ -6799,7 +6772,7 @@ export namespace Pango {
          * This is mainly useful for language bindings.
          * @returns The attribute as {@link Pango.AttrLanguage},   or `null` if it's not a language attribute
          */
-        as_language(): (AttrLanguage | null);
+        as_language(): AttrLanguage | null;
 
         /**
          * Returns the attribute cast to {@link Pango.AttrShape}.
@@ -6807,7 +6780,7 @@ export namespace Pango {
          * This is mainly useful for language bindings.
          * @returns The attribute as {@link Pango.AttrShape},   or `null` if it's not a shape attribute
          */
-        as_shape(): (AttrShape | null);
+        as_shape(): AttrShape | null;
 
         /**
          * Returns the attribute cast to {@link Pango.AttrSize}.
@@ -6815,7 +6788,7 @@ export namespace Pango {
          * This is mainly useful for language bindings.
          * @returns The attribute as {@link Pango.AttrSize},   or NULL if it's not a size attribute
          */
-        as_size(): (AttrSize | null);
+        as_size(): AttrSize | null;
 
         /**
          * Returns the attribute cast to {@link Pango.AttrString}.
@@ -6823,7 +6796,7 @@ export namespace Pango {
          * This is mainly useful for language bindings.
          * @returns The attribute as {@link Pango.AttrString},   or `null` if it's not a string attribute
          */
-        as_string(): (AttrString | null);
+        as_string(): AttrString | null;
 
         /**
          * Make a copy of an attribute.
@@ -6891,7 +6864,7 @@ export namespace Pango {
          * in C).
          * @returns the newly allocated {@link Pango.Color},   which should be freed with {@link Pango.Color.free}
          */
-        copy(): (Color | null);
+        copy(): Color | null;
 
         /**
          * Frees a color allocated by {@link Pango.Color.copy}.
@@ -6969,10 +6942,7 @@ export namespace Pango {
         static $gtype: GObject.GType<FontDescription>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): FontDescription;
 
@@ -7051,13 +7021,13 @@ export namespace Pango {
          * @param new_match a {@link Pango.FontDescription}
          * @returns `true` if `new_match` is a better match
          */
-        better_match(old_match: (FontDescription | null), new_match: FontDescription): boolean;
+        better_match(old_match: FontDescription | null, new_match: FontDescription): boolean;
 
         /**
          * Make a copy of a {@link Pango.FontDescription}.
          * @returns the newly allocated {@link Pango.FontDescription},   which should be freed with {@link Pango.FontDescription.free},   or `null` if `desc` was `null`.
          */
-        copy(): (FontDescription | null);
+        copy(): FontDescription | null;
 
         /**
          * Make a copy of a {@link Pango.FontDescription}, but don't duplicate
@@ -7069,7 +7039,7 @@ export namespace Pango {
          * to be used when the copy is only needed temporarily.
          * @returns the newly allocated {@link Pango.FontDescription},   which should be freed with {@link Pango.FontDescription.free},   or `null` if `desc` was `null`.
          */
-        copy_static(): (FontDescription | null);
+        copy_static(): FontDescription | null;
 
         /**
          * Compares two font descriptions for equality.
@@ -7102,7 +7072,7 @@ export namespace Pango {
          * See {@link Pango.FontDescription.set_family}.
          * @returns the family name field for the   font description, or `null` if not previously set. This has the same   life-time as the font description itself and should not be freed.
          */
-        get_family(): (string | null);
+        get_family(): string | null;
 
         /**
          * Gets the features field of a font description.
@@ -7110,7 +7080,7 @@ export namespace Pango {
          * See {@link Pango.FontDescription.set_features}.
          * @returns the features field for the font   description, or `null` if not previously set. This has the same   life-time as the font description itself and should not be freed.
          */
-        get_features(): (string | null);
+        get_features(): string | null;
 
         /**
          * Gets the gravity field of a font description.
@@ -7174,7 +7144,7 @@ export namespace Pango {
          * See {@link Pango.FontDescription.set_variations}.
          * @returns the variations field for the font   description, or `null` if not previously set. This has the same   life-time as the font description itself and should not be freed.
          */
-        get_variations(): (string | null);
+        get_variations(): string | null;
 
         /**
          * Gets the weight field of a font description.
@@ -7205,7 +7175,7 @@ export namespace Pango {
          * @param desc_to_merge the {@link Pango.FontDescription} to merge from,   or `null`
          * @param replace_existing if `true`, replace fields in `desc` with the   corresponding values from `desc_to_merge`, even if they   are already exist.
          */
-        merge(desc_to_merge: (FontDescription | null), replace_existing: boolean): void;
+        merge(desc_to_merge: FontDescription | null, replace_existing: boolean): void;
 
         /**
          * Merges the fields that are set in `desc_to_merge` into the fields in
@@ -7289,7 +7259,7 @@ export namespace Pango {
          * Features that are not supported by the font are silently ignored.
          * @param features a string representing the features
          */
-        set_features(features: (string | null)): void;
+        set_features(features: string | null): void;
 
         /**
          * Sets the features field of a font description.
@@ -7379,7 +7349,7 @@ export namespace Pango {
          * for example [hb_ot_var_get_axis_infos](https://harfbuzz.github.io/harfbuzz-hb-ot-var.html#hb-ot-var-get-axis-infos).
          * @param variations a string representing the variations
          */
-        set_variations(variations: (string | null)): void;
+        set_variations(variations: string | null): void;
 
         /**
          * Sets the variations field of a font description.
@@ -7414,7 +7384,7 @@ export namespace Pango {
          * lower case only.
          * @returns a new string that must be freed with `g_free()`.
          */
-        to_filename(): (string | null);
+        to_filename(): string | null;
 
         /**
          * Creates a string representation of a font description.
@@ -7473,10 +7443,7 @@ export namespace Pango {
         static $gtype: GObject.GType<FontMetrics>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         // Methods
         /**
@@ -7569,7 +7536,7 @@ export namespace Pango {
          * Increase the reference count of a font metrics structure by one.
          * @returns `metrics`
          */
-        ref(): (FontMetrics | null);
+        ref(): FontMetrics | null;
 
         /**
          * Decrease the reference count of a font metrics structure by one.
@@ -7703,7 +7670,7 @@ export namespace Pango {
          * Make a deep copy of an existing {@link Pango.GlyphItem} structure.
          * @returns the newly allocated {@link Pango.GlyphItem}
          */
-        copy(): (GlyphItem | null);
+        copy(): GlyphItem | null;
 
         /**
          * Frees a {@link Pango.GlyphItem} and resources to which it points.
@@ -7747,7 +7714,7 @@ export namespace Pango {
          * @param split_index byte index of position to split item, relative to the   start of the item
          * @returns the newly allocated item   representing text before `split_index`, which should be freed   with `pango_glyph_item_free()`.
          */
-        split(text: string, split_index: number): (GlyphItem | null);
+        split(text: string, split_index: number): GlyphItem | null;
     }
 
 
@@ -7818,7 +7785,7 @@ export namespace Pango {
          * Make a shallow copy of an existing {@link Pango.GlyphItemIter} structure.
          * @returns the newly allocated {@link Pango.GlyphItemIter}
          */
-        copy(): (GlyphItemIter | null);
+        copy(): GlyphItemIter | null;
 
         /**
          * Frees a {@link Pango.GlyphItem}Iter.
@@ -7897,7 +7864,7 @@ export namespace Pango {
          * Copy a glyph string and associated storage.
          * @returns the newly allocated {@link Pango.GlyphString}
          */
-        copy(): (GlyphString | null);
+        copy(): GlyphString | null;
 
         /**
          * Compute the logical and ink extents of a glyph string.
@@ -7988,7 +7955,7 @@ export namespace Pango {
          * @param index_ the byte index within `text`
          * @param trailing whether we should compute the result for the beginning (`false`)   or end (`true`) of the character.
          */
-        index_to_x_full(text: string, length: number, analysis: Analysis, attrs: (LogAttr | null), index_: number, trailing: boolean): number;
+        index_to_x_full(text: string, length: number, analysis: Analysis, attrs: LogAttr | null, index_: number, trailing: boolean): number;
 
         /**
          * Resize a glyph string to the given length.
@@ -8092,7 +8059,7 @@ export namespace Pango {
          * Copy an existing {@link Pango.Item} structure.
          * @returns the newly allocated {@link Pango.Item}
          */
-        copy(): (Item | null);
+        copy(): Item | null;
 
         /**
          * Free a {@link Pango.Item} and all associated memory.
@@ -8158,7 +8125,7 @@ export namespace Pango {
          * {@link Pango.Language} for the current locale of the process.
          * @param language a string representing a language tag
          */
-        static from_string(language: (string | null)): (Language | null);
+        static from_string(language: string | null): Language | null;
 
         /**
          * Returns the {@link Pango.Language} for the current locale of the process.
@@ -8208,7 +8175,7 @@ export namespace Pango {
          * you should first try the default language, followed by the
          * languages returned by this function.
          */
-        static get_preferred(): (Language[] | null);
+        static get_preferred(): Language[] | null;
 
         // Methods
         /**
@@ -8261,7 +8228,7 @@ export namespace Pango {
          * may have more values. Callers need to handle unknown values.
          * @returns An array of {@link Pango.Script} values, with the number of entries in   the array stored in `num_scripts`, or `null` if Pango does not have   any information about this particular language tag (also the case   if `language` is `null`).
          */
-        get_scripts(): (Script[] | null);
+        get_scripts(): Script[] | null;
 
         /**
          * Determines if `script` is one of the scripts used to
@@ -8331,7 +8298,7 @@ export namespace Pango {
          * Copies a {@link Pango.LayoutIter}.
          * @returns the newly allocated {@link Pango.LayoutIter}
          */
-        copy(): (LayoutIter | null);
+        copy(): LayoutIter | null;
 
         /**
          * Frees an iterator that's no longer in use.
@@ -8379,7 +8346,7 @@ export namespace Pango {
          * Gets the layout associated with a {@link Pango.LayoutIter}.
          * @returns the layout associated with `iter`
          */
-        get_layout(): (Layout | null);
+        get_layout(): Layout | null;
 
         /**
          * Obtains the extents of the {@link Pango.Layout} being iterated over.
@@ -8394,7 +8361,7 @@ export namespace Pango {
          * glyph widths, etc.).
          * @returns the current line
          */
-        get_line(): (LayoutLine | null);
+        get_line(): LayoutLine | null;
 
         /**
          * Obtains the extents of the current line.
@@ -8414,7 +8381,7 @@ export namespace Pango {
          * (glyphs, glyph widths, etc.).
          * @returns the current line, that should not be   modified
          */
-        get_line_readonly(): (LayoutLine | null);
+        get_line_readonly(): LayoutLine | null;
 
         /**
          * Divides the vertical space in the {@link Pango.Layout} being iterated over
@@ -8443,7 +8410,7 @@ export namespace Pango {
          * plan to modify the contents of the run (glyphs, glyph widths, etc.).
          * @returns the current run
          */
-        get_run(): (LayoutRun | null);
+        get_run(): LayoutRun | null;
 
         /**
          * Gets the Y position of the current run's baseline, in layout
@@ -8476,7 +8443,7 @@ export namespace Pango {
          * glyph widths, etc.).
          * @returns the current run, that   should not be modified
          */
-        get_run_readonly(): (LayoutRun | null);
+        get_run_readonly(): LayoutRun | null;
 
         /**
          * Moves `iter` forward to the next character in visual order.
@@ -8613,7 +8580,7 @@ export namespace Pango {
          * Increase the reference count of a {@link Pango.LayoutLine} by one.
          * @returns the line passed in.
          */
-        ref(): (LayoutLine | null);
+        ref(): LayoutLine | null;
 
         /**
          * Decrease the reference count of a {@link Pango.LayoutLine} by one.
@@ -8759,7 +8726,7 @@ export namespace Pango {
          * Copies a {@link Pango.Matrix}.
          * @returns the newly allocated {@link Pango.Matrix}
          */
-        copy(): (Matrix | null);
+        copy(): Matrix | null;
 
         /**
          * Free a {@link Pango.Matrix}.
@@ -9006,7 +8973,7 @@ export namespace Pango {
          * See that functions for details about the format.
          * @param text a string
          */
-        static from_string(text: string): (TabArray | null);
+        static from_string(text: string): TabArray | null;
 
         // Methods
         /**

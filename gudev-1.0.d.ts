@@ -136,7 +136,7 @@ export namespace GUdev {
 
         _init(...args: any[]): void;
 
-        static ["new"](subsystems: (string[] | null)): Client;
+        static ["new"](subsystems: string[] | null): Client;
 
         // Signals
         /** @signal */
@@ -166,7 +166,7 @@ export namespace GUdev {
          * @param device_file A device file.
          * @returns A {@link GUdev.Device} object or `null` if the device was not found. Free with `g_object_unref()`.
          */
-        query_by_device_file(device_file: string): (Device | null);
+        query_by_device_file(device_file: string): Device | null;
 
         /**
          * Looks up a device for a type and device number.
@@ -174,14 +174,14 @@ export namespace GUdev {
          * @param number A device number.
          * @returns A {@link GUdev.Device} object or `null` if the device was not found. Free with `g_object_unref()`.
          */
-        query_by_device_number(type: DeviceType, number: DeviceNumber): (Device | null);
+        query_by_device_number(type: DeviceType, number: DeviceNumber): Device | null;
 
         /**
          * Gets all devices belonging to `subsystem`.
          * @param subsystem The subsystem to get devices for or `null` to get all devices.
          * @returns A list of {@link GUdev.Device} objects. The caller should free the result by using `g_object_unref()` on each element in the list and then `g_list_free()` on the list.
          */
-        query_by_subsystem(subsystem: (string | null)): (Device[] | null);
+        query_by_subsystem(subsystem: string | null): Device[] | null;
 
         /**
          * Looks up a device for a subsystem and name.
@@ -189,26 +189,23 @@ export namespace GUdev {
          * @param name The name of the device.
          * @returns A {@link GUdev.Device} object or `null` if the device was not found. Free with `g_object_unref()`.
          */
-        query_by_subsystem_and_name(subsystem: string, name: string): (Device | null);
+        query_by_subsystem_and_name(subsystem: string, name: string): Device | null;
 
         /**
          * Looks up a device for a sysfs path.
          * @param sysfs_path A sysfs path.
          * @returns A {@link GUdev.Device} object or `null` if the device was not found. Free with `g_object_unref()`.
          */
-        query_by_sysfs_path(sysfs_path: string): (Device | null);
+        query_by_sysfs_path(sysfs_path: string): Device | null;
     }
 
 
     namespace Device {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -309,7 +306,7 @@ export namespace GUdev {
          * Gets the device file for `device`.
          * @returns The device file for `device` or `null` if no device file exists.
          */
-        get_device_file(): (string | null);
+        get_device_file(): string | null;
 
         /**
          * Gets a list of symlinks (in <literal>/dev</literal>) that points to
@@ -340,7 +337,7 @@ export namespace GUdev {
          * Gets the name of the driver used for `device`.
          * @returns The name of the driver for `device` or `null` if unknown.
          */
-        get_driver(): (string | null);
+        get_driver(): string | null;
 
         /**
          * Gets whether `device` has been initialized.
@@ -364,7 +361,7 @@ export namespace GUdev {
          * Gets the immediate parent of `device`, if any.
          * @returns A {@link GUdev.Device} or `null` if `device` has no parent. Free with `g_object_unref()`.
          */
-        get_parent(): (Device | null);
+        get_parent(): Device | null;
 
         /**
          * Walks up the chain of parents of `device` and returns the first
@@ -373,14 +370,14 @@ export namespace GUdev {
          * @param devtype The devtype of the parent to get or `null`.
          * @returns A {@link GUdev.Device} or `null` if `device` has no parent with `subsystem` and `devtype`. Free with `g_object_unref()`.
          */
-        get_parent_with_subsystem(subsystem: string, devtype: (string | null)): (Device | null);
+        get_parent_with_subsystem(subsystem: string, devtype: string | null): Device | null;
 
         /**
          * Look up the value for `key` on `device`.
          * @param key Name of property.
          * @returns The value for `key` or `null` if `key` doesn't exist on `device`. Do not free this string, it is owned by `device`.
          */
-        get_property(key: string): (string | null);
+        get_property(key: string): string | null;
 
         /**
          * @param args 
@@ -422,7 +419,7 @@ export namespace GUdev {
          * @param key Name of property.
          * @returns The value of `key` on `device` split into tokens or `null` if `key` doesn't exist. This array is owned by `device` and should not be freed by the caller.
          */
-        get_property_as_strv(key: string): (string[] | null);
+        get_property_as_strv(key: string): string[] | null;
 
         /**
          * Look up the value for `key` on `device` and convert it to an unsigned
@@ -458,7 +455,7 @@ export namespace GUdev {
          * @param name Name of the sysfs attribute.
          * @returns The value of the sysfs attribute or `null` if there is no such attribute. Do not free this string, it is owned by `device`.
          */
-        get_sysfs_attr(name: string): (string | null);
+        get_sysfs_attr(name: string): string | null;
 
         /**
          * Look up the sysfs attribute with `name` on `device` and convert it to an
@@ -539,7 +536,7 @@ export namespace GUdev {
          * @param name Name of the sysfs attribute.
          * @returns The value of the sysfs attribute split into tokens or `null` if there is no such attribute. This array is owned by `device` and should not be freed by the caller.
          */
-        get_sysfs_attr_as_strv(name: string): (string[] | null);
+        get_sysfs_attr_as_strv(name: string): string[] | null;
 
         /**
          * Look up the sysfs attribute with `name` on `device` and return the result of
@@ -552,7 +549,7 @@ export namespace GUdev {
          * @param name Name of the sysfs attribute.
          * @returns The value of the sysfs attribute split into tokens or `null` if there is no such attribute. This array is owned by `device` and should not be freed by the caller. Before version 238 the uncached getters would not strip trailing newlines.
          */
-        get_sysfs_attr_as_strv_uncached(name: string): (string[] | null);
+        get_sysfs_attr_as_strv_uncached(name: string): string[] | null;
 
         /**
          * Look up the sysfs attribute with `name` on `device` and convert it to an unsigned
@@ -589,7 +586,7 @@ export namespace GUdev {
          * @param name Name of the sysfs attribute.
          * @returns The value of the sysfs attribute or `null` if there is no such attribute. Do not free this string, it is owned by `device`.
          */
-        get_sysfs_attr_uncached(name: string): (string | null);
+        get_sysfs_attr_uncached(name: string): string | null;
 
         /**
          * Gets the sysfs path for `device`.
@@ -818,7 +815,7 @@ export namespace GUdev {
      * bug 584517 is resolved this work-around is needed).
      * @gir-type Alias
      */
-    type DeviceNumber = (bigint | number);
+    type DeviceNumber = bigint | number;
 
     /**
      * Name of the imported GIR library

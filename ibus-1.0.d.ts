@@ -263,7 +263,7 @@ export namespace IBus {
         static FAILED: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -9299,7 +9299,7 @@ export namespace IBus {
      * @param emoji an emoji character
      * @returns An {@link IBus.EmojiData} of `emoji`. This API was prepared for the old dict foramat with Gir and Vala but no longer needed. Use `ibus_emoji_data_load()` instead.
      */
-    function emoji_dict_lookup(dict: ({ [key: string]: any } | GLib.HashTable<string, EmojiData>), emoji: string): EmojiData;
+    function emoji_dict_lookup(dict: { [key: string]: any } | GLib.HashTable<string, EmojiData>, emoji: string): EmojiData;
 
     /**
      * Saves the Emoji dictionary to the cache file.
@@ -9310,7 +9310,7 @@ export namespace IBus {
      * @param path A path of the saved dictionary file.
      * @param dict An Emoji dictionary
      */
-    function emoji_dict_save(path: string, dict: ({ [key: string]: any } | GLib.HashTable<string, never>)): void;
+    function emoji_dict_save(path: string, dict: { [key: string]: any } | GLib.HashTable<string, never>): void;
 
     function error_quark(): GLib.Quark;
 
@@ -9860,13 +9860,10 @@ export namespace IBus {
 
     namespace AttrList {
         // Signal signatures
-        interface SignalSignatures extends Serializable.SignalSignatures {
-        }
+        interface SignalSignatures extends Serializable.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends Serializable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Serializable.ConstructorProps {}
     }
 
     /**
@@ -9926,13 +9923,10 @@ export namespace IBus {
 
     namespace Attribute {
         // Signal signatures
-        interface SignalSignatures extends Serializable.SignalSignatures {
-        }
+        interface SignalSignatures extends Serializable.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends Serializable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Serializable.ConstructorProps {}
     }
 
     /**
@@ -10145,7 +10139,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        add_match_async(rule: string, timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        add_match_async(rule: string, timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Add a match rule to an {@link IBus.Bus} asynchronously.
@@ -10154,7 +10148,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        add_match_async(rule: string, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        add_match_async(rule: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Add a match rule to an {@link IBus.Bus} asynchronously.
@@ -10163,7 +10157,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        add_match_async(rule: string, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        add_match_async(rule: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_add_match_async()`.
@@ -10185,7 +10179,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        create_input_context_async(client_name: string, timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<InputContext>;
+        create_input_context_async(client_name: string, timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<InputContext>;
 
         /**
          * Create an input context for client asynchronously.
@@ -10194,7 +10188,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied.      It should not be `null`.
          */
-        create_input_context_async(client_name: string, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        create_input_context_async(client_name: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Create an input context for client asynchronously.
@@ -10203,7 +10197,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied.      It should not be `null`.
          */
-        create_input_context_async(client_name: string, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<InputContext> | void);
+        create_input_context_async(client_name: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<InputContext> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_create_input_context_async()`.
@@ -10223,7 +10217,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        current_input_context_async(timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<string>;
+        current_input_context_async(timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<string>;
 
         /**
          * Get the current focused input context asynchronously.
@@ -10231,7 +10225,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        current_input_context_async(timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        current_input_context_async(timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Get the current focused input context asynchronously.
@@ -10239,7 +10233,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        current_input_context_async(timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<string> | void);
+        current_input_context_async(timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<string> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_current_input_context_async()`.
@@ -10261,7 +10255,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        exit_async(restart: boolean, timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        exit_async(restart: boolean, timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Exit or restart ibus-daemon asynchronously.
@@ -10270,7 +10264,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        exit_async(restart: boolean, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        exit_async(restart: boolean, timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Exit or restart ibus-daemon asynchronously.
@@ -10279,7 +10273,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        exit_async(restart: boolean, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        exit_async(restart: boolean, timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_exit_async()`.
@@ -10320,7 +10314,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        get_global_engine_async(timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<EngineDesc>;
+        get_global_engine_async(timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<EngineDesc>;
 
         /**
          * Get the description of current global engine asynchronously.
@@ -10328,7 +10322,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`      if you don't care about the result of the method invocation.
          */
-        get_global_engine_async(timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_global_engine_async(timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Get the description of current global engine asynchronously.
@@ -10336,7 +10330,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`      if you don't care about the result of the method invocation.
          */
-        get_global_engine_async(timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<EngineDesc> | void);
+        get_global_engine_async(timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<EngineDesc> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_get_global_engine_async_finish()`.
@@ -10358,7 +10352,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        get_ibus_property_async(property_name: string, timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<GLib.Variant>;
+        get_ibus_property_async(property_name: string, timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<GLib.Variant>;
 
         /**
          * Get org.freedesktop.DBus.Properties asynchronously.
@@ -10367,7 +10361,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        get_ibus_property_async(property_name: string, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_ibus_property_async(property_name: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Get org.freedesktop.DBus.Properties asynchronously.
@@ -10376,7 +10370,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        get_ibus_property_async(property_name: string, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<GLib.Variant> | void);
+        get_ibus_property_async(property_name: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<GLib.Variant> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_get_ibus_property_async()`.
@@ -10398,7 +10392,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        get_name_owner_async(name: string, timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<string>;
+        get_name_owner_async(name: string, timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<string>;
 
         /**
          * Return the name owner asynchronously.
@@ -10407,7 +10401,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        get_name_owner_async(name: string, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_name_owner_async(name: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Return the name owner asynchronously.
@@ -10416,7 +10410,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        get_name_owner_async(name: string, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<string> | void);
+        get_name_owner_async(name: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<string> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_get_name_owner_async()`.
@@ -10443,7 +10437,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        get_use_global_engine_async(timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        get_use_global_engine_async(timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Check if the bus's "use_global_engine" option is enabled or not asynchronously.
@@ -10451,7 +10445,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        get_use_global_engine_async(timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_use_global_engine_async(timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Check if the bus's "use_global_engine" option is enabled or not asynchronously.
@@ -10459,7 +10453,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        get_use_global_engine_async(timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        get_use_global_engine_async(timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_get_use_global_engine_async()`.
@@ -10479,7 +10473,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        get_use_sys_layout_async(timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        get_use_sys_layout_async(timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Check if the bus's "use_sys_layout" option is enabled or not asynchronously.
@@ -10487,7 +10481,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        get_use_sys_layout_async(timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_use_sys_layout_async(timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Check if the bus's "use_sys_layout" option is enabled or not asynchronously.
@@ -10495,7 +10489,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        get_use_sys_layout_async(timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        get_use_sys_layout_async(timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_get_use_sys_layout_async()`.
@@ -10528,7 +10522,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        is_global_engine_enabled_async(timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        is_global_engine_enabled_async(timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Check if the current global engine is enabled or not asynchronously.
@@ -10536,7 +10530,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        is_global_engine_enabled_async(timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        is_global_engine_enabled_async(timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Check if the current global engine is enabled or not asynchronously.
@@ -10544,7 +10538,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        is_global_engine_enabled_async(timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        is_global_engine_enabled_async(timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_is_global_engine_enabled_async()`.
@@ -10564,7 +10558,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        list_active_engines_async(timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<EngineDesc[]>;
+        list_active_engines_async(timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<EngineDesc[]>;
 
         /**
          * List active engines asynchronously.
@@ -10572,7 +10566,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`      if you don't care about the result of the method invocation.
          */
-        list_active_engines_async(timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        list_active_engines_async(timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * List active engines asynchronously.
@@ -10580,7 +10574,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`      if you don't care about the result of the method invocation.
          */
-        list_active_engines_async(timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<EngineDesc[]> | void);
+        list_active_engines_async(timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<EngineDesc[]> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_list_active_engines_async()`.
@@ -10600,7 +10594,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        list_engines_async(timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<EngineDesc[]>;
+        list_engines_async(timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<EngineDesc[]>;
 
         /**
          * List engines asynchronously.
@@ -10608,7 +10602,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`      if you don't care about the result of the method invocation.
          */
-        list_engines_async(timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        list_engines_async(timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * List engines asynchronously.
@@ -10616,7 +10610,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`      if you don't care about the result of the method invocation.
          */
-        list_engines_async(timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<EngineDesc[]> | void);
+        list_engines_async(timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<EngineDesc[]> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_list_engines_async()`.
@@ -10654,7 +10648,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        name_has_owner_async(name: string, timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        name_has_owner_async(name: string, timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Checks whether the name has owner asynchronously.
@@ -10663,7 +10657,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        name_has_owner_async(name: string, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        name_has_owner_async(name: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Checks whether the name has owner asynchronously.
@@ -10672,7 +10666,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        name_has_owner_async(name: string, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        name_has_owner_async(name: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_name_has_owner_async()`.
@@ -10694,7 +10688,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        preload_engines_async(names: string[], timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        preload_engines_async(names: string[], timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Start bus components by engine names asynchronously.
@@ -10703,7 +10697,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        preload_engines_async(names: string[], timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        preload_engines_async(names: string[], timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Start bus components by engine names asynchronously.
@@ -10712,7 +10706,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        preload_engines_async(names: string[], timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        preload_engines_async(names: string[], timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_preload_engines_async()`.
@@ -10734,7 +10728,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        register_component_async(component: Component, timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        register_component_async(component: Component, timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Register a component to an {@link IBus.Bus} asynchronously.
@@ -10743,7 +10737,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        register_component_async(component: Component, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        register_component_async(component: Component, timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Register a component to an {@link IBus.Bus} asynchronously.
@@ -10752,7 +10746,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        register_component_async(component: Component, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        register_component_async(component: Component, timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_register_component_async()`.
@@ -10774,7 +10768,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        release_name_async(name: string, timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<number>;
+        release_name_async(name: string, timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<number>;
 
         /**
          * Release a name to IBus daemon asynchronously.
@@ -10783,7 +10777,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        release_name_async(name: string, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        release_name_async(name: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Release a name to IBus daemon asynchronously.
@@ -10792,7 +10786,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        release_name_async(name: string, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<number> | void);
+        release_name_async(name: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<number> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_release_name_async()`.
@@ -10814,7 +10808,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        remove_match_async(rule: string, timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        remove_match_async(rule: string, timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Remove a match rule to an IBusBus asynchronously.
@@ -10823,7 +10817,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        remove_match_async(rule: string, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        remove_match_async(rule: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Remove a match rule to an IBusBus asynchronously.
@@ -10832,7 +10826,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        remove_match_async(rule: string, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        remove_match_async(rule: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_remove_match_async()`.
@@ -10856,7 +10850,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        request_name_async(name: string, flags: number, timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<number>;
+        request_name_async(name: string, flags: number, timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<number>;
 
         /**
          * Request a name from IBus daemon asynchronously.
@@ -10866,7 +10860,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`      if you don't care about the result of the method invocation.
          */
-        request_name_async(name: string, flags: number, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        request_name_async(name: string, flags: number, timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Request a name from IBus daemon asynchronously.
@@ -10876,7 +10870,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`      if you don't care about the result of the method invocation.
          */
-        request_name_async(name: string, flags: number, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<number> | void);
+        request_name_async(name: string, flags: number, timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<number> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_request_name_async()`.
@@ -10898,7 +10892,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        set_global_engine_async(global_engine: string, timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        set_global_engine_async(global_engine: string, timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Set current global engine asynchronously.
@@ -10907,7 +10901,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        set_global_engine_async(global_engine: string, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        set_global_engine_async(global_engine: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Set current global engine asynchronously.
@@ -10916,7 +10910,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        set_global_engine_async(global_engine: string, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        set_global_engine_async(global_engine: string, timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_set_global_engine_async()`.
@@ -10940,7 +10934,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        set_global_shortcut_keys_async(gtype: BusGlobalBindingType, keys: ProcessKeyEventData[], timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        set_global_shortcut_keys_async(gtype: BusGlobalBindingType, keys: ProcessKeyEventData[], timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Sete global shorcut keys for the Wayland session asynchronously.
@@ -10950,7 +10944,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        set_global_shortcut_keys_async(gtype: BusGlobalBindingType, keys: ProcessKeyEventData[], timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        set_global_shortcut_keys_async(gtype: BusGlobalBindingType, keys: ProcessKeyEventData[], timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Sete global shorcut keys for the Wayland session asynchronously.
@@ -10960,7 +10954,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        set_global_shortcut_keys_async(gtype: BusGlobalBindingType, keys: ProcessKeyEventData[], timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        set_global_shortcut_keys_async(gtype: BusGlobalBindingType, keys: ProcessKeyEventData[], timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_set_global_shortcut_keys_async()`.
@@ -10983,7 +10977,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        set_ibus_property_async(property_name: string, value: GLib.Variant, timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        set_ibus_property_async(property_name: string, value: GLib.Variant, timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Set org.freedesktop.DBus.Properties asynchronously.
@@ -10993,7 +10987,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        set_ibus_property_async(property_name: string, value: GLib.Variant, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        set_ibus_property_async(property_name: string, value: GLib.Variant, timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Set org.freedesktop.DBus.Properties asynchronously.
@@ -11003,7 +10997,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied      or `null` if you don't care about the result of the method invocation.
          */
-        set_ibus_property_async(property_name: string, value: GLib.Variant, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        set_ibus_property_async(property_name: string, value: GLib.Variant, timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an operation started with `ibus_bus_set_ibus_property_async()`.
@@ -11289,9 +11283,7 @@ export namespace IBus {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Proxy.ConstructorProps, Gio.AsyncInitable.ConstructorProps, Gio.DBusInterface.ConstructorProps, Gio.Initable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Proxy.ConstructorProps, Gio.AsyncInitable.ConstructorProps, Gio.DBusInterface.ConstructorProps, Gio.Initable.ConstructorProps {}
     }
 
     /**
@@ -11318,7 +11310,7 @@ export namespace IBus {
 
         _init(...args: any[]): void;
 
-        static ["new"](connection: Gio.DBusConnection, cancellable: (Gio.Cancellable | null)): Config;
+        static ["new"](connection: Gio.DBusConnection, cancellable: Gio.Cancellable | null): Config;
 
         // Conflicted with Gio.DBusProxy.new
         static ["new"](...args: never[]): any;
@@ -11345,7 +11337,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied.      The callback should not be `null`.
          */
-        static new_async(connection: Gio.DBusConnection, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<Config> | null)): void;
+        static new_async(connection: Gio.DBusConnection, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Config> | null): void;
 
         // Methods
         /**
@@ -11374,7 +11366,7 @@ export namespace IBus {
          * @param timeout_ms The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        get_value_async(section: string, name: string, timeout_ms: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<GLib.Variant>;
+        get_value_async(section: string, name: string, timeout_ms: number, cancellable: Gio.Cancellable | null): globalThis.Promise<GLib.Variant>;
 
         /**
          * Get the value of a configuration option asynchronously.
@@ -11386,7 +11378,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback Callback function to invoke when the return value is ready.
          */
-        get_value_async(section: string, name: string, timeout_ms: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_value_async(section: string, name: string, timeout_ms: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Get the value of a configuration option asynchronously.
@@ -11398,7 +11390,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback Callback function to invoke when the return value is ready.
          */
-        get_value_async(section: string, name: string, timeout_ms: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<GLib.Variant> | void);
+        get_value_async(section: string, name: string, timeout_ms: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<GLib.Variant> | void;
 
         /**
          * Finish get value of a configuration option.
@@ -11422,7 +11414,7 @@ export namespace IBus {
          * @param timeout_ms The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        get_values_async(section: string, timeout_ms: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<GLib.Variant>;
+        get_values_async(section: string, timeout_ms: number, cancellable: Gio.Cancellable | null): globalThis.Promise<GLib.Variant>;
 
         /**
          * Get all values in a section asynchronously.
@@ -11433,7 +11425,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback Callback function to invoke when the return value is ready.
          */
-        get_values_async(section: string, timeout_ms: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_values_async(section: string, timeout_ms: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Get all values in a section asynchronously.
@@ -11444,7 +11436,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback Callback function to invoke when the return value is ready.
          */
-        get_values_async(section: string, timeout_ms: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<GLib.Variant> | void);
+        get_values_async(section: string, timeout_ms: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<GLib.Variant> | void;
 
         /**
          * Finish get values in a section.
@@ -11472,7 +11464,7 @@ export namespace IBus {
          * @param timeout_ms The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        set_value_async(section: string, name: string, value: GLib.Variant, timeout_ms: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        set_value_async(section: string, name: string, value: GLib.Variant, timeout_ms: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Set the value of a configuration option asynchronously.
@@ -11485,7 +11477,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback Callback function to invoke when the return value is ready.
          */
-        set_value_async(section: string, name: string, value: GLib.Variant, timeout_ms: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        set_value_async(section: string, name: string, value: GLib.Variant, timeout_ms: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Set the value of a configuration option asynchronously.
@@ -11498,7 +11490,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback Callback function to invoke when the return value is ready.
          */
-        set_value_async(section: string, name: string, value: GLib.Variant, timeout_ms: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        set_value_async(section: string, name: string, value: GLib.Variant, timeout_ms: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finish set value of a configuration option.
@@ -11521,7 +11513,7 @@ export namespace IBus {
          * @param name Name of the configure option its self.
          * @returns `true` if succeed; `false` otherwise. See also: ibus_config_watch.
          */
-        unwatch(section: (string | null), name: (string | null)): boolean;
+        unwatch(section: string | null, name: string | null): boolean;
 
         /**
          * Subscribe to the configuration option change notification.
@@ -11534,7 +11526,7 @@ export namespace IBus {
          * @param name Name of the configure option its self.
          * @returns `true` if succeed; `false` otherwise. See also: `ibus_config_unwatch()`.
          */
-        watch(section: (string | null), name: (string | null)): boolean;
+        watch(section: string | null, name: string | null): boolean;
 
         /**
          * Starts asynchronous initialization of the object implementing the
@@ -11576,50 +11568,7 @@ export namespace IBus {
          * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        init_async(io_priority: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Starts asynchronous initialization of the object implementing the
-         * interface. This must be done before any real use of the object after
-         * initial construction. If the object also implements {@link Gio.Initable} you can
-         * optionally call `g_initable_init()` instead.
-         * 
-         * This method is intended for language bindings. If writing in C,
-         * `g_async_initable_new_async()` should typically be used instead.
-         * 
-         * When the initialization is finished, `callback` will be called. You can
-         * then call `g_async_initable_init_finish()` to get the result of the
-         * initialization.
-         * 
-         * Implementations may also support cancellation. If `cancellable` is not
-         * `null`, then initialization can be cancelled by triggering the cancellable
-         * object from another thread. If the operation was cancelled, the error
-         * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
-         * the object doesn't support cancellable initialization, the error
-         * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
-         * 
-         * As with {@link Gio.Initable}, if the object is not initialized, or initialization
-         * returns with an error, then all operations on the object except
-         * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
-         * have undefined behaviour. They will often fail with `g_critical()` or
-         * `g_warning()`, but this must not be relied on.
-         * 
-         * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
-         * be initialized multiple times; for more information, see `g_initable_init()`.
-         * If a class explicitly supports being initialized multiple times,
-         * implementation requires yielding all subsequent calls to `init_async()` on the
-         * results of the first call.
-         * 
-         * For classes that also support the {@link Gio.Initable} interface, the default
-         * implementation of this method will run the `g_initable_init()` function
-         * in a thread, so if you want to support asynchronous initialization via
-         * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
-         * any interface methods.
-         * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
-         */
-        init_async(io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        init_async(io_priority: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Starts asynchronous initialization of the object implementing the
@@ -11662,7 +11611,50 @@ export namespace IBus {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        init_async(io_priority: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        init_async(io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Starts asynchronous initialization of the object implementing the
+         * interface. This must be done before any real use of the object after
+         * initial construction. If the object also implements {@link Gio.Initable} you can
+         * optionally call `g_initable_init()` instead.
+         * 
+         * This method is intended for language bindings. If writing in C,
+         * `g_async_initable_new_async()` should typically be used instead.
+         * 
+         * When the initialization is finished, `callback` will be called. You can
+         * then call `g_async_initable_init_finish()` to get the result of the
+         * initialization.
+         * 
+         * Implementations may also support cancellation. If `cancellable` is not
+         * `null`, then initialization can be cancelled by triggering the cancellable
+         * object from another thread. If the operation was cancelled, the error
+         * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null`, and
+         * the object doesn't support cancellable initialization, the error
+         * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
+         * 
+         * As with {@link Gio.Initable}, if the object is not initialized, or initialization
+         * returns with an error, then all operations on the object except
+         * `g_object_ref()` and `g_object_unref()` are considered to be invalid, and
+         * have undefined behaviour. They will often fail with `g_critical()` or
+         * `g_warning()`, but this must not be relied on.
+         * 
+         * Callers should not assume that a class which implements {@link Gio.AsyncInitable} can
+         * be initialized multiple times; for more information, see `g_initable_init()`.
+         * If a class explicitly supports being initialized multiple times,
+         * implementation requires yielding all subsequent calls to `init_async()` on the
+         * results of the first call.
+         * 
+         * For classes that also support the {@link Gio.Initable} interface, the default
+         * implementation of this method will run the `g_initable_init()` function
+         * in a thread, so if you want to support asynchronous initialization via
+         * threads, just implement the {@link Gio.AsyncInitable} interface without overriding
+         * any interface methods.
+         * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         */
+        init_async(io_priority: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes asynchronous initialization and returns the result.
@@ -11728,7 +11720,7 @@ export namespace IBus {
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          * @virtual
          */
-        vfunc_init_async(io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        vfunc_init_async(io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes asynchronous initialization and returns the result.
@@ -11748,9 +11740,7 @@ export namespace IBus {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Service.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Service.ConstructorProps {}
     }
 
     /**
@@ -12255,7 +12245,7 @@ export namespace IBus {
              * @signal
              * @run-last
              */
-            "process-key-event": (arg0: number, arg1: number, arg2: number) => (boolean | void);
+            "process-key-event": (arg0: number, arg1: number, arg2: number) => boolean | void;
             /**
              * Emitted when a property is activated or change changed.
              * Implement the member function IBusEngineClass::property_activate
@@ -13142,9 +13132,7 @@ export namespace IBus {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Engine.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Engine.ConstructorProps {}
     }
 
     /**
@@ -13210,7 +13198,7 @@ export namespace IBus {
          * @param locale The locale name. If the locale is `null`,                        the current locale is used.
          * @returns `true` if the `locale` is matched to the table.
          */
-        add_table_by_locale(locale: (string | null)): boolean;
+        add_table_by_locale(locale: string | null): boolean;
     }
 
 
@@ -13353,15 +13341,13 @@ export namespace IBus {
              * @signal
              * @run-last
              */
-            "create-engine": (arg0: string) => (Engine | null);
+            "create-engine": (arg0: string) => Engine | null;
             "notify::connection": (pspec: GObject.ParamSpec) => void;
             "notify::object-path": (pspec: GObject.ParamSpec) => void;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Service.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Service.ConstructorProps {}
     }
 
     /**
@@ -13449,9 +13435,7 @@ export namespace IBus {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Serializable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Serializable.ConstructorProps {}
     }
 
     /**
@@ -13727,9 +13711,7 @@ export namespace IBus {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Proxy.ConstructorProps, Gio.AsyncInitable.ConstructorProps, Gio.DBusInterface.ConstructorProps, Gio.Initable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Proxy.ConstructorProps, Gio.AsyncInitable.ConstructorProps, Gio.DBusInterface.ConstructorProps, Gio.Initable.ConstructorProps {}
     }
 
     /**
@@ -13758,7 +13740,7 @@ export namespace IBus {
 
         _init(...args: any[]): void;
 
-        static ["new"](path: string, connection: Gio.DBusConnection, cancellable: (Gio.Cancellable | null)): InputContext;
+        static ["new"](path: string, connection: Gio.DBusConnection, cancellable: Gio.Cancellable | null): InputContext;
 
         // Conflicted with Gio.DBusProxy.new
         static ["new"](...args: never[]): any;
@@ -13793,7 +13775,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied.      The callback should not be `null`.
          */
-        static get_input_context_async(path: string, connection: Gio.DBusConnection, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<InputContext> | null)): void;
+        static get_input_context_async(path: string, connection: Gio.DBusConnection, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<InputContext> | null): void;
 
         /**
          * Finishes an operation started with
@@ -13809,7 +13791,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied.      The callback should not be `null`.
          */
-        static new_async(path: string, connection: Gio.DBusConnection, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<InputContext> | null)): void;
+        static new_async(path: string, connection: Gio.DBusConnection, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<InputContext> | null): void;
 
         // Methods
         /**
@@ -13847,7 +13829,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        get_engine_async(timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<EngineDesc>;
+        get_engine_async(timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<EngineDesc>;
 
         /**
          * An asynchronous IPC will be performed.
@@ -13855,7 +13837,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or     `null` if you don't care about the result of the method invocation.
          */
-        get_engine_async(timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_engine_async(timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * An asynchronous IPC will be performed.
@@ -13863,7 +13845,7 @@ export namespace IBus {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or     `null` if you don't care about the result of the method invocation.
          */
-        get_engine_async(timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<EngineDesc> | void);
+        get_engine_async(timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<EngineDesc> | void;
 
         /**
          * Finishes an operation started with `ibus_input_context_get_engine_async()`.
@@ -13940,7 +13922,7 @@ export namespace IBus {
          * @param timeout_msec The timeout in milliseconds or -1 to use the default timeout.
          * @param cancellable A GCancellable or NULL.
          */
-        process_key_event_async(keyval: number, keycode: number, state: number, timeout_msec: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        process_key_event_async(keyval: number, keycode: number, state: number, timeout_msec: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Pass the key event to input method engine.
@@ -13969,7 +13951,7 @@ export namespace IBus {
          * @param cancellable A GCancellable or NULL.
          * @param callback A GAsyncReadyCallback to call when the request is satisfied or NULL      if you don't care about the result of the method invocation.
          */
-        process_key_event_async(keyval: number, keycode: number, state: number, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        process_key_event_async(keyval: number, keycode: number, state: number, timeout_msec: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Pass the key event to input method engine.
@@ -13998,7 +13980,7 @@ export namespace IBus {
          * @param cancellable A GCancellable or NULL.
          * @param callback A GAsyncReadyCallback to call when the request is satisfied or NULL      if you don't care about the result of the method invocation.
          */
-        process_key_event_async(keyval: number, keycode: number, state: number, timeout_msec: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        process_key_event_async(keyval: number, keycode: number, state: number, timeout_msec: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an operation started with
@@ -14141,7 +14123,7 @@ export namespace IBus {
          * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        init_async(io_priority: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        init_async(io_priority: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Starts asynchronous initialization of the object implementing the
@@ -14184,7 +14166,7 @@ export namespace IBus {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        init_async(io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        init_async(io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Starts asynchronous initialization of the object implementing the
@@ -14227,7 +14209,7 @@ export namespace IBus {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        init_async(io_priority: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        init_async(io_priority: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes asynchronous initialization and returns the result.
@@ -14293,7 +14275,7 @@ export namespace IBus {
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          * @virtual
          */
-        vfunc_init_async(io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        vfunc_init_async(io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes asynchronous initialization and returns the result.
@@ -14307,13 +14289,10 @@ export namespace IBus {
 
     namespace Keymap {
         // Signal signatures
-        interface SignalSignatures extends Object.SignalSignatures {
-        }
+        interface SignalSignatures extends Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps {}
     }
 
     /**
@@ -14394,13 +14373,10 @@ export namespace IBus {
 
     namespace LookupTable {
         // Signal signatures
-        interface SignalSignatures extends Serializable.SignalSignatures {
-        }
+        interface SignalSignatures extends Serializable.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends Serializable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Serializable.ConstructorProps {}
     }
 
     /**
@@ -14637,9 +14613,7 @@ export namespace IBus {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.InitiallyUnowned.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.InitiallyUnowned.ConstructorProps {}
     }
 
     /**
@@ -14708,13 +14682,10 @@ export namespace IBus {
 
     namespace ObservedPath {
         // Signal signatures
-        interface SignalSignatures extends Serializable.SignalSignatures {
-        }
+        interface SignalSignatures extends Serializable.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends Serializable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Serializable.ConstructorProps {}
     }
 
     /**
@@ -14969,7 +14940,7 @@ export namespace IBus {
              * @signal
              * @run-last
              */
-            "process-key-event": (arg0: number, arg1: number, arg2: number) => (boolean | void);
+            "process-key-event": (arg0: number, arg1: number, arg2: number) => boolean | void;
             /**
              * Emitted when the client application get the ::register-properties.
              * Implement the member function
@@ -15154,9 +15125,7 @@ export namespace IBus {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Service.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Service.ConstructorProps {}
     }
 
     /**
@@ -15508,13 +15477,10 @@ export namespace IBus {
 
     namespace PropList {
         // Signal signatures
-        interface SignalSignatures extends Serializable.SignalSignatures {
-        }
+        interface SignalSignatures extends Serializable.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends Serializable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Serializable.ConstructorProps {}
     }
 
     /**
@@ -15693,7 +15659,7 @@ export namespace IBus {
 
         _init(...args: any[]): void;
 
-        static ["new"](key: string, type: PropType, label: Text, icon: (string | null), tooltip: Text, sensitive: boolean, visible: boolean, state: PropState, prop_list: (PropList | null)): Property;
+        static ["new"](key: string, type: PropType, label: Text, icon: string | null, tooltip: Text, sensitive: boolean, visible: boolean, state: PropState, prop_list: PropList | null): Property;
 
         // Conflicted with IBus.Serializable.new
         static ["new"](...args: never[]): any;
@@ -15852,9 +15818,7 @@ export namespace IBus {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gio.DBusProxy.ConstructorProps, Gio.AsyncInitable.ConstructorProps, Gio.DBusInterface.ConstructorProps, Gio.Initable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gio.DBusProxy.ConstructorProps, Gio.AsyncInitable.ConstructorProps, Gio.DBusInterface.ConstructorProps, Gio.Initable.ConstructorProps {}
     }
 
     /**
@@ -15969,7 +15933,7 @@ export namespace IBus {
          * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        init_async(io_priority: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        init_async(io_priority: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Starts asynchronous initialization of the object implementing the
@@ -16012,7 +15976,7 @@ export namespace IBus {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        init_async(io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        init_async(io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Starts asynchronous initialization of the object implementing the
@@ -16055,7 +16019,7 @@ export namespace IBus {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        init_async(io_priority: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        init_async(io_priority: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes asynchronous initialization and returns the result.
@@ -16121,7 +16085,7 @@ export namespace IBus {
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          * @virtual
          */
-        vfunc_init_async(io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        vfunc_init_async(io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes asynchronous initialization and returns the result.
@@ -16135,7 +16099,7 @@ export namespace IBus {
          * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
          * @returns A {@link Gio.DBusObject} or `null`. The returned reference should be freed with `g_object_unref()`.
          */
-        get_object(): (Gio.DBusObject | null);
+        get_object(): Gio.DBusObject | null;
 
         /**
          * Gets D-Bus introspection information for the D-Bus interface
@@ -16150,13 +16114,13 @@ export namespace IBus {
          * Note that `interface_` will hold a weak reference to `object`.
          * @param object A {@link Gio.DBusObject} or `null`.
          */
-        set_object(object: (Gio.DBusObject | null)): void;
+        set_object(object: Gio.DBusObject | null): void;
 
         /**
          * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
          * @virtual
          */
-        vfunc_dup_object(): (Gio.DBusObject | null);
+        vfunc_dup_object(): Gio.DBusObject | null;
 
         /**
          * Gets D-Bus introspection information for the D-Bus interface
@@ -16172,7 +16136,7 @@ export namespace IBus {
          * @param object A {@link Gio.DBusObject} or `null`.
          * @virtual
          */
-        vfunc_set_object(object: (Gio.DBusObject | null)): void;
+        vfunc_set_object(object: Gio.DBusObject | null): void;
 
         /**
          * Initializes the object implementing the interface.
@@ -16216,7 +16180,7 @@ export namespace IBus {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          */
-        init(cancellable: (Gio.Cancellable | null)): boolean;
+        init(cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Initializes the object implementing the interface.
@@ -16260,7 +16224,7 @@ export namespace IBus {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_init(cancellable: (Gio.Cancellable | null)): boolean;
+        vfunc_init(cancellable: Gio.Cancellable | null): boolean;
     }
 
 
@@ -16280,9 +16244,7 @@ export namespace IBus {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Serializable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Serializable.ConstructorProps {}
     }
 
     /**
@@ -16404,13 +16366,10 @@ export namespace IBus {
 
     namespace Serializable {
         // Signal signatures
-        interface SignalSignatures extends Object.SignalSignatures {
-        }
+        interface SignalSignatures extends Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Object.ConstructorProps {}
     }
 
     /**
@@ -16631,7 +16590,7 @@ export namespace IBus {
          * @param property_name A property name.
          * @virtual
          */
-        vfunc_service_get_property(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, property_name: string): (GLib.Variant | null);
+        vfunc_service_get_property(connection: Gio.DBusConnection, sender: string, object_path: string, interface_name: string, property_name: string): GLib.Variant | null;
 
         /**
          * The ::service_method_call class method is to connect
@@ -16698,13 +16657,10 @@ export namespace IBus {
 
     namespace Text {
         // Signal signatures
-        interface SignalSignatures extends Serializable.SignalSignatures {
-        }
+        interface SignalSignatures extends Serializable.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends Serializable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Serializable.ConstructorProps {}
     }
 
     /**
@@ -16991,7 +16947,7 @@ export namespace IBus {
          * @param path A path of the saved dictionary file.
          * @param object If the {@link GObject.Object} has "unicode-deserialize-progress"    signal, this function will emit (the number of desrialized    {@link IBus.UnicodeData}, * the total number of {@link IBus.UnicodeData}) of uint values    with that signal by 100 times. Otherwise `null`.
          */
-        static load(path: string, object: (GObject.Object | null)): UnicodeData[];
+        static load(path: string, object: GObject.Object | null): UnicodeData[];
 
         /**
          * IBusUnicodeDataLoadAsyncFinish can receive the list of {@link IBus.UnicodeData}.
@@ -17000,7 +16956,7 @@ export namespace IBus {
          * @param cancellable cancellable.
          * @param callback IBusUnicodeDataLoadAsyncFinish.
          */
-        static load_async(path: string, object: (GObject.Object | null), cancellable: (Gio.Cancellable | null), callback: UnicodeDataLoadAsyncFinish): void;
+        static load_async(path: string, object: GObject.Object | null, cancellable: Gio.Cancellable | null, callback: UnicodeDataLoadAsyncFinish): void;
 
         /**
          * Save the list of {@link IBus.UnicodeData} to the cache file.
@@ -17085,7 +17041,7 @@ export namespace IBus {
             sameScreen: boolean;
             send_event: number;
             sendEvent: number;
-            serial: (bigint | number);
+            serial: bigint | number;
             state: number;
             string: string;
             subwindow: number;

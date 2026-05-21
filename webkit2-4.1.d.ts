@@ -500,7 +500,7 @@ export namespace WebKit2 {
         static DESTINATION: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -534,7 +534,7 @@ export namespace WebKit2 {
         static FAVICON_UNKNOWN: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -736,7 +736,7 @@ export namespace WebKit2 {
         static INVALID_RESULT: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -887,7 +887,7 @@ export namespace WebKit2 {
         static FILE_DOES_NOT_EXIST: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -992,7 +992,7 @@ export namespace WebKit2 {
         static WILL_HANDLE_LOAD: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -1083,7 +1083,7 @@ export namespace WebKit2 {
         static CANNOT_USE_RESTRICTED_PORT: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -1117,7 +1117,7 @@ export namespace WebKit2 {
         static INVALID_PAGE_RANGE: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -1253,7 +1253,7 @@ export namespace WebKit2 {
         static CREATE: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -1333,7 +1333,7 @@ export namespace WebKit2 {
         static NOT_FOUND: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -1385,7 +1385,7 @@ export namespace WebKit2 {
         static MESSAGE: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -1477,7 +1477,7 @@ export namespace WebKit2 {
         static INVALID_PATH: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -1788,7 +1788,7 @@ export namespace WebKit2 {
      * @returns `uri` suitable for display, or `null` in    case of error.
      * @since 2.24
      */
-    function uri_for_display(uri: string): (string | null);
+    function uri_for_display(uri: string): string | null;
 
     /**
      * Gets the quark for the domain of user content filter errors.
@@ -2187,9 +2187,7 @@ export namespace WebKit2 {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -2247,7 +2245,7 @@ export namespace WebKit2 {
          * supplied. To continue without credentials, pass `null` as `credential`.
          * @param credential A {@link WebKit2.Credential}, or `null`
          */
-        authenticate(credential: (Credential | null)): void;
+        authenticate(credential: Credential | null): void;
 
         /**
          * Determine whether this {@link WebKit2.AuthenticationRequest} should allow the storage of credentials.
@@ -2512,13 +2510,11 @@ export namespace WebKit2 {
              * @signal
              * @run-last
              */
-            changed: (arg0: (BackForwardListItem | null), arg1: null) => void;
+            changed: (arg0: BackForwardListItem | null, arg1: null) => void;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -2574,7 +2570,7 @@ export namespace WebKit2 {
          * Returns the item that precedes the current item.
          * @returns the {@link WebKit2.BackForwardListItem}    preceding the current item or `null`.
          */
-        get_back_item(): (BackForwardListItem | null);
+        get_back_item(): BackForwardListItem | null;
 
         /**
          * Obtain the list of items preceding the current one.
@@ -2593,13 +2589,13 @@ export namespace WebKit2 {
          * Returns the current item in `back_forward_list`.
          * @returns a {@link WebKit2.BackForwardListItem}    or `null` if `back_forward_list` is empty.
          */
-        get_current_item(): (BackForwardListItem | null);
+        get_current_item(): BackForwardListItem | null;
 
         /**
          * Returns the item that follows the current item.
          * @returns the {@link WebKit2.BackForwardListItem}    following the current item or `null`.
          */
-        get_forward_item(): (BackForwardListItem | null);
+        get_forward_item(): BackForwardListItem | null;
 
         /**
          * Obtain the list of items following the current one.
@@ -2625,19 +2621,16 @@ export namespace WebKit2 {
          * @param index the index of the item
          * @returns the {@link WebKit2.BackForwardListItem}    located at the specified index relative to the current item or `null`.
          */
-        get_nth_item(index: number): (BackForwardListItem | null);
+        get_nth_item(index: number): BackForwardListItem | null;
     }
 
 
     namespace BackForwardListItem {
         // Signal signatures
-        interface SignalSignatures extends GObject.InitiallyUnowned.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.InitiallyUnowned.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.InitiallyUnowned.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.InitiallyUnowned.ConstructorProps {}
     }
 
     /**
@@ -2706,13 +2699,10 @@ export namespace WebKit2 {
 
     namespace ClipboardPermissionRequest {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {}
     }
 
     /**
@@ -2901,13 +2891,10 @@ export namespace WebKit2 {
 
     namespace ContextMenu {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -3093,13 +3080,10 @@ export namespace WebKit2 {
 
     namespace ContextMenuItem {
         // Signal signatures
-        interface SignalSignatures extends GObject.InitiallyUnowned.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.InitiallyUnowned.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.InitiallyUnowned.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.InitiallyUnowned.ConstructorProps {}
     }
 
     /**
@@ -3131,7 +3115,7 @@ export namespace WebKit2 {
 
         static ["new"](action: Gtk.Action): ContextMenuItem;
 
-        static new_from_gaction(action: Gio.Action, label: string, target: (GLib.Variant | null)): ContextMenuItem;
+        static new_from_gaction(action: Gio.Action, label: string, target: GLib.Variant | null): ContextMenuItem;
 
         static new_from_stock_action(action: ContextMenuAction): ContextMenuItem;
 
@@ -3171,7 +3155,7 @@ export namespace WebKit2 {
          * Gets the target {@link GLib.Variant} associated with `item`.
          * @returns the target {@link GLib.Variant} of the {@link WebKit2.ContextMenuItem},    or `null` if `item` was not created with `webkit_context_menu_item_new_from_gaction()`    or if no target was specified.
          */
-        get_gaction_target(): (GLib.Variant | null);
+        get_gaction_target(): GLib.Variant | null;
 
         /**
          * Gets the {@link WebKit2.ContextMenuAction} of `item`.
@@ -3209,7 +3193,7 @@ export namespace WebKit2 {
          * submenu of `item` is removed.
          * @param submenu a {@link WebKit2.ContextMenu}
          */
-        set_submenu(submenu: (ContextMenu | null)): void;
+        set_submenu(submenu: ContextMenu | null): void;
     }
 
 
@@ -3225,9 +3209,7 @@ export namespace WebKit2 {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -3279,7 +3261,7 @@ export namespace WebKit2 {
          * @param cookie the {@link Soup.Cookie} to be added
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        add_cookie(cookie: Soup.Cookie, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        add_cookie(cookie: Soup.Cookie, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously add a {@link Soup.Cookie} to the underlying storage.
@@ -3290,7 +3272,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        add_cookie(cookie: Soup.Cookie, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        add_cookie(cookie: Soup.Cookie, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously add a {@link Soup.Cookie} to the underlying storage.
@@ -3301,7 +3283,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        add_cookie(cookie: Soup.Cookie, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        add_cookie(cookie: Soup.Cookie, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_cookie_manager_add_cookie()`.
@@ -3323,7 +3305,7 @@ export namespace WebKit2 {
          * @param cookie the {@link Soup.Cookie} to be deleted
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        delete_cookie(cookie: Soup.Cookie, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        delete_cookie(cookie: Soup.Cookie, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously delete a {@link Soup.Cookie} from the current session.
@@ -3334,7 +3316,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        delete_cookie(cookie: Soup.Cookie, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        delete_cookie(cookie: Soup.Cookie, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously delete a {@link Soup.Cookie} from the current session.
@@ -3345,7 +3327,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        delete_cookie(cookie: Soup.Cookie, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        delete_cookie(cookie: Soup.Cookie, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_cookie_manager_delete_cookie()`.
@@ -3371,7 +3353,7 @@ export namespace WebKit2 {
          * `webkit_cookie_manager_get_accept_policy_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        get_accept_policy(cancellable: (Gio.Cancellable | null)): globalThis.Promise<CookieAcceptPolicy>;
+        get_accept_policy(cancellable: Gio.Cancellable | null): globalThis.Promise<CookieAcceptPolicy>;
 
         /**
          * Asynchronously get the cookie acceptance policy of `cookie_manager`.
@@ -3385,7 +3367,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        get_accept_policy(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_accept_policy(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously get the cookie acceptance policy of `cookie_manager`.
@@ -3399,7 +3381,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        get_accept_policy(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<CookieAcceptPolicy> | void);
+        get_accept_policy(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<CookieAcceptPolicy> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_cookie_manager_get_accept_policy()`.
@@ -3415,7 +3397,7 @@ export namespace WebKit2 {
          * `webkit_cookie_manager_get_all_cookies_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        get_all_cookies(cancellable: (Gio.Cancellable | null)): globalThis.Promise<Soup.Cookie[]>;
+        get_all_cookies(cancellable: Gio.Cancellable | null): globalThis.Promise<Soup.Cookie[]>;
 
         /**
          * Asynchronously get a list of {@link Soup.Cookie} from `cookie_manager`.
@@ -3425,7 +3407,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback (closure user_data): a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        get_all_cookies(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_all_cookies(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously get a list of {@link Soup.Cookie} from `cookie_manager`.
@@ -3435,7 +3417,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback (closure user_data): a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        get_all_cookies(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<Soup.Cookie[]> | void);
+        get_all_cookies(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Soup.Cookie[]> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_cookie_manager_get_all_cookies()`.
@@ -3458,7 +3440,7 @@ export namespace WebKit2 {
          * @param uri the URI associated to the cookies to be retrieved
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        get_cookies(uri: string, cancellable: (Gio.Cancellable | null)): globalThis.Promise<Soup.Cookie[]>;
+        get_cookies(uri: string, cancellable: Gio.Cancellable | null): globalThis.Promise<Soup.Cookie[]>;
 
         /**
          * Asynchronously get a list of {@link Soup.Cookie} from `cookie_manager`.
@@ -3472,7 +3454,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        get_cookies(uri: string, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_cookies(uri: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously get a list of {@link Soup.Cookie} from `cookie_manager`.
@@ -3486,7 +3468,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        get_cookies(uri: string, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<Soup.Cookie[]> | void);
+        get_cookies(uri: string, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Soup.Cookie[]> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_cookie_manager_get_cookies()`.
@@ -3505,7 +3487,7 @@ export namespace WebKit2 {
          * `webkit_cookie_manager_get_domains_with_cookies_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        get_domains_with_cookies(cancellable: (Gio.Cancellable | null)): globalThis.Promise<string[]>;
+        get_domains_with_cookies(cancellable: Gio.Cancellable | null): globalThis.Promise<string[]>;
 
         /**
          * Asynchronously get the list of domains for which `cookie_manager` contains cookies.
@@ -3515,7 +3497,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        get_domains_with_cookies(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_domains_with_cookies(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously get the list of domains for which `cookie_manager` contains cookies.
@@ -3525,7 +3507,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        get_domains_with_cookies(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<string[]> | void);
+        get_domains_with_cookies(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<string[]> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_cookie_manager_get_domains_with_cookies()`.
@@ -3545,7 +3527,7 @@ export namespace WebKit2 {
          * @param cookies a {@link GLib.List} of {@link Soup.Cookie} to be added
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        replace_cookies(cookies: Soup.Cookie[], cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        replace_cookies(cookies: Soup.Cookie[], cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously replace all cookies in `cookie_manager` with the given list of `cookies`.
@@ -3556,7 +3538,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback (closure user_data): a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        replace_cookies(cookies: Soup.Cookie[], cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        replace_cookies(cookies: Soup.Cookie[], cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously replace all cookies in `cookie_manager` with the given list of `cookies`.
@@ -3567,7 +3549,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback (closure user_data): a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        replace_cookies(cookies: Soup.Cookie[], cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        replace_cookies(cookies: Soup.Cookie[], cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_cookie_manager_replace_cookies()`.
@@ -3608,13 +3590,10 @@ export namespace WebKit2 {
 
     namespace DeviceInfoPermissionRequest {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {}
     }
 
     /**
@@ -3710,7 +3689,7 @@ export namespace WebKit2 {
              * @signal
              * @run-last
              */
-            "decide-destination": (arg0: string) => (boolean | void);
+            "decide-destination": (arg0: string) => boolean | void;
             /**
              * This signal is emitted when an error occurs during the download
              * operation. The given `error`, of the domain `WEBKIT_DOWNLOAD_ERROR`,
@@ -3747,7 +3726,7 @@ export namespace WebKit2 {
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             allow_overwrite: boolean;
             allowOverwrite: boolean;
-            destination: (string | null);
+            destination: string | null;
             estimated_progress: number;
             estimatedProgress: number;
             response: URIResponse;
@@ -3793,7 +3772,7 @@ export namespace WebKit2 {
          * @read-only
          * @default null
          */
-        get destination(): (string | null);
+        get destination(): string | null;
 
         /**
          * An estimate of the percent completion for the download operation.
@@ -3887,7 +3866,7 @@ export namespace WebKit2 {
          * sure this method returns a valid destination.
          * @returns the destination or `null`
          */
-        get_destination(): (string | null);
+        get_destination(): string | null;
 
         /**
          * Gets the elapsed time in seconds, including any fractional part.
@@ -4111,9 +4090,7 @@ export namespace WebKit2 {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -4179,7 +4156,7 @@ export namespace WebKit2 {
          * @param page_uri URI of the page for which we want to retrieve the favicon
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
-        get_favicon(page_uri: string, cancellable: (Gio.Cancellable | null)): globalThis.Promise<cairo.Surface>;
+        get_favicon(page_uri: string, cancellable: Gio.Cancellable | null): globalThis.Promise<cairo.Surface>;
 
         /**
          * Asynchronously obtains a favicon image.
@@ -4195,7 +4172,7 @@ export namespace WebKit2 {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is            satisfied or `null` if you don't care about the result.
          */
-        get_favicon(page_uri: string, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_favicon(page_uri: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously obtains a favicon image.
@@ -4211,7 +4188,7 @@ export namespace WebKit2 {
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is            satisfied or `null` if you don't care about the result.
          */
-        get_favicon(page_uri: string, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<cairo.Surface> | void);
+        get_favicon(page_uri: string, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<cairo.Surface> | void;
 
         /**
          * Finishes an operation started with `webkit_favicon_database_get_favicon()`.
@@ -4685,13 +4662,10 @@ export namespace WebKit2 {
 
     namespace FormSubmissionRequest {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -4745,7 +4719,7 @@ export namespace WebKit2 {
          * function does not reliably return all text fields.
          * @returns a {@link GLib.HashTable} with the form    text fields, or `null` if the form doesn't contain text fields.
          */
-        get_text_fields(): (GLib.HashTable<never, never> | null);
+        get_text_fields(): GLib.HashTable<never, never> | null;
 
         /**
          * Get lists of the text fields contained in the form associated to `request`.
@@ -4783,7 +4757,7 @@ export namespace WebKit2 {
              * @since 2.26
              * @run-last
              */
-            start: () => (boolean | void);
+            start: () => boolean | void;
             /**
              * The signal is emitted to notify that `manager` doesn't need to receive
              * position updates anymore.
@@ -4888,13 +4862,10 @@ export namespace WebKit2 {
 
     namespace GeolocationPermissionRequest {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {}
     }
 
     /**
@@ -5548,13 +5519,10 @@ export namespace WebKit2 {
 
     namespace InstallMissingMediaPluginsPermissionRequest {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {}
     }
 
     /**
@@ -5629,13 +5597,10 @@ export namespace WebKit2 {
 
     namespace MediaKeySystemPermissionRequest {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {}
     }
 
     /**
@@ -5939,8 +5904,8 @@ export namespace WebKit2 {
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             body: string;
-            id: (bigint | number);
-            tag: (string | null);
+            id: bigint | number;
+            tag: string | null;
             title: string;
         }
     }
@@ -5976,7 +5941,7 @@ export namespace WebKit2 {
          * @read-only
          * @default null
          */
-        get tag(): (string | null);
+        get tag(): string | null;
 
         /**
          * The title for the notification.
@@ -6043,7 +6008,7 @@ export namespace WebKit2 {
          * Obtains the tag identifier for the notification.
          * @returns the tag for the notification
          */
-        get_tag(): (string | null);
+        get_tag(): string | null;
 
         /**
          * Obtains the title for the notification.
@@ -6055,13 +6020,10 @@ export namespace WebKit2 {
 
     namespace NotificationPermissionRequest {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {}
     }
 
     /**
@@ -6145,9 +6107,7 @@ export namespace WebKit2 {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -6248,13 +6208,10 @@ export namespace WebKit2 {
 
     namespace Plugin {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -6304,7 +6261,7 @@ export namespace WebKit2 {
          * Obtain the plugin description.
          * @returns description, as a string.
          */
-        get_description(): (string | null);
+        get_description(): string | null;
 
         /**
          * Get information about MIME types handled by the plugin.
@@ -6319,25 +6276,22 @@ export namespace WebKit2 {
          * Obtain the plugin name.
          * @returns name, as a string.
          */
-        get_name(): (string | null);
+        get_name(): string | null;
 
         /**
          * Obtain the absolute path where the plugin is installed.
          * @returns path, as a string.
          */
-        get_path(): (string | null);
+        get_path(): string | null;
     }
 
 
     namespace PointerLockPermissionRequest {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {}
     }
 
     /**
@@ -6408,13 +6362,10 @@ export namespace WebKit2 {
 
     namespace PolicyDecision {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -6819,7 +6770,7 @@ export namespace WebKit2 {
          * @param parent transient parent of the print dialog
          * @returns the {@link WebKit2.PrintOperationResponse} of the print dialog
          */
-        run_dialog(parent: (Gtk.Window | null)): PrintOperationResponse;
+        run_dialog(parent: Gtk.Window | null): PrintOperationResponse;
 
         /**
          * Set the current page setup of `print_operation`.
@@ -6948,13 +6899,10 @@ export namespace WebKit2 {
 
     namespace SecurityManager {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -7284,8 +7232,8 @@ export namespace WebKit2 {
             javascriptCanOpenWindowsAutomatically: boolean;
             load_icons_ignoring_image_load_setting: boolean;
             loadIconsIgnoringImageLoadSetting: boolean;
-            math_font_family: (string | null);
-            mathFontFamily: (string | null);
+            math_font_family: string | null;
+            mathFontFamily: string | null;
             media_content_types_requiring_hardware_support: string;
             mediaContentTypesRequiringHardwareSupport: string;
             media_playback_allows_inline: boolean;
@@ -8331,16 +8279,16 @@ export namespace WebKit2 {
          * @since 2.52
          * @default null
          */
-        get math_font_family(): (string | null);
-        set math_font_family(val: (string | null));
+        get math_font_family(): string | null;
+        set math_font_family(val: string | null);
 
         /**
          * The font family used as the default for content using a math font.
          * @since 2.52
          * @default null
          */
-        get mathFontFamily(): (string | null);
-        set mathFontFamily(val: (string | null));
+        get mathFontFamily(): string | null;
+        set mathFontFamily(val: string | null);
 
         /**
          * List of media content types requiring hardware support, split by semicolons (:).
@@ -8981,7 +8929,7 @@ export namespace WebKit2 {
          * Gets the {@link WebKit2.Settings.math_font_family} property.
          * @returns The default font family used to display content marked with math font. Since 2.52
          */
-        get_math_font_family(): (string | null);
+        get_math_font_family(): string | null;
 
         /**
          * Gets the {@link WebKit2.Settings.media_content_types_requiring_hardware_support} property.
@@ -9383,13 +9331,13 @@ export namespace WebKit2 {
          * Since 2.52
          * @param math_font_family the new default math font family
          */
-        set_math_font_family(math_font_family: (string | null)): void;
+        set_math_font_family(math_font_family: string | null): void;
 
         /**
          * Set the {@link WebKit2.Settings.media_content_types_requiring_hardware_support} property.
          * @param content_types list of media content types requiring hardware support split by semicolons (:) or `null` to use the default value.
          */
-        set_media_content_types_requiring_hardware_support(content_types: (string | null)): void;
+        set_media_content_types_requiring_hardware_support(content_types: string | null): void;
 
         /**
          * Set the {@link WebKit2.Settings.media_playback_allows_inline} property.
@@ -9443,7 +9391,7 @@ export namespace WebKit2 {
          * Set the {@link WebKit2.Settings.user_agent} property.
          * @param user_agent The new custom user agent string or `null` to use the default user agent
          */
-        set_user_agent(user_agent: (string | null)): void;
+        set_user_agent(user_agent: string | null): void;
 
         /**
          * Set the {@link WebKit2.Settings.user_agent} property by appending the application details.
@@ -9454,7 +9402,7 @@ export namespace WebKit2 {
          * @param application_name The application name used for the user agent or `null` to use the default user agent.
          * @param application_version The application version for the user agent or `null` to user the default version.
          */
-        set_user_agent_with_application_details(application_name: (string | null), application_version: (string | null)): void;
+        set_user_agent_with_application_details(application_name: string | null, application_version: string | null): void;
 
         /**
          * Set the {@link Settings.webrtc_udp_ports_range} property.
@@ -9570,8 +9518,8 @@ export namespace WebKit2 {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            content_length: (bigint | number);
-            contentLength: (bigint | number);
+            content_length: bigint | number;
+            contentLength: bigint | number;
             http_headers: Soup.MessageHeaders;
             httpHeaders: Soup.MessageHeaders;
             mime_type: string;
@@ -9752,13 +9700,10 @@ export namespace WebKit2 {
 
     namespace URISchemeRequest {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -9811,7 +9756,7 @@ export namespace WebKit2 {
          * @param stream_length the length of the stream or -1 if not known
          * @param content_type the content type of the stream or `null` if not known
          */
-        finish(stream: Gio.InputStream, stream_length: (bigint | number), content_type: (string | null)): void;
+        finish(stream: Gio.InputStream, stream_length: bigint | number, content_type: string | null): void;
 
         /**
          * Finish a {@link WebKit2.URISchemeRequest} with a {@link GLib.Error}.
@@ -9879,8 +9824,8 @@ export namespace WebKit2 {
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             stream: Gio.InputStream;
-            stream_length: (bigint | number);
-            streamLength: (bigint | number);
+            stream_length: bigint | number;
+            streamLength: bigint | number;
         }
     }
 
@@ -9916,7 +9861,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default -1
          */
-        set stream_length(val: (bigint | number));
+        set stream_length(val: bigint | number);
 
         /**
          * The input stream length in bytes, `-1` for unknown length.
@@ -9924,7 +9869,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default -1
          */
-        set streamLength(val: (bigint | number));
+        set streamLength(val: bigint | number);
 
         /**
          * Compile-time signal type information.
@@ -9940,7 +9885,7 @@ export namespace WebKit2 {
 
         _init(...args: any[]): void;
 
-        static ["new"](input_stream: Gio.InputStream, stream_length: (bigint | number)): URISchemeResponse;
+        static ["new"](input_stream: Gio.InputStream, stream_length: bigint | number): URISchemeResponse;
 
         // Signals
         /** @signal */
@@ -9978,7 +9923,7 @@ export namespace WebKit2 {
          * @param status_code the HTTP status code to be returned
          * @param reason_phrase a reason phrase
          */
-        set_status(status_code: number, reason_phrase: (string | null)): void;
+        set_status(status_code: number, reason_phrase: string | null): void;
     }
 
 
@@ -10063,7 +10008,7 @@ export namespace WebKit2 {
          * filter identifiers.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        fetch_identifiers(cancellable: (Gio.Cancellable | null)): globalThis.Promise<string[]>;
+        fetch_identifiers(cancellable: Gio.Cancellable | null): globalThis.Promise<string[]>;
 
         /**
          * Asynchronously retrieve a list of the identifiers for all the stored filters.
@@ -10074,7 +10019,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the removal is completed
          */
-        fetch_identifiers(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        fetch_identifiers(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously retrieve a list of the identifiers for all the stored filters.
@@ -10085,7 +10030,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the removal is completed
          */
-        fetch_identifiers(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<string[]> | void);
+        fetch_identifiers(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<string[]> | void;
 
         /**
          * Finishes an asynchronous fetch of the list of stored filters.
@@ -10114,7 +10059,7 @@ export namespace WebKit2 {
          * @param identifier a filter identifier
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        load(identifier: string, cancellable: (Gio.Cancellable | null)): globalThis.Promise<UserContentFilter>;
+        load(identifier: string, cancellable: Gio.Cancellable | null): globalThis.Promise<UserContentFilter>;
 
         /**
          * Asynchronously load a content filter given its `identifier`.
@@ -10128,7 +10073,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the load is completed
          */
-        load(identifier: string, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        load(identifier: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously load a content filter given its `identifier`.
@@ -10142,7 +10087,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the load is completed
          */
-        load(identifier: string, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<UserContentFilter> | void);
+        load(identifier: string, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<UserContentFilter> | void;
 
         /**
          * Finishes an asynchronous filter load previously started with
@@ -10161,7 +10106,7 @@ export namespace WebKit2 {
          * @param identifier a filter identifier
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        remove(identifier: string, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        remove(identifier: string, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously remove a content filter given its `identifier`.
@@ -10173,7 +10118,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the removal is completed
          */
-        remove(identifier: string, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        remove(identifier: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously remove a content filter given its `identifier`.
@@ -10185,7 +10130,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the removal is completed
          */
-        remove(identifier: string, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        remove(identifier: string, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an asynchronous filter removal previously started with
@@ -10212,7 +10157,7 @@ export namespace WebKit2 {
          * @param source {@link GLib.Bytes} containing the rule set in JSON format
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        save(identifier: string, source: (GLib.Bytes | Uint8Array), cancellable: (Gio.Cancellable | null)): globalThis.Promise<UserContentFilter>;
+        save(identifier: string, source: GLib.Bytes | Uint8Array, cancellable: Gio.Cancellable | null): globalThis.Promise<UserContentFilter>;
 
         /**
          * Asynchronously save a content filter from a set source rule.
@@ -10232,7 +10177,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when saving is completed
          */
-        save(identifier: string, source: (GLib.Bytes | Uint8Array), cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        save(identifier: string, source: GLib.Bytes | Uint8Array, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously save a content filter from a set source rule.
@@ -10252,7 +10197,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when saving is completed
          */
-        save(identifier: string, source: (GLib.Bytes | Uint8Array), cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<UserContentFilter> | void);
+        save(identifier: string, source: GLib.Bytes | Uint8Array, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<UserContentFilter> | void;
 
         /**
          * Finishes an asynchronous filter save previously started with
@@ -10275,7 +10220,7 @@ export namespace WebKit2 {
          * @param file a {@link Gio.File} containing the rule set in JSON format
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        save_from_file(identifier: string, file: Gio.File, cancellable: (Gio.Cancellable | null)): globalThis.Promise<UserContentFilter>;
+        save_from_file(identifier: string, file: Gio.File, cancellable: Gio.Cancellable | null): globalThis.Promise<UserContentFilter>;
 
         /**
          * Asynchronously save a content filter from the contents of a file.
@@ -10291,7 +10236,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when saving is completed
          */
-        save_from_file(identifier: string, file: Gio.File, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        save_from_file(identifier: string, file: Gio.File, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously save a content filter from the contents of a file.
@@ -10307,7 +10252,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when saving is completed
          */
-        save_from_file(identifier: string, file: Gio.File, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<UserContentFilter> | void);
+        save_from_file(identifier: string, file: Gio.File, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<UserContentFilter> | void;
 
         /**
          * Finishes and asynchronous filter save previously started with
@@ -10351,15 +10296,13 @@ export namespace WebKit2 {
              * @detailed
              * @run-last
              */
-            "script-message-with-reply-received": (arg0: JavaScriptCore.Value, arg1: ScriptMessageReply) => (boolean | void);
+            "script-message-with-reply-received": (arg0: JavaScriptCore.Value, arg1: ScriptMessageReply) => boolean | void;
             [key: `script-message-received::${string}`]: (arg0: JavascriptResult) => void;
-            [key: `script-message-with-reply-received::${string}`]: (arg0: JavaScriptCore.Value, arg1: ScriptMessageReply) => (boolean | void);
+            [key: `script-message-with-reply-received::${string}`]: (arg0: JavaScriptCore.Value, arg1: ScriptMessageReply) => boolean | void;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -10502,7 +10445,7 @@ export namespace WebKit2 {
          * @param world_name the name of a `WebKitScriptWorld`
          * @returns `true` if message handler was registered successfully, or `false` otherwise.
          */
-        register_script_message_handler_with_reply(name: string, world_name: (string | null)): boolean;
+        register_script_message_handler_with_reply(name: string, world_name: string | null): boolean;
 
         /**
          * Removes all content filters from the given {@link WebKit2.UserContentManager}.
@@ -10709,10 +10652,10 @@ export namespace WebKit2 {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.InitiallyUnowned.ConstructorProps {
-            fd_list: (Gio.UnixFDList | null);
-            fdList: (Gio.UnixFDList | null);
+            fd_list: Gio.UnixFDList | null;
+            fdList: Gio.UnixFDList | null;
             name: string;
-            parameters: (GLib.Variant | null);
+            parameters: GLib.Variant | null;
         }
     }
 
@@ -10737,14 +10680,14 @@ export namespace WebKit2 {
          * @since 2.28
          * @construct-only
          */
-        get fd_list(): (Gio.UnixFDList | null);
+        get fd_list(): Gio.UnixFDList | null;
 
         /**
          * The UNIX file descriptors of the user message.
          * @since 2.28
          * @construct-only
          */
-        get fdList(): (Gio.UnixFDList | null);
+        get fdList(): Gio.UnixFDList | null;
 
         /**
          * The name of the user message.
@@ -10761,7 +10704,7 @@ export namespace WebKit2 {
          * @since 2.28
          * @construct-only
          */
-        get parameters(): (GLib.Variant | null);
+        get parameters(): GLib.Variant | null;
 
         /**
          * Compile-time signal type information.
@@ -10777,9 +10720,9 @@ export namespace WebKit2 {
 
         _init(...args: any[]): void;
 
-        static ["new"](name: string, parameters: (GLib.Variant | null)): UserMessage;
+        static ["new"](name: string, parameters: GLib.Variant | null): UserMessage;
 
-        static new_with_fd_list(name: string, parameters: (GLib.Variant | null), fd_list: (Gio.UnixFDList | null)): UserMessage;
+        static new_with_fd_list(name: string, parameters: GLib.Variant | null, fd_list: Gio.UnixFDList | null): UserMessage;
 
         // Signals
         /** @signal */
@@ -10799,7 +10742,7 @@ export namespace WebKit2 {
          * Get the `message` list of file descritpor.
          * @returns the message list of file descriptors
          */
-        get_fd_list(): (Gio.UnixFDList | null);
+        get_fd_list(): Gio.UnixFDList | null;
 
         /**
          * Get the `message` name.
@@ -10811,7 +10754,7 @@ export namespace WebKit2 {
          * Get the `message` parameters.
          * @returns the message parameters
          */
-        get_parameters(): (GLib.Variant | null);
+        get_parameters(): GLib.Variant | null;
 
         /**
          * Send a reply to an user message.
@@ -10878,7 +10821,7 @@ export namespace WebKit2 {
              * @since 2.28
              * @run-last
              */
-            "user-message-received": (arg0: UserMessage) => (boolean | void);
+            "user-message-received": (arg0: UserMessage) => boolean | void;
             "notify::local-storage-directory": (pspec: GObject.ParamSpec) => void;
             "notify::memory-pressure-settings": (pspec: GObject.ParamSpec) => void;
             "notify::process-swap-on-cross-site-navigation-enabled": (pspec: GObject.ParamSpec) => void;
@@ -11232,7 +11175,7 @@ export namespace WebKit2 {
          * `webkit_web_context_get_plugins_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        get_plugins(cancellable: (Gio.Cancellable | null)): globalThis.Promise<Plugin[]>;
+        get_plugins(cancellable: Gio.Cancellable | null): globalThis.Promise<Plugin[]>;
 
         /**
          * Asynchronously get the list of installed plugins.
@@ -11242,7 +11185,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        get_plugins(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_plugins(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously get the list of installed plugins.
@@ -11252,7 +11195,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        get_plugins(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<Plugin[]> | void);
+        get_plugins(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Plugin[]> | void;
 
         /**
          * Finish an asynchronous operation started with webkit_web_context_get_plugins.
@@ -11499,7 +11442,7 @@ export namespace WebKit2 {
          * {@link WebKit2.WebContext} won't cause any effect.
          * @param path an absolute path to the icon database directory or `null` to use the defaults
          */
-        set_favicon_database_directory(path: (string | null)): void;
+        set_favicon_database_directory(path: string | null): void;
 
         /**
          * Set the network proxy settings to be used by connections started in `context`.
@@ -11514,7 +11457,7 @@ export namespace WebKit2 {
          * @param proxy_mode a {@link WebKit2.NetworkProxyMode}
          * @param proxy_settings a {@link WebKit2.NetworkProxySettings}, or `null`
          */
-        set_network_proxy_settings(proxy_mode: NetworkProxyMode, proxy_settings: (NetworkProxySettings | null)): void;
+        set_network_proxy_settings(proxy_mode: NetworkProxyMode, proxy_settings: NetworkProxySettings | null): void;
 
         /**
          * Set the list of preferred languages.
@@ -11529,7 +11472,7 @@ export namespace WebKit2 {
          *   `Intl` functions.
          * @param languages a `null`-terminated list of language identifiers
          */
-        set_preferred_languages(languages: (string[] | null)): void;
+        set_preferred_languages(languages: string[] | null): void;
 
         /**
          * This function previously allowed specifying the process model to use.
@@ -11641,7 +11584,7 @@ export namespace WebKit2 {
              * @signal
              * @run-last
              */
-            attach: () => (boolean | void);
+            attach: () => boolean | void;
             /**
              * Emitted when the inspector should be shown.
              * 
@@ -11657,7 +11600,7 @@ export namespace WebKit2 {
              * @signal
              * @run-last
              */
-            "bring-to-front": () => (boolean | void);
+            "bring-to-front": () => boolean | void;
             /**
              * Emitted when the inspector page is closed. If you are using your own
              * inspector window, you should connect to this signal and destroy your
@@ -11679,7 +11622,7 @@ export namespace WebKit2 {
              * @signal
              * @run-last
              */
-            detach: () => (boolean | void);
+            detach: () => boolean | void;
             /**
              * Emitted when the inspector is requested to open in a separate window.
              * If this signal is not handled, a {@link Gtk.Window} with the inspector will be
@@ -11693,7 +11636,7 @@ export namespace WebKit2 {
              * @signal
              * @run-last
              */
-            "open-window": () => (boolean | void);
+            "open-window": () => boolean | void;
             "notify::attached-height": (pspec: GObject.ParamSpec) => void;
             "notify::can-attach": (pspec: GObject.ParamSpec) => void;
             "notify::inspected-uri": (pspec: GObject.ParamSpec) => void;
@@ -12011,7 +11954,7 @@ export namespace WebKit2 {
          * `webkit_web_resource_get_data_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        get_data(cancellable: (Gio.Cancellable | null)): globalThis.Promise<Uint8Array>;
+        get_data(cancellable: Gio.Cancellable | null): globalThis.Promise<Uint8Array>;
 
         /**
          * Asynchronously get the raw data for `resource`.
@@ -12021,7 +11964,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        get_data(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_data(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously get the raw data for `resource`.
@@ -12031,7 +11974,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        get_data(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<Uint8Array> | void);
+        get_data(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Uint8Array> | void;
 
         /**
          * @param args 
@@ -12110,7 +12053,7 @@ export namespace WebKit2 {
              * @since 2.2
              * @run-last
              */
-            authenticate: (arg0: AuthenticationRequest) => (boolean | void);
+            authenticate: (arg0: AuthenticationRequest) => boolean | void;
             /**
              * Emitted when closing a {@link WebKit2.WebView} is requested. This occurs when a
              * call is made from JavaScript's <function>window.close</function> function or
@@ -12161,7 +12104,7 @@ export namespace WebKit2 {
              * @signal
              * @run-last
              */
-            "context-menu": (arg0: ContextMenu, arg1: Gdk.Event, arg2: HitTestResult) => (boolean | void);
+            "context-menu": (arg0: ContextMenu, arg1: Gdk.Event, arg2: HitTestResult) => boolean | void;
             /**
              * Emitted after {@link WebKit2.WebView.SignalSignatures.context_menu | WebKit2.WebView::context-menu} signal, if the context menu is shown,
              * to notify that the context menu is dismissed.
@@ -12234,7 +12177,7 @@ export namespace WebKit2 {
              * @signal
              * @run-last
              */
-            "decide-policy": (arg0: PolicyDecision, arg1: PolicyDecisionType) => (boolean | void);
+            "decide-policy": (arg0: PolicyDecision, arg1: PolicyDecisionType) => boolean | void;
             /**
              * Emitted when JavaScript code calls
              * <function>element.webkitRequestFullScreen</function>. If the
@@ -12247,7 +12190,7 @@ export namespace WebKit2 {
              * @signal
              * @run-last
              */
-            "enter-fullscreen": () => (boolean | void);
+            "enter-fullscreen": () => boolean | void;
             /**
              * Prior to 2.46, this signal was emitted when insecure content was
              * loaded in a secure content. Since 2.46, this signal is generally
@@ -12265,7 +12208,7 @@ export namespace WebKit2 {
              * @signal
              * @run-last
              */
-            "leave-fullscreen": () => (boolean | void);
+            "leave-fullscreen": () => boolean | void;
             /**
              * Emitted when a load operation in `web_view` changes.
              * The signal is always emitted with {@link WebKit2.LoadEvent.STARTED} when a
@@ -12329,7 +12272,7 @@ export namespace WebKit2 {
              * @signal
              * @run-last
              */
-            "load-failed": (arg0: LoadEvent, arg1: string, arg2: GLib.Error) => (boolean | void);
+            "load-failed": (arg0: LoadEvent, arg1: string, arg2: GLib.Error) => boolean | void;
             /**
              * Emitted when a TLS error occurs during a load operation.
              * To allow an exception for this `certificate`
@@ -12344,7 +12287,7 @@ export namespace WebKit2 {
              * @since 2.6
              * @run-last
              */
-            "load-failed-with-tls-errors": (arg0: string, arg1: Gio.TlsCertificate, arg2: Gio.TlsCertificateFlags) => (boolean | void);
+            "load-failed-with-tls-errors": (arg0: string, arg1: Gio.TlsCertificate, arg2: Gio.TlsCertificateFlags) => boolean | void;
             /**
              * This signal is emitted when the mouse cursor moves over an
              * element such as a link, image or a media element. To determine
@@ -12408,7 +12351,7 @@ export namespace WebKit2 {
              * @signal
              * @run-last
              */
-            "permission-request": (arg0: PermissionRequest) => (boolean | void);
+            "permission-request": (arg0: PermissionRequest) => boolean | void;
             /**
              * Emitted when printing is requested on `web_view`, usually by a JavaScript call,
              * before the print dialog is shown. This signal can be used to set the initial
@@ -12422,7 +12365,7 @@ export namespace WebKit2 {
              * @signal
              * @run-last
              */
-            print: (arg0: PrintOperation) => (boolean | void);
+            print: (arg0: PrintOperation) => boolean | void;
             /**
              * This signal allows the User-Agent to respond to permission requests for powerful features, as
              * specified by the [Permissions W3C Specification](https://w3c.github.io/permissions/).
@@ -12435,7 +12378,7 @@ export namespace WebKit2 {
              * @since 2.40
              * @run-last
              */
-            "query-permission-state": (arg0: PermissionStateQuery) => (boolean | void);
+            "query-permission-state": (arg0: PermissionStateQuery) => boolean | void;
             /**
              * Emitted after {@link WebKit2.WebView.SignalSignatures.create | WebKit2.WebView::create} on the newly created {@link WebKit2.WebView}
              * when it should be displayed to the user. When this signal is emitted
@@ -12486,7 +12429,7 @@ export namespace WebKit2 {
              * @since 2.8
              * @run-last
              */
-            "run-color-chooser": (arg0: ColorChooserRequest) => (boolean | void);
+            "run-color-chooser": (arg0: ColorChooserRequest) => boolean | void;
             /**
              * This signal is emitted when the user interacts with a <input
              * type='file' /> HTML element, requesting from WebKit to show
@@ -12502,7 +12445,7 @@ export namespace WebKit2 {
              * @signal
              * @run-last
              */
-            "run-file-chooser": (arg0: FileChooserRequest) => (boolean | void);
+            "run-file-chooser": (arg0: FileChooserRequest) => boolean | void;
             /**
              * Emitted when JavaScript code calls <function>window.alert</function>,
              * <function>window.confirm</function> or <function>window.prompt</function>,
@@ -12534,7 +12477,7 @@ export namespace WebKit2 {
              * @signal
              * @run-last
              */
-            "script-dialog": (arg0: ScriptDialog) => (boolean | void);
+            "script-dialog": (arg0: ScriptDialog) => boolean | void;
             /**
              * This signal is emitted when a notification should be presented to the
              * user. The `notification` is kept alive until either: 1) the web page cancels it
@@ -12546,7 +12489,7 @@ export namespace WebKit2 {
              * @since 2.8
              * @run-last
              */
-            "show-notification": (arg0: Notification) => (boolean | void);
+            "show-notification": (arg0: Notification) => boolean | void;
             /**
              * This signal is emitted when a select element in `web_view` needs to display a
              * dropdown menu. This signal can be used to show a custom menu, using `menu` to get
@@ -12564,7 +12507,7 @@ export namespace WebKit2 {
              * @since 2.18
              * @run-last
              */
-            "show-option-menu": (arg0: OptionMenu, arg1: Gdk.Event, arg2: Gdk.Rectangle) => (boolean | void);
+            "show-option-menu": (arg0: OptionMenu, arg1: Gdk.Event, arg2: Gdk.Rectangle) => boolean | void;
             /**
              * This signal is emitted when a form is about to be submitted. The `request`
              * argument passed contains information about the text fields of the form. This
@@ -12594,14 +12537,14 @@ export namespace WebKit2 {
              * @since 2.28
              * @run-last
              */
-            "user-message-received": (arg0: UserMessage) => (boolean | void);
+            "user-message-received": (arg0: UserMessage) => boolean | void;
             /**
              * This signal is emitted when the web process crashes.
              * @signal
              * @deprecated since 2.20: Use WebKitWebView::web-process-terminated instead.
              * @run-last
              */
-            "web-process-crashed": () => (boolean | void);
+            "web-process-crashed": () => boolean | void;
             /**
              * This signal is emitted when the web process terminates abnormally due
              * to `reason`.
@@ -12686,8 +12629,8 @@ export namespace WebKit2 {
             automationPresentationType: AutomationBrowsingContextPresentation;
             camera_capture_state: MediaCaptureState;
             cameraCaptureState: MediaCaptureState;
-            default_content_security_policy: (string | null);
-            defaultContentSecurityPolicy: (string | null);
+            default_content_security_policy: string | null;
+            defaultContentSecurityPolicy: string | null;
             display_capture_state: MediaCaptureState;
             displayCaptureState: MediaCaptureState;
             editable: boolean;
@@ -12710,8 +12653,8 @@ export namespace WebKit2 {
             isWebProcessResponsive: boolean;
             microphone_capture_state: MediaCaptureState;
             microphoneCaptureState: MediaCaptureState;
-            page_id: (bigint | number);
-            pageId: (bigint | number);
+            page_id: bigint | number;
+            pageId: bigint | number;
             related_view: WebView;
             relatedView: WebView;
             settings: Settings;
@@ -12822,7 +12765,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get default_content_security_policy(): (string | null);
+        get default_content_security_policy(): string | null;
 
         /**
          * The default Content-Security-Policy used by the webview as if it were set
@@ -12839,7 +12782,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get defaultContentSecurityPolicy(): (string | null);
+        get defaultContentSecurityPolicy(): string | null;
 
         /**
          * Capture state of the display device. Whenever the user grants a media-request sent by the web
@@ -13549,7 +13492,7 @@ export namespace WebKit2 {
          * @param source_uri the source URI
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        call_async_javascript_function(body: string, length: (bigint | number), _arguments: (GLib.Variant | null), world_name: (string | null), source_uri: (string | null), cancellable: (Gio.Cancellable | null)): globalThis.Promise<JavaScriptCore.Value>;
+        call_async_javascript_function(body: string, length: bigint | number, _arguments: GLib.Variant | null, world_name: string | null, source_uri: string | null, cancellable: Gio.Cancellable | null): globalThis.Promise<JavaScriptCore.Value>;
 
         /**
          * Asynchronously call `body` with `arguments` in the script world with name `world_name` of the main frame current context in `web_view`.
@@ -13618,7 +13561,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
          */
-        call_async_javascript_function(body: string, length: (bigint | number), _arguments: (GLib.Variant | null), world_name: (string | null), source_uri: (string | null), cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        call_async_javascript_function(body: string, length: bigint | number, _arguments: GLib.Variant | null, world_name: string | null, source_uri: string | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously call `body` with `arguments` in the script world with name `world_name` of the main frame current context in `web_view`.
@@ -13687,7 +13630,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
          */
-        call_async_javascript_function(body: string, length: (bigint | number), _arguments: (GLib.Variant | null), world_name: (string | null), source_uri: (string | null), cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<JavaScriptCore.Value> | void);
+        call_async_javascript_function(body: string, length: bigint | number, _arguments: GLib.Variant | null, world_name: string | null, source_uri: string | null, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<JavaScriptCore.Value> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_web_view_call_async_javascript_function()`.
@@ -13704,7 +13647,7 @@ export namespace WebKit2 {
          * @param command the command to check
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        can_execute_editing_command(command: string, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        can_execute_editing_command(command: string, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously check if it is possible to execute the given editing command.
@@ -13715,7 +13658,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        can_execute_editing_command(command: string, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        can_execute_editing_command(command: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously check if it is possible to execute the given editing command.
@@ -13726,7 +13669,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        can_execute_editing_command(command: string, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        can_execute_editing_command(command: string, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_web_view_can_execute_editing_command()`.
@@ -13822,7 +13765,7 @@ export namespace WebKit2 {
          * @param source_uri the source URI
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        evaluate_javascript(script: string, length: (bigint | number), world_name: (string | null), source_uri: (string | null), cancellable: (Gio.Cancellable | null)): globalThis.Promise<JavaScriptCore.Value>;
+        evaluate_javascript(script: string, length: bigint | number, world_name: string | null, source_uri: string | null, cancellable: Gio.Cancellable | null): globalThis.Promise<JavaScriptCore.Value>;
 
         /**
          * Asynchronously evaluate `script` in the script world with name `world_name` of the main frame current context in `web_view`.
@@ -13886,7 +13829,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
          */
-        evaluate_javascript(script: string, length: (bigint | number), world_name: (string | null), source_uri: (string | null), cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        evaluate_javascript(script: string, length: bigint | number, world_name: string | null, source_uri: string | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously evaluate `script` in the script world with name `world_name` of the main frame current context in `web_view`.
@@ -13950,7 +13893,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
          */
-        evaluate_javascript(script: string, length: (bigint | number), world_name: (string | null), source_uri: (string | null), cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<JavaScriptCore.Value> | void);
+        evaluate_javascript(script: string, length: bigint | number, world_name: string | null, source_uri: string | null, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<JavaScriptCore.Value> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_web_view_evaluate_javascript()`.
@@ -14024,7 +13967,7 @@ export namespace WebKit2 {
          * Gets the configured default Content-Security-Policy.
          * @returns The default policy or `null`
          */
-        get_default_content_security_policy(): (string | null);
+        get_default_content_security_policy(): string | null;
 
         /**
          * Get the display capture state of a {@link WebKit2.WebView}.
@@ -14072,7 +14015,7 @@ export namespace WebKit2 {
          * Get the {@link WebKit2.InputMethodContext} currently in use by `web_view`, or `null` if no input method is being used.
          * @returns a {@link WebKit2.InputMethodContext}, or `null`
          */
-        get_input_method_context(): (InputMethodContext | null);
+        get_input_method_context(): InputMethodContext | null;
 
         /**
          * Get the {@link WebKit2.WebInspector} associated to `web_view`
@@ -14154,7 +14097,7 @@ export namespace WebKit2 {
          * @param options {@link WebKit2.SnapshotOptions} for the snapshot
          * @param cancellable a {@link Gio.Cancellable}
          */
-        get_snapshot(region: SnapshotRegion, options: SnapshotOptions, cancellable: (Gio.Cancellable | null)): globalThis.Promise<cairo.Surface>;
+        get_snapshot(region: SnapshotRegion, options: SnapshotOptions, cancellable: Gio.Cancellable | null): globalThis.Promise<cairo.Surface>;
 
         /**
          * Asynchronously retrieves a snapshot of `web_view` for `region`.
@@ -14169,7 +14112,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable}
          * @param callback a {@link Gio.AsyncReadyCallback}
          */
-        get_snapshot(region: SnapshotRegion, options: SnapshotOptions, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_snapshot(region: SnapshotRegion, options: SnapshotOptions, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously retrieves a snapshot of `web_view` for `region`.
@@ -14184,7 +14127,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable}
          * @param callback a {@link Gio.AsyncReadyCallback}
          */
-        get_snapshot(region: SnapshotRegion, options: SnapshotOptions, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<cairo.Surface> | void);
+        get_snapshot(region: SnapshotRegion, options: SnapshotOptions, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<cairo.Surface> | void;
 
         /**
          * Finishes an asynchronous operation started with `webkit_web_view_get_snapshot()`, producing
@@ -14399,7 +14342,7 @@ export namespace WebKit2 {
          * @param content_uri the URI for the alternate page content
          * @param base_uri the base URI for relative locations or `null`
          */
-        load_alternate_html(content: string, content_uri: string, base_uri: (string | null)): void;
+        load_alternate_html(content: string, content_uri: string, base_uri: string | null): void;
 
         /**
          * Load the specified `bytes` into `web_view` using the given `mime_type` and `encoding`.
@@ -14413,7 +14356,7 @@ export namespace WebKit2 {
          * @param encoding the character encoding of `bytes`, or `null`
          * @param base_uri the base URI for relative locations or `null`
          */
-        load_bytes(bytes: (GLib.Bytes | Uint8Array), mime_type: (string | null), encoding: (string | null), base_uri: (string | null)): void;
+        load_bytes(bytes: GLib.Bytes | Uint8Array, mime_type: string | null, encoding: string | null, base_uri: string | null): void;
 
         /**
          * Load the given `content` string with the specified `base_uri`.
@@ -14429,7 +14372,7 @@ export namespace WebKit2 {
          * @param content The HTML string to load
          * @param base_uri The base URI for relative locations or `null`
          */
-        load_html(content: string, base_uri: (string | null)): void;
+        load_html(content: string, base_uri: string | null): void;
 
         /**
          * Load the specified `plain_text` string into `web_view`.
@@ -14538,7 +14481,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
          */
-        run_async_javascript_function_in_world(body: string, _arguments: GLib.Variant, world_name: (string | null), cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        run_async_javascript_function_in_world(body: string, _arguments: GLib.Variant, world_name: string | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously run `script` in the context of the current page in `web_view`.
@@ -14550,20 +14493,7 @@ export namespace WebKit2 {
          * @param script the script to run
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        run_javascript(script: string, cancellable: (Gio.Cancellable | null)): globalThis.Promise<JavascriptResult>;
-
-        /**
-         * Asynchronously run `script` in the context of the current page in `web_view`.
-         * 
-         * If WebKitSettings:enable-javascript is FALSE, this method will do nothing.
-         * 
-         * When the operation is finished, `callback` will be called. You can then call
-         * `webkit_web_view_run_javascript_finish()` to get the result of the operation.
-         * @param script the script to run
-         * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
-         */
-        run_javascript(script: string, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        run_javascript(script: string, cancellable: Gio.Cancellable | null): globalThis.Promise<JavascriptResult>;
 
         /**
          * Asynchronously run `script` in the context of the current page in `web_view`.
@@ -14576,7 +14506,20 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
          */
-        run_javascript(script: string, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<JavascriptResult> | void);
+        run_javascript(script: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously run `script` in the context of the current page in `web_view`.
+         * 
+         * If WebKitSettings:enable-javascript is FALSE, this method will do nothing.
+         * 
+         * When the operation is finished, `callback` will be called. You can then call
+         * `webkit_web_view_run_javascript_finish()` to get the result of the operation.
+         * @param script the script to run
+         * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
+         */
+        run_javascript(script: string, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<JavascriptResult> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_web_view_run_javascript()`.
@@ -14642,7 +14585,7 @@ export namespace WebKit2 {
          * @param resource the location of the resource to load
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        run_javascript_from_gresource(resource: string, cancellable: (Gio.Cancellable | null)): globalThis.Promise<JavascriptResult>;
+        run_javascript_from_gresource(resource: string, cancellable: Gio.Cancellable | null): globalThis.Promise<JavascriptResult>;
 
         /**
          * Asynchronously run the script from `resource`.
@@ -14657,7 +14600,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
          */
-        run_javascript_from_gresource(resource: string, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        run_javascript_from_gresource(resource: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously run the script from `resource`.
@@ -14672,7 +14615,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
          */
-        run_javascript_from_gresource(resource: string, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<JavascriptResult> | void);
+        run_javascript_from_gresource(resource: string, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<JavascriptResult> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_web_view_run_javascript_from_gresource()`.
@@ -14695,7 +14638,7 @@ export namespace WebKit2 {
          * @param world_name the name of a `WebKitScriptWorld`
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        run_javascript_in_world(script: string, world_name: string, cancellable: (Gio.Cancellable | null)): globalThis.Promise<JavascriptResult>;
+        run_javascript_in_world(script: string, world_name: string, cancellable: Gio.Cancellable | null): globalThis.Promise<JavascriptResult>;
 
         /**
          * Asynchronously run `script` in the script world.
@@ -14710,7 +14653,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
          */
-        run_javascript_in_world(script: string, world_name: string, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        run_javascript_in_world(script: string, world_name: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously run `script` in the script world.
@@ -14725,7 +14668,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
          */
-        run_javascript_in_world(script: string, world_name: string, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<JavascriptResult> | void);
+        run_javascript_in_world(script: string, world_name: string, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<JavascriptResult> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_web_view_run_javascript_in_world()`.
@@ -14747,7 +14690,7 @@ export namespace WebKit2 {
          * @param save_mode the {@link WebKit2.SaveMode} specifying how the web page should be saved.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        save(save_mode: SaveMode, cancellable: (Gio.Cancellable | null)): globalThis.Promise<Gio.InputStream>;
+        save(save_mode: SaveMode, cancellable: Gio.Cancellable | null): globalThis.Promise<Gio.InputStream>;
 
         /**
          * Asynchronously save the current web page.
@@ -14763,7 +14706,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        save(save_mode: SaveMode, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        save(save_mode: SaveMode, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously save the current web page.
@@ -14779,7 +14722,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        save(save_mode: SaveMode, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<Gio.InputStream> | void);
+        save(save_mode: SaveMode, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Gio.InputStream> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_web_view_save()`.
@@ -14802,7 +14745,7 @@ export namespace WebKit2 {
          * @param save_mode the {@link WebKit2.SaveMode} specifying how the web page should be saved.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        save_to_file(file: Gio.File, save_mode: SaveMode, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        save_to_file(file: Gio.File, save_mode: SaveMode, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously save the current web page.
@@ -14819,7 +14762,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        save_to_file(file: Gio.File, save_mode: SaveMode, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        save_to_file(file: Gio.File, save_mode: SaveMode, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously save the current web page.
@@ -14836,7 +14779,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        save_to_file(file: Gio.File, save_mode: SaveMode, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        save_to_file(file: Gio.File, save_mode: SaveMode, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_web_view_save_to_file()`.
@@ -14855,7 +14798,7 @@ export namespace WebKit2 {
          * @param message a {@link WebKit2.UserMessage}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        send_message_to_page(message: UserMessage, cancellable: (Gio.Cancellable | null)): globalThis.Promise<UserMessage>;
+        send_message_to_page(message: UserMessage, cancellable: Gio.Cancellable | null): globalThis.Promise<UserMessage>;
 
         /**
          * Send `message` to the `WebKitWebPage` corresponding to `web_view`.
@@ -14868,7 +14811,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback (nullable): A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`
          */
-        send_message_to_page(message: UserMessage, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        send_message_to_page(message: UserMessage, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Send `message` to the `WebKitWebPage` corresponding to `web_view`.
@@ -14881,7 +14824,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback (nullable): A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`
          */
-        send_message_to_page(message: UserMessage, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<UserMessage> | void);
+        send_message_to_page(message: UserMessage, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<UserMessage> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_web_view_send_message_to_page()`.
@@ -14951,7 +14894,7 @@ export namespace WebKit2 {
          * the most recent call will be effective.
          * @param allowlist an allowlist of URI patterns, or `null`
          */
-        set_cors_allowlist(allowlist: (string[] | null)): void;
+        set_cors_allowlist(allowlist: string[] | null): void;
 
         /**
          * Sets the current custom character encoding override of `web_view`.
@@ -14962,7 +14905,7 @@ export namespace WebKit2 {
          * encoding override.
          * @param charset a character encoding name or `null`
          */
-        set_custom_charset(charset: (string | null)): void;
+        set_custom_charset(charset: string | null): void;
 
         /**
          * Set the display capture state of a {@link WebKit2.WebView}.
@@ -14996,7 +14939,7 @@ export namespace WebKit2 {
          * Note that the same {@link WebKit2.InputMethodContext} can't be set on more than one {@link WebKit2.WebView} at the same time.
          * @param context the {@link WebKit2.InputMethodContext} to set, or `null`
          */
-        set_input_method_context(context: (InputMethodContext | null)): void;
+        set_input_method_context(context: InputMethodContext | null): void;
 
         /**
          * Sets the mute state of `web_view`.
@@ -15114,9 +15057,7 @@ export namespace WebKit2 {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gtk.Container.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Gtk.Buildable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gtk.Container.ConstructorProps, Atk.ImplementorIface.ConstructorProps, Gtk.Buildable.ConstructorProps {}
     }
 
     /**
@@ -15156,13 +15097,10 @@ export namespace WebKit2 {
 
     namespace WebsiteDataAccessPermissionRequest {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {}
     }
 
     /**
@@ -15264,34 +15202,34 @@ export namespace WebKit2 {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            base_cache_directory: (string | null);
-            baseCacheDirectory: (string | null);
-            base_data_directory: (string | null);
-            baseDataDirectory: (string | null);
-            disk_cache_directory: (string | null);
-            diskCacheDirectory: (string | null);
-            dom_cache_directory: (string | null);
-            domCacheDirectory: (string | null);
-            hsts_cache_directory: (string | null);
-            hstsCacheDirectory: (string | null);
-            indexeddb_directory: (string | null);
-            indexeddbDirectory: (string | null);
+            base_cache_directory: string | null;
+            baseCacheDirectory: string | null;
+            base_data_directory: string | null;
+            baseDataDirectory: string | null;
+            disk_cache_directory: string | null;
+            diskCacheDirectory: string | null;
+            dom_cache_directory: string | null;
+            domCacheDirectory: string | null;
+            hsts_cache_directory: string | null;
+            hstsCacheDirectory: string | null;
+            indexeddb_directory: string | null;
+            indexeddbDirectory: string | null;
             is_ephemeral: boolean;
             isEphemeral: boolean;
-            itp_directory: (string | null);
-            itpDirectory: (string | null);
-            local_storage_directory: (string | null);
-            localStorageDirectory: (string | null);
-            offline_application_cache_directory: (string | null);
-            offlineApplicationCacheDirectory: (string | null);
+            itp_directory: string | null;
+            itpDirectory: string | null;
+            local_storage_directory: string | null;
+            localStorageDirectory: string | null;
+            offline_application_cache_directory: string | null;
+            offlineApplicationCacheDirectory: string | null;
             origin_storage_ratio: number;
             originStorageRatio: number;
-            service_worker_registrations_directory: (string | null);
-            serviceWorkerRegistrationsDirectory: (string | null);
+            service_worker_registrations_directory: string | null;
+            serviceWorkerRegistrationsDirectory: string | null;
             total_storage_ratio: number;
             totalStorageRatio: number;
-            websql_directory: (string | null);
-            websqlDirectory: (string | null);
+            websql_directory: string | null;
+            websqlDirectory: string | null;
         }
     }
 
@@ -15323,7 +15261,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get base_cache_directory(): (string | null);
+        get base_cache_directory(): string | null;
 
         /**
          * The base directory for caches. If `null`, a default location will be used.
@@ -15331,7 +15269,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get baseCacheDirectory(): (string | null);
+        get baseCacheDirectory(): string | null;
 
         /**
          * The base directory for website data. If `null`, a default location will be used.
@@ -15339,7 +15277,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get base_data_directory(): (string | null);
+        get base_data_directory(): string | null;
 
         /**
          * The base directory for website data. If `null`, a default location will be used.
@@ -15347,7 +15285,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get baseDataDirectory(): (string | null);
+        get baseDataDirectory(): string | null;
 
         /**
          * The directory where HTTP disk cache will be stored.
@@ -15356,7 +15294,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get disk_cache_directory(): (string | null);
+        get disk_cache_directory(): string | null;
 
         /**
          * The directory where HTTP disk cache will be stored.
@@ -15365,7 +15303,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get diskCacheDirectory(): (string | null);
+        get diskCacheDirectory(): string | null;
 
         /**
          * The directory where DOM cache will be stored.
@@ -15374,7 +15312,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get dom_cache_directory(): (string | null);
+        get dom_cache_directory(): string | null;
 
         /**
          * The directory where DOM cache will be stored.
@@ -15383,7 +15321,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get domCacheDirectory(): (string | null);
+        get domCacheDirectory(): string | null;
 
         /**
          * The directory where the HTTP Strict-Transport-Security (HSTS) cache will be stored.
@@ -15392,7 +15330,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get hsts_cache_directory(): (string | null);
+        get hsts_cache_directory(): string | null;
 
         /**
          * The directory where the HTTP Strict-Transport-Security (HSTS) cache will be stored.
@@ -15401,7 +15339,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get hstsCacheDirectory(): (string | null);
+        get hstsCacheDirectory(): string | null;
 
         /**
          * The directory where IndexedDB databases will be stored.
@@ -15410,7 +15348,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get indexeddb_directory(): (string | null);
+        get indexeddb_directory(): string | null;
 
         /**
          * The directory where IndexedDB databases will be stored.
@@ -15419,7 +15357,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get indexeddbDirectory(): (string | null);
+        get indexeddbDirectory(): string | null;
 
         /**
          * Whether the {@link WebKit2.WebsiteDataManager} is ephemeral. An ephemeral {@link WebKit2.WebsiteDataManager}
@@ -15450,7 +15388,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get itp_directory(): (string | null);
+        get itp_directory(): string | null;
 
         /**
          * The directory where Intelligent Tracking Prevention (ITP) data will be stored.
@@ -15459,7 +15397,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get itpDirectory(): (string | null);
+        get itpDirectory(): string | null;
 
         /**
          * The directory where local storage data will be stored.
@@ -15468,7 +15406,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get local_storage_directory(): (string | null);
+        get local_storage_directory(): string | null;
 
         /**
          * The directory where local storage data will be stored.
@@ -15477,7 +15415,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get localStorageDirectory(): (string | null);
+        get localStorageDirectory(): string | null;
 
         /**
          * The directory where offline web application cache will be stored.
@@ -15486,7 +15424,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get offline_application_cache_directory(): (string | null);
+        get offline_application_cache_directory(): string | null;
 
         /**
          * The directory where offline web application cache will be stored.
@@ -15495,7 +15433,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get offlineApplicationCacheDirectory(): (string | null);
+        get offlineApplicationCacheDirectory(): string | null;
 
         /**
          * The percentage of volume space that can be used for data storage for every domain.
@@ -15526,7 +15464,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get service_worker_registrations_directory(): (string | null);
+        get service_worker_registrations_directory(): string | null;
 
         /**
          * The directory where service workers registrations will be stored.
@@ -15535,7 +15473,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get serviceWorkerRegistrationsDirectory(): (string | null);
+        get serviceWorkerRegistrationsDirectory(): string | null;
 
         /**
          * The percentage of volume space that can be used for data storage for all domains.
@@ -15566,7 +15504,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get websql_directory(): (string | null);
+        get websql_directory(): string | null;
 
         /**
          * The directory where WebSQL databases will be stored.
@@ -15575,7 +15513,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get websqlDirectory(): (string | null);
+        get websqlDirectory(): string | null;
 
         /**
          * Compile-time signal type information.
@@ -15641,7 +15579,7 @@ export namespace WebKit2 {
          * @param timespan a {@link GLib.TimeSpan}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        clear(types: WebsiteDataTypes, timespan: GLib.TimeSpan, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        clear(types: WebsiteDataTypes, timespan: GLib.TimeSpan, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously clear the website data of the given `types` modified in the past `timespan`.
@@ -15659,7 +15597,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        clear(types: WebsiteDataTypes, timespan: GLib.TimeSpan, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        clear(types: WebsiteDataTypes, timespan: GLib.TimeSpan, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously clear the website data of the given `types` modified in the past `timespan`.
@@ -15677,7 +15615,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        clear(types: WebsiteDataTypes, timespan: GLib.TimeSpan, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        clear(types: WebsiteDataTypes, timespan: GLib.TimeSpan, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_website_data_manager_clear()`
@@ -15694,7 +15632,7 @@ export namespace WebKit2 {
          * @param types {@link WebKit2.WebsiteDataTypes}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        fetch(types: WebsiteDataTypes, cancellable: (Gio.Cancellable | null)): globalThis.Promise<WebsiteData[]>;
+        fetch(types: WebsiteDataTypes, cancellable: Gio.Cancellable | null): globalThis.Promise<WebsiteData[]>;
 
         /**
          * Asynchronously get the list of {@link WebKit2.WebsiteData} for the given `types`.
@@ -15705,7 +15643,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        fetch(types: WebsiteDataTypes, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        fetch(types: WebsiteDataTypes, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously get the list of {@link WebKit2.WebsiteData} for the given `types`.
@@ -15716,7 +15654,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        fetch(types: WebsiteDataTypes, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<WebsiteData[]> | void);
+        fetch(types: WebsiteDataTypes, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<WebsiteData[]> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_website_data_manager_fetch()`.
@@ -15729,13 +15667,13 @@ export namespace WebKit2 {
          * Get the {@link WebKit2.WebsiteDataManager.base_cache_directory} property.
          * @returns the base directory for caches, or `null` if    {@link WebKit2.WebsiteDataManager.base_cache_directory} was not provided or `manager` is ephemeral.
          */
-        get_base_cache_directory(): (string | null);
+        get_base_cache_directory(): string | null;
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.base_data_directory} property.
          * @returns the base directory for website data, or `null` if    {@link WebKit2.WebsiteDataManager.base_data_directory} was not provided or `manager` is ephemeral.
          */
-        get_base_data_directory(): (string | null);
+        get_base_data_directory(): string | null;
 
         /**
          * Get the {@link WebKit2.CookieManager} of `manager`.
@@ -15747,31 +15685,31 @@ export namespace WebKit2 {
          * Get the {@link WebKit2.WebsiteDataManager.disk_cache_directory} property.
          * @returns the directory where HTTP disk cache is stored or `null` if `manager` is ephemeral.
          */
-        get_disk_cache_directory(): (string | null);
+        get_disk_cache_directory(): string | null;
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.dom_cache_directory} property.
          * @returns the directory where DOM cache is stored or `null` if `manager` is ephemeral.
          */
-        get_dom_cache_directory(): (string | null);
+        get_dom_cache_directory(): string | null;
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.hsts_cache_directory} property.
          * @returns the directory where the HSTS cache is stored or `null` if `manager` is ephemeral.
          */
-        get_hsts_cache_directory(): (string | null);
+        get_hsts_cache_directory(): string | null;
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.indexeddb_directory} property.
          * @returns the directory where IndexedDB databases are stored or `null` if `manager` is ephemeral.
          */
-        get_indexeddb_directory(): (string | null);
+        get_indexeddb_directory(): string | null;
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.itp_directory} property.
          * @returns the directory where Intelligent Tracking Prevention data is stored or `null` if `manager` is ephemeral.
          */
-        get_itp_directory(): (string | null);
+        get_itp_directory(): string | null;
 
         /**
          * Get whether Intelligent Tracking Prevention (ITP) is enabled or not.
@@ -15789,7 +15727,7 @@ export namespace WebKit2 {
          * `webkit_website_data_manager_get_itp_summary_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        get_itp_summary(cancellable: (Gio.Cancellable | null)): globalThis.Promise<ITPThirdParty[]>;
+        get_itp_summary(cancellable: Gio.Cancellable | null): globalThis.Promise<ITPThirdParty[]>;
 
         /**
          * Asynchronously get the list of {@link WebKit2.ITPThirdParty} seen for `manager`.
@@ -15802,7 +15740,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        get_itp_summary(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_itp_summary(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously get the list of {@link WebKit2.ITPThirdParty} seen for `manager`.
@@ -15815,7 +15753,7 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        get_itp_summary(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<ITPThirdParty[]> | void);
+        get_itp_summary(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<ITPThirdParty[]> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_website_data_manager_get_itp_summary()`.
@@ -15828,13 +15766,13 @@ export namespace WebKit2 {
          * Get the {@link WebKit2.WebsiteDataManager.local_storage_directory} property.
          * @returns the directory where local storage data is stored or `null` if `manager` is ephemeral.
          */
-        get_local_storage_directory(): (string | null);
+        get_local_storage_directory(): string | null;
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.offline_application_cache_directory} property.
          * @returns the directory where offline web application cache is stored or `null` if `manager` is ephemeral.
          */
-        get_offline_application_cache_directory(): (string | null);
+        get_offline_application_cache_directory(): string | null;
 
         /**
          * Get whether persistent credential storage is enabled or not.
@@ -15848,7 +15786,7 @@ export namespace WebKit2 {
          * Get the {@link WebKit2.WebsiteDataManager.service_worker_registrations_directory} property.
          * @returns the directory where service worker registrations are stored or `null` if `manager` is ephemeral.
          */
-        get_service_worker_registrations_directory(): (string | null);
+        get_service_worker_registrations_directory(): string | null;
 
         /**
          * Get the TLS errors policy of `manager`.
@@ -15860,7 +15798,7 @@ export namespace WebKit2 {
          * Get the {@link WebKit2.WebsiteDataManager.websql_directory} property.
          * @returns the directory where WebSQL databases are stored or `null` if `manager` is ephemeral.
          */
-        get_websql_directory(): (string | null);
+        get_websql_directory(): string | null;
 
         /**
          * Asynchronously removes the website data in the given `website_data` list.
@@ -15874,22 +15812,7 @@ export namespace WebKit2 {
          * @param website_data a {@link GLib.List} of {@link WebKit2.WebsiteData}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          */
-        remove(types: WebsiteDataTypes, website_data: WebsiteData[], cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Asynchronously removes the website data in the given `website_data` list.
-         * 
-         * Asynchronously removes the website data of the given `types` for websites in the given `website_data` list.
-         * Use `webkit_website_data_manager_clear()` if you want to remove the website data for all sites.
-         * 
-         * When the operation is finished, `callback` will be called. You can then call
-         * `webkit_website_data_manager_remove_finish()` to get the result of the operation.
-         * @param types {@link WebKit2.WebsiteDataTypes}
-         * @param website_data a {@link GLib.List} of {@link WebKit2.WebsiteData}
-         * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
-         */
-        remove(types: WebsiteDataTypes, website_data: WebsiteData[], cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        remove(types: WebsiteDataTypes, website_data: WebsiteData[], cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously removes the website data in the given `website_data` list.
@@ -15904,7 +15827,22 @@ export namespace WebKit2 {
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        remove(types: WebsiteDataTypes, website_data: WebsiteData[], cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        remove(types: WebsiteDataTypes, website_data: WebsiteData[], cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously removes the website data in the given `website_data` list.
+         * 
+         * Asynchronously removes the website data of the given `types` for websites in the given `website_data` list.
+         * Use `webkit_website_data_manager_clear()` if you want to remove the website data for all sites.
+         * 
+         * When the operation is finished, `callback` will be called. You can then call
+         * `webkit_website_data_manager_remove_finish()` to get the result of the operation.
+         * @param types {@link WebKit2.WebsiteDataTypes}
+         * @param website_data a {@link GLib.List} of {@link WebKit2.WebsiteData}
+         * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         */
+        remove(types: WebsiteDataTypes, website_data: WebsiteData[], cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finish an asynchronous operation started with `webkit_website_data_manager_remove()`.
@@ -15937,7 +15875,7 @@ export namespace WebKit2 {
          * @param proxy_mode a {@link WebKit2.NetworkProxyMode}
          * @param proxy_settings a {@link WebKit2.NetworkProxySettings}, or `null`
          */
-        set_network_proxy_settings(proxy_mode: NetworkProxyMode, proxy_settings: (NetworkProxySettings | null)): void;
+        set_network_proxy_settings(proxy_mode: NetworkProxyMode, proxy_settings: NetworkProxySettings | null): void;
 
         /**
          * Enable or disable persistent credential storage.
@@ -16288,13 +16226,10 @@ export namespace WebKit2 {
 
     namespace XRPermissionRequest {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, PermissionRequest.ConstructorProps {}
     }
 
     /**
@@ -16440,10 +16375,7 @@ export namespace WebKit2 {
         static $gtype: GObject.GType<ApplicationInfo>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): ApplicationInfo;
 
@@ -16491,7 +16423,7 @@ export namespace WebKit2 {
          * @param minor the minor version number
          * @param micro the micro version number
          */
-        set_version(major: (bigint | number), minor: (bigint | number), micro: (bigint | number)): void;
+        set_version(major: bigint | number, minor: bigint | number, micro: bigint | number): void;
 
         /**
          * Atomically decrements the reference count of `info` by one.
@@ -16635,7 +16567,7 @@ export namespace WebKit2 {
 
         static ["new"](username: string, password: string, persistence: CredentialPersistence): Credential;
 
-        static new_for_certificate(certificate: (Gio.TlsCertificate | null), persistence: CredentialPersistence): Credential;
+        static new_for_certificate(certificate: Gio.TlsCertificate | null, persistence: CredentialPersistence): Credential;
 
         static new_for_certificate_pin(pin: string, persistence: CredentialPersistence): Credential;
 
@@ -16809,7 +16741,7 @@ export namespace WebKit2 {
          * is returned in this case.
          * @returns Feature description.
          */
-        get_details(): (string | null);
+        get_details(): string | null;
 
         /**
          * Gets a string that uniquely identifies the `feature`.
@@ -16827,7 +16759,7 @@ export namespace WebKit2 {
          * is returned in this case.
          * @returns Short feature name.
          */
-        get_name(): (string | null);
+        get_name(): string | null;
 
         /**
          * Gets the status of the feature.
@@ -16884,7 +16816,7 @@ export namespace WebKit2 {
          * @param index index of the feature
          * @returns The feature at `index`.
          */
-        get(index: (bigint | number)): Feature;
+        get(index: bigint | number): Feature;
 
         /**
          * Gets the number of elements in the feature list.
@@ -17037,7 +16969,7 @@ export namespace WebKit2 {
          * By default it's the time when the `position` was created.
          * @param timestamp timestamp in seconds since the epoch, or 0 to use current time
          */
-        set_timestamp(timestamp: (bigint | number)): void;
+        set_timestamp(timestamp: bigint | number): void;
     }
 
 
@@ -17191,7 +17123,7 @@ export namespace WebKit2 {
          * for the underline too.
          * @param rgba a {@link Gdk.RGBA} or `null`
          */
-        set_color(rgba: (Gdk.RGBA | null)): void;
+        set_color(rgba: Gdk.RGBA | null): void;
     }
 
 
@@ -17283,10 +17215,7 @@ export namespace WebKit2 {
         static $gtype: GObject.GType<MemoryPressureSettings>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): MemoryPressureSettings;
 
@@ -17400,7 +17329,7 @@ export namespace WebKit2 {
          * Gets the description of the MIME type.
          * @returns description, as a string.
          */
-        get_description(): (string | null);
+        get_description(): string | null;
 
         /**
          * Get the list of file extensions associated to the MIME type.
@@ -17458,7 +17387,7 @@ export namespace WebKit2 {
          * In all other cases this function will return `null`.
          * @returns The name of the new frame this navigation action targets or `null`
          */
-        get_frame_name(): (string | null);
+        get_frame_name(): string | null;
 
         /**
          * Return the modifier keys.
@@ -17536,9 +17465,9 @@ export namespace WebKit2 {
         static $gtype: GObject.GType<NetworkProxySettings>;
 
         // Constructors
-        constructor(default_proxy_uri: (string | null), ignore_hosts: (string[] | null));
+        constructor(default_proxy_uri: string | null, ignore_hosts: string[] | null);
 
-        static ["new"](default_proxy_uri: (string | null), ignore_hosts: (string[] | null)): NetworkProxySettings;
+        static ["new"](default_proxy_uri: string | null, ignore_hosts: string[] | null): NetworkProxySettings;
 
         // Methods
         /**
@@ -17977,7 +17906,7 @@ export namespace WebKit2 {
          * if its protocol does not require a host component.
          * @returns The host of the {@link WebKit2.SecurityOrigin}
          */
-        get_host(): (string | null);
+        get_host(): string | null;
 
         /**
          * Gets the port of `origin`.
@@ -17995,7 +17924,7 @@ export namespace WebKit2 {
          * Gets the protocol of `origin`.
          * @returns The protocol of the {@link WebKit2.SecurityOrigin}
          */
-        get_protocol(): (string | null);
+        get_protocol(): string | null;
 
         /**
          * This function returns `false`.
@@ -18023,7 +17952,7 @@ export namespace WebKit2 {
          * `null`.
          * @returns a URI representing `origin`.
          */
-        to_string(): (string | null);
+        to_string(): string | null;
 
         /**
          * Atomically decrements the reference count of `origin` by one.
@@ -18199,11 +18128,11 @@ export namespace WebKit2 {
         static $gtype: GObject.GType<UserScript>;
 
         // Constructors
-        constructor(source: string, injected_frames: UserContentInjectedFrames, injection_time: UserScriptInjectionTime, allow_list: (string[] | null), block_list: (string[] | null));
+        constructor(source: string, injected_frames: UserContentInjectedFrames, injection_time: UserScriptInjectionTime, allow_list: string[] | null, block_list: string[] | null);
 
-        static ["new"](source: string, injected_frames: UserContentInjectedFrames, injection_time: UserScriptInjectionTime, allow_list: (string[] | null), block_list: (string[] | null)): UserScript;
+        static ["new"](source: string, injected_frames: UserContentInjectedFrames, injection_time: UserScriptInjectionTime, allow_list: string[] | null, block_list: string[] | null): UserScript;
 
-        static new_for_world(source: string, injected_frames: UserContentInjectedFrames, injection_time: UserScriptInjectionTime, world_name: string, allow_list: (string[] | null), block_list: (string[] | null)): UserScript;
+        static new_for_world(source: string, injected_frames: UserContentInjectedFrames, injection_time: UserScriptInjectionTime, world_name: string, allow_list: string[] | null, block_list: string[] | null): UserScript;
 
         // Methods
         /**
@@ -18234,11 +18163,11 @@ export namespace WebKit2 {
         static $gtype: GObject.GType<UserStyleSheet>;
 
         // Constructors
-        constructor(source: string, injected_frames: UserContentInjectedFrames, level: UserStyleLevel, allow_list: (string[] | null), block_list: (string[] | null));
+        constructor(source: string, injected_frames: UserContentInjectedFrames, level: UserStyleLevel, allow_list: string[] | null, block_list: string[] | null);
 
-        static ["new"](source: string, injected_frames: UserContentInjectedFrames, level: UserStyleLevel, allow_list: (string[] | null), block_list: (string[] | null)): UserStyleSheet;
+        static ["new"](source: string, injected_frames: UserContentInjectedFrames, level: UserStyleLevel, allow_list: string[] | null, block_list: string[] | null): UserStyleSheet;
 
-        static new_for_world(source: string, injected_frames: UserContentInjectedFrames, level: UserStyleLevel, world_name: string, allow_list: (string[] | null), block_list: (string[] | null)): UserStyleSheet;
+        static new_for_world(source: string, injected_frames: UserContentInjectedFrames, level: UserStyleLevel, world_name: string, allow_list: string[] | null, block_list: string[] | null): UserStyleSheet;
 
         // Methods
         /**
@@ -18334,9 +18263,9 @@ export namespace WebKit2 {
         static $gtype: GObject.GType<WebViewSessionState>;
 
         // Constructors
-        constructor(data: (GLib.Bytes | Uint8Array));
+        constructor(data: GLib.Bytes | Uint8Array);
 
-        static ["new"](data: (GLib.Bytes | Uint8Array)): WebViewSessionState;
+        static ["new"](data: GLib.Bytes | Uint8Array): WebViewSessionState;
 
         // Methods
         /**
@@ -18524,9 +18453,7 @@ export namespace WebKit2 {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface PermissionRequestNamespace {

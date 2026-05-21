@@ -43,9 +43,7 @@ export namespace GstVulkanWayland {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstVulkan.VulkanDisplay.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstVulkan.VulkanDisplay.ConstructorProps {}
     }
 
     /**
@@ -82,7 +80,7 @@ export namespace GstVulkanWayland {
 
         _init(...args: any[]): void;
 
-        static ["new"](name: (string | null)): VulkanDisplayWayland;
+        static ["new"](name: string | null): VulkanDisplayWayland;
 
         // Conflicted with GstVulkan.VulkanDisplay.new
         static ["new"](...args: never[]): any;

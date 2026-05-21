@@ -1475,7 +1475,7 @@ export namespace GstMpegts {
      * @param data descriptor data (after tag and length field)
      * @returns {@link GstMpegts.Descriptor}, or `null` if input is invalid
      */
-    function descriptor_from_custom(tag: number, data: (Uint8Array | string)): (Descriptor | null);
+    function descriptor_from_custom(tag: number, data: Uint8Array | string): Descriptor | null;
 
     /**
      * Creates a {@link GstMpegts.Descriptor} with custom `tag`, `tag_extension` and `data`
@@ -1485,7 +1485,7 @@ export namespace GstMpegts {
      * @returns {@link GstMpegts.Descriptor}
      * @since 1.20
      */
-    function descriptor_from_custom_with_extension(tag: number, tag_extension: number, data: (Uint8Array | string)): Descriptor;
+    function descriptor_from_custom_with_extension(tag: number, tag_extension: number, data: Uint8Array | string): Descriptor;
 
     /**
      * Creates a {@link GstMpegts.Descriptor} to be a {@link GstMpegts.DVBDescriptorType.NETWORK_NAME},
@@ -1494,7 +1494,7 @@ export namespace GstMpegts {
      * @param name the network name to set
      * @returns the {@link GstMpegts.Descriptor} or `null` on failure.
      */
-    function descriptor_from_dvb_network_name(name: string): (Descriptor | null);
+    function descriptor_from_dvb_network_name(name: string): Descriptor | null;
 
     /**
      * Fills a {@link GstMpegts.Descriptor} to be a {@link GstMpegts.DVBDescriptorType.SERVICE}.
@@ -1505,7 +1505,7 @@ export namespace GstMpegts {
      * @param service_provider Name of the service provider
      * @returns the {@link GstMpegts.Descriptor} or `null` on failure
      */
-    function descriptor_from_dvb_service(service_type: DVBServiceType, service_name: (string | null), service_provider: (string | null)): (Descriptor | null);
+    function descriptor_from_dvb_service(service_type: DVBServiceType, service_name: string | null, service_provider: string | null): Descriptor | null;
 
     /**
      * @param lang a string containing the ISO639 language
@@ -1550,7 +1550,7 @@ export namespace GstMpegts {
      * @param additional_info pointer to optional additional info
      * @returns {@link GstMpegts.Descriptor}, `null` on failure
      */
-    function descriptor_from_registration(format_identifier: string, additional_info: (Uint8Array | null)): Descriptor;
+    function descriptor_from_registration(format_identifier: string, additional_info: Uint8Array | null): Descriptor;
 
     /**
      * @param source 
@@ -1582,7 +1582,7 @@ export namespace GstMpegts {
      * @param event {@link Gst.Event} containing a {@link GstMpegts.Section}
      * @returns The extracted {@link GstMpegts.Section} , or `null` if the event did not contain a valid {@link GstMpegts.Section}.
      */
-    function event_parse_mpegts_section(event: Gst.Event): (Section | null);
+    function event_parse_mpegts_section(event: Gst.Event): Section | null;
 
     /**
      * Finds the first descriptor of type `tag` in the array.
@@ -1593,7 +1593,7 @@ export namespace GstMpegts {
      * @param tag the tag to look for
      * @returns the first descriptor matching `tag`, else `null`.
      */
-    function find_descriptor(descriptors: Descriptor[], tag: number): (Descriptor | null);
+    function find_descriptor(descriptors: Descriptor[], tag: number): Descriptor | null;
 
     /**
      * Finds the first descriptor of type `tag` with `tag_extension` in the array.
@@ -1606,7 +1606,7 @@ export namespace GstMpegts {
      * @returns the first descriptor matchin `tag` with `tag_extension`, else `null`.
      * @since 1.20
      */
-    function find_descriptor_with_extension(descriptors: Descriptor[], tag: number, tag_extension: number): (Descriptor | null);
+    function find_descriptor_with_extension(descriptors: Descriptor[], tag: number, tag_extension: number): Descriptor | null;
 
     /**
      * Initializes the MPEG-TS helper library. Must be called before any
@@ -1620,14 +1620,14 @@ export namespace GstMpegts {
      * @param section The {@link GstMpegts.Section} to put in a message
      * @returns The new {@link Gst.Message} to be posted, or `null` if the section is not valid.
      */
-    function message_new_mpegts_section(parent: Gst.Object, section: Section): (Gst.Message | null);
+    function message_new_mpegts_section(parent: Gst.Object, section: Section): Gst.Message | null;
 
     /**
      * Returns the {@link GstMpegts.Section} contained in a message.
      * @param message a {@link Gst.Message}
      * @returns the contained {@link GstMpegts.Section}, or `null`.
      */
-    function message_parse_mpegts_section(message: Gst.Message): (Section | null);
+    function message_parse_mpegts_section(message: Gst.Message): Section | null;
 
     /**
      * Parses the descriptors present in `buffer` and returns them as an
@@ -1638,7 +1638,7 @@ export namespace GstMpegts {
      * @param buf_len Size of `buffer`
      * @returns an array of the parsed descriptors or `null` if there was an error.  Release with `g_array_unref` when done with it.
      */
-    function parse_descriptors(buffer: number, buf_len: (bigint | number)): (Descriptor[] | null);
+    function parse_descriptors(buffer: number, buf_len: bigint | number): Descriptor[] | null;
 
     /**
      * Allocates a new {@link GLib.PtrArray} for {@link GstMpegts.PatProgram}. The array can be filled
@@ -1707,7 +1707,7 @@ export namespace GstMpegts {
      * @param mgt a {@link GstMpegts.AtscMGT} to create the {@link GstMpegts.Section} from
      * @returns the {@link GstMpegts.Section}, or `null` if `mgt` is invalid Since: 1.18
      */
-    function section_from_atsc_mgt(mgt: AtscMGT): (Section | null);
+    function section_from_atsc_mgt(mgt: AtscMGT): Section | null;
 
     /**
      * @param rrt 
@@ -1724,7 +1724,7 @@ export namespace GstMpegts {
      * @param nit a {@link GstMpegts.NIT} to create the {@link GstMpegts.Section} from
      * @returns the {@link GstMpegts.Section}, or `null` if `nit` is invalid
      */
-    function section_from_nit(nit: NIT): (Section | null);
+    function section_from_nit(nit: NIT): Section | null;
 
     /**
      * Creates a PAT {@link GstMpegts.Section} from the `programs` array of `GstMpegtsPatPrograms`
@@ -1740,7 +1740,7 @@ export namespace GstMpegts {
      * @param pid The PID that the {@link GstMpegts.PMT} belongs to
      * @returns {@link GstMpegts.Section}, or `null` if `pmt` is invalid
      */
-    function section_from_pmt(pmt: PMT, pid: number): (Section | null);
+    function section_from_pmt(pmt: PMT, pid: number): Section | null;
 
     /**
      * Ownership of `sit` is taken. The data in `sit` is managed by the {@link GstMpegts.Section}
@@ -1748,14 +1748,14 @@ export namespace GstMpegts {
      * @param pid 
      * @returns the {@link GstMpegts.Section}, or `null` if `sit` is invalid
      */
-    function section_from_scte_sit(sit: SCTESIT, pid: number): (Section | null);
+    function section_from_scte_sit(sit: SCTESIT, pid: number): Section | null;
 
     /**
      * Ownership of `sdt` is taken. The data in `sdt` is managed by the {@link GstMpegts.Section}
      * @param sdt a {@link GstMpegts.SDT} to create the {@link GstMpegts.Section} from
      * @returns the {@link GstMpegts.Section} or `null` if `sdt` is invalid
      */
-    function section_from_sdt(sdt: SDT): (Section | null);
+    function section_from_sdt(sdt: SDT): Section | null;
 
     /**
      * @gir-type Callback
@@ -2479,17 +2479,17 @@ export namespace GstMpegts {
         /**
          * @returns The {@link GstMpegts.DVBLinkageEvent} or `null` if an error happened
          */
-        get_event(): (DVBLinkageEvent | null);
+        get_event(): DVBLinkageEvent | null;
 
         /**
          * @returns an {@link GstMpegts.DVBLinkageExtendedEvent} array or `null` if an error happened
          */
-        get_extended_event(): (DVBLinkageExtendedEvent[] | null);
+        get_extended_event(): DVBLinkageExtendedEvent[] | null;
 
         /**
          * @returns The {@link GstMpegts.DVBLinkageMobileHandOver} or `null` if an error happened
          */
-        get_mobile_hand_over(): (DVBLinkageMobileHandOver | null);
+        get_mobile_hand_over(): DVBLinkageMobileHandOver | null;
     }
 
 
@@ -2682,7 +2682,7 @@ export namespace GstMpegts {
          * @param tag descriptor tag
          * @param data descriptor data (after tag and length field)
          */
-        static from_custom(tag: number, data: (Uint8Array | string)): (Descriptor | null);
+        static from_custom(tag: number, data: Uint8Array | string): Descriptor | null;
 
         /**
          * Creates a {@link GstMpegts.Descriptor} with custom `tag`, `tag_extension` and `data`
@@ -2690,7 +2690,7 @@ export namespace GstMpegts {
          * @param tag_extension descriptor tag extension
          * @param data descriptor data (after tag and length field)
          */
-        static from_custom_with_extension(tag: number, tag_extension: number, data: (Uint8Array | string)): Descriptor;
+        static from_custom_with_extension(tag: number, tag_extension: number, data: Uint8Array | string): Descriptor;
 
         /**
          * Creates a {@link GstMpegts.Descriptor} to be a {@link GstMpegts.DVBDescriptorType.NETWORK_NAME},
@@ -2698,7 +2698,7 @@ export namespace GstMpegts {
          * will be allocated, and transferred to the caller.
          * @param name the network name to set
          */
-        static from_dvb_network_name(name: string): (Descriptor | null);
+        static from_dvb_network_name(name: string): Descriptor | null;
 
         /**
          * Fills a {@link GstMpegts.Descriptor} to be a {@link GstMpegts.DVBDescriptorType.SERVICE}.
@@ -2708,7 +2708,7 @@ export namespace GstMpegts {
          * @param service_name Name of the service
          * @param service_provider Name of the service provider
          */
-        static from_dvb_service(service_type: DVBServiceType, service_name: (string | null), service_provider: (string | null)): (Descriptor | null);
+        static from_dvb_service(service_type: DVBServiceType, service_name: string | null, service_provider: string | null): Descriptor | null;
 
         /**
          * @param lang a string containing the ISO639 language
@@ -2746,7 +2746,7 @@ export namespace GstMpegts {
          * @param format_identifier a 4 character format identifier string
          * @param additional_info pointer to optional additional info
          */
-        static from_registration(format_identifier: string, additional_info: (Uint8Array | null)): Descriptor;
+        static from_registration(format_identifier: string, additional_info: Uint8Array | null): Descriptor;
 
         /**
          * @param source 
@@ -3928,15 +3928,15 @@ export namespace GstMpegts {
         crc: number;
 
         // Constructors
-        constructor(pid: number, data: (Uint8Array | string));
+        constructor(pid: number, data: Uint8Array | string);
 
-        static ["new"](pid: number, data: (Uint8Array | string)): Section;
+        static ["new"](pid: number, data: Uint8Array | string): Section;
 
         // Static methods
         /**
          * @param mgt a {@link GstMpegts.AtscMGT} to create the {@link GstMpegts.Section} from
          */
-        static from_atsc_mgt(mgt: AtscMGT): (Section | null);
+        static from_atsc_mgt(mgt: AtscMGT): Section | null;
 
         /**
          * @param rrt 
@@ -3952,7 +3952,7 @@ export namespace GstMpegts {
          * Ownership of `nit` is taken. The data in `nit` is managed by the {@link GstMpegts.Section}
          * @param nit a {@link GstMpegts.NIT} to create the {@link GstMpegts.Section} from
          */
-        static from_nit(nit: NIT): (Section | null);
+        static from_nit(nit: NIT): Section | null;
 
         /**
          * Creates a PAT {@link GstMpegts.Section} from the `programs` array of `GstMpegtsPatPrograms`
@@ -3966,27 +3966,27 @@ export namespace GstMpegts {
          * @param pmt a {@link GstMpegts.PMT} to create a {@link GstMpegts.Section} from
          * @param pid The PID that the {@link GstMpegts.PMT} belongs to
          */
-        static from_pmt(pmt: PMT, pid: number): (Section | null);
+        static from_pmt(pmt: PMT, pid: number): Section | null;
 
         /**
          * Ownership of `sit` is taken. The data in `sit` is managed by the {@link GstMpegts.Section}
          * @param sit a {@link GstMpegts.SCTESIT} to create the {@link GstMpegts.Section} from
          * @param pid 
          */
-        static from_scte_sit(sit: SCTESIT, pid: number): (Section | null);
+        static from_scte_sit(sit: SCTESIT, pid: number): Section | null;
 
         /**
          * Ownership of `sdt` is taken. The data in `sdt` is managed by the {@link GstMpegts.Section}
          * @param sdt a {@link GstMpegts.SDT} to create the {@link GstMpegts.Section} from
          */
-        static from_sdt(sdt: SDT): (Section | null);
+        static from_sdt(sdt: SDT): Section | null;
 
         // Methods
         /**
          * Returns the {@link GstMpegts.AtscVCT} contained in the `section`
          * @returns The {@link GstMpegts.AtscVCT} contained in the section, or `null` if an error happened.
          */
-        get_atsc_cvct(): (AtscVCT | null);
+        get_atsc_cvct(): AtscVCT | null;
 
         /**
          * Returns the {@link GstMpegts.AtscEIT} contained in the `section`.
@@ -4004,7 +4004,7 @@ export namespace GstMpegts {
          * Returns the {@link GstMpegts.AtscMGT} contained in the `section`.
          * @returns The {@link GstMpegts.AtscMGT} contained in the section, or `null` if an error happened.
          */
-        get_atsc_mgt(): (AtscMGT | null);
+        get_atsc_mgt(): AtscMGT | null;
 
         /**
          * Returns the {@link GstMpegts.AtscRRT} contained in the `section`.
@@ -4022,13 +4022,13 @@ export namespace GstMpegts {
          * Returns the {@link GstMpegts.AtscVCT} contained in the `section`
          * @returns The {@link GstMpegts.AtscVCT} contained in the section, or `null` if an error happened.
          */
-        get_atsc_tvct(): (AtscVCT | null);
+        get_atsc_tvct(): AtscVCT | null;
 
         /**
          * Returns the {@link GstMpegts.BAT} contained in the `section`.
          * @returns The {@link GstMpegts.BAT} contained in the section, or `null` if an error happened.
          */
-        get_bat(): (BAT | null);
+        get_bat(): BAT | null;
 
         /**
          * Parses a Conditional Access Table.
@@ -4037,7 +4037,7 @@ export namespace GstMpegts {
          * Access Table.
          * @returns The array of {@link GstMpegts.Descriptor} contained in the section, or `null` if an error happened. Release with `g_array_unref` when done.
          */
-        get_cat(): (Descriptor[] | null);
+        get_cat(): Descriptor[] | null;
 
         /**
          * Gets the original unparsed section data.
@@ -4049,13 +4049,13 @@ export namespace GstMpegts {
          * Returns the {@link GstMpegts.EIT} contained in the `section`.
          * @returns The {@link GstMpegts.EIT} contained in the section, or `null` if an error happened.
          */
-        get_eit(): (EIT | null);
+        get_eit(): EIT | null;
 
         /**
          * Returns the {@link GstMpegts.NIT} contained in the `section`.
          * @returns The {@link GstMpegts.NIT} contained in the section, or `null` if an error happened.
          */
-        get_nit(): (NIT | null);
+        get_nit(): NIT | null;
 
         /**
          * Parses a Program Association Table (ITU H.222.0, ISO/IEC 13818-1).
@@ -4066,43 +4066,43 @@ export namespace GstMpegts {
          * "subtable_extension" field of the provided `section`.
          * @returns The {@link GstMpegts.PatProgram} contained in the section, or `null` if an error happened or the `section` did not contain a valid PAT. Release with `g_ptr_array_unref` when done.
          */
-        get_pat(): (PatProgram[] | null);
+        get_pat(): PatProgram[] | null;
 
         /**
          * Parses the Program Map Table contained in the `section`.
          * @returns The {@link GstMpegts.PMT} contained in the section, or `null` if an error happened.
          */
-        get_pmt(): (PMT | null);
+        get_pmt(): PMT | null;
 
         /**
          * Returns the {@link GstMpegts.SCTESIT} contained in the `section`.
          * @returns The {@link GstMpegts.SCTESIT} contained in the section, or `null` if an error happened.
          */
-        get_scte_sit(): (SCTESIT | null);
+        get_scte_sit(): SCTESIT | null;
 
         /**
          * Returns the {@link GstMpegts.SDT} contained in the `section`.
          * @returns The {@link GstMpegts.SDT} contained in the section, or `null` if an error happened.
          */
-        get_sdt(): (SDT | null);
+        get_sdt(): SDT | null;
 
         /**
          * Returns the {@link GstMpegts.SIT} contained in the `section`.
          * @returns The {@link GstMpegts.SIT} contained in the section, or `null` if an error happened.
          */
-        get_sit(): (SIT | null);
+        get_sit(): SIT | null;
 
         /**
          * Returns the {@link Gst.DateTime} of the TDT
          * @returns The {@link Gst.DateTime} contained in the section, or `null` if an error happened. Release with `gst_date_time_unref` when done.
          */
-        get_tdt(): (Gst.DateTime | null);
+        get_tdt(): Gst.DateTime | null;
 
         /**
          * Returns the {@link GstMpegts.TOT} contained in the `section`.
          * @returns The {@link GstMpegts.TOT} contained in the section, or `null` if an error happened.
          */
-        get_tot(): (TOT | null);
+        get_tot(): TOT | null;
 
         /**
          * Parses a Transport Stream Description Table.
@@ -4110,7 +4110,7 @@ export namespace GstMpegts {
          * Returns the array of {@link GstMpegts.Descriptor} contained in the section
          * @returns The array of {@link GstMpegts.Descriptor} contained in the section, or `null` if an error happened. Release with `g_array_unref` when done.
          */
-        get_tsdt(): (Descriptor[] | null);
+        get_tsdt(): Descriptor[] | null;
 
         /**
          * Packetize (i.e. serialize) the `section`. If the data in `section` has already

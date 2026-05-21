@@ -74,7 +74,7 @@ export namespace Dex {
         static FIBER_CANCELLED: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
     }
 
 
@@ -102,7 +102,7 @@ export namespace Dex {
      * @param offset 
      * @returns a future that will resolve when the   read completes or rejects with error.
      */
-    function aio_read(aio_context: AioContext, fd: number, offset: (bigint | number)): [Future, Uint8Array];
+    function aio_read(aio_context: AioContext, fd: number, offset: bigint | number): [Future, Uint8Array];
 
     /**
      * An asynchronous `pwrite()` wrapper.
@@ -112,7 +112,7 @@ export namespace Dex {
      * @param offset 
      * @returns a future that will resolve when the   write completes or rejects with error.
      */
-    function aio_write(aio_context: AioContext, fd: number, buffer: (Uint8Array | string), offset: (bigint | number)): Future;
+    function aio_write(aio_context: AioContext, fd: number, buffer: Uint8Array | string, offset: bigint | number): Future;
 
     /**
      * A helper for `g_async_initable_init_async()`
@@ -145,7 +145,7 @@ export namespace Dex {
      * @returns a {@link Dex.Future} that resolves to a {@link GLib.Variant}   or rejects with error.
      * @since 0.4
      */
-    function dbus_connection_call(connection: Gio.DBusConnection, bus_name: (string | null), object_path: string, interface_name: string, method_name: string, parameters: (GLib.Variant | null), reply_type: (GLib.VariantType | null), flags: Gio.DBusCallFlags, timeout_msec: number): Future;
+    function dbus_connection_call(connection: Gio.DBusConnection, bus_name: string | null, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant | null, reply_type: GLib.VariantType | null, flags: Gio.DBusCallFlags, timeout_msec: number): Future;
 
     /**
      * Wrapper for `g_dbus_connection_call_with_unix_fd_list()`.
@@ -162,7 +162,7 @@ export namespace Dex {
      * @returns a {@link Dex.FutureSet} that resolves to a {@link GLib.Variant}.   The {@link Dex.Future} containing the resulting {@link Gio.UnixFDList} can be retrieved   with `dex_future_set_get_future_at()` with an index of 1.
      * @since 0.4
      */
-    function dbus_connection_call_with_unix_fd_list(connection: Gio.DBusConnection, bus_name: (string | null), object_path: string, interface_name: string, method_name: string, parameters: (GLib.Variant | null), reply_type: (GLib.VariantType | null), flags: Gio.DBusCallFlags, timeout_msec: number, fd_list: (Gio.UnixFDList | null)): Future;
+    function dbus_connection_call_with_unix_fd_list(connection: Gio.DBusConnection, bus_name: string | null, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant | null, reply_type: GLib.VariantType | null, flags: Gio.DBusCallFlags, timeout_msec: number, fd_list: Gio.UnixFDList | null): Future;
 
     /**
      * Asynchronously closes a connection.
@@ -302,7 +302,7 @@ export namespace Dex {
      * @param io_priority 
      * @returns a {@link Dex.Future}
      */
-    function file_replace(file: Gio.File, etag: (string | null), make_backup: boolean, flags: Gio.FileCreateFlags, io_priority: number): Future;
+    function file_replace(file: Gio.File, etag: string | null, make_backup: boolean, flags: Gio.FileCreateFlags, io_priority: number): Future;
 
     /**
      * Wraps `g_file_replace_contents_bytes_async()`.
@@ -313,7 +313,7 @@ export namespace Dex {
      * @param flags A set of {@link Gio.FileCreateFlags}
      * @returns a {@link Dex.Future} which resolves to the   new etag. Therefore, it is possible to be `null` without an   error having occurred.
      */
-    function file_replace_contents_bytes(file: Gio.File, contents: (GLib.Bytes | Uint8Array), etag: (string | null), make_backup: boolean, flags: Gio.FileCreateFlags): Future;
+    function file_replace_contents_bytes(file: Gio.File, contents: GLib.Bytes | Uint8Array, etag: string | null, make_backup: boolean, flags: Gio.FileCreateFlags): Future;
 
     /**
      * @param file a {@link Gio.File}
@@ -351,7 +351,7 @@ export namespace Dex {
      * @param io_priority 
      * @returns a {@link Dex.Future}
      */
-    function input_stream_read_bytes(self: Gio.InputStream, count: (bigint | number), io_priority: number): Future;
+    function input_stream_read_bytes(self: Gio.InputStream, count: bigint | number, io_priority: number): Future;
 
     /**
      * @param self 
@@ -359,7 +359,7 @@ export namespace Dex {
      * @param io_priority `G_PRIORITY_DEFAULT` or similar priority value
      * @returns a {@link Dex.Future}
      */
-    function input_stream_skip(self: Gio.InputStream, count: (bigint | number), io_priority: number): Future;
+    function input_stream_skip(self: Gio.InputStream, count: bigint | number, io_priority: number): Future;
 
     /**
      * @param io_stream 
@@ -390,7 +390,7 @@ export namespace Dex {
      * @param io_priority 
      * @returns a {@link Dex.Future}
      */
-    function output_stream_write(self: Gio.OutputStream, buffer: (Uint8Array | string), io_priority: number): Future;
+    function output_stream_write(self: Gio.OutputStream, buffer: Uint8Array | string, io_priority: number): Future;
 
     /**
      * @param self 
@@ -398,7 +398,7 @@ export namespace Dex {
      * @param io_priority 
      * @returns a {@link Dex.Future}
      */
-    function output_stream_write_bytes(self: Gio.OutputStream, bytes: (GLib.Bytes | Uint8Array), io_priority: number): Future;
+    function output_stream_write_bytes(self: Gio.OutputStream, bytes: GLib.Bytes | Uint8Array, io_priority: number): Future;
 
     /**
      * @param resolver 
@@ -447,7 +447,7 @@ export namespace Dex {
      * @returns a {@link Dex.Future} that resolves or rejects   the value or error returned from `thread_func` as a {@link Dex.Future}.
      * @since 1.0
      */
-    function thread_spawn(thread_name: (string | null), thread_func: ThreadFunc): Future;
+    function thread_spawn(thread_name: string | null, thread_func: ThreadFunc): Future;
 
     /**
      * Use this when running on a thread spawned with `dex_thread_spawn()` and
@@ -464,7 +464,7 @@ export namespace Dex {
      * @returns a {@link Dex.Object}
      * @since 1.0
      */
-    function value_dup_object(value: (GObject.Value | any)): (Object | null);
+    function value_dup_object(value: GObject.Value | any): Object | null;
 
     /**
      * Retrieves the {@link Dex.Object} stored inside the given `value`.
@@ -472,7 +472,7 @@ export namespace Dex {
      * @returns a {@link Dex.Object}
      * @since 0.4
      */
-    function value_get_object(value: (GObject.Value | any)): (Object | null);
+    function value_get_object(value: GObject.Value | any): Object | null;
 
     /**
      * Stores the given {@link Dex.Object} inside `value`.
@@ -482,7 +482,7 @@ export namespace Dex {
      * @param object a {@link Dex.Object} or `null`
      * @since 0.4
      */
-    function value_set_object(value: (GObject.Value | any), object: (Object | null)): void;
+    function value_set_object(value: GObject.Value | any, object: Object | null): void;
 
     /**
      * Stores the given {@link Dex.Object} inside `value`.
@@ -492,20 +492,20 @@ export namespace Dex {
      * @param object a {@link Dex.Object}
      * @since 0.4
      */
-    function value_take_object(value: (GObject.Value | any), object: (Object | null)): void;
+    function value_take_object(value: GObject.Value | any, object: Object | null): void;
 
     /**
      * @gir-type Callback
      */
     interface FiberFunc {
-        (user_data: null): (Future | null);
+        (user_data: null): Future | null;
     }
 
     /**
      * @gir-type Callback
      */
     interface FutureCallback {
-        (future: Future): (Future | null);
+        (future: Future): Future | null;
     }
 
     /**
@@ -525,17 +525,16 @@ export namespace Dex {
     /**
      * @gir-type Alias
      */
-    type FileInfoList = (object | null);
+    type FileInfoList = object | null;
 
     /**
      * @gir-type Alias
      */
-    type InetAddressList = (object | null);
+    type InetAddressList = object | null;
 
     namespace AsyncPair {
         // Signal signatures
-        interface SignalSignatures extends Future.SignalSignatures {
-        }
+        interface SignalSignatures extends Future.SignalSignatures {}
     }
 
     /**
@@ -591,7 +590,7 @@ export namespace Dex {
         /**
          * @param value 
          */
-        return_int64(value: (bigint | number)): void;
+        return_int64(value: bigint | number): void;
 
         /**
          * Resolves `async_pair` with a value of `instance`.
@@ -608,12 +607,12 @@ export namespace Dex {
          * Resolves `async_pair` with `value`.
          * @param value a string or `null`
          */
-        return_string(value: (string | null)): void;
+        return_string(value: string | null): void;
 
         /**
          * @param value 
          */
-        return_uint64(value: (bigint | number)): void;
+        return_uint64(value: bigint | number): void;
 
         /**
          * Resolves `async_pair` with `variant`.
@@ -633,13 +632,10 @@ export namespace Dex {
 
     namespace AsyncResult {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, Gio.AsyncResult.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, Gio.AsyncResult.ConstructorProps {}
     }
 
     /**
@@ -666,7 +662,7 @@ export namespace Dex {
 
         _init(...args: any[]): void;
 
-        static ["new"](source_object: null, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback | null)): AsyncResult;
+        static ["new"](source_object: null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null): AsyncResult;
 
         // Signals
         /** @signal */
@@ -694,7 +690,7 @@ export namespace Dex {
          * is not available.
          * @returns a {@link Dex.Future} or `null`
          */
-        dup_future(): (Future | null);
+        dup_future(): Future | null;
 
         get_name(): string;
 
@@ -780,8 +776,7 @@ export namespace Dex {
 
     namespace Block {
         // Signal signatures
-        interface SignalSignatures extends Future.SignalSignatures {
-        }
+        interface SignalSignatures extends Future.SignalSignatures {}
     }
 
     /**
@@ -832,8 +827,7 @@ export namespace Dex {
 
     namespace Cancellable {
         // Signal signatures
-        interface SignalSignatures extends Future.SignalSignatures {
-        }
+        interface SignalSignatures extends Future.SignalSignatures {}
     }
 
     /**
@@ -853,7 +847,7 @@ export namespace Dex {
 
         static ["new"](): Cancellable;
 
-        static new_from_cancellable(cancellable: (Gio.Cancellable | null)): Cancellable;
+        static new_from_cancellable(cancellable: Gio.Cancellable | null): Cancellable;
 
         // Signals
         /** @signal */
@@ -882,8 +876,7 @@ export namespace Dex {
 
     namespace Channel {
         // Signal signatures
-        interface SignalSignatures extends Object.SignalSignatures {
-        }
+        interface SignalSignatures extends Object.SignalSignatures {}
     }
 
     /**
@@ -964,8 +957,7 @@ export namespace Dex {
 
     namespace Delayed {
         // Signal signatures
-        interface SignalSignatures extends Future.SignalSignatures {
-        }
+        interface SignalSignatures extends Future.SignalSignatures {}
     }
 
     /**
@@ -1006,7 +998,7 @@ export namespace Dex {
          * will return `null`.
          * @returns a {@link Dex.Future} or `null`
          */
-        dup_future(): (Future | null);
+        dup_future(): Future | null;
 
         /**
          * Completes `delayed` using the value provided at construction.
@@ -1017,8 +1009,7 @@ export namespace Dex {
 
     namespace Fiber {
         // Signal signatures
-        interface SignalSignatures extends Future.SignalSignatures {
-        }
+        interface SignalSignatures extends Future.SignalSignatures {}
     }
 
     /**
@@ -1064,8 +1055,7 @@ export namespace Dex {
 
     namespace Future {
         // Signal signatures
-        interface SignalSignatures extends Object.SignalSignatures {
-        }
+        interface SignalSignatures extends Object.SignalSignatures {}
     }
 
     /**
@@ -1119,7 +1109,7 @@ export namespace Dex {
 
         static new_for_int(v_int: number): Future;
 
-        static new_for_int64(v_int64: (bigint | number)): Future;
+        static new_for_int64(v_int64: bigint | number): Future;
 
         static new_for_object(value: GObject.Object): Future;
 
@@ -1129,13 +1119,13 @@ export namespace Dex {
 
         static new_for_uint(v_uint: number): Future;
 
-        static new_for_uint64(v_uint64: (bigint | number)): Future;
+        static new_for_uint64(v_uint64: bigint | number): Future;
 
-        static new_for_value(value: (GObject.Value | any)): Future;
+        static new_for_value(value: GObject.Value | any): Future;
 
         static new_infinite(): Future;
 
-        static new_take_object(value: (GObject.Object | null)): Future;
+        static new_take_object(value: GObject.Object | null): Future;
 
         static new_take_string(string: string): Future;
 
@@ -1264,7 +1254,7 @@ export namespace Dex {
          * If the result is not a `G_TYPE_STRING`, `error` is set.
          * @returns the string  or `null` and `error` is set
          */
-        await_string(): (string | null);
+        await_string(): string | null;
 
         /**
          * Awaits on `future` and returns the result as an uint.
@@ -1325,8 +1315,7 @@ export namespace Dex {
 
     namespace FutureSet {
         // Signal signatures
-        interface SignalSignatures extends Future.SignalSignatures {
-        }
+        interface SignalSignatures extends Future.SignalSignatures {}
     }
 
     /**
@@ -1388,8 +1377,7 @@ export namespace Dex {
 
     namespace MainScheduler {
         // Signal signatures
-        interface SignalSignatures extends Scheduler.SignalSignatures {
-        }
+        interface SignalSignatures extends Scheduler.SignalSignatures {}
     }
 
     /**
@@ -1425,8 +1413,7 @@ export namespace Dex {
 
     namespace Object {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
     }
 
     /**
@@ -1476,8 +1463,7 @@ export namespace Dex {
 
     namespace Promise {
         // Signal signatures
-        interface SignalSignatures extends Future.SignalSignatures {
-        }
+        interface SignalSignatures extends Future.SignalSignatures {}
     }
 
     /**
@@ -1522,7 +1508,7 @@ export namespace Dex {
          * If `promise` was created with `dex_promise_new()`, then `null` is returned.
          * @returns a {@link Gio.Cancellable} or `null`
          */
-        get_cancellable(): (Gio.Cancellable | null);
+        get_cancellable(): Gio.Cancellable | null;
 
         /**
          * Marks the promise as rejected, indicating a failure.
@@ -1534,7 +1520,7 @@ export namespace Dex {
          * Sets the result for a {@link Dex.Promise}.
          * @param value a {@link GObject.Value} containing the resolved value
          */
-        resolve(value: (GObject.Value | any)): void;
+        resolve(value: GObject.Value | any): void;
 
         /**
          * Resolve promise to `value`.
@@ -1581,18 +1567,18 @@ export namespace Dex {
          * Resolve promise to `value`.
          * @param value 
          */
-        resolve_int64(value: (bigint | number)): void;
+        resolve_int64(value: bigint | number): void;
 
         /**
          * Resolve promise to `value`.
          * @param value 
          */
-        resolve_long(value: (bigint | number)): void;
+        resolve_long(value: bigint | number): void;
 
         /**
          * @param object a {@link GObject.Object}
          */
-        resolve_object(object: (GObject.Object | null)): void;
+        resolve_object(object: GObject.Object | null): void;
 
         /**
          * @param value a string to use to resolve the promise
@@ -1609,26 +1595,25 @@ export namespace Dex {
          * Resolve promise to `value`.
          * @param value 
          */
-        resolve_uint64(value: (bigint | number)): void;
+        resolve_uint64(value: bigint | number): void;
 
         /**
          * Resolve promise to `value`.
          * @param value 
          */
-        resolve_ulong(value: (bigint | number)): void;
+        resolve_ulong(value: bigint | number): void;
 
         /**
          * If `variant` is floating, its reference is consumed.
          * @param variant a {@link GLib.Variant}
          */
-        resolve_variant(variant: (GLib.Variant | null)): void;
+        resolve_variant(variant: GLib.Variant | null): void;
     }
 
 
     namespace Scheduler {
         // Signal signatures
-        interface SignalSignatures extends Object.SignalSignatures {
-        }
+        interface SignalSignatures extends Object.SignalSignatures {}
     }
 
     /**
@@ -1674,12 +1659,12 @@ export namespace Dex {
         /**
          * Gets the default scheduler for the thread.
          */
-        static get_thread_default(): (Scheduler | null);
+        static get_thread_default(): Scheduler | null;
 
         /**
          * Gets the thread default scheduler with the reference count incremented.
          */
-        static ref_thread_default(): (Scheduler | null);
+        static ref_thread_default(): Scheduler | null;
 
         // Methods
         /**
@@ -1715,14 +1700,13 @@ export namespace Dex {
          * @param func a {@link Dex.FiberFunc}
          * @returns a {@link Dex.Future} that will resolve or reject when   `func` completes (or its resulting {@link Dex.Future} completes).
          */
-        spawn(stack_size: (bigint | number), func: FiberFunc): Future;
+        spawn(stack_size: bigint | number, func: FiberFunc): Future;
     }
 
 
     namespace StaticFuture {
         // Signal signatures
-        interface SignalSignatures extends Future.SignalSignatures {
-        }
+        interface SignalSignatures extends Future.SignalSignatures {}
     }
 
     /**
@@ -1759,8 +1743,7 @@ export namespace Dex {
 
     namespace ThreadPoolScheduler {
         // Signal signatures
-        interface SignalSignatures extends Scheduler.SignalSignatures {
-        }
+        interface SignalSignatures extends Scheduler.SignalSignatures {}
     }
 
     /**
@@ -1816,8 +1799,7 @@ export namespace Dex {
 
     namespace Timeout {
         // Signal signatures
-        interface SignalSignatures extends Future.SignalSignatures {
-        }
+        interface SignalSignatures extends Future.SignalSignatures {}
     }
 
     /**
@@ -1831,13 +1813,13 @@ export namespace Dex {
         // Constructors
         _init(...args: any[]): void;
 
-        static new_deadline(deadline: (bigint | number)): Timeout;
+        static new_deadline(deadline: bigint | number): Timeout;
 
         static new_msec(msec: number): Timeout;
 
         static new_seconds(seconds: number): Timeout;
 
-        static new_usec(usec: (bigint | number)): Timeout;
+        static new_usec(usec: bigint | number): Timeout;
 
         // Signals
         /** @signal */
@@ -1859,14 +1841,13 @@ export namespace Dex {
          * monotonic clock in microseconds.
          * @param deadline a deadline in monotonic clock
          */
-        postpone_until(deadline: (bigint | number)): void;
+        postpone_until(deadline: bigint | number): void;
     }
 
 
     namespace UnixSignal {
         // Signal signatures
-        interface SignalSignatures extends Future.SignalSignatures {
-        }
+        interface SignalSignatures extends Future.SignalSignatures {}
     }
 
     /**

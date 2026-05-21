@@ -420,9 +420,7 @@ export namespace GstCodecs {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstVideo.VideoDecoder.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstVideo.VideoDecoder.ConstructorProps {}
     }
 
     /**
@@ -673,7 +671,7 @@ export namespace GstCodecs {
          * @param system_frame_number a target system frame number of {@link GstCodecs.H264Picture}
          * @returns a {@link GstCodecs.H264Picture} if successful, or `null` otherwise
          */
-        get_picture(system_frame_number: number): (H264Picture | null);
+        get_picture(system_frame_number: number): H264Picture | null;
 
         /**
          * Called to en/disable reference picture modification process.
@@ -697,9 +695,7 @@ export namespace GstCodecs {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstVideo.VideoDecoder.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstVideo.VideoDecoder.ConstructorProps {}
     }
 
     /**
@@ -800,7 +796,7 @@ export namespace GstCodecs {
          * @param system_frame_number a target system frame number of {@link GstCodecs.H265Picture}
          * @returns a {@link GstCodecs.H265Picture} if successful, or `null` otherwise
          */
-        get_picture(system_frame_number: number): (H265Picture | null);
+        get_picture(system_frame_number: number): H265Picture | null;
 
         /**
          * Called to en/disable reference picture modification process.
@@ -824,9 +820,7 @@ export namespace GstCodecs {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstVideo.VideoDecoder.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstVideo.VideoDecoder.ConstructorProps {}
     }
 
     /**
@@ -933,9 +927,7 @@ export namespace GstCodecs {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstVideo.VideoDecoder.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstVideo.VideoDecoder.ConstructorProps {}
     }
 
     /**
@@ -1055,9 +1047,7 @@ export namespace GstCodecs {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstVideo.VideoDecoder.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstVideo.VideoDecoder.ConstructorProps {}
     }
 
     /**
@@ -1160,9 +1150,7 @@ export namespace GstCodecs {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstVideo.VideoDecoder.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstVideo.VideoDecoder.ConstructorProps {}
     }
 
     /**
@@ -1223,7 +1211,7 @@ export namespace GstCodecs {
          * @param picture a {@link GstCodecs.Vp9Picture} to be duplicated
          * @virtual
          */
-        vfunc_duplicate_picture(frame: GstVideo.VideoCodecFrame, picture: Vp9Picture): (Vp9Picture | null);
+        vfunc_duplicate_picture(frame: GstVideo.VideoCodecFrame, picture: Vp9Picture): Vp9Picture | null;
 
         /**
          * Optional. Called per one {@link GstCodecs.Vp9Picture} to notify subclass to finish
@@ -1336,10 +1324,7 @@ export namespace GstCodecs {
         static $gtype: GObject.GType<AV1Picture>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): AV1Picture;
     }
@@ -1381,7 +1366,7 @@ export namespace GstCodecs {
          * Sets `discont_state` to `picture`
          * @param discont_state a {@link GstVideo.VideoCodecState}
          */
-        set_discont_state(discont_state: (GstVideo.VideoCodecState | null)): void;
+        set_discont_state(discont_state: GstVideo.VideoCodecState | null): void;
 
         /**
          * Sets `user_data` on the picture and the {@link GLib.DestroyNotify} that will be called when
@@ -1428,7 +1413,7 @@ export namespace GstCodecs {
          * @param drain whether draining or not
          * @returns a {@link GstCodecs.H264Picture} which is needed to be outputted
          */
-        bump(drain: boolean): (H264Picture | null);
+        bump(drain: boolean): H264Picture | null;
 
         /**
          * Clear all stored {@link GstCodecs.H264Picture}
@@ -1455,13 +1440,13 @@ export namespace GstCodecs {
          * @param long_term_pic_num a long term picture number
          * @returns a {@link GstCodecs.H264Picture}
          */
-        get_long_ref_by_long_term_pic_num(long_term_pic_num: number): (H264Picture | null);
+        get_long_ref_by_long_term_pic_num(long_term_pic_num: number): H264Picture | null;
 
         /**
          * Find a short term reference picture which has the lowest frame_num_wrap
          * @returns a {@link GstCodecs.H264Picture}
          */
-        get_lowest_frame_num_short_ref(): (H264Picture | null);
+        get_lowest_frame_num_short_ref(): H264Picture | null;
 
         /**
          * @returns the number of maximum frames
@@ -1477,7 +1462,7 @@ export namespace GstCodecs {
          * @param system_frame_number 
          * @returns the picture identified with the specified `system_frame_number`, or `null` if DPB does not contain a {@link GstCodecs.H264Picture} corresponding to the `system_frame_number`
          */
-        get_picture(system_frame_number: number): (H264Picture | null);
+        get_picture(system_frame_number: number): H264Picture | null;
 
         /**
          * @returns a {@link GLib.Array} of   {@link GstCodecs.H264Picture} stored in `dpb`
@@ -1504,7 +1489,7 @@ export namespace GstCodecs {
          * @param pic_num a picture number
          * @returns a {@link GstCodecs.H264Picture}
          */
-        get_short_ref_by_pic_num(pic_num: number): (H264Picture | null);
+        get_short_ref_by_pic_num(pic_num: number): H264Picture | null;
 
         /**
          * @returns the length of stored dpb array
@@ -1565,10 +1550,7 @@ export namespace GstCodecs {
         static $gtype: GObject.GType<H264Picture>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): H264Picture;
     }
@@ -1623,7 +1605,7 @@ export namespace GstCodecs {
          * @param drain whether draining or not
          * @returns a {@link GstCodecs.H265Picture} which is needed to be outputted
          */
-        bump(drain: boolean): (H265Picture | null);
+        bump(drain: boolean): H265Picture | null;
 
         /**
          * Clear all stored {@link GstCodecs.H265Picture}
@@ -1645,7 +1627,7 @@ export namespace GstCodecs {
          * @param poc a picture order count
          * @returns a {@link GstCodecs.H265Picture}
          */
-        get_long_ref_by_poc(poc: number): (H265Picture | null);
+        get_long_ref_by_poc(poc: number): H265Picture | null;
 
         /**
          * @returns the number of maximum pictures
@@ -1656,7 +1638,7 @@ export namespace GstCodecs {
          * @param system_frame_number 
          * @returns the picture identified with the specified `system_frame_number`, or `null` if DPB does not contain a {@link GstCodecs.H265Picture} corresponding to the `system_frame_number`
          */
-        get_picture(system_frame_number: number): (H265Picture | null);
+        get_picture(system_frame_number: number): H265Picture | null;
 
         /**
          * @returns a {@link GLib.Array} of   {@link GstCodecs.H265Picture} stored in `dpb`
@@ -1668,21 +1650,21 @@ export namespace GstCodecs {
          * @param poc a picture order count
          * @returns a {@link GstCodecs.H265Picture}
          */
-        get_ref_by_poc(poc: number): (H265Picture | null);
+        get_ref_by_poc(poc: number): H265Picture | null;
 
         /**
          * Find a short or long term reference picture which has matching poc_lsb
          * @param poc_lsb a picture order count lsb
          * @returns a {@link GstCodecs.H265Picture}
          */
-        get_ref_by_poc_lsb(poc_lsb: number): (H265Picture | null);
+        get_ref_by_poc_lsb(poc_lsb: number): H265Picture | null;
 
         /**
          * Find a short term reference picture which has matching poc
          * @param poc a picture order count
          * @returns a {@link GstCodecs.H265Picture}
          */
-        get_short_ref_by_poc(poc: number): (H265Picture | null);
+        get_short_ref_by_poc(poc: number): H265Picture | null;
 
         /**
          * @returns the length of stored dpb array
@@ -1722,10 +1704,7 @@ export namespace GstCodecs {
         static $gtype: GObject.GType<H265Picture>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): H265Picture;
     }
@@ -1782,7 +1761,7 @@ export namespace GstCodecs {
          * @param drain whether draining or not
          * @returns a {@link GstCodecs.H266Picture} which is needed to be outputted
          */
-        bump(drain: boolean): (H266Picture | null);
+        bump(drain: boolean): H266Picture | null;
 
         /**
          * Clear all stored {@link GstCodecs.H266Picture}
@@ -1810,14 +1789,14 @@ export namespace GstCodecs {
          * @param poc a picture order count
          * @returns a {@link GstCodecs.H266Picture}
          */
-        get_picture_by_poc(poc: number): (H266Picture | null);
+        get_picture_by_poc(poc: number): H266Picture | null;
 
         /**
          * Find a picture which has matching poc_lsb
          * @param poc_lsb a picture order count lsb
          * @returns a {@link GstCodecs.H266Picture}
          */
-        get_picture_by_poc_lsb(poc_lsb: number): (H266Picture | null);
+        get_picture_by_poc_lsb(poc_lsb: number): H266Picture | null;
 
         /**
          * @returns a {@link GLib.Array} of   {@link GstCodecs.H266Picture} stored in `dpb`
@@ -1869,10 +1848,7 @@ export namespace GstCodecs {
         static $gtype: GObject.GType<H266Picture>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): H266Picture;
     }
@@ -1925,7 +1901,7 @@ export namespace GstCodecs {
         /**
          * @returns a {@link GstCodecs.Mpeg2Picture} which is needed to be outputted
          */
-        bump(): (Mpeg2Picture | null);
+        bump(): Mpeg2Picture | null;
 
         /**
          * Clear all stored {@link GstCodecs.Mpeg2Picture}
@@ -1959,10 +1935,7 @@ export namespace GstCodecs {
         static $gtype: GObject.GType<Mpeg2Picture>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): Mpeg2Picture;
     }
@@ -1976,10 +1949,7 @@ export namespace GstCodecs {
         static $gtype: GObject.GType<Mpeg2Slice>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
     }
 
 
@@ -2003,10 +1973,7 @@ export namespace GstCodecs {
         static $gtype: GObject.GType<Vp8Picture>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): Vp8Picture;
     }
@@ -2035,10 +2002,7 @@ export namespace GstCodecs {
         static $gtype: GObject.GType<Vp9DeltaProbabilities>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
     }
 
 
@@ -2208,10 +2172,7 @@ export namespace GstCodecs {
         static $gtype: GObject.GType<Vp9MvDeltaProbs>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
     }
 
 
@@ -2222,10 +2183,7 @@ export namespace GstCodecs {
         static $gtype: GObject.GType<Vp9Picture>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): Vp9Picture;
     }

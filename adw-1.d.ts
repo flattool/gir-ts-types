@@ -1184,7 +1184,7 @@ export namespace Adw {
      * @returns the length in `unit`
      * @since 1.4
      */
-    function length_unit_from_px(unit: LengthUnit, value: number, settings: (Gtk.Settings | null)): number;
+    function length_unit_from_px(unit: LengthUnit, value: number, settings: Gtk.Settings | null): number;
 
     /**
      * Converts `value` from `unit` to pixels.
@@ -1194,7 +1194,7 @@ export namespace Adw {
      * @returns the length in pixels
      * @since 1.4
      */
-    function length_unit_to_px(unit: LengthUnit, value: number, settings: (Gtk.Settings | null)): number;
+    function length_unit_to_px(unit: LengthUnit, value: number, settings: Gtk.Settings | null): number;
 
     /**
      * Computes the linear interpolation between `a` and `b` for `t`.
@@ -1318,7 +1318,7 @@ export namespace Adw {
              * @since 1.5
              * @run-last
              */
-            "activate-link": (arg0: string) => (boolean | void);
+            "activate-link": (arg0: string) => boolean | void;
             "notify::application-icon": (pspec: GObject.ParamSpec) => void;
             "notify::application-name": (pspec: GObject.ParamSpec) => void;
             "notify::artists": (pspec: GObject.ParamSpec) => void;
@@ -1392,18 +1392,18 @@ export namespace Adw {
             applicationIcon: string;
             application_name: string;
             applicationName: string;
-            artists: (string[] | null);
+            artists: string[] | null;
             comments: string;
             copyright: string;
             debug_info: string;
             debugInfo: string;
             debug_info_filename: string;
             debugInfoFilename: string;
-            designers: (string[] | null);
+            designers: string[] | null;
             developer_name: string;
             developerName: string;
-            developers: (string[] | null);
-            documenters: (string[] | null);
+            developers: string[] | null;
+            documenters: string[] | null;
             issue_url: string;
             issueUrl: string;
             license: string;
@@ -1654,8 +1654,8 @@ export namespace Adw {
          * * {@link AboutDialog.add_acknowledgement_section}
          * @since 1.5
          */
-        get artists(): (string[] | null);
-        set artists(val: (string[] | null));
+        get artists(): string[] | null;
+        set artists(val: string[] | null);
 
         /**
          * The comments about the application.
@@ -1761,8 +1761,8 @@ export namespace Adw {
          * * {@link AboutDialog.add_acknowledgement_section}
          * @since 1.5
          */
-        get designers(): (string[] | null);
-        set designers(val: (string[] | null));
+        get designers(): string[] | null;
+        set designers(val: string[] | null);
 
         /**
          * The developer name.
@@ -1814,8 +1814,8 @@ export namespace Adw {
          * * {@link AboutDialog.add_acknowledgement_section}
          * @since 1.5
          */
-        get developers(): (string[] | null);
-        set developers(val: (string[] | null));
+        get developers(): string[] | null;
+        set developers(val: string[] | null);
 
         /**
          * The list of documenters of the application.
@@ -1835,8 +1835,8 @@ export namespace Adw {
          * * {@link AboutDialog.add_acknowledgement_section}
          * @since 1.5
          */
-        get documenters(): (string[] | null);
-        set documenters(val: (string[] | null));
+        get documenters(): string[] | null;
+        set documenters(val: string[] | null);
 
         /**
          * The URL for the application's issue tracker.
@@ -2129,7 +2129,7 @@ export namespace Adw {
 
         static ["new"](): AboutDialog;
 
-        static new_from_appdata(resource_path: string, release_notes_version: (string | null)): AboutDialog;
+        static new_from_appdata(resource_path: string, release_notes_version: string | null): AboutDialog;
 
         // Signals
         /** @signal */
@@ -2166,7 +2166,7 @@ export namespace Adw {
          * @param name the section name
          * @param people the list of names
          */
-        add_acknowledgement_section(name: (string | null), people: string[]): void;
+        add_acknowledgement_section(name: string | null, people: string[]): void;
 
         /**
          * Adds an extra section to the Credits page.
@@ -2187,7 +2187,7 @@ export namespace Adw {
          * @param name the section name
          * @param people the list of names
          */
-        add_credit_section(name: (string | null), people: string[]): void;
+        add_credit_section(name: string | null, people: string[]): void;
 
         /**
          * Adds an extra section to the Legal page.
@@ -2235,7 +2235,7 @@ export namespace Adw {
          * @param license_type the type of license
          * @param license custom license information
          */
-        add_legal_section(title: string, copyright: (string | null), license_type: Gtk.License, license: (string | null)): void;
+        add_legal_section(title: string, copyright: string | null, license_type: Gtk.License, license: string | null): void;
 
         /**
          * Adds an extra link to the Details page.
@@ -2290,7 +2290,7 @@ export namespace Adw {
          * Gets the list of artists of the application.
          * @returns The list of artists
          */
-        get_artists(): (string[] | null);
+        get_artists(): string[] | null;
 
         /**
          * Gets the comments about the application.
@@ -2320,7 +2320,7 @@ export namespace Adw {
          * Gets the list of designers of the application.
          * @returns The list of designers
          */
-        get_designers(): (string[] | null);
+        get_designers(): string[] | null;
 
         /**
          * Gets the developer name for `self`.
@@ -2332,13 +2332,13 @@ export namespace Adw {
          * Gets the list of developers of the application.
          * @returns The list of developers
          */
-        get_developers(): (string[] | null);
+        get_developers(): string[] | null;
 
         /**
          * Gets the list of documenters of the application.
          * @returns The list of documenters
          */
-        get_documenters(): (string[] | null);
+        get_documenters(): string[] | null;
 
         /**
          * Gets the issue tracker URL for `self`.
@@ -2428,7 +2428,7 @@ export namespace Adw {
          * * {@link AboutDialog.add_acknowledgement_section}
          * @param artists the list of artists
          */
-        set_artists(artists: (string[] | null)): void;
+        set_artists(artists: string[] | null): void;
 
         /**
          * Sets the comments about the application.
@@ -2501,7 +2501,7 @@ export namespace Adw {
          * * {@link AboutDialog.add_acknowledgement_section}
          * @param designers the list of designers
          */
-        set_designers(designers: (string[] | null)): void;
+        set_designers(designers: string[] | null): void;
 
         /**
          * Sets the developer name for `self`.
@@ -2534,7 +2534,7 @@ export namespace Adw {
          * * {@link AboutDialog.add_acknowledgement_section}
          * @param developers the list of developers
          */
-        set_developers(developers: (string[] | null)): void;
+        set_developers(developers: string[] | null): void;
 
         /**
          * Sets the list of documenters of the application.
@@ -2554,7 +2554,7 @@ export namespace Adw {
          * * {@link AboutDialog.add_acknowledgement_section}
          * @param documenters the list of documenters
          */
-        set_documenters(documenters: (string[] | null)): void;
+        set_documenters(documenters: string[] | null): void;
 
         /**
          * Sets the issue tracker URL for `self`.
@@ -2735,7 +2735,7 @@ export namespace Adw {
              * @deprecated since 1.6: Use {@link AboutDialog}.
              * @run-last
              */
-            "activate-link": (arg0: string) => (boolean | void);
+            "activate-link": (arg0: string) => boolean | void;
             "notify::application-icon": (pspec: GObject.ParamSpec) => void;
             "notify::application-name": (pspec: GObject.ParamSpec) => void;
             "notify::artists": (pspec: GObject.ParamSpec) => void;
@@ -2830,18 +2830,18 @@ export namespace Adw {
             applicationIcon: string;
             application_name: string;
             applicationName: string;
-            artists: (string[] | null);
+            artists: string[] | null;
             comments: string;
             copyright: string;
             debug_info: string;
             debugInfo: string;
             debug_info_filename: string;
             debugInfoFilename: string;
-            designers: (string[] | null);
+            designers: string[] | null;
             developer_name: string;
             developerName: string;
-            developers: (string[] | null);
-            documenters: (string[] | null);
+            developers: string[] | null;
+            documenters: string[] | null;
             issue_url: string;
             issueUrl: string;
             license: string;
@@ -3093,8 +3093,8 @@ export namespace Adw {
          * @since 1.2
          * @deprecated since 1.6: Use {@link AboutDialog}.
          */
-        get artists(): (string[] | null);
-        set artists(val: (string[] | null));
+        get artists(): string[] | null;
+        set artists(val: string[] | null);
 
         /**
          * The comments about the application.
@@ -3207,8 +3207,8 @@ export namespace Adw {
          * @since 1.2
          * @deprecated since 1.6: Use {@link AboutDialog}.
          */
-        get designers(): (string[] | null);
-        set designers(val: (string[] | null));
+        get designers(): string[] | null;
+        set designers(val: string[] | null);
 
         /**
          * The developer name.
@@ -3263,8 +3263,8 @@ export namespace Adw {
          * @since 1.2
          * @deprecated since 1.6: Use {@link AboutDialog}.
          */
-        get developers(): (string[] | null);
-        set developers(val: (string[] | null));
+        get developers(): string[] | null;
+        set developers(val: string[] | null);
 
         /**
          * The list of documenters of the application.
@@ -3285,8 +3285,8 @@ export namespace Adw {
          * @since 1.2
          * @deprecated since 1.6: Use {@link AboutDialog}.
          */
-        get documenters(): (string[] | null);
-        set documenters(val: (string[] | null));
+        get documenters(): string[] | null;
+        set documenters(val: string[] | null);
 
         /**
          * The URL for the application's issue tracker.
@@ -3594,7 +3594,7 @@ export namespace Adw {
 
         static ["new"](): AboutWindow;
 
-        static new_from_appdata(resource_path: string, release_notes_version: (string | null)): AboutWindow;
+        static new_from_appdata(resource_path: string, release_notes_version: string | null): AboutWindow;
 
         // Signals
         /** @signal */
@@ -3631,7 +3631,7 @@ export namespace Adw {
          * @param name the section name
          * @param people the list of names
          */
-        add_acknowledgement_section(name: (string | null), people: string[]): void;
+        add_acknowledgement_section(name: string | null, people: string[]): void;
 
         /**
          * Adds an extra section to the Credits page.
@@ -3652,7 +3652,7 @@ export namespace Adw {
          * @param name the section name
          * @param people the list of names
          */
-        add_credit_section(name: (string | null), people: string[]): void;
+        add_credit_section(name: string | null, people: string[]): void;
 
         /**
          * Adds an extra section to the Legal page.
@@ -3700,7 +3700,7 @@ export namespace Adw {
          * @param license_type the type of license
          * @param license custom license information
          */
-        add_legal_section(title: string, copyright: (string | null), license_type: Gtk.License, license: (string | null)): void;
+        add_legal_section(title: string, copyright: string | null, license_type: Gtk.License, license: string | null): void;
 
         /**
          * Adds an extra link to the Details page.
@@ -3731,7 +3731,7 @@ export namespace Adw {
          * Gets the list of artists of the application.
          * @returns The list of artists
          */
-        get_artists(): (string[] | null);
+        get_artists(): string[] | null;
 
         /**
          * Gets the comments about the application.
@@ -3761,7 +3761,7 @@ export namespace Adw {
          * Gets the list of designers of the application.
          * @returns The list of designers
          */
-        get_designers(): (string[] | null);
+        get_designers(): string[] | null;
 
         /**
          * Gets the developer name for `self`.
@@ -3773,13 +3773,13 @@ export namespace Adw {
          * Gets the list of developers of the application.
          * @returns The list of developers
          */
-        get_developers(): (string[] | null);
+        get_developers(): string[] | null;
 
         /**
          * Gets the list of documenters of the application.
          * @returns The list of documenters
          */
-        get_documenters(): (string[] | null);
+        get_documenters(): string[] | null;
 
         /**
          * Gets the issue tracker URL for `self`.
@@ -3869,7 +3869,7 @@ export namespace Adw {
          * * {@link AboutWindow.add_acknowledgement_section}
          * @param artists the list of artists
          */
-        set_artists(artists: (string[] | null)): void;
+        set_artists(artists: string[] | null): void;
 
         /**
          * Sets the comments about the application.
@@ -3942,7 +3942,7 @@ export namespace Adw {
          * * {@link AboutWindow.add_acknowledgement_section}
          * @param designers the list of designers
          */
-        set_designers(designers: (string[] | null)): void;
+        set_designers(designers: string[] | null): void;
 
         /**
          * Sets the developer name for `self`.
@@ -3975,7 +3975,7 @@ export namespace Adw {
          * * {@link AboutWindow.add_acknowledgement_section}
          * @param developers the list of developers
          */
-        set_developers(developers: (string[] | null)): void;
+        set_developers(developers: string[] | null): void;
 
         /**
          * Sets the list of documenters of the application.
@@ -3995,7 +3995,7 @@ export namespace Adw {
          * * {@link AboutWindow.add_acknowledgement_section}
          * @param documenters the list of documenters
          */
-        set_documenters(documenters: (string[] | null)): void;
+        set_documenters(documenters: string[] | null): void;
 
         /**
          * Sets the issue tracker URL for `self`.
@@ -4209,11 +4209,11 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends PreferencesRow.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Actionable.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
-            activatable_widget: (Gtk.Widget | null);
-            activatableWidget: (Gtk.Widget | null);
-            icon_name: (string | null);
-            iconName: (string | null);
-            subtitle: (string | null);
+            activatable_widget: Gtk.Widget | null;
+            activatableWidget: Gtk.Widget | null;
+            icon_name: string | null;
+            iconName: string | null;
+            subtitle: string | null;
             subtitle_lines: number;
             subtitleLines: number;
             subtitle_selectable: boolean;
@@ -4289,8 +4289,8 @@ export namespace Adw {
          * The target widget will be activated by emitting the
          * `Gtk.Widget::mnemonic-activate` signal on it.
          */
-        get activatable_widget(): (Gtk.Widget | null);
-        set activatable_widget(val: (Gtk.Widget | null));
+        get activatable_widget(): Gtk.Widget | null;
+        set activatable_widget(val: Gtk.Widget | null);
 
         /**
          * The widget to activate when the row is activated.
@@ -4303,22 +4303,22 @@ export namespace Adw {
          * The target widget will be activated by emitting the
          * `Gtk.Widget::mnemonic-activate` signal on it.
          */
-        get activatableWidget(): (Gtk.Widget | null);
-        set activatableWidget(val: (Gtk.Widget | null));
+        get activatableWidget(): Gtk.Widget | null;
+        set activatableWidget(val: Gtk.Widget | null);
 
         /**
          * The icon name for this row.
          * @deprecated since 1.3: Use {@link ActionRow.add_prefix} to add an icon.
          */
-        get icon_name(): (string | null);
-        set icon_name(val: (string | null));
+        get icon_name(): string | null;
+        set icon_name(val: string | null);
 
         /**
          * The icon name for this row.
          * @deprecated since 1.3: Use {@link ActionRow.add_prefix} to add an icon.
          */
-        get iconName(): (string | null);
-        set iconName(val: (string | null));
+        get iconName(): string | null;
+        set iconName(val: string | null);
 
         /**
          * The subtitle for this row.
@@ -4326,8 +4326,8 @@ export namespace Adw {
          * The subtitle is interpreted as Pango markup unless
          * {@link PreferencesRow.use_markup} is set to `FALSE`.
          */
-        get subtitle(): (string | null);
-        set subtitle(val: (string | null));
+        get subtitle(): string | null;
+        set subtitle(val: string | null);
 
         /**
          * The number of lines at the end of which the subtitle label will be
@@ -4451,19 +4451,19 @@ export namespace Adw {
          * Gets the widget activated when `self` is activated.
          * @returns the activatable widget for `self`
          */
-        get_activatable_widget(): (Gtk.Widget | null);
+        get_activatable_widget(): Gtk.Widget | null;
 
         /**
          * Gets the icon name for `self`.
          * @returns the icon name for `self`
          */
-        get_icon_name(): (string | null);
+        get_icon_name(): string | null;
 
         /**
          * Gets the subtitle for `self`.
          * @returns the subtitle for `self`
          */
-        get_subtitle(): (string | null);
+        get_subtitle(): string | null;
 
         /**
          * Gets the number of lines at the end of which the subtitle label will be
@@ -4502,13 +4502,13 @@ export namespace Adw {
          * `Gtk.Widget::mnemonic-activate` signal on it.
          * @param widget the target widget
          */
-        set_activatable_widget(widget: (Gtk.Widget | null)): void;
+        set_activatable_widget(widget: Gtk.Widget | null): void;
 
         /**
          * Sets the icon name for `self`.
          * @param icon_name the icon name
          */
-        set_icon_name(icon_name: (string | null)): void;
+        set_icon_name(icon_name: string | null): void;
 
         /**
          * Sets the subtitle for `self`.
@@ -5423,11 +5423,11 @@ export namespace Adw {
             bodyUseMarkup: boolean;
             close_response: string;
             closeResponse: string;
-            default_response: (string | null);
-            defaultResponse: (string | null);
-            extra_child: (Gtk.Widget | null);
-            extraChild: (Gtk.Widget | null);
-            heading: (string | null);
+            default_response: string | null;
+            defaultResponse: string | null;
+            extra_child: Gtk.Widget | null;
+            extraChild: Gtk.Widget | null;
+            heading: string | null;
             heading_use_markup: boolean;
             headingUseMarkup: boolean;
             prefer_wide_layout: boolean;
@@ -5643,8 +5643,8 @@ export namespace Adw {
          * @since 1.5
          * @default null
          */
-        get default_response(): (string | null);
-        set default_response(val: (string | null));
+        get default_response(): string | null;
+        set default_response(val: string | null);
 
         /**
          * The response ID of the default response.
@@ -5659,8 +5659,8 @@ export namespace Adw {
          * @since 1.5
          * @default null
          */
-        get defaultResponse(): (string | null);
-        set defaultResponse(val: (string | null));
+        get defaultResponse(): string | null;
+        set defaultResponse(val: string | null);
 
         /**
          * The child widget.
@@ -5668,8 +5668,8 @@ export namespace Adw {
          * Displayed below the heading and body.
          * @since 1.5
          */
-        get extra_child(): (Gtk.Widget | null);
-        set extra_child(val: (Gtk.Widget | null));
+        get extra_child(): Gtk.Widget | null;
+        set extra_child(val: Gtk.Widget | null);
 
         /**
          * The child widget.
@@ -5677,15 +5677,15 @@ export namespace Adw {
          * Displayed below the heading and body.
          * @since 1.5
          */
-        get extraChild(): (Gtk.Widget | null);
-        set extraChild(val: (Gtk.Widget | null));
+        get extraChild(): Gtk.Widget | null;
+        set extraChild(val: Gtk.Widget | null);
 
         /**
          * The heading of the dialog.
          * @since 1.5
          */
-        get heading(): (string | null);
-        set heading(val: (string | null));
+        get heading(): string | null;
+        set heading(val: string | null);
 
         /**
          * Whether the heading includes Pango markup.
@@ -5743,7 +5743,7 @@ export namespace Adw {
 
         _init(...args: any[]): void;
 
-        static ["new"](heading: (string | null), body: (string | null)): AlertDialog;
+        static ["new"](heading: string | null, body: string | null): AlertDialog;
 
         // Conflicted with Adw.Dialog.new
         static ["new"](...args: never[]): any;
@@ -5799,7 +5799,7 @@ export namespace Adw {
          * @param parent the parent widget
          * @param cancellable a {@link Gio.Cancellable} to cancel the operation
          */
-        choose(parent: (Gtk.Widget | null), cancellable: (Gio.Cancellable | null)): globalThis.Promise<string>;
+        choose(parent: Gtk.Widget | null, cancellable: Gio.Cancellable | null): globalThis.Promise<string>;
 
         /**
          * This function shows `self` to the user.
@@ -5810,7 +5810,7 @@ export namespace Adw {
          * @param cancellable a {@link Gio.Cancellable} to cancel the operation
          * @param callback a callback to call when the operation is complete
          */
-        choose(parent: (Gtk.Widget | null), cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        choose(parent: Gtk.Widget | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * This function shows `self` to the user.
@@ -5821,7 +5821,7 @@ export namespace Adw {
          * @param cancellable a {@link Gio.Cancellable} to cancel the operation
          * @param callback a callback to call when the operation is complete
          */
-        choose(parent: (Gtk.Widget | null), cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<string> | void);
+        choose(parent: Gtk.Widget | null, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<string> | void;
 
         /**
          * Finishes the {@link AlertDialog.choose} call and returns the response ID.
@@ -5852,19 +5852,19 @@ export namespace Adw {
          * Gets the ID of the default response of `self`.
          * @returns the default response ID
          */
-        get_default_response(): (string | null);
+        get_default_response(): string | null;
 
         /**
          * Gets the child widget of `self`.
          * @returns the child widget of `self`.
          */
-        get_extra_child(): (Gtk.Widget | null);
+        get_extra_child(): Gtk.Widget | null;
 
         /**
          * Gets the heading of `self`.
          * @returns the heading of `self`.
          */
-        get_heading(): (string | null);
+        get_heading(): string | null;
 
         /**
          * Gets whether the heading of `self` includes Pango markup.
@@ -5957,7 +5957,7 @@ export namespace Adw {
          * See {@link Dialog.default_widget}.
          * @param response the default response ID
          */
-        set_default_response(response: (string | null)): void;
+        set_default_response(response: string | null): void;
 
         /**
          * Sets the child widget of `self`.
@@ -5965,13 +5965,13 @@ export namespace Adw {
          * The child widget is displayed below the heading and body.
          * @param child the child widget
          */
-        set_extra_child(child: (Gtk.Widget | null)): void;
+        set_extra_child(child: Gtk.Widget | null): void;
 
         /**
          * Sets the heading of `self`.
          * @param heading the heading of `self`
          */
-        set_heading(heading: (string | null)): void;
+        set_heading(heading: string | null): void;
 
         /**
          * Sets whether the heading of `self` includes Pango markup.
@@ -6352,13 +6352,10 @@ export namespace Adw {
 
     namespace AnimationTarget {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -6505,7 +6502,7 @@ export namespace Adw {
 
         _init(...args: any[]): void;
 
-        static ["new"](application_id: (string | null), flags: Gio.ApplicationFlags): Application;
+        static ["new"](application_id: string | null, flags: Gio.ApplicationFlags): Application;
 
         // Signals
         /** @signal */
@@ -6608,12 +6605,12 @@ export namespace Adw {
         interface ConstructorProps extends Gtk.ApplicationWindow.ConstructorProps, Gio.ActionGroup.ConstructorProps, Gio.ActionMap.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps, Gtk.Native.ConstructorProps, Gtk.Root.ConstructorProps, Gtk.ShortcutManager.ConstructorProps {
             adaptive_preview: boolean;
             adaptivePreview: boolean;
-            content: (Gtk.Widget | null);
-            current_breakpoint: (Breakpoint | null);
-            currentBreakpoint: (Breakpoint | null);
+            content: Gtk.Widget | null;
+            current_breakpoint: Breakpoint | null;
+            currentBreakpoint: Breakpoint | null;
             dialogs: Gio.ListModel;
-            visible_dialog: (Dialog | null);
-            visibleDialog: (Dialog | null);
+            visible_dialog: Dialog | null;
+            visibleDialog: Dialog | null;
         }
     }
 
@@ -6692,22 +6689,22 @@ export namespace Adw {
          * 
          * This property should always be used instead of {@link Gtk.Window.child}.
          */
-        get content(): (Gtk.Widget | null);
-        set content(val: (Gtk.Widget | null));
+        get content(): Gtk.Widget | null;
+        set content(val: Gtk.Widget | null);
 
         /**
          * The current breakpoint.
          * @since 1.4
          * @read-only
          */
-        get current_breakpoint(): (Breakpoint | null);
+        get current_breakpoint(): Breakpoint | null;
 
         /**
          * The current breakpoint.
          * @since 1.4
          * @read-only
          */
-        get currentBreakpoint(): (Breakpoint | null);
+        get currentBreakpoint(): Breakpoint | null;
 
         /**
          * The open dialogs.
@@ -6721,14 +6718,14 @@ export namespace Adw {
          * @since 1.5
          * @read-only
          */
-        get visible_dialog(): (Dialog | null);
+        get visible_dialog(): Dialog | null;
 
         /**
          * The currently visible dialog
          * @since 1.5
          * @read-only
          */
-        get visibleDialog(): (Dialog | null);
+        get visibleDialog(): Dialog | null;
 
         /**
          * Compile-time signal type information.
@@ -6781,13 +6778,13 @@ export namespace Adw {
          * This method should always be used instead of {@link Gtk.Window.get_child}.
          * @returns the content widget of `self`
          */
-        get_content(): (Gtk.Widget | null);
+        get_content(): Gtk.Widget | null;
 
         /**
          * Gets the current breakpoint.
          * @returns the current breakpoint
          */
-        get_current_breakpoint(): (Breakpoint | null);
+        get_current_breakpoint(): Breakpoint | null;
 
         /**
          * Returns a {@link Gio.ListModel} that contains the open dialogs of `self`.
@@ -6801,7 +6798,7 @@ export namespace Adw {
          * Returns the currently visible dialog in `self`, if there's one.
          * @returns the visible dialog
          */
-        get_visible_dialog(): (Dialog | null);
+        get_visible_dialog(): Dialog | null;
 
         /**
          * Sets whether adaptive preview for `self` is currently open.
@@ -6823,7 +6820,7 @@ export namespace Adw {
          * This method should always be used instead of {@link Gtk.Window.set_child}.
          * @param content the content widget
          */
-        set_content(content: (Gtk.Widget | null)): void;
+        set_content(content: Gtk.Widget | null): void;
 
         /**
          * Emits the `Gio.ActionGroup::action-added` signal on `action_group`.
@@ -6896,7 +6893,7 @@ export namespace Adw {
          * @param action_name the name of the action to activate
          * @param parameter parameters to the activation
          */
-        activate_action(action_name: string, parameter: (GLib.Variant | null)): void;
+        activate_action(action_name: string, parameter: GLib.Variant | null): void;
 
         /**
          * @param args 
@@ -6948,7 +6945,7 @@ export namespace Adw {
          * @param action_name the name of the action to query
          * @returns the parameter type
          */
-        get_action_parameter_type(action_name: string): (GLib.VariantType | null);
+        get_action_parameter_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Queries the current state of the named action within `action_group`.
@@ -6962,7 +6959,7 @@ export namespace Adw {
          * @param action_name the name of the action to query
          * @returns the current state of the action
          */
-        get_action_state(action_name: string): (GLib.Variant | null);
+        get_action_state(action_name: string): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of the
@@ -6986,7 +6983,7 @@ export namespace Adw {
          * @param action_name the name of the action to query
          * @returns the state range hint
          */
-        get_action_state_hint(action_name: string): (GLib.Variant | null);
+        get_action_state_hint(action_name: string): GLib.Variant | null;
 
         /**
          * Queries the type of the state of the named action within
@@ -7008,7 +7005,7 @@ export namespace Adw {
          * @param action_name the name of the action to query
          * @returns the state type, if the action is stateful
          */
-        get_action_state_type(action_name: string): (GLib.VariantType | null);
+        get_action_state_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Checks if the named action exists within `action_group`.
@@ -7135,7 +7132,7 @@ export namespace Adw {
          * @param parameter parameters to the activation
          * @virtual
          */
-        vfunc_activate_action(action_name: string, parameter: (GLib.Variant | null)): void;
+        vfunc_activate_action(action_name: string, parameter: GLib.Variant | null): void;
 
         /**
          * Request for the state of the named action within `action_group` to be
@@ -7182,7 +7179,7 @@ export namespace Adw {
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_parameter_type(action_name: string): (GLib.VariantType | null);
+        vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Queries the current state of the named action within `action_group`.
@@ -7196,7 +7193,7 @@ export namespace Adw {
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state(action_name: string): (GLib.Variant | null);
+        vfunc_get_action_state(action_name: string): GLib.Variant | null;
 
         /**
          * Requests a hint about the valid range of values for the state of the
@@ -7220,7 +7217,7 @@ export namespace Adw {
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state_hint(action_name: string): (GLib.Variant | null);
+        vfunc_get_action_state_hint(action_name: string): GLib.Variant | null;
 
         /**
          * Queries the type of the state of the named action within
@@ -7242,7 +7239,7 @@ export namespace Adw {
          * @param action_name the name of the action to query
          * @virtual
          */
-        vfunc_get_action_state_type(action_name: string): (GLib.VariantType | null);
+        vfunc_get_action_state_type(action_name: string): GLib.VariantType | null;
 
         /**
          * Checks if the named action exists within `action_group`.
@@ -7318,7 +7315,7 @@ export namespace Adw {
          * @param action_name the name of an action
          * @returns a {@link Gio.Action}
          */
-        lookup_action(action_name: string): (Gio.Action | null);
+        lookup_action(action_name: string): Gio.Action | null;
 
         /**
          * Removes the named action from the action map.
@@ -7374,7 +7371,7 @@ export namespace Adw {
          * @param action_name the name of an action
          * @virtual
          */
-        vfunc_lookup_action(action_name: string): (Gio.Action | null);
+        vfunc_lookup_action(action_name: string): Gio.Action | null;
 
         /**
          * Removes the named action from the action map.
@@ -7435,14 +7432,14 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
-            custom_image: (Gdk.Paintable | null);
-            customImage: (Gdk.Paintable | null);
-            icon_name: (string | null);
-            iconName: (string | null);
+            custom_image: Gdk.Paintable | null;
+            customImage: Gdk.Paintable | null;
+            icon_name: string | null;
+            iconName: string | null;
             show_initials: boolean;
             showInitials: boolean;
             size: number;
-            text: (string | null);
+            text: string | null;
         }
     }
 
@@ -7485,16 +7482,16 @@ export namespace Adw {
          * 
          * Custom image is displayed instead of initials or icon.
          */
-        get custom_image(): (Gdk.Paintable | null);
-        set custom_image(val: (Gdk.Paintable | null));
+        get custom_image(): Gdk.Paintable | null;
+        set custom_image(val: Gdk.Paintable | null);
 
         /**
          * A custom image paintable.
          * 
          * Custom image is displayed instead of initials or icon.
          */
-        get customImage(): (Gdk.Paintable | null);
-        set customImage(val: (Gdk.Paintable | null));
+        get customImage(): Gdk.Paintable | null;
+        set customImage(val: Gdk.Paintable | null);
 
         /**
          * The name of an icon to use as a fallback.
@@ -7502,8 +7499,8 @@ export namespace Adw {
          * If no name is set, `avatar-default-symbolic` will be used.
          * @default null
          */
-        get icon_name(): (string | null);
-        set icon_name(val: (string | null));
+        get icon_name(): string | null;
+        set icon_name(val: string | null);
 
         /**
          * The name of an icon to use as a fallback.
@@ -7511,8 +7508,8 @@ export namespace Adw {
          * If no name is set, `avatar-default-symbolic` will be used.
          * @default null
          */
-        get iconName(): (string | null);
-        set iconName(val: (string | null));
+        get iconName(): string | null;
+        set iconName(val: string | null);
 
         /**
          * Whether initials are used instead of an icon on the fallback avatar.
@@ -7545,8 +7542,8 @@ export namespace Adw {
          * It's only used to generate the color if {@link Avatar.show_initials} is
          * `FALSE`.
          */
-        get text(): (string | null);
-        set text(val: (string | null));
+        get text(): string | null;
+        set text(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -7562,7 +7559,7 @@ export namespace Adw {
 
         _init(...args: any[]): void;
 
-        static ["new"](size: number, text: (string | null), show_initials: boolean): Avatar;
+        static ["new"](size: number, text: string | null, show_initials: boolean): Avatar;
 
         // Signals
         /** @signal */
@@ -7591,13 +7588,13 @@ export namespace Adw {
          * Gets the custom image paintable.
          * @returns the custom image
          */
-        get_custom_image(): (Gdk.Paintable | null);
+        get_custom_image(): Gdk.Paintable | null;
 
         /**
          * Gets the name of an icon to use as a fallback.
          * @returns the icon name
          */
-        get_icon_name(): (string | null);
+        get_icon_name(): string | null;
 
         /**
          * Gets whether initials are used instead of an icon on the fallback avatar.
@@ -7615,7 +7612,7 @@ export namespace Adw {
          * Gets the text used to generate the fallback initials and color.
          * @returns the text used to generate the fallback initials and   color
          */
-        get_text(): (string | null);
+        get_text(): string | null;
 
         /**
          * Sets the custom image paintable.
@@ -7623,7 +7620,7 @@ export namespace Adw {
          * Custom image is displayed instead of initials or icon.
          * @param custom_image a custom image
          */
-        set_custom_image(custom_image: (Gdk.Paintable | null)): void;
+        set_custom_image(custom_image: Gdk.Paintable | null): void;
 
         /**
          * Sets the name of an icon to use as a fallback.
@@ -7631,7 +7628,7 @@ export namespace Adw {
          * If no name is set, `avatar-default-symbolic` will be used.
          * @param icon_name the icon name
          */
-        set_icon_name(icon_name: (string | null)): void;
+        set_icon_name(icon_name: string | null): void;
 
         /**
          * Sets whether to use initials instead of an icon on the fallback avatar.
@@ -7654,7 +7651,7 @@ export namespace Adw {
          * `FALSE`.
          * @param text the text used to get the initials and color
          */
-        set_text(text: (string | null)): void;
+        set_text(text: string | null): void;
 
         /**
          * The accessible role of the given {@link Gtk.Accessible} implementation.
@@ -7697,7 +7694,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -7725,13 +7722,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -7775,7 +7772,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -7784,7 +7781,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -7838,13 +7835,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -7860,13 +7857,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -7886,7 +7883,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -7896,7 +7893,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -7907,7 +7904,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -7918,7 +7915,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -7927,7 +7924,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -8038,8 +8035,8 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Actionable.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
-            button_label: (string | null);
-            buttonLabel: (string | null);
+            button_label: string | null;
+            buttonLabel: string | null;
             button_style: BannerButtonStyle;
             buttonStyle: BannerButtonStyle;
             revealed: boolean;
@@ -8094,8 +8091,8 @@ export namespace Adw {
          * `Adw.Banner::button-clicked` signal.
          * @since 1.3
          */
-        get button_label(): (string | null);
-        set button_label(val: (string | null));
+        get button_label(): string | null;
+        set button_label(val: string | null);
 
         /**
          * The label to show on the button.
@@ -8106,8 +8103,8 @@ export namespace Adw {
          * `Adw.Banner::button-clicked` signal.
          * @since 1.3
          */
-        get buttonLabel(): (string | null);
-        set buttonLabel(val: (string | null));
+        get buttonLabel(): string | null;
+        set buttonLabel(val: string | null);
 
         /**
          * The style class to use for the banner button.
@@ -8212,7 +8209,7 @@ export namespace Adw {
          * Gets the button label for `self`.
          * @returns the button label for `self`
          */
-        get_button_label(): (string | null);
+        get_button_label(): string | null;
 
         /**
          * Gets the style class in use for the banner button.
@@ -8247,7 +8244,7 @@ export namespace Adw {
          * `Adw.Banner::button-clicked` signal.
          * @param label the label
          */
-        set_button_label(label: (string | null)): void;
+        set_button_label(label: string | null): void;
 
         /**
          * Sets the style class to use for the banner button.
@@ -8310,16 +8307,16 @@ export namespace Adw {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * The name of the action with which this widget should be associated.
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /**
          * The target value of the actionable widget's action.
@@ -8356,7 +8353,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -8384,13 +8381,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -8434,7 +8431,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -8443,7 +8440,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -8497,13 +8494,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -8519,13 +8516,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -8542,13 +8539,13 @@ export namespace Adw {
          * Gets the action name for `actionable`.
          * @returns the action name
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
          * @returns the current target value
          */
-        get_action_target_value(): (GLib.Variant | null);
+        get_action_target_value(): GLib.Variant | null;
 
         /**
          * Specifies the name of the action with which this widget should be
@@ -8566,7 +8563,7 @@ export namespace Adw {
          * associated with the window.
          * @param action_name an action name
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -8589,7 +8586,7 @@ export namespace Adw {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -8605,13 +8602,13 @@ export namespace Adw {
          * Gets the action name for `actionable`.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
          * @virtual
          */
-        vfunc_get_action_target_value(): (GLib.Variant | null);
+        vfunc_get_action_target_value(): GLib.Variant | null;
 
         /**
          * Specifies the name of the action with which this widget should be
@@ -8630,7 +8627,7 @@ export namespace Adw {
          * @param action_name an action name
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -8654,7 +8651,7 @@ export namespace Adw {
          * @param target_value a {@link GLib.Variant} to set as the target value
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Gets the ID of the `buildable` object.
@@ -8663,7 +8660,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -8673,7 +8670,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -8684,7 +8681,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -8695,7 +8692,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -8704,7 +8701,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -8800,7 +8797,7 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
-            child: (Gtk.Widget | null);
+            child: Gtk.Widget | null;
         }
     }
 
@@ -8826,8 +8823,8 @@ export namespace Adw {
         /**
          * The child widget of the {@link Adw.Bin}.
          */
-        get child(): (Gtk.Widget | null);
-        set child(val: (Gtk.Widget | null));
+        get child(): Gtk.Widget | null;
+        set child(val: Gtk.Widget | null);
 
         /**
          * Compile-time signal type information.
@@ -8863,13 +8860,13 @@ export namespace Adw {
          * Gets the child widget of `self`.
          * @returns the child widget of `self`
          */
-        get_child(): (Gtk.Widget | null);
+        get_child(): Gtk.Widget | null;
 
         /**
          * Sets the child widget of `self`.
          * @param child the child widget
          */
-        set_child(child: (Gtk.Widget | null)): void;
+        set_child(child: Gtk.Widget | null): void;
 
         /**
          * The accessible role of the given {@link Gtk.Accessible} implementation.
@@ -8912,7 +8909,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -8940,13 +8937,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -8990,7 +8987,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -8999,7 +8996,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -9053,13 +9050,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -9075,13 +9072,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -9101,7 +9098,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -9111,7 +9108,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -9122,7 +9119,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -9133,7 +9130,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -9142,7 +9139,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -9259,22 +9256,22 @@ export namespace Adw {
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Swipeable.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
             align: number;
-            bottom_bar: (Gtk.Widget | null);
-            bottomBar: (Gtk.Widget | null);
+            bottom_bar: Gtk.Widget | null;
+            bottomBar: Gtk.Widget | null;
             bottom_bar_height: number;
             bottomBarHeight: number;
             can_close: boolean;
             canClose: boolean;
             can_open: boolean;
             canOpen: boolean;
-            content: (Gtk.Widget | null);
+            content: Gtk.Widget | null;
             full_width: boolean;
             fullWidth: boolean;
             modal: boolean;
             open: boolean;
             reveal_bottom_bar: boolean;
             revealBottomBar: boolean;
-            sheet: (Gtk.Widget | null);
+            sheet: Gtk.Widget | null;
             sheet_height: number;
             sheetHeight: number;
             show_drag_handle: boolean;
@@ -9385,8 +9382,8 @@ export namespace Adw {
          * {@link BottomSheet.reveal_bottom_bar} property.
          * @since 1.6
          */
-        get bottom_bar(): (Gtk.Widget | null);
-        set bottom_bar(val: (Gtk.Widget | null));
+        get bottom_bar(): Gtk.Widget | null;
+        set bottom_bar(val: Gtk.Widget | null);
 
         /**
          * The bottom bar widget.
@@ -9398,8 +9395,8 @@ export namespace Adw {
          * {@link BottomSheet.reveal_bottom_bar} property.
          * @since 1.6
          */
-        get bottomBar(): (Gtk.Widget | null);
-        set bottomBar(val: (Gtk.Widget | null));
+        get bottomBar(): Gtk.Widget | null;
+        set bottomBar(val: Gtk.Widget | null);
 
         /**
          * The current bottom bar height.
@@ -9483,8 +9480,8 @@ export namespace Adw {
          * It's always shown, and the bottom sheet is overlaid over it.
          * @since 1.6
          */
-        get content(): (Gtk.Widget | null);
-        set content(val: (Gtk.Widget | null));
+        get content(): Gtk.Widget | null;
+        set content(val: Gtk.Widget | null);
 
         /**
          * Whether the bottom sheet takes the full width.
@@ -9560,8 +9557,8 @@ export namespace Adw {
          * Only shown when {@link BottomSheet.open} is `TRUE`.
          * @since 1.6
          */
-        get sheet(): (Gtk.Widget | null);
-        set sheet(val: (Gtk.Widget | null));
+        get sheet(): Gtk.Widget | null;
+        set sheet(val: Gtk.Widget | null);
 
         /**
          * The current bottom sheet height.
@@ -9655,7 +9652,7 @@ export namespace Adw {
          * Gets the bottom bar widget for `self`.
          * @returns the bottom bar widget
          */
-        get_bottom_bar(): (Gtk.Widget | null);
+        get_bottom_bar(): Gtk.Widget | null;
 
         /**
          * Gets the current bottom bar height.
@@ -9682,7 +9679,7 @@ export namespace Adw {
          * Gets the content widget for `self`.
          * @returns the content widget
          */
-        get_content(): (Gtk.Widget | null);
+        get_content(): Gtk.Widget | null;
 
         /**
          * Gets whether the bottom sheet takes the full width.
@@ -9712,7 +9709,7 @@ export namespace Adw {
          * Gets the bottom sheet widget for `self`.
          * @returns the sheet widget
          */
-        get_sheet(): (Gtk.Widget | null);
+        get_sheet(): Gtk.Widget | null;
 
         /**
          * Gets the current bottom sheet height.
@@ -9749,7 +9746,7 @@ export namespace Adw {
          * {@link BottomSheet.reveal_bottom_bar} property.
          * @param bottom_bar the bottom bar widget
          */
-        set_bottom_bar(bottom_bar: (Gtk.Widget | null)): void;
+        set_bottom_bar(bottom_bar: Gtk.Widget | null): void;
 
         /**
          * Sets whether the bottom sheet can be closed by user.
@@ -9780,7 +9777,7 @@ export namespace Adw {
          * It's always shown, and the bottom sheet is overlaid over it.
          * @param content the content widget
          */
-        set_content(content: (Gtk.Widget | null)): void;
+        set_content(content: Gtk.Widget | null): void;
 
         /**
          * Sets whether the bottom sheet takes the full width.
@@ -9825,7 +9822,7 @@ export namespace Adw {
          * Only shown when {@link BottomSheet.open} is `TRUE`.
          * @param sheet the sheet widget
          */
-        set_sheet(sheet: (Gtk.Widget | null)): void;
+        set_sheet(sheet: Gtk.Widget | null): void;
 
         /**
          * Sets whether to show a drag handle in the bottom sheet.
@@ -9971,7 +9968,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -9999,13 +9996,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -10049,7 +10046,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -10058,7 +10055,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -10112,13 +10109,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -10134,13 +10131,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -10160,7 +10157,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -10170,7 +10167,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -10181,7 +10178,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -10192,7 +10189,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -10201,7 +10198,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -10279,7 +10276,7 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps, Gtk.Buildable.ConstructorProps {
-            condition: (BreakpointCondition | null);
+            condition: BreakpointCondition | null;
         }
     }
 
@@ -10341,8 +10338,8 @@ export namespace Adw {
          * The breakpoint's condition.
          * @since 1.4
          */
-        get condition(): (BreakpointCondition | null);
-        set condition(val: (BreakpointCondition | null));
+        get condition(): BreakpointCondition | null;
+        set condition(val: BreakpointCondition | null);
 
         /**
          * Compile-time signal type information.
@@ -10415,7 +10412,7 @@ export namespace Adw {
          * @param property the target property
          * @param value the value to set
          */
-        add_setter(object: GObject.Object, property: string, value: (GObject.Value | null)): void;
+        add_setter(object: GObject.Object, property: string, value: GObject.Value | null): void;
 
         /**
          * Adds `n_setters` setters to `self`.
@@ -10435,13 +10432,13 @@ export namespace Adw {
          * Gets the condition for `self`.
          * @returns the condition
          */
-        get_condition(): (BreakpointCondition | null);
+        get_condition(): BreakpointCondition | null;
 
         /**
          * Sets the condition for `self`.
          * @param condition the new condition
          */
-        set_condition(condition: (BreakpointCondition | null)): void;
+        set_condition(condition: BreakpointCondition | null): void;
 
         /**
          * Gets the ID of the `buildable` object.
@@ -10450,7 +10447,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -10460,7 +10457,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -10471,7 +10468,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -10482,7 +10479,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -10491,7 +10488,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -10588,9 +10585,9 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
-            child: (Gtk.Widget | null);
-            current_breakpoint: (Breakpoint | null);
-            currentBreakpoint: (Breakpoint | null);
+            child: Gtk.Widget | null;
+            current_breakpoint: Breakpoint | null;
+            currentBreakpoint: Breakpoint | null;
         }
     }
 
@@ -10717,22 +10714,22 @@ export namespace Adw {
          * The child widget.
          * @since 1.4
          */
-        get child(): (Gtk.Widget | null);
-        set child(val: (Gtk.Widget | null));
+        get child(): Gtk.Widget | null;
+        set child(val: Gtk.Widget | null);
 
         /**
          * The current breakpoint.
          * @since 1.4
          * @read-only
          */
-        get current_breakpoint(): (Breakpoint | null);
+        get current_breakpoint(): Breakpoint | null;
 
         /**
          * The current breakpoint.
          * @since 1.4
          * @read-only
          */
-        get currentBreakpoint(): (Breakpoint | null);
+        get currentBreakpoint(): Breakpoint | null;
 
         /**
          * Compile-time signal type information.
@@ -10774,13 +10771,13 @@ export namespace Adw {
          * Gets the child widget of `self`.
          * @returns the child widget of `self`
          */
-        get_child(): (Gtk.Widget | null);
+        get_child(): Gtk.Widget | null;
 
         /**
          * Gets the current breakpoint.
          * @returns the current breakpoint
          */
-        get_current_breakpoint(): (Breakpoint | null);
+        get_current_breakpoint(): Breakpoint | null;
 
         /**
          * Removes `breakpoint` from `self`.
@@ -10792,7 +10789,7 @@ export namespace Adw {
          * Sets the child widget of `self`.
          * @param child the child widget
          */
-        set_child(child: (Gtk.Widget | null)): void;
+        set_child(child: Gtk.Widget | null): void;
 
         /**
          * The accessible role of the given {@link Gtk.Accessible} implementation.
@@ -10835,7 +10832,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -10863,13 +10860,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -10913,7 +10910,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -10922,7 +10919,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -10976,13 +10973,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -10998,13 +10995,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -11024,7 +11021,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -11034,7 +11031,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -11045,7 +11042,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -11056,7 +11053,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -11065,7 +11062,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -11425,7 +11422,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -11453,13 +11450,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -11503,7 +11500,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -11512,7 +11509,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -11566,13 +11563,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -11588,13 +11585,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -11614,7 +11611,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -11624,7 +11621,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -11635,7 +11632,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -11646,7 +11643,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -11655,7 +11652,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -11765,10 +11762,10 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends PreferencesRow.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Actionable.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
-            end_icon_name: (string | null);
-            endIconName: (string | null);
-            start_icon_name: (string | null);
-            startIconName: (string | null);
+            end_icon_name: string | null;
+            endIconName: string | null;
+            start_icon_name: string | null;
+            startIconName: string | null;
         }
     }
 
@@ -11828,29 +11825,29 @@ export namespace Adw {
          * The icon name to show after the title.
          * @since 1.6
          */
-        get end_icon_name(): (string | null);
-        set end_icon_name(val: (string | null));
+        get end_icon_name(): string | null;
+        set end_icon_name(val: string | null);
 
         /**
          * The icon name to show after the title.
          * @since 1.6
          */
-        get endIconName(): (string | null);
-        set endIconName(val: (string | null));
+        get endIconName(): string | null;
+        set endIconName(val: string | null);
 
         /**
          * The icon name to show before the title.
          * @since 1.6
          */
-        get start_icon_name(): (string | null);
-        set start_icon_name(val: (string | null));
+        get start_icon_name(): string | null;
+        set start_icon_name(val: string | null);
 
         /**
          * The icon name to show before the title.
          * @since 1.6
          */
-        get startIconName(): (string | null);
-        set startIconName(val: (string | null));
+        get startIconName(): string | null;
+        set startIconName(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -11886,37 +11883,34 @@ export namespace Adw {
          * Gets the end icon name for `self`.
          * @returns the end icon name for `self`
          */
-        get_end_icon_name(): (string | null);
+        get_end_icon_name(): string | null;
 
         /**
          * Gets the start icon name for `self`.
          * @returns the start icon name for `self`
          */
-        get_start_icon_name(): (string | null);
+        get_start_icon_name(): string | null;
 
         /**
          * Sets the end icon name for `self`.
          * @param icon_name the end icon name
          */
-        set_end_icon_name(icon_name: (string | null)): void;
+        set_end_icon_name(icon_name: string | null): void;
 
         /**
          * Sets the start icon name for `self`.
          * @param icon_name the start icon name
          */
-        set_start_icon_name(icon_name: (string | null)): void;
+        set_start_icon_name(icon_name: string | null): void;
     }
 
 
     namespace CallbackAnimationTarget {
         // Signal signatures
-        interface SignalSignatures extends AnimationTarget.SignalSignatures {
-        }
+        interface SignalSignatures extends AnimationTarget.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends AnimationTarget.ConstructorProps {
-
-        }
+        interface ConstructorProps extends AnimationTarget.ConstructorProps {}
     }
 
     /**
@@ -12538,7 +12532,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -12566,13 +12560,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -12616,7 +12610,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -12625,7 +12619,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -12679,13 +12673,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -12701,13 +12695,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -12727,7 +12721,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -12737,7 +12731,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -12748,7 +12742,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -12759,7 +12753,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -12768,7 +12762,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -12877,7 +12871,7 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps, Gtk.Orientable.ConstructorProps {
-            carousel: (Carousel | null);
+            carousel: Carousel | null;
         }
     }
 
@@ -12909,8 +12903,8 @@ export namespace Adw {
         /**
          * The displayed carousel.
          */
-        get carousel(): (Carousel | null);
-        set carousel(val: (Carousel | null));
+        get carousel(): Carousel | null;
+        set carousel(val: Carousel | null);
 
         /**
          * Compile-time signal type information.
@@ -12946,13 +12940,13 @@ export namespace Adw {
          * Gets the displayed carousel.
          * @returns the displayed carousel
          */
-        get_carousel(): (Carousel | null);
+        get_carousel(): Carousel | null;
 
         /**
          * Sets the displayed carousel.
          * @param carousel a carousel
          */
-        set_carousel(carousel: (Carousel | null)): void;
+        set_carousel(carousel: Carousel | null): void;
 
         /**
          * The accessible role of the given {@link Gtk.Accessible} implementation.
@@ -13003,7 +12997,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -13031,13 +13025,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -13081,7 +13075,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -13090,7 +13084,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -13144,13 +13138,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -13166,13 +13160,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -13192,7 +13186,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -13202,7 +13196,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -13213,7 +13207,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -13224,7 +13218,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -13233,7 +13227,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -13342,7 +13336,7 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps, Gtk.Orientable.ConstructorProps {
-            carousel: (Carousel | null);
+            carousel: Carousel | null;
         }
     }
 
@@ -13373,8 +13367,8 @@ export namespace Adw {
         /**
          * The displayed carousel.
          */
-        get carousel(): (Carousel | null);
-        set carousel(val: (Carousel | null));
+        get carousel(): Carousel | null;
+        set carousel(val: Carousel | null);
 
         /**
          * Compile-time signal type information.
@@ -13410,13 +13404,13 @@ export namespace Adw {
          * Gets the displayed carousel.
          * @returns the displayed carousel
          */
-        get_carousel(): (Carousel | null);
+        get_carousel(): Carousel | null;
 
         /**
          * Sets the displayed carousel.
          * @param carousel a carousel
          */
-        set_carousel(carousel: (Carousel | null)): void;
+        set_carousel(carousel: Carousel | null): void;
 
         /**
          * The accessible role of the given {@link Gtk.Accessible} implementation.
@@ -13467,7 +13461,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -13495,13 +13489,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -13545,7 +13539,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -13554,7 +13548,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -13608,13 +13602,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -13630,13 +13624,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -13656,7 +13650,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -13666,7 +13660,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -13677,7 +13671,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -13688,7 +13682,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -13697,7 +13691,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -13809,7 +13803,7 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps, Gtk.Orientable.ConstructorProps {
-            child: (Gtk.Widget | null);
+            child: Gtk.Widget | null;
             maximum_size: number;
             maximumSize: number;
             tightening_threshold: number;
@@ -13855,8 +13849,8 @@ export namespace Adw {
         /**
          * The child widget of the {@link Adw.Clamp}.
          */
-        get child(): (Gtk.Widget | null);
-        set child(val: (Gtk.Widget | null));
+        get child(): Gtk.Widget | null;
+        set child(val: Gtk.Widget | null);
 
         /**
          * The maximum size allocated to the child.
@@ -13960,7 +13954,7 @@ export namespace Adw {
          * Gets the child widget of `self`.
          * @returns the child widget of `self`
          */
-        get_child(): (Gtk.Widget | null);
+        get_child(): Gtk.Widget | null;
 
         /**
          * Gets the maximum size allocated to the child.
@@ -13984,7 +13978,7 @@ export namespace Adw {
          * Sets the child widget of `self`.
          * @param child the child widget
          */
-        set_child(child: (Gtk.Widget | null)): void;
+        set_child(child: Gtk.Widget | null): void;
 
         /**
          * Sets the maximum size allocated to the child.
@@ -14070,7 +14064,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -14098,13 +14092,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -14148,7 +14142,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -14157,7 +14151,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -14211,13 +14205,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -14233,13 +14227,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -14259,7 +14253,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -14269,7 +14263,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -14280,7 +14274,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -14291,7 +14285,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -14300,7 +14294,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -14640,7 +14634,7 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps, Gtk.Orientable.ConstructorProps, Gtk.Scrollable.ConstructorProps {
-            child: (Gtk.Widget | null);
+            child: Gtk.Widget | null;
             maximum_size: number;
             maximumSize: number;
             tightening_threshold: number;
@@ -14668,8 +14662,8 @@ export namespace Adw {
         /**
          * The child widget of the {@link Adw.ClampScrollable}.
          */
-        get child(): (Gtk.Widget | null);
-        set child(val: (Gtk.Widget | null));
+        get child(): Gtk.Widget | null;
+        set child(val: Gtk.Widget | null);
 
         /**
          * The maximum size allocated to the child.
@@ -14773,7 +14767,7 @@ export namespace Adw {
          * Gets the child widget of `self`.
          * @returns the child widget of `self`
          */
-        get_child(): (Gtk.Widget | null);
+        get_child(): Gtk.Widget | null;
 
         /**
          * Gets the maximum size allocated to the child.
@@ -14797,7 +14791,7 @@ export namespace Adw {
          * Sets the child widget of `self`.
          * @param child the child widget
          */
-        set_child(child: (Gtk.Widget | null)): void;
+        set_child(child: Gtk.Widget | null): void;
 
         /**
          * Sets the maximum size allocated to the child.
@@ -14868,8 +14862,8 @@ export namespace Adw {
          * This adjustment is shared between the scrollable widget and its parent.
           * @category Inherited from Gtk.Scrollable
          */
-        get hadjustment(): (Gtk.Adjustment | null);
-        set hadjustment(val: (Gtk.Adjustment | null));
+        get hadjustment(): Gtk.Adjustment | null;
+        set hadjustment(val: Gtk.Adjustment | null);
 
         /**
          * Determines when horizontal scrolling should start.
@@ -14893,8 +14887,8 @@ export namespace Adw {
          * This adjustment is shared between the scrollable widget and its parent.
           * @category Inherited from Gtk.Scrollable
          */
-        get vadjustment(): (Gtk.Adjustment | null);
-        set vadjustment(val: (Gtk.Adjustment | null));
+        get vadjustment(): Gtk.Adjustment | null;
+        set vadjustment(val: Gtk.Adjustment | null);
 
         /**
          * Determines when vertical scrolling should start.
@@ -14933,7 +14927,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -14961,13 +14955,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -15011,7 +15005,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -15020,7 +15014,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -15074,13 +15068,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -15096,13 +15090,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -15122,7 +15116,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -15132,7 +15126,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -15143,7 +15137,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -15154,7 +15148,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -15163,7 +15157,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -15240,7 +15234,7 @@ export namespace Adw {
          * Retrieves the {@link Gtk.Adjustment} used for horizontal scrolling.
          * @returns horizontal {@link Gtk.Adjustment}.
          */
-        get_hadjustment(): (Gtk.Adjustment | null);
+        get_hadjustment(): Gtk.Adjustment | null;
 
         /**
          * Gets the horizontal {@link Gtk.ScrollablePolicy}.
@@ -15252,7 +15246,7 @@ export namespace Adw {
          * Retrieves the {@link Gtk.Adjustment} used for vertical scrolling.
          * @returns vertical {@link Gtk.Adjustment}.
          */
-        get_vadjustment(): (Gtk.Adjustment | null);
+        get_vadjustment(): Gtk.Adjustment | null;
 
         /**
          * Gets the vertical {@link Gtk.ScrollablePolicy}.
@@ -15264,7 +15258,7 @@ export namespace Adw {
          * Sets the horizontal adjustment of the {@link Gtk.Scrollable}.
          * @param hadjustment a {@link Gtk.Adjustment}
          */
-        set_hadjustment(hadjustment: (Gtk.Adjustment | null)): void;
+        set_hadjustment(hadjustment: Gtk.Adjustment | null): void;
 
         /**
          * Sets the {@link Gtk.ScrollablePolicy}.
@@ -15279,7 +15273,7 @@ export namespace Adw {
          * Sets the vertical adjustment of the {@link Gtk.Scrollable}.
          * @param vadjustment a {@link Gtk.Adjustment}
          */
-        set_vadjustment(vadjustment: (Gtk.Adjustment | null)): void;
+        set_vadjustment(vadjustment: Gtk.Adjustment | null): void;
 
         /**
          * Sets the {@link Gtk.ScrollablePolicy}.
@@ -15370,18 +15364,18 @@ export namespace Adw {
         interface ConstructorProps extends ActionRow.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Actionable.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
             enable_search: boolean;
             enableSearch: boolean;
-            expression: (Gtk.Expression | null);
-            factory: (Gtk.ListItemFactory | null);
-            header_factory: (Gtk.ListItemFactory | null);
-            headerFactory: (Gtk.ListItemFactory | null);
-            list_factory: (Gtk.ListItemFactory | null);
-            listFactory: (Gtk.ListItemFactory | null);
-            model: (Gio.ListModel | null);
+            expression: Gtk.Expression | null;
+            factory: Gtk.ListItemFactory | null;
+            header_factory: Gtk.ListItemFactory | null;
+            headerFactory: Gtk.ListItemFactory | null;
+            list_factory: Gtk.ListItemFactory | null;
+            listFactory: Gtk.ListItemFactory | null;
+            model: Gio.ListModel | null;
             search_match_mode: Gtk.StringFilterMatchMode;
             searchMatchMode: Gtk.StringFilterMatchMode;
             selected: number;
-            selected_item: (GObject.Object | null);
-            selectedItem: (GObject.Object | null);
+            selected_item: GObject.Object | null;
+            selectedItem: GObject.Object | null;
             use_subtitle: boolean;
             useSubtitle: boolean;
         }
@@ -15476,8 +15470,8 @@ export namespace Adw {
          * {@link ComboRow.factory} is not set, or when
          * {@link ComboRow.use_subtitle} is set to `TRUE`.
          */
-        get expression(): (Gtk.Expression | null);
-        set expression(val: (Gtk.Expression | null));
+        get expression(): Gtk.Expression | null;
+        set expression(val: Gtk.Expression | null);
 
         /**
          * Factory for populating list items.
@@ -15485,44 +15479,44 @@ export namespace Adw {
          * This factory is always used for the item in the row. It is also used for
          * items in the popup unless {@link ComboRow.list_factory} is set.
          */
-        get factory(): (Gtk.ListItemFactory | null);
-        set factory(val: (Gtk.ListItemFactory | null));
+        get factory(): Gtk.ListItemFactory | null;
+        set factory(val: Gtk.ListItemFactory | null);
 
         /**
          * The factory for creating header widgets for the popup.
          * @since 1.6
          */
-        get header_factory(): (Gtk.ListItemFactory | null);
-        set header_factory(val: (Gtk.ListItemFactory | null));
+        get header_factory(): Gtk.ListItemFactory | null;
+        set header_factory(val: Gtk.ListItemFactory | null);
 
         /**
          * The factory for creating header widgets for the popup.
          * @since 1.6
          */
-        get headerFactory(): (Gtk.ListItemFactory | null);
-        set headerFactory(val: (Gtk.ListItemFactory | null));
+        get headerFactory(): Gtk.ListItemFactory | null;
+        set headerFactory(val: Gtk.ListItemFactory | null);
 
         /**
          * The factory for populating list items in the popup.
          * 
          * If this is not set, {@link ComboRow.factory} is used.
          */
-        get list_factory(): (Gtk.ListItemFactory | null);
-        set list_factory(val: (Gtk.ListItemFactory | null));
+        get list_factory(): Gtk.ListItemFactory | null;
+        set list_factory(val: Gtk.ListItemFactory | null);
 
         /**
          * The factory for populating list items in the popup.
          * 
          * If this is not set, {@link ComboRow.factory} is used.
          */
-        get listFactory(): (Gtk.ListItemFactory | null);
-        set listFactory(val: (Gtk.ListItemFactory | null));
+        get listFactory(): Gtk.ListItemFactory | null;
+        set listFactory(val: Gtk.ListItemFactory | null);
 
         /**
          * The model that provides the displayed items.
          */
-        get model(): (Gio.ListModel | null);
-        set model(val: (Gio.ListModel | null));
+        get model(): Gio.ListModel | null;
+        set model(val: Gio.ListModel | null);
 
         /**
          * The match mode for the search filter.
@@ -15554,13 +15548,13 @@ export namespace Adw {
          * The selected item.
          * @read-only
          */
-        get selected_item(): (GObject.Object | null);
+        get selected_item(): GObject.Object | null;
 
         /**
          * The selected item.
          * @read-only
          */
-        get selectedItem(): (GObject.Object | null);
+        get selectedItem(): GObject.Object | null;
 
         /**
          * Whether to use the current value as the subtitle.
@@ -15637,31 +15631,31 @@ export namespace Adw {
          * Gets the expression used to obtain strings from items.
          * @returns the expression used to obtain strings from items
          */
-        get_expression(): (Gtk.Expression | null);
+        get_expression(): Gtk.Expression | null;
 
         /**
          * Gets the factory for populating list items.
          * @returns the factory in use
          */
-        get_factory(): (Gtk.ListItemFactory | null);
+        get_factory(): Gtk.ListItemFactory | null;
 
         /**
          * Gets the factory that's currently used to create header widgets for the popup.
          * @returns The factory in use
          */
-        get_header_factory(): (Gtk.ListItemFactory | null);
+        get_header_factory(): Gtk.ListItemFactory | null;
 
         /**
          * Gets the factory for populating list items in the popup.
          * @returns the factory in use
          */
-        get_list_factory(): (Gtk.ListItemFactory | null);
+        get_list_factory(): Gtk.ListItemFactory | null;
 
         /**
          * Gets the model that provides the displayed items.
          * @returns The model in use
          */
-        get_model(): (Gio.ListModel | null);
+        get_model(): Gio.ListModel | null;
 
         /**
          * Returns the match mode that the search filter is using.
@@ -15708,7 +15702,7 @@ export namespace Adw {
          * {@link ComboRow.use_subtitle} is set to `TRUE`.
          * @param expression an expression
          */
-        set_expression(expression: (Gtk.Expression | null)): void;
+        set_expression(expression: Gtk.Expression | null): void;
 
         /**
          * Sets the factory for populating list items.
@@ -15717,13 +15711,13 @@ export namespace Adw {
          * items in the popup unless {@link ComboRow.list_factory} is set.
          * @param factory the factory to use
          */
-        set_factory(factory: (Gtk.ListItemFactory | null)): void;
+        set_factory(factory: Gtk.ListItemFactory | null): void;
 
         /**
          * Sets the factory to use for creating header widgets for the popup.
          * @param factory the factory to use
          */
-        set_header_factory(factory: (Gtk.ListItemFactory | null)): void;
+        set_header_factory(factory: Gtk.ListItemFactory | null): void;
 
         /**
          * Sets the factory for populating list items in the popup.
@@ -15731,13 +15725,13 @@ export namespace Adw {
          * If this is not set, {@link ComboRow.factory} is used.
          * @param factory the factory to use
          */
-        set_list_factory(factory: (Gtk.ListItemFactory | null)): void;
+        set_list_factory(factory: Gtk.ListItemFactory | null): void;
 
         /**
          * Sets the model that provides the displayed items.
          * @param model the model to use
          */
-        set_model(model: (Gio.ListModel | null)): void;
+        set_model(model: Gio.ListModel | null): void;
 
         /**
          * Sets the match mode for the search filter.
@@ -15863,17 +15857,17 @@ export namespace Adw {
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps, Gtk.ShortcutManager.ConstructorProps {
             can_close: boolean;
             canClose: boolean;
-            child: (Gtk.Widget | null);
+            child: Gtk.Widget | null;
             content_height: number;
             contentHeight: number;
             content_width: number;
             contentWidth: number;
-            current_breakpoint: (Breakpoint | null);
-            currentBreakpoint: (Breakpoint | null);
-            default_widget: (Gtk.Widget | null);
-            defaultWidget: (Gtk.Widget | null);
-            focus_widget: (Gtk.Widget | null);
-            focusWidget: (Gtk.Widget | null);
+            current_breakpoint: Breakpoint | null;
+            currentBreakpoint: Breakpoint | null;
+            default_widget: Gtk.Widget | null;
+            defaultWidget: Gtk.Widget | null;
+            focus_widget: Gtk.Widget | null;
+            focusWidget: Gtk.Widget | null;
             follows_content_size: boolean;
             followsContentSize: boolean;
             presentation_mode: DialogPresentationMode;
@@ -15977,8 +15971,8 @@ export namespace Adw {
          * The child widget of the {@link Adw.Dialog}.
          * @since 1.5
          */
-        get child(): (Gtk.Widget | null);
-        set child(val: (Gtk.Widget | null));
+        get child(): Gtk.Widget | null;
+        set child(val: Gtk.Widget | null);
 
         /**
          * The height of the dialog's contents.
@@ -16033,14 +16027,14 @@ export namespace Adw {
          * @since 1.5
          * @read-only
          */
-        get current_breakpoint(): (Breakpoint | null);
+        get current_breakpoint(): Breakpoint | null;
 
         /**
          * The current breakpoint.
          * @since 1.5
          * @read-only
          */
-        get currentBreakpoint(): (Breakpoint | null);
+        get currentBreakpoint(): Breakpoint | null;
 
         /**
          * The default widget.
@@ -16048,8 +16042,8 @@ export namespace Adw {
          * It's activated when the user presses Enter.
          * @since 1.5
          */
-        get default_widget(): (Gtk.Widget | null);
-        set default_widget(val: (Gtk.Widget | null));
+        get default_widget(): Gtk.Widget | null;
+        set default_widget(val: Gtk.Widget | null);
 
         /**
          * The default widget.
@@ -16057,22 +16051,22 @@ export namespace Adw {
          * It's activated when the user presses Enter.
          * @since 1.5
          */
-        get defaultWidget(): (Gtk.Widget | null);
-        set defaultWidget(val: (Gtk.Widget | null));
+        get defaultWidget(): Gtk.Widget | null;
+        set defaultWidget(val: Gtk.Widget | null);
 
         /**
          * The focus widget.
          * @since 1.5
          */
-        get focus_widget(): (Gtk.Widget | null);
-        set focus_widget(val: (Gtk.Widget | null));
+        get focus_widget(): Gtk.Widget | null;
+        set focus_widget(val: Gtk.Widget | null);
 
         /**
          * The focus widget.
          * @since 1.5
          */
-        get focusWidget(): (Gtk.Widget | null);
-        set focusWidget(val: (Gtk.Widget | null));
+        get focusWidget(): Gtk.Widget | null;
+        set focusWidget(val: Gtk.Widget | null);
 
         /**
          * Whether to size content automatically.
@@ -16221,7 +16215,7 @@ export namespace Adw {
          * Gets the child widget of `self`.
          * @returns the child widget of `self`
          */
-        get_child(): (Gtk.Widget | null);
+        get_child(): Gtk.Widget | null;
 
         /**
          * Gets the height of the dialog's contents.
@@ -16239,19 +16233,19 @@ export namespace Adw {
          * Gets the current breakpoint.
          * @returns the current breakpoint
          */
-        get_current_breakpoint(): (Breakpoint | null);
+        get_current_breakpoint(): Breakpoint | null;
 
         /**
          * Gets the default widget for `self`.
          * @returns the default widget
          */
-        get_default_widget(): (Gtk.Widget | null);
+        get_default_widget(): Gtk.Widget | null;
 
         /**
          * Gets the focus widget for `self`.
          * @returns the focus widget
          */
-        get_focus(): (Gtk.Widget | null);
+        get_focus(): Gtk.Widget | null;
 
         /**
          * Gets whether to size content of `self` automatically.
@@ -16280,7 +16274,7 @@ export namespace Adw {
          * will be shown within it. Otherwise, it will be a separate window.
          * @param parent a widget within the toplevel
          */
-        present(parent: (Gtk.Widget | null)): void;
+        present(parent: Gtk.Widget | null): void;
 
         /**
          * Sets whether `self` can be closed.
@@ -16297,7 +16291,7 @@ export namespace Adw {
          * Sets the child widget of `self`.
          * @param child the child widget
          */
-        set_child(child: (Gtk.Widget | null)): void;
+        set_child(child: Gtk.Widget | null): void;
 
         /**
          * Sets the height of the dialog's contents.
@@ -16325,7 +16319,7 @@ export namespace Adw {
          * It's activated when the user presses Enter.
          * @param default_widget the default widget
          */
-        set_default_widget(default_widget: (Gtk.Widget | null)): void;
+        set_default_widget(default_widget: Gtk.Widget | null): void;
 
         /**
          * Sets the focus widget for `self`.
@@ -16338,7 +16332,7 @@ export namespace Adw {
          * {@link Gtk.Widget.grab_focus} instead of this function.
          * @param focus the focus widget
          */
-        set_focus(focus: (Gtk.Widget | null)): void;
+        set_focus(focus: Gtk.Widget | null): void;
 
         /**
          * Sets whether to size content of `self` automatically.
@@ -16415,7 +16409,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -16443,13 +16437,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -16493,7 +16487,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -16502,7 +16496,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -16556,13 +16550,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -16578,13 +16572,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -16604,7 +16598,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -16614,7 +16608,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -16625,7 +16619,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -16636,7 +16630,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -16645,7 +16639,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -16795,7 +16789,7 @@ export namespace Adw {
         interface ConstructorProps extends PreferencesRow.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Actionable.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps, Gtk.Editable.ConstructorProps {
             activates_default: boolean;
             activatesDefault: boolean;
-            attributes: (Pango.AttrList | null);
+            attributes: Pango.AttrList | null;
             enable_emoji_completion: boolean;
             enableEmojiCompletion: boolean;
             input_hints: Gtk.InputHints;
@@ -16876,8 +16870,8 @@ export namespace Adw {
          * the {@link Gtk.EntryBuffer} text, i.e. without the preedit string.
          * @since 1.2
          */
-        get attributes(): (Pango.AttrList | null);
-        set attributes(val: (Pango.AttrList | null));
+        get attributes(): Pango.AttrList | null;
+        set attributes(val: Pango.AttrList | null);
 
         /**
          * Whether to suggest emoji replacements on the entry row.
@@ -17059,7 +17053,7 @@ export namespace Adw {
          * Gets Pango attributes applied to the text of the embedded entry.
          * @returns the list of attributes
          */
-        get_attributes(): (Pango.AttrList | null);
+        get_attributes(): Pango.AttrList | null;
 
         /**
          * Gets whether to suggest emoji replacements on `self`.
@@ -17124,7 +17118,7 @@ export namespace Adw {
          * the {@link Gtk.EntryBuffer} text, i.e. without the preedit string.
          * @param attributes a list of attributes
          */
-        set_attributes(attributes: (Pango.AttrList | null)): void;
+        set_attributes(attributes: Pango.AttrList | null): void;
 
         /**
          * Sets whether to suggest emoji replacements on `self`.
@@ -17372,7 +17366,7 @@ export namespace Adw {
          * Typically, the delegate is a {@link Gtk.Text} widget.
          * @returns the delegate {@link Gtk.Editable}
          */
-        get_delegate(): (Gtk.Editable | null);
+        get_delegate(): Gtk.Editable | null;
 
         /**
          * Retrieves whether `editable` is editable.
@@ -17585,7 +17579,7 @@ export namespace Adw {
          * Typically, the delegate is a {@link Gtk.Text} widget.
          * @virtual
          */
-        vfunc_get_delegate(): (Gtk.Editable | null);
+        vfunc_get_delegate(): Gtk.Editable | null;
 
         /**
          * Retrieves the selection bound of the editable.
@@ -17850,7 +17844,7 @@ export namespace Adw {
          * @param position the position of the item to fetch
          * @returns the object at `position`.
          */
-        get_item(position: number): (A | null);
+        get_item(position: number): A | null;
 
         /**
          * Emits the {@link Gio.ListModel.SignalSignatures.items_changed | Gio.ListModel::items-changed} signal on `list`.
@@ -17890,7 +17884,7 @@ export namespace Adw {
          * @param position the position of the item to fetch
          * @virtual
          */
-        vfunc_get_item(position: number): (A | null);
+        vfunc_get_item(position: number): A | null;
 
         /**
          * Gets the type of the items in `list`.
@@ -17976,8 +17970,8 @@ export namespace Adw {
             enable_expansion: boolean;
             enableExpansion: boolean;
             expanded: boolean;
-            icon_name: (string | null);
-            iconName: (string | null);
+            icon_name: string | null;
+            iconName: string | null;
             show_enable_switch: boolean;
             showEnableSwitch: boolean;
             subtitle: string;
@@ -18057,15 +18051,15 @@ export namespace Adw {
          * The icon name for this row.
          * @deprecated since 1.3: Use {@link ExpanderRow.add_prefix} to add an icon.
          */
-        get icon_name(): (string | null);
-        set icon_name(val: (string | null));
+        get icon_name(): string | null;
+        set icon_name(val: string | null);
 
         /**
          * The icon name for this row.
          * @deprecated since 1.3: Use {@link ExpanderRow.add_prefix} to add an icon.
          */
-        get iconName(): (string | null);
-        set iconName(val: (string | null));
+        get iconName(): string | null;
+        set iconName(val: string | null);
 
         /**
          * Whether the switch enabling the expansion is visible.
@@ -18204,7 +18198,7 @@ export namespace Adw {
          * Gets the icon name for `self`.
          * @returns the icon name for `self`
          */
-        get_icon_name(): (string | null);
+        get_icon_name(): string | null;
 
         /**
          * Gets whether the switch enabling the expansion of `self` is visible.
@@ -18254,7 +18248,7 @@ export namespace Adw {
          * Sets the icon name for `self`.
          * @param icon_name the icon name
          */
-        set_icon_name(icon_name: (string | null)): void;
+        set_icon_name(icon_name: string | null): void;
 
         /**
          * Sets whether the switch enabling the expansion of `self` is visible.
@@ -18351,8 +18345,8 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Swipeable.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps, Gtk.Orientable.ConstructorProps {
-            content: (Gtk.Widget | null);
-            flap: (Gtk.Widget | null);
+            content: Gtk.Widget | null;
+            flap: Gtk.Widget | null;
             flap_position: Gtk.PackType;
             flapPosition: Gtk.PackType;
             fold_duration: number;
@@ -18370,7 +18364,7 @@ export namespace Adw {
             revealParams: SpringParams;
             reveal_progress: number;
             revealProgress: number;
-            separator: (Gtk.Widget | null);
+            separator: Gtk.Widget | null;
             swipe_to_close: boolean;
             swipeToClose: boolean;
             swipe_to_open: boolean;
@@ -18451,8 +18445,8 @@ export namespace Adw {
          * It's always displayed when unfolded, and partially visible when folded.
          * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
-        get content(): (Gtk.Widget | null);
-        set content(val: (Gtk.Widget | null));
+        get content(): Gtk.Widget | null;
+        set content(val: Gtk.Widget | null);
 
         /**
          * The flap widget.
@@ -18460,8 +18454,8 @@ export namespace Adw {
          * It's only visible when {@link Flap.reveal_progress} is greater than 0.
          * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
-        get flap(): (Gtk.Widget | null);
-        set flap(val: (Gtk.Widget | null));
+        get flap(): Gtk.Widget | null;
+        set flap(val: Gtk.Widget | null);
 
         /**
          * The flap position.
@@ -18655,8 +18649,8 @@ export namespace Adw {
          * value.
          * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
-        get separator(): (Gtk.Widget | null);
-        set separator(val: (Gtk.Widget | null));
+        get separator(): Gtk.Widget | null;
+        set separator(val: Gtk.Widget | null);
 
         /**
          * Whether the flap can be closed with a swipe gesture.
@@ -18762,13 +18756,13 @@ export namespace Adw {
          * Gets the content widget for `self`.
          * @returns the content widget for `self`
          */
-        get_content(): (Gtk.Widget | null);
+        get_content(): Gtk.Widget | null;
 
         /**
          * Gets the flap widget for `self`.
          * @returns the flap widget for `self`
          */
-        get_flap(): (Gtk.Widget | null);
+        get_flap(): Gtk.Widget | null;
 
         /**
          * Gets the flap position for `self`.
@@ -18840,7 +18834,7 @@ export namespace Adw {
          * Gets the separator widget for `self`.
          * @returns the separator widget for `self`
          */
-        get_separator(): (Gtk.Widget | null);
+        get_separator(): Gtk.Widget | null;
 
         /**
          * Gets whether `self` can be closed with a swipe gesture.
@@ -18866,7 +18860,7 @@ export namespace Adw {
          * It's always displayed when unfolded, and partially visible when folded.
          * @param content the content widget
          */
-        set_content(content: (Gtk.Widget | null)): void;
+        set_content(content: Gtk.Widget | null): void;
 
         /**
          * Sets the flap widget for `self`.
@@ -18874,7 +18868,7 @@ export namespace Adw {
          * It's only visible when {@link Flap.reveal_progress} is greater than 0.
          * @param flap the flap widget
          */
-        set_flap(flap: (Gtk.Widget | null)): void;
+        set_flap(flap: Gtk.Widget | null): void;
 
         /**
          * Sets the flap position for `self`.
@@ -18956,7 +18950,7 @@ export namespace Adw {
          * value.
          * @param separator the separator widget
          */
-        set_separator(separator: (Gtk.Widget | null)): void;
+        set_separator(separator: Gtk.Widget | null): void;
 
         /**
          * Sets whether `self` can be closed with a swipe gesture.
@@ -19125,7 +19119,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -19153,13 +19147,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -19203,7 +19197,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -19212,7 +19206,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -19266,13 +19260,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -19288,13 +19282,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -19314,7 +19308,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -19324,7 +19318,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -19335,7 +19329,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -19346,7 +19340,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -19355,7 +19349,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -19471,8 +19465,8 @@ export namespace Adw {
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
             centering_policy: CenteringPolicy;
             centeringPolicy: CenteringPolicy;
-            decoration_layout: (string | null);
-            decorationLayout: (string | null);
+            decoration_layout: string | null;
+            decorationLayout: string | null;
             show_back_button: boolean;
             showBackButton: boolean;
             show_end_title_buttons: boolean;
@@ -19481,8 +19475,8 @@ export namespace Adw {
             showStartTitleButtons: boolean;
             show_title: boolean;
             showTitle: boolean;
-            title_widget: (Gtk.Widget | null);
-            titleWidget: (Gtk.Widget | null);
+            title_widget: Gtk.Widget | null;
+            titleWidget: Gtk.Widget | null;
         }
     }
 
@@ -19616,8 +19610,8 @@ export namespace Adw {
          * and minimize, maximize and close buttons at the end.
          * @default null
          */
-        get decoration_layout(): (string | null);
-        set decoration_layout(val: (string | null));
+        get decoration_layout(): string | null;
+        set decoration_layout(val: string | null);
 
         /**
          * The decoration layout for buttons.
@@ -19634,8 +19628,8 @@ export namespace Adw {
          * and minimize, maximize and close buttons at the end.
          * @default null
          */
-        get decorationLayout(): (string | null);
-        set decorationLayout(val: (string | null));
+        get decorationLayout(): string | null;
+        set decorationLayout(val: string | null);
 
         /**
          * Whether the header bar can show the back button.
@@ -19749,8 +19743,8 @@ export namespace Adw {
          * </object>
          * ```
          */
-        get title_widget(): (Gtk.Widget | null);
-        set title_widget(val: (Gtk.Widget | null));
+        get title_widget(): Gtk.Widget | null;
+        set title_widget(val: Gtk.Widget | null);
 
         /**
          * The title widget to display.
@@ -19770,8 +19764,8 @@ export namespace Adw {
          * </object>
          * ```
          */
-        get titleWidget(): (Gtk.Widget | null);
-        set titleWidget(val: (Gtk.Widget | null));
+        get titleWidget(): Gtk.Widget | null;
+        set titleWidget(val: Gtk.Widget | null);
 
         /**
          * Compile-time signal type information.
@@ -19813,7 +19807,7 @@ export namespace Adw {
          * Gets the decoration layout for `self`.
          * @returns the decoration layout
          */
-        get_decoration_layout(): (string | null);
+        get_decoration_layout(): string | null;
 
         /**
          * Gets whether `self` can show the back button.
@@ -19843,7 +19837,7 @@ export namespace Adw {
          * Gets the title widget widget of `self`.
          * @returns the title widget
          */
-        get_title_widget(): (Gtk.Widget | null);
+        get_title_widget(): Gtk.Widget | null;
 
         /**
          * Adds `child` to `self`, packed with reference to the end of `self`.
@@ -19887,7 +19881,7 @@ export namespace Adw {
          * and minimize, maximize and close buttons at the end.
          * @param layout a decoration layout
          */
-        set_decoration_layout(layout: (string | null)): void;
+        set_decoration_layout(layout: string | null): void;
 
         /**
          * Sets whether `self` can show the back button.
@@ -19947,7 +19941,7 @@ export namespace Adw {
          * ```
          * @param title_widget a widget to use for a title
          */
-        set_title_widget(title_widget: (Gtk.Widget | null)): void;
+        set_title_widget(title_widget: Gtk.Widget | null): void;
 
         /**
          * The accessible role of the given {@link Gtk.Accessible} implementation.
@@ -19990,7 +19984,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -20018,13 +20012,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -20068,7 +20062,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -20077,7 +20071,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -20131,13 +20125,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -20153,13 +20147,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -20179,7 +20173,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -20189,7 +20183,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -20200,7 +20194,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -20211,7 +20205,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -20220,7 +20214,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -20325,7 +20319,7 @@ export namespace Adw {
             display_mode: InlineViewSwitcherDisplayMode;
             displayMode: InlineViewSwitcherDisplayMode;
             homogeneous: boolean;
-            stack: (ViewStack | null);
+            stack: ViewStack | null;
         }
     }
 
@@ -20440,8 +20434,8 @@ export namespace Adw {
          * The stack the view switcher controls.
          * @since 1.7
          */
-        get stack(): (ViewStack | null);
-        set stack(val: (ViewStack | null));
+        get stack(): ViewStack | null;
+        set stack(val: ViewStack | null);
 
         /**
          * Compile-time signal type information.
@@ -20496,7 +20490,7 @@ export namespace Adw {
          * Gets the stack `self` controls.
          * @returns The stack of `self`
          */
-        get_stack(): (ViewStack | null);
+        get_stack(): ViewStack | null;
 
         /**
          * Sets whether the toggles can be smaller than the natural size of their
@@ -20532,7 +20526,7 @@ export namespace Adw {
          * Sets the stack to control.
          * @param stack a stack
          */
-        set_stack(stack: (ViewStack | null)): void;
+        set_stack(stack: ViewStack | null): void;
 
         /**
          * The accessible role of the given {@link Gtk.Accessible} implementation.
@@ -20583,7 +20577,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -20611,13 +20605,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -20661,7 +20655,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -20670,7 +20664,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -20724,13 +20718,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -20746,13 +20740,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -20772,7 +20766,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -20782,7 +20776,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -20793,7 +20787,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -20804,7 +20798,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -20813,7 +20807,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -20887,7 +20881,7 @@ export namespace Adw {
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps, Gtk.Buildable.ConstructorProps {
             content: Gtk.Widget;
-            name: (string | null);
+            name: string | null;
         }
     }
 
@@ -20912,8 +20906,8 @@ export namespace Adw {
          * @since 1.6
          * @default null
          */
-        get name(): (string | null);
-        set name(val: (string | null));
+        get name(): string | null;
+        set name(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -20955,13 +20949,13 @@ export namespace Adw {
          * Gets the name of the layout.
          * @returns the name of the layout
          */
-        get_name(): (string | null);
+        get_name(): string | null;
 
         /**
          * Sets the name of the layout.
          * @param name the layout name
          */
-        set_name(name: (string | null)): void;
+        set_name(name: string | null): void;
 
         /**
          * Gets the ID of the `buildable` object.
@@ -20970,7 +20964,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -20980,7 +20974,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -20991,7 +20985,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -21002,7 +20996,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -21011,7 +21005,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -21212,7 +21206,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -21240,13 +21234,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -21290,7 +21284,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -21299,7 +21293,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -21353,13 +21347,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -21375,13 +21369,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -21401,7 +21395,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -21411,7 +21405,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -21422,7 +21416,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -21433,7 +21427,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -21442,7 +21436,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -21570,10 +21564,10 @@ export namespace Adw {
             pages: Gtk.SelectionModel;
             transition_type: LeafletTransitionType;
             transitionType: LeafletTransitionType;
-            visible_child: (Gtk.Widget | null);
-            visibleChild: (Gtk.Widget | null);
-            visible_child_name: (string | null);
-            visibleChildName: (string | null);
+            visible_child: Gtk.Widget | null;
+            visibleChild: Gtk.Widget | null;
+            visible_child_name: string | null;
+            visibleChildName: string | null;
         }
     }
 
@@ -21883,8 +21877,8 @@ export namespace Adw {
          * visible child.
          * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
-        get visible_child(): (Gtk.Widget | null);
-        set visible_child(val: (Gtk.Widget | null));
+        get visible_child(): Gtk.Widget | null;
+        set visible_child(val: Gtk.Widget | null);
 
         /**
          * The widget currently visible when the leaflet is folded.
@@ -21895,8 +21889,8 @@ export namespace Adw {
          * visible child.
          * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
-        get visibleChild(): (Gtk.Widget | null);
-        set visibleChild(val: (Gtk.Widget | null));
+        get visibleChild(): Gtk.Widget | null;
+        set visibleChild(val: Gtk.Widget | null);
 
         /**
          * The name of the widget currently visible when the leaflet is folded.
@@ -21905,8 +21899,8 @@ export namespace Adw {
          * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          * @default null
          */
-        get visible_child_name(): (string | null);
-        set visible_child_name(val: (string | null));
+        get visible_child_name(): string | null;
+        set visible_child_name(val: string | null);
 
         /**
          * The name of the widget currently visible when the leaflet is folded.
@@ -21915,8 +21909,8 @@ export namespace Adw {
          * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          * @default null
          */
-        get visibleChildName(): (string | null);
-        set visibleChildName(val: (string | null));
+        get visibleChildName(): string | null;
+        set visibleChildName(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -21967,7 +21961,7 @@ export namespace Adw {
          * @param direction the direction
          * @returns the previous or next child
          */
-        get_adjacent_child(direction: NavigationDirection): (Gtk.Widget | null);
+        get_adjacent_child(direction: NavigationDirection): Gtk.Widget | null;
 
         /**
          * Gets whether gestures and shortcuts for navigating backward are enabled.
@@ -21996,7 +21990,7 @@ export namespace Adw {
          * @param name the name of the child to find
          * @returns the requested child of `self`
          */
-        get_child_by_name(name: string): (Gtk.Widget | null);
+        get_child_by_name(name: string): Gtk.Widget | null;
 
         /**
          * Gets the child transition spring parameters for `self`.
@@ -22065,13 +22059,13 @@ export namespace Adw {
          * Gets the widget currently visible when the leaflet is folded.
          * @returns the visible child
          */
-        get_visible_child(): (Gtk.Widget | null);
+        get_visible_child(): Gtk.Widget | null;
 
         /**
          * Gets the name of the currently visible child widget.
          * @returns the name of the visible child
          */
-        get_visible_child_name(): (string | null);
+        get_visible_child_name(): string | null;
 
         /**
          * Inserts `child` in the position after `sibling` in the list of children.
@@ -22081,7 +22075,7 @@ export namespace Adw {
          * @param sibling the sibling after which to insert `child`
          * @returns the {@link LeafletPage} for `child`
          */
-        insert_child_after(child: Gtk.Widget, sibling: (Gtk.Widget | null)): LeafletPage;
+        insert_child_after(child: Gtk.Widget, sibling: Gtk.Widget | null): LeafletPage;
 
         /**
          * Navigates to the previous or next child.
@@ -22116,7 +22110,7 @@ export namespace Adw {
          * @param child the widget to move, must be a child of `self`
          * @param sibling the sibling to move `child` after
          */
-        reorder_child_after(child: Gtk.Widget, sibling: (Gtk.Widget | null)): void;
+        reorder_child_after(child: Gtk.Widget, sibling: Gtk.Widget | null): void;
 
         /**
          * Sets whether gestures and shortcuts for navigating backward are enabled.
@@ -22375,7 +22369,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -22403,13 +22397,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -22453,7 +22447,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -22462,7 +22456,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -22516,13 +22510,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -22538,13 +22532,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -22564,7 +22558,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -22574,7 +22568,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -22585,7 +22579,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -22596,7 +22590,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -22605,7 +22599,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -22680,7 +22674,7 @@ export namespace Adw {
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             child: Gtk.Widget;
-            name: (string | null);
+            name: string | null;
             navigatable: boolean;
         }
     }
@@ -22706,8 +22700,8 @@ export namespace Adw {
          * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          * @default null
          */
-        get name(): (string | null);
-        set name(val: (string | null));
+        get name(): string | null;
+        set name(val: string | null);
 
         /**
          * Whether the child can be navigated to when folded.
@@ -22761,7 +22755,7 @@ export namespace Adw {
          * Gets the name of `self`.
          * @returns the name of `self`.
          */
-        get_name(): (string | null);
+        get_name(): string | null;
 
         /**
          * Gets whether the child can be navigated to when folded.
@@ -22773,7 +22767,7 @@ export namespace Adw {
          * Sets the name of the `self`.
          * @param name the new value to set
          */
-        set_name(name: (string | null)): void;
+        set_name(name: string | null): void;
 
         /**
          * Sets whether `self` can be navigated to when folded.
@@ -23973,11 +23967,11 @@ export namespace Adw {
             bodyUseMarkup: boolean;
             close_response: string;
             closeResponse: string;
-            default_response: (string | null);
-            defaultResponse: (string | null);
-            extra_child: (Gtk.Widget | null);
-            extraChild: (Gtk.Widget | null);
-            heading: (string | null);
+            default_response: string | null;
+            defaultResponse: string | null;
+            extra_child: Gtk.Widget | null;
+            extraChild: Gtk.Widget | null;
+            heading: string | null;
             heading_use_markup: boolean;
             headingUseMarkup: boolean;
         }
@@ -24197,8 +24191,8 @@ export namespace Adw {
          * @deprecated since 1.6: Use {@link AlertDialog}.
          * @default null
          */
-        get default_response(): (string | null);
-        set default_response(val: (string | null));
+        get default_response(): string | null;
+        set default_response(val: string | null);
 
         /**
          * The response ID of the default response.
@@ -24214,8 +24208,8 @@ export namespace Adw {
          * @deprecated since 1.6: Use {@link AlertDialog}.
          * @default null
          */
-        get defaultResponse(): (string | null);
-        set defaultResponse(val: (string | null));
+        get defaultResponse(): string | null;
+        set defaultResponse(val: string | null);
 
         /**
          * The child widget.
@@ -24224,8 +24218,8 @@ export namespace Adw {
          * @since 1.2
          * @deprecated since 1.6: Use {@link AlertDialog}.
          */
-        get extra_child(): (Gtk.Widget | null);
-        set extra_child(val: (Gtk.Widget | null));
+        get extra_child(): Gtk.Widget | null;
+        set extra_child(val: Gtk.Widget | null);
 
         /**
          * The child widget.
@@ -24234,16 +24228,16 @@ export namespace Adw {
          * @since 1.2
          * @deprecated since 1.6: Use {@link AlertDialog}.
          */
-        get extraChild(): (Gtk.Widget | null);
-        set extraChild(val: (Gtk.Widget | null));
+        get extraChild(): Gtk.Widget | null;
+        set extraChild(val: Gtk.Widget | null);
 
         /**
          * The heading of the dialog.
          * @since 1.2
          * @deprecated since 1.6: Use {@link AlertDialog}.
          */
-        get heading(): (string | null);
-        set heading(val: (string | null));
+        get heading(): string | null;
+        set heading(val: string | null);
 
         /**
          * Whether the heading includes Pango markup.
@@ -24281,7 +24275,7 @@ export namespace Adw {
 
         _init(...args: any[]): void;
 
-        static ["new"](parent: (Gtk.Window | null), heading: (string | null), body: (string | null)): MessageDialog;
+        static ["new"](parent: Gtk.Window | null, heading: string | null, body: string | null): MessageDialog;
 
         // Conflicted with Gtk.Window.new
         static ["new"](...args: never[]): any;
@@ -24336,21 +24330,21 @@ export namespace Adw {
          * This function shows `self` to the user.
          * @param cancellable a {@link Gio.Cancellable} to cancel the operation
          */
-        choose(cancellable: (Gio.Cancellable | null)): globalThis.Promise<string>;
+        choose(cancellable: Gio.Cancellable | null): globalThis.Promise<string>;
 
         /**
          * This function shows `self` to the user.
          * @param cancellable a {@link Gio.Cancellable} to cancel the operation
          * @param callback a callback to call when the operation is complete
          */
-        choose(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        choose(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * This function shows `self` to the user.
          * @param cancellable a {@link Gio.Cancellable} to cancel the operation
          * @param callback a callback to call when the operation is complete
          */
-        choose(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<string> | void);
+        choose(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<string> | void;
 
         /**
          * Finishes the {@link MessageDialog.choose} call and returns the response ID.
@@ -24381,19 +24375,19 @@ export namespace Adw {
          * Gets the ID of the default response of `self`.
          * @returns the default response ID
          */
-        get_default_response(): (string | null);
+        get_default_response(): string | null;
 
         /**
          * Gets the child widget of `self`.
          * @returns the child widget of `self`.
          */
-        get_extra_child(): (Gtk.Widget | null);
+        get_extra_child(): Gtk.Widget | null;
 
         /**
          * Gets the heading of `self`.
          * @returns the heading of `self`.
          */
-        get_heading(): (string | null);
+        get_heading(): string | null;
 
         /**
          * Gets whether the heading of `self` includes Pango markup.
@@ -24488,7 +24482,7 @@ export namespace Adw {
          * See {@link Gtk.Window.default_widget}.
          * @param response the default response ID
          */
-        set_default_response(response: (string | null)): void;
+        set_default_response(response: string | null): void;
 
         /**
          * Sets the child widget of `self`.
@@ -24496,13 +24490,13 @@ export namespace Adw {
          * The child widget is displayed below the heading and body.
          * @param child the child widget
          */
-        set_extra_child(child: (Gtk.Widget | null)): void;
+        set_extra_child(child: Gtk.Widget | null): void;
 
         /**
          * Sets the heading of `self`.
          * @param heading the heading of `self`
          */
-        set_heading(heading: (string | null)): void;
+        set_heading(heading: string | null): void;
 
         /**
          * Sets whether the heading of `self` includes Pango markup.
@@ -24565,13 +24559,13 @@ export namespace Adw {
          * Returns the renderer that is used for this {@link Gtk.Native}.
          * @returns the renderer for `self`
          */
-        get_renderer(): (Gsk.Renderer | null);
+        get_renderer(): Gsk.Renderer | null;
 
         /**
          * Returns the surface of this {@link Gtk.Native}.
          * @returns the surface of `self`
          */
-        get_surface(): (Gdk.Surface | null);
+        get_surface(): Gdk.Surface | null;
 
         /**
          * Retrieves the surface transform of `self`.
@@ -24610,7 +24604,7 @@ export namespace Adw {
          * widget.
          * @returns the currently focused widget
          */
-        get_focus(): (Gtk.Widget | null);
+        get_focus(): Gtk.Widget | null;
 
         /**
          * If `focus` is not the current focus widget, and is focusable, sets
@@ -24623,7 +24617,7 @@ export namespace Adw {
          * this function.
          * @param focus widget to be the new focus widget, or `null`    to unset the focus widget
          */
-        set_focus(focus: (Gtk.Widget | null)): void;
+        set_focus(focus: Gtk.Widget | null): void;
 
         /**
          * Add a {@link Gtk.ShortcutController} to be managed.
@@ -24687,9 +24681,9 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
-            layout: (Layout | null);
-            layout_name: (string | null);
-            layoutName: (string | null);
+            layout: Layout | null;
+            layout_name: string | null;
+            layoutName: string | null;
         }
     }
 
@@ -24785,8 +24779,8 @@ export namespace Adw {
          * The currently used layout.
          * @since 1.6
          */
-        get layout(): (Layout | null);
-        set layout(val: (Layout | null));
+        get layout(): Layout | null;
+        set layout(val: Layout | null);
 
         /**
          * The name of the currently used layout.
@@ -24795,8 +24789,8 @@ export namespace Adw {
          * @since 1.6
          * @default null
          */
-        get layout_name(): (string | null);
-        set layout_name(val: (string | null));
+        get layout_name(): string | null;
+        set layout_name(val: string | null);
 
         /**
          * The name of the currently used layout.
@@ -24805,8 +24799,8 @@ export namespace Adw {
          * @since 1.6
          * @default null
          */
-        get layoutName(): (string | null);
-        set layoutName(val: (string | null));
+        get layoutName(): string | null;
+        set layoutName(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -24849,13 +24843,13 @@ export namespace Adw {
          * @param id the id of the child
          * @returns the child for `id`
          */
-        get_child(id: string): (Gtk.Widget | null);
+        get_child(id: string): Gtk.Widget | null;
 
         /**
          * Gets the currently used layout of `self`.
          * @returns the current layout
          */
-        get_layout(): (Layout | null);
+        get_layout(): Layout | null;
 
         /**
          * Gets layout with the name `name` from `self`, or `NULL` if it doesn't exist.
@@ -24864,13 +24858,13 @@ export namespace Adw {
          * @param name the name of the layout
          * @returns the layout with `name`
          */
-        get_layout_by_name(name: string): (Layout | null);
+        get_layout_by_name(name: string): Layout | null;
 
         /**
          * Returns the name of the currently used layout of `self`.
          * @returns the name of the current layout
          */
-        get_layout_name(): (string | null);
+        get_layout_name(): string | null;
 
         /**
          * Removes `layout` from `self`.
@@ -24942,7 +24936,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -24970,13 +24964,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -25020,7 +25014,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -25029,7 +25023,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -25083,13 +25077,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -25105,13 +25099,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -25131,7 +25125,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -25141,7 +25135,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -25152,7 +25146,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -25163,7 +25157,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -25172,7 +25166,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -25317,8 +25311,8 @@ export namespace Adw {
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
             can_pop: boolean;
             canPop: boolean;
-            child: (Gtk.Widget | null);
-            tag: (string | null);
+            child: Gtk.Widget | null;
+            tag: string | null;
             title: string;
         }
     }
@@ -25395,8 +25389,8 @@ export namespace Adw {
          * The child widget.
          * @since 1.4
          */
-        get child(): (Gtk.Widget | null);
-        set child(val: (Gtk.Widget | null));
+        get child(): Gtk.Widget | null;
+        set child(val: Gtk.Widget | null);
 
         /**
          * The page tag.
@@ -25412,8 +25406,8 @@ export namespace Adw {
          * @since 1.4
          * @default null
          */
-        get tag(): (string | null);
-        set tag(val: (string | null));
+        get tag(): string | null;
+        set tag(val: string | null);
 
         /**
          * The page title.
@@ -25496,13 +25490,13 @@ export namespace Adw {
          * Gets the child widget of `self`.
          * @returns the child widget of `self`
          */
-        get_child(): (Gtk.Widget | null);
+        get_child(): Gtk.Widget | null;
 
         /**
          * Gets the tag of `self`.
          * @returns the page tag
          */
-        get_tag(): (string | null);
+        get_tag(): string | null;
 
         /**
          * Gets the title of `self`.
@@ -25529,7 +25523,7 @@ export namespace Adw {
          * Sets the child widget of `self`.
          * @param child the child widget
          */
-        set_child(child: (Gtk.Widget | null)): void;
+        set_child(child: Gtk.Widget | null): void;
 
         /**
          * Sets the tag for `self`.
@@ -25544,7 +25538,7 @@ export namespace Adw {
          * The tag also must be set to use the `navigation.push` action.
          * @param tag the page tag
          */
-        set_tag(tag: (string | null)): void;
+        set_tag(tag: string | null): void;
 
         /**
          * Sets the title of `self`.
@@ -25596,7 +25590,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -25624,13 +25618,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -25674,7 +25668,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -25683,7 +25677,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -25737,13 +25731,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -25759,13 +25753,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -25785,7 +25779,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -25795,7 +25789,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -25806,7 +25800,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -25817,7 +25811,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -25826,7 +25820,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -25931,14 +25925,14 @@ export namespace Adw {
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
             collapsed: boolean;
-            content: (NavigationPage | null);
+            content: NavigationPage | null;
             max_sidebar_width: number;
             maxSidebarWidth: number;
             min_sidebar_width: number;
             minSidebarWidth: number;
             show_content: boolean;
             showContent: boolean;
-            sidebar: (NavigationPage | null);
+            sidebar: NavigationPage | null;
             sidebar_position: Gtk.PackType;
             sidebarPosition: Gtk.PackType;
             sidebar_width_fraction: number;
@@ -26108,8 +26102,8 @@ export namespace Adw {
          * The content widget.
          * @since 1.4
          */
-        get content(): (NavigationPage | null);
-        set content(val: (NavigationPage | null));
+        get content(): NavigationPage | null;
+        set content(val: NavigationPage | null);
 
         /**
          * The maximum sidebar width.
@@ -26201,8 +26195,8 @@ export namespace Adw {
          * The sidebar widget.
          * @since 1.4
          */
-        get sidebar(): (NavigationPage | null);
-        set sidebar(val: (NavigationPage | null));
+        get sidebar(): NavigationPage | null;
+        set sidebar(val: NavigationPage | null);
 
         /**
          * The sidebar position.
@@ -26324,7 +26318,7 @@ export namespace Adw {
          * Sets the content widget for `self`.
          * @returns the content widget
          */
-        get_content(): (NavigationPage | null);
+        get_content(): NavigationPage | null;
 
         /**
          * Gets the maximum sidebar width for `self`.
@@ -26348,7 +26342,7 @@ export namespace Adw {
          * Gets the sidebar widget for `self`.
          * @returns the sidebar widget
          */
-        get_sidebar(): (NavigationPage | null);
+        get_sidebar(): NavigationPage | null;
 
         /**
          * Gets the sidebar position for `self`.
@@ -26384,7 +26378,7 @@ export namespace Adw {
          * Sets the content widget for `self`.
          * @param content the content widget
          */
-        set_content(content: (NavigationPage | null)): void;
+        set_content(content: NavigationPage | null): void;
 
         /**
          * Sets the maximum sidebar width for `self`.
@@ -26426,7 +26420,7 @@ export namespace Adw {
          * Sets the sidebar widget for `self`.
          * @param sidebar the sidebar widget
          */
-        set_sidebar(sidebar: (NavigationPage | null)): void;
+        set_sidebar(sidebar: NavigationPage | null): void;
 
         /**
          * Sets the sidebar position for `self`.
@@ -26503,7 +26497,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -26531,13 +26525,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -26581,7 +26575,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -26590,7 +26584,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -26644,13 +26638,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -26666,13 +26660,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -26692,7 +26686,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -26702,7 +26696,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -26713,7 +26707,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -26724,7 +26718,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -26733,7 +26727,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -26804,7 +26798,7 @@ export namespace Adw {
              * @since 1.4
              * @run-last
              */
-            "get-next-page": () => (NavigationPage | null);
+            "get-next-page": () => NavigationPage | null;
             /**
              * Emitted after `page` has been popped from the navigation stack.
              * 
@@ -26891,10 +26885,10 @@ export namespace Adw {
             pop_on_escape: boolean;
             popOnEscape: boolean;
             vhomogeneous: boolean;
-            visible_page: (NavigationPage | null);
-            visiblePage: (NavigationPage | null);
-            visible_page_tag: (string | null);
-            visiblePageTag: (string | null);
+            visible_page: NavigationPage | null;
+            visiblePage: NavigationPage | null;
+            visible_page_tag: string | null;
+            visiblePageTag: string | null;
         }
     }
 
@@ -27160,14 +27154,14 @@ export namespace Adw {
          * @since 1.4
          * @read-only
          */
-        get visible_page(): (NavigationPage | null);
+        get visible_page(): NavigationPage | null;
 
         /**
          * The currently visible page.
          * @since 1.4
          * @read-only
          */
-        get visiblePage(): (NavigationPage | null);
+        get visiblePage(): NavigationPage | null;
 
         /**
          * The tag of the currently visible page.
@@ -27175,7 +27169,7 @@ export namespace Adw {
          * @read-only
          * @default null
          */
-        get visible_page_tag(): (string | null);
+        get visible_page_tag(): string | null;
 
         /**
          * The tag of the currently visible page.
@@ -27183,7 +27177,7 @@ export namespace Adw {
          * @read-only
          * @default null
          */
-        get visiblePageTag(): (string | null);
+        get visiblePageTag(): string | null;
 
         /**
          * Compile-time signal type information.
@@ -27236,7 +27230,7 @@ export namespace Adw {
          * @param tag a page tag
          * @returns the page with the given tag
          */
-        find_page(tag: string): (NavigationPage | null);
+        find_page(tag: string): NavigationPage | null;
 
         /**
          * Gets whether `self` animates page transitions.
@@ -27276,7 +27270,7 @@ export namespace Adw {
          * @param page a page in `self`
          * @returns the previous page
          */
-        get_previous_page(page: NavigationPage): (NavigationPage | null);
+        get_previous_page(page: NavigationPage): NavigationPage | null;
 
         /**
          * Gets whether `self` is vertically homogeneous.
@@ -27288,13 +27282,13 @@ export namespace Adw {
          * Gets the currently visible page in `self`.
          * @returns the currently visible page
          */
-        get_visible_page(): (NavigationPage | null);
+        get_visible_page(): NavigationPage | null;
 
         /**
          * Gets the tag of the currently visible page in `self`.
          * @returns the tag of the currently visible page
          */
-        get_visible_page_tag(): (string | null);
+        get_visible_page_tag(): string | null;
 
         /**
          * Pops the visible page from the navigation stack.
@@ -27592,7 +27586,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -27620,13 +27614,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -27670,7 +27664,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -27679,7 +27673,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -27733,13 +27727,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -27755,13 +27749,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -27781,7 +27775,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -27791,7 +27785,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -27802,7 +27796,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -27813,7 +27807,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -27822,7 +27816,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -27930,7 +27924,7 @@ export namespace Adw {
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Swipeable.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
             collapsed: boolean;
-            content: (Gtk.Widget | null);
+            content: Gtk.Widget | null;
             enable_hide_gesture: boolean;
             enableHideGesture: boolean;
             enable_show_gesture: boolean;
@@ -27943,7 +27937,7 @@ export namespace Adw {
             pinSidebar: boolean;
             show_sidebar: boolean;
             showSidebar: boolean;
-            sidebar: (Gtk.Widget | null);
+            sidebar: Gtk.Widget | null;
             sidebar_position: Gtk.PackType;
             sidebarPosition: Gtk.PackType;
             sidebar_width_fraction: number;
@@ -28107,8 +28101,8 @@ export namespace Adw {
          * The content widget.
          * @since 1.4
          */
-        get content(): (Gtk.Widget | null);
-        set content(val: (Gtk.Widget | null));
+        get content(): Gtk.Widget | null;
+        set content(val: Gtk.Widget | null);
 
         /**
          * Whether the sidebar can be closed with a swipe gesture.
@@ -28250,8 +28244,8 @@ export namespace Adw {
          * The sidebar widget.
          * @since 1.4
          */
-        get sidebar(): (Gtk.Widget | null);
-        set sidebar(val: (Gtk.Widget | null));
+        get sidebar(): Gtk.Widget | null;
+        set sidebar(val: Gtk.Widget | null);
 
         /**
          * The sidebar position.
@@ -28367,7 +28361,7 @@ export namespace Adw {
          * Gets the content widget for `self`.
          * @returns the content widget for `self`
          */
-        get_content(): (Gtk.Widget | null);
+        get_content(): Gtk.Widget | null;
 
         /**
          * Gets whether `self` can be closed with a swipe gesture.
@@ -28409,7 +28403,7 @@ export namespace Adw {
          * Gets the sidebar widget for `self`.
          * @returns the sidebar widget for `self`
          */
-        get_sidebar(): (Gtk.Widget | null);
+        get_sidebar(): Gtk.Widget | null;
 
         /**
          * Gets the sidebar position for `self`.
@@ -28442,7 +28436,7 @@ export namespace Adw {
          * Sets the content widget for `self`.
          * @param content the content widget
          */
-        set_content(content: (Gtk.Widget | null)): void;
+        set_content(content: Gtk.Widget | null): void;
 
         /**
          * Sets whether `self` can be closed with a swipe gesture.
@@ -28502,7 +28496,7 @@ export namespace Adw {
          * Sets the sidebar widget for `self`.
          * @param sidebar the sidebar widget
          */
-        set_sidebar(sidebar: (Gtk.Widget | null)): void;
+        set_sidebar(sidebar: Gtk.Widget | null): void;
 
         /**
          * Sets the sidebar position for `self`.
@@ -28665,7 +28659,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -28693,13 +28687,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -28743,7 +28737,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -28752,7 +28746,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -28806,13 +28800,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -28828,13 +28822,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -28854,7 +28848,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -28864,7 +28858,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -28875,7 +28869,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -28886,7 +28880,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -28895,7 +28889,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -29011,9 +29005,7 @@ export namespace Adw {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends EntryRow.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Actionable.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps, Gtk.Editable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends EntryRow.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Actionable.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps, Gtk.Editable.ConstructorProps {}
     }
 
     /**
@@ -29271,7 +29263,7 @@ export namespace Adw {
          * Typically, the delegate is a {@link Gtk.Text} widget.
          * @returns the delegate {@link Gtk.Editable}
          */
-        get_delegate(): (Gtk.Editable | null);
+        get_delegate(): Gtk.Editable | null;
 
         /**
          * Retrieves whether `editable` is editable.
@@ -29484,7 +29476,7 @@ export namespace Adw {
          * Typically, the delegate is a {@link Gtk.Text} widget.
          * @virtual
          */
-        vfunc_get_delegate(): (Gtk.Editable | null);
+        vfunc_get_delegate(): Gtk.Editable | null;
 
         /**
          * Retrieves the selection bound of the editable.
@@ -29594,10 +29586,10 @@ export namespace Adw {
         interface ConstructorProps extends Dialog.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps, Gtk.ShortcutManager.ConstructorProps {
             search_enabled: boolean;
             searchEnabled: boolean;
-            visible_page: (Gtk.Widget | null);
-            visiblePage: (Gtk.Widget | null);
-            visible_page_name: (string | null);
-            visiblePageName: (string | null);
+            visible_page: Gtk.Widget | null;
+            visiblePage: Gtk.Widget | null;
+            visible_page_name: string | null;
+            visiblePageName: string | null;
         }
     }
 
@@ -29649,15 +29641,15 @@ export namespace Adw {
          * The currently visible page.
          * @since 1.5
          */
-        get visible_page(): (Gtk.Widget | null);
-        set visible_page(val: (Gtk.Widget | null));
+        get visible_page(): Gtk.Widget | null;
+        set visible_page(val: Gtk.Widget | null);
 
         /**
          * The currently visible page.
          * @since 1.5
          */
-        get visiblePage(): (Gtk.Widget | null);
-        set visiblePage(val: (Gtk.Widget | null));
+        get visiblePage(): Gtk.Widget | null;
+        set visiblePage(val: Gtk.Widget | null);
 
         /**
          * The name of the currently visible page.
@@ -29666,8 +29658,8 @@ export namespace Adw {
          * @since 1.5
          * @default null
          */
-        get visible_page_name(): (string | null);
-        set visible_page_name(val: (string | null));
+        get visible_page_name(): string | null;
+        set visible_page_name(val: string | null);
 
         /**
          * The name of the currently visible page.
@@ -29676,8 +29668,8 @@ export namespace Adw {
          * @since 1.5
          * @default null
          */
-        get visiblePageName(): (string | null);
-        set visiblePageName(val: (string | null));
+        get visiblePageName(): string | null;
+        set visiblePageName(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -29733,13 +29725,13 @@ export namespace Adw {
          * Gets the currently visible page of `self`.
          * @returns the visible page
          */
-        get_visible_page(): (PreferencesPage | null);
+        get_visible_page(): PreferencesPage | null;
 
         /**
          * Gets the name of currently visible page of `self`.
          * @returns the name of the visible page
          */
-        get_visible_page_name(): (string | null);
+        get_visible_page_name(): string | null;
 
         /**
          * Pop the visible page from the subpage stack of `self`.
@@ -29845,9 +29837,9 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
-            description: (string | null);
-            header_suffix: (Gtk.Widget | null);
-            headerSuffix: (Gtk.Widget | null);
+            description: string | null;
+            header_suffix: Gtk.Widget | null;
+            headerSuffix: Gtk.Widget | null;
             separate_rows: boolean;
             separateRows: boolean;
             title: string;
@@ -29900,8 +29892,8 @@ export namespace Adw {
         /**
          * The description for this group of preferences.
          */
-        get description(): (string | null);
-        set description(val: (string | null));
+        get description(): string | null;
+        set description(val: string | null);
 
         /**
          * The header suffix widget.
@@ -29912,8 +29904,8 @@ export namespace Adw {
          * group.
          * @since 1.1
          */
-        get header_suffix(): (Gtk.Widget | null);
-        set header_suffix(val: (Gtk.Widget | null));
+        get header_suffix(): Gtk.Widget | null;
+        set header_suffix(val: Gtk.Widget | null);
 
         /**
          * The header suffix widget.
@@ -29924,8 +29916,8 @@ export namespace Adw {
          * group.
          * @since 1.1
          */
-        get headerSuffix(): (Gtk.Widget | null);
-        set headerSuffix(val: (Gtk.Widget | null));
+        get headerSuffix(): Gtk.Widget | null;
+        set headerSuffix(val: Gtk.Widget | null);
 
         /**
          * Whether to separate rows.
@@ -30000,19 +29992,19 @@ export namespace Adw {
          * @param model a list model to bind
          * @param create_row_func a function creating a row for each item, or `NULL` in case `model` is `NULL`
          */
-        bind_model(model: (Gio.ListModel | null), create_row_func: (Gtk.ListBoxCreateWidgetFunc | null)): void;
+        bind_model(model: Gio.ListModel | null, create_row_func: Gtk.ListBoxCreateWidgetFunc | null): void;
 
         /**
          * Gets the description of `self`.
          * @returns the description of `self`
          */
-        get_description(): (string | null);
+        get_description(): string | null;
 
         /**
          * Gets the suffix for `self`'s header.
          * @returns the suffix for `self`'s header.
          */
-        get_header_suffix(): (Gtk.Widget | null);
+        get_header_suffix(): Gtk.Widget | null;
 
         /**
          * Gets the row at `index`.
@@ -30021,7 +30013,7 @@ export namespace Adw {
          * @param index a row index
          * @returns the row at `index`
          */
-        get_row(index: number): (Gtk.Widget | null);
+        get_row(index: number): Gtk.Widget | null;
 
         /**
          * Gets whether `self`'s rows are separated.
@@ -30045,7 +30037,7 @@ export namespace Adw {
          * Sets the description for `self`.
          * @param description the description
          */
-        set_description(description: (string | null)): void;
+        set_description(description: string | null): void;
 
         /**
          * Sets the suffix for `self`'s header.
@@ -30055,7 +30047,7 @@ export namespace Adw {
          * Suffixes are commonly used to show a button or a spinner for the whole group.
          * @param suffix the suffix to set
          */
-        set_header_suffix(suffix: (Gtk.Widget | null)): void;
+        set_header_suffix(suffix: Gtk.Widget | null): void;
 
         /**
          * Sets whether `self`'s rows are separated.
@@ -30114,7 +30106,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -30142,13 +30134,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -30192,7 +30184,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -30201,7 +30193,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -30255,13 +30247,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -30277,13 +30269,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -30303,7 +30295,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -30313,7 +30305,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -30324,7 +30316,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -30335,7 +30327,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -30344,7 +30336,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -30445,13 +30437,13 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
-            banner: (Banner | null);
+            banner: Banner | null;
             description: string;
             description_centered: boolean;
             descriptionCentered: boolean;
-            icon_name: (string | null);
-            iconName: (string | null);
-            name: ((string | null) | any);
+            icon_name: string | null;
+            iconName: string | null;
+            name: string | null | any;
             title: string;
             use_underline: boolean;
             useUnderline: boolean;
@@ -30486,8 +30478,8 @@ export namespace Adw {
          * A {@link Banner} displayed at the top of the page.
          * @since 1.7
          */
-        get banner(): (Banner | null);
-        set banner(val: (Banner | null));
+        get banner(): Banner | null;
+        set banner(val: Banner | null);
 
         /**
          * The description to be displayed at the top of the page.
@@ -30515,23 +30507,23 @@ export namespace Adw {
         /**
          * The icon name for this page.
          */
-        get icon_name(): (string | null);
-        set icon_name(val: (string | null));
+        get icon_name(): string | null;
+        set icon_name(val: string | null);
 
         /**
          * The icon name for this page.
          */
-        get iconName(): (string | null);
-        set iconName(val: (string | null));
+        get iconName(): string | null;
+        set iconName(val: string | null);
 
         /**
          * The name of this page.
          * @default null
          */
     // This accessor conflicts with another accessor's type in a parent class or interface.
-        get name(): ((string | null) | any);
+        get name(): string | null | any;
     // This accessor conflicts with another accessor's type in a parent class or interface.
-        set name(val: ((string | null) | any));
+        set name(val: string | null | any);
 
         /**
          * The title for this page.
@@ -30593,7 +30585,7 @@ export namespace Adw {
          * Gets the banner displayed at the top of the page.
          * @returns the banner for `self`
          */
-        get_banner(): (Banner | null);
+        get_banner(): Banner | null;
 
         /**
          * Gets the description of `self`.
@@ -30614,19 +30606,19 @@ export namespace Adw {
          * @param index a group index
          * @returns the group at `index`
          */
-        get_group(index: number): (PreferencesGroup | null);
+        get_group(index: number): PreferencesGroup | null;
 
         /**
          * Gets the icon name for `self`.
          * @returns the icon name for `self`
          */
-        get_icon_name(): (string | null);
+        get_icon_name(): string | null;
 
         /**
          * Gets the name of `self`.
          * @returns the name of `self`
          */
-        get_name(): (string | null);
+        get_name(): string | null;
 
         /**
          * @param args 
@@ -30671,7 +30663,7 @@ export namespace Adw {
          * Sets the banner displayed at the top of the page.
          * @param banner the banner to display at the top of the page
          */
-        set_banner(banner: (Banner | null)): void;
+        set_banner(banner: Banner | null): void;
 
         /**
          * Sets the description of `self`.
@@ -30691,13 +30683,13 @@ export namespace Adw {
          * Sets the icon name for `self`.
          * @param icon_name the icon name
          */
-        set_icon_name(icon_name: (string | null)): void;
+        set_icon_name(icon_name: string | null): void;
 
         /**
          * Sets the name of `self`.
          * @param name the name
          */
-        set_name(name: (string | null)): void;
+        set_name(name: string | null): void;
 
         /**
          * @param args 
@@ -30758,7 +30750,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -30786,13 +30778,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -30836,7 +30828,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -30845,7 +30837,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -30899,13 +30891,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -30921,13 +30913,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -30947,7 +30939,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -30957,7 +30949,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -30968,7 +30960,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -30979,7 +30971,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -30988,7 +30980,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -31276,16 +31268,16 @@ export namespace Adw {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * The name of the action with which this widget should be associated.
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /**
          * The target value of the actionable widget's action.
@@ -31305,13 +31297,13 @@ export namespace Adw {
          * Gets the action name for `actionable`.
          * @returns the action name
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
          * @returns the current target value
          */
-        get_action_target_value(): (GLib.Variant | null);
+        get_action_target_value(): GLib.Variant | null;
 
         /**
          * Specifies the name of the action with which this widget should be
@@ -31329,7 +31321,7 @@ export namespace Adw {
          * associated with the window.
          * @param action_name an action name
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -31352,7 +31344,7 @@ export namespace Adw {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -31368,13 +31360,13 @@ export namespace Adw {
          * Gets the action name for `actionable`.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
          * @virtual
          */
-        vfunc_get_action_target_value(): (GLib.Variant | null);
+        vfunc_get_action_target_value(): GLib.Variant | null;
 
         /**
          * Specifies the name of the action with which this widget should be
@@ -31393,7 +31385,7 @@ export namespace Adw {
          * @param action_name an action name
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -31417,7 +31409,7 @@ export namespace Adw {
          * @param target_value a {@link GLib.Variant} to set as the target value
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
     }
 
 
@@ -31502,10 +31494,10 @@ export namespace Adw {
             canNavigateBack: boolean;
             search_enabled: boolean;
             searchEnabled: boolean;
-            visible_page: (Gtk.Widget | null);
-            visiblePage: (Gtk.Widget | null);
-            visible_page_name: (string | null);
-            visiblePageName: (string | null);
+            visible_page: Gtk.Widget | null;
+            visiblePage: Gtk.Widget | null;
+            visible_page_name: string | null;
+            visiblePageName: string | null;
         }
     }
 
@@ -31595,15 +31587,15 @@ export namespace Adw {
          * The currently visible page.
          * @deprecated since 1.6: Use {@link PreferencesDialog}.
          */
-        get visible_page(): (Gtk.Widget | null);
-        set visible_page(val: (Gtk.Widget | null));
+        get visible_page(): Gtk.Widget | null;
+        set visible_page(val: Gtk.Widget | null);
 
         /**
          * The currently visible page.
          * @deprecated since 1.6: Use {@link PreferencesDialog}.
          */
-        get visiblePage(): (Gtk.Widget | null);
-        set visiblePage(val: (Gtk.Widget | null));
+        get visiblePage(): Gtk.Widget | null;
+        set visiblePage(val: Gtk.Widget | null);
 
         /**
          * The name of the currently visible page.
@@ -31612,8 +31604,8 @@ export namespace Adw {
          * @deprecated since 1.6: Use {@link PreferencesDialog}.
          * @default null
          */
-        get visible_page_name(): (string | null);
-        set visible_page_name(val: (string | null));
+        get visible_page_name(): string | null;
+        set visible_page_name(val: string | null);
 
         /**
          * The name of the currently visible page.
@@ -31622,8 +31614,8 @@ export namespace Adw {
          * @deprecated since 1.6: Use {@link PreferencesDialog}.
          * @default null
          */
-        get visiblePageName(): (string | null);
-        set visiblePageName(val: (string | null));
+        get visiblePageName(): string | null;
+        set visiblePageName(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -31692,13 +31684,13 @@ export namespace Adw {
          * Gets the currently visible page of `self`.
          * @returns the visible page
          */
-        get_visible_page(): (PreferencesPage | null);
+        get_visible_page(): PreferencesPage | null;
 
         /**
          * Gets the name of currently visible page of `self`.
          * @returns the name of the visible page
          */
-        get_visible_page_name(): (string | null);
+        get_visible_page_name(): string | null;
 
         /**
          * Pop the visible page from the subpage stack of `self`.
@@ -32101,7 +32093,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -32129,13 +32121,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -32179,7 +32171,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -32188,7 +32180,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -32242,13 +32234,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -32264,13 +32256,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -32290,7 +32282,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -32300,7 +32292,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -32311,7 +32303,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -32322,7 +32314,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -32331,7 +32323,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -32434,9 +32426,7 @@ export namespace Adw {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Dialog.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps, Gtk.ShortcutManager.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Dialog.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps, Gtk.ShortcutManager.ConstructorProps {}
     }
 
     /**
@@ -32784,7 +32774,7 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps<A extends GObject.Object = GObject.Object> extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps, Gtk.Buildable.ConstructorProps {
-            title: (string | null);
+            title: string | null;
         }
     }
 
@@ -32812,8 +32802,8 @@ export namespace Adw {
          * @since 1.8
          * @default null
          */
-        get title(): (string | null);
-        set title(val: (string | null));
+        get title(): string | null;
+        set title(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -32829,7 +32819,7 @@ export namespace Adw {
 
         _init(...args: any[]): void;
 
-        static ["new"](title: (string | null)): ShortcutsSection;
+        static ["new"](title: string | null): ShortcutsSection;
 
         // Signals
         /** @signal */
@@ -32855,13 +32845,13 @@ export namespace Adw {
          * Gets the title of `self`.
          * @returns the title
          */
-        get_title(): (string | null);
+        get_title(): string | null;
 
         /**
          * Sets the title of `self`.
          * @param title the title to use
          */
-        set_title(title: (string | null)): void;
+        set_title(title: string | null): void;
 
         /**
          * Gets the type of the items in `list`.
@@ -32902,7 +32892,7 @@ export namespace Adw {
          * @param position the position of the item to fetch
          * @returns the object at `position`.
          */
-        get_item(position: number): (A | null);
+        get_item(position: number): A | null;
 
         /**
          * Emits the {@link Gio.ListModel.SignalSignatures.items_changed | Gio.ListModel::items-changed} signal on `list`.
@@ -32942,7 +32932,7 @@ export namespace Adw {
          * @param position the position of the item to fetch
          * @virtual
          */
-        vfunc_get_item(position: number): (A | null);
+        vfunc_get_item(position: number): A | null;
 
         /**
          * Gets the type of the items in `list`.
@@ -32974,7 +32964,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -32984,7 +32974,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -32995,7 +32985,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -33006,7 +32996,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -33015,7 +33005,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -33092,7 +33082,7 @@ export namespace Adw {
              * @since 1.4
              * @run-last
              */
-            output: () => (boolean | void);
+            output: () => boolean | void;
             /**
              * Emitted right after the spinbutton wraps.
              * 
@@ -33332,7 +33322,7 @@ export namespace Adw {
 
         _init(...args: any[]): void;
 
-        static ["new"](adjustment: (Gtk.Adjustment | null), climb_rate: number, digits: number): SpinRow;
+        static ["new"](adjustment: Gtk.Adjustment | null, climb_rate: number, digits: number): SpinRow;
 
         // Conflicted with Adw.ActionRow.new
         static ["new"](...args: never[]): any;
@@ -33362,7 +33352,7 @@ export namespace Adw {
          * @param climb_rate the new climb rate
          * @param digits the number of decimal places to display
          */
-        configure(adjustment: (Gtk.Adjustment | null), climb_rate: number, digits: number): void;
+        configure(adjustment: Gtk.Adjustment | null, climb_rate: number, digits: number): void;
 
         /**
          * Gets the adjustment that holds the value for the spin row.
@@ -33416,7 +33406,7 @@ export namespace Adw {
          * Sets the adjustment that holds the value for the spin row.
          * @param adjustment an adjustment
          */
-        set_adjustment(adjustment: (Gtk.Adjustment | null)): void;
+        set_adjustment(adjustment: Gtk.Adjustment | null): void;
 
         /**
          * Sets the acceleration rate when you hold down a button or key.
@@ -33677,7 +33667,7 @@ export namespace Adw {
          * Typically, the delegate is a {@link Gtk.Text} widget.
          * @returns the delegate {@link Gtk.Editable}
          */
-        get_delegate(): (Gtk.Editable | null);
+        get_delegate(): Gtk.Editable | null;
 
         /**
          * Retrieves whether `editable` is editable.
@@ -33890,7 +33880,7 @@ export namespace Adw {
          * Typically, the delegate is a {@link Gtk.Text} widget.
          * @virtual
          */
-        vfunc_get_delegate(): (Gtk.Editable | null);
+        vfunc_get_delegate(): Gtk.Editable | null;
 
         /**
          * Retrieves the selection bound of the editable.
@@ -34010,9 +34000,7 @@ export namespace Adw {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {}
     }
 
     /**
@@ -34128,7 +34116,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -34156,13 +34144,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -34206,7 +34194,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -34215,7 +34203,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -34269,13 +34257,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -34291,13 +34279,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -34317,7 +34305,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -34327,7 +34315,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -34338,7 +34326,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -34349,7 +34337,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -34358,7 +34346,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -34418,7 +34406,7 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps, Gdk.Paintable.ConstructorProps, Gtk.SymbolicPaintable.ConstructorProps {
-            widget: (Gtk.Widget | null);
+            widget: Gtk.Widget | null;
         }
     }
 
@@ -34463,8 +34451,8 @@ export namespace Adw {
          * The widget the spinner uses for frame clock.
          * @since 1.6
          */
-        get widget(): (Gtk.Widget | null);
-        set widget(val: (Gtk.Widget | null));
+        get widget(): Gtk.Widget | null;
+        set widget(val: Gtk.Widget | null);
 
         /**
          * Compile-time signal type information.
@@ -34480,7 +34468,7 @@ export namespace Adw {
 
         _init(...args: any[]): void;
 
-        static ["new"](widget: (Gtk.Widget | null)): SpinnerPaintable;
+        static ["new"](widget: Gtk.Widget | null): SpinnerPaintable;
 
         // Signals
         /** @signal */
@@ -34500,13 +34488,13 @@ export namespace Adw {
          * Gets the widget used for frame clock.
          * @returns the widget
          */
-        get_widget(): (Gtk.Widget | null);
+        get_widget(): Gtk.Widget | null;
 
         /**
          * Sets the widget used for frame clock.
          * @param widget the widget to use for frame clock
          */
-        set_widget(widget: (Gtk.Widget | null)): void;
+        set_widget(widget: Gtk.Widget | null): void;
 
         /**
          * Compute a concrete size for the {@link Gdk.Paintable}.
@@ -34825,16 +34813,16 @@ export namespace Adw {
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Actionable.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
             can_shrink: boolean;
             canShrink: boolean;
-            child: (Gtk.Widget | null);
+            child: Gtk.Widget | null;
             direction: Gtk.ArrowType;
             dropdown_tooltip: string;
             dropdownTooltip: string;
-            icon_name: (string | null);
-            iconName: (string | null);
-            label: (string | null);
-            menu_model: (Gio.MenuModel | null);
-            menuModel: (Gio.MenuModel | null);
-            popover: (Gtk.Popover | null);
+            icon_name: string | null;
+            iconName: string | null;
+            label: string | null;
+            menu_model: Gio.MenuModel | null;
+            menuModel: Gio.MenuModel | null;
+            popover: Gtk.Popover | null;
             use_underline: boolean;
             useUnderline: boolean;
         }
@@ -34926,8 +34914,8 @@ export namespace Adw {
          * Setting the child widget will set {@link SplitButton.label} and
          * {@link SplitButton.icon_name} to `NULL`.
          */
-        get child(): (Gtk.Widget | null);
-        set child(val: (Gtk.Widget | null));
+        get child(): Gtk.Widget | null;
+        set child(val: Gtk.Widget | null);
 
         /**
          * The direction in which the popup will be popped up.
@@ -34968,8 +34956,8 @@ export namespace Adw {
          * {@link SplitButton.child} to `NULL`.
          * @default null
          */
-        get icon_name(): (string | null);
-        set icon_name(val: (string | null));
+        get icon_name(): string | null;
+        set icon_name(val: string | null);
 
         /**
          * The name of the icon used to automatically populate the button.
@@ -34978,8 +34966,8 @@ export namespace Adw {
          * {@link SplitButton.child} to `NULL`.
          * @default null
          */
-        get iconName(): (string | null);
-        set iconName(val: (string | null));
+        get iconName(): string | null;
+        set iconName(val: string | null);
 
         /**
          * The label for the button.
@@ -34988,8 +34976,8 @@ export namespace Adw {
          * {@link SplitButton.child} to `NULL`.
          * @default null
          */
-        get label(): (string | null);
-        set label(val: (string | null));
+        get label(): string | null;
+        set label(val: string | null);
 
         /**
          * The {@link Gio.MenuModel} from which the popup will be created.
@@ -35003,8 +34991,8 @@ export namespace Adw {
          * If {@link SplitButton.popover} is already set, it will be dissociated
          * from the button, and the property is set to `NULL`.
          */
-        get menu_model(): (Gio.MenuModel | null);
-        set menu_model(val: (Gio.MenuModel | null));
+        get menu_model(): Gio.MenuModel | null;
+        set menu_model(val: Gio.MenuModel | null);
 
         /**
          * The {@link Gio.MenuModel} from which the popup will be created.
@@ -35018,8 +35006,8 @@ export namespace Adw {
          * If {@link SplitButton.popover} is already set, it will be dissociated
          * from the button, and the property is set to `NULL`.
          */
-        get menuModel(): (Gio.MenuModel | null);
-        set menuModel(val: (Gio.MenuModel | null));
+        get menuModel(): Gio.MenuModel | null;
+        set menuModel(val: Gio.MenuModel | null);
 
         /**
          * The {@link Gtk.Popover} that will be popped up when the dropdown is clicked.
@@ -35029,8 +35017,8 @@ export namespace Adw {
          * If {@link SplitButton.menu_model} is set, the menu model is dissociated
          * from the button, and the property is set to `NULL`.
          */
-        get popover(): (Gtk.Popover | null);
-        set popover(val: (Gtk.Popover | null));
+        get popover(): Gtk.Popover | null;
+        set popover(val: Gtk.Popover | null);
 
         /**
          * Whether an underline in the text indicates a mnemonic.
@@ -35090,7 +35078,7 @@ export namespace Adw {
          * Gets the child widget.
          * @returns the child widget
          */
-        get_child(): (Gtk.Widget | null);
+        get_child(): Gtk.Widget | null;
 
         /**
          * Gets the direction in which the popup will be popped up.
@@ -35114,25 +35102,25 @@ export namespace Adw {
          * Gets the name of the icon used to automatically populate the button.
          * @returns the icon name
          */
-        get_icon_name(): (string | null);
+        get_icon_name(): string | null;
 
         /**
          * Gets the label for `self`.
          * @returns the label for `self`
          */
-        get_label(): (string | null);
+        get_label(): string | null;
 
         /**
          * Gets the menu model from which the popup will be created.
          * @returns the menu model
          */
-        get_menu_model(): (Gio.MenuModel | null);
+        get_menu_model(): Gio.MenuModel | null;
 
         /**
          * Gets the popover that will be popped up when the dropdown is clicked.
          * @returns the popover
          */
-        get_popover(): (Gtk.Popover | null);
+        get_popover(): Gtk.Popover | null;
 
         /**
          * Gets whether an underline in the text indicates a mnemonic.
@@ -35168,7 +35156,7 @@ export namespace Adw {
          * {@link SplitButton.icon_name} to `NULL`.
          * @param child the new child widget
          */
-        set_child(child: (Gtk.Widget | null)): void;
+        set_child(child: Gtk.Widget | null): void;
 
         /**
          * Sets the direction in which the popup will be popped up.
@@ -35228,7 +35216,7 @@ export namespace Adw {
          * the button, and the property is set to `NULL`.
          * @param menu_model the menu model
          */
-        set_menu_model(menu_model: (Gio.MenuModel | null)): void;
+        set_menu_model(menu_model: Gio.MenuModel | null): void;
 
         /**
          * Sets the popover that will be popped up when the dropdown is clicked.
@@ -35239,7 +35227,7 @@ export namespace Adw {
          * from the button, and the property is set to `NULL`.
          * @param popover the popover
          */
-        set_popover(popover: (Gtk.Popover | null)): void;
+        set_popover(popover: Gtk.Popover | null): void;
 
         /**
          * Sets whether an underline in the text indicates a mnemonic.
@@ -35274,16 +35262,16 @@ export namespace Adw {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * The name of the action with which this widget should be associated.
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /**
          * The target value of the actionable widget's action.
@@ -35320,7 +35308,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -35348,13 +35336,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -35398,7 +35386,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -35407,7 +35395,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -35461,13 +35449,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -35483,13 +35471,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -35506,13 +35494,13 @@ export namespace Adw {
          * Gets the action name for `actionable`.
          * @returns the action name
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
          * @returns the current target value
          */
-        get_action_target_value(): (GLib.Variant | null);
+        get_action_target_value(): GLib.Variant | null;
 
         /**
          * Specifies the name of the action with which this widget should be
@@ -35530,7 +35518,7 @@ export namespace Adw {
          * associated with the window.
          * @param action_name an action name
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -35553,7 +35541,7 @@ export namespace Adw {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -35569,13 +35557,13 @@ export namespace Adw {
          * Gets the action name for `actionable`.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
          * @virtual
          */
-        vfunc_get_action_target_value(): (GLib.Variant | null);
+        vfunc_get_action_target_value(): GLib.Variant | null;
 
         /**
          * Specifies the name of the action with which this widget should be
@@ -35594,7 +35582,7 @@ export namespace Adw {
          * @param action_name an action name
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -35618,7 +35606,7 @@ export namespace Adw {
          * @param target_value a {@link GLib.Variant} to set as the target value
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Gets the ID of the `buildable` object.
@@ -35627,7 +35615,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -35637,7 +35625,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -35648,7 +35636,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -35659,7 +35647,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -35668,7 +35656,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -36156,8 +36144,8 @@ export namespace Adw {
             transitionRunning: boolean;
             transition_type: SqueezerTransitionType;
             transitionType: SqueezerTransitionType;
-            visible_child: (Gtk.Widget | null);
-            visibleChild: (Gtk.Widget | null);
+            visible_child: Gtk.Widget | null;
+            visibleChild: Gtk.Widget | null;
             xalign: number;
             yalign: number;
         }
@@ -36360,14 +36348,14 @@ export namespace Adw {
          * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          * @read-only
          */
-        get visible_child(): (Gtk.Widget | null);
+        get visible_child(): Gtk.Widget | null;
 
         /**
          * The currently visible child.
          * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          * @read-only
          */
-        get visibleChild(): (Gtk.Widget | null);
+        get visibleChild(): Gtk.Widget | null;
 
         /**
          * The horizontal alignment, from 0 (start) to 1 (end).
@@ -36500,7 +36488,7 @@ export namespace Adw {
          * Gets the currently visible child of `self`.
          * @returns the visible child
          */
-        get_visible_child(): (Gtk.Widget | null);
+        get_visible_child(): Gtk.Widget | null;
 
         /**
          * Gets the horizontal alignment, from 0 (start) to 1 (end).
@@ -36651,7 +36639,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -36679,13 +36667,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -36729,7 +36717,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -36738,7 +36726,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -36792,13 +36780,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -36814,13 +36802,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -36840,7 +36828,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -36850,7 +36838,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -36861,7 +36849,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -36872,7 +36860,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -36881,7 +36869,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -37097,11 +37085,11 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
-            child: (Gtk.Widget | null);
-            description: (string | null);
-            icon_name: (string | null);
-            iconName: (string | null);
-            paintable: (Gdk.Paintable | null);
+            child: Gtk.Widget | null;
+            description: string | null;
+            icon_name: string | null;
+            iconName: string | null;
+            paintable: Gdk.Paintable | null;
             title: string;
         }
     }
@@ -37145,14 +37133,14 @@ export namespace Adw {
         /**
          * The child widget.
          */
-        get child(): (Gtk.Widget | null);
-        set child(val: (Gtk.Widget | null));
+        get child(): Gtk.Widget | null;
+        set child(val: Gtk.Widget | null);
 
         /**
          * The description markup to be displayed below the title.
          */
-        get description(): (string | null);
-        set description(val: (string | null));
+        get description(): string | null;
+        set description(val: string | null);
 
         /**
          * The name of the icon to be used.
@@ -37160,8 +37148,8 @@ export namespace Adw {
          * Changing this will set {@link StatusPage.paintable} to `NULL`.
          * @default null
          */
-        get icon_name(): (string | null);
-        set icon_name(val: (string | null));
+        get icon_name(): string | null;
+        set icon_name(val: string | null);
 
         /**
          * The name of the icon to be used.
@@ -37169,16 +37157,16 @@ export namespace Adw {
          * Changing this will set {@link StatusPage.paintable} to `NULL`.
          * @default null
          */
-        get iconName(): (string | null);
-        set iconName(val: (string | null));
+        get iconName(): string | null;
+        set iconName(val: string | null);
 
         /**
          * The paintable to be used.
          * 
          * Changing this will set {@link StatusPage.icon_name} to `NULL`.
          */
-        get paintable(): (Gdk.Paintable | null);
-        set paintable(val: (Gdk.Paintable | null));
+        get paintable(): Gdk.Paintable | null;
+        set paintable(val: Gdk.Paintable | null);
 
         /**
          * The title to be displayed below the icon.
@@ -37222,25 +37210,25 @@ export namespace Adw {
          * Gets the child widget of `self`.
          * @returns the child widget of `self`
          */
-        get_child(): (Gtk.Widget | null);
+        get_child(): Gtk.Widget | null;
 
         /**
          * Gets the description markup for `self`.
          * @returns the description
          */
-        get_description(): (string | null);
+        get_description(): string | null;
 
         /**
          * Gets the icon name for `self`.
          * @returns the icon name
          */
-        get_icon_name(): (string | null);
+        get_icon_name(): string | null;
 
         /**
          * Gets the paintable for `self`.
          * @returns the paintable
          */
-        get_paintable(): (Gdk.Paintable | null);
+        get_paintable(): Gdk.Paintable | null;
 
         /**
          * Gets the title for `self`.
@@ -37252,7 +37240,7 @@ export namespace Adw {
          * Sets the child widget of `self`.
          * @param child the child widget
          */
-        set_child(child: (Gtk.Widget | null)): void;
+        set_child(child: Gtk.Widget | null): void;
 
         /**
          * Sets the description markup for `self`.
@@ -37260,7 +37248,7 @@ export namespace Adw {
          * The description is displayed below the title. It is parsed as Pango markup.
          * @param description the description
          */
-        set_description(description: (string | null)): void;
+        set_description(description: string | null): void;
 
         /**
          * Sets the icon name for `self`.
@@ -37268,7 +37256,7 @@ export namespace Adw {
          * Changing this will set {@link StatusPage.paintable} to `NULL`.
          * @param icon_name the icon name
          */
-        set_icon_name(icon_name: (string | null)): void;
+        set_icon_name(icon_name: string | null): void;
 
         /**
          * Sets the paintable for `self`.
@@ -37276,7 +37264,7 @@ export namespace Adw {
          * Changing this will set {@link StatusPage.icon_name} to `NULL`.
          * @param paintable the paintable
          */
-        set_paintable(paintable: (Gdk.Paintable | null)): void;
+        set_paintable(paintable: Gdk.Paintable | null): void;
 
         /**
          * Sets the title for `self`.
@@ -37327,7 +37315,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -37355,13 +37343,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -37405,7 +37393,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -37414,7 +37402,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -37468,13 +37456,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -37490,13 +37478,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -37516,7 +37504,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -37526,7 +37514,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -37537,7 +37525,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -37548,7 +37536,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -37557,7 +37545,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -37633,7 +37621,7 @@ export namespace Adw {
             color_scheme: ColorScheme;
             colorScheme: ColorScheme;
             dark: boolean;
-            display: (Gdk.Display | null);
+            display: Gdk.Display | null;
             document_font_name: string;
             documentFontName: string;
             high_contrast: boolean;
@@ -37799,7 +37787,7 @@ export namespace Adw {
          * {@link StyleManager.get_default}.
          * @construct-only
          */
-        get display(): (Gdk.Display | null);
+        get display(): Gdk.Display | null;
 
         /**
          * The system document font.
@@ -38016,7 +38004,7 @@ export namespace Adw {
          * {@link StyleManager.get_default}.
          * @returns the display
          */
-        get_display(): (Gdk.Display | null);
+        get_display(): Gdk.Display | null;
 
         /**
          * Gets the system document font.
@@ -38653,7 +38641,7 @@ export namespace Adw {
              * @signal
              * @run-last
              */
-            "extra-drag-drop": (arg0: TabPage, arg1: unknown) => (boolean | void);
+            "extra-drag-drop": (arg0: TabPage, arg1: unknown) => boolean | void;
             /**
              * This signal is emitted when the dropped content is preloaded.
              * 
@@ -38720,8 +38708,8 @@ export namespace Adw {
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
             autohide: boolean;
-            end_action_widget: (Gtk.Widget | null);
-            endActionWidget: (Gtk.Widget | null);
+            end_action_widget: Gtk.Widget | null;
+            endActionWidget: Gtk.Widget | null;
             expand_tabs: boolean;
             expandTabs: boolean;
             extra_drag_preferred_action: Gdk.DragAction;
@@ -38731,11 +38719,11 @@ export namespace Adw {
             inverted: boolean;
             is_overflowing: boolean;
             isOverflowing: boolean;
-            start_action_widget: (Gtk.Widget | null);
-            startActionWidget: (Gtk.Widget | null);
+            start_action_widget: Gtk.Widget | null;
+            startActionWidget: Gtk.Widget | null;
             tabs_revealed: boolean;
             tabsRevealed: boolean;
-            view: (TabView | null);
+            view: TabView | null;
         }
     }
 
@@ -38793,14 +38781,14 @@ export namespace Adw {
         /**
          * The widget shown after the tabs.
          */
-        get end_action_widget(): (Gtk.Widget | null);
-        set end_action_widget(val: (Gtk.Widget | null));
+        get end_action_widget(): Gtk.Widget | null;
+        set end_action_widget(val: Gtk.Widget | null);
 
         /**
          * The widget shown after the tabs.
          */
-        get endActionWidget(): (Gtk.Widget | null);
-        set endActionWidget(val: (Gtk.Widget | null));
+        get endActionWidget(): Gtk.Widget | null;
+        set endActionWidget(val: Gtk.Widget | null);
 
         /**
          * Whether tabs expand to full width.
@@ -38899,14 +38887,14 @@ export namespace Adw {
         /**
          * The widget shown before the tabs.
          */
-        get start_action_widget(): (Gtk.Widget | null);
-        set start_action_widget(val: (Gtk.Widget | null));
+        get start_action_widget(): Gtk.Widget | null;
+        set start_action_widget(val: Gtk.Widget | null);
 
         /**
          * The widget shown before the tabs.
          */
-        get startActionWidget(): (Gtk.Widget | null);
-        set startActionWidget(val: (Gtk.Widget | null));
+        get startActionWidget(): Gtk.Widget | null;
+        set startActionWidget(val: Gtk.Widget | null);
 
         /**
          * Whether the tabs are currently revealed.
@@ -38929,8 +38917,8 @@ export namespace Adw {
         /**
          * The tab view the tab bar controls.
          */
-        get view(): (TabView | null);
-        set view(val: (TabView | null));
+        get view(): TabView | null;
+        set view(val: TabView | null);
 
         /**
          * Compile-time signal type information.
@@ -38972,7 +38960,7 @@ export namespace Adw {
          * Gets the widget shown after the tabs.
          * @returns the widget shown after the tabs
          */
-        get_end_action_widget(): (Gtk.Widget | null);
+        get_end_action_widget(): Gtk.Widget | null;
 
         /**
          * Gets whether tabs expand to full width.
@@ -39010,7 +38998,7 @@ export namespace Adw {
          * Gets the widget shown before the tabs.
          * @returns the widget shown before the tabs
          */
-        get_start_action_widget(): (Gtk.Widget | null);
+        get_start_action_widget(): Gtk.Widget | null;
 
         /**
          * Gets whether the tabs are currently revealed.
@@ -39024,7 +39012,7 @@ export namespace Adw {
          * Gets the tab view `self` controls.
          * @returns the view `self` controls
          */
-        get_view(): (TabView | null);
+        get_view(): TabView | null;
 
         /**
          * Sets whether the tabs automatically hide.
@@ -39041,7 +39029,7 @@ export namespace Adw {
          * Sets the widget to show after the tabs.
          * @param widget the widget to show after the tabs
          */
-        set_end_action_widget(widget: (Gtk.Widget | null)): void;
+        set_end_action_widget(widget: Gtk.Widget | null): void;
 
         /**
          * Sets whether tabs expand to full width.
@@ -39073,13 +39061,13 @@ export namespace Adw {
          * Sets the widget to show before the tabs.
          * @param widget the widget to show before the tabs
          */
-        set_start_action_widget(widget: (Gtk.Widget | null)): void;
+        set_start_action_widget(widget: Gtk.Widget | null): void;
 
         /**
          * Sets the tab view `self` controls.
          * @param view a tab view
          */
-        set_view(view: (TabView | null)): void;
+        set_view(view: TabView | null): void;
 
         /**
          * Sets the supported types for this drop target.
@@ -39096,7 +39084,7 @@ export namespace Adw {
          * @param actions the supported actions
          * @param types all supported {@link GObject.GType}s that can be dropped
          */
-        setup_extra_drop_target(actions: Gdk.DragAction, types: (GObject.GType[] | null)): void;
+        setup_extra_drop_target(actions: Gdk.DragAction, types: GObject.GType[] | null): void;
 
         /**
          * The accessible role of the given {@link Gtk.Accessible} implementation.
@@ -39139,7 +39127,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -39167,13 +39155,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -39217,7 +39205,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -39226,7 +39214,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -39280,13 +39268,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -39302,13 +39290,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -39328,7 +39316,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -39338,7 +39326,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -39349,7 +39337,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -39360,7 +39348,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -39369,7 +39357,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -39486,7 +39474,7 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Actionable.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
-            view: (TabView | null);
+            view: TabView | null;
         }
     }
 
@@ -39530,8 +39518,8 @@ export namespace Adw {
          * The view the tab button displays.
          * @since 1.3
          */
-        get view(): (TabView | null);
-        set view(val: (TabView | null));
+        get view(): TabView | null;
+        set view(val: TabView | null);
 
         /**
          * Compile-time signal type information.
@@ -39567,13 +39555,13 @@ export namespace Adw {
          * Gets the tab view `self` displays.
          * @returns the tab view
          */
-        get_view(): (TabView | null);
+        get_view(): TabView | null;
 
         /**
          * Sets the tab view to display.
          * @param view a tab view
          */
-        set_view(view: (TabView | null)): void;
+        set_view(view: TabView | null): void;
 
         /**
          * The accessible role of the given {@link Gtk.Accessible} implementation.
@@ -39600,16 +39588,16 @@ export namespace Adw {
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * The name of the action with which this widget should be associated.
          * @default null
           * @category Inherited from Gtk.Actionable
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /**
          * The target value of the actionable widget's action.
@@ -39646,7 +39634,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -39674,13 +39662,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -39724,7 +39712,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -39733,7 +39721,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -39787,13 +39775,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -39809,13 +39797,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -39832,13 +39820,13 @@ export namespace Adw {
          * Gets the action name for `actionable`.
          * @returns the action name
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
          * @returns the current target value
          */
-        get_action_target_value(): (GLib.Variant | null);
+        get_action_target_value(): GLib.Variant | null;
 
         /**
          * Specifies the name of the action with which this widget should be
@@ -39856,7 +39844,7 @@ export namespace Adw {
          * associated with the window.
          * @param action_name an action name
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -39879,7 +39867,7 @@ export namespace Adw {
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value
          */
-        set_action_target_value(target_value: (GLib.Variant | null)): void;
+        set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Sets the action-name and associated string target value of an
@@ -39895,13 +39883,13 @@ export namespace Adw {
          * Gets the action name for `actionable`.
          * @virtual
          */
-        vfunc_get_action_name(): (string | null);
+        vfunc_get_action_name(): string | null;
 
         /**
          * Gets the current target value of `actionable`.
          * @virtual
          */
-        vfunc_get_action_target_value(): (GLib.Variant | null);
+        vfunc_get_action_target_value(): GLib.Variant | null;
 
         /**
          * Specifies the name of the action with which this widget should be
@@ -39920,7 +39908,7 @@ export namespace Adw {
          * @param action_name an action name
          * @virtual
          */
-        vfunc_set_action_name(action_name: (string | null)): void;
+        vfunc_set_action_name(action_name: string | null): void;
 
         /**
          * Sets the target value of an actionable widget.
@@ -39944,7 +39932,7 @@ export namespace Adw {
          * @param target_value a {@link GLib.Variant} to set as the target value
          * @virtual
          */
-        vfunc_set_action_target_value(target_value: (GLib.Variant | null)): void;
+        vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
 
         /**
          * Gets the ID of the `buildable` object.
@@ -39953,7 +39941,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -39963,7 +39951,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -39974,7 +39962,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -39985,7 +39973,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -39994,7 +39982,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -40073,7 +40061,7 @@ export namespace Adw {
              * @since 1.3
              * @run-last
              */
-            "extra-drag-drop": (arg0: TabPage, arg1: unknown) => (boolean | void);
+            "extra-drag-drop": (arg0: TabPage, arg1: unknown) => boolean | void;
             /**
              * This signal is emitted when the dropped content is preloaded.
              * 
@@ -40141,7 +40129,7 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
-            child: (Gtk.Widget | null);
+            child: Gtk.Widget | null;
             enable_new_tab: boolean;
             enableNewTab: boolean;
             enable_search: boolean;
@@ -40154,13 +40142,13 @@ export namespace Adw {
             open: boolean;
             search_active: boolean;
             searchActive: boolean;
-            secondary_menu: (Gio.MenuModel | null);
-            secondaryMenu: (Gio.MenuModel | null);
+            secondary_menu: Gio.MenuModel | null;
+            secondaryMenu: Gio.MenuModel | null;
             show_end_title_buttons: boolean;
             showEndTitleButtons: boolean;
             show_start_title_buttons: boolean;
             showStartTitleButtons: boolean;
-            view: (TabView | null);
+            view: TabView | null;
         }
     }
 
@@ -40232,8 +40220,8 @@ export namespace Adw {
          * The child widget.
          * @since 1.3
          */
-        get child(): (Gtk.Widget | null);
-        set child(val: (Gtk.Widget | null));
+        get child(): Gtk.Widget | null;
+        set child(val: Gtk.Widget | null);
 
         /**
          * Whether to enable new tab button.
@@ -40380,8 +40368,8 @@ export namespace Adw {
          * Use it to add extra actions, e.g. to open a new window or undo closed tab.
          * @since 1.3
          */
-        get secondary_menu(): (Gio.MenuModel | null);
-        set secondary_menu(val: (Gio.MenuModel | null));
+        get secondary_menu(): Gio.MenuModel | null;
+        set secondary_menu(val: Gio.MenuModel | null);
 
         /**
          * The secondary menu model.
@@ -40389,8 +40377,8 @@ export namespace Adw {
          * Use it to add extra actions, e.g. to open a new window or undo closed tab.
          * @since 1.3
          */
-        get secondaryMenu(): (Gio.MenuModel | null);
-        set secondaryMenu(val: (Gio.MenuModel | null));
+        get secondaryMenu(): Gio.MenuModel | null;
+        set secondaryMenu(val: Gio.MenuModel | null);
 
         /**
          * Whether to show end title buttons in the overview's header bar.
@@ -40438,8 +40426,8 @@ export namespace Adw {
          * The view must be inside the tab overview, see {@link TabOverview.child}.
          * @since 1.3
          */
-        get view(): (TabView | null);
-        set view(val: (TabView | null));
+        get view(): TabView | null;
+        set view(val: TabView | null);
 
         /**
          * Compile-time signal type information.
@@ -40475,7 +40463,7 @@ export namespace Adw {
          * Gets the child widget of `self`.
          * @returns the child widget of `self`
          */
-        get_child(): (Gtk.Widget | null);
+        get_child(): Gtk.Widget | null;
 
         /**
          * Gets whether to new tab button is enabled for `self`.
@@ -40525,7 +40513,7 @@ export namespace Adw {
          * Gets the secondary menu model for `self`.
          * @returns the secondary menu model
          */
-        get_secondary_menu(): (Gio.MenuModel | null);
+        get_secondary_menu(): Gio.MenuModel | null;
 
         /**
          * Gets whether end title buttons are shown in `self`'s header bar.
@@ -40543,13 +40531,13 @@ export namespace Adw {
          * Gets the tab view `self` controls.
          * @returns the tab view
          */
-        get_view(): (TabView | null);
+        get_view(): TabView | null;
 
         /**
          * Sets the child widget of `self`.
          * @param child the child widget
          */
-        set_child(child: (Gtk.Widget | null)): void;
+        set_child(child: Gtk.Widget | null): void;
 
         /**
          * Sets whether to enable new tab button for `self`.
@@ -40603,7 +40591,7 @@ export namespace Adw {
          * Use it to add extra actions, e.g. to open a new window or undo closed tab.
          * @param secondary_menu a menu model
          */
-        set_secondary_menu(secondary_menu: (Gio.MenuModel | null)): void;
+        set_secondary_menu(secondary_menu: Gio.MenuModel | null): void;
 
         /**
          * Sets whether to show end title buttons in `self`'s header bar.
@@ -40627,7 +40615,7 @@ export namespace Adw {
          * The view must be inside `self`, see {@link TabOverview.child}.
          * @param view a tab view
          */
-        set_view(view: (TabView | null)): void;
+        set_view(view: TabView | null): void;
 
         /**
          * Sets the supported types for this drop target.
@@ -40645,7 +40633,7 @@ export namespace Adw {
          * @param actions the supported actions
          * @param types all supported {@link GObject.GType}s that can be dropped
          */
-        setup_extra_drop_target(actions: Gdk.DragAction, types: (GObject.GType[] | null)): void;
+        setup_extra_drop_target(actions: Gdk.DragAction, types: GObject.GType[] | null): void;
 
         /**
          * The accessible role of the given {@link Gtk.Accessible} implementation.
@@ -40688,7 +40676,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -40716,13 +40704,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -40766,7 +40754,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -40775,7 +40763,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -40829,13 +40817,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -40851,13 +40839,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -40877,7 +40865,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -40887,7 +40875,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -40898,7 +40886,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -40909,7 +40897,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -40918,7 +40906,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -40995,20 +40983,20 @@ export namespace Adw {
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps, Gtk.Accessible.ConstructorProps {
             child: Gtk.Widget;
-            icon: (Gio.Icon | null);
+            icon: Gio.Icon | null;
             indicator_activatable: boolean;
             indicatorActivatable: boolean;
-            indicator_icon: (Gio.Icon | null);
-            indicatorIcon: (Gio.Icon | null);
+            indicator_icon: Gio.Icon | null;
+            indicatorIcon: Gio.Icon | null;
             indicator_tooltip: string;
             indicatorTooltip: string;
-            keyword: (string | null);
+            keyword: string | null;
             live_thumbnail: boolean;
             liveThumbnail: boolean;
             loading: boolean;
             needs_attention: boolean;
             needsAttention: boolean;
-            parent: (TabPage | null);
+            parent: TabPage | null;
             pinned: boolean;
             selected: boolean;
             thumbnail_xalign: number;
@@ -41016,7 +41004,7 @@ export namespace Adw {
             thumbnail_yalign: number;
             thumbnailYalign: number;
             title: string;
-            tooltip: (string | null);
+            tooltip: string | null;
         }
     }
 
@@ -41043,8 +41031,8 @@ export namespace Adw {
          * {@link Adw.TabBar} also won't show the icon if the page is pinned and
          * [propertyTabPage:indicator-icon] is set.
          */
-        get icon(): (Gio.Icon | null);
-        set icon(val: (Gio.Icon | null));
+        get icon(): Gio.Icon | null;
+        set icon(val: Gio.Icon | null);
 
         /**
          * Whether the indicator icon is activatable.
@@ -41089,8 +41077,8 @@ export namespace Adw {
          * If {@link TabPage.indicator_activatable} is set to `TRUE`, the
          * indicator icon can act as a button.
          */
-        get indicator_icon(): (Gio.Icon | null);
-        set indicator_icon(val: (Gio.Icon | null));
+        get indicator_icon(): Gio.Icon | null;
+        set indicator_icon(val: Gio.Icon | null);
 
         /**
          * An indicator icon for the page.
@@ -41111,8 +41099,8 @@ export namespace Adw {
          * If {@link TabPage.indicator_activatable} is set to `TRUE`, the
          * indicator icon can act as a button.
          */
-        get indicatorIcon(): (Gio.Icon | null);
-        set indicatorIcon(val: (Gio.Icon | null));
+        get indicatorIcon(): Gio.Icon | null;
+        set indicatorIcon(val: Gio.Icon | null);
 
         /**
          * The tooltip of the indicator icon.
@@ -41145,8 +41133,8 @@ export namespace Adw {
          * Keywords allow to include e.g. page URLs into tab search in a web browser.
          * @since 1.3
          */
-        get keyword(): (string | null);
-        set keyword(val: (string | null));
+        get keyword(): string | null;
+        set keyword(val: string | null);
 
         /**
          * Whether to enable live thumbnail for this page.
@@ -41233,7 +41221,7 @@ export namespace Adw {
          * See {@link TabView.add_page} and {@link TabView.close_page}.
          * @construct-only
          */
-        get parent(): (TabPage | null);
+        get parent(): TabPage | null;
 
         /**
          * Whether the page is pinned.
@@ -41340,8 +41328,8 @@ export namespace Adw {
          * If not set, {@link TabBar} and {@link TabOverview} will use
          * {@link TabPage.title} as a tooltip instead.
          */
-        get tooltip(): (string | null);
-        set tooltip(val: (string | null));
+        get tooltip(): string | null;
+        set tooltip(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -41381,7 +41369,7 @@ export namespace Adw {
          * Gets the icon of `self`.
          * @returns the icon of `self`
          */
-        get_icon(): (Gio.Icon | null);
+        get_icon(): Gio.Icon | null;
 
         /**
          * Gets whether the indicator of `self` is activatable.
@@ -41393,7 +41381,7 @@ export namespace Adw {
          * Gets the indicator icon of `self`.
          * @returns the indicator icon of `self`
          */
-        get_indicator_icon(): (Gio.Icon | null);
+        get_indicator_icon(): Gio.Icon | null;
 
         /**
          * Gets the tooltip of the indicator icon of `self`.
@@ -41405,7 +41393,7 @@ export namespace Adw {
          * Gets the search keyword of `self`.
          * @returns the search keyword of `self`
          */
-        get_keyword(): (string | null);
+        get_keyword(): string | null;
 
         /**
          * Gets whether to live thumbnail is enabled `self`.
@@ -41431,7 +41419,7 @@ export namespace Adw {
          * See {@link TabView.add_page} and {@link TabView.close_page}.
          * @returns the parent page
          */
-        get_parent(): (TabPage | null);
+        get_parent(): TabPage | null;
 
         /**
          * Gets whether `self` is pinned.
@@ -41469,7 +41457,7 @@ export namespace Adw {
          * Gets the tooltip of `self`.
          * @returns the tooltip of `self`
          */
-        get_tooltip(): (string | null);
+        get_tooltip(): string | null;
 
         /**
          * Invalidates thumbnail for `self`.
@@ -41493,7 +41481,7 @@ export namespace Adw {
          * [propertyTabPage:indicator-icon] is set.
          * @param icon the icon of `self`
          */
-        set_icon(icon: (Gio.Icon | null)): void;
+        set_icon(icon: Gio.Icon | null): void;
 
         /**
          * Sets whether the indicator of `self` is activatable.
@@ -41526,7 +41514,7 @@ export namespace Adw {
          * indicator icon can act as a button.
          * @param indicator_icon the indicator icon of `self`
          */
-        set_indicator_icon(indicator_icon: (Gio.Icon | null)): void;
+        set_indicator_icon(indicator_icon: Gio.Icon | null): void;
 
         /**
          * Sets the tooltip of the indicator icon of `self`.
@@ -41686,7 +41674,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -41714,13 +41702,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -41764,7 +41752,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -41773,7 +41761,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -41827,13 +41815,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -41849,13 +41837,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -41906,7 +41894,7 @@ export namespace Adw {
              * @signal
              * @run-last
              */
-            "close-page": (arg0: TabPage) => (boolean | void);
+            "close-page": (arg0: TabPage) => boolean | void;
             /**
              * Emitted when a tab should be transferred into a new window.
              * 
@@ -41917,7 +41905,7 @@ export namespace Adw {
              * @signal
              * @run-last
              */
-            "create-window": () => (TabView | null);
+            "create-window": () => TabView | null;
             /**
              * Emitted after the indicator icon on `page` has been activated.
              * 
@@ -41966,7 +41954,7 @@ export namespace Adw {
              * @signal
              * @run-last
              */
-            "setup-menu": (arg0: (TabPage | null)) => void;
+            "setup-menu": (arg0: TabPage | null) => void;
             "notify::default-icon": (pspec: GObject.ParamSpec) => void;
             "notify::is-transferring-page": (pspec: GObject.ParamSpec) => void;
             "notify::menu-model": (pspec: GObject.ParamSpec) => void;
@@ -42019,15 +42007,15 @@ export namespace Adw {
             defaultIcon: Gio.Icon;
             is_transferring_page: boolean;
             isTransferringPage: boolean;
-            menu_model: (Gio.MenuModel | null);
-            menuModel: (Gio.MenuModel | null);
+            menu_model: Gio.MenuModel | null;
+            menuModel: Gio.MenuModel | null;
             n_pages: number;
             nPages: number;
             n_pinned_pages: number;
             nPinnedPages: number;
             pages: Gtk.SelectionModel;
-            selected_page: (TabPage | null);
-            selectedPage: (TabPage | null);
+            selected_page: TabPage | null;
+            selectedPage: TabPage | null;
             shortcuts: TabViewShortcuts;
         }
     }
@@ -42151,8 +42139,8 @@ export namespace Adw {
          * provided menu model. Use the `Adw.TabView::setup-menu` signal to set up
          * the menu actions for the particular tab.
          */
-        get menu_model(): (Gio.MenuModel | null);
-        set menu_model(val: (Gio.MenuModel | null));
+        get menu_model(): Gio.MenuModel | null;
+        set menu_model(val: Gio.MenuModel | null);
 
         /**
          * Tab context menu model.
@@ -42161,8 +42149,8 @@ export namespace Adw {
          * provided menu model. Use the `Adw.TabView::setup-menu` signal to set up
          * the menu actions for the particular tab.
          */
-        get menuModel(): (Gio.MenuModel | null);
-        set menuModel(val: (Gio.MenuModel | null));
+        get menuModel(): Gio.MenuModel | null;
+        set menuModel(val: Gio.MenuModel | null);
 
         /**
          * The number of pages in the tab view.
@@ -42209,14 +42197,14 @@ export namespace Adw {
         /**
          * The currently selected page.
          */
-        get selected_page(): (TabPage | null);
-        set selected_page(val: (TabPage | null));
+        get selected_page(): TabPage | null;
+        set selected_page(val: TabPage | null);
 
         /**
          * The currently selected page.
          */
-        get selectedPage(): (TabPage | null);
-        set selectedPage(val: (TabPage | null));
+        get selectedPage(): TabPage | null;
+        set selectedPage(val: TabPage | null);
 
         /**
          * The enabled shortcuts.
@@ -42274,7 +42262,7 @@ export namespace Adw {
          * @param parent a parent page for `child`
          * @returns the page object representing `child`
          */
-        add_page(child: Gtk.Widget, parent: (TabPage | null)): TabPage;
+        add_page(child: Gtk.Widget, parent: TabPage | null): TabPage;
 
         /**
          * Adds `shortcuts` for `self`.
@@ -42379,7 +42367,7 @@ export namespace Adw {
          * Gets the tab context menu model for `self`.
          * @returns the tab context menu model for `self`
          */
-        get_menu_model(): (Gio.MenuModel | null);
+        get_menu_model(): Gio.MenuModel | null;
 
         /**
          * Gets the number of pages in `self`.
@@ -42430,7 +42418,7 @@ export namespace Adw {
          * Gets the currently selected page in `self`.
          * @returns the selected page
          */
-        get_selected_page(): (TabPage | null);
+        get_selected_page(): TabPage | null;
 
         /**
          * Gets the enabled shortcuts for `self`.
@@ -42570,7 +42558,7 @@ export namespace Adw {
          * the menu actions for the particular tab.
          * @param menu_model a menu model
          */
-        set_menu_model(menu_model: (Gio.MenuModel | null)): void;
+        set_menu_model(menu_model: Gio.MenuModel | null): void;
 
         /**
          * Pins or unpins `page`.
@@ -42679,7 +42667,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -42707,13 +42695,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -42757,7 +42745,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -42766,7 +42754,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -42820,13 +42808,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -42842,13 +42830,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -42868,7 +42856,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -42878,7 +42866,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -42889,7 +42877,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -42900,7 +42888,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -42909,7 +42897,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -43287,17 +43275,17 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            action_name: (string | null);
-            actionName: (string | null);
-            action_target: (GLib.Variant | null);
-            actionTarget: (GLib.Variant | null);
-            button_label: (string | null);
-            buttonLabel: (string | null);
-            custom_title: (Gtk.Widget | null);
-            customTitle: (Gtk.Widget | null);
+            action_name: string | null;
+            actionName: string | null;
+            action_target: GLib.Variant | null;
+            actionTarget: GLib.Variant | null;
+            button_label: string | null;
+            buttonLabel: string | null;
+            custom_title: Gtk.Widget | null;
+            customTitle: Gtk.Widget | null;
             priority: ToastPriority;
             timeout: number;
-            title: (string | null);
+            title: string | null;
             use_markup: boolean;
             useMarkup: boolean;
         }
@@ -43439,8 +43427,8 @@ export namespace Adw {
          * See {@link Toast.action_target}.
          * @default null
          */
-        get action_name(): (string | null);
-        set action_name(val: (string | null));
+        get action_name(): string | null;
+        set action_name(val: string | null);
 
         /**
          * The name of the associated action.
@@ -43450,20 +43438,20 @@ export namespace Adw {
          * See {@link Toast.action_target}.
          * @default null
          */
-        get actionName(): (string | null);
-        set actionName(val: (string | null));
+        get actionName(): string | null;
+        set actionName(val: string | null);
 
         /**
          * The parameter for action invocations.
          */
-        get action_target(): (GLib.Variant | null);
-        set action_target(val: (GLib.Variant | null));
+        get action_target(): GLib.Variant | null;
+        set action_target(val: GLib.Variant | null);
 
         /**
          * The parameter for action invocations.
          */
-        get actionTarget(): (GLib.Variant | null);
-        set actionTarget(val: (GLib.Variant | null));
+        get actionTarget(): GLib.Variant | null;
+        set actionTarget(val: GLib.Variant | null);
 
         /**
          * The label to show on the button.
@@ -43475,8 +43463,8 @@ export namespace Adw {
          * See {@link Toast.action_name}.
          * @default null
          */
-        get button_label(): (string | null);
-        set button_label(val: (string | null));
+        get button_label(): string | null;
+        set button_label(val: string | null);
 
         /**
          * The label to show on the button.
@@ -43488,8 +43476,8 @@ export namespace Adw {
          * See {@link Toast.action_name}.
          * @default null
          */
-        get buttonLabel(): (string | null);
-        set buttonLabel(val: (string | null));
+        get buttonLabel(): string | null;
+        set buttonLabel(val: string | null);
 
         /**
          * The custom title widget.
@@ -43500,8 +43488,8 @@ export namespace Adw {
          * Setting a custom title will unset {@link Toast.title}.
          * @since 1.2
          */
-        get custom_title(): (Gtk.Widget | null);
-        set custom_title(val: (Gtk.Widget | null));
+        get custom_title(): Gtk.Widget | null;
+        set custom_title(val: Gtk.Widget | null);
 
         /**
          * The custom title widget.
@@ -43512,8 +43500,8 @@ export namespace Adw {
          * Setting a custom title will unset {@link Toast.title}.
          * @since 1.2
          */
-        get customTitle(): (Gtk.Widget | null);
-        set customTitle(val: (Gtk.Widget | null));
+        get customTitle(): Gtk.Widget | null;
+        set customTitle(val: Gtk.Widget | null);
 
         /**
          * The priority of the toast.
@@ -43552,8 +43540,8 @@ export namespace Adw {
          * 
          * If {@link Toast.custom_title} is set, it will be used instead.
          */
-        get title(): (string | null);
-        set title(val: (string | null));
+        get title(): string | null;
+        set title(val: string | null);
 
         /**
          * Whether to use Pango markup for the toast title.
@@ -43617,25 +43605,25 @@ export namespace Adw {
          * Gets the name of the associated action.
          * @returns the action name
          */
-        get_action_name(): (string | null);
+        get_action_name(): string | null;
 
         /**
          * Gets the parameter for action invocations.
          * @returns the action target
          */
-        get_action_target_value(): (GLib.Variant | null);
+        get_action_target_value(): GLib.Variant | null;
 
         /**
          * Gets the label to show on the button.
          * @returns the button label
          */
-        get_button_label(): (string | null);
+        get_button_label(): string | null;
 
         /**
          * Gets the custom title widget of `self`.
          * @returns the custom title widget
          */
-        get_custom_title(): (Gtk.Widget | null);
+        get_custom_title(): Gtk.Widget | null;
 
         /**
          * Gets priority for `self`.
@@ -43656,7 +43644,7 @@ export namespace Adw {
          * the return value will be `null`.
          * @returns the title
          */
-        get_title(): (string | null);
+        get_title(): string | null;
 
         /**
          * Gets whether to use Pango markup for the toast title.
@@ -43672,7 +43660,7 @@ export namespace Adw {
          * See {@link Toast.action_target}.
          * @param action_name the action name
          */
-        set_action_name(action_name: (string | null)): void;
+        set_action_name(action_name: string | null): void;
 
         /**
          * Sets the parameter for action invocations.
@@ -43681,7 +43669,7 @@ export namespace Adw {
          * will sink it.
          * @param action_target the action target
          */
-        set_action_target_value(action_target: (GLib.Variant | null)): void;
+        set_action_target_value(action_target: GLib.Variant | null): void;
 
         /**
          * Sets the label to show on the button.
@@ -43693,7 +43681,7 @@ export namespace Adw {
          * See {@link Toast.action_name}.
          * @param button_label a button label
          */
-        set_button_label(button_label: (string | null)): void;
+        set_button_label(button_label: string | null): void;
 
         /**
          * Sets the custom title widget of `self`.
@@ -43704,7 +43692,7 @@ export namespace Adw {
          * Setting a custom title will unset {@link Toast.title}.
          * @param widget the custom title widget
          */
-        set_custom_title(widget: (Gtk.Widget | null)): void;
+        set_custom_title(widget: Gtk.Widget | null): void;
 
         /**
          * Sets the action name and its parameter.
@@ -43713,7 +43701,7 @@ export namespace Adw {
          * {@link Gio.Action.parse_detailed_name}.
          * @param detailed_action_name the detailed action name
          */
-        set_detailed_action_name(detailed_action_name: (string | null)): void;
+        set_detailed_action_name(detailed_action_name: string | null): void;
 
         /**
          * Sets priority for `self`.
@@ -43807,7 +43795,7 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
-            child: (Gtk.Widget | null);
+            child: Gtk.Widget | null;
         }
     }
 
@@ -43863,8 +43851,8 @@ export namespace Adw {
         /**
          * The child widget.
          */
-        get child(): (Gtk.Widget | null);
-        set child(val: (Gtk.Widget | null));
+        get child(): Gtk.Widget | null;
+        set child(val: Gtk.Widget | null);
 
         /**
          * Compile-time signal type information.
@@ -43922,13 +43910,13 @@ export namespace Adw {
          * Gets the child widget of `self`.
          * @returns the child widget of `self`
          */
-        get_child(): (Gtk.Widget | null);
+        get_child(): Gtk.Widget | null;
 
         /**
          * Sets the child widget of `self`.
          * @param child the child widget
          */
-        set_child(child: (Gtk.Widget | null)): void;
+        set_child(child: Gtk.Widget | null): void;
 
         /**
          * The accessible role of the given {@link Gtk.Accessible} implementation.
@@ -43971,7 +43959,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -43999,13 +43987,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -44049,7 +44037,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -44058,7 +44046,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -44112,13 +44100,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -44134,13 +44122,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -44160,7 +44148,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -44170,7 +44158,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -44181,7 +44169,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -44192,7 +44180,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -44201,7 +44189,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -44267,11 +44255,11 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            child: (Gtk.Widget | null);
+            child: Gtk.Widget | null;
             enabled: boolean;
-            icon_name: (string | null);
-            iconName: (string | null);
-            label: (string | null);
+            icon_name: string | null;
+            iconName: string | null;
+            label: string | null;
             name: string;
             tooltip: string;
             use_underline: boolean;
@@ -44301,8 +44289,8 @@ export namespace Adw {
          * screen reader.
          * @since 1.7
          */
-        get child(): (Gtk.Widget | null);
-        set child(val: (Gtk.Widget | null));
+        get child(): Gtk.Widget | null;
+        set child(val: Gtk.Widget | null);
 
         /**
          * Whether this toggle is enabled.
@@ -44320,8 +44308,8 @@ export namespace Adw {
          * @since 1.7
          * @default null
          */
-        get icon_name(): (string | null);
-        set icon_name(val: (string | null));
+        get icon_name(): string | null;
+        set icon_name(val: string | null);
 
         /**
          * The toggle icon name.
@@ -44331,8 +44319,8 @@ export namespace Adw {
          * @since 1.7
          * @default null
          */
-        get iconName(): (string | null);
-        set iconName(val: (string | null));
+        get iconName(): string | null;
+        set iconName(val: string | null);
 
         /**
          * The toggle label.
@@ -44343,8 +44331,8 @@ export namespace Adw {
          * @since 1.7
          * @default null
          */
-        get label(): (string | null);
-        set label(val: (string | null));
+        get label(): string | null;
+        set label(val: string | null);
 
         /**
          * The toggle name.
@@ -44421,7 +44409,7 @@ export namespace Adw {
          * Gets the child widget of `self`.
          * @returns the toggle child
          */
-        get_child(): (Gtk.Widget | null);
+        get_child(): Gtk.Widget | null;
 
         /**
          * Gets whether `self` is enabled.
@@ -44433,7 +44421,7 @@ export namespace Adw {
          * Gets the icon name of `self`.
          * @returns the toggle icon name
          */
-        get_icon_name(): (string | null);
+        get_icon_name(): string | null;
 
         /**
          * Gets the index of `self` within its toggle group.
@@ -44445,7 +44433,7 @@ export namespace Adw {
          * Gets the label of `self`.
          * @returns the toggle label
          */
-        get_label(): (string | null);
+        get_label(): string | null;
 
         /**
          * Gets the name of `self`.
@@ -44474,7 +44462,7 @@ export namespace Adw {
          * screen reader.
          * @param child a child widget
          */
-        set_child(child: (Gtk.Widget | null)): void;
+        set_child(child: Gtk.Widget | null): void;
 
         /**
          * Sets whether `self` is enabled.
@@ -44489,7 +44477,7 @@ export namespace Adw {
          * {@link Toggle.child} is set.
          * @param icon_name the icon name
          */
-        set_icon_name(icon_name: (string | null)): void;
+        set_icon_name(icon_name: string | null): void;
 
         /**
          * Sets the label of `self` to `label`.
@@ -44499,7 +44487,7 @@ export namespace Adw {
          * reader.
          * @param label a label
          */
-        set_label(label: (string | null)): void;
+        set_label(label: string | null): void;
 
         /**
          * Sets the name of `self` to `name`.
@@ -44509,7 +44497,7 @@ export namespace Adw {
          * See {@link ToggleGroup.active_name}.
          * @param name a name
          */
-        set_name(name: (string | null)): void;
+        set_name(name: string | null): void;
 
         /**
          * Sets the tooltip of `self` to `tooltip`.
@@ -44580,8 +44568,8 @@ export namespace Adw {
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps, Gtk.Orientable.ConstructorProps {
             active: number;
-            active_name: (string | null);
-            activeName: (string | null);
+            active_name: string | null;
+            activeName: string | null;
             can_shrink: boolean;
             canShrink: boolean;
             homogeneous: boolean;
@@ -44719,8 +44707,8 @@ export namespace Adw {
          * @since 1.7
          * @default null
          */
-        get active_name(): (string | null);
-        set active_name(val: (string | null));
+        get active_name(): string | null;
+        set active_name(val: string | null);
 
         /**
          * The name of the active toggle.
@@ -44732,8 +44720,8 @@ export namespace Adw {
          * @since 1.7
          * @default null
          */
-        get activeName(): (string | null);
-        set activeName(val: (string | null));
+        get activeName(): string | null;
+        set activeName(val: string | null);
 
         /**
          * Whether the toggles can be smaller than the natural size of their contents.
@@ -44846,7 +44834,7 @@ export namespace Adw {
          * See {@link Toggle.name}.
          * @returns the active toggle name
          */
-        get_active_name(): (string | null);
+        get_active_name(): string | null;
 
         /**
          * Gets whether the toggles can be smaller than the natural size of their
@@ -44872,14 +44860,14 @@ export namespace Adw {
          * @param index toggle's index
          * @returns the toggle
          */
-        get_toggle(index: number): (Toggle | null);
+        get_toggle(index: number): Toggle | null;
 
         /**
          * Gets the toggle with the name `name` from `self`.
          * @param name toggle name
          * @returns the toggle
          */
-        get_toggle_by_name(name: string): (Toggle | null);
+        get_toggle_by_name(name: string): Toggle | null;
 
         /**
          * Returns a {@link Gio.ListModel} that contains the toggles of the group.
@@ -44919,7 +44907,7 @@ export namespace Adw {
          * If `name` is `NULL`, unset the current active toggle instead.
          * @param name toggle name
          */
-        set_active_name(name: (string | null)): void;
+        set_active_name(name: string | null): void;
 
         /**
          * Sets whether the toggles can be smaller than the natural size of their
@@ -44987,7 +44975,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -45015,13 +45003,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -45065,7 +45053,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -45074,7 +45062,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -45128,13 +45116,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -45150,13 +45138,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -45176,7 +45164,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -45186,7 +45174,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -45197,7 +45185,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -45208,7 +45196,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -45217,7 +45205,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -45337,7 +45325,7 @@ export namespace Adw {
             bottomBarHeight: number;
             bottom_bar_style: ToolbarStyle;
             bottomBarStyle: ToolbarStyle;
-            content: (Gtk.Widget | null);
+            content: Gtk.Widget | null;
             extend_content_to_bottom_edge: boolean;
             extendContentToBottomEdge: boolean;
             extend_content_to_top_edge: boolean;
@@ -45551,8 +45539,8 @@ export namespace Adw {
          * The content widget.
          * @since 1.4
          */
-        get content(): (Gtk.Widget | null);
-        set content(val: (Gtk.Widget | null));
+        get content(): Gtk.Widget | null;
+        set content(val: Gtk.Widget | null);
 
         /**
          * Whether the content widget can extend behind bottom bars.
@@ -45823,7 +45811,7 @@ export namespace Adw {
          * Gets the content widget for `self`.
          * @returns the content widget
          */
-        get_content(): (Gtk.Widget | null);
+        get_content(): Gtk.Widget | null;
 
         /**
          * Gets whether the content widget can extend behind bottom bars.
@@ -45905,7 +45893,7 @@ export namespace Adw {
          * Sets the content widget for `self`.
          * @param content the content widget
          */
-        set_content(content: (Gtk.Widget | null)): void;
+        set_content(content: Gtk.Widget | null): void;
 
         /**
          * Sets whether the content widget can extend behind bottom bars.
@@ -46027,7 +46015,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -46055,13 +46043,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -46105,7 +46093,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -46114,7 +46102,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -46168,13 +46156,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -46190,13 +46178,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -46216,7 +46204,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -46226,7 +46214,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -46237,7 +46225,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -46248,7 +46236,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -46257,7 +46245,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -46369,10 +46357,10 @@ export namespace Adw {
             transition_running: boolean;
             transitionRunning: boolean;
             vhomogeneous: boolean;
-            visible_child: (Gtk.Widget | null);
-            visibleChild: (Gtk.Widget | null);
-            visible_child_name: (string | null);
-            visibleChildName: (string | null);
+            visible_child: Gtk.Widget | null;
+            visibleChild: Gtk.Widget | null;
+            visible_child_name: string | null;
+            visibleChildName: string | null;
         }
     }
 
@@ -46546,14 +46534,14 @@ export namespace Adw {
         /**
          * The widget currently visible in the stack.
          */
-        get visible_child(): (Gtk.Widget | null);
-        set visible_child(val: (Gtk.Widget | null));
+        get visible_child(): Gtk.Widget | null;
+        set visible_child(val: Gtk.Widget | null);
 
         /**
          * The widget currently visible in the stack.
          */
-        get visibleChild(): (Gtk.Widget | null);
-        set visibleChild(val: (Gtk.Widget | null));
+        get visibleChild(): Gtk.Widget | null;
+        set visibleChild(val: Gtk.Widget | null);
 
         /**
          * The name of the widget currently visible in the stack.
@@ -46561,8 +46549,8 @@ export namespace Adw {
          * See {@link ViewStack.visible_child}.
          * @default null
          */
-        get visible_child_name(): (string | null);
-        set visible_child_name(val: (string | null));
+        get visible_child_name(): string | null;
+        set visible_child_name(val: string | null);
 
         /**
          * The name of the widget currently visible in the stack.
@@ -46570,8 +46558,8 @@ export namespace Adw {
          * See {@link ViewStack.visible_child}.
          * @default null
          */
-        get visibleChildName(): (string | null);
-        set visibleChildName(val: (string | null));
+        get visibleChildName(): string | null;
+        set visibleChildName(val: string | null);
 
         /**
          * Compile-time signal type information.
@@ -46618,7 +46606,7 @@ export namespace Adw {
          * @param name the name for `child`
          * @returns the {@link Adw.ViewStackPage} for `child`
          */
-        add_named(child: Gtk.Widget, name: (string | null)): ViewStackPage;
+        add_named(child: Gtk.Widget, name: string | null): ViewStackPage;
 
         /**
          * Adds a child to `self`.
@@ -46630,7 +46618,7 @@ export namespace Adw {
          * @param title a human-readable title for `child`
          * @returns the {@link Adw.ViewStackPage} for `child`
          */
-        add_titled(child: Gtk.Widget, name: (string | null), title: string): ViewStackPage;
+        add_titled(child: Gtk.Widget, name: string | null, title: string): ViewStackPage;
 
         /**
          * Adds a child to `self`.
@@ -46643,14 +46631,14 @@ export namespace Adw {
          * @param icon_name an icon name for `child`
          * @returns the {@link Adw.ViewStackPage} for `child`
          */
-        add_titled_with_icon(child: Gtk.Widget, name: (string | null), title: string, icon_name: string): ViewStackPage;
+        add_titled_with_icon(child: Gtk.Widget, name: string | null, title: string, icon_name: string): ViewStackPage;
 
         /**
          * Finds the child with `name` in `self`.
          * @param name the name of the child to find
          * @returns the requested child
          */
-        get_child_by_name(name: string): (Gtk.Widget | null);
+        get_child_by_name(name: string): Gtk.Widget | null;
 
         /**
          * Gets whether `self` uses a crossfade transition between pages.
@@ -46711,13 +46699,13 @@ export namespace Adw {
          * Gets the currently visible child of `self`.
          * @returns the visible child
          */
-        get_visible_child(): (Gtk.Widget | null);
+        get_visible_child(): Gtk.Widget | null;
 
         /**
          * Returns the name of the currently visible child of `self`.
          * @returns the name of the visible child
          */
-        get_visible_child_name(): (string | null);
+        get_visible_child_name(): string | null;
 
         /**
          * Removes a child widget from `self`.
@@ -46818,7 +46806,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -46846,13 +46834,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -46896,7 +46884,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -46905,7 +46893,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -46959,13 +46947,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -46981,13 +46969,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -47007,7 +46995,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -47017,7 +47005,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -47028,7 +47016,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -47039,7 +47027,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -47048,7 +47036,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -47119,12 +47107,12 @@ export namespace Adw {
             badge_number: number;
             badgeNumber: number;
             child: Gtk.Widget;
-            icon_name: (string | null);
-            iconName: (string | null);
-            name: (string | null);
+            icon_name: string | null;
+            iconName: string | null;
+            name: string | null;
             needs_attention: boolean;
             needsAttention: boolean;
-            title: (string | null);
+            title: string | null;
             use_underline: boolean;
             useUnderline: boolean;
             visible: boolean;
@@ -47173,22 +47161,22 @@ export namespace Adw {
          * The icon name of the child page.
          * @default null
          */
-        get icon_name(): (string | null);
-        set icon_name(val: (string | null));
+        get icon_name(): string | null;
+        set icon_name(val: string | null);
 
         /**
          * The icon name of the child page.
          * @default null
          */
-        get iconName(): (string | null);
-        set iconName(val: (string | null));
+        get iconName(): string | null;
+        set iconName(val: string | null);
 
         /**
          * The name of the child page.
          * @default null
          */
-        get name(): (string | null);
-        set name(val: (string | null));
+        get name(): string | null;
+        set name(val: string | null);
 
         /**
          * Whether the page requires the user attention.
@@ -47212,8 +47200,8 @@ export namespace Adw {
          * The title of the child page.
          * @default null
          */
-        get title(): (string | null);
-        set title(val: (string | null));
+        get title(): string | null;
+        set title(val: string | null);
 
         /**
          * Whether an embedded underline in the title indicates a mnemonic.
@@ -47283,13 +47271,13 @@ export namespace Adw {
          * Gets the icon name of the page.
          * @returns the icon name of the page
          */
-        get_icon_name(): (string | null);
+        get_icon_name(): string | null;
 
         /**
          * Gets the name of the page.
          * @returns the name of the page
          */
-        get_name(): (string | null);
+        get_name(): string | null;
 
         /**
          * Gets whether the page requires the user attention.
@@ -47301,7 +47289,7 @@ export namespace Adw {
          * Gets the page title.
          * @returns the page title
          */
-        get_title(): (string | null);
+        get_title(): string | null;
 
         /**
          * Gets whether underlines in the page title indicate mnemonics.
@@ -47333,13 +47321,13 @@ export namespace Adw {
          * Sets the icon name of the page.
          * @param icon_name the icon name
          */
-        set_icon_name(icon_name: (string | null)): void;
+        set_icon_name(icon_name: string | null): void;
 
         /**
          * Sets the name of the page.
          * @param name the page name
          */
-        set_name(name: (string | null)): void;
+        set_name(name: string | null): void;
 
         /**
          * Sets whether the page requires the user attention.
@@ -47353,7 +47341,7 @@ export namespace Adw {
          * Sets the page title.
          * @param title the page title
          */
-        set_title(title: (string | null)): void;
+        set_title(title: string | null): void;
 
         /**
          * Sets whether underlines in the page title indicate mnemonics.
@@ -47411,7 +47399,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -47439,13 +47427,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -47489,7 +47477,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -47498,7 +47486,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -47552,13 +47540,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -47574,13 +47562,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -47603,8 +47591,8 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps<A extends GObject.Object = GObject.Object> extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps, Gtk.SelectionModel.ConstructorProps {
-            selected_page: (ViewStackPage | null);
-            selectedPage: (ViewStackPage | null);
+            selected_page: ViewStackPage | null;
+            selectedPage: ViewStackPage | null;
         }
     }
 
@@ -47628,8 +47616,8 @@ export namespace Adw {
          * This can be used to keep an up-to-date view of the visible child.
          * @since 1.4
          */
-        get selected_page(): (ViewStackPage | null);
-        set selected_page(val: (ViewStackPage | null));
+        get selected_page(): ViewStackPage | null;
+        set selected_page(val: ViewStackPage | null);
 
         /**
          * The selected {@link ViewStackPage} within the {@link ViewStackPages}.
@@ -47640,8 +47628,8 @@ export namespace Adw {
          * This can be used to keep an up-to-date view of the visible child.
          * @since 1.4
          */
-        get selectedPage(): (ViewStackPage | null);
-        set selectedPage(val: (ViewStackPage | null));
+        get selectedPage(): ViewStackPage | null;
+        set selectedPage(val: ViewStackPage | null);
 
         /**
          * Compile-time signal type information.
@@ -47679,7 +47667,7 @@ export namespace Adw {
          * Returns `NULL` if there's no selected page.
          * @returns the stack page
          */
-        get_selected_page(): (ViewStackPage | null);
+        get_selected_page(): ViewStackPage | null;
 
         /**
          * Sets the visible child in the associated {@link ViewStack}.
@@ -47728,7 +47716,7 @@ export namespace Adw {
          * @param position the position of the item to fetch
          * @returns the object at `position`.
          */
-        get_item(position: number): (A | null);
+        get_item(position: number): A | null;
 
         /**
          * Emits the {@link Gio.ListModel.SignalSignatures.items_changed | Gio.ListModel::items-changed} signal on `list`.
@@ -47768,7 +47756,7 @@ export namespace Adw {
          * @param position the position of the item to fetch
          * @virtual
          */
-        vfunc_get_item(position: number): (A | null);
+        vfunc_get_item(position: number): A | null;
 
         /**
          * Gets the type of the items in `list`.
@@ -48071,7 +48059,7 @@ export namespace Adw {
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
             policy: ViewSwitcherPolicy;
-            stack: (ViewStack | null);
+            stack: ViewStack | null;
         }
     }
 
@@ -48160,8 +48148,8 @@ export namespace Adw {
         /**
          * The stack the view switcher controls.
          */
-        get stack(): (ViewStack | null);
-        set stack(val: (ViewStack | null));
+        get stack(): ViewStack | null;
+        set stack(val: ViewStack | null);
 
         /**
          * Compile-time signal type information.
@@ -48203,7 +48191,7 @@ export namespace Adw {
          * Gets the stack controlled by `self`.
          * @returns the stack
          */
-        get_stack(): (ViewStack | null);
+        get_stack(): ViewStack | null;
 
         /**
          * Sets the policy of `self`.
@@ -48215,7 +48203,7 @@ export namespace Adw {
          * Sets the stack controlled by `self`.
          * @param stack a stack
          */
-        set_stack(stack: (ViewStack | null)): void;
+        set_stack(stack: ViewStack | null): void;
 
         /**
          * The accessible role of the given {@link Gtk.Accessible} implementation.
@@ -48258,7 +48246,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -48286,13 +48274,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -48336,7 +48324,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -48345,7 +48333,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -48399,13 +48387,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -48421,13 +48409,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -48447,7 +48435,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -48457,7 +48445,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -48468,7 +48456,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -48479,7 +48467,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -48488,7 +48476,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -48586,7 +48574,7 @@ export namespace Adw {
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
             reveal: boolean;
-            stack: (ViewStack | null);
+            stack: ViewStack | null;
         }
     }
 
@@ -48666,8 +48654,8 @@ export namespace Adw {
         /**
          * The stack the view switcher controls.
          */
-        get stack(): (ViewStack | null);
-        set stack(val: (ViewStack | null));
+        get stack(): ViewStack | null;
+        set stack(val: ViewStack | null);
 
         /**
          * Compile-time signal type information.
@@ -48709,7 +48697,7 @@ export namespace Adw {
          * Gets the stack controlled by `self`.
          * @returns the stack
          */
-        get_stack(): (ViewStack | null);
+        get_stack(): ViewStack | null;
 
         /**
          * Sets whether `self` should be revealed or hidden.
@@ -48721,7 +48709,7 @@ export namespace Adw {
          * Sets the stack controlled by `self`.
          * @param stack a stack
          */
-        set_stack(stack: (ViewStack | null)): void;
+        set_stack(stack: ViewStack | null): void;
 
         /**
          * The accessible role of the given {@link Gtk.Accessible} implementation.
@@ -48764,7 +48752,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -48792,13 +48780,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -48842,7 +48830,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -48851,7 +48839,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -48905,13 +48893,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -48927,13 +48915,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -48953,7 +48941,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -48963,7 +48951,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -48974,7 +48962,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -48985,7 +48973,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -48994,7 +48982,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -49094,7 +49082,7 @@ export namespace Adw {
 
         // Constructor properties interface
         interface ConstructorProps extends Gtk.Widget.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
-            stack: (ViewStack | null);
+            stack: ViewStack | null;
             subtitle: string;
             title: string;
             title_visible: boolean;
@@ -49175,8 +49163,8 @@ export namespace Adw {
          * The stack the view switcher controls.
          * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwviewswitchertitle)
          */
-        get stack(): (ViewStack | null);
-        set stack(val: (ViewStack | null));
+        get stack(): ViewStack | null;
+        set stack(val: ViewStack | null);
 
         /**
          * The subtitle to display.
@@ -49283,7 +49271,7 @@ export namespace Adw {
          * Gets the stack controlled by `self`.
          * @returns the stack
          */
-        get_stack(): (ViewStack | null);
+        get_stack(): ViewStack | null;
 
         /**
          * Gets the subtitle of `self`.
@@ -49316,7 +49304,7 @@ export namespace Adw {
          * Sets the stack controlled by `self`.
          * @param stack a stack
          */
-        set_stack(stack: (ViewStack | null)): void;
+        set_stack(stack: ViewStack | null): void;
 
         /**
          * Sets the subtitle of `self`.
@@ -49389,7 +49377,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -49417,13 +49405,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -49467,7 +49455,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -49476,7 +49464,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -49530,13 +49518,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -49552,13 +49540,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -49578,7 +49566,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -49588,7 +49576,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -49599,7 +49587,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -49610,7 +49598,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -49619,7 +49607,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -49746,12 +49734,12 @@ export namespace Adw {
         interface ConstructorProps extends Gtk.Window.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps, Gtk.Native.ConstructorProps, Gtk.Root.ConstructorProps, Gtk.ShortcutManager.ConstructorProps {
             adaptive_preview: boolean;
             adaptivePreview: boolean;
-            content: (Gtk.Widget | null);
-            current_breakpoint: (Breakpoint | null);
-            currentBreakpoint: (Breakpoint | null);
+            content: Gtk.Widget | null;
+            current_breakpoint: Breakpoint | null;
+            currentBreakpoint: Breakpoint | null;
             dialogs: Gio.ListModel;
-            visible_dialog: (Dialog | null);
-            visibleDialog: (Dialog | null);
+            visible_dialog: Dialog | null;
+            visibleDialog: Dialog | null;
         }
     }
 
@@ -49878,22 +49866,22 @@ export namespace Adw {
          * 
          * This property should always be used instead of {@link Gtk.Window.child}.
          */
-        get content(): (Gtk.Widget | null);
-        set content(val: (Gtk.Widget | null));
+        get content(): Gtk.Widget | null;
+        set content(val: Gtk.Widget | null);
 
         /**
          * The current breakpoint.
          * @since 1.4
          * @read-only
          */
-        get current_breakpoint(): (Breakpoint | null);
+        get current_breakpoint(): Breakpoint | null;
 
         /**
          * The current breakpoint.
          * @since 1.4
          * @read-only
          */
-        get currentBreakpoint(): (Breakpoint | null);
+        get currentBreakpoint(): Breakpoint | null;
 
         /**
          * The open dialogs.
@@ -49907,14 +49895,14 @@ export namespace Adw {
          * @since 1.5
          * @read-only
          */
-        get visible_dialog(): (Dialog | null);
+        get visible_dialog(): Dialog | null;
 
         /**
          * The currently visible dialog
          * @since 1.5
          * @read-only
          */
-        get visibleDialog(): (Dialog | null);
+        get visibleDialog(): Dialog | null;
 
         /**
          * Compile-time signal type information.
@@ -49964,13 +49952,13 @@ export namespace Adw {
          * This method should always be used instead of {@link Gtk.Window.get_child}.
          * @returns the content widget of `self`
          */
-        get_content(): (Gtk.Widget | null);
+        get_content(): Gtk.Widget | null;
 
         /**
          * Gets the current breakpoint.
          * @returns the current breakpoint
          */
-        get_current_breakpoint(): (Breakpoint | null);
+        get_current_breakpoint(): Breakpoint | null;
 
         /**
          * Returns a {@link Gio.ListModel} that contains the open dialogs of `self`.
@@ -49984,7 +49972,7 @@ export namespace Adw {
          * Returns the currently visible dialog in `self`, if there's one.
          * @returns the visible dialog
          */
-        get_visible_dialog(): (Dialog | null);
+        get_visible_dialog(): Dialog | null;
 
         /**
          * Sets whether adaptive preview for `self` is currently open.
@@ -50006,19 +49994,19 @@ export namespace Adw {
          * This method should always be used instead of {@link Gtk.Window.set_child}.
          * @param content the content widget
          */
-        set_content(content: (Gtk.Widget | null)): void;
+        set_content(content: Gtk.Widget | null): void;
 
         /**
          * Returns the renderer that is used for this {@link Gtk.Native}.
          * @returns the renderer for `self`
          */
-        get_renderer(): (Gsk.Renderer | null);
+        get_renderer(): Gsk.Renderer | null;
 
         /**
          * Returns the surface of this {@link Gtk.Native}.
          * @returns the surface of `self`
          */
-        get_surface(): (Gdk.Surface | null);
+        get_surface(): Gdk.Surface | null;
 
         /**
          * Retrieves the surface transform of `self`.
@@ -50057,7 +50045,7 @@ export namespace Adw {
          * widget.
          * @returns the currently focused widget
          */
-        get_focus(): (Gtk.Widget | null);
+        get_focus(): Gtk.Widget | null;
 
         /**
          * If `focus` is not the current focus widget, and is focusable, sets
@@ -50070,7 +50058,7 @@ export namespace Adw {
          * this function.
          * @param focus widget to be the new focus widget, or `null`    to unset the focus widget
          */
-        set_focus(focus: (Gtk.Widget | null)): void;
+        set_focus(focus: Gtk.Widget | null): void;
 
         /**
          * Add a {@link Gtk.ShortcutController} to be managed.
@@ -50276,7 +50264,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -50304,13 +50292,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -50354,7 +50342,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -50363,7 +50351,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -50417,13 +50405,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -50439,13 +50427,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -50465,7 +50453,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -50475,7 +50463,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -50486,7 +50474,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -50497,7 +50485,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -50506,7 +50494,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -51116,7 +51104,7 @@ export namespace Adw {
          * @param child the widget to insert
          * @param sibling the sibling after which to insert `child`
          */
-        insert_child_after(child: Gtk.Widget, sibling: (Gtk.Widget | null)): void;
+        insert_child_after(child: Gtk.Widget, sibling: Gtk.Widget | null): void;
 
         /**
          * Adds `child` as the first child to `self`.
@@ -51145,7 +51133,7 @@ export namespace Adw {
          * @param child the widget to move, must be a child of `self`
          * @param sibling the sibling to move `child` after
          */
-        reorder_child_after(child: Gtk.Widget, sibling: (Gtk.Widget | null)): void;
+        reorder_child_after(child: Gtk.Widget, sibling: Gtk.Widget | null): void;
 
         /**
          * Sets the alignment of the children within each line.
@@ -51331,7 +51319,7 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
          */
-        get_accessible_parent(): (Gtk.Accessible | null);
+        get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the accessible role of an accessible object.
@@ -51359,13 +51347,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
          */
-        get_first_accessible_child(): (Gtk.Accessible | null);
+        get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
          */
-        get_next_accessible_sibling(): (Gtk.Accessible | null);
+        get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -51409,7 +51397,7 @@ export namespace Adw {
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
          */
-        set_accessible_parent(parent: (Gtk.Accessible | null), next_sibling: (Gtk.Accessible | null)): void;
+        set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
         /**
          * Updates the next accessible sibling.
@@ -51418,7 +51406,7 @@ export namespace Adw {
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
          */
-        update_next_accessible_sibling(new_sibling: (Gtk.Accessible | null)): void;
+        update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
         /**
          * Informs ATs that the platform state has changed.
@@ -51472,13 +51460,13 @@ export namespace Adw {
          * This function returns `NULL` for top level widgets.
          * @virtual
          */
-        vfunc_get_accessible_parent(): (Gtk.Accessible | null);
+        vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
          * @virtual
          */
-        vfunc_get_at_context(): (Gtk.ATContext | null);
+        vfunc_get_at_context(): Gtk.ATContext | null;
 
         /**
          * Queries the coordinates and dimensions of this accessible
@@ -51494,13 +51482,13 @@ export namespace Adw {
          * Retrieves the first accessible child of an accessible object.
          * @virtual
          */
-        vfunc_get_first_accessible_child(): (Gtk.Accessible | null);
+        vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @virtual
          */
-        vfunc_get_next_accessible_sibling(): (Gtk.Accessible | null);
+        vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
 
         /**
          * Queries a platform state, such as focus.
@@ -51520,7 +51508,7 @@ export namespace Adw {
          * of the `<object>` tag used to construct the `buildable`.
          * @returns the ID of the buildable object
          */
-        get_buildable_id(): (string | null);
+        get_buildable_id(): string | null;
 
         /**
          * Adds a child to `buildable`. `type` is an optional string
@@ -51530,7 +51518,7 @@ export namespace Adw {
          * @param type kind of child or `null`
          * @virtual
          */
-        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: (string | null)): void;
+        vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
         /**
          * Similar to `gtk_buildable_parser_finished()` but is
@@ -51541,7 +51529,7 @@ export namespace Adw {
          * @param data user data created in custom_tag_start
          * @virtual
          */
-        vfunc_custom_finished(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called at the end of each custom element handled by
@@ -51552,7 +51540,7 @@ export namespace Adw {
          * @param data user data that will be passed in to parser functions
          * @virtual
          */
-        vfunc_custom_tag_end(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string, data: null): void;
+        vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
         /**
          * Called for each unknown element under `<child>`.
@@ -51561,7 +51549,7 @@ export namespace Adw {
          * @param tagname name of tag
          * @virtual
          */
-        vfunc_custom_tag_start(builder: Gtk.Builder, child: (GObject.Object | null), tagname: string): [boolean, Gtk.BuildableParser, never];
+        vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, Gtk.BuildableParser, never];
 
         /**
          * The getter corresponding to `set_id`. Implement this
@@ -52955,9 +52943,7 @@ export namespace Adw {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends Gtk.Widget.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gtk.Widget.ConstructorProps {}
     }
 
     export interface SwipeableNamespace {

@@ -3661,7 +3661,7 @@ export namespace HarfBuzz {
      * @returns the byte data of `blob`.
      * @since 0.9.2
      */
-    function blob_get_data(blob: blob_t): (string[] | null);
+    function blob_get_data(blob: blob_t): string[] | null;
 
     /**
      * Tries to make blob data writable (possibly copying it) and
@@ -3757,7 +3757,7 @@ export namespace HarfBuzz {
      * @param item_length the number of characters to add to the `buffer`, or -1 for the               end of `text` (assuming it is `NULL` terminated)
      * @since 0.9.39
      */
-    function buffer_add_latin1(buffer: buffer_t, text: (Uint8Array | string), item_offset: number, item_length: number): void;
+    function buffer_add_latin1(buffer: buffer_t, text: Uint8Array | string, item_offset: number, item_length: number): void;
 
     /**
      * See `hb_buffer_add_codepoints()`.
@@ -3796,7 +3796,7 @@ export namespace HarfBuzz {
      * @param item_length The number of characters to add to the `buffer`, or -1 for the               end of `text` (assuming it is `NULL` terminated).
      * @since 0.9.2
      */
-    function buffer_add_utf8(buffer: buffer_t, text: (Uint8Array | string), item_offset: number, item_length: number): void;
+    function buffer_add_utf8(buffer: buffer_t, text: Uint8Array | string, item_offset: number, item_length: number): void;
 
     /**
      * Check if allocating memory for the buffer succeeded.
@@ -3850,7 +3850,7 @@ export namespace HarfBuzz {
      * @returns `true` if the full string was parsed, `false` otherwise.
      * @since 0.9.7
      */
-    function buffer_deserialize_glyphs(buffer: buffer_t, buf: string[], font: (font_t | null), format: buffer_serialize_format_t): [bool_t, string];
+    function buffer_deserialize_glyphs(buffer: buffer_t, buf: string[], font: font_t | null, format: buffer_serialize_format_t): [bool_t, string];
 
     /**
      * Deserializes Unicode `buffer` from textual representation in the format
@@ -4124,7 +4124,7 @@ export namespace HarfBuzz {
      * @returns The number of serialized items.
      * @since 2.7.3
      */
-    function buffer_serialize(buffer: buffer_t, start: number, end: number, font: (font_t | null), format: buffer_serialize_format_t, flags: buffer_serialize_flags_t): [number, Uint8Array, number];
+    function buffer_serialize(buffer: buffer_t, start: number, end: number, font: font_t | null, format: buffer_serialize_format_t, flags: buffer_serialize_flags_t): [number, Uint8Array, number];
 
     /**
      * Parses a string into an {@link HarfBuzz.buffer_serialize_format_t}. Does not check if
@@ -4134,7 +4134,7 @@ export namespace HarfBuzz {
      * @returns The parsed {@link HarfBuzz.buffer_serialize_format_t}.
      * @since 0.9.7
      */
-    function buffer_serialize_format_from_string(str: (Uint8Array | string)): buffer_serialize_format_t;
+    function buffer_serialize_format_from_string(str: Uint8Array | string): buffer_serialize_format_t;
 
     /**
      * Converts `format` to the string corresponding it, or `NULL` if it is not a valid
@@ -4197,7 +4197,7 @@ export namespace HarfBuzz {
      * @returns The number of serialized items.
      * @since 0.9.7
      */
-    function buffer_serialize_glyphs(buffer: buffer_t, start: number, end: number, font: (font_t | null), format: buffer_serialize_format_t, flags: buffer_serialize_flags_t): [number, Uint8Array, number];
+    function buffer_serialize_glyphs(buffer: buffer_t, start: number, end: number, font: font_t | null, format: buffer_serialize_format_t, flags: buffer_serialize_flags_t): [number, Uint8Array, number];
 
     /**
      * Returns a list of supported buffer serialization formats.
@@ -4360,7 +4360,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 1.1.3
      */
-    function buffer_set_message_func(buffer: buffer_t, func: buffer_message_func_t, destroy: (destroy_func_t | null)): void;
+    function buffer_set_message_func(buffer: buffer_t, func: buffer_message_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the {@link HarfBuzz.codepoint_t} that replaces characters not found in
@@ -4459,7 +4459,7 @@ export namespace HarfBuzz {
      * @returns A pointer to the allocated memory.
      * @since 11.0.0
      */
-    function calloc(nmemb: (bigint | number), size: (bigint | number)): null;
+    function calloc(nmemb: bigint | number, size: bigint | number): null;
 
     /**
      * Fetches the alpha channel of the given `color`.
@@ -4525,7 +4525,7 @@ export namespace HarfBuzz {
      * @returns The {@link HarfBuzz.direction_t} matching `str`
      * @since 0.9.2
      */
-    function direction_from_string(str: (Uint8Array | string)): direction_t;
+    function direction_from_string(str: Uint8Array | string): direction_t;
 
     /**
      * Converts an {@link HarfBuzz.direction_t} to a string.
@@ -4595,7 +4595,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 4.0.0
      */
-    function draw_funcs_set_close_path_func(dfuncs: draw_funcs_t, func: draw_close_path_func_t, destroy: (destroy_func_t | null)): void;
+    function draw_funcs_set_close_path_func(dfuncs: draw_funcs_t, func: draw_close_path_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets cubic-to callback to the draw functions object.
@@ -4604,7 +4604,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 4.0.0
      */
-    function draw_funcs_set_cubic_to_func(dfuncs: draw_funcs_t, func: draw_cubic_to_func_t, destroy: (destroy_func_t | null)): void;
+    function draw_funcs_set_cubic_to_func(dfuncs: draw_funcs_t, func: draw_cubic_to_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets line-to callback to the draw functions object.
@@ -4613,7 +4613,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 4.0.0
      */
-    function draw_funcs_set_line_to_func(dfuncs: draw_funcs_t, func: draw_line_to_func_t, destroy: (destroy_func_t | null)): void;
+    function draw_funcs_set_line_to_func(dfuncs: draw_funcs_t, func: draw_line_to_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets move-to callback to the draw functions object.
@@ -4622,7 +4622,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 4.0.0
      */
-    function draw_funcs_set_move_to_func(dfuncs: draw_funcs_t, func: draw_move_to_func_t, destroy: (destroy_func_t | null)): void;
+    function draw_funcs_set_move_to_func(dfuncs: draw_funcs_t, func: draw_move_to_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets quadratic-to callback to the draw functions object.
@@ -4631,7 +4631,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 4.0.0
      */
-    function draw_funcs_set_quadratic_to_func(dfuncs: draw_funcs_t, func: draw_quadratic_to_func_t, destroy: (destroy_func_t | null)): void;
+    function draw_funcs_set_quadratic_to_func(dfuncs: draw_funcs_t, func: draw_quadratic_to_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Perform a "line-to" draw operation.
@@ -4774,7 +4774,7 @@ export namespace HarfBuzz {
      * @returns The new face object
      * @since 0.9.2
      */
-    function face_create_for_tables(reference_table_func: reference_table_func_t, destroy: (destroy_func_t | null)): face_t;
+    function face_create_for_tables(reference_table_func: reference_table_func_t, destroy: destroy_func_t | null): face_t;
 
     /**
      * A thin wrapper around `hb_blob_create_from_file_or_fail()`
@@ -4800,7 +4800,7 @@ export namespace HarfBuzz {
      * @returns The new face object, or `NULL` if the file cannot be read or the loader fails to load the face.
      * @since 11.0.0
      */
-    function face_create_from_file_or_fail_using(file_name: string, index: number, loader_name: (string | null)): face_t;
+    function face_create_from_file_or_fail_using(file_name: string, index: number, loader_name: string | null): face_t;
 
     /**
      * Like `hb_face_create()`, but returns `NULL` if the blob data
@@ -4826,7 +4826,7 @@ export namespace HarfBuzz {
      * @returns The new face object, or `NULL` if the loader fails to load the face.
      * @since 11.0.0
      */
-    function face_create_or_fail_using(blob: blob_t, index: number, loader_name: (string | null)): face_t;
+    function face_create_or_fail_using(blob: blob_t, index: number, loader_name: string | null): face_t;
 
     /**
      * Fetches the singleton empty face object.
@@ -4925,7 +4925,7 @@ export namespace HarfBuzz {
      * @param destroy A callback to call when `func` is not needed anymore
      * @since 10.0.0
      */
-    function face_set_get_table_tags_func(face: face_t, func: get_table_tags_func_t, destroy: (destroy_func_t | null)): void;
+    function face_set_get_table_tags_func(face: face_t, func: get_table_tags_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the glyph count for a face object to the specified value.
@@ -5001,7 +5001,7 @@ export namespace HarfBuzz {
      * @returns `true` if `str` is successfully parsed, `false` otherwise
      * @since 0.9.5
      */
-    function feature_from_string(str: (Uint8Array | string)): [bool_t, feature_t];
+    function feature_from_string(str: Uint8Array | string): [bool_t, feature_t];
 
     /**
      * Converts a {@link HarfBuzz.feature_t} into a `NULL`-terminated string in the format
@@ -5133,7 +5133,7 @@ export namespace HarfBuzz {
      * @since 7.0.0
      * @deprecated since 11.2.0: Use hb_font_funcs_set_draw_glyph_or_fail_func instead.
      */
-    function font_funcs_set_draw_glyph_func(ffuncs: font_funcs_t, func: font_draw_glyph_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_draw_glyph_func(ffuncs: font_funcs_t, func: font_draw_glyph_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_draw_glyph_or_fail_func_t}.
@@ -5142,7 +5142,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 11.2.0
      */
-    function font_funcs_set_draw_glyph_or_fail_func(ffuncs: font_funcs_t, func: font_draw_glyph_or_fail_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_draw_glyph_or_fail_func(ffuncs: font_funcs_t, func: font_draw_glyph_or_fail_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_font_h_extents_func_t}.
@@ -5151,7 +5151,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 1.1.2
      */
-    function font_funcs_set_font_h_extents_func(ffuncs: font_funcs_t, func: font_get_font_h_extents_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_font_h_extents_func(ffuncs: font_funcs_t, func: font_get_font_h_extents_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_font_v_extents_func_t}.
@@ -5160,7 +5160,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 1.1.2
      */
-    function font_funcs_set_font_v_extents_func(ffuncs: font_funcs_t, func: font_get_font_v_extents_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_font_v_extents_func(ffuncs: font_funcs_t, func: font_get_font_v_extents_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_glyph_contour_point_func_t}.
@@ -5169,7 +5169,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 0.9.2
      */
-    function font_funcs_set_glyph_contour_point_func(ffuncs: font_funcs_t, func: font_get_glyph_contour_point_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_glyph_contour_point_func(ffuncs: font_funcs_t, func: font_get_glyph_contour_point_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_glyph_extents_func_t}.
@@ -5178,7 +5178,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 0.9.2
      */
-    function font_funcs_set_glyph_extents_func(ffuncs: font_funcs_t, func: font_get_glyph_extents_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_glyph_extents_func(ffuncs: font_funcs_t, func: font_get_glyph_extents_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_glyph_from_name_func_t}.
@@ -5187,7 +5187,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 0.9.2
      */
-    function font_funcs_set_glyph_from_name_func(ffuncs: font_funcs_t, func: font_get_glyph_from_name_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_glyph_from_name_func(ffuncs: font_funcs_t, func: font_get_glyph_from_name_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Deprecated.  Use `hb_font_funcs_set_nominal_glyph_func()` and
@@ -5198,7 +5198,7 @@ export namespace HarfBuzz {
      * @since 0.9.2
      * @deprecated since 1.2.3
      */
-    function font_funcs_set_glyph_func(ffuncs: font_funcs_t, func: font_get_glyph_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_glyph_func(ffuncs: font_funcs_t, func: font_get_glyph_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_glyph_h_advance_func_t}.
@@ -5207,7 +5207,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 0.9.2
      */
-    function font_funcs_set_glyph_h_advance_func(ffuncs: font_funcs_t, func: font_get_glyph_h_advance_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_glyph_h_advance_func(ffuncs: font_funcs_t, func: font_get_glyph_h_advance_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_glyph_h_advances_func_t}.
@@ -5216,7 +5216,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 1.8.6
      */
-    function font_funcs_set_glyph_h_advances_func(ffuncs: font_funcs_t, func: font_get_glyph_h_advances_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_glyph_h_advances_func(ffuncs: font_funcs_t, func: font_get_glyph_h_advances_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_glyph_h_kerning_func_t}.
@@ -5225,7 +5225,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 0.9.2
      */
-    function font_funcs_set_glyph_h_kerning_func(ffuncs: font_funcs_t, func: font_get_glyph_h_kerning_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_glyph_h_kerning_func(ffuncs: font_funcs_t, func: font_get_glyph_h_kerning_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_glyph_h_origin_func_t}.
@@ -5234,7 +5234,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 0.9.2
      */
-    function font_funcs_set_glyph_h_origin_func(ffuncs: font_funcs_t, func: font_get_glyph_h_origin_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_glyph_h_origin_func(ffuncs: font_funcs_t, func: font_get_glyph_h_origin_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_glyph_h_origins_func_t}.
@@ -5243,7 +5243,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 11.3.0
      */
-    function font_funcs_set_glyph_h_origins_func(ffuncs: font_funcs_t, func: font_get_glyph_h_origins_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_glyph_h_origins_func(ffuncs: font_funcs_t, func: font_get_glyph_h_origins_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_glyph_name_func_t}.
@@ -5252,7 +5252,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 0.9.2
      */
-    function font_funcs_set_glyph_name_func(ffuncs: font_funcs_t, func: font_get_glyph_name_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_glyph_name_func(ffuncs: font_funcs_t, func: font_get_glyph_name_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_glyph_shape_func_t},
@@ -5263,7 +5263,7 @@ export namespace HarfBuzz {
      * @since 4.0.0
      * @deprecated since 7.0.0: Use `hb_font_funcs_set_draw_glyph_func()` instead
      */
-    function font_funcs_set_glyph_shape_func(ffuncs: font_funcs_t, func: font_get_glyph_shape_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_glyph_shape_func(ffuncs: font_funcs_t, func: font_get_glyph_shape_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_glyph_v_advance_func_t}.
@@ -5272,7 +5272,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 0.9.2
      */
-    function font_funcs_set_glyph_v_advance_func(ffuncs: font_funcs_t, func: font_get_glyph_v_advance_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_glyph_v_advance_func(ffuncs: font_funcs_t, func: font_get_glyph_v_advance_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_glyph_v_advances_func_t}.
@@ -5281,7 +5281,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 1.8.6
      */
-    function font_funcs_set_glyph_v_advances_func(ffuncs: font_funcs_t, func: font_get_glyph_v_advances_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_glyph_v_advances_func(ffuncs: font_funcs_t, func: font_get_glyph_v_advances_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_glyph_v_kerning_func_t}.
@@ -5291,7 +5291,7 @@ export namespace HarfBuzz {
      * @since 0.9.2
      * @deprecated since 2.0.0
      */
-    function font_funcs_set_glyph_v_kerning_func(ffuncs: font_funcs_t, func: font_get_glyph_v_kerning_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_glyph_v_kerning_func(ffuncs: font_funcs_t, func: font_get_glyph_v_kerning_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_glyph_v_origin_func_t}.
@@ -5300,7 +5300,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 0.9.2
      */
-    function font_funcs_set_glyph_v_origin_func(ffuncs: font_funcs_t, func: font_get_glyph_v_origin_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_glyph_v_origin_func(ffuncs: font_funcs_t, func: font_get_glyph_v_origin_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_glyph_v_origins_func_t}.
@@ -5309,7 +5309,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 11.3.0
      */
-    function font_funcs_set_glyph_v_origins_func(ffuncs: font_funcs_t, func: font_get_glyph_v_origins_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_glyph_v_origins_func(ffuncs: font_funcs_t, func: font_get_glyph_v_origins_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_nominal_glyph_func_t}.
@@ -5318,7 +5318,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 1.2.3
      */
-    function font_funcs_set_nominal_glyph_func(ffuncs: font_funcs_t, func: font_get_nominal_glyph_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_nominal_glyph_func(ffuncs: font_funcs_t, func: font_get_nominal_glyph_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_nominal_glyphs_func_t}.
@@ -5327,7 +5327,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 2.0.0
      */
-    function font_funcs_set_nominal_glyphs_func(ffuncs: font_funcs_t, func: font_get_nominal_glyphs_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_nominal_glyphs_func(ffuncs: font_funcs_t, func: font_get_nominal_glyphs_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_paint_glyph_func_t}.
@@ -5337,7 +5337,7 @@ export namespace HarfBuzz {
      * @since 7.0.0
      * @deprecated since 11.2.0: Use `hb_font_funcs_set_paint_glyph_or_fail_func()` instead.
      */
-    function font_funcs_set_paint_glyph_func(ffuncs: font_funcs_t, func: font_paint_glyph_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_paint_glyph_func(ffuncs: font_funcs_t, func: font_paint_glyph_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_paint_glyph_or_fail_func_t}.
@@ -5346,7 +5346,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is no longer needed
      * @since 11.2.0
      */
-    function font_funcs_set_paint_glyph_or_fail_func(ffuncs: font_funcs_t, func: font_paint_glyph_or_fail_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_paint_glyph_or_fail_func(ffuncs: font_funcs_t, func: font_paint_glyph_or_fail_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.font_get_variation_glyph_func_t}.
@@ -5355,7 +5355,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 1.2.3
      */
-    function font_funcs_set_variation_glyph_func(ffuncs: font_funcs_t, func: font_get_variation_glyph_func_t, destroy: (destroy_func_t | null)): void;
+    function font_funcs_set_variation_glyph_func(ffuncs: font_funcs_t, func: font_get_variation_glyph_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Fetches the empty font object.
@@ -5826,7 +5826,7 @@ export namespace HarfBuzz {
      * @returns `true` if data found, `false` otherwise
      * @since 0.9.2
      */
-    function font_glyph_from_string(font: font_t, s: (Uint8Array | string)): [bool_t, codepoint_t];
+    function font_glyph_from_string(font: font_t, s: Uint8Array | string): [bool_t, codepoint_t];
 
     /**
      * Fetches the name of the specified glyph ID in `font` and returns
@@ -6312,7 +6312,7 @@ export namespace HarfBuzz {
      * @returns the new {@link HarfBuzz.blob_t} blob object
      * @since 0.9.38
      */
-    function glib_blob_create(gbytes: (GLib.Bytes | Uint8Array)): blob_t;
+    function glib_blob_create(gbytes: GLib.Bytes | Uint8Array): blob_t;
 
     /**
      * Fetches a Unicode-functions structure that is populated
@@ -6355,7 +6355,7 @@ export namespace HarfBuzz {
      * @returns The {@link HarfBuzz.language_t} corresponding to the BCP 47 language tag.
      * @since 0.9.2
      */
-    function language_from_string(str: (Uint8Array | string)): language_t;
+    function language_from_string(str: Uint8Array | string): language_t;
 
     /**
      * Fetch the default language from current locale.
@@ -6397,7 +6397,7 @@ export namespace HarfBuzz {
      * @returns A pointer to the allocated memory.
      * @since 11.0.0
      */
-    function malloc(size: (bigint | number)): null;
+    function malloc(size: bigint | number): null;
 
     /**
      * Tests whether memory allocation for a set was successful.
@@ -6715,7 +6715,7 @@ export namespace HarfBuzz {
      * @param features The array of features to collect,   terminated by `HB_TAG_NONE`
      * @since 1.8.5
      */
-    function ot_layout_collect_features(face: face_t, table_tag: tag_t, scripts: (tag_t[] | null), languages: (tag_t[] | null), features: (tag_t[] | null)): set_t;
+    function ot_layout_collect_features(face: face_t, table_tag: tag_t, scripts: tag_t[] | null, languages: tag_t[] | null, features: tag_t[] | null): set_t;
 
     /**
      * Fetches the mapping from feature tags to feature indexes for
@@ -6741,7 +6741,7 @@ export namespace HarfBuzz {
      * @param features The array of features to collect lookups for,   terminated by `HB_TAG_NONE`
      * @since 0.9.8
      */
-    function ot_layout_collect_lookups(face: face_t, table_tag: tag_t, scripts: (tag_t[] | null), languages: (tag_t[] | null), features: (tag_t[] | null)): set_t;
+    function ot_layout_collect_lookups(face: face_t, table_tag: tag_t, scripts: tag_t[] | null, languages: tag_t[] | null, features: tag_t[] | null): set_t;
 
     /**
      * Fetches a list of the characters defined as having a variant under the specified
@@ -6830,7 +6830,7 @@ export namespace HarfBuzz {
      * @returns `true` if found baseline value in the font.
      * @since 8.0.0
      */
-    function ot_layout_get_baseline2(font: font_t, baseline_tag: ot_layout_baseline_tag_t, direction: direction_t, script: script_t, language: (language_t | null)): [bool_t, position_t | null];
+    function ot_layout_get_baseline2(font: font_t, baseline_tag: ot_layout_baseline_tag_t, direction: direction_t, script: script_t, language: language_t | null): [bool_t, position_t | null];
 
     /**
      * Fetches a baseline value from the face, and synthesizes
@@ -6857,7 +6857,7 @@ export namespace HarfBuzz {
      * @param language language, currently unused.
      * @since 8.0.0
      */
-    function ot_layout_get_baseline_with_fallback2(font: font_t, baseline_tag: ot_layout_baseline_tag_t, direction: direction_t, script: script_t, language: (language_t | null)): position_t;
+    function ot_layout_get_baseline_with_fallback2(font: font_t, baseline_tag: ot_layout_baseline_tag_t, direction: direction_t, script: script_t, language: language_t | null): position_t;
 
     /**
      * Fetches script/language-specific font extents.  These values are
@@ -6896,7 +6896,7 @@ export namespace HarfBuzz {
      * @returns `true` if found script/language-specific font extents.
      * @since 8.0.0
      */
-    function ot_layout_get_font_extents2(font: font_t, direction: direction_t, script: script_t, language: (language_t | null)): [bool_t, font_extents_t | null];
+    function ot_layout_get_font_extents2(font: font_t, direction: direction_t, script: script_t, language: language_t | null): [bool_t, font_extents_t | null];
 
     /**
      * Fetches the GDEF class of the requested glyph in the specified face.
@@ -7558,7 +7558,7 @@ export namespace HarfBuzz {
      * @returns The {@link HarfBuzz.language_t} corresponding to `tag`.
      * @since 0.9.2
      */
-    function ot_tag_to_language(tag: tag_t): (language_t | null);
+    function ot_tag_to_language(tag: tag_t): language_t | null;
 
     /**
      * Converts a script tag to an {@link HarfBuzz.script_t}.
@@ -7583,7 +7583,7 @@ export namespace HarfBuzz {
      * @param language_count maximum number of language tags to retrieve (IN) and actual number of language tags retrieved (OUT)
      * @since 2.0.0
      */
-    function ot_tags_from_script_and_language(script: script_t, language: (language_t | null), script_count: (number | null), language_count: (number | null)): [number | null, tag_t | null, number | null, tag_t | null];
+    function ot_tags_from_script_and_language(script: script_t, language: language_t | null, script_count: number | null, language_count: number | null): [number | null, tag_t | null, number | null, tag_t | null];
 
     /**
      * Converts a script tag and a language tag to an {@link HarfBuzz.script_t} and an
@@ -7793,7 +7793,7 @@ export namespace HarfBuzz {
      * @param destroy Function to call when `user_data` is no longer needed
      * @since 7.0.0
      */
-    function paint_funcs_set_color_func(funcs: paint_funcs_t, func: paint_color_func_t, destroy: (destroy_func_t | null)): void;
+    function paint_funcs_set_color_func(funcs: paint_funcs_t, func: paint_color_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the color-glyph callback on the paint functions struct.
@@ -7802,7 +7802,7 @@ export namespace HarfBuzz {
      * @param destroy Function to call when `user_data` is no longer needed
      * @since 8.2.0
      */
-    function paint_funcs_set_color_glyph_func(funcs: paint_funcs_t, func: paint_color_glyph_func_t, destroy: (destroy_func_t | null)): void;
+    function paint_funcs_set_color_glyph_func(funcs: paint_funcs_t, func: paint_color_glyph_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the custom-palette-color callback on the paint functions struct.
@@ -7811,7 +7811,7 @@ export namespace HarfBuzz {
      * @param destroy Function to call when `user_data` is no longer needed
      * @since 7.0.0
      */
-    function paint_funcs_set_custom_palette_color_func(funcs: paint_funcs_t, func: paint_custom_palette_color_func_t, destroy: (destroy_func_t | null)): void;
+    function paint_funcs_set_custom_palette_color_func(funcs: paint_funcs_t, func: paint_custom_palette_color_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the paint-image callback on the paint functions struct.
@@ -7820,7 +7820,7 @@ export namespace HarfBuzz {
      * @param destroy Function to call when `user_data` is no longer needed
      * @since 7.0.0
      */
-    function paint_funcs_set_image_func(funcs: paint_funcs_t, func: paint_image_func_t, destroy: (destroy_func_t | null)): void;
+    function paint_funcs_set_image_func(funcs: paint_funcs_t, func: paint_image_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the linear-gradient callback on the paint functions struct.
@@ -7829,7 +7829,7 @@ export namespace HarfBuzz {
      * @param destroy Function to call when `user_data` is no longer needed
      * @since 7.0.0
      */
-    function paint_funcs_set_linear_gradient_func(funcs: paint_funcs_t, func: paint_linear_gradient_func_t, destroy: (destroy_func_t | null)): void;
+    function paint_funcs_set_linear_gradient_func(funcs: paint_funcs_t, func: paint_linear_gradient_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the pop-clip callback on the paint functions struct.
@@ -7838,7 +7838,7 @@ export namespace HarfBuzz {
      * @param destroy Function to call when `user_data` is no longer needed
      * @since 7.0.0
      */
-    function paint_funcs_set_pop_clip_func(funcs: paint_funcs_t, func: paint_pop_clip_func_t, destroy: (destroy_func_t | null)): void;
+    function paint_funcs_set_pop_clip_func(funcs: paint_funcs_t, func: paint_pop_clip_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the pop-group callback on the paint functions struct.
@@ -7847,7 +7847,7 @@ export namespace HarfBuzz {
      * @param destroy Function to call when `user_data` is no longer needed
      * @since 7.0.0
      */
-    function paint_funcs_set_pop_group_func(funcs: paint_funcs_t, func: paint_pop_group_func_t, destroy: (destroy_func_t | null)): void;
+    function paint_funcs_set_pop_group_func(funcs: paint_funcs_t, func: paint_pop_group_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the pop-transform callback on the paint functions struct.
@@ -7856,7 +7856,7 @@ export namespace HarfBuzz {
      * @param destroy Function to call when `user_data` is no longer needed
      * @since 7.0.0
      */
-    function paint_funcs_set_pop_transform_func(funcs: paint_funcs_t, func: paint_pop_transform_func_t, destroy: (destroy_func_t | null)): void;
+    function paint_funcs_set_pop_transform_func(funcs: paint_funcs_t, func: paint_pop_transform_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the push-clip-glyph callback on the paint functions struct.
@@ -7865,7 +7865,7 @@ export namespace HarfBuzz {
      * @param destroy Function to call when `user_data` is no longer needed
      * @since 7.0.0
      */
-    function paint_funcs_set_push_clip_glyph_func(funcs: paint_funcs_t, func: paint_push_clip_glyph_func_t, destroy: (destroy_func_t | null)): void;
+    function paint_funcs_set_push_clip_glyph_func(funcs: paint_funcs_t, func: paint_push_clip_glyph_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the push-clip-rect callback on the paint functions struct.
@@ -7874,7 +7874,7 @@ export namespace HarfBuzz {
      * @param destroy Function to call when `user_data` is no longer needed
      * @since 7.0.0
      */
-    function paint_funcs_set_push_clip_rectangle_func(funcs: paint_funcs_t, func: paint_push_clip_rectangle_func_t, destroy: (destroy_func_t | null)): void;
+    function paint_funcs_set_push_clip_rectangle_func(funcs: paint_funcs_t, func: paint_push_clip_rectangle_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the push-group callback on the paint functions struct.
@@ -7883,7 +7883,7 @@ export namespace HarfBuzz {
      * @param destroy Function to call when `user_data` is no longer needed
      * @since 7.0.0
      */
-    function paint_funcs_set_push_group_func(funcs: paint_funcs_t, func: paint_push_group_func_t, destroy: (destroy_func_t | null)): void;
+    function paint_funcs_set_push_group_func(funcs: paint_funcs_t, func: paint_push_group_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the push-transform callback on the paint functions struct.
@@ -7892,7 +7892,7 @@ export namespace HarfBuzz {
      * @param destroy Function to call when `user_data` is no longer needed
      * @since 7.0.0
      */
-    function paint_funcs_set_push_transform_func(funcs: paint_funcs_t, func: paint_push_transform_func_t, destroy: (destroy_func_t | null)): void;
+    function paint_funcs_set_push_transform_func(funcs: paint_funcs_t, func: paint_push_transform_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the radial-gradient callback on the paint functions struct.
@@ -7901,7 +7901,7 @@ export namespace HarfBuzz {
      * @param destroy Function to call when `user_data` is no longer needed
      * @since 7.0.0
      */
-    function paint_funcs_set_radial_gradient_func(funcs: paint_funcs_t, func: paint_radial_gradient_func_t, destroy: (destroy_func_t | null)): void;
+    function paint_funcs_set_radial_gradient_func(funcs: paint_funcs_t, func: paint_radial_gradient_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the sweep-gradient callback on the paint functions struct.
@@ -7910,7 +7910,7 @@ export namespace HarfBuzz {
      * @param destroy Function to call when `user_data` is no longer needed
      * @since 7.0.0
      */
-    function paint_funcs_set_sweep_gradient_func(funcs: paint_funcs_t, func: paint_sweep_gradient_func_t, destroy: (destroy_func_t | null)): void;
+    function paint_funcs_set_sweep_gradient_func(funcs: paint_funcs_t, func: paint_sweep_gradient_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Perform a "image" paint operation.
@@ -7924,7 +7924,7 @@ export namespace HarfBuzz {
      * @param extents the extents of the glyph
      * @since 7.0.0
      */
-    function paint_image(funcs: paint_funcs_t, paint_data: null, image: blob_t, width: number, height: number, format: tag_t, slant: number, extents: (glyph_extents_t | null)): void;
+    function paint_image(funcs: paint_funcs_t, paint_data: null, image: blob_t, width: number, height: number, format: tag_t, slant: number, extents: glyph_extents_t | null): void;
 
     /**
      * Perform a "linear-gradient" paint operation.
@@ -8066,7 +8066,7 @@ export namespace HarfBuzz {
      * @returns A pointer to the reallocated memory.
      * @since 11.0.0
      */
-    function realloc(ptr: null, size: (bigint | number)): null;
+    function realloc(ptr: null, size: bigint | number): null;
 
     /**
      * Converts an ISO 15924 script tag to a corresponding {@link HarfBuzz.script_t}.
@@ -8084,7 +8084,7 @@ export namespace HarfBuzz {
      * @returns An {@link HarfBuzz.script_t} corresponding to the ISO 15924 tag.
      * @since 0.9.2
      */
-    function script_from_string(str: (Uint8Array | string)): script_t;
+    function script_from_string(str: Uint8Array | string): script_t;
 
     /**
      * Fetches the {@link HarfBuzz.direction_t} of a script when it is
@@ -8423,7 +8423,7 @@ export namespace HarfBuzz {
      * @param features an array of user    specified {@link HarfBuzz.feature_t} or `NULL`
      * @since 0.9.2
      */
-    function shape(font: font_t, buffer: buffer_t, features: (feature_t[] | null)): void;
+    function shape(font: font_t, buffer: buffer_t, features: feature_t[] | null): void;
 
     /**
      * See `hb_shape()` for details. If `shaper_list` is not `NULL`, the specified
@@ -8436,7 +8436,7 @@ export namespace HarfBuzz {
      * @returns false if all shapers failed, true otherwise
      * @since 0.9.2
      */
-    function shape_full(font: font_t, buffer: buffer_t, features: (feature_t[] | null), shaper_list: (string[] | null)): bool_t;
+    function shape_full(font: font_t, buffer: buffer_t, features: feature_t[] | null, shaper_list: string[] | null): bool_t;
 
     /**
      * Retrieves the list of shapers supported by HarfBuzz.
@@ -8545,7 +8545,7 @@ export namespace HarfBuzz {
      * @returns The {@link HarfBuzz.tag_t} corresponding to `str`
      * @since 0.9.2
      */
-    function tag_from_string(str: (Uint8Array | string)): tag_t;
+    function tag_from_string(str: Uint8Array | string): tag_t;
 
     /**
      * Converts an {@link HarfBuzz.tag_t} to a string and returns it in `buf`.
@@ -8617,7 +8617,7 @@ export namespace HarfBuzz {
      * @returns The Unicode-functions structure
      * @since 0.9.2
      */
-    function unicode_funcs_create(parent: (unicode_funcs_t | null)): unicode_funcs_t;
+    function unicode_funcs_create(parent: unicode_funcs_t | null): unicode_funcs_t;
 
     /**
      * Fetches a pointer to the default Unicode-functions structure that is used
@@ -8667,7 +8667,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 0.9.2
      */
-    function unicode_funcs_set_combining_class_func(ufuncs: unicode_funcs_t, func: unicode_combining_class_func_t, destroy: (destroy_func_t | null)): void;
+    function unicode_funcs_set_combining_class_func(ufuncs: unicode_funcs_t, func: unicode_combining_class_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.unicode_compose_func_t}.
@@ -8676,7 +8676,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 0.9.2
      */
-    function unicode_funcs_set_compose_func(ufuncs: unicode_funcs_t, func: unicode_compose_func_t, destroy: (destroy_func_t | null)): void;
+    function unicode_funcs_set_compose_func(ufuncs: unicode_funcs_t, func: unicode_compose_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.unicode_decompose_compatibility_func_t}.
@@ -8686,7 +8686,7 @@ export namespace HarfBuzz {
      * @since 0.9.2
      * @deprecated since 2.0.0
      */
-    function unicode_funcs_set_decompose_compatibility_func(ufuncs: unicode_funcs_t, func: unicode_decompose_compatibility_func_t, destroy: (destroy_func_t | null)): void;
+    function unicode_funcs_set_decompose_compatibility_func(ufuncs: unicode_funcs_t, func: unicode_decompose_compatibility_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.unicode_decompose_func_t}.
@@ -8695,7 +8695,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 0.9.2
      */
-    function unicode_funcs_set_decompose_func(ufuncs: unicode_funcs_t, func: unicode_decompose_func_t, destroy: (destroy_func_t | null)): void;
+    function unicode_funcs_set_decompose_func(ufuncs: unicode_funcs_t, func: unicode_decompose_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.unicode_eastasian_width_func_t}.
@@ -8705,7 +8705,7 @@ export namespace HarfBuzz {
      * @since 0.9.2
      * @deprecated since 2.0.0
      */
-    function unicode_funcs_set_eastasian_width_func(ufuncs: unicode_funcs_t, func: unicode_eastasian_width_func_t, destroy: (destroy_func_t | null)): void;
+    function unicode_funcs_set_eastasian_width_func(ufuncs: unicode_funcs_t, func: unicode_eastasian_width_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.unicode_general_category_func_t}.
@@ -8714,7 +8714,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 0.9.2
      */
-    function unicode_funcs_set_general_category_func(ufuncs: unicode_funcs_t, func: unicode_general_category_func_t, destroy: (destroy_func_t | null)): void;
+    function unicode_funcs_set_general_category_func(ufuncs: unicode_funcs_t, func: unicode_general_category_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.unicode_mirroring_func_t}.
@@ -8723,7 +8723,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 0.9.2
      */
-    function unicode_funcs_set_mirroring_func(ufuncs: unicode_funcs_t, func: unicode_mirroring_func_t, destroy: (destroy_func_t | null)): void;
+    function unicode_funcs_set_mirroring_func(ufuncs: unicode_funcs_t, func: unicode_mirroring_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the implementation function for {@link HarfBuzz.unicode_script_func_t}.
@@ -8732,7 +8732,7 @@ export namespace HarfBuzz {
      * @param destroy The function to call when `user_data` is not needed anymore
      * @since 0.9.2
      */
-    function unicode_funcs_set_script_func(ufuncs: unicode_funcs_t, func: unicode_script_func_t, destroy: (destroy_func_t | null)): void;
+    function unicode_funcs_set_script_func(ufuncs: unicode_funcs_t, func: unicode_script_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Retrieves the General Category (gc) property
@@ -8777,7 +8777,7 @@ export namespace HarfBuzz {
      * @returns `true` if `str` is successfully parsed, `false` otherwise
      * @since 1.4.2
      */
-    function variation_from_string(str: (Uint8Array | string)): [bool_t, variation_t];
+    function variation_from_string(str: Uint8Array | string): [bool_t, variation_t];
 
     /**
      * Converts an {@link HarfBuzz.variation_t} into a `NULL`-terminated string in the format
@@ -9018,7 +9018,7 @@ export namespace HarfBuzz {
      * @gir-type Callback
      */
     interface paint_image_func_t {
-        (funcs: paint_funcs_t, paint_data: null, image: blob_t, width: number, height: number, format: tag_t, slant: number, extents: (glyph_extents_t | null)): bool_t;
+        (funcs: paint_funcs_t, paint_data: null, image: blob_t, width: number, height: number, format: tag_t, slant: number, extents: glyph_extents_t | null): bool_t;
     }
 
     /**
@@ -10158,10 +10158,7 @@ export namespace HarfBuzz {
         static $gtype: GObject.GType<user_data_key_t>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
     }
 
 

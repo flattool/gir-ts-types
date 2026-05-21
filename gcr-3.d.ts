@@ -368,7 +368,7 @@ export namespace Gcr {
      * @param other the certificate to compare against
      * @returns zero if the certificates match, non-zero otherwise.
      */
-    function certificate_compare(first: (Comparable | null), other: (Comparable | null)): number;
+    function certificate_compare(first: Comparable | null, other: Comparable | null): number;
 
     function data_error_get_domain(): GLib.Quark;
 
@@ -380,7 +380,7 @@ export namespace Gcr {
      * @param checksum_type the type of fingerprint to create
      * @returns the          fingerprint or `null` if the input was invalid.
      */
-    function fingerprint_from_attributes(attrs: Gck.Attributes, checksum_type: GLib.ChecksumType): (Uint8Array | null);
+    function fingerprint_from_attributes(attrs: Gck.Attributes, checksum_type: GLib.ChecksumType): Uint8Array | null;
 
     /**
      * Create a key fingerprint for a DER encoded subjectPublicKeyInfo. The
@@ -394,7 +394,7 @@ export namespace Gcr {
      * @param checksum_type the type of fingerprint to create
      * @returns the          fingerprint or `null` if the input was invalid.
      */
-    function fingerprint_from_subject_public_key_info(key_info: (Uint8Array | string), checksum_type: GLib.ChecksumType): (Uint8Array | null);
+    function fingerprint_from_subject_public_key_info(key_info: Uint8Array | string, checksum_type: GLib.ChecksumType): Uint8Array | null;
 
     /**
      * Get an appropriate icon for the token
@@ -568,7 +568,7 @@ export namespace Gcr {
      * lookup trust assertions.
      * @returns the uri which identifies trust storage slot
      */
-    function pkcs11_get_trust_lookup_uris(): (string[] | null);
+    function pkcs11_get_trust_lookup_uris(): string[] | null;
 
     /**
      * Selects an appropriate PKCS#11 slot to store trust assertions. The slot
@@ -580,39 +580,39 @@ export namespace Gcr {
      * When done with the {@link Gck.Slot}, use `g_object_unref()` to release it.
      * @returns the {@link Gck.Slot} to use for trust          assertions, or null if not initialized or no appropriate          trust store could be found.
      */
-    function pkcs11_get_trust_store_slot(): (Gck.Slot | null);
+    function pkcs11_get_trust_store_slot(): Gck.Slot | null;
 
     /**
      * Get the PKCS#11 URI that is used to identify which slot to use for
      * storing trust storage.
      * @returns the uri which identifies trust storage slot
      */
-    function pkcs11_get_trust_store_uri(): (string | null);
+    function pkcs11_get_trust_store_uri(): string | null;
 
     /**
      * Asynchronously initialize the registered PKCS#11 modules.
      * @param cancellable optional cancellable used to cancel the operation
      * @returns whether the operation was successful or not.
      */
-    function pkcs11_initialize(cancellable: (Gio.Cancellable | null)): boolean;
+    function pkcs11_initialize(cancellable: Gio.Cancellable | null): boolean;
 
     /**
      * Asynchronously initialize the registered PKCS#11 modules.
      * @param cancellable optional cancellable used to cancel the operation
      */
-    function pkcs11_initialize_async(cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+    function pkcs11_initialize_async(cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
     /**
      * Asynchronously initialize the registered PKCS#11 modules.
      * @param cancellable optional cancellable used to cancel the operation
      * @param callback callback which will be called when the operation completes
      */
-    function pkcs11_initialize_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<(Gio.Cancellable | null)> | null)): void;
+    function pkcs11_initialize_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Gio.Cancellable | null> | null): void;
     /**
      * Asynchronously initialize the registered PKCS#11 modules.
      * @param cancellable optional cancellable used to cancel the operation
      * @param callback callback which will be called when the operation completes
      */
-    function pkcs11_initialize_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<(Gio.Cancellable | null)> | null)): (globalThis.Promise<boolean> | void);
+    function pkcs11_initialize_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Gio.Cancellable | null> | null): globalThis.Promise<boolean> | void;
 
     /**
      * Complete the asynchronous operation to initialize the registered PKCS#11
@@ -641,7 +641,7 @@ export namespace Gcr {
      * PKCS#11 slots are automatically configured by the GCR library.
      * @param pkcs11_uris the uris which identifies trust lookup slots
      */
-    function pkcs11_set_trust_lookup_uris(pkcs11_uris: (string | null)): void;
+    function pkcs11_set_trust_lookup_uris(pkcs11_uris: string | null): void;
 
     /**
      * Set the PKCS#11 URI that is used to identify which slot to use for
@@ -651,7 +651,7 @@ export namespace Gcr {
      * PKCS#11 slot is automatically configured by the GCR library.
      * @param pkcs11_uri the uri which identifies trust storage slot
      */
-    function pkcs11_set_trust_store_uri(pkcs11_uri: (string | null)): void;
+    function pkcs11_set_trust_store_uri(pkcs11_uri: string | null): void;
 
     /**
      * Add a pinned `certificate` for connections to `peer` for `purpose`. A pinned
@@ -669,7 +669,7 @@ export namespace Gcr {
      * @param cancellable a {@link Gio.Cancellable}
      * @returns `true` if the pinned certificate is recorded successfully
      */
-    function trust_add_pinned_certificate(certificate: Certificate, purpose: string, peer: string, cancellable: (Gio.Cancellable | null)): boolean;
+    function trust_add_pinned_certificate(certificate: Certificate, purpose: string, peer: string, cancellable: Gio.Cancellable | null): boolean;
 
     /**
      * Add a pinned certificate for communication with `peer` for `purpose`. A pinned
@@ -687,7 +687,7 @@ export namespace Gcr {
      * @param peer the peer for this pinned certificate
      * @param cancellable a {@link Gio.Cancellable}
      */
-    function trust_add_pinned_certificate_async(certificate: Certificate, purpose: string, peer: string, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+    function trust_add_pinned_certificate_async(certificate: Certificate, purpose: string, peer: string, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
     /**
      * Add a pinned certificate for communication with `peer` for `purpose`. A pinned
      * certificate overrides all other certificate verification and should be used
@@ -705,7 +705,7 @@ export namespace Gcr {
      * @param cancellable a {@link Gio.Cancellable}
      * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
      */
-    function trust_add_pinned_certificate_async(certificate: Certificate, purpose: string, peer: string, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<Certificate> | null)): void;
+    function trust_add_pinned_certificate_async(certificate: Certificate, purpose: string, peer: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Certificate> | null): void;
     /**
      * Add a pinned certificate for communication with `peer` for `purpose`. A pinned
      * certificate overrides all other certificate verification and should be used
@@ -723,7 +723,7 @@ export namespace Gcr {
      * @param cancellable a {@link Gio.Cancellable}
      * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
      */
-    function trust_add_pinned_certificate_async(certificate: Certificate, purpose: string, peer: string, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<Certificate> | null)): (globalThis.Promise<boolean> | void);
+    function trust_add_pinned_certificate_async(certificate: Certificate, purpose: string, peer: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Certificate> | null): globalThis.Promise<boolean> | void;
 
     /**
      * Finishes an asynchronous operation started by
@@ -748,7 +748,7 @@ export namespace Gcr {
      * @param cancellable a {@link Gio.Cancellable}
      * @returns `true` if the certificate is a trust anchor
      */
-    function trust_is_certificate_anchored(certificate: Certificate, purpose: string, cancellable: (Gio.Cancellable | null)): boolean;
+    function trust_is_certificate_anchored(certificate: Certificate, purpose: string, cancellable: Gio.Cancellable | null): boolean;
 
     /**
      * Check if the `certificate` is a trust anchor for the given `purpose`. A trust
@@ -761,7 +761,7 @@ export namespace Gcr {
      * @param purpose the purpose string
      * @param cancellable a {@link Gio.Cancellable}
      */
-    function trust_is_certificate_anchored_async(certificate: Certificate, purpose: string, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+    function trust_is_certificate_anchored_async(certificate: Certificate, purpose: string, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
     /**
      * Check if the `certificate` is a trust anchor for the given `purpose`. A trust
      * anchor is used to verify the signatures on other certificates when verifying
@@ -774,7 +774,7 @@ export namespace Gcr {
      * @param cancellable a {@link Gio.Cancellable}
      * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
      */
-    function trust_is_certificate_anchored_async(certificate: Certificate, purpose: string, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<Certificate> | null)): void;
+    function trust_is_certificate_anchored_async(certificate: Certificate, purpose: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Certificate> | null): void;
     /**
      * Check if the `certificate` is a trust anchor for the given `purpose`. A trust
      * anchor is used to verify the signatures on other certificates when verifying
@@ -787,7 +787,7 @@ export namespace Gcr {
      * @param cancellable a {@link Gio.Cancellable}
      * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
      */
-    function trust_is_certificate_anchored_async(certificate: Certificate, purpose: string, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<Certificate> | null)): (globalThis.Promise<boolean> | void);
+    function trust_is_certificate_anchored_async(certificate: Certificate, purpose: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Certificate> | null): globalThis.Promise<boolean> | void;
 
     /**
      * Finishes an asynchronous operation started by
@@ -815,7 +815,7 @@ export namespace Gcr {
      * @param cancellable a {@link Gio.Cancellable}
      * @returns `true` if the certificate is pinned for the host and purpose
      */
-    function trust_is_certificate_pinned(certificate: Certificate, purpose: string, peer: string, cancellable: (Gio.Cancellable | null)): boolean;
+    function trust_is_certificate_pinned(certificate: Certificate, purpose: string, peer: string, cancellable: Gio.Cancellable | null): boolean;
 
     /**
      * Check if `certificate` is pinned for `purpose` to communicate with `peer`. A
@@ -829,7 +829,7 @@ export namespace Gcr {
      * @param peer the peer for this pinned
      * @param cancellable a {@link Gio.Cancellable}
      */
-    function trust_is_certificate_pinned_async(certificate: Certificate, purpose: string, peer: string, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+    function trust_is_certificate_pinned_async(certificate: Certificate, purpose: string, peer: string, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
     /**
      * Check if `certificate` is pinned for `purpose` to communicate with `peer`. A
      * pinned certificate overrides all other certificate verification.
@@ -843,7 +843,7 @@ export namespace Gcr {
      * @param cancellable a {@link Gio.Cancellable}
      * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
      */
-    function trust_is_certificate_pinned_async(certificate: Certificate, purpose: string, peer: string, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<Certificate> | null)): void;
+    function trust_is_certificate_pinned_async(certificate: Certificate, purpose: string, peer: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Certificate> | null): void;
     /**
      * Check if `certificate` is pinned for `purpose` to communicate with `peer`. A
      * pinned certificate overrides all other certificate verification.
@@ -857,7 +857,7 @@ export namespace Gcr {
      * @param cancellable a {@link Gio.Cancellable}
      * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
      */
-    function trust_is_certificate_pinned_async(certificate: Certificate, purpose: string, peer: string, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<Certificate> | null)): (globalThis.Promise<boolean> | void);
+    function trust_is_certificate_pinned_async(certificate: Certificate, purpose: string, peer: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Certificate> | null): globalThis.Promise<boolean> | void;
 
     /**
      * Finishes an asynchronous operation started by
@@ -884,7 +884,7 @@ export namespace Gcr {
      * @param cancellable a {@link Gio.Cancellable}
      * @returns `true` if the pinned certificate no longer exists
      */
-    function trust_remove_pinned_certificate(certificate: Certificate, purpose: string, peer: string, cancellable: (Gio.Cancellable | null)): boolean;
+    function trust_remove_pinned_certificate(certificate: Certificate, purpose: string, peer: string, cancellable: Gio.Cancellable | null): boolean;
 
     /**
      * Remove a pinned certificate for communication with `peer` for `purpose`.
@@ -900,7 +900,7 @@ export namespace Gcr {
      * @param peer the peer for this pinned certificate
      * @param cancellable a {@link Gio.Cancellable}
      */
-    function trust_remove_pinned_certificate_async(certificate: Certificate, purpose: string, peer: string, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+    function trust_remove_pinned_certificate_async(certificate: Certificate, purpose: string, peer: string, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
     /**
      * Remove a pinned certificate for communication with `peer` for `purpose`.
      * 
@@ -916,7 +916,7 @@ export namespace Gcr {
      * @param cancellable a {@link Gio.Cancellable}
      * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
      */
-    function trust_remove_pinned_certificate_async(certificate: Certificate, purpose: string, peer: string, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<Certificate> | null)): void;
+    function trust_remove_pinned_certificate_async(certificate: Certificate, purpose: string, peer: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Certificate> | null): void;
     /**
      * Remove a pinned certificate for communication with `peer` for `purpose`.
      * 
@@ -932,7 +932,7 @@ export namespace Gcr {
      * @param cancellable a {@link Gio.Cancellable}
      * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
      */
-    function trust_remove_pinned_certificate_async(certificate: Certificate, purpose: string, peer: string, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<Certificate> | null)): (globalThis.Promise<boolean> | void);
+    function trust_remove_pinned_certificate_async(certificate: Certificate, purpose: string, peer: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Certificate> | null): globalThis.Promise<boolean> | void;
 
     /**
      * Finishes an asynchronous operation started by
@@ -1112,7 +1112,7 @@ export namespace Gcr {
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @returns whether the operation completed successfully
          */
-        build(purpose: string, peer: (string | null), flags: CertificateChainFlags, cancellable: (Gio.Cancellable | null)): boolean;
+        build(purpose: string, peer: string | null, flags: CertificateChainFlags, cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Complete a certificate chain. Once a certificate chain has been built
@@ -1149,45 +1149,7 @@ export namespace Gcr {
          * @param flags chain completion flags
          * @param cancellable a {@link Gio.Cancellable} or `null`
          */
-        build_async(purpose: string, peer: (string | null), flags: CertificateChainFlags, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Complete a certificate chain. Once a certificate chain has been built
-         * its status can be examined.
-         * 
-         * This will lookup missing certificates in PKCS#11
-         * modules and also that each certificate in the chain is the signer of the
-         * previous one. If a trust anchor, pinned certificate, or self-signed certificate
-         * is found, then the chain is considered built. Any extra certificates are
-         * removed from the chain.
-         * 
-         * It's important to understand that building of a certificate chain does not
-         * constitute verifying that chain. This is merely the first step towards
-         * trust verification.
-         * 
-         * The `purpose` is a string like `GCR_PURPOSE_CLIENT_AUTH` and is the purpose
-         * for which the certificate chain will be used. Trust anchors are looked up
-         * for this purpose. This argument is required.
-         * 
-         * The `peer` is usually the host name of the peer whith which this certificate
-         * chain is being used. It is used to look up pinned certificates that have
-         * been stored for this peer. If `null` then no pinned certificates will
-         * be considered.
-         * 
-         * If the {@link Gcr.CertificateChainFlags.NO_LOOKUPS} flag is specified then no
-         * lookups for anchors or pinned certificates are done, and the resulting chain
-         * will be neither anchored or pinned. Additionally no missing certificate
-         * authorities are looked up in PKCS#11
-         * 
-         * When the operation is finished, `callback` will be called. You can then call
-         * `gcr_certificate_chain_build_finish()` to get the result of the operation.
-         * @param purpose the purpose the certificate chain will be used for
-         * @param peer the peer the certificate chain will be used with, or `null`
-         * @param flags chain completion flags
-         * @param cancellable a {@link Gio.Cancellable} or `null`
-         * @param callback this will be called when the operation completes.
-         */
-        build_async(purpose: string, peer: (string | null), flags: CertificateChainFlags, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        build_async(purpose: string, peer: string | null, flags: CertificateChainFlags, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Complete a certificate chain. Once a certificate chain has been built
@@ -1225,7 +1187,45 @@ export namespace Gcr {
          * @param cancellable a {@link Gio.Cancellable} or `null`
          * @param callback this will be called when the operation completes.
          */
-        build_async(purpose: string, peer: (string | null), flags: CertificateChainFlags, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        build_async(purpose: string, peer: string | null, flags: CertificateChainFlags, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Complete a certificate chain. Once a certificate chain has been built
+         * its status can be examined.
+         * 
+         * This will lookup missing certificates in PKCS#11
+         * modules and also that each certificate in the chain is the signer of the
+         * previous one. If a trust anchor, pinned certificate, or self-signed certificate
+         * is found, then the chain is considered built. Any extra certificates are
+         * removed from the chain.
+         * 
+         * It's important to understand that building of a certificate chain does not
+         * constitute verifying that chain. This is merely the first step towards
+         * trust verification.
+         * 
+         * The `purpose` is a string like `GCR_PURPOSE_CLIENT_AUTH` and is the purpose
+         * for which the certificate chain will be used. Trust anchors are looked up
+         * for this purpose. This argument is required.
+         * 
+         * The `peer` is usually the host name of the peer whith which this certificate
+         * chain is being used. It is used to look up pinned certificates that have
+         * been stored for this peer. If `null` then no pinned certificates will
+         * be considered.
+         * 
+         * If the {@link Gcr.CertificateChainFlags.NO_LOOKUPS} flag is specified then no
+         * lookups for anchors or pinned certificates are done, and the resulting chain
+         * will be neither anchored or pinned. Additionally no missing certificate
+         * authorities are looked up in PKCS#11
+         * 
+         * When the operation is finished, `callback` will be called. You can then call
+         * `gcr_certificate_chain_build_finish()` to get the result of the operation.
+         * @param purpose the purpose the certificate chain will be used for
+         * @param peer the peer the certificate chain will be used with, or `null`
+         * @param flags chain completion flags
+         * @param cancellable a {@link Gio.Cancellable} or `null`
+         * @param callback this will be called when the operation completes.
+         */
+        build_async(purpose: string, peer: string | null, flags: CertificateChainFlags, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an asynchronous operation started by
@@ -1355,7 +1355,7 @@ export namespace Gcr {
          * @param private_key a private key
          * @param cancellable cancellation object
          */
-        static capable(private_key: Gck.Object, cancellable: (Gio.Cancellable | null)): boolean;
+        static capable(private_key: Gck.Object, cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Asynchronously check whether {@link CertificateRequest} is capable of
@@ -1364,7 +1364,7 @@ export namespace Gcr {
          * @param cancellable cancellation object
          * @param callback will be called when the operation completes
          */
-        static capable_async(private_key: Gck.Object, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<CertificateRequest> | null)): void;
+        static capable_async(private_key: Gck.Object, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<CertificateRequest> | null): void;
 
         /**
          * Get the result for asynchronously check whether {@link CertificateRequest} is
@@ -1389,7 +1389,7 @@ export namespace Gcr {
          * @param cancellable a cancellation object
          * @returns whether certificate request was successfully completed or not
          */
-        complete(cancellable: (Gio.Cancellable | null)): boolean;
+        complete(cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Asynchronously complete and sign a certificate request, so that it can
@@ -1398,17 +1398,7 @@ export namespace Gcr {
          * This call will return immediately and complete later.
          * @param cancellable a cancellation object
          */
-        complete_async(cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Asynchronously complete and sign a certificate request, so that it can
-         * be encoded and sent to a certificate authority.
-         * 
-         * This call will return immediately and complete later.
-         * @param cancellable a cancellation object
-         * @param callback called when the operation completes
-         */
-        complete_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        complete_async(cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously complete and sign a certificate request, so that it can
@@ -1418,7 +1408,17 @@ export namespace Gcr {
          * @param cancellable a cancellation object
          * @param callback called when the operation completes
          */
-        complete_async(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        complete_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously complete and sign a certificate request, so that it can
+         * be encoded and sent to a certificate authority.
+         * 
+         * This call will return immediately and complete later.
+         * @param cancellable a cancellation object
+         * @param callback called when the operation completes
+         */
+        complete_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finish an asynchronous operation to complete and sign a certificate
@@ -1508,7 +1508,7 @@ export namespace Gcr {
 
         _init(...args: any[]): void;
 
-        static new_with_callback(underlying: Collection, callback: (FilterCollectionFunc | null)): FilterCollection;
+        static new_with_callback(underlying: Collection, callback: FilterCollectionFunc | null): FilterCollection;
 
         // Signals
         /** @signal */
@@ -1547,7 +1547,7 @@ export namespace Gcr {
          * This will refilter the collection.
          * @param callback function to call for each object
          */
-        set_callback(callback: (FilterCollectionFunc | null)): void;
+        set_callback(callback: FilterCollectionFunc | null): void;
 
         /**
          * Check whether the collection contains an object or not.
@@ -1633,7 +1633,7 @@ export namespace Gcr {
              * @signal
              * @run-last
              */
-            authenticate: (arg0: number) => (boolean | void);
+            authenticate: (arg0: number) => boolean | void;
             /**
              * This signal is emitted when an item is sucessfully parsed. To access
              * the information about the item use the `gcr_parser_get_parsed_label()`,
@@ -1650,12 +1650,12 @@ export namespace Gcr {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            parsed_attributes: (Gck.Attributes | null);
-            parsedAttributes: (Gck.Attributes | null);
-            parsed_description: (string | null);
-            parsedDescription: (string | null);
-            parsed_label: (string | null);
-            parsedLabel: (string | null);
+            parsed_attributes: Gck.Attributes | null;
+            parsedAttributes: Gck.Attributes | null;
+            parsed_description: string | null;
+            parsedDescription: string | null;
+            parsed_label: string | null;
+            parsedLabel: string | null;
         }
     }
 
@@ -1685,42 +1685,42 @@ export namespace Gcr {
          * generally only valid during a {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
          * @read-only
          */
-        get parsed_attributes(): (Gck.Attributes | null);
+        get parsed_attributes(): Gck.Attributes | null;
 
         /**
          * Get the attributes that make up the currently parsed item. This is
          * generally only valid during a {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
          * @read-only
          */
-        get parsedAttributes(): (Gck.Attributes | null);
+        get parsedAttributes(): Gck.Attributes | null;
 
         /**
          * The description of the type of the currently parsed item. This is generally
          * only valid during a {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
          * @read-only
          */
-        get parsed_description(): (string | null);
+        get parsed_description(): string | null;
 
         /**
          * The description of the type of the currently parsed item. This is generally
          * only valid during a {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
          * @read-only
          */
-        get parsedDescription(): (string | null);
+        get parsedDescription(): string | null;
 
         /**
          * The label of the currently parsed item. This is generally
          * only valid during a {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
          * @read-only
          */
-        get parsed_label(): (string | null);
+        get parsed_label(): string | null;
 
         /**
          * The label of the currently parsed item. This is generally
          * only valid during a {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
          * @read-only
          */
-        get parsedLabel(): (string | null);
+        get parsedLabel(): string | null;
 
         /**
          * Compile-time signal type information.
@@ -1771,7 +1771,7 @@ export namespace Gcr {
          * items. This is usually called from the {@link Gcr.Parser.SignalSignatures.authenticate | Gcr.Parser::authenticate} signal.
          * @param password a password to try
          */
-        add_password(password: (string | null)): void;
+        add_password(password: string | null): void;
 
         /**
          * Disable parsing of the given format. Use {@link Gcr.DataFormat.ALL} to disable all the formats.
@@ -1809,14 +1809,14 @@ export namespace Gcr {
          * only valid during the {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
          * @returns the attributes for the current item,          which are owned by the parser and should not be freed
          */
-        get_parsed_attributes(): (Gck.Attributes | null);
+        get_parsed_attributes(): Gck.Attributes | null;
 
         /**
          * Get the raw data block that represents this parsed object. This is only
          * valid during the {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
          * @returns the raw data          block of the currently parsed item; the value is owned by the parser          and should not be freed
          */
-        get_parsed_block(): (Uint8Array | null);
+        get_parsed_block(): Uint8Array | null;
 
         /**
          * Get the raw data block that represents this parsed object. This is only
@@ -1830,7 +1830,7 @@ export namespace Gcr {
          * only valid during the {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
          * @returns the description for the current item; this is owned by          the parser and should not be freed
          */
-        get_parsed_description(): (string | null);
+        get_parsed_description(): string | null;
 
         /**
          * Get the format of the raw data block that represents this parsed object.
@@ -1846,7 +1846,7 @@ export namespace Gcr {
          * during the {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} signal.
          * @returns the label of the currently parsed item. The value is          owned by the parser and should not be freed.
          */
-        get_parsed_label(): (string | null);
+        get_parsed_label(): string | null;
 
         /**
          * Parse the data. The {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} and {@link Gcr.Parser.SignalSignatures.authenticate | Gcr.Parser::authenticate} signals
@@ -1854,7 +1854,7 @@ export namespace Gcr {
          * @param data the data to parse
          * @returns Whether the data was parsed successfully or not.
          */
-        parse_bytes(data: (GLib.Bytes | Uint8Array)): boolean;
+        parse_bytes(data: GLib.Bytes | Uint8Array): boolean;
 
         /**
          * Parse the data. The {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} and {@link Gcr.Parser.SignalSignatures.authenticate | Gcr.Parser::authenticate} signals
@@ -1864,7 +1864,7 @@ export namespace Gcr {
          * @param data the data to parse
          * @returns Whether the data was parsed successfully or not.
          */
-        parse_data(data: (Uint8Array | string)): boolean;
+        parse_data(data: Uint8Array | string): boolean;
 
         /**
          * Parse items from the data in a {@link Gio.InputStream}. This function may block while
@@ -1877,7 +1877,7 @@ export namespace Gcr {
          * @param cancellable An optional cancellation object
          * @returns Whether the parsing completed successfully or not.
          */
-        parse_stream(input: Gio.InputStream, cancellable: (Gio.Cancellable | null)): boolean;
+        parse_stream(input: Gio.InputStream, cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Parse items from the data in a {@link Gio.InputStream}. This function completes
@@ -1888,19 +1888,7 @@ export namespace Gcr {
          * @param input The input stream
          * @param cancellable An optional cancellation object
          */
-        parse_stream_async(input: Gio.InputStream, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Parse items from the data in a {@link Gio.InputStream}. This function completes
-         * asyncronously and doesn't block.
-         * 
-         * The {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} and {@link Gcr.Parser.SignalSignatures.authenticate | Gcr.Parser::authenticate} signals
-         * may fire during the parsing.
-         * @param input The input stream
-         * @param cancellable An optional cancellation object
-         * @param callback Called when the operation result is ready.
-         */
-        parse_stream_async(input: Gio.InputStream, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        parse_stream_async(input: Gio.InputStream, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Parse items from the data in a {@link Gio.InputStream}. This function completes
@@ -1912,7 +1900,19 @@ export namespace Gcr {
          * @param cancellable An optional cancellation object
          * @param callback Called when the operation result is ready.
          */
-        parse_stream_async(input: Gio.InputStream, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        parse_stream_async(input: Gio.InputStream, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Parse items from the data in a {@link Gio.InputStream}. This function completes
+         * asyncronously and doesn't block.
+         * 
+         * The {@link Gcr.Parser.SignalSignatures.parsed | Gcr.Parser::parsed} and {@link Gcr.Parser.SignalSignatures.authenticate | Gcr.Parser::authenticate} signals
+         * may fire during the parsing.
+         * @param input The input stream
+         * @param cancellable An optional cancellation object
+         * @param callback Called when the operation result is ready.
+         */
+        parse_stream_async(input: Gio.InputStream, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Complete an operation to parse a stream.
@@ -1925,7 +1925,7 @@ export namespace Gcr {
          * Sets the filename of the parser item.
          * @param filename a string of the filename of the parser item
          */
-        set_filename(filename: (string | null)): void;
+        set_filename(filename: string | null): void;
     }
 
 
@@ -2013,7 +2013,7 @@ export namespace Gcr {
          * @param certificate a {@link Gcr.Certificate}
          * @param cancellable a {@link Gio.Cancellable}
          */
-        static lookup_issuer(certificate: Certificate, cancellable: (Gio.Cancellable | null)): Certificate;
+        static lookup_issuer(certificate: Certificate, cancellable: Gio.Cancellable | null): Certificate;
 
         /**
          * Lookup a the issuer of a `certificate` in the PKCS#11 storage. The
@@ -2027,7 +2027,7 @@ export namespace Gcr {
          * @param cancellable a {@link Gio.Cancellable}
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the operation completes
          */
-        static lookup_issuer_async(certificate: Certificate, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<Pkcs11Certificate> | null)): void;
+        static lookup_issuer_async(certificate: Certificate, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Pkcs11Certificate> | null): void;
 
         /**
          * Finishes an asynchronous operation started by
@@ -2188,7 +2188,7 @@ export namespace Gcr {
          * @param part a DN type string or OID.
          * @returns the allocated part of the issuer DN, or `null` if no          such part is present
          */
-        get_issuer_part(part: string): (string | null);
+        get_issuer_part(part: string): string | null;
 
         /**
          * Get the raw DER data for the issuer DN of the certificate.
@@ -2269,7 +2269,7 @@ export namespace Gcr {
          * @param part a DN type string or OID.
          * @returns the allocated part of the subject DN, or `null` if no          such part is present.
          */
-        get_subject_part(part: string): (string | null);
+        get_subject_part(part: string): string | null;
 
         /**
          * Get the raw DER data for the subject DN of the certificate.
@@ -2300,7 +2300,7 @@ export namespace Gcr {
          * Gets the raw DER data for an X.509 certificate.
          * @virtual
          */
-        vfunc_get_der_data(): (Uint8Array | string);
+        vfunc_get_der_data(): Uint8Array | string;
 
         /**
          * Compare whether two objects represent the same thing. The return value can
@@ -2308,7 +2308,7 @@ export namespace Gcr {
          * @param other Another comparable object
          * @returns Zero if the two objects represent the same thing, non-zero if not.
          */
-        compare(other: (Comparable | null)): number;
+        compare(other: Comparable | null): number;
 
         /**
          * Compare whether two objects represent the same thing. The return value can
@@ -2316,7 +2316,7 @@ export namespace Gcr {
          * @param other Another comparable object
          * @virtual
          */
-        vfunc_compare(other: (Comparable | null)): number;
+        vfunc_compare(other: Comparable | null): number;
 
         /**
          * Gets a named field from the objects table of associations (see `g_object_set_data()`).
@@ -2411,7 +2411,7 @@ export namespace Gcr {
 
         _init(...args: any[]): void;
 
-        static ["new"](protocol: (string | null)): SecretExchange;
+        static ["new"](protocol: string | null): SecretExchange;
 
         // Signals
         /** @signal */
@@ -2496,7 +2496,7 @@ export namespace Gcr {
          * @param secret_len length of `secret`, or -1 if null terminated
          * @returns a newly allocated string to be sent to the other     side of the secret exchange
          */
-        send(secret: (string | null), secret_len: (bigint | number)): string;
+        send(secret: string | null, secret_len: bigint | number): string;
     }
 
 
@@ -2513,9 +2513,7 @@ export namespace Gcr {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, Certificate.ConstructorProps, Comparable.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, Certificate.ConstructorProps, Comparable.ConstructorProps {}
     }
 
     /**
@@ -2543,7 +2541,7 @@ export namespace Gcr {
 
         _init(...args: any[]): void;
 
-        static ["new"](data: (Uint8Array | string)): SimpleCertificate;
+        static ["new"](data: Uint8Array | string): SimpleCertificate;
 
         // Signals
         /** @signal */
@@ -2700,7 +2698,7 @@ export namespace Gcr {
          * @param part a DN type string or OID.
          * @returns the allocated part of the issuer DN, or `null` if no          such part is present
          */
-        get_issuer_part(part: string): (string | null);
+        get_issuer_part(part: string): string | null;
 
         /**
          * Get the raw DER data for the issuer DN of the certificate.
@@ -2781,7 +2779,7 @@ export namespace Gcr {
          * @param part a DN type string or OID.
          * @returns the allocated part of the subject DN, or `null` if no          such part is present.
          */
-        get_subject_part(part: string): (string | null);
+        get_subject_part(part: string): string | null;
 
         /**
          * Get the raw DER data for the subject DN of the certificate.
@@ -2812,7 +2810,7 @@ export namespace Gcr {
          * Gets the raw DER data for an X.509 certificate.
          * @virtual
          */
-        vfunc_get_der_data(): (Uint8Array | string);
+        vfunc_get_der_data(): Uint8Array | string;
 
         /**
          * Compare whether two objects represent the same thing. The return value can
@@ -2820,7 +2818,7 @@ export namespace Gcr {
          * @param other Another comparable object
          * @returns Zero if the two objects represent the same thing, non-zero if not.
          */
-        compare(other: (Comparable | null)): number;
+        compare(other: Comparable | null): number;
 
         /**
          * Compare whether two objects represent the same thing. The return value can
@@ -2828,19 +2826,16 @@ export namespace Gcr {
          * @param other Another comparable object
          * @virtual
          */
-        vfunc_compare(other: (Comparable | null)): number;
+        vfunc_compare(other: Comparable | null): number;
     }
 
 
     namespace SimpleCollection {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, Collection.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, Collection.ConstructorProps {}
     }
 
     /**
@@ -3169,7 +3164,7 @@ export namespace Gcr {
          * @param timeout_seconds the number of seconds to wait to access the prompt, or -1
          * @param cancellable optional cancellation object
          */
-        static open(timeout_seconds: number, cancellable: (Gio.Cancellable | null)): SystemPrompt;
+        static open(timeout_seconds: number, cancellable: Gio.Cancellable | null): SystemPrompt;
 
         /**
          * Asynchronously open a system prompt with the default system prompter.
@@ -3184,7 +3179,7 @@ export namespace Gcr {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        static open_async(timeout_seconds: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<SystemPrompt> | null)): void;
+        static open_async(timeout_seconds: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<SystemPrompt> | null): void;
 
         /**
          * Complete an operation to asynchronously open a system prompt.
@@ -3206,7 +3201,7 @@ export namespace Gcr {
          * @param timeout_seconds the number of seconds to wait to access the prompt, or -1
          * @param cancellable optional cancellation object
          */
-        static open_for_prompter(prompter_name: (string | null), timeout_seconds: number, cancellable: (Gio.Cancellable | null)): SystemPrompt;
+        static open_for_prompter(prompter_name: string | null, timeout_seconds: number, cancellable: Gio.Cancellable | null): SystemPrompt;
 
         /**
          * Opens a system prompt asynchronously. If prompter_name is `null`, then the
@@ -3223,7 +3218,7 @@ export namespace Gcr {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        static open_for_prompter_async(prompter_name: (string | null), timeout_seconds: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<SystemPrompt> | null)): void;
+        static open_for_prompter_async(prompter_name: string | null, timeout_seconds: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<SystemPrompt> | null): void;
 
         // Methods
         /**
@@ -3239,7 +3234,7 @@ export namespace Gcr {
          * @param cancellable an optional cancellation object
          * @returns whether close was cleanly completed
          */
-        close(cancellable: (Gio.Cancellable | null)): boolean;
+        close(cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * @param args 
@@ -3255,7 +3250,7 @@ export namespace Gcr {
          * This call returns immediately and completes asynchronously.
          * @param cancellable an optional cancellation object
          */
-        close_async(cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        close_async(cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Close this prompt asynchronously. After calling this function, no further
@@ -3266,7 +3261,7 @@ export namespace Gcr {
          * @param cancellable an optional cancellation object
          * @param callback called when the operation completes
          */
-        close_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        close_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Close this prompt asynchronously. After calling this function, no further
@@ -3277,7 +3272,7 @@ export namespace Gcr {
          * @param cancellable an optional cancellation object
          * @param callback called when the operation completes
          */
-        close_async(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        close_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Complete operation to close this prompt.
@@ -3515,7 +3510,7 @@ export namespace Gcr {
          * @param cancellable optional cancellation object
          * @returns the reply from the prompt
          */
-        confirm(cancellable: (Gio.Cancellable | null)): PromptReply;
+        confirm(cancellable: Gio.Cancellable | null): PromptReply;
 
         /**
          * Prompts for confirmation asking a cancel/continue style question.
@@ -3525,18 +3520,7 @@ export namespace Gcr {
          * This method will return immediately and complete asynchronously.
          * @param cancellable optional cancellation object
          */
-        confirm_async(cancellable: (Gio.Cancellable | null)): globalThis.Promise<PromptReply>;
-
-        /**
-         * Prompts for confirmation asking a cancel/continue style question.
-         * Set the various properties on the prompt before calling this method to
-         * represent the question correctly.
-         * 
-         * This method will return immediately and complete asynchronously.
-         * @param cancellable optional cancellation object
-         * @param callback called when the operation completes
-         */
-        confirm_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        confirm_async(cancellable: Gio.Cancellable | null): globalThis.Promise<PromptReply>;
 
         /**
          * Prompts for confirmation asking a cancel/continue style question.
@@ -3547,7 +3531,18 @@ export namespace Gcr {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        confirm_async(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<PromptReply> | void);
+        confirm_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Prompts for confirmation asking a cancel/continue style question.
+         * Set the various properties on the prompt before calling this method to
+         * represent the question correctly.
+         * 
+         * This method will return immediately and complete asynchronously.
+         * @param cancellable optional cancellation object
+         * @param callback called when the operation completes
+         */
+        confirm_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<PromptReply> | void;
 
         /**
          * Complete an operation to prompt for confirmation.
@@ -3575,7 +3570,7 @@ export namespace Gcr {
          * @param cancellable optional cancellation object
          * @returns the reply from the prompt
          */
-        confirm_run(cancellable: (Gio.Cancellable | null)): PromptReply;
+        confirm_run(cancellable: Gio.Cancellable | null): PromptReply;
 
         /**
          * Get the string handle of the caller's window.
@@ -3695,7 +3690,7 @@ export namespace Gcr {
          * @param cancellable optional cancellation object
          * @returns the password owned by the prompt, or `null`
          */
-        password(cancellable: (Gio.Cancellable | null)): string;
+        password(cancellable: Gio.Cancellable | null): string;
 
         /**
          * Prompts for password. Set the various properties on the prompt before calling
@@ -3704,17 +3699,7 @@ export namespace Gcr {
          * This method will return immediately and complete asynchronously.
          * @param cancellable optional cancellation object
          */
-        password_async(cancellable: (Gio.Cancellable | null)): globalThis.Promise<string>;
-
-        /**
-         * Prompts for password. Set the various properties on the prompt before calling
-         * this method to explain which password should be entered.
-         * 
-         * This method will return immediately and complete asynchronously.
-         * @param cancellable optional cancellation object
-         * @param callback called when the operation completes
-         */
-        password_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        password_async(cancellable: Gio.Cancellable | null): globalThis.Promise<string>;
 
         /**
          * Prompts for password. Set the various properties on the prompt before calling
@@ -3724,7 +3709,17 @@ export namespace Gcr {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        password_async(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<string> | void);
+        password_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Prompts for password. Set the various properties on the prompt before calling
+         * this method to explain which password should be entered.
+         * 
+         * This method will return immediately and complete asynchronously.
+         * @param cancellable optional cancellation object
+         * @param callback called when the operation completes
+         */
+        password_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<string> | void;
 
         /**
          * Complete an operation to prompt for a password.
@@ -3757,7 +3752,7 @@ export namespace Gcr {
          * @param cancellable optional cancellation object
          * @returns the password owned by the prompt, or `null`
          */
-        password_run(cancellable: (Gio.Cancellable | null)): string;
+        password_run(cancellable: Gio.Cancellable | null): string;
 
         /**
          * Reset the contents and properties of the prompt.
@@ -3803,7 +3798,7 @@ export namespace Gcr {
          * If this is `null`, then no additional choice is being displayed.
          * @param choice_label the additional choice or `null`
          */
-        set_choice_label(choice_label: (string | null)): void;
+        set_choice_label(choice_label: string | null): void;
 
         /**
          * Set the label for the continue button.
@@ -3860,7 +3855,7 @@ export namespace Gcr {
          * If this string is `null` then no warning is displayed.
          * @param warning the warning or `null`
          */
-        set_warning(warning: (string | null)): void;
+        set_warning(warning: string | null): void;
 
         /**
          * close a prompt
@@ -3878,7 +3873,7 @@ export namespace Gcr {
          * @param callback called when the operation completes
          * @virtual
          */
-        vfunc_prompt_confirm_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        vfunc_prompt_confirm_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Complete an operation to prompt for confirmation.
@@ -3900,7 +3895,7 @@ export namespace Gcr {
          * @param callback called when the operation completes
          * @virtual
          */
-        vfunc_prompt_password_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        vfunc_prompt_password_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Complete an operation to prompt for a password.
@@ -3956,7 +3951,7 @@ export namespace Gcr {
          * @param io_priority the [I/O priority](iface.AsyncResult.html#io-priority) of the operation
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        init_async(io_priority: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        init_async(io_priority: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Starts asynchronous initialization of the object implementing the
@@ -3999,7 +3994,7 @@ export namespace Gcr {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        init_async(io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        init_async(io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Starts asynchronous initialization of the object implementing the
@@ -4042,7 +4037,7 @@ export namespace Gcr {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
-        init_async(io_priority: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        init_async(io_priority: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes asynchronous initialization and returns the result.
@@ -4102,7 +4097,7 @@ export namespace Gcr {
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          * @virtual
          */
-        vfunc_init_async(io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        vfunc_init_async(io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes asynchronous initialization and returns the result.
@@ -4154,7 +4149,7 @@ export namespace Gcr {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          */
-        init(cancellable: (Gio.Cancellable | null)): boolean;
+        init(cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Initializes the object implementing the interface.
@@ -4198,7 +4193,7 @@ export namespace Gcr {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_init(cancellable: (Gio.Cancellable | null)): boolean;
+        vfunc_init(cancellable: Gio.Cancellable | null): boolean;
     }
 
 
@@ -4342,13 +4337,10 @@ export namespace Gcr {
 
     namespace UnionCollection {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, Collection.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, Collection.ConstructorProps {}
     }
 
     /**
@@ -4593,7 +4585,7 @@ export namespace Gcr {
          * Get the attributes which make up the parsed item.
          * @returns the attributes for the item; these          are owned by the parsed item and should not be freed
          */
-        get_attributes(): (Gck.Attributes | null);
+        get_attributes(): Gck.Attributes | null;
 
         /**
          * Get the raw data block for the parsed item.
@@ -4605,13 +4597,13 @@ export namespace Gcr {
          * Get the raw data block for the parsed item.
          * @returns the raw data of          the parsed item, or `null`
          */
-        get_data(): (Uint8Array | null);
+        get_data(): Uint8Array | null;
 
         /**
          * Get the descirption for a parsed item.
          * @returns the description
          */
-        get_description(): (string | null);
+        get_description(): string | null;
 
         /**
          * Get the filename of the parsed item.
@@ -4629,7 +4621,7 @@ export namespace Gcr {
          * Get the label for the parsed item.
          * @returns the label for the item
          */
-        get_label(): (string | null);
+        get_label(): string | null;
 
         /**
          * Add a reference to a parsed item. An item may not be shared across threads
@@ -4766,7 +4758,7 @@ export namespace Gcr {
              * Gets the raw DER data for an X.509 certificate.
              * @virtual
              */
-            vfunc_get_der_data(): (Uint8Array | string);
+            vfunc_get_der_data(): Uint8Array | string;
         }
 
 
@@ -4795,7 +4787,7 @@ export namespace Gcr {
         * @param first the certificate to compare
         * @param other the certificate to compare against
         */
-        compare(first: (Comparable | null), other: (Comparable | null)): number;
+        compare(first: Comparable | null, other: Comparable | null): number;
     }
     /**
      * An interface that represents an X.509 certificate.
@@ -4959,7 +4951,7 @@ export namespace Gcr {
          * @param part a DN type string or OID.
          * @returns the allocated part of the issuer DN, or `null` if no          such part is present
          */
-        get_issuer_part(part: string): (string | null);
+        get_issuer_part(part: string): string | null;
 
         /**
          * Get the raw DER data for the issuer DN of the certificate.
@@ -5040,7 +5032,7 @@ export namespace Gcr {
          * @param part a DN type string or OID.
          * @returns the allocated part of the subject DN, or `null` if no          such part is present.
          */
-        get_subject_part(part: string): (string | null);
+        get_subject_part(part: string): string | null;
 
         /**
          * Get the raw DER data for the subject DN of the certificate.
@@ -5115,9 +5107,7 @@ export namespace Gcr {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface CollectionNamespace {
@@ -5190,14 +5180,12 @@ export namespace Gcr {
              * @param other Another comparable object
              * @virtual
              */
-            vfunc_compare(other: (Comparable | null)): number;
+            vfunc_compare(other: Comparable | null): number;
         }
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface ComparableNamespace {
@@ -5217,7 +5205,7 @@ export namespace Gcr {
          * @param other Another comparable object
          * @returns Zero if the two objects represent the same thing, non-zero if not.
          */
-        compare(other: (Comparable | null)): number;
+        compare(other: Comparable | null): number;
     }
 
 
@@ -5244,7 +5232,7 @@ export namespace Gcr {
              * @param cancellable optional cancellable object
              * @virtual
              */
-            vfunc_supplement(builder: Gck.Builder, cancellable: (Gio.Cancellable | null)): Gio.TlsInteractionResult;
+            vfunc_supplement(builder: Gck.Builder, cancellable: Gio.Cancellable | null): Gio.TlsInteractionResult;
 
             /**
              * Asynchronously supplement attributes before import. This means prompting the
@@ -5257,7 +5245,7 @@ export namespace Gcr {
              * @param callback called when the operation completes
              * @virtual
              */
-            vfunc_supplement_async(builder: Gck.Builder, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+            vfunc_supplement_async(builder: Gck.Builder, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
             /**
              * Complete operation to asynchronously supplement attributes before import.
@@ -5285,9 +5273,7 @@ export namespace Gcr {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends Gio.TlsInteraction.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gio.TlsInteraction.ConstructorProps {}
     }
 
     export interface ImportInteractionNamespace {
@@ -5315,7 +5301,7 @@ export namespace Gcr {
          * @param cancellable optional cancellable object
          * @returns {@link Gio.TlsInteractionResult.HANDLED} if successful or {@link Gio.TlsInteractionResult.FAILED}
          */
-        supplement(builder: Gck.Builder, cancellable: (Gio.Cancellable | null)): Gio.TlsInteractionResult;
+        supplement(builder: Gck.Builder, cancellable: Gio.Cancellable | null): Gio.TlsInteractionResult;
 
         /**
          * Asynchronously supplement attributes before import. This means prompting the
@@ -5326,19 +5312,7 @@ export namespace Gcr {
          * @param builder supplemented attributes
          * @param cancellable optional cancellable object
          */
-        supplement_async(builder: Gck.Builder, cancellable: (Gio.Cancellable | null)): globalThis.Promise<Gio.TlsInteractionResult>;
-
-        /**
-         * Asynchronously supplement attributes before import. This means prompting the
-         * user for things like labels and the like. The needed attributes will have
-         * been passed to `gcr_import_interaction_supplement_prep()`.
-         * 
-         * This method prompts the user and fills in the attributes.
-         * @param builder supplemented attributes
-         * @param cancellable optional cancellable object
-         * @param callback called when the operation completes
-         */
-        supplement_async(builder: Gck.Builder, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        supplement_async(builder: Gck.Builder, cancellable: Gio.Cancellable | null): globalThis.Promise<Gio.TlsInteractionResult>;
 
         /**
          * Asynchronously supplement attributes before import. This means prompting the
@@ -5350,7 +5324,19 @@ export namespace Gcr {
          * @param cancellable optional cancellable object
          * @param callback called when the operation completes
          */
-        supplement_async(builder: Gck.Builder, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<Gio.TlsInteractionResult> | void);
+        supplement_async(builder: Gck.Builder, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously supplement attributes before import. This means prompting the
+         * user for things like labels and the like. The needed attributes will have
+         * been passed to `gcr_import_interaction_supplement_prep()`.
+         * 
+         * This method prompts the user and fills in the attributes.
+         * @param builder supplemented attributes
+         * @param cancellable optional cancellable object
+         * @param callback called when the operation completes
+         */
+        supplement_async(builder: Gck.Builder, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Gio.TlsInteractionResult> | void;
 
         /**
          * Complete operation to asynchronously supplement attributes before import.
@@ -5395,7 +5381,7 @@ export namespace Gcr {
              * @param callback called when the operation completes
              * @virtual
              */
-            vfunc_import_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+            vfunc_import_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
             /**
              * Complete an asynchronous operation to import queued items.
@@ -5409,7 +5395,7 @@ export namespace Gcr {
              * @param cancellable 
              * @virtual
              */
-            vfunc_import_sync(cancellable: (Gio.Cancellable | null)): boolean;
+            vfunc_import_sync(cancellable: Gio.Cancellable | null): boolean;
 
             /**
              * Queues an additional item to be imported. The parsed item is represented
@@ -5427,7 +5413,7 @@ export namespace Gcr {
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             icon: Gio.Icon;
-            interaction: (Gio.TlsInteraction | null);
+            interaction: Gio.TlsInteraction | null;
             label: string;
             uri: string;
         }
@@ -5497,8 +5483,8 @@ export namespace Gcr {
         /**
          * The interaction for the importer.
          */
-        get interaction(): (Gio.TlsInteraction | null);
-        set interaction(val: (Gio.TlsInteraction | null));
+        get interaction(): Gio.TlsInteraction | null;
+        set interaction(val: Gio.TlsInteraction | null);
 
         /**
          * The label for the importer.
@@ -5519,7 +5505,7 @@ export namespace Gcr {
          * importer.
          * @returns the interaction or `null`
          */
-        get_interaction(): (Gio.TlsInteraction | null);
+        get_interaction(): Gio.TlsInteraction | null;
 
         /**
          * Import the queued items in the importer. This call will block
@@ -5527,22 +5513,14 @@ export namespace Gcr {
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns whether the items were imported successfully or not
          */
-        ["import"](cancellable: (Gio.Cancellable | null)): boolean;
+        ["import"](cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Import the queued items in the importer. This function returns immediately
          * and completes asynchronously.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          */
-        import_async(cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Import the queued items in the importer. This function returns immediately
-         * and completes asynchronously.
-         * @param cancellable a {@link Gio.Cancellable}, or `null`
-         * @param callback called when the operation completes
-         */
-        import_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        import_async(cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Import the queued items in the importer. This function returns immediately
@@ -5550,7 +5528,15 @@ export namespace Gcr {
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @param callback called when the operation completes
          */
-        import_async(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        import_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Import the queued items in the importer. This function returns immediately
+         * and completes asynchronously.
+         * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @param callback called when the operation completes
+         */
+        import_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Complete an asynchronous operation to import queued items.
@@ -5607,7 +5593,7 @@ export namespace Gcr {
              * @param callback called when the operation completes
              * @virtual
              */
-            vfunc_prompt_confirm_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+            vfunc_prompt_confirm_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
             /**
              * Complete an operation to prompt for confirmation.
@@ -5629,7 +5615,7 @@ export namespace Gcr {
              * @param callback called when the operation completes
              * @virtual
              */
-            vfunc_prompt_password_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+            vfunc_prompt_password_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
             /**
              * Complete an operation to prompt for a password.
@@ -5911,7 +5897,7 @@ export namespace Gcr {
          * @param cancellable optional cancellation object
          * @returns the reply from the prompt
          */
-        confirm(cancellable: (Gio.Cancellable | null)): PromptReply;
+        confirm(cancellable: Gio.Cancellable | null): PromptReply;
 
         /**
          * Prompts for confirmation asking a cancel/continue style question.
@@ -5921,18 +5907,7 @@ export namespace Gcr {
          * This method will return immediately and complete asynchronously.
          * @param cancellable optional cancellation object
          */
-        confirm_async(cancellable: (Gio.Cancellable | null)): globalThis.Promise<PromptReply>;
-
-        /**
-         * Prompts for confirmation asking a cancel/continue style question.
-         * Set the various properties on the prompt before calling this method to
-         * represent the question correctly.
-         * 
-         * This method will return immediately and complete asynchronously.
-         * @param cancellable optional cancellation object
-         * @param callback called when the operation completes
-         */
-        confirm_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        confirm_async(cancellable: Gio.Cancellable | null): globalThis.Promise<PromptReply>;
 
         /**
          * Prompts for confirmation asking a cancel/continue style question.
@@ -5943,7 +5918,18 @@ export namespace Gcr {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        confirm_async(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<PromptReply> | void);
+        confirm_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Prompts for confirmation asking a cancel/continue style question.
+         * Set the various properties on the prompt before calling this method to
+         * represent the question correctly.
+         * 
+         * This method will return immediately and complete asynchronously.
+         * @param cancellable optional cancellation object
+         * @param callback called when the operation completes
+         */
+        confirm_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<PromptReply> | void;
 
         /**
          * Complete an operation to prompt for confirmation.
@@ -5971,7 +5957,7 @@ export namespace Gcr {
          * @param cancellable optional cancellation object
          * @returns the reply from the prompt
          */
-        confirm_run(cancellable: (Gio.Cancellable | null)): PromptReply;
+        confirm_run(cancellable: Gio.Cancellable | null): PromptReply;
 
         /**
          * Get the string handle of the caller's window.
@@ -6091,7 +6077,7 @@ export namespace Gcr {
          * @param cancellable optional cancellation object
          * @returns the password owned by the prompt, or `null`
          */
-        password(cancellable: (Gio.Cancellable | null)): string;
+        password(cancellable: Gio.Cancellable | null): string;
 
         /**
          * Prompts for password. Set the various properties on the prompt before calling
@@ -6100,17 +6086,7 @@ export namespace Gcr {
          * This method will return immediately and complete asynchronously.
          * @param cancellable optional cancellation object
          */
-        password_async(cancellable: (Gio.Cancellable | null)): globalThis.Promise<string>;
-
-        /**
-         * Prompts for password. Set the various properties on the prompt before calling
-         * this method to explain which password should be entered.
-         * 
-         * This method will return immediately and complete asynchronously.
-         * @param cancellable optional cancellation object
-         * @param callback called when the operation completes
-         */
-        password_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        password_async(cancellable: Gio.Cancellable | null): globalThis.Promise<string>;
 
         /**
          * Prompts for password. Set the various properties on the prompt before calling
@@ -6120,7 +6096,17 @@ export namespace Gcr {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        password_async(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<string> | void);
+        password_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Prompts for password. Set the various properties on the prompt before calling
+         * this method to explain which password should be entered.
+         * 
+         * This method will return immediately and complete asynchronously.
+         * @param cancellable optional cancellation object
+         * @param callback called when the operation completes
+         */
+        password_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<string> | void;
 
         /**
          * Complete an operation to prompt for a password.
@@ -6153,7 +6139,7 @@ export namespace Gcr {
          * @param cancellable optional cancellation object
          * @returns the password owned by the prompt, or `null`
          */
-        password_run(cancellable: (Gio.Cancellable | null)): string;
+        password_run(cancellable: Gio.Cancellable | null): string;
 
         /**
          * Reset the contents and properties of the prompt.
@@ -6199,7 +6185,7 @@ export namespace Gcr {
          * If this is `null`, then no additional choice is being displayed.
          * @param choice_label the additional choice or `null`
          */
-        set_choice_label(choice_label: (string | null)): void;
+        set_choice_label(choice_label: string | null): void;
 
         /**
          * Set the label for the continue button.
@@ -6256,7 +6242,7 @@ export namespace Gcr {
          * If this string is `null` then no warning is displayed.
          * @param warning the warning or `null`
          */
-        set_warning(warning: (string | null)): void;
+        set_warning(warning: string | null): void;
     }
 
 

@@ -54,7 +54,7 @@ export namespace Gly {
         static NO_MORE_FRAMES: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -477,7 +477,7 @@ export namespace Gly {
          * @param texture Texture data
          * @returns a new {@link NewFrame}
          */
-        add_frame(width: number, height: number, memory_format: MemoryFormat, texture: (GLib.Bytes | Uint8Array)): NewFrame;
+        add_frame(width: number, height: number, memory_format: MemoryFormat, texture: GLib.Bytes | Uint8Array): NewFrame;
 
         /**
          * @param width 
@@ -487,7 +487,7 @@ export namespace Gly {
          * @param texture Texture data
          * @returns a new {@link NewFrame}
          */
-        add_frame_with_stride(width: number, height: number, stride: number, memory_format: MemoryFormat, texture: (GLib.Bytes | Uint8Array)): NewFrame;
+        add_frame_with_stride(width: number, height: number, stride: number, memory_format: MemoryFormat, texture: GLib.Bytes | Uint8Array): NewFrame;
 
         /**
          * Add metadata that are stored as key-value pairs.
@@ -503,27 +503,27 @@ export namespace Gly {
         /**
          * @returns The encoded image.
          */
-        create(): (EncodedImage | null);
+        create(): EncodedImage | null;
 
         /**
          * Asynchronous version of {@link Creator.create}.
          * @param cancellable A {@link Gio.Cancellable} to cancel the operation
          */
-        create_async(cancellable: (Gio.Cancellable | null)): globalThis.Promise<EncodedImage>;
-
-        /**
-         * Asynchronous version of {@link Creator.create}.
-         * @param cancellable A {@link Gio.Cancellable} to cancel the operation
-         * @param callback A callback to call when the operation is complete
-         */
-        create_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        create_async(cancellable: Gio.Cancellable | null): globalThis.Promise<EncodedImage>;
 
         /**
          * Asynchronous version of {@link Creator.create}.
          * @param cancellable A {@link Gio.Cancellable} to cancel the operation
          * @param callback A callback to call when the operation is complete
          */
-        create_async(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<EncodedImage> | void);
+        create_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronous version of {@link Creator.create}.
+         * @param cancellable A {@link Gio.Cancellable} to cancel the operation
+         * @param callback A callback to call when the operation is complete
+         */
+        create_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<EncodedImage> | void;
 
         /**
          * Finishes the {@link Creator.create_async} call.
@@ -560,7 +560,7 @@ export namespace Gly {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            data: (GLib.Bytes | Uint8Array);
+            data: GLib.Bytes | Uint8Array;
         }
     }
 
@@ -621,13 +621,10 @@ export namespace Gly {
 
     namespace Frame {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -677,7 +674,7 @@ export namespace Gly {
          * This value is `NULL` if no CICP is used.
          * @returns CICP
          */
-        get_color_cicp(): (Cicp | null);
+        get_color_cicp(): Cicp | null;
 
         /**
          * Duration to show frame for animations.
@@ -839,13 +836,10 @@ export namespace Gly {
 
     namespace Image {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -900,7 +894,7 @@ export namespace Gly {
          * @param key A null-terminated string.
          * @returns The UTF-8 encoded value associated with `key`.
          */
-        get_metadata_key_value(key: string): (string | null);
+        get_metadata_key_value(key: string): string | null;
 
         /**
          * Get the list of available keys for {@link Image.get_metadata_key_value}.
@@ -925,7 +919,7 @@ export namespace Gly {
          * @param frame_request 
          * @param cancellable A {@link Gio.Cancellable} to cancel the operation
          */
-        get_specific_frame_async(frame_request: FrameRequest, cancellable: (Gio.Cancellable | null)): globalThis.Promise<Frame>;
+        get_specific_frame_async(frame_request: FrameRequest, cancellable: Gio.Cancellable | null): globalThis.Promise<Frame>;
 
         /**
          * Asynchronous version of {@link Image.get_specific_frame}.
@@ -933,7 +927,7 @@ export namespace Gly {
          * @param cancellable A {@link Gio.Cancellable} to cancel the operation
          * @param callback A callback to call when the operation is complete
          */
-        get_specific_frame_async(frame_request: FrameRequest, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        get_specific_frame_async(frame_request: FrameRequest, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronous version of {@link Image.get_specific_frame}.
@@ -941,7 +935,7 @@ export namespace Gly {
          * @param cancellable A {@link Gio.Cancellable} to cancel the operation
          * @param callback A callback to call when the operation is complete
          */
-        get_specific_frame_async(frame_request: FrameRequest, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<Frame> | void);
+        get_specific_frame_async(frame_request: FrameRequest, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Frame> | void;
 
         /**
          * Finishes the {@link Image.get_specific_frame_async} call.
@@ -985,21 +979,21 @@ export namespace Gly {
          * Asynchronous version of {@link Image.next_frame}.
          * @param cancellable A {@link Gio.Cancellable} to cancel the operation
          */
-        next_frame_async(cancellable: (Gio.Cancellable | null)): globalThis.Promise<Frame>;
+        next_frame_async(cancellable: Gio.Cancellable | null): globalThis.Promise<Frame>;
 
         /**
          * Asynchronous version of {@link Image.next_frame}.
          * @param cancellable A {@link Gio.Cancellable} to cancel the operation
          * @param callback A callback to call when the operation is complete
          */
-        next_frame_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        next_frame_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronous version of {@link Image.next_frame}.
          * @param cancellable A {@link Gio.Cancellable} to cancel the operation
          * @param callback A callback to call when the operation is complete
          */
-        next_frame_async(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<Frame> | void);
+        next_frame_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Frame> | void;
 
         /**
          * Finishes the {@link Image.next_frame_async} call.
@@ -1026,7 +1020,7 @@ export namespace Gly {
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             apply_transformation: boolean;
             applyTransformation: boolean;
-            bytes: (GLib.Bytes | Uint8Array);
+            bytes: GLib.Bytes | Uint8Array;
             cancellable: Gio.Cancellable;
             file: Gio.File;
             memory_format_selection: MemoryFormatSelection;
@@ -1138,7 +1132,7 @@ export namespace Gly {
 
         static ["new"](file: Gio.File): Loader;
 
-        static new_for_bytes(bytes: (GLib.Bytes | Uint8Array)): Loader;
+        static new_for_bytes(bytes: GLib.Bytes | Uint8Array): Loader;
 
         static new_for_stream(stream: Gio.InputStream): Loader;
 
@@ -1170,7 +1164,7 @@ export namespace Gly {
          * @param cancellable 
          * @param callback 
          */
-        static get_mime_types_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<Loader> | null)): void;
+        static get_mime_types_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Loader> | null): void;
 
         /**
          * Finishes the {@link Loader.get_mime_types_async} call.
@@ -1189,21 +1183,21 @@ export namespace Gly {
          * Asynchronous version of {@link Loader.load}.
          * @param cancellable A {@link Gio.Cancellable} to cancel the operation
          */
-        load_async(cancellable: (Gio.Cancellable | null)): globalThis.Promise<Image>;
+        load_async(cancellable: Gio.Cancellable | null): globalThis.Promise<Image>;
 
         /**
          * Asynchronous version of {@link Loader.load}.
          * @param cancellable A {@link Gio.Cancellable} to cancel the operation
          * @param callback A callback to call when the operation is complete
          */
-        load_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        load_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronous version of {@link Loader.load}.
          * @param cancellable A {@link Gio.Cancellable} to cancel the operation
          * @param callback A callback to call when the operation is complete
          */
-        load_async(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<Image> | void);
+        load_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Image> | void;
 
         /**
          * Finishes the {@link Loader.load_async} call.
@@ -1242,13 +1236,10 @@ export namespace Gly {
 
     namespace NewFrame {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -1291,7 +1282,7 @@ export namespace Gly {
          * @param icc_profile ICC profile
          * @returns `TRUE` if format supports ICC color profiles.
          */
-        set_color_icc_profile(icc_profile: (GLib.Bytes | Uint8Array)): boolean;
+        set_color_icc_profile(icc_profile: GLib.Bytes | Uint8Array): boolean;
     }
 
 

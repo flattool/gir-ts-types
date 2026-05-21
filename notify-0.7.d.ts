@@ -318,7 +318,7 @@ export namespace Notify {
      * @param app_name The name of the application initializing libnotify.
      * @returns `true` if successful, or `false` on error.
      */
-    function init(app_name: (string | null)): boolean;
+    function init(app_name: string | null): boolean;
 
     /**
      * Gets whether or not libnotify is initialized.
@@ -331,7 +331,7 @@ export namespace Notify {
      * @param app_icon The optional icon theme icon name or filename.
      * @since 0.8.4
      */
-    function set_app_icon(app_icon: (string | null)): void;
+    function set_app_icon(app_icon: string | null): void;
 
     /**
      * Sets the application name.
@@ -510,7 +510,7 @@ export namespace Notify {
 
         _init(...args: any[]): void;
 
-        static ["new"](summary: string, body: (string | null), icon: (string | null)): Notification;
+        static ["new"](summary: string, body: string | null, icon: string | null): Notification;
 
         // Signals
         /** @signal */
@@ -572,7 +572,7 @@ export namespace Notify {
          * supports it.
          * @returns The {@link Gio.AppLaunchContext} for  the current activation token, or `null` if unset
          */
-        get_activation_app_launch_context(): (Gio.AppLaunchContext | null);
+        get_activation_app_launch_context(): Gio.AppLaunchContext | null;
 
         /**
          * Gets the activation token of the notification.
@@ -583,7 +583,7 @@ export namespace Notify {
          * supports it.
          * @returns The current activation token, or `null` if none
          */
-        get_activation_token(): (string | null);
+        get_activation_token(): string | null;
 
         /**
          * Returns the closed reason code for the notification.
@@ -602,7 +602,7 @@ export namespace Notify {
          * will be set from the value set via {@link set_app_icon}.
          * @param app_icon The optional icon theme icon name or filename.
          */
-        set_app_icon(app_icon: (string | null)): void;
+        set_app_icon(app_icon: string | null): void;
 
         /**
          * Sets the application name for the notification.
@@ -612,7 +612,7 @@ export namespace Notify {
          * {@link set_app_name}.
          * @param app_name the localised application name
          */
-        set_app_name(app_name: (string | null)): void;
+        set_app_name(app_name: string | null): void;
 
         /**
          * Sets the category of this notification.
@@ -632,7 +632,7 @@ export namespace Notify {
          * @param key the hint key
          * @param value the hint value
          */
-        set_hint(key: string, value: (GLib.Variant | null)): void;
+        set_hint(key: string, value: GLib.Variant | null): void;
 
         /**
          * Sets a hint with a byte value.
@@ -648,7 +648,7 @@ export namespace Notify {
          * @param key The hint.
          * @param value The hint's value.
          */
-        set_hint_byte_array(key: string, value: (Uint8Array | string)): void;
+        set_hint_byte_array(key: string, value: Uint8Array | string): void;
 
         /**
          * Sets a hint with a double value.
@@ -723,7 +723,7 @@ export namespace Notify {
          * @param icon The optional icon theme icon name or filename.
          * @returns `true`, unless an invalid parameter was passed.
          */
-        update(summary: string, body: (string | null), icon: (string | null)): boolean;
+        update(summary: string, body: string | null, icon: string | null): boolean;
     }
 
 
