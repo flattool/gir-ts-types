@@ -129,7 +129,7 @@ export namespace Json {
         static INVALID_ASSIGNMENT: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -152,7 +152,7 @@ export namespace Json {
         static QUERY: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -207,7 +207,7 @@ export namespace Json {
         static INVALID_TYPE: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -281,7 +281,7 @@ export namespace Json {
      * @returns a node with the serialized boxed type
      * @since 0.10
      */
-    function boxed_serialize(gboxed_type: GObject.GType, boxed: null): (Node | null);
+    function boxed_serialize(gboxed_type: GObject.GType, boxed: null): Node | null;
 
     /**
      * Deserializes a JSON data stream and creates an instance of the given
@@ -303,7 +303,7 @@ export namespace Json {
      * @since 0.4
      * @deprecated since 0.10: Use {@link Json.gobject_from_data} instead
      */
-    function construct_gobject<T = GObject.Object>(gtype: GObject.GType, data: string, length: (bigint | number)): T;
+    function construct_gobject<T = GObject.Object>(gtype: GObject.GType, data: string, length: bigint | number): T;
 
     /**
      * Parses the given string and returns the corresponding JSON tree.
@@ -316,7 +316,7 @@ export namespace Json {
      * @returns the root node of the JSON tree
      * @since 1.2
      */
-    function from_string(str: string): (Node | null);
+    function from_string(str: string): Node | null;
 
     /**
      * Creates a new {@link GObject.Object} instance of the given type, and constructs it
@@ -344,7 +344,7 @@ export namespace Json {
      * @returns a new object instance of the given type
      * @since 0.10
      */
-    function gobject_from_data<T = GObject.Object>(gtype: GObject.GType, data: string, length: (bigint | number)): T;
+    function gobject_from_data<T = GObject.Object>(gtype: GObject.GType, data: string, length: bigint | number): T;
 
     /**
      * Creates a JSON tree representing the passed object instance.
@@ -400,7 +400,7 @@ export namespace Json {
      * @returns A newly created {@link GLib.Variant}
      * @since 0.14
      */
-    function gvariant_deserialize(json_node: Node, signature: (string | null)): (GLib.Variant | null);
+    function gvariant_deserialize(json_node: Node, signature: string | null): GLib.Variant | null;
 
     /**
      * Converts a JSON string to a {@link GLib.Variant} value.
@@ -420,7 +420,7 @@ export namespace Json {
      * @returns A newly created {@link GLib.Variant}D compliant
      * @since 0.14
      */
-    function gvariant_deserialize_data(json: string, length: (bigint | number), signature: (string | null)): (GLib.Variant | null);
+    function gvariant_deserialize_data(json: string, length: bigint | number, signature: string | null): GLib.Variant | null;
 
     /**
      * Converts `variant` to a JSON tree.
@@ -638,7 +638,7 @@ export namespace Json {
          * @param value the value of the member or element
          * @returns the builder instance
          */
-        add_boolean_value(value: boolean): (Builder | null);
+        add_boolean_value(value: boolean): Builder | null;
 
         /**
          * Adds a floating point value to the currently open object member or array.
@@ -651,7 +651,7 @@ export namespace Json {
          * @param value the value of the member or element
          * @returns the builder instance
          */
-        add_double_value(value: number): (Builder | null);
+        add_double_value(value: number): Builder | null;
 
         /**
          * Adds an integer value to the currently open object member or array.
@@ -664,7 +664,7 @@ export namespace Json {
          * @param value the value of the member or element
          * @returns the builder instance
          */
-        add_int_value(value: (bigint | number)): (Builder | null);
+        add_int_value(value: bigint | number): Builder | null;
 
         /**
          * Adds a null value to the currently open object member or array.
@@ -676,7 +676,7 @@ export namespace Json {
          * See also: {@link Json.Builder.add_value}
          * @returns the builder instance
          */
-        add_null_value(): (Builder | null);
+        add_null_value(): Builder | null;
 
         /**
          * Adds a string value to the currently open object member or array.
@@ -689,7 +689,7 @@ export namespace Json {
          * @param value the value of the member or element
          * @returns the builder instance
          */
-        add_string_value(value: string): (Builder | null);
+        add_string_value(value: string): Builder | null;
 
         /**
          * Adds a value to the currently open object member or array.
@@ -702,7 +702,7 @@ export namespace Json {
          * @param node the value of the member or element
          * @returns the builder instance
          */
-        add_value(node: Node): (Builder | null);
+        add_value(node: Node): Builder | null;
 
         /**
          * Opens an array inside the given builder.
@@ -713,7 +713,7 @@ export namespace Json {
          * {@link Json.Builder.end_array} to close the array.
          * @returns the builder instance
          */
-        begin_array(): (Builder | null);
+        begin_array(): Builder | null;
 
         /**
          * Opens an object inside the given builder.
@@ -727,7 +727,7 @@ export namespace Json {
          * If the builder is in an inconsistent state, this function will return `NULL`.
          * @returns the builder instance
          */
-        begin_object(): (Builder | null);
+        begin_object(): Builder | null;
 
         /**
          * Closes the array inside the given builder that was opened by the most
@@ -736,7 +736,7 @@ export namespace Json {
          * This function cannot be called after {@link Json.Builder.set_member_name}.
          * @returns the builder instance
          */
-        end_array(): (Builder | null);
+        end_array(): Builder | null;
 
         /**
          * Closes the object inside the given builder that was opened by the most
@@ -745,7 +745,7 @@ export namespace Json {
          * This function cannot be called after {@link Json.Builder.set_member_name}.
          * @returns the builder instance
          */
-        end_object(): (Builder | null);
+        end_object(): Builder | null;
 
         /**
          * Returns the root of the currently constructed tree.
@@ -755,7 +755,7 @@ export namespace Json {
          * `NULL`.
          * @returns the root node
          */
-        get_root(): (Node | null);
+        get_root(): Node | null;
 
         /**
          * Resets the state of the builder back to its initial state.
@@ -775,7 +775,7 @@ export namespace Json {
          * @param member_name the name of the member
          * @returns the builder instance
          */
-        set_member_name(member_name: string): (Builder | null);
+        set_member_name(member_name: string): Builder | null;
     }
 
 
@@ -794,7 +794,7 @@ export namespace Json {
             indent_char: number;
             indentChar: number;
             pretty: boolean;
-            root: (Node | null);
+            root: Node | null;
         }
     }
 
@@ -847,8 +847,8 @@ export namespace Json {
          * stream.
          * @since 0.4
          */
-        get root(): (Node | null);
-        set root(val: (Node | null));
+        get root(): Node | null;
+        set root(val: Node | null);
 
         /**
          * Compile-time signal type information.
@@ -903,7 +903,7 @@ export namespace Json {
          * {@link Json.Generator.set_root}.
          * @returns the root node
          */
-        get_root(): (Node | null);
+        get_root(): Node | null;
 
         /**
          * Sets the number of repetitions for each indentation level.
@@ -944,7 +944,7 @@ export namespace Json {
          * The ownership of the passed `node` is transferred to the generator object.
          * @param node the root node
          */
-        take_root(node: (Node | null)): void;
+        take_root(node: Node | null): void;
 
         /**
          * Generates a JSON data stream from `generator` and returns it as a
@@ -977,7 +977,7 @@ export namespace Json {
          * @param cancellable a {@link Gio.Cancellable}
          * @returns whether the write operation was successful
          */
-        to_stream(stream: Gio.OutputStream, cancellable: (Gio.Cancellable | null)): boolean;
+        to_stream(stream: Gio.OutputStream, cancellable: Gio.Cancellable | null): boolean;
     }
 
 
@@ -1252,7 +1252,7 @@ export namespace Json {
          * {@link Json.Parser.steal_root}.
          * @returns the root node.
          */
-        get_root(): (Node | null);
+        get_root(): Node | null;
 
         /**
          * Retrieves whether the parser is operating in strict mode.
@@ -1286,7 +1286,7 @@ export namespace Json {
          * @param length the length of the buffer, or -1 if it is `NUL` terminated
          * @returns `TRUE` if the buffer was succesfully parsed
          */
-        load_from_data(data: string, length: (bigint | number)): boolean;
+        load_from_data(data: string, length: bigint | number): boolean;
 
         /**
          * Loads a JSON stream from the content of `filename` and parses it.
@@ -1325,7 +1325,7 @@ export namespace Json {
          * @param cancellable a {@link Gio.Cancellable}
          * @returns `TRUE` if the data stream was successfully read and   parsed, and `FALSE` otherwise
          */
-        load_from_stream(stream: Gio.InputStream, cancellable: (Gio.Cancellable | null)): boolean;
+        load_from_stream(stream: Gio.InputStream, cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Asynchronously reads the contents of a stream.
@@ -1339,22 +1339,7 @@ export namespace Json {
          * @param stream the input stream with the JSON data
          * @param cancellable a {@link Gio.Cancellable}
          */
-        load_from_stream_async(stream: Gio.InputStream, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Asynchronously reads the contents of a stream.
-         * 
-         * For more details, see {@link Json.Parser.load_from_stream}, which is the
-         * synchronous version of this call.
-         * 
-         * When the operation is finished, `callback` will be called. You should
-         * then call {@link Json.Parser.load_from_stream_finish} to get the result
-         * of the operation.
-         * @param stream the input stream with the JSON data
-         * @param cancellable a {@link Gio.Cancellable}
-         * @param callback the function to call when the request is satisfied
-         */
-        load_from_stream_async(stream: Gio.InputStream, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        load_from_stream_async(stream: Gio.InputStream, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously reads the contents of a stream.
@@ -1369,7 +1354,22 @@ export namespace Json {
          * @param cancellable a {@link Gio.Cancellable}
          * @param callback the function to call when the request is satisfied
          */
-        load_from_stream_async(stream: Gio.InputStream, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        load_from_stream_async(stream: Gio.InputStream, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously reads the contents of a stream.
+         * 
+         * For more details, see {@link Json.Parser.load_from_stream}, which is the
+         * synchronous version of this call.
+         * 
+         * When the operation is finished, `callback` will be called. You should
+         * then call {@link Json.Parser.load_from_stream_finish} to get the result
+         * of the operation.
+         * @param stream the input stream with the JSON data
+         * @param cancellable a {@link Gio.Cancellable}
+         * @param callback the function to call when the request is satisfied
+         */
+        load_from_stream_async(stream: Gio.InputStream, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an asynchronous stream loading started with
@@ -1398,19 +1398,16 @@ export namespace Json {
          * return `NULL`.
          * @returns the root node
          */
-        steal_root(): (Node | null);
+        steal_root(): Node | null;
     }
 
 
     namespace Path {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -1728,7 +1725,7 @@ export namespace Json {
 
         _init(...args: any[]): void;
 
-        static ["new"](node: (Node | null)): Reader;
+        static ["new"](node: Node | null): Reader;
 
         // Signals
         /** @signal */
@@ -1790,7 +1787,7 @@ export namespace Json {
          * Retrieves the reader node at the current position.
          * @returns the current node of the reader
          */
-        get_current_node(): (Node | null);
+        get_current_node(): Node | null;
 
         /**
          * Retrieves the floating point value of the current position of the reader.
@@ -1804,7 +1801,7 @@ export namespace Json {
          * Retrieves the error currently set on the reader.
          * @returns the current error
          */
-        get_error(): (GLib.Error | null);
+        get_error(): GLib.Error | null;
 
         /**
          * Retrieves the integer value of the current position of the reader.
@@ -1820,7 +1817,7 @@ export namespace Json {
          * In case of failure, the reader is set to an error state.
          * @returns the name of the member
          */
-        get_member_name(): (string | null);
+        get_member_name(): string | null;
 
         /**
          * Checks whether the value of the current position of the reader is `null`.
@@ -1845,7 +1842,7 @@ export namespace Json {
          * is set to an error state.
          * @returns the current value node
          */
-        get_value(): (Node | null);
+        get_value(): Node | null;
 
         /**
          * Checks whether the reader is currently on an array.
@@ -1988,7 +1985,7 @@ export namespace Json {
          * The reader will take a copy of the node.
          * @param root the root node
          */
-        set_root(root: (Node | null)): void;
+        set_root(root: Node | null): void;
     }
 
 
@@ -2015,10 +2012,7 @@ export namespace Json {
         static $gtype: GObject.GType<Array>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): Array;
 
@@ -2033,7 +2027,7 @@ export namespace Json {
          * See also: {@link Json.Array.add_element}, {@link Json.Node.take_array}
          * @param value the array to add
          */
-        add_array_element(value: (Array | null)): void;
+        add_array_element(value: Array | null): void;
 
         /**
          * Conveniently adds the given boolean value into an array.
@@ -2063,7 +2057,7 @@ export namespace Json {
          * See also: {@link Json.Array.add_element}, {@link Json.Node.set_int}
          * @param value the integer value to add
          */
-        add_int_element(value: (bigint | number)): void;
+        add_int_element(value: bigint | number): void;
 
         /**
          * Conveniently adds a `null` element into an array
@@ -2080,7 +2074,7 @@ export namespace Json {
          * See also: {@link Json.Array.add_element}, {@link Json.Node.take_object}
          * @param value the object to add
          */
-        add_object_element(value: (Object | null)): void;
+        add_object_element(value: Object | null): void;
 
         /**
          * Conveniently adds the given string value into an array.
@@ -2160,7 +2154,7 @@ export namespace Json {
          * Retrieves all the elements of an array as a list of nodes.
          * @returns the elements   of the array
          */
-        get_elements(): (Node[] | null);
+        get_elements(): Node[] | null;
 
         /**
          * Conveniently retrieves the integer value of the element at the given
@@ -2324,10 +2318,7 @@ export namespace Json {
         static $gtype: GObject.GType<Node>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static alloc(): Node;
 
@@ -2356,7 +2347,7 @@ export namespace Json {
          * array value. Use `JSON_NODE_HOLDS_ARRAY` first.
          * @returns the JSON array with its reference   count increased.
          */
-        dup_array(): (Array | null);
+        dup_array(): Array | null;
 
         /**
          * Retrieves the object inside `node`.
@@ -2367,7 +2358,7 @@ export namespace Json {
          * object value. Use `JSON_NODE_HOLDS_OBJECT` first.
          * @returns the JSON object
          */
-        dup_object(): (Object | null);
+        dup_object(): Object | null;
 
         /**
          * Gets a copy of the string value stored inside a node.
@@ -2375,7 +2366,7 @@ export namespace Json {
          * If the node does not hold a string value, `NULL` is returned.
          * @returns a copy of the string   inside the node
          */
-        dup_string(): (string | null);
+        dup_string(): string | null;
 
         /**
          * Check whether `a` and `b` are equal node, meaning they have the same
@@ -2400,7 +2391,7 @@ export namespace Json {
          * array value. Use `JSON_NODE_HOLDS_ARRAY` first.
          * @returns the JSON array
          */
-        get_array(): (Array | null);
+        get_array(): Array | null;
 
         /**
          * Gets the boolean value stored inside a node.
@@ -2455,13 +2446,13 @@ export namespace Json {
          * object value. Use `JSON_NODE_HOLDS_OBJECT` first.
          * @returns the JSON object
          */
-        get_object(): (Object | null);
+        get_object(): Object | null;
 
         /**
          * Retrieves the parent node of the given `node`.
          * @returns the parent node, or `NULL` if `node`   is the root node
          */
-        get_parent(): (Node | null);
+        get_parent(): Node | null;
 
         /**
          * Gets the string value stored inside a node.
@@ -2469,7 +2460,7 @@ export namespace Json {
          * If the node does not hold a string value, `NULL` is returned.
          * @returns a string value.
          */
-        get_string(): (string | null);
+        get_string(): string | null;
 
         /**
          * Retrieves a value from a node and copies into `value`.
@@ -2521,7 +2512,7 @@ export namespace Json {
          * @param array the JSON array to initialize `node` with, or `NULL`
          * @returns the initialized node
          */
-        init_array(array: (Array | null)): Node;
+        init_array(array: Array | null): Node;
 
         /**
          * Initializes `node` to `JSON_NODE_VALUE` and sets `value` into it.
@@ -2551,7 +2542,7 @@ export namespace Json {
          * @param value an integer
          * @returns the initialized node
          */
-        init_int(value: (bigint | number)): Node;
+        init_int(value: bigint | number): Node;
 
         /**
          * Initializes `node` to `JSON_NODE_NULL`.
@@ -2572,7 +2563,7 @@ export namespace Json {
          * @param object the JSON object to initialize `node` with, or `NULL`
          * @returns the initialized node
          */
-        init_object(object: (Object | null)): Node;
+        init_object(object: Object | null): Node;
 
         /**
          * Initializes `node` to `JSON_NODE_VALUE` and sets `value` into it.
@@ -2582,7 +2573,7 @@ export namespace Json {
          * @param value a string value
          * @returns the initialized node
          */
-        init_string(value: (string | null)): Node;
+        init_string(value: string | null): Node;
 
         /**
          * Check whether the given `node` has been marked as immutable by calling
@@ -2656,7 +2647,7 @@ export namespace Json {
          * a value node.
          * @param value an integer value
          */
-        set_int(value: (bigint | number)): void;
+        set_int(value: bigint | number): void;
 
         /**
          * Sets `objects` inside `node`.
@@ -2669,7 +2660,7 @@ export namespace Json {
          * an object node.
          * @param object a JSON object
          */
-        set_object(object: (Object | null)): void;
+        set_object(object: Object | null): void;
 
         /**
          * Sets the parent node for the given `node`.
@@ -2679,7 +2670,7 @@ export namespace Json {
          * The `node` may be immutable.
          * @param parent the parent node
          */
-        set_parent(parent: (Node | null)): void;
+        set_parent(parent: Node | null): void;
 
         /**
          * Sets `value` as the string content of the `node`, replacing any existing
@@ -2712,7 +2703,7 @@ export namespace Json {
          * a value node.
          * @param value the value to set
          */
-        set_value(value: (GObject.Value | any)): void;
+        set_value(value: GObject.Value | any): void;
 
         /**
          * Sets `array` inside `node`.
@@ -2779,10 +2770,7 @@ export namespace Json {
         static $gtype: GObject.GType<Object>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): Object;
 
@@ -2802,7 +2790,7 @@ export namespace Json {
          * @param member_name the name of the JSON object member to access
          * @returns a copy of the value for the   requested object member
          */
-        dup_member(member_name: string): (Node | null);
+        dup_member(member_name: string): Node | null;
 
         /**
          * Check whether `a` and `b` are equal objects, meaning they have the same
@@ -2838,7 +2826,7 @@ export namespace Json {
          * @param member_name the name of the member
          * @returns the array inside the object's member
          */
-        get_array_member(member_name: string): (Array | null);
+        get_array_member(member_name: string): Array | null;
 
         /**
          * Convenience function that retrieves the boolean value
@@ -2919,14 +2907,14 @@ export namespace Json {
          * @param default_value the value to return if `member_name` is not valid
          * @returns the integer value of the object's member, or the   given default
          */
-        get_int_member_with_default(member_name: string, default_value: (bigint | number)): number;
+        get_int_member_with_default(member_name: string, default_value: bigint | number): number;
 
         /**
          * Retrieves the value of the given member inside an object.
          * @param member_name the name of the JSON object member to access
          * @returns the value for the   requested object member
          */
-        get_member(member_name: string): (Node | null);
+        get_member(member_name: string): Node | null;
 
         /**
          * Retrieves all the names of the members of an object.
@@ -2935,7 +2923,7 @@ export namespace Json {
          * and calling {@link Json.Object.get_member}.
          * @returns the   member names of the object
          */
-        get_members(): (string[] | null);
+        get_members(): string[] | null;
 
         /**
          * Convenience function that checks whether the value
@@ -2959,7 +2947,7 @@ export namespace Json {
          * @param member_name the name of the member
          * @returns the object inside the object's member
          */
-        get_object_member(member_name: string): (Object | null);
+        get_object_member(member_name: string): Object | null;
 
         /**
          * Retrieves the number of members of a JSON object.
@@ -2998,7 +2986,7 @@ export namespace Json {
          * Retrieves all the values of the members of an object.
          * @returns the   member values of the object
          */
-        get_values(): (Node[] | null);
+        get_values(): Node[] | null;
 
         /**
          * Checks whether `object` has a member named `member_name`.
@@ -3079,7 +3067,7 @@ export namespace Json {
          * @param member_name the name of the member
          * @param value the value of the member
          */
-        set_int_member(member_name: string, value: (bigint | number)): void;
+        set_int_member(member_name: string, value: bigint | number): void;
 
         /**
          * Sets the value of a member inside an object.
@@ -3148,10 +3136,7 @@ export namespace Json {
         static $gtype: GObject.GType<ObjectIter>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         // Methods
         /**
@@ -3310,7 +3295,7 @@ export namespace Json {
              * @param name the name of the property
              * @virtual
              */
-            vfunc_find_property(name: string): (GObject.ParamSpec | null);
+            vfunc_find_property(name: string): GObject.ParamSpec | null;
 
             /**
              * Calls the {@link Json.Serializable.get_property} implementation
@@ -3335,7 +3320,7 @@ export namespace Json {
              * @param pspec a property description
              * @virtual
              */
-            vfunc_serialize_property(property_name: string, value: unknown, pspec: GObject.ParamSpec): (Node | null);
+            vfunc_serialize_property(property_name: string, value: unknown, pspec: GObject.ParamSpec): Node | null;
 
             /**
              * Calls the {@link Json.Serializable.set_property} implementation
@@ -3356,9 +3341,7 @@ export namespace Json {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface SerializableNamespace {
@@ -3401,7 +3384,7 @@ export namespace Json {
          * @param property_node the JSON node containing the serialized property
          * @returns `TRUE` if the property was successfully deserialized
          */
-        default_deserialize_property(property_name: string, value: (GObject.Value | any), pspec: GObject.ParamSpec, property_node: Node): boolean;
+        default_deserialize_property(property_name: string, value: GObject.Value | any, pspec: GObject.ParamSpec, property_node: Node): boolean;
 
         /**
          * Calls the default implementation of the {@link Json.Serializable.serialize_property}
@@ -3428,7 +3411,7 @@ export namespace Json {
          * @param pspec a property description
          * @returns a node containing the   serialized property
          */
-        default_serialize_property(property_name: string, value: (GObject.Value | any), pspec: GObject.ParamSpec): (Node | null);
+        default_serialize_property(property_name: string, value: GObject.Value | any, pspec: GObject.ParamSpec): Node | null;
 
         /**
          * Asks a {@link Json.Serializable} implementation to deserialize the
@@ -3458,7 +3441,7 @@ export namespace Json {
          * @param name the name of the property
          * @returns the property description
          */
-        find_property(name: string): (GObject.ParamSpec | null);
+        find_property(name: string): GObject.ParamSpec | null;
 
         /**
          * Calls the {@link Json.Serializable.get_property} implementation
@@ -3490,7 +3473,7 @@ export namespace Json {
          * @param pspec a property description
          * @returns a node containing the serialized property
          */
-        serialize_property(property_name: string, value: (GObject.Value | any), pspec: GObject.ParamSpec): (Node | null);
+        serialize_property(property_name: string, value: GObject.Value | any, pspec: GObject.ParamSpec): Node | null;
 
         /**
          * Calls the {@link Json.Serializable.set_property} implementation
@@ -3499,7 +3482,7 @@ export namespace Json {
          * @param pspec a property description
          * @param value the property value to set
          */
-        set_property(pspec: GObject.ParamSpec, value: (GObject.Value | any)): void;
+        set_property(pspec: GObject.ParamSpec, value: GObject.Value | any): void;
 
         /**
          * @param args 
@@ -3558,7 +3541,7 @@ export namespace Json {
      * @param name the name of the property
      * @virtual
      */
-    vfunc_find_property(name: string): (GObject.ParamSpec | null);
+    vfunc_find_property(name: string): GObject.ParamSpec | null;
         /**
          * Calls the {@link Json.Serializable.get_property} implementation
          * on the {@link Json.Serializable} instance, which will get the value of
@@ -3600,7 +3583,7 @@ export namespace Json {
      * @param pspec a property description
      * @virtual
      */
-    vfunc_serialize_property(property_name: string, value: unknown, pspec: GObject.ParamSpec): (Node | null);
+    vfunc_serialize_property(property_name: string, value: unknown, pspec: GObject.ParamSpec): Node | null;
         /**
          * Calls the {@link Json.Serializable.set_property} implementation
          * on the {@link Json.Serializable} instance, which will set the property

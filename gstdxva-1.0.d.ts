@@ -70,9 +70,7 @@ export namespace GstDxva {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstCodecs.AV1Decoder.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstCodecs.AV1Decoder.ConstructorProps {}
     }
 
     /**
@@ -203,9 +201,7 @@ export namespace GstDxva {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstCodecs.H264Decoder.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstCodecs.H264Decoder.ConstructorProps {}
     }
 
     /**
@@ -328,9 +324,7 @@ export namespace GstDxva {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstCodecs.H265Decoder.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstCodecs.H265Decoder.ConstructorProps {}
     }
 
     /**
@@ -446,9 +440,7 @@ export namespace GstDxva {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstCodecs.Mpeg2Decoder.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstCodecs.Mpeg2Decoder.ConstructorProps {}
     }
 
     /**
@@ -574,9 +566,7 @@ export namespace GstDxva {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstCodecs.Vp8Decoder.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstCodecs.Vp8Decoder.ConstructorProps {}
     }
 
     /**
@@ -692,9 +682,7 @@ export namespace GstDxva {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstCodecs.Vp9Decoder.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstCodecs.Vp9Decoder.ConstructorProps {}
     }
 
     /**

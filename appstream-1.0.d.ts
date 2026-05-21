@@ -979,7 +979,7 @@ export namespace AppStream {
         static VALUE_MISSING: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -1055,7 +1055,7 @@ export namespace AppStream {
         static CACHE_DAMAGED: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -1223,7 +1223,7 @@ export namespace AppStream {
         static NOT_IMPLEMENTED: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -1557,7 +1557,7 @@ export namespace AppStream {
         static NOT_FOUND: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -1695,7 +1695,7 @@ export namespace AppStream {
         static FAILED: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -1726,7 +1726,7 @@ export namespace AppStream {
         static INVALID_FILENAME: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
@@ -1936,7 +1936,7 @@ export namespace AppStream {
      * @returns a newly allocated formatted version of    `age`, or `null` if the given `system` has no representation for `age`
      * @since 0.12.12
      */
-    function content_rating_system_format_age(system: ContentRatingSystem, age: number): (string | null);
+    function content_rating_system_format_age(system: ContentRatingSystem, age: number): string | null;
 
     /**
      * Determine the most appropriate {@link AppStream.ContentRatingSystem} for the given `locale`.
@@ -1974,7 +1974,7 @@ export namespace AppStream {
      * @returns a human-readable string for `system`, or `null` if unknown
      * @since 0.12.12
      */
-    function content_rating_system_to_string(system: ContentRatingSystem): (string | null);
+    function content_rating_system_to_string(system: ContentRatingSystem): string | null;
 
     /**
      * Converts the text representation to an enumerated value.
@@ -2081,7 +2081,7 @@ export namespace AppStream {
      * @returns The license name, or `null` if none found.
      * @since 1.0.0
      */
-    function get_license_name(license: string): (string | null);
+    function get_license_name(license: string): string | null;
 
     /**
      * Get a web URL to the license text and more license information for an SPDX
@@ -2090,7 +2090,7 @@ export namespace AppStream {
      * @returns The license URL, or `null` if none available.
      * @since 0.12.7
      */
-    function get_license_url(license: string): (string | null);
+    function get_license_url(license: string): string | null;
 
     /**
      * Replaces the string `find` with the string `replace` in a {@link GLib.String} up to
@@ -2499,7 +2499,7 @@ export namespace AppStream {
      * @returns string, or `null` for invalid
      * @since 0.9.8
      */
-    function spdx_license_detokenize(license_tokens: string): (string | null);
+    function spdx_license_detokenize(license_tokens: string): string | null;
 
     /**
      * Tokenizes the SPDX license string (or any simarly formatted string)
@@ -2512,7 +2512,7 @@ export namespace AppStream {
      * @returns array of strings, or `null` for invalid
      * @since 0.9.8
      */
-    function spdx_license_tokenize(license: string): (string[] | null);
+    function spdx_license_tokenize(license: string): string[] | null;
 
     /**
      * Converts the text representation to an enumerated value.
@@ -2748,7 +2748,7 @@ export namespace AppStream {
      * @returns `true` if the locale is compatible.
      * @since 0.9.5
      */
-    function utils_locale_is_compatible(locale1: (string | null), locale2: (string | null)): boolean;
+    function utils_locale_is_compatible(locale1: string | null, locale2: string | null): boolean;
 
     /**
      * Converts a POSIX locale string to the corresponding IETF BCP47 format.
@@ -3089,13 +3089,10 @@ export namespace AppStream {
 
     namespace Agreement {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -3149,7 +3146,7 @@ export namespace AppStream {
          * Gets the first section in the agreement.
          * @returns agreement section, or `null`
          */
-        get_section_default(): (AgreementSection | null);
+        get_section_default(): AgreementSection | null;
 
         /**
          * Gets all the sections in the agreement.
@@ -3179,13 +3176,10 @@ export namespace AppStream {
 
     namespace AgreementSection {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -3229,7 +3223,7 @@ export namespace AppStream {
          * This function may return `null` if no context is set.
          * @returns the {@link AppStream.Context} used by this agreement section.
          */
-        get_context(): (Context | null);
+        get_context(): Context | null;
 
         /**
          * Gets the agreement section desc.
@@ -3261,7 +3255,7 @@ export namespace AppStream {
          * @param desc the agreement description, e.g. "GDPR"
          * @param locale the locale in BCP47 format. e.g. "en-GB"
          */
-        set_description(desc: string, locale: (string | null)): void;
+        set_description(desc: string, locale: string | null): void;
 
         /**
          * Sets the agreement section kind.
@@ -3274,19 +3268,16 @@ export namespace AppStream {
          * @param name the agreement name, e.g. "GDPR"
          * @param locale the locale. e.g. "en_GB"
          */
-        set_name(name: string, locale: (string | null)): void;
+        set_name(name: string, locale: string | null): void;
     }
 
 
     namespace Artifact {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -3348,7 +3339,7 @@ export namespace AppStream {
          * @param kind 
          * @returns an {@link AppStream.Checksum}, or `null` for not set or invalid
          */
-        get_checksum(kind: ChecksumKind): (Checksum | null);
+        get_checksum(kind: ChecksumKind): Checksum | null;
 
         /**
          * Get a list of all checksums we have for this artifact.
@@ -3417,19 +3408,16 @@ export namespace AppStream {
          * @param size a size in bytes, or 0 for unknown
          * @param kind a {@link AppStream.SizeKind}
          */
-        set_size(size: (bigint | number), kind: SizeKind): void;
+        set_size(size: bigint | number, kind: SizeKind): void;
     }
 
 
     namespace Branding {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -3476,7 +3464,7 @@ export namespace AppStream {
          * @param scheme_kind Color scheme preference for the color, e.g. {@link AppStream.ColorSchemeKind.LIGHT}
          * @returns The HTML color code of the found color, or `null` if no color was found.
          */
-        get_color(kind: ColorKind, scheme_kind: ColorSchemeKind): (string | null);
+        get_color(kind: ColorKind, scheme_kind: ColorSchemeKind): string | null;
 
         /**
          * Deletes a color that matches the given type and scheme preference.
@@ -3498,13 +3486,10 @@ export namespace AppStream {
 
     namespace Bundle {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -3757,13 +3742,10 @@ export namespace AppStream {
 
     namespace Checksum {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -3864,7 +3846,7 @@ export namespace AppStream {
             projectLicense: string;
             screenshots: Screenshot[];
             summary: string;
-            urls: ({ [key: string]: any } | GLib.HashTable<UrlKind, string>);
+            urls: { [key: string]: any } | GLib.HashTable<UrlKind, string>;
         }
     }
 
@@ -4052,14 +4034,14 @@ export namespace AppStream {
          * @param keyword The new keyword to add.
          * @param locale BCP47 locale of the values, or `null` to use current locale.
          */
-        add_keyword(keyword: string, locale: (string | null)): void;
+        add_keyword(keyword: string, locale: string | null): void;
 
         /**
          * Adds a language to the component.
          * @param locale the BCP47 locale, or `null`. e.g. "en-GB"
          * @param percentage the percentage completion of the translation, 0 for locales with unknown amount of translation
          */
-        add_language(locale: (string | null), percentage: number): void;
+        add_language(locale: string | null, percentage: number): void;
 
         /**
          * Adds a {@link AppStream.Launchable} containing launchables entries for this component.
@@ -4154,13 +4136,13 @@ export namespace AppStream {
          * @param rel_kind the kind of relations to check
          * @returns An array of {@link AppStream.RelationCheckResult}
          */
-        check_relations(sysinfo: (SystemInfo | null), pool: (Pool | null), rel_kind: RelationKind): RelationCheckResult[];
+        check_relations(sysinfo: SystemInfo | null, pool: Pool | null, rel_kind: RelationKind): RelationCheckResult[];
 
         /**
          * Remove all keywords for the given locale.
          * @param locale BCP47 locale of the values, or `null` to use current locale.
          */
-        clear_keywords(locale: (string | null)): void;
+        clear_keywords(locale: string | null): void;
 
         /**
          * Remove all registered language translation information.
@@ -4186,7 +4168,7 @@ export namespace AppStream {
          * @param kind an agreement kind, e.g. {@link AppStream.AgreementKind.EULA}
          * @returns a {@link AppStream.Agreement} or `null` for not found
          */
-        get_agreement_by_kind(kind: AgreementKind): (Agreement | null);
+        get_agreement_by_kind(kind: AgreementKind): Agreement | null;
 
         /**
          * Get a list of all agreements registered with this software component.
@@ -4205,14 +4187,14 @@ export namespace AppStream {
          * in case this component has no special branding.
          * @returns An {@link AppStream.Branding}.
          */
-        get_branding(): (Branding | null);
+        get_branding(): Branding | null;
 
         /**
          * Gets a bundle identifier string.
          * @param bundle_kind the bundle kind, e.g. {@link AppStream.BundleKind.LIMBA}.
          * @returns An {@link AppStream.Bundle}, or `null` if not set.
          */
-        get_bundle(bundle_kind: BundleKind): (Bundle | null);
+        get_bundle(bundle_kind: BundleKind): Bundle | null;
 
         /**
          * Get a list of all software bundles associated with this component.
@@ -4235,7 +4217,7 @@ export namespace AppStream {
          * @param kind a ratings kind, e.g. "oars-1.0"
          * @returns a {@link AppStream.ContentRating} or `null` if not found
          */
-        get_content_rating(kind: string): (ContentRating | null);
+        get_content_rating(kind: string): ContentRating | null;
 
         /**
          * Gets all content ratings defined for this software.
@@ -4250,7 +4232,7 @@ export namespace AppStream {
          * a file or cache but constructed in memory).
          * @returns the associated {@link AppStream.Context} or `null`
          */
-        get_context(): (Context | null);
+        get_context(): Context | null;
 
         /**
          * @returns Hash table of custom user defined data fields.
@@ -4305,7 +4287,7 @@ export namespace AppStream {
          * See %as_component_get_extends() for the reverse.
          * @returns A {@link GLib.PtrArray} or `null` if not set.
          */
-        get_extends(): (string[] | null);
+        get_extends(): string[] | null;
 
         /**
          * Gets an icon matching the size constraints.
@@ -4320,14 +4302,14 @@ export namespace AppStream {
          * @param height the icon height in pixels.
          * @returns An icon matching the given width/height, or `null` if not found.
          */
-        get_icon_by_size(width: number, height: number): (Icon | null);
+        get_icon_by_size(width: number, height: number): Icon | null;
 
         /**
          * Gets a stock icon for this component if one is associated with it.
          * Will return `null` otherwise.
          * @returns An stock icon, or `null` if none found.
          */
-        get_icon_stock(): (Icon | null);
+        get_icon_stock(): Icon | null;
 
         /**
          * @returns A {@link GLib.PtrArray} of all icons for this component.
@@ -4368,7 +4350,7 @@ export namespace AppStream {
          * @param locale the BCP47 locale, or `null`. e.g. "en-GB"
          * @returns a percentage value, -1 if locale was not found
          */
-        get_language(locale: (string | null)): number;
+        get_language(locale: string | null): number;
 
         /**
          * Get a list of all languages.
@@ -4382,7 +4364,7 @@ export namespace AppStream {
          * @param kind a launch kind, e.g. {@link AppStream.LaunchableKind.DESKTOP_ID}
          * @returns a {@link AppStream.Launchable} or `null` if not found
          */
-        get_launchable(kind: LaunchableKind): (Launchable | null);
+        get_launchable(kind: LaunchableKind): Launchable | null;
 
         /**
          * @returns an array
@@ -4475,7 +4457,7 @@ export namespace AppStream {
          * @param kind kind of the provided item, e.g. {@link AppStream.ProvidedKind.MEDIATYPE}
          * @returns {@link AppStream.Provided} containing the items this component provides, or `null`.
          */
-        get_provided_for_kind(kind: ProvidedKind): (Provided | null);
+        get_provided_for_kind(kind: ProvidedKind): Provided | null;
 
         /**
          * Get an array of items that are recommended by this component.
@@ -4612,7 +4594,7 @@ export namespace AppStream {
          * @param url_kind the URL kind, e.g. {@link AppStream.UrlKind.HOMEPAGE}.
          * @returns string, or `null` if unset
          */
-        get_url(url_kind: UrlKind): (string | null);
+        get_url(url_kind: UrlKind): string | null;
 
         /**
          * @returns `true` if this component has a bundle associated.
@@ -4690,7 +4672,7 @@ export namespace AppStream {
          * @param bytes the data to load.
          * @returns `true` on success.
          */
-        load_from_bytes(context: Context, format: FormatKind, bytes: (GLib.Bytes | Uint8Array)): boolean;
+        load_from_bytes(context: Context, format: FormatKind, bytes: GLib.Bytes | Uint8Array): boolean;
 
         /**
          * Get release information for this component, download it
@@ -4698,7 +4680,7 @@ export namespace AppStream {
          * @param allow_net 
          * @returns Release information as {@link AppStream.ReleaseList}, or `null` if loading failed.
          */
-        load_releases(allow_net: boolean): (ReleaseList | null);
+        load_releases(allow_net: boolean): ReleaseList | null;
 
         /**
          * Remove a tag from this component
@@ -4780,7 +4762,7 @@ export namespace AppStream {
          * @param value The long description
          * @param locale The BCP47 locale for this value, or `null` to use the current active one.
          */
-        set_description(value: string, locale: (string | null)): void;
+        set_description(value: string, locale: string | null): void;
 
         /**
          * Set the the component's developer.
@@ -4800,7 +4782,7 @@ export namespace AppStream {
          * @param locale BCP47 locale of the values, or `null` to use current locale.
          * @param deep_copy Set to `true` if the keywords array should be copied, `false` to set by reference.
          */
-        set_keywords(new_keywords: string[], locale: (string | null), deep_copy: boolean): void;
+        set_keywords(new_keywords: string[], locale: string | null, deep_copy: boolean): void;
 
         /**
          * Sets the {@link AppStream.ComponentKind} of this component.
@@ -4825,7 +4807,7 @@ export namespace AppStream {
          * @param value The name
          * @param locale The BCP47 locale for this value, or `null` to use the current active one.
          */
-        set_name(value: string, locale: (string | null)): void;
+        set_name(value: string, locale: string | null): void;
 
         /**
          * Set a variant suffix for the component name
@@ -4833,7 +4815,7 @@ export namespace AppStream {
          * @param value the developer or developer team name
          * @param locale the BCP47 locale, or `null`. e.g. "en-GB"
          */
-        set_name_variant_suffix(value: string, locale: (string | null)): void;
+        set_name_variant_suffix(value: string, locale: string | null): void;
 
         /**
          * @param origin the origin.
@@ -4900,7 +4882,7 @@ export namespace AppStream {
          * @param value The summary
          * @param locale The BCP47 locale for this value, or `null` to use the current active one.
          */
-        set_summary(value: string, locale: (string | null)): void;
+        set_summary(value: string, locale: string | null): void;
 
         /**
          * Reorder the screenshots to prioritize a certain environment or style, instead of using the default
@@ -4911,7 +4893,7 @@ export namespace AppStream {
          * @param style and environment style string, e.g. "light" or "dark"
          * @param prioritize_style if `true`, order screenshots of the given style earlier than ones of the given environment.
          */
-        sort_screenshots(environment: (string | null), style: (string | null), prioritize_style: boolean): void;
+        sort_screenshots(environment: string | null, style: string | null, prioritize_style: boolean): void;
 
         /**
          * Returns a string identifying this component.
@@ -5055,13 +5037,10 @@ export namespace AppStream {
 
     namespace ContentRating {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -5200,13 +5179,10 @@ export namespace AppStream {
 
     namespace Context {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -5313,7 +5289,7 @@ export namespace AppStream {
          * for data reading, but when writing data all locale will be written.
          * @param locale a POSIX or BCP47 locale, or `null`. e.g. "en_GB"
          */
-        set_locale(locale: (string | null)): void;
+        set_locale(locale: string | null): void;
 
         /**
          * Sets the media base URL.
@@ -5348,13 +5324,10 @@ export namespace AppStream {
 
     namespace Developer {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -5416,19 +5389,16 @@ export namespace AppStream {
          * @param value the developer or developer team name
          * @param locale the BCP47 locale, or `null`. e.g. "en-GB"
          */
-        set_name(value: string, locale: (string | null)): void;
+        set_name(value: string, locale: string | null): void;
     }
 
 
     namespace Icon {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -5551,13 +5521,10 @@ export namespace AppStream {
 
     namespace Image {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -5672,13 +5639,10 @@ export namespace AppStream {
 
     namespace Issue {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -5758,13 +5722,10 @@ export namespace AppStream {
 
     namespace Launchable {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -5833,13 +5794,10 @@ export namespace AppStream {
 
     namespace Metadata {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -5938,7 +5896,7 @@ export namespace AppStream {
          * component that has been parsed.
          * @returns An {@link AppStream.Component} or `null`
          */
-        get_component(): (Component | null);
+        get_component(): Component | null;
 
         /**
          * @returns an {@link AppStream.ComponentBox} of all parsed components
@@ -5981,7 +5939,7 @@ export namespace AppStream {
          * Gets the recently parsed {@link AppStream.ReleaseList} entry.
          * @returns An {@link AppStream.ReleaseList} or `null`
          */
-        get_release_list(): (ReleaseList | null);
+        get_release_list(): ReleaseList | null;
 
         /**
          * @returns A {@link GLib.PtrArray} of all parsed release metadata.
@@ -6004,7 +5962,7 @@ export namespace AppStream {
          * @param format The format of the data (XML or YAML).
          * @returns `true` on success.
          */
-        parse_bytes(bytes: (GLib.Bytes | Uint8Array), format: FormatKind): boolean;
+        parse_bytes(bytes: GLib.Bytes | Uint8Array, format: FormatKind): boolean;
 
         /**
          * Parses any AppStream metadata into one or more {@link AppStream.Component} instances.
@@ -6013,7 +5971,7 @@ export namespace AppStream {
          * @param format The format of the data (XML or YAML).
          * @returns `true` on success.
          */
-        parse_data(data: string, data_len: (bigint | number), format: FormatKind): boolean;
+        parse_data(data: string, data_len: bigint | number, format: FormatKind): boolean;
 
         /**
          * Parses XDG Desktop Entry metadata and adds it to the list of parsed entities.
@@ -6026,7 +5984,7 @@ export namespace AppStream {
          * @param data_len The data length, or -1 if unknown and null-terminated.
          * @returns `true` if the file was parsed without error.
          */
-        parse_desktop_data(cid: string, data: string, data_len: (bigint | number)): boolean;
+        parse_desktop_data(cid: string, data: string, data_len: bigint | number): boolean;
 
         /**
          * Parses an AppStream upstream metadata file.
@@ -6045,7 +6003,7 @@ export namespace AppStream {
          * @param bytes Metadata describing release notes.
          * @returns `true` on success.
          */
-        parse_releases_bytes(bytes: (GLib.Bytes | Uint8Array)): boolean;
+        parse_releases_bytes(bytes: GLib.Bytes | Uint8Array): boolean;
 
         /**
          * Parses any AppStream release metadata into {@link AppStream.Release} objects
@@ -6167,9 +6125,7 @@ export namespace AppStream {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -6352,22 +6308,14 @@ export namespace AppStream {
          * @param cancellable a {@link Gio.Cancellable}.
          * @returns `true` if update completed without error.
          */
-        load(cancellable: (Gio.Cancellable | null)): boolean;
+        load(cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Asynchronously loads data from all registered locations.
          * Equivalent to `as_pool_load()` (but asynchronous)
          * @param cancellable a {@link Gio.Cancellable}.
          */
-        load_async(cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
-
-        /**
-         * Asynchronously loads data from all registered locations.
-         * Equivalent to `as_pool_load()` (but asynchronous)
-         * @param cancellable a {@link Gio.Cancellable}.
-         * @param callback A {@link Gio.AsyncReadyCallback}
-         */
-        load_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        load_async(cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously loads data from all registered locations.
@@ -6375,7 +6323,15 @@ export namespace AppStream {
          * @param cancellable a {@link Gio.Cancellable}.
          * @param callback A {@link Gio.AsyncReadyCallback}
          */
-        load_async(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        load_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously loads data from all registered locations.
+         * Equivalent to `as_pool_load()` (but asynchronous)
+         * @param cancellable a {@link Gio.Cancellable}.
+         * @param callback A {@link Gio.AsyncReadyCallback}
+         */
+        load_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Retrieve the result of `as_pool_load_async()`.
@@ -6431,13 +6387,10 @@ export namespace AppStream {
 
     namespace Provided {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -6512,13 +6465,10 @@ export namespace AppStream {
 
     namespace Reference {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -6569,7 +6519,7 @@ export namespace AppStream {
          * Otherwise return `null`.
          * @returns the registry name.
          */
-        get_registry_name(): (string | null);
+        get_registry_name(): string | null;
 
         /**
          * Gets the value of this reference, e.g. a DOI if the
@@ -6602,13 +6552,10 @@ export namespace AppStream {
 
     namespace Relation {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -6740,7 +6687,7 @@ export namespace AppStream {
          * @param pool an {@link AppStream.Pool} to find component dependencies in.
          * @returns an {@link AppStream.RelationCheckResult} with details about the result, or `null` on error.
          */
-        is_satisfied(system_info: (SystemInfo | null), pool: (Pool | null)): (RelationCheckResult | null);
+        is_satisfied(system_info: SystemInfo | null, pool: Pool | null): RelationCheckResult | null;
 
         /**
          * Set the version comparison type of this {@link AppStream.Relation}.
@@ -6824,13 +6771,10 @@ export namespace AppStream {
 
     namespace RelationCheckResult {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -6880,13 +6824,13 @@ export namespace AppStream {
          * May be `null` in case the relation is satisfied and there is no further information about it.
          * @returns a human-readable message about this relation's state.
          */
-        get_message(): (string | null);
+        get_message(): string | null;
 
         /**
          * Get the relation that this check result was generated for.
          * @returns an {@link AppStream.Relation} or `null`
          */
-        get_relation(): (Relation | null);
+        get_relation(): Relation | null;
 
         /**
          * Returns the status of this relation check result.
@@ -6918,13 +6862,10 @@ export namespace AppStream {
 
     namespace Release {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -6998,25 +6939,25 @@ export namespace AppStream {
         /**
          * @returns the {@link AppStream.Context} associated with this release. This function may return `null` if no context is set.
          */
-        get_context(): (Context | null);
+        get_context(): Context | null;
 
         /**
          * Gets the release date.
          * @returns The date in ISO8601 format.
          */
-        get_date(): (string | null);
+        get_date(): string | null;
 
         /**
          * Gets the end-of-life date for this release.
          * @returns The EOL date in ISO8601 format.
          */
-        get_date_eol(): (string | null);
+        get_date_eol(): string | null;
 
         /**
          * Gets the release description markup for a given locale.
          * @returns markup, or `null` for not set or invalid
          */
-        get_description(): (string | null);
+        get_description(): string | null;
 
         /**
          * Get a list of all issues resolved by this release.
@@ -7055,13 +6996,13 @@ export namespace AppStream {
          * @param url_kind the URL kind, e.g. {@link AppStream.ReleaseUrlKind.DETAILS}.
          * @returns string, or `null` if unset
          */
-        get_url(url_kind: ReleaseUrlKind): (string | null);
+        get_url(url_kind: ReleaseUrlKind): string | null;
 
         /**
          * Gets the release version.
          * @returns string, or `null` for not set or invalid
          */
-        get_version(): (string | null);
+        get_version(): string | null;
 
         /**
          * Test if the release is tagged with the selected tag.
@@ -7103,7 +7044,7 @@ export namespace AppStream {
          * @param description the description markup.
          * @param locale the BCP47 locale, or `null`. e.g. "en-GB".
          */
-        set_description(description: string, locale: (string | null)): void;
+        set_description(description: string, locale: string | null): void;
 
         /**
          * Sets the release kind to distinguish between end-user ready
@@ -7116,14 +7057,14 @@ export namespace AppStream {
          * Sets the release timestamp.
          * @param timestamp the timestamp value.
          */
-        set_timestamp(timestamp: (bigint | number)): void;
+        set_timestamp(timestamp: bigint | number): void;
 
         /**
          * Sets the UNIX timestamp for the date when this
          * release is out of support (end-of-life).
          * @param timestamp the timestamp value.
          */
-        set_timestamp_eol(timestamp: (bigint | number)): void;
+        set_timestamp_eol(timestamp: bigint | number): void;
 
         /**
          * Sets the release urgency.
@@ -7155,13 +7096,10 @@ export namespace AppStream {
 
     namespace ReleaseList {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -7216,7 +7154,7 @@ export namespace AppStream {
          * This function may return `null` if no context is set
          * @returns the associated {@link AppStream.Context} or `null`
          */
-        get_context(): (Context | null);
+        get_context(): Context | null;
 
         /**
          * Get the release entries as {@link GLib.PtrArray}.
@@ -7241,7 +7179,7 @@ export namespace AppStream {
          * Get the remote URL to obtain release information from.
          * @returns The URL of external release data, or `null`
          */
-        get_url(): (string | null);
+        get_url(): string | null;
 
         /**
          * Retrieve a release entry at the respective index from the
@@ -7263,7 +7201,7 @@ export namespace AppStream {
          * @param bytes the release XML data as {@link GLib.Bytes}
          * @returns `true` on success.
          */
-        load_from_bytes(context: (Context | null), bytes: (GLib.Bytes | Uint8Array)): boolean;
+        load_from_bytes(context: Context | null, bytes: GLib.Bytes | Uint8Array): boolean;
 
         /**
          * Sets the document context these releases are associated with.
@@ -7318,7 +7256,7 @@ export namespace AppStream {
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             date: Review;
             description: string;
-            flags: (bigint | number);
+            flags: bigint | number;
             id: string;
             locale: string;
             priority: number;
@@ -7357,7 +7295,7 @@ export namespace AppStream {
          * @default 0
          */
         get flags(): number;
-        set flags(val: (bigint | number));
+        set flags(val: bigint | number);
 
         /**
          * @since 0.14.0
@@ -7632,13 +7570,10 @@ export namespace AppStream {
 
     namespace Screenshot {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -7705,14 +7640,14 @@ export namespace AppStream {
          * This function may return `null` if no context is set.
          * @returns the {@link AppStream.Context} used by this screenshot.
          */
-        get_context(): (Context | null);
+        get_context(): Context | null;
 
         /**
          * Get the GUI environment ID of this screenshot, if any
          * is associated with it. E.g. "plasma-mobile" or "gnome:dark".
          * @returns The GUI environment ID the screenshot was recorded in, or `null` if none set.
          */
-        get_environment(): (string | null);
+        get_environment(): string | null;
 
         /**
          * Gets the AsImage closest to the target size. The {@link AppStream.Image} may not actually
@@ -7725,7 +7660,7 @@ export namespace AppStream {
          * @param scale the target scaling factor.
          * @returns an {@link AppStream.Image}, or `null`
          */
-        get_image(width: number, height: number, scale: number): (Image | null);
+        get_image(width: number, height: number, scale: number): Image | null;
 
         /**
          * Gets the images for this screenshots. Only images valid for the current
@@ -7791,7 +7726,7 @@ export namespace AppStream {
          * Sets the GUI environment ID of this screenshot.
          * @param env_id the GUI environment ID, e.g. "plasma-mobile" or "gnome:dark"
          */
-        set_environment(env_id: (string | null)): void;
+        set_environment(env_id: string | null): void;
 
         /**
          * Sets the screenshot kind.
@@ -7803,13 +7738,10 @@ export namespace AppStream {
 
     namespace Suggested {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -7883,13 +7815,10 @@ export namespace AppStream {
 
     namespace SystemInfo {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -8041,7 +7970,7 @@ export namespace AppStream {
          * @param side the {@link AppStream.DisplaySideKind} to select.
          * @param value_dip the length value in device-independt pixels.
          */
-        set_display_length(side: DisplaySideKind, value_dip: (bigint | number)): void;
+        set_display_length(side: DisplaySideKind, value_dip: bigint | number): void;
 
         /**
          * Set whether this system has a GUI / desktop environment available.
@@ -8060,13 +7989,10 @@ export namespace AppStream {
 
     namespace Translation {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -8141,19 +8067,16 @@ export namespace AppStream {
          * components it may not be.
          * @param locale The POSIX locale that the source strings are in, or `null` if unknown or default.
          */
-        set_source_locale(locale: (string | null)): void;
+        set_source_locale(locale: string | null): void;
     }
 
 
     namespace Validator {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -8209,7 +8132,7 @@ export namespace AppStream {
          * @param release_fname File basename of the release metadata file to add.
          * @param release_metadata Data of the release metadata file.
          */
-        add_release_bytes(release_fname: string, release_metadata: (GLib.Bytes | Uint8Array)): boolean;
+        add_release_bytes(release_fname: string, release_metadata: GLib.Bytes | Uint8Array): boolean;
 
         /**
          * Add a release metadata file to the validation process.
@@ -8309,7 +8232,7 @@ export namespace AppStream {
          * @param metadata XML metadata as {@link GLib.Bytes}.
          * @returns `true` if bytes validated successfully.
          */
-        validate_bytes(metadata: (GLib.Bytes | Uint8Array)): boolean;
+        validate_bytes(metadata: GLib.Bytes | Uint8Array): boolean;
 
         /**
          * Validate AppStream XML data.
@@ -8336,13 +8259,10 @@ export namespace AppStream {
 
     namespace ValidatorIssue {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -8459,7 +8379,7 @@ export namespace AppStream {
          * Sets the line number where this issue was found.
          * @param line the line number.
          */
-        set_line(line: (bigint | number)): void;
+        set_line(line: bigint | number): void;
 
         /**
          * Sets the severity for this issue.
@@ -8477,13 +8397,10 @@ export namespace AppStream {
 
     namespace Video {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -8627,10 +8544,7 @@ export namespace AppStream {
         static $gtype: GObject.GType<BrandingColorIter>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         // Methods
         /**

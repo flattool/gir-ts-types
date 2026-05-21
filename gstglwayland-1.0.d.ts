@@ -41,9 +41,7 @@ export namespace GstGLWayland {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstGL.GLDisplay.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstGL.GLDisplay.ConstructorProps {}
     }
 
     /**
@@ -79,7 +77,7 @@ export namespace GstGLWayland {
 
         _init(...args: any[]): void;
 
-        static ["new"](name: (string | null)): GLDisplayWayland;
+        static ["new"](name: string | null): GLDisplayWayland;
 
         // Conflicted with GstGL.GLDisplay.new
         static ["new"](...args: never[]): any;

@@ -339,9 +339,7 @@ export namespace Manette {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -409,7 +407,7 @@ export namespace Manette {
          * Can return `NULL` if there's no mapping or `self` doesn't support mappings.
          * @returns the mapping for `self`
          */
-        get_mapping(): (string | null);
+        get_mapping(): string | null;
 
         /**
          * Gets the device's name.
@@ -505,9 +503,7 @@ export namespace Manette {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**

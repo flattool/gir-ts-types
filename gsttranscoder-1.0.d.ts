@@ -48,7 +48,7 @@ export namespace GstTranscoder {
         static FAILED: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -212,9 +212,9 @@ export namespace GstTranscoder {
             avoidReencoding: boolean;
             dest_uri: string;
             destUri: string;
-            duration: (bigint | number);
+            duration: bigint | number;
             pipeline: Gst.Element;
-            position: (bigint | number);
+            position: bigint | number;
             position_update_interval: number;
             positionUpdateInterval: number;
             profile: GstPbutils.EncodingProfile;
@@ -398,7 +398,7 @@ export namespace GstTranscoder {
          * @param context A {@link GLib.MainContext} on which the main-loop will process                       transcoder bus messages on. Can be NULL (thread-default                       context will be used then).
          * @returns The {@link GstTranscoder.TranscoderSignalAdapter} to connect signal handlers to.
          */
-        get_signal_adapter(context: (GLib.MainContext | null)): (TranscoderSignalAdapter | null);
+        get_signal_adapter(context: GLib.MainContext | null): TranscoderSignalAdapter | null;
 
         /**
          * Gets the URI of the currently-transcoding stream.
@@ -488,7 +488,7 @@ export namespace GstTranscoder {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            transcoder: (Transcoder | null);
+            transcoder: Transcoder | null;
         }
     }
 
@@ -506,7 +506,7 @@ export namespace GstTranscoder {
          * @since 1.20
          * @read-only
          */
-        get transcoder(): (Transcoder | null);
+        get transcoder(): Transcoder | null;
 
         /**
          * Compile-time signal type information.
@@ -539,7 +539,7 @@ export namespace GstTranscoder {
         /**
          * @returns The {@link GstTranscoder.Transcoder} `self` is tracking
          */
-        get_transcoder(): (Transcoder | null);
+        get_transcoder(): Transcoder | null;
     }
 
 

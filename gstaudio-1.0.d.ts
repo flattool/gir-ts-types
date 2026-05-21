@@ -1190,7 +1190,7 @@ export namespace GstAudio {
      * @param bpf size of one audio frame in bytes. This is the size of one sample * number of channels.
      * @returns `null` if the buffer is completely outside the configured segment, otherwise the clipped buffer is returned. If the buffer has no timestamp, it is assumed to be inside the segment and is not clipped
      */
-    function audio_buffer_clip(buffer: Gst.Buffer, segment: Gst.Segment, rate: number, bpf: number): (Gst.Buffer | null);
+    function audio_buffer_clip(buffer: Gst.Buffer, segment: Gst.Segment, rate: number, bpf: number): Gst.Buffer | null;
 
     /**
      * Maps an audio `gstbuffer` so that it can be read or written and stores the
@@ -1258,7 +1258,7 @@ export namespace GstAudio {
      * @returns the truncated buffer
      * @since 1.16
      */
-    function audio_buffer_truncate(buffer: Gst.Buffer, bpf: number, trim: (bigint | number), samples: (bigint | number)): Gst.Buffer;
+    function audio_buffer_truncate(buffer: Gst.Buffer, bpf: number, trim: bigint | number, samples: bigint | number): Gst.Buffer;
 
     /**
      * Get the fallback channel-mask for the given number of channels.
@@ -1282,7 +1282,7 @@ export namespace GstAudio {
      * @param position The   %GstAudioChannelPosition<!-- -->s
      * @returns `true` if channel and channel mask are valid and could be converted
      */
-    function audio_channel_positions_from_mask(channel_mask: (bigint | number), position: AudioChannelPosition[]): boolean;
+    function audio_channel_positions_from_mask(channel_mask: bigint | number, position: AudioChannelPosition[]): boolean;
 
     /**
      * Convert the `position` array of `channels` channels to a bitmask.
@@ -1346,7 +1346,7 @@ export namespace GstAudio {
      * @param dest a destination   to fill
      * @deprecated since 1.20: Use `gst_audio_format_info_fill_silence()` instead.
      */
-    function audio_format_fill_silence(info: AudioFormatInfo, dest: (Uint8Array | string)): void;
+    function audio_format_fill_silence(info: AudioFormatInfo, dest: Uint8Array | string): void;
 
     /**
      * Convert the `format` string to its {@link GstAudio.AudioFormat}.
@@ -1413,7 +1413,7 @@ export namespace GstAudio {
      * @param endianness the expected byte order of the payloaded data
      * @returns transfer-full: `true` if the payloading was successful, `false` otherwise.
      */
-    function audio_iec61937_payload(src: (Uint8Array | string), dst: (Uint8Array | string), spec: AudioRingBufferSpec, endianness: number): boolean;
+    function audio_iec61937_payload(src: Uint8Array | string, dst: Uint8Array | string, spec: AudioRingBufferSpec, endianness: number): boolean;
 
     /**
      * Parse `caps` and update `info`.
@@ -1450,7 +1450,7 @@ export namespace GstAudio {
      * @returns an audio `GstCaps`
      * @since 1.18
      */
-    function audio_make_raw_caps(formats: (AudioFormat[] | null), layout: AudioLayout): Gst.Caps;
+    function audio_make_raw_caps(formats: AudioFormat[] | null, layout: AudioLayout): Gst.Caps;
 
     function audio_meta_api_get_type(): GObject.GType;
 
@@ -1474,7 +1474,7 @@ export namespace GstAudio {
      * @param to The channel positions to convert to.
      * @returns `true` if the reordering was possible.
      */
-    function audio_reorder_channels(data: (Uint8Array | string), format: AudioFormat, from: AudioChannelPosition[], to: AudioChannelPosition[]): boolean;
+    function audio_reorder_channels(data: Uint8Array | string, format: AudioFormat, from: AudioChannelPosition[], to: AudioChannelPosition[]): boolean;
 
     /**
      * Reorders `data` with the given `reorder_map`.
@@ -1488,7 +1488,7 @@ export namespace GstAudio {
      * @param reorder_map The channel reorder map.
      * @since 1.26
      */
-    function audio_reorder_channels_with_reorder_map(data: (Uint8Array | string), bps: number, reorder_map: number[]): void;
+    function audio_reorder_channels_with_reorder_map(data: Uint8Array | string, bps: number, reorder_map: number[]): void;
 
     /**
      * Make a new resampler.
@@ -1523,7 +1523,7 @@ export namespace GstAudio {
      * @returns the {@link GstAudio.AudioClippingMeta} on `buffer`.
      * @since 1.8
      */
-    function buffer_add_audio_clipping_meta(buffer: Gst.Buffer, format: Gst.Format, start: (bigint | number), end: (bigint | number)): AudioClippingMeta;
+    function buffer_add_audio_clipping_meta(buffer: Gst.Buffer, format: Gst.Format, start: bigint | number, end: bigint | number): AudioClippingMeta;
 
     /**
      * Attaches {@link GstAudio.AudioDownmixMeta} metadata to `buffer` with the given parameters.
@@ -1548,7 +1548,7 @@ export namespace GstAudio {
      * @returns the {@link GstAudio.AudioLevelMeta} on `buffer`.
      * @since 1.20
      */
-    function buffer_add_audio_level_meta(buffer: Gst.Buffer, level: number, voice_activity: boolean): (AudioLevelMeta | null);
+    function buffer_add_audio_level_meta(buffer: Gst.Buffer, level: number, voice_activity: boolean): AudioLevelMeta | null;
 
     /**
      * Allocates and attaches a {@link GstAudio.AudioMeta} on `buffer`, which must be writable
@@ -1576,7 +1576,7 @@ export namespace GstAudio {
      * @returns the {@link GstAudio.AudioMeta} that was attached on the `buffer`
      * @since 1.16
      */
-    function buffer_add_audio_meta(buffer: Gst.Buffer, info: AudioInfo, samples: (bigint | number), offsets: ((bigint | number) | null)): AudioMeta;
+    function buffer_add_audio_meta(buffer: Gst.Buffer, info: AudioInfo, samples: bigint | number, offsets: bigint | number | null): AudioMeta;
 
     /**
      * Allocates and attaches a {@link GstAudio.DsdPlaneOffsetMeta} on `buffer`, which must be
@@ -1607,7 +1607,7 @@ export namespace GstAudio {
      * @returns the {@link GstAudio.DsdPlaneOffsetMeta} that was attached   on the `buffer`
      * @since 1.24
      */
-    function buffer_add_dsd_plane_offset_meta(buffer: Gst.Buffer, num_channels: number, num_bytes_per_channel: (bigint | number), offsets: ((bigint | number) | null)): DsdPlaneOffsetMeta;
+    function buffer_add_dsd_plane_offset_meta(buffer: Gst.Buffer, num_channels: number, num_bytes_per_channel: bigint | number, offsets: bigint | number | null): DsdPlaneOffsetMeta;
 
     /**
      * Find the {@link GstAudio.AudioDownmixMeta} on `buffer` for the given destination
@@ -1624,7 +1624,7 @@ export namespace GstAudio {
      * @returns the {@link GstAudio.AudioLevelMeta} or `null` when there is no such metadata on `buffer`.
      * @since 1.20
      */
-    function buffer_get_audio_level_meta(buffer: Gst.Buffer): (AudioLevelMeta | null);
+    function buffer_get_audio_level_meta(buffer: Gst.Buffer): AudioLevelMeta | null;
 
     /**
      * Converts DSD data from one layout and grouping format to another.
@@ -1657,7 +1657,7 @@ export namespace GstAudio {
      * @param reverse_byte_bits If TRUE, reverse the bits in each DSD byte
      * @since 1.24
      */
-    function dsd_convert(input_data: number, output_data: number, input_format: DsdFormat, output_format: DsdFormat, input_layout: AudioLayout, output_layout: AudioLayout, input_plane_offsets: (bigint | number), output_plane_offsets: (bigint | number), num_dsd_bytes: (bigint | number), num_channels: number, reverse_byte_bits: boolean): void;
+    function dsd_convert(input_data: number, output_data: number, input_format: DsdFormat, output_format: DsdFormat, input_layout: AudioLayout, output_layout: AudioLayout, input_plane_offsets: bigint | number, output_plane_offsets: bigint | number, num_dsd_bytes: bigint | number, num_channels: number, reverse_byte_bits: boolean): void;
 
     /**
      * Convert the DSD format string `str` to its {@link GstAudio.DsdFormat}.
@@ -1976,16 +1976,16 @@ export namespace GstAudio {
 
         // Constructor properties interface
         interface ConstructorProps extends GstBase.Aggregator.ConstructorProps {
-            alignment_threshold: (bigint | number);
-            alignmentThreshold: (bigint | number);
-            discont_wait: (bigint | number);
-            discontWait: (bigint | number);
+            alignment_threshold: bigint | number;
+            alignmentThreshold: bigint | number;
+            discont_wait: bigint | number;
+            discontWait: bigint | number;
             force_live: boolean;
             forceLive: boolean;
             ignore_inactive_pads: boolean;
             ignoreInactivePads: boolean;
-            output_buffer_duration: (bigint | number);
-            outputBufferDuration: (bigint | number);
+            output_buffer_duration: bigint | number;
+            outputBufferDuration: bigint | number;
             output_buffer_duration_fraction: Gst.Fraction;
             outputBufferDurationFraction: Gst.Fraction;
         }
@@ -2047,25 +2047,25 @@ export namespace GstAudio {
          * @default 40000000
          */
         get alignment_threshold(): number;
-        set alignment_threshold(val: (bigint | number));
+        set alignment_threshold(val: bigint | number);
 
         /**
          * @default 40000000
          */
         get alignmentThreshold(): number;
-        set alignmentThreshold(val: (bigint | number));
+        set alignmentThreshold(val: bigint | number);
 
         /**
          * @default 1000000000
          */
         get discont_wait(): number;
-        set discont_wait(val: (bigint | number));
+        set discont_wait(val: bigint | number);
 
         /**
          * @default 1000000000
          */
         get discontWait(): number;
-        set discontWait(val: (bigint | number));
+        set discontWait(val: bigint | number);
 
         /**
          * Causes the element to aggregate on a timeout even when no live source is
@@ -2123,13 +2123,13 @@ export namespace GstAudio {
          * @default 10000000
          */
         get output_buffer_duration(): number;
-        set output_buffer_duration(val: (bigint | number));
+        set output_buffer_duration(val: bigint | number);
 
         /**
          * @default 10000000
          */
         get outputBufferDuration(): number;
-        set outputBufferDuration(val: (bigint | number));
+        set outputBufferDuration(val: bigint | number);
 
         /**
          * Output block size in nanoseconds, expressed as a fraction.
@@ -2394,19 +2394,19 @@ export namespace GstAudio {
 
         // Constructor properties interface
         interface ConstructorProps extends GstBase.BaseSink.ConstructorProps {
-            alignment_threshold: (bigint | number);
-            alignmentThreshold: (bigint | number);
-            buffer_time: (bigint | number);
-            bufferTime: (bigint | number);
-            can_activate_pull: (boolean | any);
+            alignment_threshold: bigint | number;
+            alignmentThreshold: bigint | number;
+            buffer_time: bigint | number;
+            bufferTime: bigint | number;
+            can_activate_pull: boolean | any;
             canActivatePull: boolean;
-            discont_wait: (bigint | number);
-            discontWait: (bigint | number);
-            drift_tolerance: (bigint | number);
-            driftTolerance: (bigint | number);
-            latency_time: (bigint | number);
-            latencyTime: (bigint | number);
-            provide_clock: (boolean | any);
+            discont_wait: bigint | number;
+            discontWait: bigint | number;
+            drift_tolerance: bigint | number;
+            driftTolerance: bigint | number;
+            latency_time: bigint | number;
+            latencyTime: bigint | number;
+            provide_clock: boolean | any;
             provideClock: boolean;
             slave_method: AudioBaseSinkSlaveMethod;
             slaveMethod: AudioBaseSinkSlaveMethod;
@@ -2427,25 +2427,25 @@ export namespace GstAudio {
          * @default 40000000
          */
         get alignment_threshold(): number;
-        set alignment_threshold(val: (bigint | number));
+        set alignment_threshold(val: bigint | number);
 
         /**
          * @default 40000000
          */
         get alignmentThreshold(): number;
-        set alignmentThreshold(val: (bigint | number));
+        set alignmentThreshold(val: bigint | number);
 
         /**
          * @default 200000
          */
         get buffer_time(): number;
-        set buffer_time(val: (bigint | number));
+        set buffer_time(val: bigint | number);
 
         /**
          * @default 200000
          */
         get bufferTime(): number;
-        set bufferTime(val: (bigint | number));
+        set bufferTime(val: bigint | number);
 
         /**
          * @default false
@@ -2465,7 +2465,7 @@ export namespace GstAudio {
          * @default 1000000000
          */
         get discont_wait(): number;
-        set discont_wait(val: (bigint | number));
+        set discont_wait(val: bigint | number);
 
         /**
          * A window of time in nanoseconds to wait before creating a discontinuity as
@@ -2473,7 +2473,7 @@ export namespace GstAudio {
          * @default 1000000000
          */
         get discontWait(): number;
-        set discontWait(val: (bigint | number));
+        set discontWait(val: bigint | number);
 
         /**
          * Controls the amount of time in microseconds that clocks are allowed
@@ -2481,7 +2481,7 @@ export namespace GstAudio {
          * @default 40000
          */
         get drift_tolerance(): number;
-        set drift_tolerance(val: (bigint | number));
+        set drift_tolerance(val: bigint | number);
 
         /**
          * Controls the amount of time in microseconds that clocks are allowed
@@ -2489,19 +2489,19 @@ export namespace GstAudio {
          * @default 40000
          */
         get driftTolerance(): number;
-        set driftTolerance(val: (bigint | number));
+        set driftTolerance(val: bigint | number);
 
         /**
          * @default 10000
          */
         get latency_time(): number;
-        set latency_time(val: (bigint | number));
+        set latency_time(val: bigint | number);
 
         /**
          * @default 10000
          */
         get latencyTime(): number;
-        set latencyTime(val: (bigint | number));
+        set latencyTime(val: bigint | number);
 
         /**
          * @default true
@@ -2572,7 +2572,7 @@ export namespace GstAudio {
          * the returned buffer (see `gst_object_set_parent()`).
          * @virtual
          */
-        vfunc_create_ringbuffer(): (AudioRingBuffer | null);
+        vfunc_create_ringbuffer(): AudioRingBuffer | null;
 
         /**
          * payload data in a format suitable to write to the sink. If no
@@ -2591,7 +2591,7 @@ export namespace GstAudio {
          * the returned buffer (see `gst_object_set_parent()`).
          * @returns The new ringbuffer of `sink`.
          */
-        create_ringbuffer(): (AudioRingBuffer | null);
+        create_ringbuffer(): AudioRingBuffer | null;
 
         /**
          * Get the current alignment threshold, in nanoseconds, used by `sink`.
@@ -2662,7 +2662,7 @@ export namespace GstAudio {
          * Controls the sink's drift tolerance.
          * @param drift_tolerance the new drift tolerance in microseconds
          */
-        set_drift_tolerance(drift_tolerance: (bigint | number)): void;
+        set_drift_tolerance(drift_tolerance: bigint | number): void;
 
         /**
          * Controls whether `sink` will provide a clock or not. If `provide` is `true`,
@@ -2701,15 +2701,15 @@ export namespace GstAudio {
 
         // Constructor properties interface
         interface ConstructorProps extends GstBase.PushSrc.ConstructorProps {
-            actual_buffer_time: (bigint | number);
-            actualBufferTime: (bigint | number);
-            actual_latency_time: (bigint | number);
-            actualLatencyTime: (bigint | number);
-            buffer_time: (bigint | number);
-            bufferTime: (bigint | number);
-            latency_time: (bigint | number);
-            latencyTime: (bigint | number);
-            provide_clock: (boolean | any);
+            actual_buffer_time: bigint | number;
+            actualBufferTime: bigint | number;
+            actual_latency_time: bigint | number;
+            actualLatencyTime: bigint | number;
+            buffer_time: bigint | number;
+            bufferTime: bigint | number;
+            latency_time: bigint | number;
+            latencyTime: bigint | number;
+            provide_clock: boolean | any;
             provideClock: boolean;
             slave_method: AudioBaseSrcSlaveMethod;
             slaveMethod: AudioBaseSrcSlaveMethod;
@@ -2758,25 +2758,25 @@ export namespace GstAudio {
          * @default 200000
          */
         get buffer_time(): number;
-        set buffer_time(val: (bigint | number));
+        set buffer_time(val: bigint | number);
 
         /**
          * @default 200000
          */
         get bufferTime(): number;
-        set bufferTime(val: (bigint | number));
+        set bufferTime(val: bigint | number);
 
         /**
          * @default 10000
          */
         get latency_time(): number;
-        set latency_time(val: (bigint | number));
+        set latency_time(val: bigint | number);
 
         /**
          * @default 10000
          */
         get latencyTime(): number;
-        set latencyTime(val: (bigint | number));
+        set latencyTime(val: bigint | number);
 
         /**
          * @default true
@@ -2845,7 +2845,7 @@ export namespace GstAudio {
          * returned buffer (see `gst_object_set_parent()`).
          * @virtual
          */
-        vfunc_create_ringbuffer(): (AudioRingBuffer | null);
+        vfunc_create_ringbuffer(): AudioRingBuffer | null;
 
         // Methods
         /**
@@ -2854,7 +2854,7 @@ export namespace GstAudio {
          * returned buffer (see `gst_object_set_parent()`).
          * @returns The new ringbuffer of `src`.
          */
-        create_ringbuffer(): (AudioRingBuffer | null);
+        create_ringbuffer(): AudioRingBuffer | null;
 
         /**
          * Queries whether `src` will provide a clock or not. See also
@@ -3043,13 +3043,13 @@ export namespace GstAudio {
          * modified.
          * @returns the     supported protocols.  Returns `null` if the `handler` isn't     implemented properly, or the `handler` doesn't support any     protocols.
          */
-        get_protocols(): (string[] | null);
+        get_protocols(): string[] | null;
 
         /**
          * Gets the currently handled URI.
          * @returns the URI currently handled by   the `handler`.  Returns `null` if there are no URI currently   handled. The returned string must be freed with `g_free()` when no   longer needed.
          */
-        get_uri(): (string | null);
+        get_uri(): string | null;
 
         /**
          * Gets the type of the given URI handler
@@ -3068,7 +3068,7 @@ export namespace GstAudio {
          * Gets the currently handled URI.
          * @virtual
          */
-        vfunc_get_uri(): (string | null);
+        vfunc_get_uri(): string | null;
 
         /**
          * Tries to set the URI of the given handler.
@@ -3119,9 +3119,7 @@ export namespace GstAudio {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.SystemClock.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.SystemClock.ConstructorProps {}
     }
 
     /**
@@ -3223,10 +3221,10 @@ export namespace GstAudio {
         interface ConstructorProps extends Gst.Element.ConstructorProps {
             max_errors: number;
             maxErrors: number;
-            min_latency: (bigint | number);
-            minLatency: (bigint | number);
+            min_latency: bigint | number;
+            minLatency: bigint | number;
             plc: boolean;
-            tolerance: (bigint | number);
+            tolerance: bigint | number;
         }
     }
 
@@ -3348,13 +3346,13 @@ export namespace GstAudio {
          * @default 0
          */
         get min_latency(): number;
-        set min_latency(val: (bigint | number));
+        set min_latency(val: bigint | number);
 
         /**
          * @default 0
          */
         get minLatency(): number;
-        set minLatency(val: (bigint | number));
+        set minLatency(val: bigint | number);
 
         /**
          * @default false
@@ -3366,7 +3364,7 @@ export namespace GstAudio {
          * @default 0
          */
         get tolerance(): number;
-        set tolerance(val: (bigint | number));
+        set tolerance(val: bigint | number);
 
         /**
          * Compile-time signal type information.
@@ -3581,7 +3579,7 @@ export namespace GstAudio {
          * @param size size of the buffer
          * @returns allocated buffer
          */
-        allocate_output_buffer(size: (bigint | number)): Gst.Buffer;
+        allocate_output_buffer(size: bigint | number): Gst.Buffer;
 
         /**
          * Collects decoded data and pushes it downstream.
@@ -3598,7 +3596,7 @@ export namespace GstAudio {
          * @param frames number of decoded frames represented by decoded data
          * @returns a {@link Gst.FlowReturn} that should be escalated to caller (of caller)
          */
-        finish_frame(buf: (Gst.Buffer | null), frames: number): Gst.FlowReturn;
+        finish_frame(buf: Gst.Buffer | null, frames: number): Gst.FlowReturn;
 
         /**
          * Collects decoded data and pushes it downstream. This function may be called
@@ -3617,7 +3615,7 @@ export namespace GstAudio {
          * @param buf decoded data
          * @returns a {@link Gst.FlowReturn} that should be escalated to caller (of caller)
          */
-        finish_subframe(buf: (Gst.Buffer | null)): Gst.FlowReturn;
+        finish_subframe(buf: Gst.Buffer | null): Gst.FlowReturn;
 
         /**
          * Lets {@link GstAudio.AudioDecoder} sub-classes to know the memory `allocator`
@@ -3703,7 +3701,7 @@ export namespace GstAudio {
          * @param tags a {@link Gst.TagList} to merge, or NULL
          * @param mode the {@link Gst.TagMergeMode} to use, usually #GST_TAG_MERGE_REPLACE
          */
-        merge_tags(tags: (Gst.TagList | null), mode: Gst.TagMergeMode): void;
+        merge_tags(tags: Gst.TagList | null, mode: Gst.TagMergeMode): void;
 
         /**
          * Negotiate with downstream elements to currently configured {@link GstAudio.AudioInfo}.
@@ -3721,7 +3719,7 @@ export namespace GstAudio {
          * @param filter filter caps
          * @returns a {@link Gst.Caps} owned by caller
          */
-        proxy_getcaps(caps: (Gst.Caps | null), filter: (Gst.Caps | null)): Gst.Caps;
+        proxy_getcaps(caps: Gst.Caps | null, filter: Gst.Caps | null): Gst.Caps;
 
         /**
          * Sets a caps in allocation query which are different from the set
@@ -3730,7 +3728,7 @@ export namespace GstAudio {
          * query will use the caps from the pad.
          * @param allocation_caps a {@link Gst.Caps} or `null`
          */
-        set_allocation_caps(allocation_caps: (Gst.Caps | null)): void;
+        set_allocation_caps(allocation_caps: Gst.Caps | null): void;
 
         /**
          * Configures decoder drain handling.  If drainable, subclass might
@@ -3860,7 +3858,7 @@ export namespace GstAudio {
             markGranule: boolean;
             perfect_timestamp: boolean;
             perfectTimestamp: boolean;
-            tolerance: (bigint | number);
+            tolerance: bigint | number;
         }
     }
 
@@ -4003,7 +4001,7 @@ export namespace GstAudio {
          * @default 40000000
          */
         get tolerance(): number;
-        set tolerance(val: (bigint | number));
+        set tolerance(val: bigint | number);
 
         /**
          * Compile-time signal type information.
@@ -4211,7 +4209,7 @@ export namespace GstAudio {
          * @param size size of the buffer
          * @returns allocated buffer
          */
-        allocate_output_buffer(size: (bigint | number)): Gst.Buffer;
+        allocate_output_buffer(size: bigint | number): Gst.Buffer;
 
         /**
          * Collects encoded data and pushes encoded data downstream.
@@ -4228,7 +4226,7 @@ export namespace GstAudio {
          * @param samples number of samples (per channel) represented by encoded data
          * @returns a {@link Gst.FlowReturn} that should be escalated to caller (of caller)
          */
-        finish_frame(buffer: (Gst.Buffer | null), samples: number): Gst.FlowReturn;
+        finish_frame(buffer: Gst.Buffer | null, samples: number): Gst.FlowReturn;
 
         /**
          * Lets {@link GstAudio.AudioEncoder} sub-classes to know the memory `allocator`
@@ -4313,7 +4311,7 @@ export namespace GstAudio {
          * @param tags a {@link Gst.TagList} to merge, or NULL to unset     previously-set tags
          * @param mode the {@link Gst.TagMergeMode} to use, usually #GST_TAG_MERGE_REPLACE
          */
-        merge_tags(tags: (Gst.TagList | null), mode: Gst.TagMergeMode): void;
+        merge_tags(tags: Gst.TagList | null, mode: Gst.TagMergeMode): void;
 
         /**
          * Negotiate with downstream elements to currently configured {@link Gst.Caps}.
@@ -4331,7 +4329,7 @@ export namespace GstAudio {
          * @param filter filter caps
          * @returns a {@link Gst.Caps} owned by caller
          */
-        proxy_getcaps(caps: (Gst.Caps | null), filter: (Gst.Caps | null)): Gst.Caps;
+        proxy_getcaps(caps: Gst.Caps | null, filter: Gst.Caps | null): Gst.Caps;
 
         /**
          * Sets a caps in allocation query which are different from the set
@@ -4340,7 +4338,7 @@ export namespace GstAudio {
          * query will use the caps from the pad.
          * @param allocation_caps a {@link Gst.Caps} or `null`
          */
-        set_allocation_caps(allocation_caps: (Gst.Caps | null)): void;
+        set_allocation_caps(allocation_caps: Gst.Caps | null): void;
 
         /**
          * Configures encoder drain handling.  If drainable, subclass might
@@ -4527,7 +4525,7 @@ export namespace GstAudio {
          * @param value new value
          * @returns `true` for success, `false` if e.g. there is no preset with that `name`
          */
-        set_meta(name: string, tag: string, value: (string | null)): boolean;
+        set_meta(name: string, tag: string, value: string | null): boolean;
 
         /**
          * Delete the given preset.
@@ -4590,7 +4588,7 @@ export namespace GstAudio {
          * @param value new value
          * @virtual
          */
-        vfunc_set_meta(name: string, tag: string, value: (string | null)): boolean;
+        vfunc_set_meta(name: string, tag: string, value: string | null): boolean;
 
         /**
          * Increases the reference count of `object`.
@@ -4631,9 +4629,7 @@ export namespace GstAudio {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GstBase.BaseTransform.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GstBase.BaseTransform.ConstructorProps {}
     }
 
     /**
@@ -4709,9 +4705,7 @@ export namespace GstAudio {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Gst.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Gst.Object.ConstructorProps {}
     }
 
     /**
@@ -4990,7 +4984,7 @@ export namespace GstAudio {
          * @param accum accumulator for rate conversion.
          * @returns The number of samples written to the ringbuffer or -1 on error. The number of samples written can be less than `out_samples` when `buf` was interrupted with a flush or stop.
          */
-        commit(sample: (bigint | number), data: (Uint8Array | string), out_samples: number, accum: number): [number, number, number];
+        commit(sample: bigint | number, data: Uint8Array | string, out_samples: number, accum: number): [number, number, number];
 
         /**
          * Convert `src_val` in `src_fmt` to the equivalent value in `dest_fmt`. The result
@@ -5000,7 +4994,7 @@ export namespace GstAudio {
          * @param dest_fmt the destination format
          * @returns TRUE if the conversion succeeded.
          */
-        convert(src_fmt: Gst.Format, src_val: (bigint | number), dest_fmt: Gst.Format): [boolean, number];
+        convert(src_fmt: Gst.Format, src_val: bigint | number, dest_fmt: Gst.Format): [boolean, number];
 
         /**
          * Get the number of samples queued in the audio device. This is
@@ -5105,7 +5099,7 @@ export namespace GstAudio {
          * @param data where the data should be read
          * @returns The number of samples read from the ringbuffer or -1 on error. MT safe.
          */
-        read(sample: (bigint | number), data: (Uint8Array | string)): [number, Gst.ClockTime];
+        read(sample: bigint | number, data: Uint8Array | string): [number, Gst.ClockTime];
 
         /**
          * Free the resources of the ringbuffer.
@@ -5128,7 +5122,7 @@ export namespace GstAudio {
          * MT safe.
          * @param cb the callback to set
          */
-        set_callback(cb: (AudioRingBufferCallback | null)): void;
+        set_callback(cb: AudioRingBufferCallback | null): void;
 
         /**
          * Tell the ringbuffer about the device's channel positions. This must
@@ -5163,7 +5157,7 @@ export namespace GstAudio {
          * MT safe.
          * @param sample the sample number to set
          */
-        set_sample(sample: (bigint | number)): void;
+        set_sample(sample: bigint | number): void;
 
         /**
          * Sets the current segment number of the ringbuffer.
@@ -5171,7 +5165,7 @@ export namespace GstAudio {
          * MT safe.
          * @param segdone the segment number to set
          */
-        set_segdone(segdone: (bigint | number)): void;
+        set_segdone(segdone: bigint | number): void;
 
         /**
          * @param readseg 
@@ -5222,9 +5216,7 @@ export namespace GstAudio {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends AudioBaseSink.ConstructorProps {
-
-        }
+        interface ConstructorProps extends AudioBaseSink.ConstructorProps {}
     }
 
     /**
@@ -5391,9 +5383,7 @@ export namespace GstAudio {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends AudioBaseSrc.ConstructorProps {
-
-        }
+        interface ConstructorProps extends AudioBaseSrc.ConstructorProps {}
     }
 
     /**
@@ -5591,7 +5581,7 @@ export namespace GstAudio {
          * @param rate sample rate.
          * @param bpf size of one audio frame in bytes. This is the size of one sample * number of channels.
          */
-        static clip(buffer: Gst.Buffer, segment: Gst.Segment, rate: number, bpf: number): (Gst.Buffer | null);
+        static clip(buffer: Gst.Buffer, segment: Gst.Segment, rate: number, bpf: number): Gst.Buffer | null;
 
         /**
          * Maps an audio `gstbuffer` so that it can be read or written and stores the
@@ -5654,7 +5644,7 @@ export namespace GstAudio {
          * @param trim the number of samples to remove from the beginning of the buffer
          * @param samples the final number of samples that should exist in this buffer or -1 to use all the remaining samples if you are only removing samples from the beginning.
          */
-        static truncate(buffer: Gst.Buffer, bpf: number, trim: (bigint | number), samples: (bigint | number)): Gst.Buffer;
+        static truncate(buffer: Gst.Buffer, bpf: number, trim: bigint | number, samples: bigint | number): Gst.Buffer;
 
         // Methods
         /**
@@ -5798,9 +5788,9 @@ export namespace GstAudio {
         static $gtype: GObject.GType<AudioConverter>;
 
         // Constructors
-        constructor(flags: AudioConverterFlags, in_info: AudioInfo, out_info: AudioInfo, config: (Gst.Structure | null));
+        constructor(flags: AudioConverterFlags, in_info: AudioInfo, out_info: AudioInfo, config: Gst.Structure | null);
 
-        static ["new"](flags: AudioConverterFlags, in_info: AudioInfo, out_info: AudioInfo, config: (Gst.Structure | null)): AudioConverter;
+        static ["new"](flags: AudioConverterFlags, in_info: AudioInfo, out_info: AudioInfo, config: Gst.Structure | null): AudioConverter;
 
         // Methods
         /**
@@ -5811,7 +5801,7 @@ export namespace GstAudio {
          * @param _in input data
          * @returns `true` is the conversion could be performed.
          */
-        convert(flags: AudioConverterFlags, _in: (Uint8Array | string)): [boolean, Uint8Array];
+        convert(flags: AudioConverterFlags, _in: Uint8Array | string): [boolean, Uint8Array];
 
         /**
          * Free a previously allocated `convert` instance.
@@ -5830,7 +5820,7 @@ export namespace GstAudio {
          * @param out_frames number of output frames
          * @returns the number of input frames
          */
-        get_in_frames(out_frames: (bigint | number)): number;
+        get_in_frames(out_frames: bigint | number): number;
 
         /**
          * Get the maximum number of input frames that the converter would
@@ -5845,7 +5835,7 @@ export namespace GstAudio {
          * @param in_frames number of input frames
          * @returns the number of output frames
          */
-        get_out_frames(in_frames: (bigint | number)): number;
+        get_out_frames(in_frames: bigint | number): number;
 
         /**
          * Returns whether the audio converter will operate in passthrough mode.
@@ -5884,7 +5874,7 @@ export namespace GstAudio {
          * @param out_frames number of output frames
          * @returns `true` is the conversion could be performed.
          */
-        samples(flags: AudioConverterFlags, _in: null, in_frames: (bigint | number), out: null, out_frames: (bigint | number)): boolean;
+        samples(flags: AudioConverterFlags, _in: null, in_frames: bigint | number, out: null, out_frames: bigint | number): boolean;
 
         /**
          * Returns whether the audio converter can perform the conversion in-place.
@@ -5913,7 +5903,7 @@ export namespace GstAudio {
          * @param config a {@link Gst.Structure} or `null`
          * @returns `true` when the new parameters could be set
          */
-        update_config(in_rate: number, out_rate: number, config: (Gst.Structure | null)): boolean;
+        update_config(in_rate: number, out_rate: number, config: Gst.Structure | null): boolean;
     }
 
 
@@ -6013,7 +6003,7 @@ export namespace GstAudio {
          * Fill `length` bytes in `dest` with silence samples for `info`.
          * @param dest a destination   to fill
          */
-        fill_silence(dest: (Uint8Array | string)): void;
+        fill_silence(dest: Uint8Array | string): void;
     }
 
 
@@ -6078,7 +6068,7 @@ export namespace GstAudio {
          * @param dest_fmt {@link Gst.Format} of the `dest_val`
          * @returns TRUE if the conversion was successful.
          */
-        convert(src_fmt: Gst.Format, src_val: (bigint | number), dest_fmt: Gst.Format): [boolean, number];
+        convert(src_fmt: Gst.Format, src_val: bigint | number, dest_fmt: Gst.Format): [boolean, number];
 
         /**
          * Copy a GstAudioInfo structure.
@@ -6108,7 +6098,7 @@ export namespace GstAudio {
          * @param channels the number of channels
          * @param position the channel positions
          */
-        set_format(format: AudioFormat, rate: number, channels: number, position: (AudioChannelPosition[] | null)): void;
+        set_format(format: AudioFormat, rate: number, channels: number, position: AudioChannelPosition[] | null): void;
 
         /**
          * Convert the values of `info` into a {@link Gst.Caps}.
@@ -6241,7 +6231,7 @@ export namespace GstAudio {
          * @param out_frames number of input frames
          * @returns The number of input frames needed for producing `out_frames` of data from `resampler`.
          */
-        get_in_frames(out_frames: (bigint | number)): number;
+        get_in_frames(out_frames: bigint | number): number;
 
         /**
          * Get the maximum number of input samples that the resampler would
@@ -6256,7 +6246,7 @@ export namespace GstAudio {
          * @param in_frames number of input frames
          * @returns The number of frames that would be available after giving `in_frames` as input to `resampler`.
          */
-        get_out_frames(in_frames: (bigint | number)): number;
+        get_out_frames(in_frames: bigint | number): number;
 
         /**
          * Perform resampling on `in_frames` frames in `in` and write `out_frames` to `out`.
@@ -6279,7 +6269,7 @@ export namespace GstAudio {
          * @param out output samples
          * @param out_frames number of output frames
          */
-        resample(_in: null, in_frames: (bigint | number), out: null, out_frames: (bigint | number)): void;
+        resample(_in: null, in_frames: bigint | number, out: null, out_frames: bigint | number): void;
 
         /**
          * Reset `resampler` to the state it was when it was first created, discarding
@@ -6603,7 +6593,7 @@ export namespace GstAudio {
          * @param channels the number of channels
          * @param positions the channel positions
          */
-        set_format(format: DsdFormat, rate: number, channels: number, positions: (AudioChannelPosition[] | null)): void;
+        set_format(format: DsdFormat, rate: number, channels: number, positions: AudioChannelPosition[] | null): void;
 
         /**
          * Convert the values of `info` into a {@link Gst.Caps}.

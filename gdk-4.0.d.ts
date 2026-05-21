@@ -333,7 +333,7 @@ export namespace Gdk {
         static CREATION_FAILED: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -574,7 +574,7 @@ export namespace Gdk {
         static LINK_FAILED: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -1732,7 +1732,7 @@ export namespace Gdk {
         static UNSUPPORTED_FORMAT: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -1841,7 +1841,7 @@ export namespace Gdk {
         static NOT_AVAILABLE: number;
 
         // Constructors
-        constructor(options: { message: string, code: number });
+        constructor(options: { message: string; code: number });
 
         // Static methods
         /**
@@ -6970,7 +6970,7 @@ export namespace Gdk {
      * @param io_priority the I/O priority of the operation
      * @param cancellable optional {@link Gio.Cancellable} object
      */
-    function content_deserialize_async(stream: Gio.InputStream, mime_type: string, type: GObject.GType, io_priority: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<[GObject.Value]>;
+    function content_deserialize_async(stream: Gio.InputStream, mime_type: string, type: GObject.GType, io_priority: number, cancellable: Gio.Cancellable | null): globalThis.Promise<[GObject.Value]>;
     /**
      * Reads content from the given input stream and deserialize it, asynchronously.
      * 
@@ -6983,7 +6983,7 @@ export namespace Gdk {
      * @param cancellable optional {@link Gio.Cancellable} object
      * @param callback callback to call when the operation is done
      */
-    function content_deserialize_async(stream: Gio.InputStream, mime_type: string, type: GObject.GType, io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<Gio.InputStream> | null)): void;
+    function content_deserialize_async(stream: Gio.InputStream, mime_type: string, type: GObject.GType, io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Gio.InputStream> | null): void;
     /**
      * Reads content from the given input stream and deserialize it, asynchronously.
      * 
@@ -6996,7 +6996,7 @@ export namespace Gdk {
      * @param cancellable optional {@link Gio.Cancellable} object
      * @param callback callback to call when the operation is done
      */
-    function content_deserialize_async(stream: Gio.InputStream, mime_type: string, type: GObject.GType, io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<Gio.InputStream> | null)): (globalThis.Promise<[GObject.Value]> | void);
+    function content_deserialize_async(stream: Gio.InputStream, mime_type: string, type: GObject.GType, io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Gio.InputStream> | null): globalThis.Promise<[GObject.Value]> | void;
 
     /**
      * Finishes a content deserialization operation.
@@ -7018,7 +7018,7 @@ export namespace Gdk {
      * @returns the content formats if `string` is valid
      * @since 4.4
      */
-    function content_formats_parse(string: string): (ContentFormats | null);
+    function content_formats_parse(string: string): ContentFormats | null;
 
     /**
      * Registers a function to deserialize object of a given type.
@@ -7055,7 +7055,7 @@ export namespace Gdk {
      * @param io_priority the I/O priority of the operation
      * @param cancellable optional {@link Gio.Cancellable} object
      */
-    function content_serialize_async(stream: Gio.OutputStream, mime_type: string, value: (GObject.Value | any), io_priority: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+    function content_serialize_async(stream: Gio.OutputStream, mime_type: string, value: GObject.Value | any, io_priority: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
     /**
      * Serialize content and write it to the given output stream, asynchronously.
      * 
@@ -7068,7 +7068,7 @@ export namespace Gdk {
      * @param cancellable optional {@link Gio.Cancellable} object
      * @param callback callback to call when the operation is done
      */
-    function content_serialize_async(stream: Gio.OutputStream, mime_type: string, value: (GObject.Value | any), io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<Gio.OutputStream> | null)): void;
+    function content_serialize_async(stream: Gio.OutputStream, mime_type: string, value: GObject.Value | any, io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Gio.OutputStream> | null): void;
     /**
      * Serialize content and write it to the given output stream, asynchronously.
      * 
@@ -7081,7 +7081,7 @@ export namespace Gdk {
      * @param cancellable optional {@link Gio.Cancellable} object
      * @param callback callback to call when the operation is done
      */
-    function content_serialize_async(stream: Gio.OutputStream, mime_type: string, value: (GObject.Value | any), io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<Gio.OutputStream> | null)): (globalThis.Promise<boolean> | void);
+    function content_serialize_async(stream: Gio.OutputStream, mime_type: string, value: GObject.Value | any, io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Gio.OutputStream> | null): globalThis.Promise<boolean> | void;
 
     /**
      * Finishes a content serialization operation.
@@ -7158,7 +7158,7 @@ export namespace Gdk {
      * @param string string of a potential mime type
      * @returns An interned string for the canonicalized   mime type or `null` if the string wasn't a valid mime type
      */
-    function intern_mime_type(string: string): (string | null);
+    function intern_mime_type(string: string): string | null;
 
     /**
      * Obtains the upper- and lower-case versions of the keyval `symbol`.
@@ -7202,7 +7202,7 @@ export namespace Gdk {
      * @param keyval a key value
      * @returns a string containing the name   of the key
      */
-    function keyval_name(keyval: number): (string | null);
+    function keyval_name(keyval: number): string | null;
 
     /**
      * Converts a key value to lower case, if applicable.
@@ -7260,7 +7260,7 @@ export namespace Gdk {
      * @returns A newly-created pixbuf with a   reference count of 1
      * @deprecated since 4.12: Use {@link Gdk.Texture} and subclasses instead   cairo surfaces and pixbufs
      */
-    function pixbuf_get_from_surface(surface: cairo.Surface, src_x: number, src_y: number, width: number, height: number): (GdkPixbuf.Pixbuf | null);
+    function pixbuf_get_from_surface(surface: cairo.Surface, src_x: number, src_y: number, width: number, height: number): GdkPixbuf.Pixbuf | null;
 
     /**
      * Creates a new pixbuf from `texture`.
@@ -7272,7 +7272,7 @@ export namespace Gdk {
      * @returns a new {@link GdkPixbuf.Pixbuf}
      * @deprecated since 4.12: Use {@link Gdk.Texture} and subclasses instead   cairo surfaces and pixbufs
      */
-    function pixbuf_get_from_texture(texture: Texture): (GdkPixbuf.Pixbuf | null);
+    function pixbuf_get_from_texture(texture: Texture): GdkPixbuf.Pixbuf | null;
 
     /**
      * Sets a list of backends that GDK should try to use.
@@ -7349,7 +7349,7 @@ export namespace Gdk {
      * @gir-type Callback
      */
     interface CursorGetTextureCallback {
-        (cursor: Cursor, cursor_size: number, scale: number, data: null): (Texture | null);
+        (cursor: Cursor, cursor_size: number, scale: number, data: null): Texture | null;
     }
 
     /**
@@ -7996,7 +7996,7 @@ export namespace Gdk {
          * See also {@link Gdk.AppLaunchContext.set_icon_name}.
          * @param icon a {@link Gio.Icon}
          */
-        set_icon(icon: (Gio.Icon | null)): void;
+        set_icon(icon: Gio.Icon | null): void;
 
         /**
          * Sets the icon for applications that are launched with this context.
@@ -8010,7 +8010,7 @@ export namespace Gdk {
          * for the launched application itself.
          * @param icon_name an icon name
          */
-        set_icon_name(icon_name: (string | null)): void;
+        set_icon_name(icon_name: string | null): void;
 
         /**
          * Sets the timestamp of `context`.
@@ -8030,8 +8030,7 @@ export namespace Gdk {
 
     namespace ButtonEvent {
         // Signal signatures
-        interface SignalSignatures extends Event.SignalSignatures {
-        }
+        interface SignalSignatures extends Event.SignalSignatures {}
     }
 
     /**
@@ -8074,9 +8073,7 @@ export namespace Gdk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends DrawContext.ConstructorProps {
-
-        }
+        interface ConstructorProps extends DrawContext.ConstructorProps {}
     }
 
     /**
@@ -8129,7 +8126,7 @@ export namespace Gdk {
          * {@link Gdk.DrawContext.end_frame} is called.
          * @returns a Cairo context   to draw on `GdkSurface
          */
-        cairo_create(): (cairo.Context | null);
+        cairo_create(): cairo.Context | null;
     }
 
 
@@ -8404,7 +8401,7 @@ export namespace Gdk {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            content: (ContentProvider | null);
+            content: ContentProvider | null;
             display: Display;
             formats: ContentFormats;
             local: boolean;
@@ -8439,7 +8436,7 @@ export namespace Gdk {
          * provided otherwise.
          * @read-only
          */
-        get content(): (ContentProvider | null);
+        get content(): ContentProvider | null;
 
         /**
          * The {@link Gdk.Display} that the clipboard belongs to.
@@ -8495,7 +8492,7 @@ export namespace Gdk {
          * current process, `null` will be returned.
          * @returns The content of a clipboard   if the clipboard does not maintain any content
          */
-        get_content(): (ContentProvider | null);
+        get_content(): ContentProvider | null;
 
         /**
          * Gets the {@link Gdk.Display} that the clipboard was created for.
@@ -8531,7 +8528,7 @@ export namespace Gdk {
          * @param io_priority the I/O priority of the request
          * @param cancellable optional {@link Gio.Cancellable} object
          */
-        read_async(mime_types: string[], io_priority: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<[(Gio.InputStream | null), string]>;
+        read_async(mime_types: string[], io_priority: number, cancellable: Gio.Cancellable | null): globalThis.Promise<[Gio.InputStream | null, string]>;
 
         /**
          * Asynchronously requests an input stream to read the `clipboard`'s
@@ -8544,7 +8541,7 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object
          * @param callback callback to call when the request is satisfied
          */
-        read_async(mime_types: string[], io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        read_async(mime_types: string[], io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously requests an input stream to read the `clipboard`'s
@@ -8557,7 +8554,7 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object
          * @param callback callback to call when the request is satisfied
          */
-        read_async(mime_types: string[], io_priority: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<[(Gio.InputStream | null), string]> | void);
+        read_async(mime_types: string[], io_priority: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<[Gio.InputStream | null, string]> | void;
 
         /**
          * Finishes an asynchronous clipboard read.
@@ -8566,7 +8563,7 @@ export namespace Gdk {
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link Gio.InputStream}
          */
-        read_finish(result: Gio.AsyncResult): [(Gio.InputStream | null), string];
+        read_finish(result: Gio.AsyncResult): [Gio.InputStream | null, string];
 
         /**
          * Asynchronously request the `clipboard` contents converted to a string.
@@ -8576,18 +8573,7 @@ export namespace Gdk {
          * need more control over the operation.
          * @param cancellable optional {@link Gio.Cancellable} object
          */
-        read_text_async(cancellable: (Gio.Cancellable | null)): globalThis.Promise<(string | null)>;
-
-        /**
-         * Asynchronously request the `clipboard` contents converted to a string.
-         * 
-         * This is a simple wrapper around {@link Gdk.Clipboard.read_value_async}.
-         * Use that function or {@link Gdk.Clipboard.read_async} directly if you
-         * need more control over the operation.
-         * @param cancellable optional {@link Gio.Cancellable} object
-         * @param callback callback to call when the request is satisfied
-         */
-        read_text_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        read_text_async(cancellable: Gio.Cancellable | null): globalThis.Promise<string | null>;
 
         /**
          * Asynchronously request the `clipboard` contents converted to a string.
@@ -8598,7 +8584,18 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object
          * @param callback callback to call when the request is satisfied
          */
-        read_text_async(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<(string | null)> | void);
+        read_text_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously request the `clipboard` contents converted to a string.
+         * 
+         * This is a simple wrapper around {@link Gdk.Clipboard.read_value_async}.
+         * Use that function or {@link Gdk.Clipboard.read_async} directly if you
+         * need more control over the operation.
+         * @param cancellable optional {@link Gio.Cancellable} object
+         * @param callback callback to call when the request is satisfied
+         */
+        read_text_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<string | null> | void;
 
         /**
          * Finishes an asynchronous clipboard read.
@@ -8607,7 +8604,7 @@ export namespace Gdk {
          * @param result a {@link Gio.AsyncResult}
          * @returns a new string
          */
-        read_text_finish(result: Gio.AsyncResult): (string | null);
+        read_text_finish(result: Gio.AsyncResult): string | null;
 
         /**
          * Asynchronously request the `clipboard` contents converted to a {@link GdkPixbuf.Pixbuf}.
@@ -8617,18 +8614,7 @@ export namespace Gdk {
          * need more control over the operation.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        read_texture_async(cancellable: (Gio.Cancellable | null)): globalThis.Promise<(Texture | null)>;
-
-        /**
-         * Asynchronously request the `clipboard` contents converted to a {@link GdkPixbuf.Pixbuf}.
-         * 
-         * This is a simple wrapper around {@link Gdk.Clipboard.read_value_async}.
-         * Use that function or {@link Gdk.Clipboard.read_async} directly if you
-         * need more control over the operation.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback callback to call when the request is satisfied
-         */
-        read_texture_async(cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        read_texture_async(cancellable: Gio.Cancellable | null): globalThis.Promise<Texture | null>;
 
         /**
          * Asynchronously request the `clipboard` contents converted to a {@link GdkPixbuf.Pixbuf}.
@@ -8639,7 +8625,18 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback callback to call when the request is satisfied
          */
-        read_texture_async(cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<(Texture | null)> | void);
+        read_texture_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously request the `clipboard` contents converted to a {@link GdkPixbuf.Pixbuf}.
+         * 
+         * This is a simple wrapper around {@link Gdk.Clipboard.read_value_async}.
+         * Use that function or {@link Gdk.Clipboard.read_async} directly if you
+         * need more control over the operation.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback callback to call when the request is satisfied
+         */
+        read_texture_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Texture | null> | void;
 
         /**
          * Finishes an asynchronous clipboard read.
@@ -8648,7 +8645,7 @@ export namespace Gdk {
          * @param result a {@link Gio.AsyncResult}
          * @returns a new {@link Gdk.Texture}
          */
-        read_texture_finish(result: Gio.AsyncResult): (Texture | null);
+        read_texture_finish(result: Gio.AsyncResult): Texture | null;
 
         /**
          * Asynchronously request the `clipboard` contents converted to the given
@@ -8661,21 +8658,7 @@ export namespace Gdk {
          * @param io_priority the I/O priority of the request
          * @param cancellable optional {@link Gio.Cancellable} object
          */
-        read_value_async(type: GObject.GType, io_priority: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<unknown>;
-
-        /**
-         * Asynchronously request the `clipboard` contents converted to the given
-         * `type`.
-         * 
-         * For local clipboard contents that are available in the given {@link GObject.GType},
-         * the value will be copied directly. Otherwise, GDK will try to use
-         * {@link content_deserialize_async} to convert the clipboard's data.
-         * @param type a {@link GObject.GType} to read
-         * @param io_priority the I/O priority of the request
-         * @param cancellable optional {@link Gio.Cancellable} object
-         * @param callback callback to call when the request is satisfied
-         */
-        read_value_async(type: GObject.GType, io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        read_value_async(type: GObject.GType, io_priority: number, cancellable: Gio.Cancellable | null): globalThis.Promise<unknown>;
 
         /**
          * Asynchronously request the `clipboard` contents converted to the given
@@ -8689,7 +8672,21 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object
          * @param callback callback to call when the request is satisfied
          */
-        read_value_async(type: GObject.GType, io_priority: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<unknown> | void);
+        read_value_async(type: GObject.GType, io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously request the `clipboard` contents converted to the given
+         * `type`.
+         * 
+         * For local clipboard contents that are available in the given {@link GObject.GType},
+         * the value will be copied directly. Otherwise, GDK will try to use
+         * {@link content_deserialize_async} to convert the clipboard's data.
+         * @param type a {@link GObject.GType} to read
+         * @param io_priority the I/O priority of the request
+         * @param cancellable optional {@link Gio.Cancellable} object
+         * @param callback callback to call when the request is satisfied
+         */
+        read_value_async(type: GObject.GType, io_priority: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<unknown> | void;
 
         /**
          * Finishes an asynchronous clipboard read.
@@ -8716,13 +8713,13 @@ export namespace Gdk {
          * @param provider the new contents of `clipboard`   or `null` to clear the clipboard
          * @returns `true` if setting the clipboard succeeded
          */
-        set_content(provider: (ContentProvider | null)): boolean;
+        set_content(provider: ContentProvider | null): boolean;
 
         /**
          * Sets the `clipboard` to contain the given `value`.
          * @param value a {@link GObject.Value} to set
          */
-        set(value: (GObject.Value | any)): void;
+        set(value: GObject.Value | any): void;
 
         /**
          * @param args 
@@ -8746,7 +8743,7 @@ export namespace Gdk {
          * @param io_priority the I/O priority of the request
          * @param cancellable optional {@link Gio.Cancellable} object
          */
-        store_async(io_priority: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        store_async(io_priority: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously instructs the `clipboard` to store its contents remotely.
@@ -8765,7 +8762,7 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object
          * @param callback callback to call when the request is satisfied
          */
-        store_async(io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        store_async(io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously instructs the `clipboard` to store its contents remotely.
@@ -8784,7 +8781,7 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object
          * @param callback callback to call when the request is satisfied
          */
-        store_async(io_priority: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        store_async(io_priority: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an asynchronous clipboard store.
@@ -8799,13 +8796,10 @@ export namespace Gdk {
 
     namespace ContentDeserializer {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, Gio.AsyncResult.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, Gio.AsyncResult.ConstructorProps {}
     }
 
     /**
@@ -8858,7 +8852,7 @@ export namespace Gdk {
          * This is the {@link Gio.Cancellable} that was passed to {@link Gdk.content_deserialize_async}.
          * @returns the cancellable for the current operation
          */
-        get_cancellable(): (Gio.Cancellable | null);
+        get_cancellable(): Gio.Cancellable | null;
 
         /**
          * Gets the {@link GObject.GType} to create an instance of.
@@ -9047,11 +9041,11 @@ export namespace Gdk {
 
         _init(...args: any[]): void;
 
-        static new_for_bytes(mime_type: string, bytes: (GLib.Bytes | Uint8Array)): ContentProvider;
+        static new_for_bytes(mime_type: string, bytes: GLib.Bytes | Uint8Array): ContentProvider;
 
-        static new_for_value(value: (GObject.Value | any)): ContentProvider;
+        static new_for_value(value: GObject.Value | any): ContentProvider;
 
-        static new_union(providers: (ContentProvider[] | null)): ContentProvider;
+        static new_union(providers: ContentProvider[] | null): ContentProvider;
 
         // Signals
         /** @signal */
@@ -9130,7 +9124,7 @@ export namespace Gdk {
          * @param callback callback to call when the request is satisfied
          * @virtual
          */
-        vfunc_write_mime_type_async(mime_type: string, stream: Gio.OutputStream, io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        vfunc_write_mime_type_async(mime_type: string, stream: Gio.OutputStream, io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes an asynchronous write operation.
@@ -9190,7 +9184,7 @@ export namespace Gdk {
          * @param io_priority I/O priority of the request.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        write_mime_type_async(mime_type: string, stream: Gio.OutputStream, io_priority: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<boolean>;
+        write_mime_type_async(mime_type: string, stream: Gio.OutputStream, io_priority: number, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously writes the contents of `provider` to `stream` in the given
@@ -9207,7 +9201,7 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback callback to call when the request is satisfied
          */
-        write_mime_type_async(mime_type: string, stream: Gio.OutputStream, io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        write_mime_type_async(mime_type: string, stream: Gio.OutputStream, io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously writes the contents of `provider` to `stream` in the given
@@ -9224,7 +9218,7 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback callback to call when the request is satisfied
          */
-        write_mime_type_async(mime_type: string, stream: Gio.OutputStream, io_priority: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<boolean> | void);
+        write_mime_type_async(mime_type: string, stream: Gio.OutputStream, io_priority: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finishes an asynchronous write operation.
@@ -9239,13 +9233,10 @@ export namespace Gdk {
 
     namespace ContentSerializer {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps, Gio.AsyncResult.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps, Gio.AsyncResult.ConstructorProps {}
     }
 
     /**
@@ -9299,7 +9290,7 @@ export namespace Gdk {
          * This is the {@link Gio.Cancellable} that was passed to {@link content_serialize_async}.
          * @returns the cancellable for the current operation
          */
-        get_cancellable(): (Gio.Cancellable | null);
+        get_cancellable(): Gio.Cancellable | null;
 
         /**
          * Gets the {@link GObject.GType} to of the object to serialize.
@@ -9421,8 +9412,7 @@ export namespace Gdk {
 
     namespace CrossingEvent {
         // Signal signatures
-        interface SignalSignatures extends Event.SignalSignatures {
-        }
+        interface SignalSignatures extends Event.SignalSignatures {}
     }
 
     /**
@@ -9481,13 +9471,13 @@ export namespace Gdk {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            fallback: (Cursor | null);
+            fallback: Cursor | null;
             hotspot_x: number;
             hotspotX: number;
             hotspot_y: number;
             hotspotY: number;
-            name: (string | null);
-            texture: (Texture | null);
+            name: string | null;
+            texture: Texture | null;
         }
     }
 
@@ -9536,7 +9526,7 @@ export namespace Gdk {
          * Cursor to fall back to if this cursor cannot be displayed.
          * @construct-only
          */
-        get fallback(): (Cursor | null);
+        get fallback(): Cursor | null;
 
         /**
          * X position of the cursor hotspot in the cursor image.
@@ -9573,7 +9563,7 @@ export namespace Gdk {
          * @construct-only
          * @default null
          */
-        get name(): (string | null);
+        get name(): string | null;
 
         /**
          * The texture displayed by this cursor.
@@ -9581,7 +9571,7 @@ export namespace Gdk {
          * The texture will be `null` if the cursor was created from a name.
          * @construct-only
          */
-        get texture(): (Texture | null);
+        get texture(): Texture | null;
 
         /**
          * Compile-time signal type information.
@@ -9597,11 +9587,11 @@ export namespace Gdk {
 
         _init(...args: any[]): void;
 
-        static new_from_callback(callback: CursorGetTextureCallback, fallback: (Cursor | null)): Cursor;
+        static new_from_callback(callback: CursorGetTextureCallback, fallback: Cursor | null): Cursor;
 
-        static new_from_name(name: string, fallback: (Cursor | null)): Cursor;
+        static new_from_name(name: string, fallback: Cursor | null): Cursor;
 
-        static new_from_texture(texture: Texture, hotspot_x: number, hotspot_y: number, fallback: (Cursor | null)): Cursor;
+        static new_from_texture(texture: Texture, hotspot_x: number, hotspot_y: number, fallback: Cursor | null): Cursor;
 
         // Signals
         /** @signal */
@@ -9627,7 +9617,7 @@ export namespace Gdk {
          * it is used on does not support textured cursors.
          * @returns the fallback of the cursor or `null`   to use the default cursor as fallback
          */
-        get_fallback(): (Cursor | null);
+        get_fallback(): Cursor | null;
 
         /**
          * Returns the horizontal offset of the hotspot.
@@ -9659,7 +9649,7 @@ export namespace Gdk {
          * If the cursor is not a named cursor, `null` will be returned.
          * @returns the name of the cursor or `null`   if it is not a named cursor
          */
-        get_name(): (string | null);
+        get_name(): string | null;
 
         /**
          * Returns the texture for the cursor.
@@ -9667,14 +9657,13 @@ export namespace Gdk {
          * If the cursor is a named cursor, `null` will be returned.
          * @returns the texture for cursor or `null`   if it is a named cursor
          */
-        get_texture(): (Texture | null);
+        get_texture(): Texture | null;
     }
 
 
     namespace DNDEvent {
         // Signal signatures
-        interface SignalSignatures extends Event.SignalSignatures {
-        }
+        interface SignalSignatures extends Event.SignalSignatures {}
     }
 
     /**
@@ -9705,14 +9694,13 @@ export namespace Gdk {
          * Gets the {@link Gdk.Drop} object from a DND event.
          * @returns the drop
          */
-        get_drop(): (Drop | null);
+        get_drop(): Drop | null;
     }
 
 
     namespace DeleteEvent {
         // Signal signatures
-        interface SignalSignatures extends Event.SignalSignatures {
-        }
+        interface SignalSignatures extends Event.SignalSignatures {}
     }
 
     /**
@@ -9793,8 +9781,8 @@ export namespace Gdk {
             hasBidiLayouts: boolean;
             has_cursor: boolean;
             hasCursor: boolean;
-            layout_names: (string[] | null);
-            layoutNames: (string[] | null);
+            layout_names: string[] | null;
+            layoutNames: string[] | null;
             modifier_state: ModifierType;
             modifierState: ModifierType;
             n_axes: number;
@@ -9804,15 +9792,15 @@ export namespace Gdk {
             numLockState: boolean;
             num_touches: number;
             numTouches: number;
-            product_id: (string | null);
-            productId: (string | null);
+            product_id: string | null;
+            productId: string | null;
             scroll_lock_state: boolean;
             scrollLockState: boolean;
             seat: Seat;
             source: InputSource;
-            tool: (DeviceTool | null);
-            vendor_id: (string | null);
-            vendorId: (string | null);
+            tool: DeviceTool | null;
+            vendor_id: string | null;
+            vendorId: string | null;
         }
     }
 
@@ -9929,7 +9917,7 @@ export namespace Gdk {
          * @since 4.18
          * @read-only
          */
-        get layout_names(): (string[] | null);
+        get layout_names(): string[] | null;
 
         /**
          * The names of the keyboard layouts of a {@link Gdk.Device}.
@@ -9940,7 +9928,7 @@ export namespace Gdk {
          * @since 4.18
          * @read-only
          */
-        get layoutNames(): (string[] | null);
+        get layoutNames(): string[] | null;
 
         /**
          * The current modifier state of the device.
@@ -10026,7 +10014,7 @@ export namespace Gdk {
          * @construct-only
          * @default null
          */
-        get product_id(): (string | null);
+        get product_id(): string | null;
 
         /**
          * Product ID of this device.
@@ -10035,7 +10023,7 @@ export namespace Gdk {
          * @construct-only
          * @default null
          */
-        get productId(): (string | null);
+        get productId(): string | null;
 
         /**
          * Whether Scroll Lock is on.
@@ -10072,7 +10060,7 @@ export namespace Gdk {
          * The {@link Gdk.DeviceTool} that is currently used with this device.
          * @read-only
          */
-        get tool(): (DeviceTool | null);
+        get tool(): DeviceTool | null;
 
         /**
          * Vendor ID of this device.
@@ -10081,7 +10069,7 @@ export namespace Gdk {
          * @construct-only
          * @default null
          */
-        get vendor_id(): (string | null);
+        get vendor_id(): string | null;
 
         /**
          * Vendor ID of this device.
@@ -10090,7 +10078,7 @@ export namespace Gdk {
          * @construct-only
          * @default null
          */
-        get vendorId(): (string | null);
+        get vendorId(): string | null;
 
         /**
          * Compile-time signal type information.
@@ -10143,7 +10131,7 @@ export namespace Gdk {
          * Retrieves the current tool for `device`.
          * @returns the {@link Gdk.DeviceTool}
          */
-        get_device_tool(): (DeviceTool | null);
+        get_device_tool(): DeviceTool | null;
 
         /**
          * Returns the direction of effective layout of the keyboard.
@@ -10177,7 +10165,7 @@ export namespace Gdk {
          * This is only relevant for keyboard devices.
          * @returns `null`-terminated array of strings of layouts,
          */
-        get_layout_names(): (string[] | null);
+        get_layout_names(): string[] | null;
 
         /**
          * Retrieves the current modifier state of the keyboard.
@@ -10214,7 +10202,7 @@ export namespace Gdk {
          * See {@link Gdk.Device.get_vendor_id} for more information.
          * @returns the product ID
          */
-        get_product_id(): (string | null);
+        get_product_id(): string | null;
 
         /**
          * Retrieves whether the Scroll Lock modifier of the keyboard is locked.
@@ -10244,7 +10232,7 @@ export namespace Gdk {
          * (for example, belongs to another application).
          * @returns the {@link Gdk.Surface} under the   device position
          */
-        get_surface_at_position(): [(Surface | null), number, number];
+        get_surface_at_position(): [Surface | null, number, number];
 
         /**
          * Returns the timestamp of the last activity for this device.
@@ -10287,7 +10275,7 @@ export namespace Gdk {
          * ```
          * @returns the vendor ID
          */
-        get_vendor_id(): (string | null);
+        get_vendor_id(): string | null;
     }
 
 
@@ -10303,9 +10291,9 @@ export namespace Gdk {
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             axes: AxisFlags;
-            hardware_id: (bigint | number);
-            hardwareId: (bigint | number);
-            serial: (bigint | number);
+            hardware_id: bigint | number;
+            hardwareId: bigint | number;
+            serial: bigint | number;
             tool_type: DeviceToolType;
             toolType: DeviceToolType;
         }
@@ -10595,7 +10583,7 @@ export namespace Gdk {
          * 
          *     gdk_display_manager_get_default_display (gdk_display_manager_get ())
          */
-        static get_default(): (Display | null);
+        static get_default(): Display | null;
 
         /**
          * Opens a display.
@@ -10603,7 +10591,7 @@ export namespace Gdk {
          * If opening the display fails, `NULL` is returned.
          * @param display_name the name of the display to open
          */
-        static open(display_name: (string | null)): (Display | null);
+        static open(display_name: string | null): Display | null;
 
         // Methods
         /**
@@ -10673,7 +10661,7 @@ export namespace Gdk {
          * this function will return `null`.
          * @returns the default seat.
          */
-        get_default_seat(): (Seat | null);
+        get_default_seat(): Seat | null;
 
         /**
          * Returns the dma-buf formats that are supported on this display.
@@ -10697,7 +10685,7 @@ export namespace Gdk {
          * @param surface a {@link Gdk.Surface}
          * @returns the monitor with the largest   overlap with `surface`
          */
-        get_monitor_at_surface(surface: Surface): (Monitor | null);
+        get_monitor_at_surface(surface: Surface): Monitor | null;
 
         /**
          * Gets the list of monitors associated with this display.
@@ -10733,14 +10721,14 @@ export namespace Gdk {
          * @param value location to store the value of the setting
          * @returns `true` if the setting existed and a value was stored   in `value`, `false` otherwise
          */
-        get_setting(name: string, value: (GObject.Value | any)): boolean;
+        get_setting(name: string, value: GObject.Value | any): boolean;
 
         /**
          * Gets the startup notification ID for a Wayland display, or `null`
          * if no ID has been defined.
          * @returns the startup notification ID for `display`
          */
-        get_startup_notification_id(): (string | null);
+        get_startup_notification_id(): string | null;
 
         /**
          * Finds out if the display has been closed.
@@ -10935,8 +10923,8 @@ export namespace Gdk {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            default_display: (Display | null);
-            defaultDisplay: (Display | null);
+            default_display: Display | null;
+            defaultDisplay: Display | null;
         }
     }
 
@@ -10993,14 +10981,14 @@ export namespace Gdk {
         /**
          * The default display.
          */
-        get default_display(): (Display | null);
-        set default_display(val: (Display | null));
+        get default_display(): Display | null;
+        set default_display(val: Display | null);
 
         /**
          * The default display.
          */
-        get defaultDisplay(): (Display | null);
-        set defaultDisplay(val: (Display | null));
+        get defaultDisplay(): Display | null;
+        set defaultDisplay(val: Display | null);
 
         /**
          * Compile-time signal type information.
@@ -11048,7 +11036,7 @@ export namespace Gdk {
          * Gets the default {@link Gdk.Display}.
          * @returns a {@link Gdk.Display}
          */
-        get_default_display(): (Display | null);
+        get_default_display(): Display | null;
 
         /**
          * List all currently open displays.
@@ -11061,7 +11049,7 @@ export namespace Gdk {
          * @param name the name of the display to open
          * @returns a {@link Gdk.Display}, or `null`   if the display could not be opened
          */
-        open_display(name: (string | null)): (Display | null);
+        open_display(name: string | null): Display | null;
 
         /**
          * Sets `display` as the default display.
@@ -11080,9 +11068,7 @@ export namespace Gdk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Texture.ConstructorProps, Paintable.ConstructorProps, Gio.Icon.ConstructorProps, Gio.LoadableIcon.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Texture.ConstructorProps, Paintable.ConstructorProps, Gio.Icon.ConstructorProps, Gio.LoadableIcon.ConstructorProps {}
     }
 
     /**
@@ -11347,7 +11333,7 @@ export namespace Gdk {
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @returns `true` if `icon1` is equal to `icon2`. `false` otherwise.
          */
-        equal(icon2: (Gio.Icon | null)): boolean;
+        equal(icon2: Gio.Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -11363,7 +11349,7 @@ export namespace Gdk {
          * (as opposed to over the network), and within the same file system namespace.
          * @returns a {@link GLib.Variant}, or `null` when serialization fails. The {@link GLib.Variant} will not be floating.
          */
-        serialize(): (GLib.Variant | null);
+        serialize(): GLib.Variant | null;
 
         /**
          * Generates a textual representation of `icon` that can be used for
@@ -11384,14 +11370,14 @@ export namespace Gdk {
          *   the encoding is simply the name (such as `network-server`).
          * @returns An allocated NUL-terminated UTF8 string or `null` if `icon` can't be serialized. Use `g_free()` to free.
          */
-        to_string(): (string | null);
+        to_string(): string | null;
 
         /**
          * Checks if two icons are equal.
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @virtual
          */
-        vfunc_equal(icon2: (Gio.Icon | null)): boolean;
+        vfunc_equal(icon2: Gio.Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -11407,7 +11393,7 @@ export namespace Gdk {
          * (as opposed to over the network), and within the same file system namespace.
          * @virtual
          */
-        vfunc_serialize(): (GLib.Variant | null);
+        vfunc_serialize(): GLib.Variant | null;
 
         /**
          * Serializes the `icon` into string tokens.
@@ -11423,7 +11409,7 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a {@link Gio.InputStream} to read the icon from.
          */
-        load(size: number, cancellable: (Gio.Cancellable | null)): [Gio.InputStream, string];
+        load(size: number, cancellable: Gio.Cancellable | null): [Gio.InputStream, string];
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -11432,17 +11418,7 @@ export namespace Gdk {
          * @param size an integer.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        load_async(size: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<[Gio.InputStream, string]>;
-
-        /**
-         * Loads an icon asynchronously. To finish this function, see
-         * `g_loadable_icon_load_finish()`. For the synchronous, blocking
-         * version of this function, see `g_loadable_icon_load()`.
-         * @param size an integer.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        load_async(size: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        load_async(size: number, cancellable: Gio.Cancellable | null): globalThis.Promise<[Gio.InputStream, string]>;
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -11452,7 +11428,17 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        load_async(size: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<[Gio.InputStream, string]> | void);
+        load_async(size: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Loads an icon asynchronously. To finish this function, see
+         * `g_loadable_icon_load_finish()`. For the synchronous, blocking
+         * version of this function, see `g_loadable_icon_load()`.
+         * @param size an integer.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        load_async(size: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<[Gio.InputStream, string]> | void;
 
         /**
          * Finishes an asynchronous icon load started in `g_loadable_icon_load_async()`.
@@ -11468,7 +11454,7 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_load(size: number, cancellable: (Gio.Cancellable | null)): [Gio.InputStream, string];
+        vfunc_load(size: number, cancellable: Gio.Cancellable | null): [Gio.InputStream, string];
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -11479,7 +11465,7 @@ export namespace Gdk {
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_load_async(size: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        vfunc_load_async(size: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes an asynchronous icon load started in `g_loadable_icon_load_async()`.
@@ -11507,19 +11493,19 @@ export namespace Gdk {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            color_state: (ColorState | null);
-            colorState: (ColorState | null);
+            color_state: ColorState | null;
+            colorState: ColorState | null;
             display: Display;
             fourcc: number;
             height: number;
-            modifier: (bigint | number);
+            modifier: bigint | number;
             n_planes: number;
             nPlanes: number;
             premultiplied: boolean;
-            update_region: (cairo.Region | null);
-            updateRegion: (cairo.Region | null);
-            update_texture: (Texture | null);
-            updateTexture: (Texture | null);
+            update_region: cairo.Region | null;
+            updateRegion: cairo.Region | null;
+            update_texture: Texture | null;
+            updateTexture: Texture | null;
             width: number;
         }
     }
@@ -11594,15 +11580,15 @@ export namespace Gdk {
          * The color state of the texture.
          * @since 4.16
          */
-        get color_state(): (ColorState | null);
-        set color_state(val: (ColorState | null));
+        get color_state(): ColorState | null;
+        set color_state(val: ColorState | null);
 
         /**
          * The color state of the texture.
          * @since 4.16
          */
-        get colorState(): (ColorState | null);
-        set colorState(val: (ColorState | null));
+        get colorState(): ColorState | null;
+        set colorState(val: ColorState | null);
 
         /**
          * The display that this texture will be used on.
@@ -11633,7 +11619,7 @@ export namespace Gdk {
          * @default 0
          */
         get modifier(): number;
-        set modifier(val: (bigint | number));
+        set modifier(val: bigint | number);
 
         /**
          * The number of planes of the texture.
@@ -11671,29 +11657,29 @@ export namespace Gdk {
          * The update region for {@link Gdk.DmabufTextureBuilder.update_texture}.
          * @since 4.14
          */
-        get update_region(): (cairo.Region | null);
-        set update_region(val: (cairo.Region | null));
+        get update_region(): cairo.Region | null;
+        set update_region(val: cairo.Region | null);
 
         /**
          * The update region for {@link Gdk.DmabufTextureBuilder.update_texture}.
          * @since 4.14
          */
-        get updateRegion(): (cairo.Region | null);
-        set updateRegion(val: (cairo.Region | null));
+        get updateRegion(): cairo.Region | null;
+        set updateRegion(val: cairo.Region | null);
 
         /**
          * The texture {@link Gdk.DmabufTextureBuilder.update_region} is an update for.
          * @since 4.14
          */
-        get update_texture(): (Texture | null);
-        set update_texture(val: (Texture | null));
+        get update_texture(): Texture | null;
+        set update_texture(val: Texture | null);
 
         /**
          * The texture {@link Gdk.DmabufTextureBuilder.update_region} is an update for.
          * @since 4.14
          */
-        get updateTexture(): (Texture | null);
-        set updateTexture(val: (Texture | null));
+        get updateTexture(): Texture | null;
+        set updateTexture(val: Texture | null);
 
         /**
          * The width of the texture.
@@ -11753,13 +11739,13 @@ export namespace Gdk {
          * @param data user data to pass to the destroy function
          * @returns a newly built {@link Gdk.Texture} or `NULL`   if the format is not supported
          */
-        build(data: null): (Texture | null);
+        build(data: null): Texture | null;
 
         /**
          * Gets the color state previously set via `gdk_dmabuf_texture_builder_set_color_state()`.
          * @returns the color state
          */
-        get_color_state(): (ColorState | null);
+        get_color_state(): ColorState | null;
 
         /**
          * Returns the display that this texture builder is
@@ -11828,14 +11814,14 @@ export namespace Gdk {
          * `null` if none was set.
          * @returns The region
          */
-        get_update_region(): (cairo.Region | null);
+        get_update_region(): cairo.Region | null;
 
         /**
          * Gets the texture previously set via `gdk_dmabuf_texture_builder_set_update_texture()` or
          * `null` if none was set.
          * @returns The texture
          */
-        get_update_texture(): (Texture | null);
+        get_update_texture(): Texture | null;
 
         /**
          * Gets the width previously set via `gdk_dmabuf_texture_builder_set_width()` or
@@ -11852,7 +11838,7 @@ export namespace Gdk {
          * If you don't know what colorstates are, this is probably the right thing.
          * @param color_state a {@link Gdk.ColorState} or `NULL` to unset the colorstate.
          */
-        set_color_state(color_state: (ColorState | null)): void;
+        set_color_state(color_state: ColorState | null): void;
 
         /**
          * Sets the display that this texture builder is
@@ -11893,7 +11879,7 @@ export namespace Gdk {
          * Sets the modifier.
          * @param modifier the modifier value
          */
-        set_modifier(modifier: (bigint | number)): void;
+        set_modifier(modifier: bigint | number): void;
 
         /**
          * Sets the number of planes of the texture.
@@ -11939,14 +11925,14 @@ export namespace Gdk {
          * An example would be a screen recording where only the mouse pointer moves.
          * @param region the region to update
          */
-        set_update_region(region: (cairo.Region | null)): void;
+        set_update_region(region: cairo.Region | null): void;
 
         /**
          * Sets the texture to be updated by this texture. See
          * {@link Gdk.DmabufTextureBuilder.set_update_region} for an explanation.
          * @param texture the texture to update
          */
-        set_update_texture(texture: (Texture | null)): void;
+        set_update_texture(texture: Texture | null): void;
 
         /**
          * Sets the width of the texture.
@@ -12121,7 +12107,7 @@ export namespace Gdk {
          * @param dx the x offset to `device`'s position where the drag nominally started
          * @param dy the y offset to `device`'s position where the drag nominally started
          */
-        static begin(surface: Surface, device: Device, content: ContentProvider, actions: DragAction, dx: number, dy: number): (Drag | null);
+        static begin(surface: Surface, device: Device, content: ContentProvider, actions: DragAction, dx: number, dy: number): Drag | null;
 
         // Methods
         /**
@@ -12174,7 +12160,7 @@ export namespace Gdk {
          * when the drag operation is over.
          * @returns the drag surface
          */
-        get_drag_surface(): (Surface | null);
+        get_drag_surface(): Surface | null;
 
         /**
          * Retrieves the formats supported by this {@link Gdk.Drag} object.
@@ -12215,8 +12201,8 @@ export namespace Gdk {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            display: (Display | null);
-            surface: (Surface | null);
+            display: Display | null;
+            surface: Surface | null;
         }
     }
 
@@ -12240,13 +12226,13 @@ export namespace Gdk {
          * The {@link Gdk.Display} used to create the {@link Gdk.DrawContext}.
          * @construct-only
          */
-        get display(): (Display | null);
+        get display(): Display | null;
 
         /**
          * The {@link Gdk.Surface} the context is bound to.
          * @construct-only
          */
-        get surface(): (Surface | null);
+        get surface(): Surface | null;
 
         /**
          * Compile-time signal type information.
@@ -12321,7 +12307,7 @@ export namespace Gdk {
          * Retrieves the {@link Gdk.Display} the `context` is created for
          * @returns the {@link Gdk.Display}
          */
-        get_display(): (Display | null);
+        get_display(): Display | null;
 
         /**
          * Retrieves the region that is currently being repainted.
@@ -12334,13 +12320,13 @@ export namespace Gdk {
          * and {@link Gdk.DrawContext.end_frame}, `null` will be returned.
          * @returns a Cairo region
          */
-        get_frame_region(): (cairo.Region | null);
+        get_frame_region(): cairo.Region | null;
 
         /**
          * Retrieves the surface that `context` is bound to.
          * @returns a {@link Gdk.Surface}
          */
-        get_surface(): (Surface | null);
+        get_surface(): Surface | null;
 
         /**
          * Returns `true` if `context` is in the process of drawing to its surface.
@@ -12370,7 +12356,7 @@ export namespace Gdk {
             actions: DragAction;
             device: Device;
             display: Display;
-            drag: (Drag | null);
+            drag: Drag | null;
             formats: ContentFormats;
             surface: Surface;
         }
@@ -12420,7 +12406,7 @@ export namespace Gdk {
          * The {@link Gdk.Drag} that initiated this drop
          * @construct-only
          */
-        get drag(): (Drag | null);
+        get drag(): Drag | null;
 
         /**
          * The possible formats that the drop can provide its data in.
@@ -12509,7 +12495,7 @@ export namespace Gdk {
          * If it is not, `NULL` is returned.
          * @returns the corresponding {@link Gdk.Drag}
          */
-        get_drag(): (Drag | null);
+        get_drag(): Drag | null;
 
         /**
          * Returns the {@link Gdk.ContentFormats} that the drop offers the data
@@ -12531,7 +12517,7 @@ export namespace Gdk {
          * @param io_priority the I/O priority for the read operation
          * @param cancellable optional {@link Gio.Cancellable} object
          */
-        read_async(mime_types: string[], io_priority: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<[(Gio.InputStream | null), string]>;
+        read_async(mime_types: string[], io_priority: number, cancellable: Gio.Cancellable | null): globalThis.Promise<[Gio.InputStream | null, string]>;
 
         /**
          * Asynchronously read the dropped data from a {@link Gdk.Drop}
@@ -12541,7 +12527,7 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object
          * @param callback a {@link Gio.AsyncReadyCallback} to call when   the request is satisfied
          */
-        read_async(mime_types: string[], io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        read_async(mime_types: string[], io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously read the dropped data from a {@link Gdk.Drop}
@@ -12551,7 +12537,7 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object
          * @param callback a {@link Gio.AsyncReadyCallback} to call when   the request is satisfied
          */
-        read_async(mime_types: string[], io_priority: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<[(Gio.InputStream | null), string]> | void);
+        read_async(mime_types: string[], io_priority: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<[Gio.InputStream | null, string]> | void;
 
         /**
          * Finishes an async drop read operation.
@@ -12565,7 +12551,7 @@ export namespace Gdk {
          * @param result a {@link Gio.AsyncResult}
          * @returns the {@link Gio.InputStream}
          */
-        read_finish(result: Gio.AsyncResult): [(Gio.InputStream | null), string];
+        read_finish(result: Gio.AsyncResult): [Gio.InputStream | null, string];
 
         /**
          * Asynchronously request the drag operation's contents converted
@@ -12578,21 +12564,7 @@ export namespace Gdk {
          * @param io_priority the I/O priority of the request.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        read_value_async(type: GObject.GType, io_priority: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<unknown>;
-
-        /**
-         * Asynchronously request the drag operation's contents converted
-         * to the given `type`.
-         * 
-         * For local drag-and-drop operations that are available in the given
-         * {@link GObject.GType}, the value will be copied directly. Otherwise, GDK will
-         * try to use {@link Gdk.content_deserialize_async} to convert the data.
-         * @param type a {@link GObject.GType} to read
-         * @param io_priority the I/O priority of the request.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback callback to call when the request is satisfied
-         */
-        read_value_async(type: GObject.GType, io_priority: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        read_value_async(type: GObject.GType, io_priority: number, cancellable: Gio.Cancellable | null): globalThis.Promise<unknown>;
 
         /**
          * Asynchronously request the drag operation's contents converted
@@ -12606,7 +12578,21 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback callback to call when the request is satisfied
          */
-        read_value_async(type: GObject.GType, io_priority: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<unknown> | void);
+        read_value_async(type: GObject.GType, io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronously request the drag operation's contents converted
+         * to the given `type`.
+         * 
+         * For local drag-and-drop operations that are available in the given
+         * {@link GObject.GType}, the value will be copied directly. Otherwise, GDK will
+         * try to use {@link Gdk.content_deserialize_async} to convert the data.
+         * @param type a {@link GObject.GType} to read
+         * @param io_priority the I/O priority of the request.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback callback to call when the request is satisfied
+         */
+        read_value_async(type: GObject.GType, io_priority: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<unknown> | void;
 
         /**
          * Finishes an async drop read.
@@ -12640,8 +12626,7 @@ export namespace Gdk {
 
     namespace Event {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
     }
 
     /**
@@ -12732,7 +12717,7 @@ export namespace Gdk {
          * Returns the device of an event.
          * @returns a {@link Gdk.Device}
          */
-        get_device(): (Device | null);
+        get_device(): Device | null;
 
         /**
          * Returns a {@link Gdk.DeviceTool} representing the tool that
@@ -12747,13 +12732,13 @@ export namespace Gdk {
          * persistently across runs, see {@link Gdk.DeviceTool.get_serial}.
          * @returns The current device tool
          */
-        get_device_tool(): (DeviceTool | null);
+        get_device_tool(): DeviceTool | null;
 
         /**
          * Retrieves the display associated to the `event`.
          * @returns a {@link Gdk.Display}
          */
-        get_display(): (Display | null);
+        get_display(): Display | null;
 
         /**
          * Returns the event sequence to which the event belongs.
@@ -12782,7 +12767,7 @@ export namespace Gdk {
          * has a tool.
          * @returns an   array of time and coordinates
          */
-        get_history(): (TimeCoord[] | null);
+        get_history(): TimeCoord[] | null;
 
         /**
          * Returns the modifier state field of an event.
@@ -12810,13 +12795,13 @@ export namespace Gdk {
          * Returns the seat that originated the event.
          * @returns a {@link Gdk.Seat}.
          */
-        get_seat(): (Seat | null);
+        get_seat(): Seat | null;
 
         /**
          * Extracts the surface associated with an event.
          * @returns The {@link Gdk.Surface} associated with the event
          */
-        get_surface(): (Surface | null);
+        get_surface(): Surface | null;
 
         /**
          * Returns the timestamp of `event`.
@@ -12860,8 +12845,7 @@ export namespace Gdk {
 
     namespace FocusEvent {
         // Signal signatures
-        interface SignalSignatures extends Event.SignalSignatures {
-        }
+        interface SignalSignatures extends Event.SignalSignatures {}
     }
 
     /**
@@ -12971,9 +12955,7 @@ export namespace Gdk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -13064,7 +13046,7 @@ export namespace Gdk {
          * Gets the frame timings for the current frame.
          * @returns the {@link Gdk.FrameTimings} for the   frame currently being processed, or even no frame is being   processed, for the previous frame. Before any frames have been   processed, returns `null`.
          */
-        get_current_timings(): (FrameTimings | null);
+        get_current_timings(): FrameTimings | null;
 
         /**
          * Calculates the current frames-per-second, based on the
@@ -13115,7 +13097,7 @@ export namespace Gdk {
          * interval after the last presentation time, and later than `base_time`.
          * @param base_time base time for determining a presentaton time
          */
-        get_refresh_info(base_time: (bigint | number)): [number, number];
+        get_refresh_info(base_time: bigint | number): [number, number];
 
         /**
          * Retrieves a {@link Gdk.FrameTimings} object holding timing information
@@ -13127,7 +13109,7 @@ export namespace Gdk {
          * @param frame_counter the frame counter value identifying the frame to  be received
          * @returns the {@link Gdk.FrameTimings} object   for the specified frame, or `null` if it is not available
          */
-        get_timings(frame_counter: (bigint | number)): (FrameTimings | null);
+        get_timings(frame_counter: bigint | number): FrameTimings | null;
 
         /**
          * Asks the frame clock to run a particular phase.
@@ -13162,8 +13144,8 @@ export namespace Gdk {
             allowed_apis: GLAPI;
             allowedApis: GLAPI;
             api: GLAPI;
-            shared_context: (GLContext | null);
-            sharedContext: (GLContext | null);
+            shared_context: GLContext | null;
+            sharedContext: GLContext | null;
         }
     }
 
@@ -13254,7 +13236,7 @@ export namespace Gdk {
          * @deprecated since 4.4: Use {@link Gdk.GLContext.is_shared} to check if contexts   can be shared.
          * @construct-only
          */
-        get shared_context(): (GLContext | null);
+        get shared_context(): GLContext | null;
 
         /**
          * Always `null`
@@ -13264,7 +13246,7 @@ export namespace Gdk {
          * @deprecated since 4.4: Use {@link Gdk.GLContext.is_shared} to check if contexts   can be shared.
          * @construct-only
          */
-        get sharedContext(): (GLContext | null);
+        get sharedContext(): GLContext | null;
 
         /**
          * Compile-time signal type information.
@@ -13305,7 +13287,7 @@ export namespace Gdk {
         /**
          * Retrieves the current {@link Gdk.GLContext}.
          */
-        static get_current(): (GLContext | null);
+        static get_current(): GLContext | null;
 
         // Methods
         /**
@@ -13334,7 +13316,7 @@ export namespace Gdk {
          * Retrieves the display the `context` is created for
          * @returns a {@link Gdk.Display}
          */
-        get_display(): (Display | null);
+        get_display(): Display | null;
 
         /**
          * Retrieves whether the context is forward-compatible.
@@ -13361,13 +13343,13 @@ export namespace Gdk {
          * anymore, this function has been deprecated and now always returns `null`.
          * @returns `null`
          */
-        get_shared_context(): (GLContext | null);
+        get_shared_context(): GLContext | null;
 
         /**
          * Retrieves the surface used by the `context`.
          * @returns a {@link Gdk.Surface}
          */
-        get_surface(): (Surface | null);
+        get_surface(): Surface | null;
 
         /**
          * Checks whether the `context` is using an OpenGL or OpenGL ES profile.
@@ -13516,9 +13498,7 @@ export namespace Gdk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Texture.ConstructorProps, Paintable.ConstructorProps, Gio.Icon.ConstructorProps, Gio.LoadableIcon.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Texture.ConstructorProps, Paintable.ConstructorProps, Gio.Icon.ConstructorProps, Gio.LoadableIcon.ConstructorProps {}
     }
 
     /**
@@ -13789,7 +13769,7 @@ export namespace Gdk {
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @returns `true` if `icon1` is equal to `icon2`. `false` otherwise.
          */
-        equal(icon2: (Gio.Icon | null)): boolean;
+        equal(icon2: Gio.Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -13805,7 +13785,7 @@ export namespace Gdk {
          * (as opposed to over the network), and within the same file system namespace.
          * @returns a {@link GLib.Variant}, or `null` when serialization fails. The {@link GLib.Variant} will not be floating.
          */
-        serialize(): (GLib.Variant | null);
+        serialize(): GLib.Variant | null;
 
         /**
          * Generates a textual representation of `icon` that can be used for
@@ -13826,14 +13806,14 @@ export namespace Gdk {
          *   the encoding is simply the name (such as `network-server`).
          * @returns An allocated NUL-terminated UTF8 string or `null` if `icon` can't be serialized. Use `g_free()` to free.
          */
-        to_string(): (string | null);
+        to_string(): string | null;
 
         /**
          * Checks if two icons are equal.
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @virtual
          */
-        vfunc_equal(icon2: (Gio.Icon | null)): boolean;
+        vfunc_equal(icon2: Gio.Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -13849,7 +13829,7 @@ export namespace Gdk {
          * (as opposed to over the network), and within the same file system namespace.
          * @virtual
          */
-        vfunc_serialize(): (GLib.Variant | null);
+        vfunc_serialize(): GLib.Variant | null;
 
         /**
          * Serializes the `icon` into string tokens.
@@ -13865,7 +13845,7 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a {@link Gio.InputStream} to read the icon from.
          */
-        load(size: number, cancellable: (Gio.Cancellable | null)): [Gio.InputStream, string];
+        load(size: number, cancellable: Gio.Cancellable | null): [Gio.InputStream, string];
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -13874,17 +13854,7 @@ export namespace Gdk {
          * @param size an integer.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        load_async(size: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<[Gio.InputStream, string]>;
-
-        /**
-         * Loads an icon asynchronously. To finish this function, see
-         * `g_loadable_icon_load_finish()`. For the synchronous, blocking
-         * version of this function, see `g_loadable_icon_load()`.
-         * @param size an integer.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        load_async(size: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        load_async(size: number, cancellable: Gio.Cancellable | null): globalThis.Promise<[Gio.InputStream, string]>;
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -13894,7 +13864,17 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        load_async(size: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<[Gio.InputStream, string]> | void);
+        load_async(size: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Loads an icon asynchronously. To finish this function, see
+         * `g_loadable_icon_load_finish()`. For the synchronous, blocking
+         * version of this function, see `g_loadable_icon_load()`.
+         * @param size an integer.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        load_async(size: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<[Gio.InputStream, string]> | void;
 
         /**
          * Finishes an asynchronous icon load started in `g_loadable_icon_load_async()`.
@@ -13910,7 +13890,7 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_load(size: number, cancellable: (Gio.Cancellable | null)): [Gio.InputStream, string];
+        vfunc_load(size: number, cancellable: Gio.Cancellable | null): [Gio.InputStream, string];
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -13921,7 +13901,7 @@ export namespace Gdk {
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_load_async(size: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        vfunc_load_async(size: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes an asynchronous icon load started in `g_loadable_icon_load_async()`.
@@ -13951,17 +13931,17 @@ export namespace Gdk {
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             color_state: ColorState;
             colorState: ColorState;
-            context: (GLContext | null);
+            context: GLContext | null;
             format: MemoryFormat;
             has_mipmap: boolean;
             hasMipmap: boolean;
             height: number;
             id: number;
             sync: never;
-            update_region: (cairo.Region | null);
-            updateRegion: (cairo.Region | null);
-            update_texture: (Texture | null);
-            updateTexture: (Texture | null);
+            update_region: cairo.Region | null;
+            updateRegion: cairo.Region | null;
+            update_texture: Texture | null;
+            updateTexture: Texture | null;
             width: number;
         }
     }
@@ -14002,8 +13982,8 @@ export namespace Gdk {
          * The context owning the texture.
          * @since 4.12
          */
-        get context(): (GLContext | null);
-        set context(val: (GLContext | null));
+        get context(): GLContext | null;
+        set context(val: GLContext | null);
 
         /**
          * The format when downloading the texture.
@@ -14058,29 +14038,29 @@ export namespace Gdk {
          * The update region for {@link Gdk.GLTextureBuilder.update_texture}.
          * @since 4.12
          */
-        get update_region(): (cairo.Region | null);
-        set update_region(val: (cairo.Region | null));
+        get update_region(): cairo.Region | null;
+        set update_region(val: cairo.Region | null);
 
         /**
          * The update region for {@link Gdk.GLTextureBuilder.update_texture}.
          * @since 4.12
          */
-        get updateRegion(): (cairo.Region | null);
-        set updateRegion(val: (cairo.Region | null));
+        get updateRegion(): cairo.Region | null;
+        set updateRegion(val: cairo.Region | null);
 
         /**
          * The texture {@link Gdk.GLTextureBuilder.update_region} is an update for.
          * @since 4.12
          */
-        get update_texture(): (Texture | null);
-        set update_texture(val: (Texture | null));
+        get update_texture(): Texture | null;
+        set update_texture(val: Texture | null);
 
         /**
          * The texture {@link Gdk.GLTextureBuilder.update_region} is an update for.
          * @since 4.12
          */
-        get updateTexture(): (Texture | null);
-        set updateTexture(val: (Texture | null));
+        get updateTexture(): Texture | null;
+        set updateTexture(val: Texture | null);
 
         /**
          * The width of the texture.
@@ -14150,7 +14130,7 @@ export namespace Gdk {
          * `null` if none was set.
          * @returns The context
          */
-        get_context(): (GLContext | null);
+        get_context(): GLContext | null;
 
         /**
          * Gets the format previously set via `gdk_gl_texture_builder_set_format()`.
@@ -14189,14 +14169,14 @@ export namespace Gdk {
          * `null` if none was set.
          * @returns The region
          */
-        get_update_region(): (cairo.Region | null);
+        get_update_region(): cairo.Region | null;
 
         /**
          * Gets the texture previously set via `gdk_gl_texture_builder_set_update_texture()` or
          * `null` if none was set.
          * @returns The texture
          */
-        get_update_texture(): (Texture | null);
+        get_update_texture(): Texture | null;
 
         /**
          * Gets the width previously set via `gdk_gl_texture_builder_set_width()` or
@@ -14221,7 +14201,7 @@ export namespace Gdk {
          * The context must be set before calling {@link Gdk.GLTextureBuilder.build}.
          * @param context The context the texture belongs to or `null` to unset
          */
-        set_context(context: (GLContext | null)): void;
+        set_context(context: GLContext | null): void;
 
         /**
          * Sets the format of the texture. The default is `GDK_MEMORY_R8G8B8A8_PREMULTIPLIED`.
@@ -14297,14 +14277,14 @@ export namespace Gdk {
          * An example would be a screen recording where only the mouse pointer moves.
          * @param region the region to update
          */
-        set_update_region(region: (cairo.Region | null)): void;
+        set_update_region(region: cairo.Region | null): void;
 
         /**
          * Sets the texture to be updated by this texture. See
          * {@link Gdk.GLTextureBuilder.set_update_region} for an explanation.
          * @param texture the texture to update
          */
-        set_update_texture(texture: (Texture | null)): void;
+        set_update_texture(texture: Texture | null): void;
 
         /**
          * Sets the width of the texture.
@@ -14318,8 +14298,7 @@ export namespace Gdk {
 
     namespace GrabBrokenEvent {
         // Signal signatures
-        interface SignalSignatures extends Event.SignalSignatures {
-        }
+        interface SignalSignatures extends Event.SignalSignatures {}
     }
 
     /**
@@ -14362,8 +14341,7 @@ export namespace Gdk {
 
     namespace KeyEvent {
         // Signal signatures
-        interface SignalSignatures extends Event.SignalSignatures {
-        }
+        interface SignalSignatures extends Event.SignalSignatures {}
     }
 
     /**
@@ -14461,9 +14439,7 @@ export namespace Gdk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends Texture.ConstructorProps, Paintable.ConstructorProps, Gio.Icon.ConstructorProps, Gio.LoadableIcon.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Texture.ConstructorProps, Paintable.ConstructorProps, Gio.Icon.ConstructorProps, Gio.LoadableIcon.ConstructorProps {}
     }
 
     /**
@@ -14487,7 +14463,7 @@ export namespace Gdk {
 
         _init(...args: any[]): void;
 
-        static ["new"](width: number, height: number, format: MemoryFormat, bytes: (GLib.Bytes | Uint8Array), stride: (bigint | number)): MemoryTexture;
+        static ["new"](width: number, height: number, format: MemoryFormat, bytes: GLib.Bytes | Uint8Array, stride: bigint | number): MemoryTexture;
 
         // Signals
         /** @signal */
@@ -14724,7 +14700,7 @@ export namespace Gdk {
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @returns `true` if `icon1` is equal to `icon2`. `false` otherwise.
          */
-        equal(icon2: (Gio.Icon | null)): boolean;
+        equal(icon2: Gio.Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -14740,7 +14716,7 @@ export namespace Gdk {
          * (as opposed to over the network), and within the same file system namespace.
          * @returns a {@link GLib.Variant}, or `null` when serialization fails. The {@link GLib.Variant} will not be floating.
          */
-        serialize(): (GLib.Variant | null);
+        serialize(): GLib.Variant | null;
 
         /**
          * Generates a textual representation of `icon` that can be used for
@@ -14761,14 +14737,14 @@ export namespace Gdk {
          *   the encoding is simply the name (such as `network-server`).
          * @returns An allocated NUL-terminated UTF8 string or `null` if `icon` can't be serialized. Use `g_free()` to free.
          */
-        to_string(): (string | null);
+        to_string(): string | null;
 
         /**
          * Checks if two icons are equal.
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @virtual
          */
-        vfunc_equal(icon2: (Gio.Icon | null)): boolean;
+        vfunc_equal(icon2: Gio.Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -14784,7 +14760,7 @@ export namespace Gdk {
          * (as opposed to over the network), and within the same file system namespace.
          * @virtual
          */
-        vfunc_serialize(): (GLib.Variant | null);
+        vfunc_serialize(): GLib.Variant | null;
 
         /**
          * Serializes the `icon` into string tokens.
@@ -14800,7 +14776,7 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a {@link Gio.InputStream} to read the icon from.
          */
-        load(size: number, cancellable: (Gio.Cancellable | null)): [Gio.InputStream, string];
+        load(size: number, cancellable: Gio.Cancellable | null): [Gio.InputStream, string];
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -14809,17 +14785,7 @@ export namespace Gdk {
          * @param size an integer.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        load_async(size: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<[Gio.InputStream, string]>;
-
-        /**
-         * Loads an icon asynchronously. To finish this function, see
-         * `g_loadable_icon_load_finish()`. For the synchronous, blocking
-         * version of this function, see `g_loadable_icon_load()`.
-         * @param size an integer.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        load_async(size: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        load_async(size: number, cancellable: Gio.Cancellable | null): globalThis.Promise<[Gio.InputStream, string]>;
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -14829,7 +14795,17 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        load_async(size: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<[Gio.InputStream, string]> | void);
+        load_async(size: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Loads an icon asynchronously. To finish this function, see
+         * `g_loadable_icon_load_finish()`. For the synchronous, blocking
+         * version of this function, see `g_loadable_icon_load()`.
+         * @param size an integer.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        load_async(size: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<[Gio.InputStream, string]> | void;
 
         /**
          * Finishes an asynchronous icon load started in `g_loadable_icon_load_async()`.
@@ -14845,7 +14821,7 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_load(size: number, cancellable: (Gio.Cancellable | null)): [Gio.InputStream, string];
+        vfunc_load(size: number, cancellable: Gio.Cancellable | null): [Gio.InputStream, string];
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -14856,7 +14832,7 @@ export namespace Gdk {
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_load_async(size: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        vfunc_load_async(size: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes an asynchronous icon load started in `g_loadable_icon_load_async()`.
@@ -14882,16 +14858,16 @@ export namespace Gdk {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            bytes: (GLib.Bytes | null);
+            bytes: GLib.Bytes | null;
             color_state: ColorState;
             colorState: ColorState;
             format: MemoryFormat;
             height: number;
-            stride: (bigint | number);
-            update_region: (cairo.Region | null);
-            updateRegion: (cairo.Region | null);
-            update_texture: (Texture | null);
-            updateTexture: (Texture | null);
+            stride: bigint | number;
+            update_region: cairo.Region | null;
+            updateRegion: cairo.Region | null;
+            update_texture: Texture | null;
+            updateTexture: Texture | null;
             width: number;
         }
     }
@@ -14919,8 +14895,8 @@ export namespace Gdk {
          * The bytes holding the data.
          * @since 4.16
          */
-        get bytes(): (GLib.Bytes | null);
-        set bytes(val: (GLib.Bytes | null));
+        get bytes(): GLib.Bytes | null;
+        set bytes(val: GLib.Bytes | null);
 
         /**
          * The colorstate describing the data.
@@ -14961,35 +14937,35 @@ export namespace Gdk {
          * @default 0
          */
         get stride(): number;
-        set stride(val: (bigint | number));
+        set stride(val: bigint | number);
 
         /**
          * The update region for {@link Gdk.MemoryTextureBuilder.update_texture}.
          * @since 4.16
          */
-        get update_region(): (cairo.Region | null);
-        set update_region(val: (cairo.Region | null));
+        get update_region(): cairo.Region | null;
+        set update_region(val: cairo.Region | null);
 
         /**
          * The update region for {@link Gdk.MemoryTextureBuilder.update_texture}.
          * @since 4.16
          */
-        get updateRegion(): (cairo.Region | null);
-        set updateRegion(val: (cairo.Region | null));
+        get updateRegion(): cairo.Region | null;
+        set updateRegion(val: cairo.Region | null);
 
         /**
          * The texture {@link Gdk.MemoryTextureBuilder.update_region} is an update for.
          * @since 4.16
          */
-        get update_texture(): (Texture | null);
-        set update_texture(val: (Texture | null));
+        get update_texture(): Texture | null;
+        set update_texture(val: Texture | null);
 
         /**
          * The texture {@link Gdk.MemoryTextureBuilder.update_region} is an update for.
          * @since 4.16
          */
-        get updateTexture(): (Texture | null);
-        set updateTexture(val: (Texture | null));
+        get updateTexture(): Texture | null;
+        set updateTexture(val: Texture | null);
 
         /**
          * The width of the texture.
@@ -15046,7 +15022,7 @@ export namespace Gdk {
          * or `null` if none was set.
          * @returns The bytes
          */
-        get_bytes(): (GLib.Bytes | null);
+        get_bytes(): GLib.Bytes | null;
 
         /**
          * Gets the colorstate previously set via `gdk_memory_texture_builder_set_color_state()`.
@@ -15092,14 +15068,14 @@ export namespace Gdk {
          * or `null` if none was set.
          * @returns The update region
          */
-        get_update_region(): (cairo.Region | null);
+        get_update_region(): cairo.Region | null;
 
         /**
          * Gets the texture previously set via `gdk_memory_texture_builder_set_update_texture()`
          * or `null` if none was set.
          * @returns The update texture
          */
-        get_update_texture(): (Texture | null);
+        get_update_texture(): Texture | null;
 
         /**
          * Gets the width previously set via `gdk_memory_texture_builder_set_width()`
@@ -15114,7 +15090,7 @@ export namespace Gdk {
          * The bytes must be set before calling {@link Gdk.MemoryTextureBuilder.build}.
          * @param bytes The bytes the texture shows or `null` to unset
          */
-        set_bytes(bytes: (GLib.Bytes | null)): void;
+        set_bytes(bytes: GLib.Bytes | null): void;
 
         /**
          * Sets the colorstate describing the data.
@@ -15147,7 +15123,7 @@ export namespace Gdk {
          * @param plane a plane
          * @param offset the texture's offset for `plane`
          */
-        set_offset(plane: number, offset: (bigint | number)): void;
+        set_offset(plane: number, offset: bigint | number): void;
 
         /**
          * Sets the rowstride of the bytes used.
@@ -15155,14 +15131,14 @@ export namespace Gdk {
          * The rowstride must be set before calling {@link Gdk.MemoryTextureBuilder.build}.
          * @param stride the stride or 0 to unset
          */
-        set_stride(stride: (bigint | number)): void;
+        set_stride(stride: bigint | number): void;
 
         /**
          * Sets the stride of the texture for `plane`.
          * @param plane a plane
          * @param stride the texture's stride for `plane`
          */
-        set_stride_for_plane(plane: number, stride: (bigint | number)): void;
+        set_stride_for_plane(plane: number, stride: bigint | number): void;
 
         /**
          * Sets the region to be updated by this texture.
@@ -15178,7 +15154,7 @@ export namespace Gdk {
          * An example would be a screen recording where only the mouse pointer moves.
          * @param region the region to update
          */
-        set_update_region(region: (cairo.Region | null)): void;
+        set_update_region(region: cairo.Region | null): void;
 
         /**
          * Sets the texture to be updated by this texture.
@@ -15186,7 +15162,7 @@ export namespace Gdk {
          * See {@link Gdk.MemoryTextureBuilder.set_update_region} for an explanation.
          * @param texture the texture to update
          */
-        set_update_texture(texture: (Texture | null)): void;
+        set_update_texture(texture: Texture | null): void;
 
         /**
          * Sets the width of the texture.
@@ -15225,14 +15201,14 @@ export namespace Gdk {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            connector: (string | null);
-            description: (string | null);
+            connector: string | null;
+            description: string | null;
             display: Display;
             geometry: Rectangle;
             height_mm: number;
             heightMm: number;
-            manufacturer: (string | null);
-            model: (string | null);
+            manufacturer: string | null;
+            model: string | null;
             refresh_rate: number;
             refreshRate: number;
             scale: number;
@@ -15264,7 +15240,7 @@ export namespace Gdk {
          * @read-only
          * @default null
          */
-        get connector(): (string | null);
+        get connector(): string | null;
 
         /**
          * A short description of the monitor, meant for display to the user.
@@ -15272,7 +15248,7 @@ export namespace Gdk {
          * @read-only
          * @default null
          */
-        get description(): (string | null);
+        get description(): string | null;
 
         /**
          * The {@link Gdk.Display} of the monitor.
@@ -15305,14 +15281,14 @@ export namespace Gdk {
          * @read-only
          * @default null
          */
-        get manufacturer(): (string | null);
+        get manufacturer(): string | null;
 
         /**
          * The model name.
          * @read-only
          * @default null
          */
-        get model(): (string | null);
+        get model(): string | null;
 
         /**
          * The refresh rate, in milli-Hertz.
@@ -15427,7 +15403,7 @@ export namespace Gdk {
          * relied on as stable identifiers of a specific monitor.
          * @returns the name of the connector
          */
-        get_connector(): (string | null);
+        get_connector(): string | null;
 
         /**
          * Gets a string describing the monitor, if available.
@@ -15435,7 +15411,7 @@ export namespace Gdk {
          * This can be used to identify a monitor in the UI.
          * @returns the monitor description
          */
-        get_description(): (string | null);
+        get_description(): string | null;
 
         /**
          * Gets the display that this monitor belongs to.
@@ -15468,13 +15444,13 @@ export namespace Gdk {
          * [https://uefi.org/pnp_id_list](https://uefi.org/pnp_id_list).
          * @returns the name of the manufacturer
          */
-        get_manufacturer(): (string | null);
+        get_manufacturer(): string | null;
 
         /**
          * Gets the string identifying the monitor model, if available.
          * @returns the monitor model
          */
-        get_model(): (string | null);
+        get_model(): string | null;
 
         /**
          * Gets the refresh rate of the monitor, if available.
@@ -15537,8 +15513,7 @@ export namespace Gdk {
 
     namespace MotionEvent {
         // Signal signatures
-        interface SignalSignatures extends Event.SignalSignatures {
-        }
+        interface SignalSignatures extends Event.SignalSignatures {}
     }
 
     /**
@@ -15568,8 +15543,7 @@ export namespace Gdk {
 
     namespace PadEvent {
         // Signal signatures
-        interface SignalSignatures extends Event.SignalSignatures {
-        }
+        interface SignalSignatures extends Event.SignalSignatures {}
     }
 
     /**
@@ -15617,8 +15591,7 @@ export namespace Gdk {
 
     namespace ProximityEvent {
         // Signal signatures
-        interface SignalSignatures extends Event.SignalSignatures {
-        }
+        interface SignalSignatures extends Event.SignalSignatures {}
     }
 
     /**
@@ -15648,8 +15621,7 @@ export namespace Gdk {
 
     namespace ScrollEvent {
         // Signal signatures
-        interface SignalSignatures extends Event.SignalSignatures {
-        }
+        interface SignalSignatures extends Event.SignalSignatures {}
     }
 
     /**
@@ -15831,13 +15803,13 @@ export namespace Gdk {
          * Returns the device that routes keyboard events.
          * @returns a {@link Gdk.Device} with keyboard   capabilities. This object is owned by GTK and must not be freed.
          */
-        get_keyboard(): (Device | null);
+        get_keyboard(): Device | null;
 
         /**
          * Returns the device that routes pointer events.
          * @returns a {@link Gdk.Device} with pointer   capabilities. This object is owned by GTK and must not be freed.
          */
-        get_pointer(): (Device | null);
+        get_pointer(): Device | null;
 
         /**
          * Returns all `GdkDeviceTools` that are known to the application.
@@ -15849,13 +15821,10 @@ export namespace Gdk {
 
     namespace Snapshot {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
-        }
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     /**
@@ -15910,7 +15879,7 @@ export namespace Gdk {
              * @signal
              * @run-last
              */
-            event: (arg0: Event) => (boolean | void);
+            event: (arg0: Event) => boolean | void;
             /**
              * Emitted when the size of `surface` is changed, or when relayout should
              * be performed.
@@ -15932,7 +15901,7 @@ export namespace Gdk {
              * @signal
              * @run-last
              */
-            render: (arg0: cairo.Region) => (boolean | void);
+            render: (arg0: cairo.Region) => boolean | void;
             "notify::cursor": (pspec: GObject.ParamSpec) => void;
             "notify::display": (pspec: GObject.ParamSpec) => void;
             "notify::frame-clock": (pspec: GObject.ParamSpec) => void;
@@ -15945,7 +15914,7 @@ export namespace Gdk {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            cursor: (Cursor | null);
+            cursor: Cursor | null;
             display: Display;
             frame_clock: FrameClock;
             frameClock: FrameClock;
@@ -15977,8 +15946,8 @@ export namespace Gdk {
         /**
          * The mouse pointer for the {@link Gdk.Surface}.
          */
-        get cursor(): (Cursor | null);
-        set cursor(val: (Cursor | null));
+        get cursor(): Cursor | null;
+        set cursor(val: Cursor | null);
 
         /**
          * The {@link Gdk.Display} connection of the surface.
@@ -16156,7 +16125,7 @@ export namespace Gdk {
          * Use {@link Gdk.Surface.set_cursor} to unset the cursor of the surface.
          * @returns a {@link Gdk.Cursor}
          */
-        get_cursor(): (Cursor | null);
+        get_cursor(): Cursor | null;
 
         /**
          * Retrieves a {@link Gdk.Cursor} pointer for the `device` currently set on the
@@ -16169,7 +16138,7 @@ export namespace Gdk {
          * @param device a pointer {@link Gdk.Device}
          * @returns a {@link Gdk.Cursor}
          */
-        get_device_cursor(device: Device): (Cursor | null);
+        get_device_cursor(device: Device): Cursor | null;
 
         /**
          * Obtains the current device position and modifier state.
@@ -16298,7 +16267,7 @@ export namespace Gdk {
          * to create the cursor. To make the cursor invisible, use `GDK_BLANK_CURSOR`.
          * @param cursor a {@link Gdk.Cursor}
          */
-        set_cursor(cursor: (Cursor | null)): void;
+        set_cursor(cursor: Cursor | null): void;
 
         /**
          * Sets a specific {@link Gdk.Cursor} for a given device when it gets inside `surface`.
@@ -16330,7 +16299,7 @@ export namespace Gdk {
          * a particular backend supports input regions.
          * @param region region of surface to be reactive,   or `null` to make the entire surface reactive
          */
-        set_input_region(region: (cairo.Region | null)): void;
+        set_input_region(region: cairo.Region | null): void;
 
         /**
          * Marks a region of the {@link Gdk.Surface} as opaque.
@@ -16350,7 +16319,7 @@ export namespace Gdk {
          * [GtkWidgetClass.css_changed](../gtk4/vfunc.Widget.css_changed.html) handler.
          * @param region a region, or `null` to make the entire   surface opaque
          */
-        set_opaque_region(region: (cairo.Region | null)): void;
+        set_opaque_region(region: cairo.Region | null): void;
 
         /**
          * Translates coordinates between two surfaces.
@@ -16460,7 +16429,7 @@ export namespace Gdk {
 
         static new_for_pixbuf(pixbuf: GdkPixbuf.Pixbuf): Texture;
 
-        static new_from_bytes(bytes: (GLib.Bytes | Uint8Array)): Texture;
+        static new_from_bytes(bytes: GLib.Bytes | Uint8Array): Texture;
 
         static new_from_file(file: Gio.File): Texture;
 
@@ -16508,7 +16477,7 @@ export namespace Gdk {
          * @param data pointer to enough memory to be filled with the   downloaded data of `texture`
          * @param stride rowstride in bytes
          */
-        download(data: (Uint8Array | string), stride: (bigint | number)): void;
+        download(data: Uint8Array | string, stride: bigint | number): void;
 
         /**
          * Returns the color state associated with the texture.
@@ -16822,7 +16791,7 @@ export namespace Gdk {
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @returns `true` if `icon1` is equal to `icon2`. `false` otherwise.
          */
-        equal(icon2: (Gio.Icon | null)): boolean;
+        equal(icon2: Gio.Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -16838,7 +16807,7 @@ export namespace Gdk {
          * (as opposed to over the network), and within the same file system namespace.
          * @returns a {@link GLib.Variant}, or `null` when serialization fails. The {@link GLib.Variant} will not be floating.
          */
-        serialize(): (GLib.Variant | null);
+        serialize(): GLib.Variant | null;
 
         /**
          * Generates a textual representation of `icon` that can be used for
@@ -16859,14 +16828,14 @@ export namespace Gdk {
          *   the encoding is simply the name (such as `network-server`).
          * @returns An allocated NUL-terminated UTF8 string or `null` if `icon` can't be serialized. Use `g_free()` to free.
          */
-        to_string(): (string | null);
+        to_string(): string | null;
 
         /**
          * Checks if two icons are equal.
          * @param icon2 pointer to the second {@link Gio.Icon}.
          * @virtual
          */
-        vfunc_equal(icon2: (Gio.Icon | null)): boolean;
+        vfunc_equal(icon2: Gio.Icon | null): boolean;
 
         /**
          * Gets a hash for an icon.
@@ -16882,7 +16851,7 @@ export namespace Gdk {
          * (as opposed to over the network), and within the same file system namespace.
          * @virtual
          */
-        vfunc_serialize(): (GLib.Variant | null);
+        vfunc_serialize(): GLib.Variant | null;
 
         /**
          * Serializes the `icon` into string tokens.
@@ -16898,7 +16867,7 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns a {@link Gio.InputStream} to read the icon from.
          */
-        load(size: number, cancellable: (Gio.Cancellable | null)): [Gio.InputStream, string];
+        load(size: number, cancellable: Gio.Cancellable | null): [Gio.InputStream, string];
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -16907,17 +16876,7 @@ export namespace Gdk {
          * @param size an integer.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        load_async(size: number, cancellable: (Gio.Cancellable | null)): globalThis.Promise<[Gio.InputStream, string]>;
-
-        /**
-         * Loads an icon asynchronously. To finish this function, see
-         * `g_loadable_icon_load_finish()`. For the synchronous, blocking
-         * version of this function, see `g_loadable_icon_load()`.
-         * @param size an integer.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
-         */
-        load_async(size: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        load_async(size: number, cancellable: Gio.Cancellable | null): globalThis.Promise<[Gio.InputStream, string]>;
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -16927,7 +16886,17 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          */
-        load_async(size: number, cancellable: (Gio.Cancellable | null), callback?: (Gio.AsyncReadyCallback<this> | null)): (globalThis.Promise<[Gio.InputStream, string]> | void);
+        load_async(size: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Loads an icon asynchronously. To finish this function, see
+         * `g_loadable_icon_load_finish()`. For the synchronous, blocking
+         * version of this function, see `g_loadable_icon_load()`.
+         * @param size an integer.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         */
+        load_async(size: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<[Gio.InputStream, string]> | void;
 
         /**
          * Finishes an asynchronous icon load started in `g_loadable_icon_load_async()`.
@@ -16943,7 +16912,7 @@ export namespace Gdk {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @virtual
          */
-        vfunc_load(size: number, cancellable: (Gio.Cancellable | null)): [Gio.InputStream, string];
+        vfunc_load(size: number, cancellable: Gio.Cancellable | null): [Gio.InputStream, string];
 
         /**
          * Loads an icon asynchronously. To finish this function, see
@@ -16954,7 +16923,7 @@ export namespace Gdk {
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_load_async(size: number, cancellable: (Gio.Cancellable | null), callback: (Gio.AsyncReadyCallback<this> | null)): void;
+        vfunc_load_async(size: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Finishes an asynchronous icon load started in `g_loadable_icon_load_async()`.
@@ -16967,8 +16936,7 @@ export namespace Gdk {
 
     namespace TouchEvent {
         // Signal signatures
-        interface SignalSignatures extends Event.SignalSignatures {
-        }
+        interface SignalSignatures extends Event.SignalSignatures {}
     }
 
     /**
@@ -17005,8 +16973,7 @@ export namespace Gdk {
 
     namespace TouchpadEvent {
         // Signal signatures
-        interface SignalSignatures extends Event.SignalSignatures {
-        }
+        interface SignalSignatures extends Event.SignalSignatures {}
     }
 
     /**
@@ -17086,9 +17053,7 @@ export namespace Gdk {
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends DrawContext.ConstructorProps {
-
-        }
+        interface ConstructorProps extends DrawContext.ConstructorProps {}
     }
 
     /**
@@ -17232,7 +17197,7 @@ export namespace Gdk {
          * this function returns `NULL`.
          * @returns A new {@link Gdk.CicpParams}
          */
-        create_cicp_params(): (CicpParams | null);
+        create_cicp_params(): CicpParams | null;
 
         /**
          * Compares two `GdkColorStates` for equality.
@@ -17309,9 +17274,9 @@ export namespace Gdk {
         static $gtype: GObject.GType<ContentFormats>;
 
         // Constructors
-        constructor(mime_types: (string[] | null));
+        constructor(mime_types: string[] | null);
 
-        static ["new"](mime_types: (string[] | null)): ContentFormats;
+        static ["new"](mime_types: string[] | null): ContentFormats;
 
         static new_for_gtype(type: GObject.GType): ContentFormats;
 
@@ -17327,7 +17292,7 @@ export namespace Gdk {
          * is returned.
          * @param string the string to parse
          */
-        static parse(string: string): (ContentFormats | null);
+        static parse(string: string): ContentFormats | null;
 
         // Methods
         /**
@@ -17351,7 +17316,7 @@ export namespace Gdk {
          * they are empty. In that case `null` will be returned.
          * @returns `G_TYPE_INVALID`-terminated array of types included in `formats`
          */
-        get_gtypes(): (GObject.GType[] | null);
+        get_gtypes(): GObject.GType[] | null;
 
         /**
          * Gets the mime types included in `formats`.
@@ -17360,7 +17325,7 @@ export namespace Gdk {
          * when they are empty. In that case `null` will be returned.
          * @returns `null`-terminated array of interned strings of mime types included   in `formats`
          */
-        get_mime_types(): (string[] | null);
+        get_mime_types(): string[] | null;
 
         /**
          * Returns whether the content formats contain any formats.
@@ -17393,7 +17358,7 @@ export namespace Gdk {
          * @param second the {@link Gdk.ContentFormats} to intersect with
          * @returns The first common mime type or `null` if none
          */
-        match_mime_type(second: ContentFormats): (string | null);
+        match_mime_type(second: ContentFormats): string | null;
 
         /**
          * Prints the given `formats` into a string for human consumption.
@@ -17474,10 +17439,7 @@ export namespace Gdk {
         static $gtype: GObject.GType<ContentFormatsBuilder>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): ContentFormatsBuilder;
 
@@ -17572,7 +17534,7 @@ export namespace Gdk {
          * @param modifier a format modifier
          * @returns `TRUE` if the format specified by the arguments   is part of `formats`
          */
-        contains(fourcc: number, modifier: (bigint | number)): boolean;
+        contains(fourcc: number, modifier: bigint | number): boolean;
 
         /**
          * Returns whether `formats1` and `formats2` contain the
@@ -17580,14 +17542,14 @@ export namespace Gdk {
          * @param formats2 another {@link Gdk.DmabufFormats}
          * @returns `TRUE` if `formats1` and `formats2` are equal
          */
-        equal(formats2: (DmabufFormats | null)): boolean;
+        equal(formats2: DmabufFormats | null): boolean;
 
         /**
          * Gets the fourcc code and modifier for a format
          * that is contained in `formats`.
          * @param idx the index of the format to return
          */
-        get_format(idx: (bigint | number)): [number, number];
+        get_format(idx: bigint | number): [number, number];
 
         /**
          * Returns the number of formats that the `formats` object
@@ -18301,7 +18263,7 @@ export namespace Gdk {
          * @param data pointer to enough memory to be filled with the   downloaded data of the texture
          * @param stride rowstride in bytes
          */
-        download_into(data: (Uint8Array | string), stride: (bigint | number)): void;
+        download_into(data: Uint8Array | string, stride: bigint | number): void;
 
         /**
          * Frees the given downloader and all its associated resources.
@@ -18393,10 +18355,7 @@ export namespace Gdk {
         static $gtype: GObject.GType<ToplevelLayout>;
 
         // Constructors
-
-        constructor(properties?: Partial<{
-
-        }>);
+        constructor(properties?: Partial<{}>);
 
         static ["new"](): ToplevelLayout;
 
@@ -18427,7 +18386,7 @@ export namespace Gdk {
          * the surface on.
          * @returns the monitor on which `layout` fullscreens
          */
-        get_fullscreen_monitor(): (Monitor | null);
+        get_fullscreen_monitor(): Monitor | null;
 
         /**
          * If the layout specifies whether to the toplevel should go maximized,
@@ -18456,7 +18415,7 @@ export namespace Gdk {
          * @param fullscreen true to fullscreen the surface
          * @param monitor the monitor to fullscreen on
          */
-        set_fullscreen(fullscreen: boolean, monitor: (Monitor | null)): void;
+        set_fullscreen(fullscreen: boolean, monitor: Monitor | null): void;
 
         /**
          * Sets whether the layout should cause the surface
@@ -18546,9 +18505,7 @@ export namespace Gdk {
     namespace DevicePad {
 
         // Constructor properties interface
-        interface ConstructorProps extends Device.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Device.ConstructorProps {}
     }
 
     export interface DevicePadNamespace {
@@ -18620,9 +18577,7 @@ export namespace Gdk {
     namespace DragSurface {
 
         // Constructor properties interface
-        interface ConstructorProps extends Surface.ConstructorProps {
-
-        }
+        interface ConstructorProps extends Surface.ConstructorProps {}
     }
 
     export interface DragSurfaceNamespace {
@@ -18747,9 +18702,7 @@ export namespace Gdk {
 
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {
-
-        }
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
     }
 
     export interface PaintableNamespace {
@@ -18960,7 +18913,7 @@ export namespace Gdk {
         // Constructor properties interface
         interface ConstructorProps extends Surface.ConstructorProps {
             autohide: boolean;
-            parent: (Surface | null);
+            parent: Surface | null;
         }
     }
 
@@ -18992,7 +18945,7 @@ export namespace Gdk {
          * The parent surface.
          * @construct-only
          */
-        get parent(): (Surface | null);
+        get parent(): Surface | null;
 
         // Methods
         /**
@@ -19005,7 +18958,7 @@ export namespace Gdk {
          * Returns the parent surface of a popup.
          * @returns the parent surface
          */
-        get_parent(): (Surface | null);
+        get_parent(): Surface | null;
 
         /**
          * Obtains the position of the popup relative to its parent.
@@ -19261,7 +19214,7 @@ export namespace Gdk {
          * @param y surface Y coordinate of mouse click that began the drag
          * @param timestamp timestamp of mouse click that began the drag (use   {@link Gdk.Event.get_time})
          */
-        begin_resize(edge: SurfaceEdge, device: (Device | null), button: number, x: number, y: number, timestamp: number): void;
+        begin_resize(edge: SurfaceEdge, device: Device | null, button: number, x: number, y: number, timestamp: number): void;
 
         /**
          * Sets keyboard focus to `surface`.
@@ -19317,7 +19270,7 @@ export namespace Gdk {
          * by listening to the {@link Gdk.Toplevel.shortcuts_inhibited} property.
          * @param event the {@link Gdk.Event} that is triggering the inhibit   request, or `null` if none is available
          */
-        inhibit_system_shortcuts(event: (Event | null)): void;
+        inhibit_system_shortcuts(event: Event | null): void;
 
         /**
          * Asks to lower the `toplevel` below other windows.
