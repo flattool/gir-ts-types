@@ -274,7 +274,7 @@ export namespace Secret {
      * @returns whether or not the given attributes table is valid
      * @since 0.21.2
      */
-    function attributes_validate(schema: Schema, attributes: { [key: string]: any } | GLib.HashTable<never, never>): boolean;
+    function attributes_validate(schema: Schema, attributes: never): boolean;
 
     /**
      * Get a {@link Secret.Backend} instance.
@@ -366,7 +366,7 @@ export namespace Secret {
      * @param attributes the attribute keys and values
      * @param cancellable optional cancellation object
      */
-    function password_clear(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
+    function password_clear(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
     /**
      * Remove unlocked matching passwords from the secret service.
      * 
@@ -380,7 +380,7 @@ export namespace Secret {
      * @param cancellable optional cancellation object
      * @param callback called when the operation completes
      */
-    function password_clear(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): void;
+    function password_clear(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): void;
     /**
      * Remove unlocked matching passwords from the secret service.
      * 
@@ -394,7 +394,7 @@ export namespace Secret {
      * @param cancellable optional cancellation object
      * @param callback called when the operation completes
      */
-    function password_clear(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): globalThis.Promise<boolean> | void;
+    function password_clear(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): globalThis.Promise<boolean> | void;
 
     /**
      * Remove unlocked matching passwords from the secret service.
@@ -410,7 +410,7 @@ export namespace Secret {
      * @param cancellable optional cancellation object
      * @returns whether any passwords were removed
      */
-    function password_clear_sync(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null): boolean;
+    function password_clear_sync(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null): boolean;
 
     /**
      * Finish an asynchronous operation to lookup a password in the secret service.
@@ -431,7 +431,7 @@ export namespace Secret {
      * @param attributes the attribute keys and values
      * @param cancellable optional cancellation object
      */
-    function password_lookup(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null): globalThis.Promise<string>;
+    function password_lookup(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null): globalThis.Promise<string>;
     /**
      * Lookup a password in the secret service.
      * 
@@ -445,7 +445,7 @@ export namespace Secret {
      * @param cancellable optional cancellation object
      * @param callback called when the operation completes
      */
-    function password_lookup(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): void;
+    function password_lookup(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): void;
     /**
      * Lookup a password in the secret service.
      * 
@@ -459,7 +459,7 @@ export namespace Secret {
      * @param cancellable optional cancellation object
      * @param callback called when the operation completes
      */
-    function password_lookup(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): globalThis.Promise<string> | void;
+    function password_lookup(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): globalThis.Promise<string> | void;
 
     /**
      * Lookup a password in the secret service.
@@ -475,7 +475,7 @@ export namespace Secret {
      * @param cancellable optional cancellation object
      * @returns a new password string which should be freed with   {@link password_free} or may be freed with {@link GLib.free} when done
      */
-    function password_lookup_sync(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null): string;
+    function password_lookup_sync(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null): string;
 
     /**
      * Finish an asynchronous operation to search for items in the secret service.
@@ -497,7 +497,7 @@ export namespace Secret {
      * @param cancellable optional cancellation object
      * @since 0.19.0
      */
-    function password_search(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, flags: SearchFlags, cancellable: Gio.Cancellable | null): globalThis.Promise<Retrievable[]>;
+    function password_search(schema: Schema | null, attributes: { [key: string]: string }, flags: SearchFlags, cancellable: Gio.Cancellable | null): globalThis.Promise<Retrievable[]>;
     /**
      * Search for items in the secret service.
      * 
@@ -511,7 +511,7 @@ export namespace Secret {
      * @param callback called when the operation completes
      * @since 0.19.0
      */
-    function password_search(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, flags: SearchFlags, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): void;
+    function password_search(schema: Schema | null, attributes: { [key: string]: string }, flags: SearchFlags, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): void;
     /**
      * Search for items in the secret service.
      * 
@@ -525,7 +525,7 @@ export namespace Secret {
      * @param callback called when the operation completes
      * @since 0.19.0
      */
-    function password_search(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, flags: SearchFlags, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): globalThis.Promise<Retrievable[]> | void;
+    function password_search(schema: Schema | null, attributes: { [key: string]: string }, flags: SearchFlags, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): globalThis.Promise<Retrievable[]> | void;
 
     /**
      * Search for items in the secret service.
@@ -543,7 +543,7 @@ export namespace Secret {
      * @returns a list of   {@link Retrievable} containing attributes of the matched items
      * @since 0.19.0
      */
-    function password_search_sync(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, flags: SearchFlags, cancellable: Gio.Cancellable | null): Retrievable[];
+    function password_search_sync(schema: Schema | null, attributes: { [key: string]: string }, flags: SearchFlags, cancellable: Gio.Cancellable | null): Retrievable[];
 
     /**
      * Finish asynchronous operation to store a password in the secret service.
@@ -572,7 +572,7 @@ export namespace Secret {
      * @param password the null-terminated password to store
      * @param cancellable optional cancellation object
      */
-    function password_store(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, collection: string | null, label: string, password: string, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
+    function password_store(schema: Schema | null, attributes: { [key: string]: string }, collection: string | null, label: string, password: string, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
     /**
      * Store a password in the secret service.
      * 
@@ -594,7 +594,7 @@ export namespace Secret {
      * @param cancellable optional cancellation object
      * @param callback called when the operation completes
      */
-    function password_store(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, collection: string | null, label: string, password: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): void;
+    function password_store(schema: Schema | null, attributes: { [key: string]: string }, collection: string | null, label: string, password: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): void;
     /**
      * Store a password in the secret service.
      * 
@@ -616,7 +616,7 @@ export namespace Secret {
      * @param cancellable optional cancellation object
      * @param callback called when the operation completes
      */
-    function password_store(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, collection: string | null, label: string, password: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): globalThis.Promise<boolean> | void;
+    function password_store(schema: Schema | null, attributes: { [key: string]: string }, collection: string | null, label: string, password: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): globalThis.Promise<boolean> | void;
 
     /**
      * Store a password in the secret service.
@@ -634,7 +634,7 @@ export namespace Secret {
      * @param callback called when the operation completes
      * @since 0.19.0
      */
-    function password_store_binary(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, collection: string | null, label: string, value: Value, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): void;
+    function password_store_binary(schema: Schema | null, attributes: { [key: string]: string }, collection: string | null, label: string, value: Value, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Schema | null> | null): void;
 
     /**
      * Store a password in the secret service.
@@ -653,7 +653,7 @@ export namespace Secret {
      * @returns whether the storage was successful or not
      * @since 0.19.0
      */
-    function password_store_binary_sync(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, collection: string | null, label: string, value: Value, cancellable: Gio.Cancellable | null): boolean;
+    function password_store_binary_sync(schema: Schema | null, attributes: { [key: string]: string }, collection: string | null, label: string, value: Value, cancellable: Gio.Cancellable | null): boolean;
 
     /**
      * Store a password in the secret service.
@@ -677,7 +677,7 @@ export namespace Secret {
      * @param cancellable optional cancellation object
      * @returns whether the storage was successful or not
      */
-    function password_store_sync(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, collection: string | null, label: string, password: string, cancellable: Gio.Cancellable | null): boolean;
+    function password_store_sync(schema: Schema | null, attributes: { [key: string]: string }, collection: string | null, label: string, password: string, cancellable: Gio.Cancellable | null): boolean;
 
     /**
      * Clear the memory used by a password.
@@ -1288,7 +1288,7 @@ export namespace Secret {
          * @param flags search option flags
          * @param cancellable optional cancellation object
          */
-        search(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, flags: SearchFlags, cancellable: Gio.Cancellable | null): globalThis.Promise<Item[]>;
+        search(schema: Schema | null, attributes: { [key: string]: string }, flags: SearchFlags, cancellable: Gio.Cancellable | null): globalThis.Promise<Item[]>;
 
         /**
          * Search for items matching the `attributes` in the `collection`.
@@ -1312,7 +1312,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        search(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, flags: SearchFlags, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+        search(schema: Schema | null, attributes: { [key: string]: string }, flags: SearchFlags, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Search for items matching the `attributes` in the `collection`.
@@ -1336,7 +1336,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        search(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, flags: SearchFlags, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Item[]> | void;
+        search(schema: Schema | null, attributes: { [key: string]: string }, flags: SearchFlags, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Item[]> | void;
 
         /**
          * Complete asynchronous operation to search for items in a collection.
@@ -1368,7 +1368,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @returns a list of items that matched the search
          */
-        search_sync(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, flags: SearchFlags, cancellable: Gio.Cancellable | null): Item[];
+        search_sync(schema: Schema | null, attributes: { [key: string]: string }, flags: SearchFlags, cancellable: Gio.Cancellable | null): Item[];
 
         /**
          * Set the label of this collection.
@@ -1893,7 +1893,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        static create(collection: Collection, schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, label: string, value: Value, flags: ItemCreateFlags, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Item> | null): void;
+        static create(collection: Collection, schema: Schema | null, attributes: { [key: string]: string }, label: string, value: Value, flags: ItemCreateFlags, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Item> | null): void;
 
         /**
          * Finish operation to create a new item in the secret service.
@@ -1919,7 +1919,7 @@ export namespace Secret {
          * @param flags flags for the creation of the new item
          * @param cancellable optional cancellation object
          */
-        static create_sync(collection: Collection, schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, label: string, value: Value, flags: ItemCreateFlags, cancellable: Gio.Cancellable | null): Item;
+        static create_sync(collection: Collection, schema: Schema | null, attributes: { [key: string]: string }, label: string, value: Value, flags: ItemCreateFlags, cancellable: Gio.Cancellable | null): Item;
 
         /**
          * Load the secret values for a secret item stored in the service.
@@ -2018,7 +2018,7 @@ export namespace Secret {
          * {@link Item.set_attributes} instead.
          * @returns a new reference   to the attributes, which should not be modified, and   released with {@link GLib.HashTable.unref}
          */
-        get_attributes(): GLib.HashTable<string, string>;
+        get_attributes(): { [key: string]: string };
 
         /**
          * Get the created date and time of the item.
@@ -2180,7 +2180,7 @@ export namespace Secret {
          * @param attributes a new set of attributes
          * @param cancellable optional cancellation object
          */
-        set_attributes(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
+        set_attributes(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Set the attributes of this item.
@@ -2195,7 +2195,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @param callback called when the asynchronous operation completes
          */
-        set_attributes(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+        set_attributes(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Set the attributes of this item.
@@ -2210,7 +2210,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @param callback called when the asynchronous operation completes
          */
-        set_attributes(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
+        set_attributes(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Complete operation to set the attributes of this item.
@@ -2233,7 +2233,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @returns whether the change was successful or not
          */
-        set_attributes_sync(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null): boolean;
+        set_attributes_sync(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Set the label of this item.
@@ -2349,8 +2349,8 @@ export namespace Secret {
          * @since 0.19.0
           * @category Inherited from Secret.Retrievable
          */
-        get attributes(): GLib.HashTable<string, string>;
-        set attributes(val: { [key: string]: any } | GLib.HashTable<string, string>);
+        get attributes(): { [key: string]: string };
+        set attributes(val: { [key: string]: string });
 
         /**
          * The date and time (in seconds since the UNIX epoch) that this
@@ -3597,7 +3597,7 @@ export namespace Secret {
          * @param attributes the attribute keys and values
          * @param cancellable optional cancellation object
          */
-        clear(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
+        clear(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Remove unlocked items which match the attributes from the secret service.
@@ -3613,7 +3613,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        clear(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+        clear(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Remove unlocked items which match the attributes from the secret service.
@@ -3629,7 +3629,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        clear(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
+        clear(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finish asynchronous operation to remove items from the secret
@@ -3654,7 +3654,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @returns whether items were removed or not
          */
-        clear_sync(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null): boolean;
+        clear_sync(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Create a new item in a secret service collection and return its D-Bus
@@ -3683,7 +3683,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @returns a new string containing the D-Bus object path   of the item
          */
-        create_item_dbus_path_sync(collection_path: string, properties: { [key: string]: any } | GLib.HashTable<string, GLib.Variant>, value: Value, flags: ItemCreateFlags, cancellable: Gio.Cancellable | null): string;
+        create_item_dbus_path_sync(collection_path: string, properties: { [key: string]: GLib.Variant }, value: Value, flags: ItemCreateFlags, cancellable: Gio.Cancellable | null): string;
 
         /**
          * Decode a {@link Value} into {@link GLib.Variant} received with the Secret Service
@@ -4016,7 +4016,7 @@ export namespace Secret {
          * @param attributes the attribute keys and values
          * @param cancellable optional cancellation object
          */
-        lookup(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null): globalThis.Promise<Value>;
+        lookup(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null): globalThis.Promise<Value>;
 
         /**
          * Lookup a secret value in the secret service.
@@ -4032,7 +4032,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        lookup(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+        lookup(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Lookup a secret value in the secret service.
@@ -4048,7 +4048,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        lookup(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Value> | void;
+        lookup(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Value> | void;
 
         /**
          * Finish asynchronous operation to lookup a secret value in the secret service.
@@ -4074,7 +4074,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @returns a newly allocated {@link Value}, which should be   released with {@link Value.unref}, or `null` if no secret found
          */
-        lookup_sync(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, cancellable: Gio.Cancellable | null): Value;
+        lookup_sync(schema: Schema | null, attributes: { [key: string]: string }, cancellable: Gio.Cancellable | null): Value;
 
         /**
          * Perform prompting for a {@link Prompt}.
@@ -4181,7 +4181,7 @@ export namespace Secret {
          * @param flags search option flags
          * @param cancellable optional cancellation object
          */
-        search(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, flags: SearchFlags, cancellable: Gio.Cancellable | null): globalThis.Promise<Item[]>;
+        search(schema: Schema | null, attributes: { [key: string]: string }, flags: SearchFlags, cancellable: Gio.Cancellable | null): globalThis.Promise<Item[]>;
 
         /**
          * Search for items matching the `attributes`.
@@ -4210,7 +4210,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        search(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, flags: SearchFlags, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+        search(schema: Schema | null, attributes: { [key: string]: string }, flags: SearchFlags, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Search for items matching the `attributes`.
@@ -4239,7 +4239,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        search(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, flags: SearchFlags, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Item[]> | void;
+        search(schema: Schema | null, attributes: { [key: string]: string }, flags: SearchFlags, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Item[]> | void;
 
         /**
          * Complete asynchronous operation to search for items.
@@ -4278,7 +4278,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @returns a list of items that matched the search
          */
-        search_sync(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, flags: SearchFlags, cancellable: Gio.Cancellable | null): Item[];
+        search_sync(schema: Schema | null, attributes: { [key: string]: string }, flags: SearchFlags, cancellable: Gio.Cancellable | null): Item[];
 
         /**
          * Assign a collection to this alias.
@@ -4372,7 +4372,7 @@ export namespace Secret {
          * @param value the secret value
          * @param cancellable optional cancellation object
          */
-        store(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, collection: string | null, label: string, value: Value, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
+        store(schema: Schema | null, attributes: { [key: string]: string }, collection: string | null, label: string, value: Value, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Store a secret value in the secret service.
@@ -4398,7 +4398,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        store(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, collection: string | null, label: string, value: Value, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+        store(schema: Schema | null, attributes: { [key: string]: string }, collection: string | null, label: string, value: Value, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * Store a secret value in the secret service.
@@ -4424,7 +4424,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @param callback called when the operation completes
          */
-        store(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, collection: string | null, label: string, value: Value, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
+        store(schema: Schema | null, attributes: { [key: string]: string }, collection: string | null, label: string, value: Value, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
          * Finish asynchronous operation to store a secret value in the secret service.
@@ -4458,7 +4458,7 @@ export namespace Secret {
          * @param cancellable optional cancellation object
          * @returns whether the storage was successful or not
          */
-        store_sync(schema: Schema | null, attributes: { [key: string]: any } | GLib.HashTable<string, string>, collection: string | null, label: string, value: Value, cancellable: Gio.Cancellable | null): boolean;
+        store_sync(schema: Schema | null, attributes: { [key: string]: string }, collection: string | null, label: string, value: Value, cancellable: Gio.Cancellable | null): boolean;
 
         /**
          * Unlock items or collections in the secret service.
@@ -4903,7 +4903,7 @@ export namespace Secret {
          * @param callback 
          * @virtual
          */
-        vfunc_clear(schema: Schema, attributes: GLib.HashTable<never, never>, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+        vfunc_clear(schema: Schema, attributes: never, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * implementation of {@link password_clear_finish}, required
@@ -4936,7 +4936,7 @@ export namespace Secret {
          * @param callback 
          * @virtual
          */
-        vfunc_lookup(schema: Schema, attributes: GLib.HashTable<never, never>, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+        vfunc_lookup(schema: Schema, attributes: never, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * implementation of {@link password_lookup_finish}, required
@@ -4954,7 +4954,7 @@ export namespace Secret {
          * @param callback 
          * @virtual
          */
-        vfunc_search(schema: Schema, attributes: GLib.HashTable<never, never>, flags: SearchFlags, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+        vfunc_search(schema: Schema, attributes: never, flags: SearchFlags, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * implementation of {@link password_store}, required
@@ -4967,7 +4967,7 @@ export namespace Secret {
          * @param callback 
          * @virtual
          */
-        vfunc_store(schema: Schema, attributes: GLib.HashTable<never, never>, collection: string, label: string, value: Value, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+        vfunc_store(schema: Schema, attributes: never, collection: string, label: string, value: Value, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
          * implementation of {@link password_store_finish}, required
@@ -5096,7 +5096,7 @@ export namespace Secret {
         // Constructors
         constructor(name: string, flags: SchemaFlags, ___: any[]);
 
-        static ["new"](name: string, flags: SchemaFlags, attribute_names_and_types: { [key: string]: any } | GLib.HashTable<string, SchemaAttributeType>): Schema;
+        static ["new"](name: string, flags: SchemaFlags, attribute_names_and_types: { [key: string]: SchemaAttributeType }): Schema;
 
         // Methods
         /**
@@ -5244,7 +5244,7 @@ export namespace Secret {
              * @param callback 
              * @virtual
              */
-            vfunc_clear(schema: Schema, attributes: GLib.HashTable<never, never>, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+            vfunc_clear(schema: Schema, attributes: never, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
             /**
              * implementation of {@link password_clear_finish}, required
@@ -5277,7 +5277,7 @@ export namespace Secret {
              * @param callback 
              * @virtual
              */
-            vfunc_lookup(schema: Schema, attributes: GLib.HashTable<never, never>, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+            vfunc_lookup(schema: Schema, attributes: never, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
             /**
              * implementation of {@link password_lookup_finish}, required
@@ -5295,7 +5295,7 @@ export namespace Secret {
              * @param callback 
              * @virtual
              */
-            vfunc_search(schema: Schema, attributes: GLib.HashTable<never, never>, flags: SearchFlags, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+            vfunc_search(schema: Schema, attributes: never, flags: SearchFlags, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
             /**
              * implementation of {@link password_store}, required
@@ -5308,7 +5308,7 @@ export namespace Secret {
              * @param callback 
              * @virtual
              */
-            vfunc_store(schema: Schema, attributes: GLib.HashTable<never, never>, collection: string, label: string, value: Value, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+            vfunc_store(schema: Schema, attributes: never, collection: string, label: string, value: Value, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
             /**
              * implementation of {@link password_store_finish}, required
@@ -5404,7 +5404,7 @@ export namespace Secret {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            attributes: { [key: string]: any } | GLib.HashTable<string, string>;
+            attributes: { [key: string]: string };
             created: bigint | number;
             label: string;
             modified: bigint | number;
@@ -5437,8 +5437,8 @@ export namespace Secret {
          * stored or transferred securely.
          * @since 0.19.0
          */
-        get attributes(): GLib.HashTable<string, string>;
-        set attributes(val: { [key: string]: any } | GLib.HashTable<string, string>);
+        get attributes(): { [key: string]: string };
+        set attributes(val: { [key: string]: string });
 
         /**
          * The date and time (in seconds since the UNIX epoch) that this
@@ -5477,7 +5477,7 @@ export namespace Secret {
          * Do not modify the attribute returned by this method.
          * @returns a new reference   to the attributes, which should not be modified, and   released with {@link GLib.HashTable.unref}
          */
-        get_attributes(): GLib.HashTable<string, string>;
+        get_attributes(): { [key: string]: string };
 
         /**
          * Get the created date and time of the object.

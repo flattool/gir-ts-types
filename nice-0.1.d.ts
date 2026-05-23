@@ -743,8 +743,8 @@ export namespace Nice {
             mainContext: never;
             max_connectivity_checks: number;
             maxConnectivityChecks: number;
-            proxy_extra_headers: { [key: string]: any } | GLib.HashTable<string, string>;
-            proxyExtraHeaders: { [key: string]: any } | GLib.HashTable<string, string>;
+            proxy_extra_headers: { [key: string]: string };
+            proxyExtraHeaders: { [key: string]: string };
             proxy_ip: string;
             proxyIp: string;
             proxy_password: string;
@@ -1188,8 +1188,8 @@ export namespace Nice {
          * header-name/header-value.
          * @since 0.1.20
          */
-        get proxy_extra_headers(): GLib.HashTable<string, string>;
-        set proxy_extra_headers(val: { [key: string]: any } | GLib.HashTable<string, string>);
+        get proxy_extra_headers(): { [key: string]: string };
+        set proxy_extra_headers(val: { [key: string]: string });
 
         /**
          * Optional extra headers to append to the HTTP proxy CONNECT request.
@@ -1197,8 +1197,8 @@ export namespace Nice {
          * header-name/header-value.
          * @since 0.1.20
          */
-        get proxyExtraHeaders(): GLib.HashTable<string, string>;
-        set proxyExtraHeaders(val: { [key: string]: any } | GLib.HashTable<string, string>);
+        get proxyExtraHeaders(): { [key: string]: string };
+        set proxyExtraHeaders(val: { [key: string]: string });
 
         /**
          * The proxy server IP used to bypass a proxy firewall

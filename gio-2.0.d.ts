@@ -4159,7 +4159,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      * @param data a stream of data, or `null`
      * @returns a string indicating a guessed content type for the     given data. Free with `g_free()`
      */
-    function content_type_guess(filename: string | null, data: Uint8Array | null): [string, boolean];
+    function content_type_guess(filename: string | null, data: Uint8Array | string | null): [string, boolean];
 
     /**
      * Tries to guess the type of the tree with root `root`, by
@@ -11724,7 +11724,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
          * @virtual
          */
-        vfunc_read_nonblocking(): [bigint | number, Uint8Array | null];
+        vfunc_read_nonblocking(): [bigint | number, Uint8Array | string | null];
     }
 
 
@@ -18893,7 +18893,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        read_line_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<[Uint8Array | null, bigint | number]>;
+        read_line_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<[Uint8Array | null, number]>;
 
         /**
          * The asynchronous version of `g_data_input_stream_read_line()`.  It is
@@ -18919,7 +18919,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback callback to call when the request is satisfied.
          */
-        read_line_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[Uint8Array | null, bigint | number]> | void;
+        read_line_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[Uint8Array | null, number]> | void;
 
         /**
          * Finish an asynchronous call started by
@@ -19026,7 +19026,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          */
-        read_until_async(stop_chars: string, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<[string, bigint | number]>;
+        read_until_async(stop_chars: string, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<[string, number]>;
 
         /**
          * The asynchronous version of `g_data_input_stream_read_until()`.
@@ -19072,7 +19072,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @param callback callback to call when the request is satisfied.
          */
-        read_until_async(stop_chars: string, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[string, bigint | number]> | void;
+        read_until_async(stop_chars: string, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[string, number]> | void;
 
         /**
          * Finish an asynchronous call started by
@@ -19122,7 +19122,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          */
-        read_upto_async(stop_chars: string, stop_chars_len: bigint | number, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<[string, bigint | number]>;
+        read_upto_async(stop_chars: string, stop_chars_len: bigint | number, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<[string, number]>;
 
         /**
          * The asynchronous version of `g_data_input_stream_read_upto()`.
@@ -19168,7 +19168,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback callback to call when the request is satisfied
          */
-        read_upto_async(stop_chars: string, stop_chars_len: bigint | number, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[string, bigint | number]> | void;
+        read_upto_async(stop_chars: string, stop_chars_len: bigint | number, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[string, number]> | void;
 
         /**
          * Finish an asynchronous call started by
@@ -24705,7 +24705,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
          * @virtual
          */
-        vfunc_read_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): Uint8Array | null;
+        vfunc_read_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): Uint8Array | string | null;
 
         /**
          * Finishes an asynchronous stream read operation.
@@ -25911,7 +25911,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
          * @virtual
          */
-        vfunc_read_nonblocking(): [bigint | number, Uint8Array | null];
+        vfunc_read_nonblocking(): [bigint | number, Uint8Array | string | null];
 
         /**
          * Tests if the stream supports the {@link Gio.SeekableIface}.
@@ -27359,7 +27359,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param item_index The {@link Gio.MenuItem} to query
          * @virtual
          */
-        vfunc_get_item_attributes(item_index: number): { [key: string]: any } | GLib.HashTable<string, GLib.Variant>;
+        vfunc_get_item_attributes(item_index: number): { [key: string]: GLib.Variant };
 
         /**
          * Queries the item at position `item_index` in `model` for the link
@@ -27378,7 +27378,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param item_index The {@link Gio.MenuItem} to query
          * @virtual
          */
-        vfunc_get_item_links(item_index: number): { [key: string]: any } | GLib.HashTable<string, MenuModel>;
+        vfunc_get_item_links(item_index: number): { [key: string]: MenuModel };
 
         /**
          * Query the number of items in `model`.
@@ -39165,7 +39165,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable a {@link Gio.Cancellable}
          * @returns `true` if successful
          */
-        communicate(stdin_buf: GLib.Bytes | null, cancellable: Cancellable | null): [boolean, GLib.Bytes | null, GLib.Bytes | null];
+        communicate(stdin_buf: GLib.Bytes | Uint8Array | null, cancellable: Cancellable | null): [boolean, GLib.Bytes | null, GLib.Bytes | null];
 
         /**
          * Asynchronous version of `g_subprocess_communicate()`.  Complete
@@ -39173,16 +39173,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param stdin_buf Input data, or `null`
          * @param cancellable Cancellable
          */
-        communicate_async(stdin_buf: GLib.Bytes | null, cancellable: Cancellable | null): globalThis.Promise<[GLib.Bytes | null, GLib.Bytes | null]>;
-
-        /**
-         * Asynchronous version of `g_subprocess_communicate()`.  Complete
-         * invocation with `g_subprocess_communicate_finish()`.
-         * @param stdin_buf Input data, or `null`
-         * @param cancellable Cancellable
-         * @param callback Callback
-         */
-        communicate_async(stdin_buf: GLib.Bytes | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+        communicate_async(stdin_buf: GLib.Bytes | Uint8Array | null, cancellable: Cancellable | null): globalThis.Promise<[GLib.Bytes | null, GLib.Bytes | null]>;
 
         /**
          * Asynchronous version of `g_subprocess_communicate()`.  Complete
@@ -39191,7 +39182,16 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param cancellable Cancellable
          * @param callback Callback
          */
-        communicate_async(stdin_buf: GLib.Bytes | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[GLib.Bytes | null, GLib.Bytes | null]> | void;
+        communicate_async(stdin_buf: GLib.Bytes | Uint8Array | null, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Asynchronous version of `g_subprocess_communicate()`.  Complete
+         * invocation with `g_subprocess_communicate_finish()`.
+         * @param stdin_buf Input data, or `null`
+         * @param cancellable Cancellable
+         * @param callback Callback
+         */
+        communicate_async(stdin_buf: GLib.Bytes | Uint8Array | null, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<[GLib.Bytes | null, GLib.Bytes | null]> | void;
 
         /**
          * Complete an invocation of `g_subprocess_communicate_async()`.
@@ -40707,7 +40707,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * like will normally be much easier to use.
          * @param result the {@link GObject.Value} result of                                      a task function
          */
-        return_value(result: GObject.Value | null): void;
+        return_value(result: GObject.Value | any | null): void;
 
         /**
          * Runs `task_func` in another thread. When `task_func` returns, `task`'s
@@ -41770,7 +41770,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.70
          * @read-only
          */
-        get dns_names(): never[] | null;
+        get dns_names(): null[] | null;
 
         /**
          * The DNS names from the certificate's Subject Alternative Names (SANs),
@@ -41778,7 +41778,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.70
          * @read-only
          */
-        get dnsNames(): never[] | null;
+        get dnsNames(): null[] | null;
 
         /**
          * The IP addresses from the certificate's Subject Alternative Names (SANs),
@@ -41786,7 +41786,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.70
          * @read-only
          */
-        get ip_addresses(): never[] | null;
+        get ip_addresses(): null[] | null;
 
         /**
          * The IP addresses from the certificate's Subject Alternative Names (SANs),
@@ -41794,7 +41794,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @since 2.70
          * @read-only
          */
-        get ipAddresses(): never[] | null;
+        get ipAddresses(): null[] | null;
 
         /**
          * A {@link Gio.TlsCertificate} representing the entity that issued this
@@ -60793,7 +60793,7 @@ export const _LocalFilePrototype: typeof File.prototype;
              * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
              * @virtual
              */
-            vfunc_read_nonblocking(): [bigint | number, Uint8Array | null];
+            vfunc_read_nonblocking(): [bigint | number, Uint8Array | string | null];
         }
 
 
