@@ -10393,7 +10393,7 @@ export namespace Adw {
          * @param property the target property
          * @param value the value to set
          */
-        add_setter(object: GObject.Object, property: string, value: GObject.Value | null): void;
+        add_setter(object: GObject.Object, property: string, value: GObject.Value | any | null): void;
 
         /**
          * Adds `n_setters` setters to `self`.

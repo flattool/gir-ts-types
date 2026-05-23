@@ -1887,7 +1887,7 @@ export namespace GioUnix {
          * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
          * @virtual
          */
-        vfunc_read_nonblocking(): [bigint | number, Uint8Array | null];
+        vfunc_read_nonblocking(): [bigint | number, Uint8Array | string | null];
     }
 
 

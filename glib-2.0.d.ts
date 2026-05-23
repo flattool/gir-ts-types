@@ -6126,7 +6126,7 @@ export class VariantType<S extends string = any> {
      * @returns a newly allocated, zero-terminated Base-64               encoded string representing `data`. The returned string must               be freed with `g_free()`.
      * @since 2.12
      */
-    function base64_encode(data: Uint8Array | null): string;
+    function base64_encode(data: Uint8Array | string | null): string;
 
     /**
      * Flush the status from a sequence of calls to `g_base64_encode_step()`.
@@ -8411,7 +8411,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if the key did not exist yet
      * @since 2.32
      */
-    function hash_table_add(hash_table: { [key: string]: any } | HashTable<never, never>, key: null): boolean;
+    function hash_table_add(hash_table: never, key: null): boolean;
 
     /**
      * Checks if `key` is in `hash_table`.
@@ -8420,7 +8420,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if `key` is in `hash_table`, `false` otherwise.
      * @since 2.32
      */
-    function hash_table_contains(hash_table: { [key: string]: any } | HashTable<never, never>, key: null): boolean;
+    function hash_table_contains(hash_table: never, key: null): boolean;
 
     /**
      * Destroys all keys and values in the {@link GLib.HashTable} and decrements its
@@ -8431,7 +8431,7 @@ export class VariantType<S extends string = any> {
      * destruction phase.
      * @param hash_table a {@link GLib.HashTable}
      */
-    function hash_table_destroy(hash_table: { [key: string]: any } | HashTable<never, never>): void;
+    function hash_table_destroy(hash_table: never): void;
 
     /**
      * Calls the given function for key/value pairs in the {@link GLib.HashTable}
@@ -8452,7 +8452,7 @@ export class VariantType<S extends string = any> {
      * @returns The value of the first key/value pair is returned,     for which `predicate` evaluates to `true`. If no pair with the     requested property is found, `null` is returned.
      * @since 2.4
      */
-    function hash_table_find(hash_table: { [key: string]: any } | HashTable<never, never>, predicate: HRFunc): null;
+    function hash_table_find(hash_table: never, predicate: HRFunc): null;
 
     /**
      * Calls the given function for each of the key/value pairs in the
@@ -8470,7 +8470,7 @@ export class VariantType<S extends string = any> {
      * @param hash_table a {@link GLib.HashTable}
      * @param func the function to call for each key/value pair
      */
-    function hash_table_foreach(hash_table: { [key: string]: any } | HashTable<never, never>, func: HFunc): void;
+    function hash_table_foreach(hash_table: never, func: HFunc): void;
 
     /**
      * Calls the given function for each key/value pair in the
@@ -8485,7 +8485,7 @@ export class VariantType<S extends string = any> {
      * @param func the function to call for each key/value pair
      * @returns the number of key/value pairs removed
      */
-    function hash_table_foreach_remove(hash_table: { [key: string]: any } | HashTable<never, never>, func: HRFunc): number;
+    function hash_table_foreach_remove(hash_table: never, func: HRFunc): number;
 
     /**
      * Calls the given function for each key/value pair in the
@@ -8499,7 +8499,7 @@ export class VariantType<S extends string = any> {
      * @param func the function to call for each key/value pair
      * @returns the number of key/value pairs removed.
      */
-    function hash_table_foreach_steal(hash_table: { [key: string]: any } | HashTable<never, never>, func: HRFunc): number;
+    function hash_table_foreach_steal(hash_table: never, func: HRFunc): number;
 
     /**
      * Inserts a new key and value into a {@link GLib.HashTable}.
@@ -8519,7 +8519,7 @@ export class VariantType<S extends string = any> {
      * @param value the value to associate with the key
      * @returns `true` if the key did not exist yet
      */
-    function hash_table_insert(hash_table: { [key: string]: any } | HashTable<never, never>, key: null, value: null): boolean;
+    function hash_table_insert(hash_table: never, key: null, value: null): boolean;
 
     /**
      * Looks up a key in a {@link GLib.HashTable}. Note that this function cannot
@@ -8530,7 +8530,7 @@ export class VariantType<S extends string = any> {
      * @param key the key to look up
      * @returns the associated value, or `null` if the key is not found
      */
-    function hash_table_lookup(hash_table: { [key: string]: any } | HashTable<never, never>, key: null): null;
+    function hash_table_lookup(hash_table: never, key: null): null;
 
     /**
      * Looks up a key in the {@link GLib.HashTable}, returning the original key and the
@@ -8545,7 +8545,7 @@ export class VariantType<S extends string = any> {
      * @param lookup_key the key to look up
      * @returns `true` if the key was found in the {@link GLib.HashTable}
      */
-    function hash_table_lookup_extended(hash_table: { [key: string]: any } | HashTable<never, never>, lookup_key: null): [boolean, null, null];
+    function hash_table_lookup_extended(hash_table: never, lookup_key: null): [boolean, null, null];
 
     /**
      * Creates a new {@link GLib.HashTable} like `g_hash_table_new_full()` with a reference
@@ -8560,7 +8560,7 @@ export class VariantType<S extends string = any> {
      * @returns a new {@link GLib.HashTable}
      * @since 2.72
      */
-    function hash_table_new_similar(other_hash_table: { [key: string]: any } | HashTable<never, never>): HashTable<never, never>;
+    function hash_table_new_similar(other_hash_table: never): never;
 
     /**
      * Atomically increments the reference count of `hash_table` by one.
@@ -8569,7 +8569,7 @@ export class VariantType<S extends string = any> {
      * @returns the passed in {@link GLib.HashTable}
      * @since 2.10
      */
-    function hash_table_ref(hash_table: { [key: string]: any } | HashTable<never, never>): HashTable<never, never>;
+    function hash_table_ref(hash_table: never): never;
 
     /**
      * Removes a key and its associated value from a {@link GLib.HashTable}.
@@ -8582,7 +8582,7 @@ export class VariantType<S extends string = any> {
      * @param key the key to remove
      * @returns `true` if the key was found and removed from the {@link GLib.HashTable}
      */
-    function hash_table_remove(hash_table: { [key: string]: any } | HashTable<never, never>, key: null): boolean;
+    function hash_table_remove(hash_table: never, key: null): boolean;
 
     /**
      * Removes all keys and their associated values from a {@link GLib.HashTable}.
@@ -8594,7 +8594,7 @@ export class VariantType<S extends string = any> {
      * @param hash_table a {@link GLib.HashTable}
      * @since 2.12
      */
-    function hash_table_remove_all(hash_table: { [key: string]: any } | HashTable<never, never>): void;
+    function hash_table_remove_all(hash_table: never): void;
 
     /**
      * Inserts a new key and value into a {@link GLib.HashTable} similar to
@@ -8613,14 +8613,14 @@ export class VariantType<S extends string = any> {
      * @param value the value to associate with the key
      * @returns `true` if the key did not exist yet
      */
-    function hash_table_replace(hash_table: { [key: string]: any } | HashTable<never, never>, key: null, value: null): boolean;
+    function hash_table_replace(hash_table: never, key: null, value: null): boolean;
 
     /**
      * Returns the number of elements contained in the {@link GLib.HashTable}.
      * @param hash_table a {@link GLib.HashTable}
      * @returns the number of key/value pairs in the {@link GLib.HashTable}.
      */
-    function hash_table_size(hash_table: { [key: string]: any } | HashTable<never, never>): number;
+    function hash_table_size(hash_table: never): number;
 
     /**
      * Removes a key and its associated value from a {@link GLib.HashTable} without
@@ -8629,7 +8629,7 @@ export class VariantType<S extends string = any> {
      * @param key the key to remove
      * @returns `true` if the key was found and removed from the {@link GLib.HashTable}
      */
-    function hash_table_steal(hash_table: { [key: string]: any } | HashTable<never, never>, key: null): boolean;
+    function hash_table_steal(hash_table: never, key: null): boolean;
 
     /**
      * Removes all keys and their associated values from a {@link GLib.HashTable}
@@ -8637,7 +8637,7 @@ export class VariantType<S extends string = any> {
      * @param hash_table a {@link GLib.HashTable}
      * @since 2.12
      */
-    function hash_table_steal_all(hash_table: { [key: string]: any } | HashTable<never, never>): void;
+    function hash_table_steal_all(hash_table: never): void;
 
     /**
      * Looks up a key in the {@link GLib.HashTable}, stealing the original key and the
@@ -8662,7 +8662,7 @@ export class VariantType<S extends string = any> {
      * @returns `true` if the key was found in the {@link GLib.HashTable}
      * @since 2.58
      */
-    function hash_table_steal_extended(hash_table: { [key: string]: any } | HashTable<never, never>, lookup_key: null): [boolean, null, null];
+    function hash_table_steal_extended(hash_table: never, lookup_key: null): [boolean, null, null];
 
     /**
      * Atomically decrements the reference count of `hash_table` by one.
@@ -8672,7 +8672,7 @@ export class VariantType<S extends string = any> {
      * @param hash_table a valid {@link GLib.HashTable}
      * @since 2.10
      */
-    function hash_table_unref(hash_table: { [key: string]: any } | HashTable<never, never>): void;
+    function hash_table_unref(hash_table: never): void;
 
     /**
      * Destroys a {@link GLib.Hook}, given its ID.
@@ -14051,7 +14051,7 @@ export class VariantType<S extends string = any> {
      * @returns A hash table of attribute/value pairs, with both names and values     fully-decoded; or `null` on error.
      * @since 2.66
      */
-    function uri_parse_params(params: string, length: bigint | number, separators: string, flags: UriParamsFlags): HashTable<string, string>;
+    function uri_parse_params(params: string, length: bigint | number, separators: string, flags: UriParamsFlags): { [key: string]: string };
 
     /**
      * Gets the scheme portion of a URI string.
@@ -17625,11 +17625,11 @@ export class VariantType<S extends string = any> {
         static $gtype: GObject.GType<Bytes>;
 
         // Constructors
-        constructor(data: Uint8Array | null);
+        constructor(data: Uint8Array | string | null);
 
-        static ["new"](data: Uint8Array | null): Bytes;
+        static ["new"](data: Uint8Array | string | null): Bytes;
 
-        static new_take(data: Uint8Array | null): Bytes;
+        static new_take(data: Uint8Array | string | null): Bytes;
 
         // Methods
         /**
@@ -19503,14 +19503,14 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param key a key to insert
          */
-        static add(hash_table: { [key: string]: any } | HashTable<never, never>, key: null): boolean;
+        static add(hash_table: never, key: null): boolean;
 
         /**
          * Checks if `key` is in `hash_table`.
          * @param hash_table a {@link GLib.HashTable}
          * @param key a key to check
          */
-        static contains(hash_table: { [key: string]: any } | HashTable<never, never>, key: null): boolean;
+        static contains(hash_table: never, key: null): boolean;
 
         /**
          * Destroys all keys and values in the {@link GLib.HashTable} and decrements its
@@ -19521,7 +19521,7 @@ export class VariantType<S extends string = any> {
          * destruction phase.
          * @param hash_table a {@link GLib.HashTable}
          */
-        static destroy(hash_table: { [key: string]: any } | HashTable<never, never>): void;
+        static destroy(hash_table: never): void;
 
         /**
          * Calls the given function for key/value pairs in the {@link GLib.HashTable}
@@ -19540,7 +19540,7 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param predicate function to test the key/value pairs for a certain property
          */
-        static find(hash_table: { [key: string]: any } | HashTable<never, never>, predicate: HRFunc): null;
+        static find(hash_table: never, predicate: HRFunc): null;
 
         /**
          * Calls the given function for each of the key/value pairs in the
@@ -19558,7 +19558,7 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param func the function to call for each key/value pair
          */
-        static foreach(hash_table: { [key: string]: any } | HashTable<never, never>, func: HFunc): void;
+        static foreach(hash_table: never, func: HFunc): void;
 
         /**
          * Calls the given function for each key/value pair in the
@@ -19572,7 +19572,7 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param func the function to call for each key/value pair
          */
-        static foreach_remove(hash_table: { [key: string]: any } | HashTable<never, never>, func: HRFunc): number;
+        static foreach_remove(hash_table: never, func: HRFunc): number;
 
         /**
          * Calls the given function for each key/value pair in the
@@ -19585,7 +19585,7 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param func the function to call for each key/value pair
          */
-        static foreach_steal(hash_table: { [key: string]: any } | HashTable<never, never>, func: HRFunc): number;
+        static foreach_steal(hash_table: never, func: HRFunc): number;
 
         /**
          * Inserts a new key and value into a {@link GLib.HashTable}.
@@ -19604,7 +19604,7 @@ export class VariantType<S extends string = any> {
          * @param key a key to insert
          * @param value the value to associate with the key
          */
-        static insert(hash_table: { [key: string]: any } | HashTable<never, never>, key: null, value: null): boolean;
+        static insert(hash_table: never, key: null, value: null): boolean;
 
         /**
          * Looks up a key in a {@link GLib.HashTable}. Note that this function cannot
@@ -19614,7 +19614,7 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param key the key to look up
          */
-        static lookup(hash_table: { [key: string]: any } | HashTable<never, never>, key: null): null;
+        static lookup(hash_table: never, key: null): null;
 
         /**
          * Looks up a key in the {@link GLib.HashTable}, returning the original key and the
@@ -19628,7 +19628,7 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param lookup_key the key to look up
          */
-        static lookup_extended(hash_table: { [key: string]: any } | HashTable<never, never>, lookup_key: null): [boolean, null, null];
+        static lookup_extended(hash_table: never, lookup_key: null): [boolean, null, null];
 
         /**
          * Creates a new {@link GLib.HashTable} like `g_hash_table_new_full()` with a reference
@@ -19641,14 +19641,14 @@ export class VariantType<S extends string = any> {
          * or values from `other_hash_table`.
          * @param other_hash_table Another {@link GLib.HashTable}
          */
-        static new_similar(other_hash_table: { [key: string]: any } | HashTable<never, never>): HashTable<never, never>;
+        static new_similar(other_hash_table: never): never;
 
         /**
          * Atomically increments the reference count of `hash_table` by one.
          * This function is MT-safe and may be called from any thread.
          * @param hash_table a valid {@link GLib.HashTable}
          */
-        static ref(hash_table: { [key: string]: any } | HashTable<never, never>): HashTable<never, never>;
+        static ref(hash_table: never): never;
 
         /**
          * Removes a key and its associated value from a {@link GLib.HashTable}.
@@ -19660,7 +19660,7 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param key the key to remove
          */
-        static remove(hash_table: { [key: string]: any } | HashTable<never, never>, key: null): boolean;
+        static remove(hash_table: never, key: null): boolean;
 
         /**
          * Removes all keys and their associated values from a {@link GLib.HashTable}.
@@ -19671,7 +19671,7 @@ export class VariantType<S extends string = any> {
          * values are freed yourself.
          * @param hash_table a {@link GLib.HashTable}
          */
-        static remove_all(hash_table: { [key: string]: any } | HashTable<never, never>): void;
+        static remove_all(hash_table: never): void;
 
         /**
          * Inserts a new key and value into a {@link GLib.HashTable} similar to
@@ -19689,13 +19689,13 @@ export class VariantType<S extends string = any> {
          * @param key a key to insert
          * @param value the value to associate with the key
          */
-        static replace(hash_table: { [key: string]: any } | HashTable<never, never>, key: null, value: null): boolean;
+        static replace(hash_table: never, key: null, value: null): boolean;
 
         /**
          * Returns the number of elements contained in the {@link GLib.HashTable}.
          * @param hash_table a {@link GLib.HashTable}
          */
-        static size(hash_table: { [key: string]: any } | HashTable<never, never>): number;
+        static size(hash_table: never): number;
 
         /**
          * Removes a key and its associated value from a {@link GLib.HashTable} without
@@ -19703,14 +19703,14 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param key the key to remove
          */
-        static steal(hash_table: { [key: string]: any } | HashTable<never, never>, key: null): boolean;
+        static steal(hash_table: never, key: null): boolean;
 
         /**
          * Removes all keys and their associated values from a {@link GLib.HashTable}
          * without calling the key and value destroy functions.
          * @param hash_table a {@link GLib.HashTable}
          */
-        static steal_all(hash_table: { [key: string]: any } | HashTable<never, never>): void;
+        static steal_all(hash_table: never): void;
 
         /**
          * Looks up a key in the {@link GLib.HashTable}, stealing the original key and the
@@ -19733,7 +19733,7 @@ export class VariantType<S extends string = any> {
          * @param hash_table a {@link GLib.HashTable}
          * @param lookup_key the key to look up
          */
-        static steal_extended(hash_table: { [key: string]: any } | HashTable<never, never>, lookup_key: null): [boolean, null, null];
+        static steal_extended(hash_table: never, lookup_key: null): [boolean, null, null];
 
         /**
          * Atomically decrements the reference count of `hash_table` by one.
@@ -19742,7 +19742,7 @@ export class VariantType<S extends string = any> {
          * This function is MT-safe and may be called from any thread.
          * @param hash_table a valid {@link GLib.HashTable}
          */
-        static unref(hash_table: { [key: string]: any } | HashTable<never, never>): void;
+        static unref(hash_table: never): void;
     }
 
 
@@ -19767,7 +19767,7 @@ export class VariantType<S extends string = any> {
          * Returns the {@link GLib.HashTable} associated with `iter`.
          * @returns the {@link GLib.HashTable} associated with `iter`.
          */
-        get_hash_table(): HashTable<never, never>;
+        get_hash_table(): never;
 
         /**
          * Initializes a key/value pair iterator and associates it with
@@ -19791,7 +19791,7 @@ export class VariantType<S extends string = any> {
          * 
          * @param hash_table a {@link GLib.HashTable}
          */
-        init(hash_table: { [key: string]: any } | HashTable<never, never>): void;
+        init(hash_table: never): void;
 
         /**
          * Advances `iter` and retrieves the key and/or value that are now
@@ -27991,7 +27991,7 @@ export class VariantType<S extends string = any> {
          * @param separators the separator byte character set between parameters. (usually   `&`, but sometimes `;` or both `&;`). Note that this function works on   bytes not characters, so it can't be used to delimit UTF-8 strings for   anything but ASCII characters. You may pass an empty set, in which case   no splitting will occur.
          * @param flags flags to modify the way the parameters are handled.
          */
-        static parse_params(params: string, length: bigint | number, separators: string, flags: UriParamsFlags): HashTable<string, string>;
+        static parse_params(params: string, length: bigint | number, separators: string, flags: UriParamsFlags): { [key: string]: string };
 
         /**
          * Gets the scheme portion of a URI string.

@@ -2737,7 +2737,7 @@ export namespace Polkit {
         /**
          * The UNIX group ids of the process.
          */
-        get gids(): never[] | null;
+        get gids(): null[] | null;
         set gids(val: never[] | null);
 
         /**
@@ -2879,7 +2879,7 @@ export namespace Polkit {
          * not the effective group-ids.
          * @returns a {@link GLib.Array}          of `gid_t` containing the group ids for `process` or NULL if unknown,          as a new reference to the array, caller must deref it when done.
          */
-        get_gids(): never[][] | null;
+        get_gids(): null[][] | null;
 
         /**
          * (deprecated)

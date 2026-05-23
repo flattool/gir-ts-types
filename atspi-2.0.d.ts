@@ -2569,7 +2569,7 @@ export namespace Atspi {
          * atspi_text_get_attributes instead.
          * @returns The name-value-pair attributes assigned to this object.
          */
-        get_attributes(): GLib.HashTable<string, string>;
+        get_attributes(): { [key: string]: string };
 
         /**
          * Gets a {@link GLib.Array} representing any assigned
@@ -3207,7 +3207,7 @@ export namespace Atspi {
          * that change within the document content, see `atspi_text_get_attribute_run` instead.
          * @returns a {@link GLib.HashTable}          containing the constant attributes of the document, as name-value pairs.
          */
-        get_document_attributes(): GLib.HashTable<string, string>;
+        get_document_attributes(): { [key: string]: string };
 
         /**
          * Gets the current page number of an `AccessibleDocument` object.
@@ -3734,7 +3734,7 @@ export namespace Atspi {
          * @param include_defaults a #bool that, when set as `FALSE`, indicates the call should only return those attributes which are explicitly set on the current attribute run, omitting any attributes which are inherited from the default values.
          * @returns a {@link GLib.HashTable} with attributes          defined at the indicated offset, optionally including the 'default' ones.
          */
-        get_attribute_run(offset: number, include_defaults: boolean): [GLib.HashTable<string, string>, number, number];
+        get_attribute_run(offset: number, include_defaults: boolean): [{ [key: string]: string }, number, number];
 
         /**
          * Gets the value of a named attribute at a given offset.
@@ -3751,7 +3751,7 @@ export namespace Atspi {
          * @param offset a `gint` indicating the offset from which the attribute        search is based.
          * @returns a {@link GLib.HashTable} describing the attributes at the given character offset.
          */
-        get_text_attributes(offset: number): [GLib.HashTable<string, string>, number, number];
+        get_text_attributes(offset: number): [{ [key: string]: string }, number, number];
 
         /**
          * Gets the ranges of text from an {@link Atspi.Text} object which lie within the
@@ -3805,7 +3805,7 @@ export namespace Atspi {
          * describes the entire set of text attributes over a range.
          * @returns a {@link GLib.HashTable}          containing the default attributes applied to a text object,          (exclusive of explicitly-set attributes), encoded as UTF-8.
          */
-        get_default_attributes(): GLib.HashTable<string, string>;
+        get_default_attributes(): { [key: string]: string };
 
         /**
          * Gets the number of active non-contiguous selections for an
@@ -4938,7 +4938,7 @@ export namespace Atspi {
 
         _init(...args: any[]): void;
 
-        static ["new"](states: StateSet | null, statematchtype: CollectionMatchType, attributes: GLib.HashTable<string, string> | null, attributematchtype: CollectionMatchType, roles: Role[] | null, rolematchtype: CollectionMatchType, interfaces: string[] | null, interfacematchtype: CollectionMatchType, invert: boolean): MatchRule;
+        static ["new"](states: StateSet | null, statematchtype: CollectionMatchType, attributes: { [key: string]: string } | null, attributematchtype: CollectionMatchType, roles: Role[] | null, rolematchtype: CollectionMatchType, interfaces: string[] | null, interfacematchtype: CollectionMatchType, invert: boolean): MatchRule;
 
         // Signals
         /** @signal */
@@ -5881,7 +5881,7 @@ export namespace Atspi {
          * that change within the document content, see `atspi_text_get_attribute_run` instead.
          * @returns a {@link GLib.HashTable}          containing the constant attributes of the document, as name-value pairs.
          */
-        get_document_attributes(): GLib.HashTable<string, string>;
+        get_document_attributes(): { [key: string]: string };
 
         /**
          * Gets the current page number of an `AccessibleDocument` object.
@@ -6610,7 +6610,7 @@ export namespace Atspi {
          * @param include_defaults a #bool that, when set as `FALSE`, indicates the call should only return those attributes which are explicitly set on the current attribute run, omitting any attributes which are inherited from the default values.
          * @returns a {@link GLib.HashTable} with attributes          defined at the indicated offset, optionally including the 'default' ones.
          */
-        get_attribute_run(offset: number, include_defaults: boolean): [GLib.HashTable<string, string>, number, number];
+        get_attribute_run(offset: number, include_defaults: boolean): [{ [key: string]: string }, number, number];
 
         /**
          * Gets the value of a named attribute at a given offset.
@@ -6627,7 +6627,7 @@ export namespace Atspi {
          * @param offset a `gint` indicating the offset from which the attribute        search is based.
          * @returns a {@link GLib.HashTable} describing the attributes at the given character offset.
          */
-        get_text_attributes(offset: number): [GLib.HashTable<string, string>, number, number];
+        get_text_attributes(offset: number): [{ [key: string]: string }, number, number];
 
         /**
          * Gets the ranges of text from an {@link Atspi.Text} object which lie within the
@@ -6681,7 +6681,7 @@ export namespace Atspi {
          * describes the entire set of text attributes over a range.
          * @returns a {@link GLib.HashTable}          containing the default attributes applied to a text object,          (exclusive of explicitly-set attributes), encoded as UTF-8.
          */
-        get_default_attributes(): GLib.HashTable<string, string>;
+        get_default_attributes(): { [key: string]: string };
 
         /**
          * Gets the number of active non-contiguous selections for an
