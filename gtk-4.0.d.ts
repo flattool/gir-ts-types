@@ -34024,7 +34024,7 @@ export interface Builder {
          * @param views a dictionary of `[ name, target ]`   pairs; the `name` keys map to the view names in the VFL lines, while   the `target` values map to children of the widget using a {@link Gtk.ConstraintLayout},   or guides
          * @returns the list of   {@link Gtk.Constraint} instances that were added to the layout
          */
-        add_constraints_from_description(lines: string[], hspacing: number, vspacing: number, views: { [key: string]: any } | GLib.HashTable<string, ConstraintTarget>): Constraint[];
+        add_constraints_from_description(lines: string[], hspacing: number, vspacing: number, views: { [key: string]: ConstraintTarget }): Constraint[];
 
         /**
          * Adds a guide to `layout`.
@@ -38055,7 +38055,7 @@ export interface Builder {
             drop: Gdk.Drop | null;
             formats: Gdk.ContentFormats | null;
             preload: boolean;
-            value: GObject.Value | null;
+            value: GObject.Value | any | null;
         }
     }
 
@@ -38207,7 +38207,7 @@ export interface Builder {
          * of available data.
          * @read-only
          */
-        get value(): GObject.Value | null;
+        get value(): unknown | null;
 
         /**
          * Compile-time signal type information.
@@ -38287,7 +38287,7 @@ export interface Builder {
          * Gets the current drop data, as a {@link GObject.Value}.
          * @returns The current drop data
          */
-        get_value(): GObject.Value | null;
+        get_value(): unknown | null;
 
         /**
          * Rejects the ongoing drop operation.
@@ -139032,7 +139032,7 @@ export interface Builder {
 
         static ["new"](file: Gio.File | null, start: CssLocation, end: CssLocation): CssSection;
 
-        static new_with_bytes(file: Gio.File | null, bytes: GLib.Bytes | null, start: CssLocation, end: CssLocation): CssSection;
+        static new_with_bytes(file: Gio.File | null, bytes: GLib.Bytes | Uint8Array | null, start: CssLocation, end: CssLocation): CssSection;
 
         // Methods
         /**
