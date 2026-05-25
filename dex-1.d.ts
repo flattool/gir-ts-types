@@ -1,3 +1,4 @@
+/// <reference path="./giounix-2.0.d.ts" />
 /// <reference path="./gio-2.0.d.ts" />
 /// <reference path="./gobject-2.0.d.ts" />
 /// <reference path="./glib-2.0.d.ts" />
@@ -15,6 +16,7 @@
 declare module 'gi://Dex?version=1' {
 
 // Module dependencies
+import type GioUnix from 'gi://GioUnix?version=2.0';
 import type Gio from 'gi://Gio?version=2.0';
 import type GObject from 'gi://GObject?version=2.0';
 import type GLib from 'gi://GLib?version=2.0';
@@ -121,6 +123,42 @@ export namespace Dex {
     function aio_write(aio_context: AioContext | null, fd: number, buffer: Uint8Array | string, offset: bigint | number): Future;
 
     /**
+     * Wraps {@link Gio.AppInfo.get_default_for_type_async}.
+     * @param content_type a content type
+     * @param must_support_uris whether the app must support URIs
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.AppInfo} or rejects with error.
+     * @since 1.2
+     */
+    function app_info_get_default_for_type(content_type: string, must_support_uris: boolean): Future;
+
+    /**
+     * Wraps {@link Gio.AppInfo.get_default_for_uri_scheme_async}.
+     * @param uri_scheme a URI scheme
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.AppInfo} or rejects with error.
+     * @since 1.2
+     */
+    function app_info_get_default_for_uri_scheme(uri_scheme: string): Future;
+
+    /**
+     * Wraps {@link Gio.AppInfo.launch_default_for_uri_async}.
+     * @param uri a URI to launch
+     * @param context a {@link Gio.AppLaunchContext}, or `null`
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error.
+     * @since 1.2
+     */
+    function app_info_launch_default_for_uri(uri: string, context: Gio.AppLaunchContext | null): Future;
+
+    /**
+     * Wraps {@link Gio.AppInfo.launch_uris_async}.
+     * @param appinfo a {@link Gio.AppInfo}
+     * @param uris URIs to launch
+     * @param context a {@link Gio.AppLaunchContext}, or `null`
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error.
+     * @since 1.2
+     */
+    function app_info_launch_uris(appinfo: Gio.AppInfo, uris: string[], context: Gio.AppLaunchContext | null): Future;
+
+    /**
      * A helper for {@link Gio.AsyncInitable.init_async}.
      * @param initable a {@link Gio.AsyncInitable}
      * @param io_priority the [IO priority][iface@Gio.AsyncResult#io-priority] of the   request
@@ -128,6 +166,16 @@ export namespace Dex {
      * @since 1.0
      */
     function async_initable_init(initable: Gio.AsyncInitable, io_priority: number): Future;
+
+    /**
+     * Wraps {@link Gio.BufferedInputStream.fill_async}.
+     * @param stream a {@link Gio.BufferedInputStream}
+     * @param count the number of bytes to fill, or -1
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to the number   of bytes read as a `gint64`, or rejects with error.
+     * @since 1.2
+     */
+    function buffered_input_stream_fill(stream: Gio.BufferedInputStream, count: bigint | number, io_priority: number): Future;
 
     /**
      * Wrapper for {@link Gio.bus_get}.
@@ -165,6 +213,31 @@ export namespace Dex {
      * @since 1.1
      */
     function data_input_stream_read_line(stream: Gio.DataInputStream, io_priority: number): Future;
+
+    /**
+     * Reads a UTF-8 line from the data input stream.
+     * 
+     * Wraps {@link Gio.DataInputStream.read_line_async} with
+     * {@link Gio.DataInputStream.read_line_finish_utf8}.
+     * @param stream a {@link Gio.DataInputStream}
+     * @param io_priority the [IO priority][iface@Gio.AsyncResult#io-priority] of the   request
+     * @returns a {@link Dex.Future} that resolves   to a string containing the line (without the line terminator), or `null`   if the end of the stream is reached.
+     * @since 1.2
+     */
+    function data_input_stream_read_line_utf8(stream: Gio.DataInputStream, io_priority: number): Future;
+
+    /**
+     * Reads data from the stream until one of `stop_chars` is found.
+     * 
+     * Wraps {@link Gio.DataInputStream.read_upto_async}.
+     * @param stream a {@link Gio.DataInputStream}
+     * @param stop_chars characters to terminate the read
+     * @param stop_chars_len length of `stop_chars`, or -1 if `stop_chars` is nul-terminated
+     * @param io_priority the [IO priority][iface@Gio.AsyncResult#io-priority] of the   request
+     * @returns a {@link Dex.Future} that resolves   to a string containing the read data, not including the stop character, or   `null` if the end of the stream is reached.
+     * @since 1.2
+     */
+    function data_input_stream_read_upto(stream: Gio.DataInputStream, stop_chars: string, stop_chars_len: bigint | number, io_priority: number): Future;
 
     /**
      * Wrapper for {@link Gio.DBusConnection.call}.
@@ -217,6 +290,35 @@ export namespace Dex {
      * @since 0.4
      */
     function dbus_connection_send_message_with_reply(connection: Gio.DBusConnection, message: Gio.DBusMessage, flags: Gio.DBusSendMessageFlags, timeout_msec: number): [Future, number];
+
+    /**
+     * Wraps {@link Gio.DtlsConnection.close_async}.
+     * @param dtls_connection a {@link Gio.DtlsConnection}
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error.
+     * @since 1.2
+     */
+    function dtls_connection_close(dtls_connection: Gio.DtlsConnection, io_priority: number): Future;
+
+    /**
+     * Wraps {@link Gio.DtlsConnection.handshake_async}.
+     * @param dtls_connection a {@link Gio.DtlsConnection}
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error.
+     * @since 1.2
+     */
+    function dtls_connection_handshake(dtls_connection: Gio.DtlsConnection, io_priority: number): Future;
+
+    /**
+     * Wraps {@link Gio.DtlsConnection.shutdown_async}.
+     * @param dtls_connection a {@link Gio.DtlsConnection}
+     * @param shutdown_read whether to shut down the read side
+     * @param shutdown_write whether to shut down the write side
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error.
+     * @since 1.2
+     */
+    function dtls_connection_shutdown(dtls_connection: Gio.DtlsConnection, shutdown_read: boolean, shutdown_write: boolean, io_priority: number): Future;
 
     function error_quark(): GLib.Quark;
 
@@ -304,6 +406,15 @@ export namespace Dex {
     function file_enumerate_children(file: Gio.File, attributes: string, flags: Gio.FileQueryInfoFlags, io_priority: number): Future;
 
     /**
+     * Wraps {@link Gio.FileEnumerator.close_async}.
+     * @param file_enumerator a {@link Gio.FileEnumerator}
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error.
+     * @since 1.2
+     */
+    function file_enumerator_close(file_enumerator: Gio.FileEnumerator, io_priority: number): Future;
+
+    /**
      * Wraps {@link Gio.FileEnumerator.next_files_async}.
      * 
      * Use {@link Dex.Future.await_boxed} to await for the result of this function.
@@ -328,6 +439,26 @@ export namespace Dex {
      * @since 1.2
      */
     function file_find_enclosing_mount(file: Gio.File, io_priority: number): Future;
+
+    /**
+     * Wraps {@link Gio.FileInputStream.query_info_async}.
+     * @param stream a {@link Gio.FileInputStream}
+     * @param attributes file attributes to query
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.FileInfo} or rejects with error.
+     * @since 1.2
+     */
+    function file_input_stream_query_info(stream: Gio.FileInputStream, attributes: string, io_priority: number): Future;
+
+    /**
+     * Wraps {@link Gio.FileIOStream.query_info_async}.
+     * @param stream a {@link Gio.FileIOStream}
+     * @param attributes file attributes to query
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.FileInfo} or rejects with error.
+     * @since 1.2
+     */
+    function file_io_stream_query_info(stream: Gio.FileIOStream, attributes: string, io_priority: number): Future;
 
     /**
      * Wraps {@link Gio.File.load_bytes_async}.
@@ -409,6 +540,16 @@ export namespace Dex {
      * @since 1.2
      */
     function file_open_readwrite(file: Gio.File, io_priority: number): Future;
+
+    /**
+     * Wraps {@link Gio.FileOutputStream.query_info_async}.
+     * @param stream a {@link Gio.FileOutputStream}
+     * @param attributes file attributes to query
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.FileInfo} or rejects with error.
+     * @since 1.2
+     */
+    function file_output_stream_query_info(stream: Gio.FileOutputStream, attributes: string, io_priority: number): Future;
 
     /**
      * Wraps {@link Gio.File.query_default_handler_async}.
@@ -619,6 +760,17 @@ export namespace Dex {
     function io_stream_close(io_stream: Gio.IOStream, io_priority: number): Future;
 
     /**
+     * Wraps {@link Gio.IOStream.splice_async}.
+     * @param stream1 a {@link Gio.IOStream}
+     * @param stream2 a {@link Gio.IOStream}
+     * @param flags splice flags
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error.
+     * @since 1.2
+     */
+    function io_stream_splice(stream1: Gio.IOStream, stream2: Gio.IOStream, flags: Gio.IOStreamSpliceFlags, io_priority: number): Future;
+
+    /**
      * Similar to {@link GLib.mkdir_with_parents} but runs on a dedicated thread.
      * @param path a path to a directory to create
      * @param mode the mode for the directory such as `0750`
@@ -628,11 +780,29 @@ export namespace Dex {
     function mkdir_with_parents(path: string, mode: number): Future;
 
     /**
+     * Wraps {@link Gio.NetworkMonitor.can_reach_async}.
+     * @param monitor a {@link Gio.NetworkMonitor}
+     * @param connectable a {@link Gio.SocketConnectable}
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error.
+     * @since 1.2
+     */
+    function network_monitor_can_reach(monitor: Gio.NetworkMonitor, connectable: Gio.SocketConnectable): Future;
+
+    /**
      * @param self a {@link Gio.OutputStream}
      * @param io_priority the [IO priority][iface@Gio.AsyncResult#io-priority] of the   request
      * @returns a {@link Dex.Future} that resolves   to true or rejects with error.
      */
     function output_stream_close(self: Gio.OutputStream, io_priority: number): Future;
+
+    /**
+     * Wraps {@link Gio.OutputStream.flush_async}.
+     * @param self a {@link Gio.OutputStream}
+     * @param io_priority priority for the IO operation
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error.
+     * @since 1.2
+     */
+    function output_stream_flush(self: Gio.OutputStream, io_priority: number): Future;
 
     /**
      * @param output a {@link Gio.OutputStream}
@@ -664,6 +834,22 @@ export namespace Dex {
     function output_stream_write_bytes(stream: Gio.OutputStream, bytes: GLib.Bytes | Uint8Array, io_priority: number): Future;
 
     /**
+     * Writes all bytes in `vectors` to `stream`.
+     * 
+     * This function copies the `vectors` array before starting the operation, but
+     * the buffers referenced by the vectors must remain valid until the returned
+     * future completes.
+     * 
+     * Wraps {@link Gio.OutputStream.writev_all_async}.
+     * @param stream a {@link Gio.OutputStream}
+     * @param vectors vectors to write to `stream`
+     * @param io_priority the [IO priority][iface@Gio.AsyncResult#io-priority] of the   request
+     * @returns a {@link Dex.Future} that resolves to a `guint64`   containing the number of bytes written, or rejects with error.
+     * @since 1.2
+     */
+    function output_stream_writev_all(stream: Gio.OutputStream, vectors: Gio.OutputVector[], io_priority: number): Future;
+
+    /**
      * Creates a new {@link GObject.ParamSpec} instance specifying a
      * `DEX_TYPE_OBJECT` derived property.
      * 
@@ -680,11 +866,94 @@ export namespace Dex {
     function param_spec_object(name: string, nick: string | null, blurb: string | null, object_type: GObject.GType, flags: GObject.ParamFlags): GObject.ParamSpec;
 
     /**
+     * Wraps {@link Gio.Permission.acquire_async}.
+     * @param permission a {@link Gio.Permission}
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error.
+     * @since 1.2
+     */
+    function permission_acquire(permission: Gio.Permission): Future;
+
+    /**
+     * Wraps {@link Gio.Permission.release_async}.
+     * @param permission a {@link Gio.Permission}
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error.
+     * @since 1.2
+     */
+    function permission_release(permission: Gio.Permission): Future;
+
+    /**
+     * Wraps {@link Gio.Proxy.connect_async}.
+     * @param proxy a {@link Gio.Proxy}
+     * @param connection a {@link Gio.IOStream}
+     * @param proxy_address a {@link Gio.ProxyAddress}
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.IOStream} or rejects with error.
+     * @since 1.2
+     */
+    function proxy_connect(proxy: Gio.Proxy, connection: Gio.IOStream, proxy_address: Gio.ProxyAddress): Future;
+
+    /**
+     * Wraps {@link Gio.ProxyResolver.lookup_async}.
+     * @param resolver a {@link Gio.ProxyResolver}
+     * @param uri a URI
+     * @returns a {@link Dex.Future} that resolves to a   string vector of proxy URIs or rejects with error.
+     * @since 1.2
+     */
+    function proxy_resolver_lookup(resolver: Gio.ProxyResolver, uri: string): Future;
+
+    /**
+     * Wraps {@link Gio.Resolver.lookup_by_address_async}.
+     * @param resolver a {@link Gio.Resolver}
+     * @param address a {@link Gio.InetAddress}
+     * @returns a {@link Dex.Future} that resolves to a hostname   string or rejects with error.
+     * @since 1.2
+     */
+    function resolver_lookup_by_address(resolver: Gio.Resolver, address: Gio.InetAddress): Future;
+
+    /**
      * @param resolver a {@link Gio.Resolver}
      * @param address the address to look up
      * @returns a {@link Dex.Future} that resolves to a   {@link GLib.List} of {@link Gio.InetAddress}.
      */
     function resolver_lookup_by_name(resolver: Gio.Resolver, address: string): Future;
+
+    /**
+     * Wraps {@link Gio.Resolver.lookup_by_name_with_flags_async}.
+     * @param resolver a {@link Gio.Resolver}
+     * @param address hostname to look up
+     * @param flags lookup flags
+     * @returns a {@link Dex.Future} that resolves to a   {@link GLib.List} of {@link Gio.InetAddress} or rejects with error.
+     * @since 1.2
+     */
+    function resolver_lookup_by_name_with_flags(resolver: Gio.Resolver, address: string, flags: Gio.ResolverNameLookupFlags): Future;
+
+    /**
+     * Wraps {@link Gio.Resolver.lookup_records_async}.
+     * @param resolver a {@link Gio.Resolver}
+     * @param rrname DNS record name
+     * @param record_type DNS record type
+     * @returns a {@link Dex.Future} that resolves to a   {@link GLib.List} of {@link GLib.Variant} or rejects with error.
+     * @since 1.2
+     */
+    function resolver_lookup_records(resolver: Gio.Resolver, rrname: string, record_type: Gio.ResolverRecordType): Future;
+
+    /**
+     * Wraps {@link Gio.Resolver.lookup_service_async}.
+     * @param resolver a {@link Gio.Resolver}
+     * @param service service name
+     * @param protocol protocol name
+     * @param domain domain name
+     * @returns a {@link Dex.Future} that resolves to a   {@link GLib.List} of {@link Gio.SrvTarget} or rejects with error.
+     * @since 1.2
+     */
+    function resolver_lookup_service(resolver: Gio.Resolver, service: string, protocol: string, domain: string): Future;
+
+    /**
+     * Wraps {@link Gio.SocketAddressEnumerator.next_async}.
+     * @param enumerator a {@link Gio.SocketAddressEnumerator}
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.SocketAddress}, `null` at the end of the enumeration, or   rejects with error.
+     * @since 1.2
+     */
+    function socket_address_enumerator_next(enumerator: Gio.SocketAddressEnumerator): Future;
 
     /**
      * @param socket_client a {@link Gio.SocketClient}
@@ -694,10 +963,71 @@ export namespace Dex {
     function socket_client_connect(socket_client: Gio.SocketClient, socket_connectable: Gio.SocketConnectable): Future;
 
     /**
+     * Wraps {@link Gio.SocketClient.connect_to_host_async}.
+     * @param socket_client a {@link Gio.SocketClient}
+     * @param host_and_port host and optional port to connect to
+     * @param default_port default port to use
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.SocketConnection} or rejects with error.
+     * @since 1.2
+     */
+    function socket_client_connect_to_host(socket_client: Gio.SocketClient, host_and_port: string, default_port: number): Future;
+
+    /**
+     * Wraps {@link Gio.SocketClient.connect_to_service_async}.
+     * @param socket_client a {@link Gio.SocketClient}
+     * @param domain domain to connect to
+     * @param service service to connect to
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.SocketConnection} or rejects with error.
+     * @since 1.2
+     */
+    function socket_client_connect_to_service(socket_client: Gio.SocketClient, domain: string, service: string): Future;
+
+    /**
+     * Wraps {@link Gio.SocketClient.connect_to_uri_async}.
+     * @param socket_client a {@link Gio.SocketClient}
+     * @param uri URI to connect to
+     * @param default_port default port to use
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.SocketConnection} or rejects with error.
+     * @since 1.2
+     */
+    function socket_client_connect_to_uri(socket_client: Gio.SocketClient, uri: string, default_port: number): Future;
+
+    /**
+     * Wraps {@link Gio.SocketConnection.connect_async}.
+     * @param connection a {@link Gio.SocketConnection}
+     * @param address a {@link Gio.SocketAddress}
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error.
+     * @since 1.2
+     */
+    function socket_connection_connect(connection: Gio.SocketConnection, address: Gio.SocketAddress): Future;
+
+    /**
      * @param listener a {@link Gio.SocketListener}
      * @returns a {@link Dex.Future} that resolves to   a {@link Gio.SocketConnection} or rejects with error.
      */
     function socket_listener_accept(listener: Gio.SocketListener): Future;
+
+    /**
+     * Creates a {@link Dex.Future} that resolves when `socket` satisfies
+     * `condition`.
+     * 
+     * The future resolves to the {@link GLib.IOCondition} reported by the socket
+     * source. This may include additional conditions such as {@link GObject.IOCondition.HUP} or
+     * {@link GObject.IOCondition.ERR}.
+     * @param socket a {@link Gio.Socket}
+     * @param condition a {@link GLib.IOCondition} to wait for
+     * @returns a {@link Dex.Future} that resolves to a   {@link GLib.IOCondition}.
+     * @since 1.2
+     */
+    function socket_wait(socket: Gio.Socket, condition: GLib.IOCondition): Future;
+
+    /**
+     * Wraps {@link Gio.Subprocess.wait_async}.
+     * @param subprocess a {@link Gio.Subprocess}
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error.
+     * @since 1.2
+     */
+    function subprocess_wait(subprocess: Gio.Subprocess): Future;
 
     /**
      * Creates a future that awaits for `subprocess` to complete using
@@ -744,6 +1074,87 @@ export namespace Dex {
      * @since 1.2
      */
     function tls_connection_handshake(tls_connection: Gio.TlsConnection, io_priority: number): Future;
+
+    /**
+     * Wraps {@link Gio.TlsDatabase.lookup_certificate_for_handle_async}.
+     * @param database a {@link Gio.TlsDatabase}
+     * @param handle certificate handle
+     * @param interaction a {@link Gio.TlsInteraction}, or `null`
+     * @param flags lookup flags
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.TlsCertificate} or rejects with error.
+     * @since 1.2
+     */
+    function tls_database_lookup_certificate_for_handle(database: Gio.TlsDatabase, handle: string, interaction: Gio.TlsInteraction | null, flags: Gio.TlsDatabaseLookupFlags): Future;
+
+    /**
+     * Wraps {@link Gio.TlsDatabase.lookup_certificate_issuer_async}.
+     * @param database a {@link Gio.TlsDatabase}
+     * @param certificate a {@link Gio.TlsCertificate}
+     * @param interaction a {@link Gio.TlsInteraction}, or `null`
+     * @param flags lookup flags
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.TlsCertificate} or rejects with error.
+     * @since 1.2
+     */
+    function tls_database_lookup_certificate_issuer(database: Gio.TlsDatabase, certificate: Gio.TlsCertificate, interaction: Gio.TlsInteraction | null, flags: Gio.TlsDatabaseLookupFlags): Future;
+
+    /**
+     * Wraps {@link Gio.TlsDatabase.lookup_certificates_issued_by_async}.
+     * @param database a {@link Gio.TlsDatabase}
+     * @param issuer_raw_dn issuer distinguished name bytes
+     * @param interaction a {@link Gio.TlsInteraction}, or `null`
+     * @param flags lookup flags
+     * @returns a {@link Dex.Future} that resolves to a   {@link GLib.List} of {@link Gio.TlsCertificate} or rejects with error.
+     * @since 1.2
+     */
+    function tls_database_lookup_certificates_issued_by(database: Gio.TlsDatabase, issuer_raw_dn: Uint8Array | string, interaction: Gio.TlsInteraction | null, flags: Gio.TlsDatabaseLookupFlags): Future;
+
+    /**
+     * Wraps {@link Gio.TlsDatabase.verify_chain_async}.
+     * @param database a {@link Gio.TlsDatabase}
+     * @param chain a {@link Gio.TlsCertificate}
+     * @param purpose certificate purpose
+     * @param identity expected peer identity, or `null`
+     * @param interaction a {@link Gio.TlsInteraction}, or `null`
+     * @param flags verification flags
+     * @returns a {@link Dex.Future} that resolves to   {@link Gio.TlsCertificateFlags} or rejects with error.
+     * @since 1.2
+     */
+    function tls_database_verify_chain(database: Gio.TlsDatabase, chain: Gio.TlsCertificate, purpose: string, identity: Gio.SocketConnectable | null, interaction: Gio.TlsInteraction | null, flags: Gio.TlsDatabaseVerifyFlags): Future;
+
+    /**
+     * Wraps {@link Gio.TlsInteraction.ask_password_async}.
+     * @param interaction a {@link Gio.TlsInteraction}
+     * @param password a {@link Gio.TlsPassword}
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.TlsInteractionResult} or rejects with error.
+     * @since 1.2
+     */
+    function tls_interaction_ask_password(interaction: Gio.TlsInteraction, password: Gio.TlsPassword): Future;
+
+    /**
+     * Wraps {@link Gio.TlsInteraction.request_certificate_async}.
+     * @param interaction a {@link Gio.TlsInteraction}
+     * @param connection a {@link Gio.TlsConnection}
+     * @param flags certificate request flags
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.TlsInteractionResult} or rejects with error.
+     * @since 1.2
+     */
+    function tls_interaction_request_certificate(interaction: Gio.TlsInteraction, connection: Gio.TlsConnection, flags: Gio.TlsCertificateRequestFlags): Future;
+
+    /**
+     * Wraps `g_unix_connection_receive_credentials_async()`.
+     * @param connection a {@link Gio.UnixConnection}
+     * @returns a {@link Dex.Future} that resolves to a   {@link Gio.Credentials} or rejects with error.
+     * @since 1.2
+     */
+    function unix_connection_receive_credentials(connection: Gio.UnixConnection): Future;
+
+    /**
+     * Wraps `g_unix_connection_send_credentials_async()`.
+     * @param connection a {@link Gio.UnixConnection}
+     * @returns a {@link Dex.Future} that resolves to `true`   or rejects with error.
+     * @since 1.2
+     */
+    function unix_connection_send_credentials(connection: Gio.UnixConnection): Future;
 
     /**
      * This runs {@link GLib.unlink} on a dedicated thread.
@@ -2271,6 +2682,13 @@ export namespace Dex {
          * @param value 
          */
         resolve_double(value: number): void;
+
+        /**
+         * Resolve `promise` to `value`.
+         * @param enum_type a {@link GObject.GType} of `G_TYPE_ENUM`
+         * @param value the enum value
+         */
+        resolve_enum(enum_type: GObject.GType, value: number): void;
 
         /**
          * Resolves the promise to `fd`.

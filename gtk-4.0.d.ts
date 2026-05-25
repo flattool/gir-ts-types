@@ -7528,6 +7528,11 @@ export interface Builder {
          * Information about session saving.
          */
         SESSION,
+        /**
+         * Print information from the GTK inspector 'general' page,
+         * in markdown format.
+         */
+        GENERAL_INFO,
     }
 
 
@@ -134190,7 +134195,9 @@ export interface Builder {
          * don't have to worry about when a frame clock is assigned to a widget.
          * 
          * To remove a tick callback, pass the ID that is returned by this function
-         * to {@link Gtk.Widget.remove_tick_callback}.
+         * to {@link Gtk.Widget.remove_tick_callback}. Tick callbacks will be
+         * removed automatically when the widget is destroyed, so you do not have
+         * to remove it yourself.
          * @param callback function   to call for updating animations
          * @returns an ID for this callback
          */
