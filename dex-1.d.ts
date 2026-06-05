@@ -98,6 +98,46 @@ export namespace Dex {
 
 
     /**
+     * @gir-type Enum
+     */
+    enum ThreadPoolShutdownMode {
+        DRAIN,
+        CANCEL_QUEUED,
+    }
+
+
+    /**
+     * An asynchronous `close()` wrapper.
+     * 
+     * This function takes ownership of `fd` and will close it asynchronously.
+     * 
+     * Generally you want to provide `NULL` for the `aio_context` as that
+     * will get the default aio context for your scheduler.
+     * @param aio_context 
+     * @param fd the file descriptor to close
+     * @returns a future that will resolve to `true` when the   close completes or rejects with error.
+     * @since 1.2
+     */
+    function aio_close(aio_context: AioContext | null, fd: number): Future;
+
+    /**
+     * An asynchronous `open()` wrapper.
+     * 
+     * Generally you want to provide `NULL` for the `aio_context` as that
+     * will get the default aio context for your scheduler.
+     * 
+     * The resulting future resolves to a file descriptor which can be consumed
+     * with {@link Dex.Future.await_fd}.
+     * @param aio_context 
+     * @param path the path to open
+     * @param flags flags for `open()`
+     * @param mode permissions to use when creating the file
+     * @returns a future that will resolve when the   open completes or rejects with error.
+     * @since 1.2
+     */
+    function aio_open(aio_context: AioContext | null, path: string, flags: number, mode: number): Future;
+
+    /**
      * An asynchronous `pread()` wrapper.
      * 
      * Generally you want to provide `NULL` for the `aio_context` as that
@@ -1039,6 +1079,19 @@ export namespace Dex {
     function subprocess_wait_check(subprocess: Gio.Subprocess): Future;
 
     /**
+     * Adds a test function like `g_test_add_func()`, but runs `test_func` from a
+     * {@link Dex.Fiber}. The calling thread is given a thread-default
+     * {@link Dex.Scheduler} if it does not already have one, allowing tests to use
+     * `dex_await()` and related APIs directly.
+     * 
+     * After `test_func` completes, the scheduler's main context is iterated until no
+     * immediately pending sources remain.
+     * @param testpath test case path
+     * @param test_func test function to execute from a fiber
+     */
+    function test_add_func(testpath: string, test_func: GLib.TestFunc): void;
+
+    /**
      * Spawns a new thread named `thread_name` running `thread_func` with
      * `user_data` passed to it.
      * 
@@ -1256,6 +1309,15 @@ export namespace Dex {
          *   to a runtime error.
          */
         HANDLE_METHOD_INVOCATIONS_IN_FIBER,
+    }
+
+
+    /**
+     * @gir-type Flags
+     */
+    enum TaskGroupFlags {
+        NONE,
+        CANCEL_ON_ERROR,
     }
 
 
@@ -2914,6 +2976,152 @@ export namespace Dex {
         /** @signal */
         emit<K extends keyof StaticFuture.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<StaticFuture.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
         emit(signal: string, ...args: any[]): void;
+    }
+
+
+    namespace TaskGroup {
+        // Signal signatures
+        interface SignalSignatures extends Future.SignalSignatures {}
+    }
+
+    /**
+     * A structured scope for related {@link Dex.Future} instances.
+     * 
+     * A task group owns the futures added to it until the group is closed or
+     * cancelled. The group itself is also a {@link Dex.Future}, so callers can
+     * await the scope to learn when all tracked futures have finished.
+     * 
+     * Use {@link Dex.TaskGroup.add} to attach futures explicitly, or pass `NULL`
+     * to {@link Dex.TaskGroup.add} after pushing a thread-default group with
+     * {@link Dex.TaskGroup.push_thread_default}. Close the group with
+     * {@link Dex.TaskGroup.close} once no more futures will be added.
+     * 
+     * Cancellation is stronger than ordinary discard-driven cleanup: calling
+     * {@link Dex.TaskGroup.cancel} cancels all tracked children, including nested
+     * task groups, and completes the task group with a cancellation error. When
+     * {@link Dex.TaskGroup.close} is used instead, the task group resolves only
+     * after every tracked future has resolved or rejected.
+     * 
+     * Developer note: always pair {@link Dex.TaskGroup.push_thread_default} with
+     * {@link Dex.TaskGroup.pop_thread_default} on the same thread, and prefer
+     * {@link Dex.TaskGroup.close} over relying on finalization to finish work.
+     * @gir-type Class
+     * @since 1.2
+     */
+    class TaskGroup extends Future {
+        static $gtype: GObject.GType<TaskGroup>;
+
+        // Constructors
+        _init(...args: any[]): void;
+
+        static ["new"](flags: TaskGroupFlags): TaskGroup;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof TaskGroup.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TaskGroup.SignalSignatures[K]>): number;
+        connect(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        connect_after<K extends keyof TaskGroup.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TaskGroup.SignalSignatures[K]>): number;
+        connect_after(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        emit<K extends keyof TaskGroup.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TaskGroup.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
+        emit(signal: string, ...args: any[]): void;
+
+        // Methods
+        /**
+         * Adds `future` to `group`.
+         * 
+         * If `group` is `null`, then the future will be disowned.
+         * Otherwise, `future` will be added to `group`.
+         * @param future a {@link Dex.Future}
+         * @returns `false` if the group is closed or cancelled;   otherwise `true`.
+         */
+        add(future: Future): boolean;
+
+        cancel(): void;
+
+        /**
+         * Close the group to new tasks.
+         * @returns a {@link Dex.Future} that resolves when all the   collected futures have resolved or rejected.
+         */
+        close(): Future;
+
+        pop_thread_default(): void;
+
+        push_thread_default(): void;
+    }
+
+
+    namespace ThreadPool {
+        // Signal signatures
+        interface SignalSignatures extends Object.SignalSignatures {}
+    }
+
+    /**
+     * {@link Dex.ThreadPool} is a thread pool for managing native OS threads similar
+     * to {@link GLib.ThreadPool}.
+     * 
+     * The threads managed by {@link Dex.ThreadPool} do not contain a
+     * {@link Dex.Scheduler} which means that you cannot await
+     * futures or schedule {@link Dex.Block} from a worker thread.
+     * 
+     * Threads are created up-front from {@link Dex.ThreadPool.new}.
+     * 
+     * {@link Dex.ThreadPool} primarily exists for situations where you are
+     * using blocking external libraries and want to avoid calling
+     * {@link Dex.thread_spawn} without any sort of queuing or bounding
+     * on the permitted concurrency.
+     * @gir-type Class
+     * @since 1.2
+     */
+    class ThreadPool extends Object {
+        static $gtype: GObject.GType<ThreadPool>;
+
+        // Constructors
+        _init(...args: any[]): void;
+
+        static ["new"](n_threads: number): ThreadPool;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof ThreadPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ThreadPool.SignalSignatures[K]>): number;
+        connect(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        connect_after<K extends keyof ThreadPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ThreadPool.SignalSignatures[K]>): number;
+        connect_after(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        emit<K extends keyof ThreadPool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ThreadPool.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
+        emit(signal: string, ...args: any[]): void;
+
+        // Methods
+        /**
+         * Begins shutting down the pool and prevents new submissions.
+         * @param mode shutdown policy for queued work
+         * @returns a future that resolves when shutdown completes
+         */
+        close(mode: ThreadPoolShutdownMode): Future;
+
+        /**
+         * Gets the fixed number of threads owned by the pool.
+         * @returns the number of threads in the pool
+         */
+        get_n_threads(): number;
+
+        /**
+         * Queues blocking work to run on one of the pool's reusable threads.
+         * 
+         * The provided `thread_name` is applied to the returned future using
+         * {@link Dex.Future.set_static_name} so that tracing and debugging tools can
+         * identify the work item. It does not rename the underlying OS worker thread.
+         * @param thread_name the name to use for debugging the returned future
+         * @param thread_func the function to run on a pooled thread
+         * @returns a future that resolves when the work completes
+         */
+        submit(thread_name: string | null, thread_func: ThreadFunc): Future;
     }
 
 

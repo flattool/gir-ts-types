@@ -1007,24 +1007,24 @@ export namespace Gly {
     namespace Loader {
         // Signal signatures
         interface SignalSignatures extends GObject.Object.SignalSignatures {
-            "notify::apply-transformation": (pspec: GObject.ParamSpec) => void;
+            "notify::accepted-memory-formats": (pspec: GObject.ParamSpec) => void;
+            "notify::apply-transformations": (pspec: GObject.ParamSpec) => void;
             "notify::bytes": (pspec: GObject.ParamSpec) => void;
             "notify::cancellable": (pspec: GObject.ParamSpec) => void;
             "notify::file": (pspec: GObject.ParamSpec) => void;
-            "notify::memory-format-selection": (pspec: GObject.ParamSpec) => void;
             "notify::sandbox-selector": (pspec: GObject.ParamSpec) => void;
             "notify::stream": (pspec: GObject.ParamSpec) => void;
         }
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            apply_transformation: boolean;
-            applyTransformation: boolean;
+            accepted_memory_formats: MemoryFormatSelection;
+            acceptedMemoryFormats: MemoryFormatSelection;
+            apply_transformations: boolean;
+            applyTransformations: boolean;
             bytes: GLib.Bytes | Uint8Array;
             cancellable: Gio.Cancellable;
             file: Gio.File;
-            memory_format_selection: MemoryFormatSelection;
-            memoryFormatSelection: MemoryFormatSelection;
             sandbox_selector: SandboxSelector;
             sandboxSelector: SandboxSelector;
             stream: Gio.InputStream;
@@ -1063,21 +1063,33 @@ export namespace Gly {
 
         // Properties
         /**
-         * @default false
+         * @write-only
+         * @default 0
          */
-        get apply_transformation(): boolean;
-        set apply_transformation(val: boolean);
+        set accepted_memory_formats(val: MemoryFormatSelection);
 
         /**
+         * @write-only
+         * @default 0
+         */
+        set acceptedMemoryFormats(val: MemoryFormatSelection);
+
+        /**
+         * @write-only
          * @default false
          */
-        get applyTransformation(): boolean;
-        set applyTransformation(val: boolean);
+        set apply_transformations(val: boolean);
+
+        /**
+         * @write-only
+         * @default false
+         */
+        set applyTransformations(val: boolean);
 
         /**
          * @construct-only
          */
-        get bytes(): GLib.Bytes;
+        set bytes(val: GLib.Bytes | Uint8Array);
 
         get cancellable(): Gio.Cancellable;
         set cancellable(val: Gio.Cancellable);
@@ -1085,36 +1097,24 @@ export namespace Gly {
         /**
          * @construct-only
          */
-        get file(): Gio.File;
+        set file(val: Gio.File);
 
         /**
-         * @default 0
-         */
-        get memory_format_selection(): MemoryFormatSelection;
-        set memory_format_selection(val: MemoryFormatSelection);
-
-        /**
-         * @default 0
-         */
-        get memoryFormatSelection(): MemoryFormatSelection;
-        set memoryFormatSelection(val: MemoryFormatSelection);
-
-        /**
+         * @write-only
          * @default Auto
          */
-        get sandbox_selector(): SandboxSelector;
         set sandbox_selector(val: SandboxSelector);
 
         /**
+         * @write-only
          * @default Auto
          */
-        get sandboxSelector(): SandboxSelector;
         set sandboxSelector(val: SandboxSelector);
 
         /**
          * @construct-only
          */
-        get stream(): Gio.InputStream;
+        set stream(val: Gio.InputStream);
 
         /**
          * Compile-time signal type information.
@@ -1236,10 +1236,26 @@ export namespace Gly {
 
     namespace NewFrame {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {}
+        interface SignalSignatures extends GObject.Object.SignalSignatures {
+            "notify::color-icc-profile": (pspec: GObject.ParamSpec) => void;
+            "notify::height": (pspec: GObject.ParamSpec) => void;
+            "notify::memory-format": (pspec: GObject.ParamSpec) => void;
+            "notify::stride": (pspec: GObject.ParamSpec) => void;
+            "notify::texture": (pspec: GObject.ParamSpec) => void;
+            "notify::width": (pspec: GObject.ParamSpec) => void;
+        }
 
         // Constructor properties interface
-        interface ConstructorProps extends GObject.Object.ConstructorProps {}
+        interface ConstructorProps extends GObject.Object.ConstructorProps {
+            color_icc_profile: GLib.Bytes | Uint8Array;
+            colorIccProfile: GLib.Bytes | Uint8Array;
+            height: number;
+            memory_format: MemoryFormat;
+            memoryFormat: MemoryFormat;
+            stride: number;
+            texture: GLib.Bytes | Uint8Array;
+            width: number;
+        }
     }
 
     /**
@@ -1249,6 +1265,48 @@ export namespace Gly {
      */
     class NewFrame extends GObject.Object {
         static $gtype: GObject.GType<NewFrame>;
+
+        // Properties
+        get color_icc_profile(): GLib.Bytes;
+        set color_icc_profile(val: GLib.Bytes | Uint8Array);
+
+        get colorIccProfile(): GLib.Bytes;
+        set colorIccProfile(val: GLib.Bytes | Uint8Array);
+
+        /**
+         * @construct-only
+         * @default 0
+         */
+        get height(): number;
+
+        /**
+         * @construct-only
+         * @default R8g8b8
+         */
+        get memory_format(): MemoryFormat;
+
+        /**
+         * @construct-only
+         * @default R8g8b8
+         */
+        get memoryFormat(): MemoryFormat;
+
+        /**
+         * @construct-only
+         * @default 0
+         */
+        get stride(): number;
+
+        /**
+         * @construct-only
+         */
+        get texture(): GLib.Bytes;
+
+        /**
+         * @construct-only
+         * @default 0
+         */
+        get width(): number;
 
         /**
          * Compile-time signal type information.

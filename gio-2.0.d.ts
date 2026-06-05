@@ -58284,9 +58284,44 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @param make_backup `true` if a backup should be created
          * @param flags a set of {@link Gio.FileCreateFlags}
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
+         */
+        replace_contents_bytes_async(contents: GLib.Bytes | Uint8Array, etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable: Cancellable | null): globalThis.Promise<string>;
+
+        /**
+         * Same as `g_file_replace_contents_async()` but takes a {@link GLib.Bytes} input instead.
+         * This function will keep a ref on `contents` until the operation is done.
+         * Unlike `g_file_replace_contents_async()` this allows forgetting about the
+         * content without waiting for the callback.
+         * 
+         * When this operation has completed, `callback` will be called with
+         * `user_user` data, and the operation can be finalized with
+         * `g_file_replace_contents_finish()`.
+         * @param contents a {@link GLib.Bytes}
+         * @param etag a new [entity tag](#entity-tags) for the `file`, or `null`
+         * @param make_backup `true` if a backup should be created
+         * @param flags a set of {@link Gio.FileCreateFlags}
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          */
         replace_contents_bytes_async(contents: GLib.Bytes | Uint8Array, etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Same as `g_file_replace_contents_async()` but takes a {@link GLib.Bytes} input instead.
+         * This function will keep a ref on `contents` until the operation is done.
+         * Unlike `g_file_replace_contents_async()` this allows forgetting about the
+         * content without waiting for the callback.
+         * 
+         * When this operation has completed, `callback` will be called with
+         * `user_user` data, and the operation can be finalized with
+         * `g_file_replace_contents_finish()`.
+         * @param contents a {@link GLib.Bytes}
+         * @param etag a new [entity tag](#entity-tags) for the `file`, or `null`
+         * @param make_backup `true` if a backup should be created
+         * @param flags a set of {@link Gio.FileCreateFlags}
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         */
+        replace_contents_bytes_async(contents: GLib.Bytes | Uint8Array, etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<string> | void;
 
         /**
          * Finishes an asynchronous replace of the given `file`. See

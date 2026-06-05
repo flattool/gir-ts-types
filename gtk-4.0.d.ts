@@ -107244,6 +107244,16 @@ export interface Builder {
         scale_3d(factor_x: number, factor_y: number, factor_z: number): void;
 
         /**
+         * Sets the snapping mode to use when appending snappable content
+         * to the snapshot.
+         * 
+         * The snap mode is part of the current state, so {@link Snapshot.save}
+         * and {@link Snapshot.restore} can be used to remember a snap mode.
+         * @param snap the snapping mode to use
+         */
+        set_snap(snap: Gsk.RectSnap): void;
+
+        /**
          * Returns the render node that was constructed
          * by `snapshot`.
          * 
@@ -113903,6 +113913,10 @@ export interface Builder {
      * will start a fade-out of path1 300ms before a transition from state
      * 0 to 1, 2 or 3.
      * 
+     * States can be specified numerically, or by name. It is also possible
+     * to say `not STATE` instead of explictly listing all states that are
+     * different from `STATE`.
+     * 
      * In addition to the `gpa:fill` and `gpa:stroke` attributes, symbolic
      * colors can also be specified as a custom paint server reference,
      * like this: `url(#gpa:warning)`. This works in `fill` and `stroke`
@@ -114575,9 +114589,9 @@ export interface Builder {
      * classes such as `:focus`, `:active`, `:hover` or `:visited`.
      * 
      * If {@link Gtk.Widget.has_tooltip} is set, then the content
-     * of \<title\> elements will be shown as tooltips.
+     * of `<title>` elements will be shown as tooltips.
      * 
-     * SVG animations and different \<view\>s can be triggered by input
+     * SVG animations and different `<view>`s can be triggered by input
      * events as well. The following events are supported: focus, blur,
      * mouseenter, mouseleave, click.
      * See the [SVG animation](https://svgwg.org/specs/animations/)

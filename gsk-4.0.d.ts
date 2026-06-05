@@ -787,6 +787,76 @@ export namespace Gsk {
     /**
      * @gir-type Enum
      */
+    export namespace Side {
+        export const $gtype: GObject.GType<Side>;
+    }
+
+    /**
+     * The sides of a rectangle as used by {@link Gsk.RectSnap} or {@link Gsk.BorderNode}.
+     * 
+     * This is the order used by CSS shorthand arguments.
+     * @gir-type Enum
+     * @since 4.24
+     */
+    enum Side {
+        /**
+         * The top side
+         */
+        TOP,
+        /**
+         * The right side
+         */
+        RIGHT,
+        /**
+         * The bottom side
+         */
+        BOTTOM,
+        /**
+         * The left side
+         */
+        LEFT,
+    }
+
+
+    /**
+     * @gir-type Enum
+     */
+    export namespace SnapDirection {
+        export const $gtype: GObject.GType<SnapDirection>;
+    }
+
+    /**
+     * Specifies how a coordinate should be snapped to the pixel grid.
+     * 
+     * Note that the top and left sides of rectangles need to be snapped
+     * in the opposite direction from the bottom and right sides to make
+     * the rectangle grow or shrink.
+     * @gir-type Enum
+     * @since 4.24
+     */
+    enum SnapDirection {
+        /**
+         * Don't snap the value
+         */
+        NONE,
+        /**
+         * Use `floor()` to snap
+         */
+        FLOOR,
+        /**
+         * Use `ceil()` to snap
+         */
+        CEIL,
+        /**
+         * Use `round()` to snap
+         */
+        ROUND,
+    }
+
+
+    /**
+     * @gir-type Enum
+     */
     export namespace TransformCategory {
         export const $gtype: GObject.GType<TransformCategory>;
     }
@@ -844,6 +914,46 @@ export namespace Gsk {
 
 
     /**
+     * Makes the rectangle grow in every direction.
+     * 
+     * This is useful to avoid seams but can lead to overlap with adjacent content.
+     * 
+     * ![Snap by growing](snap-grow.svg)
+     * @since 4.24
+     */
+    const RECT_SNAP_GROW: number;
+
+    /**
+     * Makes the rectangle not snap at all.
+     * 
+     * This is the default value for snapping.
+     * @since 4.24
+     */
+    const RECT_SNAP_NONE: number;
+
+    /**
+     * Makes the rectangle round to the closest pixel edge on all sides.
+     * 
+     * This is useful when multiple rectangles are placed next to each other at the same coordinate, and they should
+     * do so without any seams.
+     * 
+     * ![Snap by rounding](snap-round.svg)
+     * @since 4.24
+     */
+    const RECT_SNAP_ROUND: number;
+
+    /**
+     * Makes the rectangle shrink in every direction.
+     * 
+     * This is useful to make sure the rectangle fits into the allocated area and does not overlap content
+     * that is not snapped.
+     * 
+     * ![Snap by shrinking](snap-shrink.svg)
+     * @since 4.24
+     */
+    const RECT_SNAP_SHRINK: number;
+
+    /**
      * Compares two component transfers for equality.
      * @param self a component transfer
      * @param other another component transfer
@@ -882,6 +992,26 @@ export namespace Gsk {
      * @since 4.14
      */
     function path_parse(string: string): Path | null;
+
+    /**
+     * Queries the way a given border is snapped.
+     * @param snap a rectangle snap
+     * @param side the border to query
+     * @returns the direction the given border is snapped
+     * @since 4.24
+     */
+    function rect_snap_get_direction(snap: RectSnap, side: Side): SnapDirection;
+
+    /**
+     * Creates a new way to snap rectangles for the 4 given sides.
+     * @param top How to snap the top edge
+     * @param right How to snap the right edge
+     * @param bottom How to snap the bottom edge
+     * @param left How to snap the left edge
+     * @returns a description for how to snap rectangles
+     * @since 4.24
+     */
+    function rect_snap_new(top: SnapDirection, right: SnapDirection, bottom: SnapDirection, left: SnapDirection): RectSnap;
 
     /**
      * Registers an error quark for {@link Gsk.RenderNode} errors.
@@ -1198,6 +1328,12 @@ export namespace Gsk {
 
         // Methods
         /**
+         * Retrieves the snap value for the border
+         * @returns the snap value
+         */
+        get_border_snap(): RectSnap;
+
+        /**
          * Retrieves the colors of the border.
          * @returns an array of 4 {@link Gdk.RGBA}   structs for the top, right, bottom and left color of the border
          */
@@ -1208,6 +1344,12 @@ export namespace Gsk {
          * @returns the outline of the border
          */
         get_outline(): RoundedRect;
+
+        /**
+         * Retrieves the snap value for this node
+         * @returns the snap value
+         */
+        get_snap(): RectSnap;
 
         /**
          * Retrieves the stroke widths of the border.
@@ -1411,6 +1553,12 @@ export namespace Gsk {
          * @returns a clip rectangle
          */
         get_clip(): Graphene.Rect;
+
+        /**
+         * Retrieves the snap value for this node
+         * @returns the snap value
+         */
+        get_snap(): RectSnap;
     }
 
 
@@ -1462,6 +1610,12 @@ export namespace Gsk {
          * @returns a color vector
          */
         get_color_offset(): Graphene.Vec4;
+
+        /**
+         * Retrieves the snap value for this node
+         * @returns the snap value
+         */
+        get_snap(): RectSnap;
     }
 
 
@@ -1504,6 +1658,12 @@ export namespace Gsk {
          * @returns the color of the node
          */
         get_color(): Gdk.RGBA;
+
+        /**
+         * Retrieves the snap value for this node
+         * @returns the snap value
+         */
+        get_snap(): RectSnap;
     }
 
 
@@ -1674,6 +1834,12 @@ export namespace Gsk {
          * @returns the rotation for the gradient
          */
         get_rotation(): number;
+
+        /**
+         * Retrieves the snap value for this node
+         * @returns the snap value
+         */
+        get_snap(): RectSnap;
     }
 
 
@@ -2426,6 +2592,12 @@ export namespace Gsk {
         get_outline(): RoundedRect;
 
         /**
+         * Retrieves the snap value for this node
+         * @returns the snap value
+         */
+        get_snap(): RectSnap;
+
+        /**
          * Retrieves how much the shadow spreads inwards.
          * @returns the size of the shadow, in pixels
          */
@@ -2527,6 +2699,12 @@ export namespace Gsk {
          * @returns the number of color stops
          */
         get_n_color_stops(): number;
+
+        /**
+         * Retrieves the snap value for this node
+         * @returns the snap value
+         */
+        get_snap(): RectSnap;
 
         /**
          * Retrieves the initial point of the linear gradient.
@@ -2749,6 +2927,12 @@ export namespace Gsk {
         get_outline(): RoundedRect;
 
         /**
+         * Retrieves the snap value for this node
+         * @returns the snap value
+         */
+        get_snap(): RectSnap;
+
+        /**
          * Retrieves how much the shadow spreads outwards.
          * @returns the size of the shadow, in pixels
          */
@@ -2793,6 +2977,12 @@ export namespace Gsk {
          * @returns the index of the copy to paste.
          */
         get_depth(): number;
+
+        /**
+         * Retrieves the snap value for this node
+         * @returns the snap value
+         */
+        get_snap(): RectSnap;
     }
 
 
@@ -2856,6 +3046,12 @@ export namespace Gsk {
          * @returns the number of color stops
          */
         get_n_color_stops(): number;
+
+        /**
+         * Retrieves the snap value for this node
+         * @returns the snap value
+         */
+        get_snap(): RectSnap;
 
         /**
          * Retrieves the start value for the gradient.
@@ -3208,6 +3404,19 @@ export namespace Gsk {
          * @returns a bounding rectangle
          */
         get_child_bounds(): Graphene.Rect;
+
+        /**
+         * Retrieves the snap value for the child's bounding
+         * rectangle.
+         * @returns the snap value
+         */
+        get_child_snap(): RectSnap;
+
+        /**
+         * Retrieves the snap value for this node
+         * @returns the snap value
+         */
+        get_snap(): RectSnap;
     }
 
 
@@ -3317,6 +3526,12 @@ export namespace Gsk {
          * @returns a rounded rectangle
          */
         get_clip(): RoundedRect;
+
+        /**
+         * Retrieves the snap value for this node
+         * @returns the snap value
+         */
+        get_snap(): RectSnap;
     }
 
 
@@ -3568,6 +3783,12 @@ export namespace Gsk {
 
         // Methods
         /**
+         * Retrieves the snap value for this node
+         * @returns the snap value
+         */
+        get_snap(): RectSnap;
+
+        /**
          * Retrieves the {@link Gdk.Texture} used when creating this {@link Gsk.RenderNode}.
          * @returns the {@link Gdk.Texture}
          */
@@ -3612,6 +3833,12 @@ export namespace Gsk {
          * @returns the {@link Gsk.ScalingFilter}
          */
         get_filter(): ScalingFilter;
+
+        /**
+         * Retrieves the snap value for this node
+         * @returns the snap value
+         */
+        get_snap(): RectSnap;
 
         /**
          * Retrieves the {@link Gdk.Texture} used when creating this {@link Gsk.RenderNode}.
@@ -5690,6 +5917,12 @@ export namespace Gsk {
      * @gir-type Alias
      */
     type VulkanRendererClass = typeof VulkanRenderer;
+
+    /**
+     * The ways a rectangle can be snapped to a grid.
+     * @gir-type Alias
+     */
+    type RectSnap = number;
 
     /**
      * Name of the imported GIR library

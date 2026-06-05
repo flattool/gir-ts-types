@@ -106,6 +106,30 @@ export namespace Soup {
 
 
     /**
+     * A {@link SoupCookieJar} error.
+     * @gir-type Struct
+     */
+    class CookieJarError extends GLib.Error {
+        static $gtype: GObject.GType<GLib.Error>;
+
+        // Static fields
+        /**
+         * an error from a database operation
+         */
+        static DB: number;
+
+        // Constructors
+        constructor(options: { message: string; code: number });
+
+        // Static methods
+        /**
+         * Registers error quark for SoupCookieJar.
+         */
+        static quark(): GLib.Quark;
+    }
+
+
+    /**
      * @gir-type Enum
      */
     export namespace DateFormat {
@@ -1083,6 +1107,13 @@ export namespace Soup {
      * @returns `true` if the version of the libsoup currently loaded   is the same as or newer than the passed-in version.
      */
     function check_version(major: number, minor: number, micro: number): boolean;
+
+    /**
+     * Registers error quark for SoupCookieJar.
+     * @returns Error quark for SoupCookieJar.
+     * @since 3.8
+     */
+    function cookie_jar_error_quark(): GLib.Quark;
 
     /**
      * Parses `header` and returns a {@link Cookie}.
@@ -3578,13 +3609,16 @@ export namespace Soup {
         // Signal signatures
         interface SignalSignatures extends CookieJar.SignalSignatures {
             "notify::filename": (pspec: GObject.ParamSpec) => void;
+            "notify::max-size": (pspec: GObject.ParamSpec) => void;
             "notify::accept-policy": (pspec: GObject.ParamSpec) => void;
             "notify::read-only": (pspec: GObject.ParamSpec) => void;
         }
 
         // Constructor properties interface
-        interface ConstructorProps extends CookieJar.ConstructorProps, SessionFeature.ConstructorProps {
+        interface ConstructorProps extends CookieJar.ConstructorProps, Gio.Initable.ConstructorProps, SessionFeature.ConstructorProps {
             filename: string;
+            max_size: bigint | number;
+            maxSize: bigint | number;
         }
     }
 
@@ -3597,9 +3631,12 @@ export namespace Soup {
      * (This is identical to `SoupCookieJarSqlite` in
      * libsoup-gnome; it has just been moved into libsoup proper, and
      * renamed to avoid conflicting.)
+     * 
+     * Since 3.8 this class implements {@link Gio.Initable} to track failures
+     * opening the database. See {@link SoupCookieJarDB.new_with_error}.
      * @gir-type Class
      */
-    class CookieJarDB extends CookieJar implements SessionFeature {
+    class CookieJarDB extends CookieJar implements Gio.Initable, SessionFeature {
         static $gtype: GObject.GType<CookieJarDB>;
 
         // Properties
@@ -3609,6 +3646,22 @@ export namespace Soup {
          * @default null
          */
         get filename(): string;
+
+        /**
+         * Cookie-storage maximum database size.
+         * @since 3.8
+         * @construct-only
+         * @default 0
+         */
+        get max_size(): number;
+
+        /**
+         * Cookie-storage maximum database size.
+         * @since 3.8
+         * @construct-only
+         * @default 0
+         */
+        get maxSize(): number;
 
         /**
          * Compile-time signal type information.
@@ -3629,6 +3682,8 @@ export namespace Soup {
         // Conflicted with Soup.CookieJar.new
         static ["new"](...args: never[]): any;
 
+        static new_with_error(filename: string, read_only: boolean): CookieJarDB;
+
         // Signals
         /** @signal */
         connect<K extends keyof CookieJarDB.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, CookieJarDB.SignalSignatures[K]>): number;
@@ -3641,6 +3696,128 @@ export namespace Soup {
         /** @signal */
         emit<K extends keyof CookieJarDB.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<CookieJarDB.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
         emit(signal: string, ...args: any[]): void;
+
+        // Methods
+        /**
+         * Get the maximum size for the database file storage
+         * 
+         * This method returns the currently configured max database file size. A return value of zero
+         * indicates that no limit is configured.
+         * @returns Database max file size
+         */
+        get_max_size(): number;
+
+        /**
+         * Set the maximum size for the database file storage
+         * 
+         * If `max_size` is 0, it means "no limit", in which case the database file size will be limited only
+         * by the database capabilities / intrinsic limits.
+         * 
+         * If `max_size` has a higher limit than supported by the database, the max_size will be internally
+         * set to the limit supported by the database.
+         * 
+         * The `max_size` will be internally truncated to a multiple of the database page size. If the page
+         * size is, for example, 4K, setting a max size of 10K will effectively limit the database size to
+         * 8K to ensure it does not grow beyond the specified limit.
+         * 
+         * Attempting to set a limit that is less than the already used database file storage will NOT
+         * truncate the database, but won't allow the database to grow further in size (although writes
+         * might be still accepted within the already allocated space).
+         * 
+         * This value does not persist in the database. Each construction of this class must set
+         * the property again or it will use the default value.
+         * @param max_size Max database file size, in bytes `error` A {@link GLib.Error}
+         * @returns `true` is configuration was successful, otherwise `false` and `error` will be set.
+         */
+        set_max_size(max_size: bigint | number): boolean;
+
+        /**
+         * Initializes the object implementing the interface.
+         * 
+         * This method is intended for language bindings. If writing in C,
+         * `g_initable_new()` should typically be used instead.
+         * 
+         * The object must be initialized before any real use after initial
+         * construction, either with this function or `g_async_initable_init_async()`.
+         * 
+         * Implementations may also support cancellation. If `cancellable` is not `null`,
+         * then initialization can be cancelled by triggering the cancellable object
+         * from another thread. If the operation was cancelled, the error
+         * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null` and
+         * the object doesn't support cancellable initialization the error
+         * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
+         * 
+         * If the object is not initialized, or initialization returns with an
+         * error, then all operations on the object except `g_object_ref()` and
+         * `g_object_unref()` are considered to be invalid, and have undefined
+         * behaviour. See the [description][iface@Gio.Initable#description] for more details.
+         * 
+         * Callers should not assume that a class which implements {@link Gio.Initable} can be
+         * initialized multiple times, unless the class explicitly documents itself as
+         * supporting this. Generally, a class’ implementation of `init()` can assume
+         * (and assert) that it will only be called once. Previously, this documentation
+         * recommended all {@link Gio.Initable} implementations should be idempotent; that
+         * recommendation was relaxed in GLib 2.54.
+         * 
+         * If a class explicitly supports being initialized multiple times, it is
+         * recommended that the method is idempotent: multiple calls with the same
+         * arguments should return the same results. Only the first call initializes
+         * the object; further calls return the result of the first call.
+         * 
+         * One reason why a class might need to support idempotent initialization is if
+         * it is designed to be used via the singleton pattern, with a
+         * {@link GObject.ObjectClass}.constructor that sometimes returns an existing instance.
+         * In this pattern, a caller would expect to be able to call `g_initable_init()`
+         * on the result of `g_object_new()`, regardless of whether it is in fact a new
+         * instance.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
+         */
+        init(cancellable: Gio.Cancellable | null): boolean;
+
+        /**
+         * Initializes the object implementing the interface.
+         * 
+         * This method is intended for language bindings. If writing in C,
+         * `g_initable_new()` should typically be used instead.
+         * 
+         * The object must be initialized before any real use after initial
+         * construction, either with this function or `g_async_initable_init_async()`.
+         * 
+         * Implementations may also support cancellation. If `cancellable` is not `null`,
+         * then initialization can be cancelled by triggering the cancellable object
+         * from another thread. If the operation was cancelled, the error
+         * {@link Gio.IOErrorEnum.CANCELLED} will be returned. If `cancellable` is not `null` and
+         * the object doesn't support cancellable initialization the error
+         * {@link Gio.IOErrorEnum.NOT_SUPPORTED} will be returned.
+         * 
+         * If the object is not initialized, or initialization returns with an
+         * error, then all operations on the object except `g_object_ref()` and
+         * `g_object_unref()` are considered to be invalid, and have undefined
+         * behaviour. See the [description][iface@Gio.Initable#description] for more details.
+         * 
+         * Callers should not assume that a class which implements {@link Gio.Initable} can be
+         * initialized multiple times, unless the class explicitly documents itself as
+         * supporting this. Generally, a class’ implementation of `init()` can assume
+         * (and assert) that it will only be called once. Previously, this documentation
+         * recommended all {@link Gio.Initable} implementations should be idempotent; that
+         * recommendation was relaxed in GLib 2.54.
+         * 
+         * If a class explicitly supports being initialized multiple times, it is
+         * recommended that the method is idempotent: multiple calls with the same
+         * arguments should return the same results. Only the first call initializes
+         * the object; further calls return the result of the first call.
+         * 
+         * One reason why a class might need to support idempotent initialization is if
+         * it is designed to be used via the singleton pattern, with a
+         * {@link GObject.ObjectClass}.constructor that sometimes returns an existing instance.
+         * In this pattern, a caller would expect to be able to call `g_initable_init()`
+         * on the result of `g_object_new()`, regardless of whether it is in fact a new
+         * instance.
+         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @virtual
+         */
+        vfunc_init(cancellable: Gio.Cancellable | null): boolean;
     }
 
 
