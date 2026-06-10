@@ -7180,6 +7180,20 @@ export namespace Gdk {
     function keyval_from_name(keyval_name: string): number;
 
     /**
+     * Gets keyvals that are 'aliases' for `keyval`.
+     * 
+     * Aliases are meant to be functionally equivalent and
+     * should be treated the same with respect to keyboard
+     * shortcuts, etc. An example are keypad keys that are
+     * aliases for their normal counterpart, such as
+     * `GDK_KEY_KP_Left` and `GDK_KEY_Left`.
+     * @param keyval the keyval to get aliases for
+     * @returns an array of keyvals
+     * @since 4.24
+     */
+    function keyval_get_aliases(keyval: number): number[] | null;
+
+    /**
      * Returns true if the given key value is in lower case.
      * @param keyval a key value.
      * @returns true if `keyval` is in lower case, or if `keyval` is not   subject to case conversion.

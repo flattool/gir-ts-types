@@ -29160,12 +29160,12 @@ export namespace Adw {
      *     ╰── [content child]
      * ```
      * 
-     * When collapsed, the one containing the sidebar child has the `.background`
+     * When collapsed, the one containing the sidebar child has the `.overlay-pane`
      * style class and the other one has no style classes.
      * 
      * ```
      * overlay-split-view
-     * ├── widget.background
+     * ├── widget.overlay-pane
      * │   ╰── [sidebar child]
      * ╰── widget
      *     ╰── [content child]

@@ -1256,6 +1256,13 @@ export namespace Dex {
     /**
      * @gir-type Callback
      */
+    interface CoroutineFunc {
+        (context: CoroutineContext): Future | null;
+    }
+
+    /**
+     * @gir-type Callback
+     */
     interface FiberFunc {
         (user_data: null): Future | null;
     }
@@ -1744,6 +1751,42 @@ export namespace Dex {
     }
 
 
+    namespace Coroutine {
+        // Signal signatures
+        interface SignalSignatures extends Future.SignalSignatures {}
+    }
+
+    /**
+     * {@link Dex.Coroutine} is a {@link Dex.Future} implemented as a stateful stackless
+     * coroutine cooperatively scheduled on a {@link Dex.Scheduler}.
+     * 
+     * Each coroutine stores stackful suspension state and optionally accepts user
+     * data via `user_data`.
+     * 
+     * Use user data passed at spawn time for stateful data.
+     * @gir-type Class
+     */
+    class Coroutine extends Future {
+        static $gtype: GObject.GType<Coroutine>;
+
+        // Constructors
+        _init(...args: any[]): void;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof Coroutine.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Coroutine.SignalSignatures[K]>): number;
+        connect(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        connect_after<K extends keyof Coroutine.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Coroutine.SignalSignatures[K]>): number;
+        connect_after(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        emit<K extends keyof Coroutine.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Coroutine.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
+        emit(signal: string, ...args: any[]): void;
+    }
+
+
     namespace DBusInterfaceSkeleton {
         // Signal signatures
         interface SignalSignatures extends Gio.DBusInterfaceSkeleton.SignalSignatures {
@@ -1986,6 +2029,15 @@ export namespace Dex {
         /** @signal */
         emit<K extends keyof Fiber.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Fiber.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
         emit(signal: string, ...args: any[]): void;
+
+        // Static methods
+        /**
+         * Cooperatively yields execution back to the current scheduler.
+         * 
+         * This may only be called from within a {@link Dex.Fiber}. If it is called
+         * from any other context, `error` is set to {@link Dex.Error.NO_FIBER}.
+         */
+        static ["yield"](): boolean;
     }
 
 
@@ -2499,8 +2551,9 @@ export namespace Dex {
      * 
      * A limiter starts with a fixed number of permits. Use {@link Dex.Limiter.acquire}
      * and {@link Dex.Limiter.release} directly when a permit must cover a custom
-     * scope, or use {@link Dex.Limiter.run} to acquire a permit, spawn a fiber, and
-     * release the permit automatically when that fiber completes.
+     * scope, or use {@link Dex.Limiter.run} or
+     * {@link Dex.Limiter.run_on_pool} to acquire a permit and release it
+     * automatically when the work completes.
      * @gir-type Class
      * @since 1.2
      */
@@ -2550,6 +2603,19 @@ export namespace Dex {
         close(): void;
 
         /**
+         * Closes `limiter` and waits for all queued and running work to complete.
+         * 
+         * After this function is called, new acquire attempts are rejected with
+         * {@link Dex.Error.SEMAPHORE_CLOSED}.
+         * 
+         * The returned future resolves to ``true`` once all outstanding pending acquire
+         * futures and held permits are complete. Existing permit holders must still
+         * eventually release.
+         * @returns a {@link Dex.Future} that resolves to `true`
+         */
+        close_after_drain(): Future;
+
+        /**
          * Gets the maximum number of permits available from `limiter`.
          * @returns the maximum number of concurrent operations
          */
@@ -2577,6 +2643,36 @@ export namespace Dex {
          * @returns a future representing the spawned fiber
          */
         run(scheduler: Scheduler | null, stack_size: bigint | number, func: FiberFunc): Future;
+
+        /**
+         * Runs `func` while holding one permit from `limiter`.
+         * 
+         * The returned future resolves or rejects with the result of the spawned
+         * coroutine. The permit is released automatically after the coroutine resolves
+         * or rejects. If the returned future is discarded after the coroutine starts,
+         * the coroutine is allowed to complete so that the permit can be released.
+         * @param scheduler scheduler to spawn `func` on, or `null` for the thread default
+         * @param func coroutine function to run after a permit is acquired
+         * @returns a future representing the spawned coroutine
+         */
+        run_coroutine(scheduler: Scheduler | null, func: CoroutineFunc): Future;
+
+        /**
+         * Runs `thread_func` on `pool` while holding one permit from `limiter`.
+         * 
+         * The returned future resolves or rejects with the result of the submitted
+         * thread-pool work. The permit is released automatically after the work
+         * resolves or rejects. If the returned future is discarded after the work is
+         * submitted to `pool`, the work is allowed to complete so that the permit can be
+         * released.
+         * 
+         * Workers in {@link Dex.ThreadPool} are not scheduler threads, so `thread_func` must
+         * not use `dex_await()`.
+         * @param pool a {@link Dex.ThreadPool}
+         * @param thread_func function to run on `pool` after a permit is acquired
+         * @returns a future representing the submitted work
+         */
+        run_on_pool(pool: ThreadPool, thread_func: ThreadFunc): Future;
     }
 
 
@@ -2915,11 +3011,11 @@ export namespace Dex {
          * fiber_func (gpointer data)
          * {
          *   GInputStream *stream = data;
-         *   g_autoptr(GError) error = NULL;
-         *   g_autoptr(GBytes) bytes = NULL;
+         *   GError *error = NULL;
+         *   GBytes *bytes = NULL;
          * 
          *   if (!(bytes = dex_await_boxed (dex_input_stream_read_bytes (stream, 4096, 0), &error)))
-         *     return dex_future_new_for_error (g_steal_pointer (&error));
+         *     return dex_future_new_for_error (error);
          * 
          *   ...
          * 
@@ -2939,6 +3035,17 @@ export namespace Dex {
          * @returns a {@link Dex.Future} that will resolve or reject when   `func` completes (or its resulting {@link Dex.Future} completes).
          */
         spawn(stack_size: bigint | number, func: FiberFunc): Future;
+
+        /**
+         * Request `scheduler` to spawn a {@link Dex.Coroutine} and execute
+         * `func` with user data.
+         * 
+         * If the function returns `null` while suspended, it should have set an awaited
+         * future in its context using one of the [macro@DEX_COROUTINE_SUSPEND_*] helpers.
+         * @param func coroutine entrypoint
+         * @returns a {@link Dex.Future} that will resolve or reject   when `func` finishes or returns an error.
+         */
+        spawn_coroutine(func: CoroutineFunc): Future;
     }
 
 
@@ -3300,6 +3407,32 @@ export namespace Dex {
      * @gir-type Alias
      */
     type AsyncResultClass = typeof AsyncResult;
+
+    /**
+     * @gir-type Alias
+     */
+    type CoroutineClass = typeof Coroutine;
+
+    /**
+     * @gir-type Struct
+     */
+    abstract class CoroutineContext {
+        static $gtype: GObject.GType<CoroutineContext>;
+
+        // Methods
+        /**
+         * @param pc 
+         * @param future 
+         */
+        resume(pc: number, future: Future): void;
+
+        /**
+         * @param pc 
+         * @param future 
+         */
+        suspend(pc: number, future: Future): void;
+    }
+
 
     /**
      * @gir-type Alias

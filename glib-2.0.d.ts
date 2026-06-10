@@ -24644,11 +24644,12 @@ export class VariantType<S extends string = any> {
          * you use any {@link GLib.MatchInfo} method (except `g_match_info_free()`) after
          * freeing or modifying `string` then the behaviour is undefined.
          * @param string the string to scan for matches
+         * @param string_len the length of `string`, in bytes, or -1 if `string` is nul-terminated
          * @param start_position starting index of the string to match, in bytes
          * @param match_options match options
          * @returns `true` is the string matched, `false` otherwise
          */
-        match_all_full(string: string[], start_position: number, match_options: RegexMatchFlags): [boolean, MatchInfo | null];
+        match_all_full(string: string, string_len: bigint | number, start_position: number, match_options: RegexMatchFlags): [boolean, MatchInfo | null];
 
         /**
          * Scans for a match in `string` for the pattern in `regex`.
@@ -24705,11 +24706,12 @@ export class VariantType<S extends string = any> {
          * ```
          * 
          * @param string the string to scan for matches
+         * @param string_len the length of `string`, in bytes, or -1 if `string` is nul-terminated
          * @param start_position starting index of the string to match, in bytes
          * @param match_options match options
          * @returns `true` is the string matched, `false` otherwise
          */
-        match_full(string: string[], start_position: number, match_options: RegexMatchFlags): [boolean, MatchInfo | null];
+        match_full(string: string, string_len: bigint | number, start_position: number, match_options: RegexMatchFlags): [boolean, MatchInfo | null];
 
         /**
          * Increases reference count of `regex` by 1.
@@ -24745,12 +24747,13 @@ export class VariantType<S extends string = any> {
          * string and setting {@link GLib.RegexMatchFlags.NOTBOL} in the case of a pattern that
          * begins with any kind of lookbehind assertion, such as `"\b"`.
          * @param string the string to perform matches against
+         * @param string_len the length of `string`, in bytes, or -1 if `string` is nul-terminated
          * @param start_position starting index of the string to match, in bytes
          * @param replacement text to replace each match with
          * @param match_options options for the match
          * @returns a newly allocated string containing the replacements
          */
-        replace(string: string[], start_position: number, replacement: string, match_options: RegexMatchFlags): string;
+        replace(string: string, string_len: bigint | number, start_position: number, replacement: string, match_options: RegexMatchFlags): string;
 
         /**
          * Replaces occurrences of the pattern in regex with the output of
@@ -24801,12 +24804,13 @@ export class VariantType<S extends string = any> {
          * ```
          * 
          * @param string string to perform matches against
+         * @param string_len the length of `string`, in bytes, or -1 if `string` is nul-terminated
          * @param start_position starting index of the string to match, in bytes
          * @param match_options options for the match
          * @param _eval a function to call for each match
          * @returns a newly allocated string containing the replacements
          */
-        replace_eval(string: string[], start_position: number, match_options: RegexMatchFlags, _eval: RegexEvalCallback): string;
+        replace_eval(string: string, string_len: bigint | number, start_position: number, match_options: RegexMatchFlags, _eval: RegexEvalCallback): string;
 
         /**
          * Replaces all occurrences of the pattern in `regex` with the
@@ -24818,12 +24822,13 @@ export class VariantType<S extends string = any> {
          * case of a pattern that begins with any kind of lookbehind
          * assertion, such as "\b".
          * @param string the string to perform matches against
+         * @param string_len the length of `string`, in bytes, or -1 if `string` is nul-terminated
          * @param start_position starting index of the string to match, in bytes
          * @param replacement text to replace each match with
          * @param match_options options for the match
          * @returns a newly allocated string containing the replacements
          */
-        replace_literal(string: string[], start_position: number, replacement: string, match_options: RegexMatchFlags): string;
+        replace_literal(string: string, string_len: bigint | number, start_position: number, replacement: string, match_options: RegexMatchFlags): string;
 
         /**
          * Breaks the string on the pattern, and returns an array of the tokens.
@@ -24872,12 +24877,13 @@ export class VariantType<S extends string = any> {
          * string and setting {@link GLib.RegexMatchFlags.NOTBOL} in the case of a pattern
          * that begins with any kind of lookbehind assertion, such as "\b".
          * @param string the string to split with the pattern
+         * @param string_len the length of `string`, in bytes, or -1 if `string` is nul-terminated
          * @param start_position starting index of the string to match, in bytes
          * @param match_options match time option flags
          * @param max_tokens the maximum number of tokens to split `string` into.   If this is less than 1, the string is split completely
          * @returns a `null`-terminated gchar ** array. Free it using `g_strfreev()`
          */
-        split_full(string: string[], start_position: number, match_options: RegexMatchFlags, max_tokens: number): string[];
+        split_full(string: string, string_len: bigint | number, start_position: number, match_options: RegexMatchFlags, max_tokens: number): string[];
 
         /**
          * Decreases reference count of `regex` by 1. When reference count drops
