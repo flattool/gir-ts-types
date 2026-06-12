@@ -254,6 +254,7 @@ export namespace Atspi {
          * immediate parent.
          */
         PARENT,
+        LAST_DEFINED,
     }
 
 
@@ -291,6 +292,7 @@ export namespace Atspi {
          * human interface device (HID) was released.
          */
         BUTTON_RELEASED_EVENT,
+        EVENT_LAST_DEFINED,
     }
 
 
@@ -314,6 +316,7 @@ export namespace Atspi {
          * Key release event
          */
         RELEASED,
+        EVENT_LAST_DEFINED,
     }
 
 
@@ -374,6 +377,7 @@ export namespace Atspi {
          * Emulates unlocking a set of modifiers.
          */
         UNLOCKMODIFIERS,
+        SYNTH_LAST_DEFINED,
     }
 
 
@@ -448,6 +452,7 @@ export namespace Atspi {
          * For time and date formatting.
          */
         TIME,
+        LAST_DEFINED,
     }
 
 
@@ -1469,6 +1474,7 @@ export namespace Atspi {
          * on the window.
          */
         ANYWHERE,
+        LAST_DEFINED,
     }
 
 
@@ -1852,6 +1858,7 @@ export namespace Atspi {
          * range.
          */
         LINE_END,
+        LAST_DEFINED,
     }
 
 
@@ -1887,6 +1894,7 @@ export namespace Atspi {
          * bounded by min and max are retained.
          */
         BOTH,
+        LAST_DEFINED,
     }
 
 
