@@ -713,6 +713,10 @@ export namespace Gsk {
          * A node that combines two child nodes in an arithmetic way.
          */
         ARITHMETIC_NODE,
+        /**
+         * A node that generates a Perlin noise or fractal Brownian motion pattern.
+         */
+        TURBULENCE_NODE,
     }
 
 
