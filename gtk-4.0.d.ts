@@ -95304,7 +95304,7 @@ export interface Builder {
      * {@link Gtk.Revealer.set_transition_type}.
      * 
      * These animations respect the {@link Gtk.Settings.gtk_enable_animations}
-     * setting.
+     * and {@link GTk.Settings.gtk_interface_reduced_motion} settings.
      * 
      * # CSS nodes
      * 
@@ -110112,8 +110112,9 @@ export interface Builder {
      * 
      * Transitions between pages can be animated as slides or fades. This
      * can be controlled with {@link Gtk.Stack.set_transition_type}.
+     * 
      * These animations respect the {@link Gtk.Settings.gtk_enable_animations}
-     * setting.
+     * and {@link Gtk.Settings.gtk_interface_reduced_motion} settings.
      * 
      * {@link Gtk.Stack} maintains a {@link Gtk.StackPage} object for each added
      * child, which holds additional per-child properties. You

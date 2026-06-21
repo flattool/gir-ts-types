@@ -18859,19 +18859,29 @@ export class VariantType<S extends string = any> {
         add_years(years: number): DateTime | null;
 
         /**
-         * A comparison function for `GDateTimes` that is suitable
-         * as a {@link GLib.CompareFunc}. Both `GDateTimes` must be non-`null`.
-         * @param dt2 second {@link GLib.DateTime} to compare
-         * @returns -1, 0 or 1 if `dt1` is less than, equal to or greater   than `dt2`.
+         * A comparison function for date-times that is suitable
+         * as a {@link GLib.CompareFunc}.
+         * 
+         * This effectively converts both date-times to the same time zone before
+         * comparing, so date-times in different time zones can compare equal if they
+         * refer to the same instant. See {@link GLib.DateTime.difference}.
+         * 
+         * Both date-times must be non-`NULL`.
+         * @param dt2 second date-time to compare
+         * @returns `-1`, `0` or `1` if `dt1` is less than, equal to or greater than `dt2`
          */
         compare(dt2: DateTime): number;
 
         /**
-         * Calculates the difference in time between `end` and `begin`.  The
-         * {@link GLib.TimeSpan} that is returned is effectively `end` - `begin` (ie:
-         * positive if the first parameter is larger).
-         * @param begin a {@link GLib.DateTime}
-         * @returns the difference between the two {@link GLib.DateTime}, as a time   span expressed in microseconds.
+         * Calculates the difference in time between `end` and `begin`.
+         * 
+         * The time span that is returned is effectively `end` - `begin` (positive if the
+         * first parameter is larger).
+         * 
+         * This effectively converts both date-times to the same time zone before
+         * calculating the difference.
+         * @param begin another date-time
+         * @returns the difference between the two date-times, as a time   span expressed in microseconds
          */
         difference(begin: DateTime): TimeSpan;
 
@@ -18880,6 +18890,11 @@ export class VariantType<S extends string = any> {
          * 
          * Equal here means that they represent the same moment after converting
          * them to the same time zone.
+         * 
+         * If you need to check that the date-times are in the same time zone as well
+         * as referring to the same instant in time, additionally compare the values
+         * returned by {@link GLib.TimeZone.get_offset} for the time zones for the two
+         * date-times.
          * @param dt2 a {@link GLib.DateTime}
          * @returns `true` if `dt1` and `dt2` are equal
          */
@@ -22206,6 +22221,8 @@ export class VariantType<S extends string = any> {
          * If `match_num` is a valid sub pattern but it didn't match anything
          * (e.g. sub pattern 1, matching "b" against "(a)?b") then an empty
          * string is returned.
+         * When a partial match is reported via `g_match_info_is_partial_match()`
+         * only the full text of the match can be queried (`match_num` must be `0`).
          * 
          * If the match was obtained using the DFA algorithm, that is using
          * `g_regex_match_all()` or `g_regex_match_all_full()`, the retrieved
@@ -22228,6 +22245,9 @@ export class VariantType<S extends string = any> {
          * 
          * If a sub pattern didn't match anything (e.g. sub pattern 1, matching
          * "b" against "(a)?b") then an empty string is inserted.
+         * 
+         * When a partial match is reported via `g_match_info_is_partial_match()`
+         * only the full text of the match will be returned, i.e. an array of size 1.
          * 
          * If the last match was obtained using the DFA algorithm, that is using
          * `g_regex_match_all()` or `g_regex_match_all_full()`, the retrieved
@@ -22275,6 +22295,8 @@ export class VariantType<S extends string = any> {
          * 
          * Valid values for `match_num` are `0` for the full text of the match,
          * `1` for the first paren set, `2` for the second, and so on.
+         * When a partial match is reported via `g_match_info_is_partial_match()`
+         * only the full text of the match can be queried (`match_num` must be `0`).
          * 
          * As `end_pos` is set to the byte after the final byte of the match (on success),
          * the length of the match can be calculated as `end_pos - start_pos`.
@@ -22545,6 +22567,10 @@ export class VariantType<S extends string = any> {
          * 
          * There were formerly some restrictions on the pattern for partial matching.
          * The restrictions no longer apply.
+         * 
+         * If the match was partial `g_match_info_fetch()`, `g_match_info_fetch_pos()`
+         * and `g_match_info_fetch_all()` can be called to retrieve the text and positions
+         * of the entire match, i.e. only for sub expression `0`.
          * 
          * See pcrepartial(3) for more information on partial matching.
          * @returns `true` if the match was partial, `false` otherwise

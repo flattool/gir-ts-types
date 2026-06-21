@@ -35966,12 +35966,14 @@ export const _LocalFilePrototype: typeof File.prototype;
         get_family(): SocketFamily;
 
         /**
-         * Returns the underlying OS socket object. On unix this
-         * is a socket file descriptor, and on Windows this is
-         * a Winsock2 SOCKET handle. This may be useful for
-         * doing platform specific or otherwise unusual operations
-         * on the socket.
-         * @returns the file descriptor of the socket.
+         * Gets the underlying OS socket descriptor.
+         * 
+         * On Unix this is a socket file descriptor, and on Windows this is
+         * a Winsock2 `SOCKET` handle.
+         * 
+         * This may be useful for doing platform specific or otherwise unusual
+         * operations on the socket.
+         * @returns the file descriptor of the socket, or `-1` if the socket has not yet   been initialised or has been closed
          */
         get_fd(): number;
 
