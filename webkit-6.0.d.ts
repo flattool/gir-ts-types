@@ -677,6 +677,10 @@ export namespace WebKit {
          * Editable element expects a password
          */
         PASSWORD,
+        /**
+         * Edited field contents will be used for searching data.
+         */
+        SEARCH,
     }
 
 
