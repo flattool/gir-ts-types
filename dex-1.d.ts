@@ -75,6 +75,8 @@ export namespace Dex {
 
         static FIBER_CANCELLED: number;
 
+        static INVALID_TRANSITION: number;
+
         // Constructors
         constructor(options: { message: string; code: number });
     }
@@ -1284,6 +1286,13 @@ export namespace Dex {
     /**
      * @gir-type Callback
      */
+    interface StateTransitionFunc {
+        (from: number, to: number): boolean;
+    }
+
+    /**
+     * @gir-type Callback
+     */
     interface ThreadFunc {
         (user_data: null): Future;
     }
@@ -2082,6 +2091,8 @@ export namespace Dex {
         static finally_loop(future: Future, callback: FutureCallback): Future;
 
         static first(futures: Future[]): Future;
+
+        static new_enum(enum_type: GObject.GType, enum_value: number): Future;
 
         static new_for_boolean(v_bool: boolean): Future;
 
@@ -3003,6 +3014,9 @@ export namespace Dex {
          * The fiber will have its own stack and cooperatively schedules among other
          * fibers sharing the scheduler.
          * 
+         * This can be called from any thread. The resulting fiber runs on the thread
+         * associated with the `scheduler`.
+         * 
          * If `stack_size` is 0, it will set to a sensible default. Otherwise, it is
          * rounded up to the nearest page size.
          * 
@@ -3041,11 +3055,67 @@ export namespace Dex {
          * `func` with user data.
          * 
          * If the function returns `null` while suspended, it should have set an awaited
-         * future in its context using one of the [macro@DEX_COROUTINE_SUSPEND_*] helpers.
+         * future in its context using one of the `DEX_COROUTINE_SUSPEND_*` helpers.
          * @param func coroutine entrypoint
          * @returns a {@link Dex.Future} that will resolve or reject   when `func` finishes or returns an error.
          */
         spawn_coroutine(func: CoroutineFunc): Future;
+    }
+
+
+    namespace StateMachine {
+        // Signal signatures
+        interface SignalSignatures extends Object.SignalSignatures {}
+    }
+
+    /**
+     * {@link Dex.StateMachine} provides a serialized asynchronous state machine.
+     * 
+     * Transitions are declared up front with a static table of
+     * {@link Dex.StateTransition} entries. Requests made with
+     * {@link Dex.StateMachine.transition} are serialized through an internal
+     * {@link Dex.Limiter} with a max concurrency of one. Transition callbacks run
+     * from a fiber, so they may use `dex_await()` and related APIs while still
+     * appearing as synchronous functions.
+     * @gir-type Class
+     */
+    class StateMachine extends Object {
+        static $gtype: GObject.GType<StateMachine>;
+
+        // Constructors
+        _init(...args: any[]): void;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof StateMachine.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, StateMachine.SignalSignatures[K]>): number;
+        connect(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        connect_after<K extends keyof StateMachine.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, StateMachine.SignalSignatures[K]>): number;
+        connect_after(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        emit<K extends keyof StateMachine.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<StateMachine.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
+        emit(signal: string, ...args: any[]): void;
+
+        // Methods
+        /**
+         * Gets the current state of `state_machine`.
+         * @returns the current state
+         */
+        get_state(): number;
+
+        /**
+         * Requests a transition to `target`.
+         * 
+         * Transition requests are serialized. The matching callback is run from a
+         * fiber and may use `dex_await()` to wait for asynchronous work. If the
+         * callback succeeds, the state machine commits the possibly modified inout
+         * `to` argument and the returned future resolves to that enum value.
+         * @param target the target state
+         * @returns a future resolving to the final enum state
+         */
+        transition(target: number): Future;
     }
 
 
@@ -3222,7 +3292,7 @@ export namespace Dex {
          * Queues blocking work to run on one of the pool's reusable threads.
          * 
          * The provided `thread_name` is applied to the returned future using
-         * {@link Dex.Future.set_static_name} so that tracing and debugging tools can
+         * `dex_future_set_static_name()` so that tracing and debugging tools can
          * identify the work item. It does not rename the underlying OS worker thread.
          * @param thread_name the name to use for debugging the returned future
          * @param thread_func the function to run on a pooled thread
@@ -3443,6 +3513,22 @@ export namespace Dex {
      * @gir-type Alias
      */
     type FutureListModelClass = typeof FutureListModel;
+
+    /**
+     * Describes one supported transition edge in a {@link Dex.StateMachine}.
+     * @gir-type Struct
+     */
+    class StateTransition {
+        static $gtype: GObject.GType<StateTransition>;
+
+        // Fields
+        from: number;
+
+        to: number;
+
+        func: StateTransitionFunc;
+    }
+
 
     /**
      * Name of the imported GIR library

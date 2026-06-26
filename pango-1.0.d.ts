@@ -234,6 +234,10 @@ export namespace Pango {
          * font-relative size change ({@link Pango.AttrInt}). Since 1.50
          */
         FONT_SCALE,
+        /**
+         * font width ({@link Pango.AttrInt}). Since: 1.58
+         */
+        WIDTH,
     }
 
 
@@ -1595,6 +1599,63 @@ export namespace Pango {
     /**
      * @gir-type Enum
      */
+    export namespace Width {
+        export const $gtype: GObject.GType<Width>;
+    }
+
+    /**
+     * An enumeration specifying the width of the font relative to other designs
+     * within a family.
+     * 
+     * The enumeration values match {@link PangoStretch}, but
+     * the numeric values are expanded to allow intermediate
+     * values.
+     * @gir-type Enum
+     * @since 1.58
+     */
+    enum Width {
+        /**
+         * ultra condensed width
+         */
+        ULTRA_CONDENSED,
+        /**
+         * extra condensed width
+         */
+        EXTRA_CONDENSED,
+        /**
+         * condensed width
+         */
+        CONDENSED,
+        /**
+         * semi condensed width
+         */
+        SEMI_CONDENSED,
+        /**
+         * the normal width
+         */
+        NORMAL,
+        /**
+         * semi expanded width
+         */
+        SEMI_EXPANDED,
+        /**
+         * expanded width
+         */
+        EXPANDED,
+        /**
+         * extra expanded width
+         */
+        EXTRA_EXPANDED,
+        /**
+         * ultra expanded width
+         */
+        ULTRA_EXPANDED,
+    }
+
+
+    /**
+     * @gir-type Enum
+     */
     export namespace WrapMode {
         export const $gtype: GObject.GType<WrapMode>;
     }
@@ -2130,6 +2191,14 @@ export namespace Pango {
      * @returns the newly allocated   {@link Pango.Attribute}, which should be freed with   {@link Pango.Attribute.destroy}
      */
     function attr_weight_new(weight: Weight): Attribute;
+
+    /**
+     * Create a new font width attribute.
+     * @param width the width
+     * @returns the newly allocated   {@link Pango.Attribute}, which should be freed with   {@link Pango.Attribute.destroy}
+     * @since 1.58
+     */
+    function attr_width_new(width: Width): Attribute;
 
     /**
      * Marks the range of the attribute as a single word.
@@ -3095,7 +3164,15 @@ export namespace Pango {
          */
         WEIGHT,
         /**
-         * the font stretch is specified.
+         * Font width is specified.
+         * 
+         * This is an alias for {@link Pango.FontMask.STRETCH}.
+         * 
+         * 1.58
+         */
+        WIDTH,
+        /**
+         * the font stretch/width is specified.
          */
         STRETCH,
         /**
@@ -7010,7 +7087,7 @@ export namespace Pango {
          * for `desc` than those of `old_match` are, or if `old_match` is `null`,
          * determines if `new_match` is a match at all.
          * 
-         * Approximate matching is done for weight and style; other style attributes
+         * Approximate matching is done for weight, width and style; other style attributes
          * must match exactly. Style attributes are all attributes other than family
          * and size-related attributes. Approximate matching for style considers
          * {@link Pango.Style.OBLIQUE} and {@link Pango.Style.ITALIC} as matches, but not as good
@@ -7153,6 +7230,14 @@ export namespace Pango {
          * @returns the weight field for the font description.   Use {@link Pango.FontDescription.get_set_fields} to find   out if the field was explicitly set or not.
          */
         get_weight(): Weight;
+
+        /**
+         * Gets the width field of a font description.
+         * 
+         * See {@link Pango.FontDescription.set_width}.
+         * @returns the width field for the font description.   Use {@link Pango.FontDescription.get_set_fields} to find   out if the field was explicitly set or not.
+         */
+        get_width(): Width;
 
         /**
          * Computes a hash of a {@link Pango.FontDescription} structure.
@@ -7374,6 +7459,17 @@ export namespace Pango {
          * @param weight the weight for the font description.
          */
         set_weight(weight: Weight): void;
+
+        /**
+         * Sets the width field of a font description.
+         * 
+         * The width field specifies how narrow or wide the
+         * font should be. In addition to the values of the
+         * {@link Pango.Width} enumeration, other
+         * intermediate numeric values are possible.
+         * @param width the width for the font description
+         */
+        set_width(width: Width): void;
 
         /**
          * Creates a filename representation of a font description.

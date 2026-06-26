@@ -520,6 +520,80 @@ export namespace Gdk {
     /**
      * @gir-type Enum
      */
+    export namespace FrameResult {
+        export const $gtype: GObject.GType<FrameResult>;
+    }
+
+    /**
+     * An enumeration describing the process of rendering a frame.
+     * Rendering a frame starts with the frame clock cycle and then follows
+     * the rendered frame (if there was one) through the display server
+     * until it appears on screen.
+     * 
+     * It is relevant in particular for {@link Gdk.FrameTimings} which
+     * may still be waiting for values to be filled in.
+     * @gir-type Enum
+     * @since 4.24
+     */
+    enum FrameResult {
+        /**
+         * The frame is currently being prepared and rendered by GTK.
+         * This is the initial state.
+         */
+        PREPARING,
+        /**
+         * GTK has determined that nothing needs to be rendered because
+         * there are no visual changes. No rendering will be submitted to
+         * the display server and because of that no information will
+         * be forthcoming from the display server.
+         * 
+         * The frame is complete.
+         */
+        SKIPPED,
+        /**
+         * GTK has determined that nothing needs to be rendered because
+         * there are no visual changes. This information has been submitted
+         * to the display server. The presentation time has been updated to
+         * reflect when this frame would have been displayed.
+         * 
+         * The frame is complete.
+         */
+        EMPTY,
+        /**
+         * A frame has been drawn and submitted to the display server, but
+         * the display server will not provide any further feedback about when
+         * or how the frame is going to be displayed.
+         * 
+         * The frame is complete.
+         */
+        SUBMITTED,
+        /**
+         * The frame has been drawn and submitted to the display server, but the
+         * display server has not yet replied what is going to happen with the
+         * rendered image.
+         */
+        OUTSTANDING,
+        /**
+         * The frame has been drawn and submitted to the display server, but the
+         * display server has not displayed it. No presentation time will be available.
+         * 
+         * The frame is complete.
+         */
+        DISCARDED,
+        /**
+         * The frame has been drawn and submitted to the display server, and the
+         * display server has rendered it and displayed the result. The presentation
+         * time is accurately reflecting when that happened.
+         * 
+         * The frame is complete.
+         */
+        PRESENTED,
+    }
+
+
+    /**
+     * @gir-type Enum
+     */
     export namespace FullscreenMode {
         export const $gtype: GObject.GType<FullscreenMode>;
     }
@@ -17763,6 +17837,21 @@ export namespace Gdk {
          * @returns the refresh interval of the display, in microseconds,   or 0 if the refresh interval is not available.   See {@link Gdk.FrameTimings.get_complete}.
          */
         get_refresh_interval(): number;
+
+        /**
+         * Gets the result of the frame cycle that recorded these timings.
+         * 
+         * The timing information in a {@link Gdk.FrameTimings} is filled in
+         * incrementally as the frame as drawn and passed off to the
+         * window system for processing and display to the user. The
+         * accessor functions for {@link Gdk.FrameTimings} can return 0 to
+         * indicate an unavailable value for two reasons: either because
+         * the information is not yet available, or because it isn't
+         * available at all. Looking at the result of the timings gives
+         * an explanation for why a value is not available.
+         * @returns The result of the frame these timings have been recorded for.
+         */
+        get_result(): FrameResult;
 
         /**
          * Increases the reference count of `timings`.
