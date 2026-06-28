@@ -1753,6 +1753,8 @@ export namespace Pango {
      */
     const GLYPH_UNKNOWN_FLAG: Glyph;
 
+    const RENDER_COMPONENT_ALL: number;
+
     /**
      * The scale between dimensions used for Pango distances and device units.
      * 
@@ -3252,6 +3254,55 @@ export namespace Pango {
          * Include information about the formatted output
          */
         OUTPUT,
+    }
+
+
+    /**
+     * @gir-type Flags
+     */
+    export namespace RenderComponent {
+        export const $gtype: GObject.GType<RenderComponent>;
+    }
+
+    /**
+     * Flags that specify which components of a layout to include
+     * in renderer output.
+     * 
+     * This is more or less parallel to the {@link Pango.RenderPart} enum,
+     * but allows separating plain and color glyphs, and specifying more
+     * than one component.
+     * @gir-type Flags
+     * @since 1.58
+     */
+    enum RenderComponent {
+        /**
+         * No components
+         */
+        NONE,
+        /**
+         * The plain glyphs of the layout
+         */
+        PLAIN_GLYPH,
+        /**
+         * The color glyphs of the layout
+         */
+        COLOR_GLYPH,
+        /**
+         * Background of the layout
+         */
+        BACKGROUND,
+        /**
+         * Underlines of the layout
+         */
+        UNDERLINE,
+        /**
+         * Strikethrough lines of the layout
+         */
+        STRIKETHROUGH,
+        /**
+         * Overlines of the layout
+         */
+        OVERLINE,
     }
 
 
@@ -6192,6 +6243,12 @@ export namespace Pango {
         get_color(part: RenderPart): Color | null;
 
         /**
+         * Gets the components that are included in the output of the renderer.
+         * @returns the components
+         */
+        get_components(): RenderComponent;
+
+        /**
          * Gets the layout currently being rendered using `renderer`.
          * 
          * Calling this function only makes sense from inside a subclass's
@@ -6262,6 +6319,12 @@ export namespace Pango {
          * @param color the new color or `null` to unset the current color
          */
         set_color(part: RenderPart, color: Color | null): void;
+
+        /**
+         * Sets the components to include in the output of the renderer.
+         * @param components the components to include
+         */
+        set_components(components: RenderComponent): void;
 
         /**
          * Sets the transformation matrix that will be applied when rendering.
