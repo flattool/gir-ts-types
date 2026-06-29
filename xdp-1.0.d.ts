@@ -108,6 +108,23 @@ export namespace Xdp {
     /**
      * @gir-type Enum
      */
+    export namespace InputCaptureSessionPersistence {
+        export const $gtype: GObject.GType<InputCaptureSessionPersistence>;
+    }
+
+    /**
+     * @gir-type Enum
+     */
+    enum InputCaptureSessionPersistence {
+        NONE,
+        TRANSIENT,
+        PERSISTENT,
+    }
+
+
+    /**
+     * @gir-type Enum
+     */
     export namespace KeyState {
         export const $gtype: GObject.GType<KeyState>;
     }
@@ -625,6 +642,10 @@ export namespace Xdp {
          * Allow selecting multiple files
          */
         MULTIPLE,
+        /**
+         * Select folders instead of files (Since: 0.10)
+         */
+        DIRECTORY,
     }
 
 
@@ -1049,6 +1070,21 @@ export namespace Xdp {
         enable(): void;
 
         /**
+         * Returns the restore token for this session or NULL if none exists. This token
+         * can be passed to {@link InputCaptureSession.set_restore_token} for a future
+         * session to restore this session, possibly skipping interactive permission
+         * dialogs.
+         * 
+         * This method only returns a token for a session created with
+         * {@link Portal.create_input_capture_session2} and only once
+         * {@link InputCaptureSession.start_finish} has completed.
+         * 
+         * The token may change with every session.
+         * @returns the restore token or NULL
+         */
+        get_restore_token(): string;
+
+        /**
          * Return the {@link XdpSession} for this InputCapture session.
          * @returns a {@link Session} object
          */
@@ -1137,6 +1173,79 @@ export namespace Xdp {
          * @returns a list of failed pointer barriers
          */
         set_pointer_barriers_finish(result: Gio.AsyncResult): InputCapturePointerBarrier[];
+
+        /**
+         * Sets the restore token for the session about to be started. This instructs
+         * the portal to restore the previous session identified by this token.
+         * 
+         * This method can only be called for a session created with
+         * {@link Portal.create_input_capture_session2} and only before
+         * {@link InputCaptureSession.start} has been called. It has no effect
+         * otherwise.
+         * 
+         * The restore token for the current session can be obtained with
+         * {@link InputCaptureSession.get_restore_token}.
+         * @param restore_token a restore token from a previous session
+         */
+        set_restore_token(restore_token: string): void;
+
+        /**
+         * Requests session persistence from the portal. A persistent session can
+         * be restored using the restore token, see
+         * {@link InputCaptureSession.set_restore_token}.
+         * 
+         * This method can only be called for a session created with
+         * {@link Portal.create_input_capture_session2} and only before
+         * {@link InputCaptureSession.start} has been called. It has no effect
+         * otherwise.
+         * 
+         * The default persistence is none.
+         * @param persistence the session persistence for this session
+         */
+        set_session_persistence(persistence: InputCaptureSessionPersistence): void;
+
+        /**
+         * Start the input capture session.
+         * 
+         * When the request is done, `callback` will be called. You can then
+         * call {@link InputCaptureSession.start_finish} to get the results.
+         * @param parent parent window information
+         * @param capabilities which kinds of capabilities to request
+         * @param cancellable optional {@link Gio.Cancellable}
+         */
+        start(parent: Parent | null, capabilities: InputCapability, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
+
+        /**
+         * Start the input capture session.
+         * 
+         * When the request is done, `callback` will be called. You can then
+         * call {@link InputCaptureSession.start_finish} to get the results.
+         * @param parent parent window information
+         * @param capabilities which kinds of capabilities to request
+         * @param cancellable optional {@link Gio.Cancellable}
+         * @param callback a callback to call when the request is done
+         */
+        start(parent: Parent | null, capabilities: InputCapability, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Start the input capture session.
+         * 
+         * When the request is done, `callback` will be called. You can then
+         * call {@link InputCaptureSession.start_finish} to get the results.
+         * @param parent parent window information
+         * @param capabilities which kinds of capabilities to request
+         * @param cancellable optional {@link Gio.Cancellable}
+         * @param callback a callback to call when the request is done
+         */
+        start(parent: Parent | null, capabilities: InputCapability, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
+
+        /**
+         * Finishes the InputCapture Start request, and returns TRUE if it was
+         * successful.
+         * @param result a {@link Gio.AsyncResult}
+         * @returns TRUE on success.
+         */
+        start_finish(result: Gio.AsyncResult): boolean;
     }
 
 
@@ -1717,6 +1826,54 @@ export namespace Xdp {
         create_input_capture_session(parent: Parent | null, capabilities: InputCapability, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<InputCaptureSession> | void;
 
         /**
+         * Creates an inactive session for input capture.
+         * 
+         * When the request is done, `callback` will be called. You can then
+         * call {@link Portal.create_input_capture_session2_finish} to get the results.
+         * @param cancellable optional {@link Gio.Cancellable}
+         */
+        create_input_capture_session2(cancellable: Gio.Cancellable | null): globalThis.Promise<InputCaptureSession>;
+
+        /**
+         * Creates an inactive session for input capture.
+         * 
+         * When the request is done, `callback` will be called. You can then
+         * call {@link Portal.create_input_capture_session2_finish} to get the results.
+         * @param cancellable optional {@link Gio.Cancellable}
+         * @param callback a callback to call when the request is done
+         */
+        create_input_capture_session2(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Creates an inactive session for input capture.
+         * 
+         * When the request is done, `callback` will be called. You can then
+         * call {@link Portal.create_input_capture_session2_finish} to get the results.
+         * @param cancellable optional {@link Gio.Cancellable}
+         * @param callback a callback to call when the request is done
+         */
+        create_input_capture_session2(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<InputCaptureSession> | void;
+
+        /**
+         * Finishes the InputCapture CreateSession2 method call, and returns a
+         * {@link InputCaptureSession}. To get to the {@link Session} within use
+         * `xdp_input_capture_session_get_session()`.
+         * 
+         * The created session is inactive, and must be started with
+         * [method.InputCaptureSession.start].
+         * @param result a {@link Gio.AsyncResult}
+         * @returns a {@link InputCaptureSession}
+         */
+        create_input_capture_session2_finish(result: Gio.AsyncResult): InputCaptureSession;
+
+        /**
+         * Creates an inactive session for input capture.
+         * @param cancellable optional {@link Gio.Cancellable}
+         * @returns a {@link InputCaptureSession}
+         */
+        create_input_capture_session2_sync(cancellable: Gio.Cancellable | null): InputCaptureSession;
+
+        /**
          * Finishes the InputCapture CreateSession request, and returns a
          * {@link InputCaptureSession}. To get to the {@link Session} within use
          * `xdp_input_capture_session_get_session()`.
@@ -1977,6 +2134,49 @@ export namespace Xdp {
          * @returns `true` if the uninstallation was successful, `false` with `error` set   otherwise
          */
         dynamic_launcher_uninstall(desktop_file_id: string): boolean;
+
+        /**
+         * Retrieving the input portal API version.
+         * 
+         * When the request is done, `callback` will be called. You can then
+         * call {@link Portal.get_input_capture_version_finish} to get the results.
+         * @param cancellable optional {@link Gio.Cancellable}
+         */
+        get_input_capture_version(cancellable: Gio.Cancellable | null): globalThis.Promise<number>;
+
+        /**
+         * Retrieving the input portal API version.
+         * 
+         * When the request is done, `callback` will be called. You can then
+         * call {@link Portal.get_input_capture_version_finish} to get the results.
+         * @param cancellable optional {@link Gio.Cancellable}
+         * @param callback a callback to call when the request is done
+         */
+        get_input_capture_version(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Retrieving the input portal API version.
+         * 
+         * When the request is done, `callback` will be called. You can then
+         * call {@link Portal.get_input_capture_version_finish} to get the results.
+         * @param cancellable optional {@link Gio.Cancellable}
+         * @param callback a callback to call when the request is done
+         */
+        get_input_capture_version(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<number> | void;
+
+        /**
+         * Finishes retrieving the input portal API version.
+         * @param result a {@link Gio.AsyncResult}
+         * @returns the API version of the input capture portal, or -1 on error
+         */
+        get_input_capture_version_finish(result: Gio.AsyncResult): number;
+
+        /**
+         * Retrieving the input portal API version.
+         * @param cancellable optional {@link Gio.Cancellable}
+         * @returns the API version of the input capture portal, or -1 on error
+         */
+        get_input_capture_version_sync(cancellable: Gio.Cancellable | null): number;
 
         /**
          * This function returns an object to access settings exposed through
@@ -3310,6 +3510,16 @@ export namespace Xdp {
              * @run-cleanup
              */
             closed: () => void;
+            /**
+             * @signal
+             * @run-cleanup
+             */
+            "selection-owner-changed": (arg0: string[], arg1: boolean) => void;
+            /**
+             * @signal
+             * @run-cleanup
+             */
+            "selection-transfer": (arg0: string, arg1: number) => void;
         }
 
         // Constructor properties interface
@@ -3411,6 +3621,13 @@ export namespace Xdp {
         get_restore_token(): string | null;
 
         /**
+         * Get the currently advertised mime types of the current clipboard selection
+         * owner.
+         * @returns A NULL terminated array of mime type strings.
+         */
+        get_selection_mime_types(): string[];
+
+        /**
          * Obtains information about the state of the session that is represented
          * by `session`.
          * @returns the state of `session`
@@ -3444,6 +3661,17 @@ export namespace Xdp {
          * @returns the selected streams
          */
         get_streams(): GLib.Variant;
+
+        /**
+         * Returns TRUE if the session has enabled clipboard integration.
+         */
+        is_clipboard_enabled(): boolean;
+
+        /**
+         * Return TRUE if the most recently received clipboard selection owner is the
+         * selection of this session.
+         */
+        is_selection_owned_by_session(): boolean;
 
         /**
          * Changes the state of the key to `state`.
@@ -3521,6 +3749,51 @@ export namespace Xdp {
          * @param y new Y position
          */
         pointer_position(stream: number, x: number, y: number): void;
+
+        /**
+         * Requests clipboard integration on the session.
+         */
+        request_clipboard(): void;
+
+        /**
+         * Request to read the contents of the current clipboard selection in the passed
+         * mime type format. On success a file descriptor is returned, which can be read
+         * from to retrieve the clipboard selection content.
+         * @param mime_type a string containing the requested mime type
+         * @returns A file descriptor, or -1 on error. The caller must close the file descriptor when finished with it.
+         */
+        selection_read(mime_type: string): number;
+
+        /**
+         * Retrieve a file descriptor to write the content of the clipboard selection
+         * to. The content should be formatted according to the mime type of the mime
+         * type passed via the `Xdp.Session::selection-transfer` that carried the
+         * passed serial number.
+         * @param serial a serial number
+         * @returns a file descriptor to a pipe to write the clipboard selection content to, or -1 on error. The caller must close the file descriptor when finished with it.
+         */
+        selection_write(serial: number): number;
+
+        /**
+         * Notify whether a clipboard selection write operation associated with the
+         * passed serial was successful or not.
+         * @param serial a serial number
+         * @param success TRUE if the transfer was successful
+         */
+        selection_write_done(serial: number, success: boolean): void;
+
+        /**
+         * Set the clipboard selection to advertise support for the passed list of mime
+         * types.
+         * 
+         * When some entity in the windowing system requests to retrieve the contents of
+         * the selection, the `Xdp.Session::selection-transfer` signal is emitted. In
+         * response to this, the caller of this function must respond by calling
+         * {@link Session.selection_write} with the serial number passed via the
+         * mentioned signal.
+         * @param mime_types A NULL terminated array of mime type strings.
+         */
+        set_selection(mime_types: string): void;
 
         /**
          * Starts the session.
@@ -3668,31 +3941,31 @@ export namespace Xdp {
         read_all_values(namespaces: string, cancellable: Gio.Cancellable | null): GLib.Variant;
 
         /**
-         * Read a setting value as unsigned int within `namespace`, with `key`.
-         * @param namespace the namespace of the value.
+         * Read a setting value as unsigned int within `namespace_`, with `key`.
+         * @param namespace_ the namespace of the value.
          * @param key the key of the value.
          * @param cancellable a GCancellable or NULL.
          * @returns the stringint value, or NULL if not found or not the right type. If `error` is not NULL, then the error is returned.
          */
-        read_string(namespace: string, key: string, cancellable: Gio.Cancellable | null): string;
+        read_string(namespace_: string, key: string, cancellable: Gio.Cancellable | null): string;
 
         /**
-         * Read a setting value as unsigned int within `namespace`, with `key`.
-         * @param namespace the namespace of the value.
+         * Read a setting value as unsigned int within `namespace_`, with `key`.
+         * @param namespace_ the namespace of the value.
          * @param key the key of the value.
          * @param cancellable a GCancellable or NULL.
          * @returns the uint value, or 0 if not found or not the right type. If `error` is not NULL, then the error is returned.
          */
-        read_uint(namespace: string, key: string, cancellable: Gio.Cancellable | null): number;
+        read_uint(namespace_: string, key: string, cancellable: Gio.Cancellable | null): number;
 
         /**
-         * Read a setting value within `namespace`, with `key`.
-         * @param namespace the namespace of the value.
+         * Read a setting value within `namespace_`, with `key`.
+         * @param namespace_ the namespace of the value.
          * @param key the key of the value.
          * @param cancellable a GCancellable or NULL.
          * @returns the value, or `null` if not found. If `error` is not NULL, then the error is returned.
          */
-        read_value(namespace: string, key: string, cancellable: Gio.Cancellable | null): GLib.Variant;
+        read_value(namespace_: string, key: string, cancellable: Gio.Cancellable | null): GLib.Variant;
     }
 
 
