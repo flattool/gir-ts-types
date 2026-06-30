@@ -7587,6 +7587,19 @@ export namespace Gtk {
     function selection_remove_all(widget: Widget): void;
 
     /**
+     * Set a list of supported targets for a given widget and selection.
+     * 
+     * The main difference between `gtk_selection_add_targets()` and
+     * `gtk_selection_set_targets()` is that the former only appends
+     * targets while the latter clears the old targets and adds new
+     * targets in a single step.
+     * @param widget a {@link Gtk.Widget}
+     * @param selection the selection
+     * @param targets a table of targets to set
+     */
+    function selection_set_targets(widget: Widget, selection: Gdk.Atom, targets: TargetEntry[]): void;
+
+    /**
      * Sets the GTK+ debug flags.
      * @param flags 
      */
@@ -140460,6 +140473,11 @@ export namespace Gtk {
          * @param info an ID that will be passed back to the application
          */
         add_uri_targets(info: number): void;
+
+        /**
+         * Removes all targets in the list.
+         */
+        clear(): void;
 
         /**
          * Looks up a given target in a {@link Gtk.TargetList}.

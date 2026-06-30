@@ -2103,6 +2103,10 @@ export interface Builder {
          */
         PROP_COMPLETE_TEXT,
         /**
+         * the property id for {@link Gtk.Editable.input_interceptor}
+         */
+        PROP_INPUT_INTERCEPTOR,
+        /**
          * the number of properties
          */
         NUM_PROPERTIES,
@@ -38929,6 +38933,7 @@ export interface Builder {
             "notify::cursor-position": (pspec: GObject.ParamSpec) => void;
             "notify::editable": (pspec: GObject.ParamSpec) => void;
             "notify::enable-undo": (pspec: GObject.ParamSpec) => void;
+            "notify::input-interceptor": (pspec: GObject.ParamSpec) => void;
             "notify::max-width-chars": (pspec: GObject.ParamSpec) => void;
             "notify::selection-bound": (pspec: GObject.ParamSpec) => void;
             "notify::text": (pspec: GObject.ParamSpec) => void;
@@ -39129,6 +39134,22 @@ export interface Builder {
          */
         get enableUndo(): boolean;
         set enableUndo(val: boolean);
+
+        /**
+         * The widget used to intercept input for this editable
+         * @since 4.24
+          * @category Inherited from Gtk.Editable
+         */
+        get input_interceptor(): Widget | null;
+        set input_interceptor(val: Widget | null);
+
+        /**
+         * The widget used to intercept input for this editable
+         * @since 4.24
+          * @category Inherited from Gtk.Editable
+         */
+        get inputInterceptor(): Widget | null;
+        set inputInterceptor(val: Widget | null);
 
         /**
          * The desired maximum width of the entry, in characters.
@@ -39637,6 +39658,13 @@ export interface Builder {
         get_enable_undo(): boolean;
 
         /**
+         * Retrieves the widget that was previously set up as input interceptor
+         * for `editable`. See {@link Gtk.Editable.set_input_interceptor}.
+         * @returns The editable widget
+         */
+        get_input_interceptor(): Widget | null;
+
+        /**
          * Retrieves the desired maximum width of `editable`, in characters.
          * @returns the maximum width of the entry, in characters
          */
@@ -39741,6 +39769,21 @@ export interface Builder {
          * @param enable_undo if undo/redo should be enabled
          */
         set_enable_undo(enable_undo: boolean): void;
+
+        /**
+         * Sets `interceptor` as the widget that `editable` will intercept key events from.
+         * 
+         * A typical usecase for this is implementing auto-showing search entries, so
+         * that textual input may be intercepted from another widget and handled first
+         * hand by the given editable. The events will be handled in the bubble phase
+         * of `interceptor`, which means that editable child widgets of `interceptor` will
+         * receive the text input before it can be captured.
+         * 
+         * Only those events that would be handled by an input method will be handled,
+         * this excludes combinations of Ctrl/Alt/Mod, and other shortcuts.
+         * @param interceptor the input interceptor widget
+         */
+        set_input_interceptor(interceptor: Widget | null): void;
 
         /**
          * Sets the desired maximum width in characters of `editable`.
@@ -40190,6 +40233,7 @@ export interface Builder {
             "notify::cursor-position": (pspec: GObject.ParamSpec) => void;
             "notify::editable": (pspec: GObject.ParamSpec) => void;
             "notify::enable-undo": (pspec: GObject.ParamSpec) => void;
+            "notify::input-interceptor": (pspec: GObject.ParamSpec) => void;
             "notify::max-width-chars": (pspec: GObject.ParamSpec) => void;
             "notify::selection-bound": (pspec: GObject.ParamSpec) => void;
             "notify::text": (pspec: GObject.ParamSpec) => void;
@@ -41764,6 +41808,22 @@ export interface Builder {
         set enableUndo(val: boolean);
 
         /**
+         * The widget used to intercept input for this editable
+         * @since 4.24
+          * @category Inherited from Gtk.Editable
+         */
+        get input_interceptor(): Widget | null;
+        set input_interceptor(val: Widget | null);
+
+        /**
+         * The widget used to intercept input for this editable
+         * @since 4.24
+          * @category Inherited from Gtk.Editable
+         */
+        get inputInterceptor(): Widget | null;
+        set inputInterceptor(val: Widget | null);
+
+        /**
          * The desired maximum width of the entry, in characters.
          * @default -1
           * @category Inherited from Gtk.Editable
@@ -42317,6 +42377,13 @@ export interface Builder {
         get_enable_undo(): boolean;
 
         /**
+         * Retrieves the widget that was previously set up as input interceptor
+         * for `editable`. See {@link Gtk.Editable.set_input_interceptor}.
+         * @returns The editable widget
+         */
+        get_input_interceptor(): Widget | null;
+
+        /**
          * Retrieves the desired maximum width of `editable`, in characters.
          * @returns the maximum width of the entry, in characters
          */
@@ -42412,6 +42479,21 @@ export interface Builder {
          * @param enable_undo if undo/redo should be enabled
          */
         set_enable_undo(enable_undo: boolean): void;
+
+        /**
+         * Sets `interceptor` as the widget that `editable` will intercept key events from.
+         * 
+         * A typical usecase for this is implementing auto-showing search entries, so
+         * that textual input may be intercepted from another widget and handled first
+         * hand by the given editable. The events will be handled in the bubble phase
+         * of `interceptor`, which means that editable child widgets of `interceptor` will
+         * receive the text input before it can be captured.
+         * 
+         * Only those events that would be handled by an input method will be handled,
+         * this excludes combinations of Ctrl/Alt/Mod, and other shortcuts.
+         * @param interceptor the input interceptor widget
+         */
+        set_input_interceptor(interceptor: Widget | null): void;
 
         /**
          * Sets the desired maximum width in characters of `editable`.
@@ -85669,6 +85751,7 @@ export interface Builder {
             "notify::cursor-position": (pspec: GObject.ParamSpec) => void;
             "notify::editable": (pspec: GObject.ParamSpec) => void;
             "notify::enable-undo": (pspec: GObject.ParamSpec) => void;
+            "notify::input-interceptor": (pspec: GObject.ParamSpec) => void;
             "notify::max-width-chars": (pspec: GObject.ParamSpec) => void;
             "notify::selection-bound": (pspec: GObject.ParamSpec) => void;
             "notify::text": (pspec: GObject.ParamSpec) => void;
@@ -85925,6 +86008,22 @@ export interface Builder {
          */
         get enableUndo(): boolean;
         set enableUndo(val: boolean);
+
+        /**
+         * The widget used to intercept input for this editable
+         * @since 4.24
+          * @category Inherited from Gtk.Editable
+         */
+        get input_interceptor(): Widget | null;
+        set input_interceptor(val: Widget | null);
+
+        /**
+         * The widget used to intercept input for this editable
+         * @since 4.24
+          * @category Inherited from Gtk.Editable
+         */
+        get inputInterceptor(): Widget | null;
+        set inputInterceptor(val: Widget | null);
 
         /**
          * The desired maximum width of the entry, in characters.
@@ -86433,6 +86532,13 @@ export interface Builder {
         get_enable_undo(): boolean;
 
         /**
+         * Retrieves the widget that was previously set up as input interceptor
+         * for `editable`. See {@link Gtk.Editable.set_input_interceptor}.
+         * @returns The editable widget
+         */
+        get_input_interceptor(): Widget | null;
+
+        /**
          * Retrieves the desired maximum width of `editable`, in characters.
          * @returns the maximum width of the entry, in characters
          */
@@ -86537,6 +86643,21 @@ export interface Builder {
          * @param enable_undo if undo/redo should be enabled
          */
         set_enable_undo(enable_undo: boolean): void;
+
+        /**
+         * Sets `interceptor` as the widget that `editable` will intercept key events from.
+         * 
+         * A typical usecase for this is implementing auto-showing search entries, so
+         * that textual input may be intercepted from another widget and handled first
+         * hand by the given editable. The events will be handled in the bubble phase
+         * of `interceptor`, which means that editable child widgets of `interceptor` will
+         * receive the text input before it can be captured.
+         * 
+         * Only those events that would be handled by an input method will be handled,
+         * this excludes combinations of Ctrl/Alt/Mod, and other shortcuts.
+         * @param interceptor the input interceptor widget
+         */
+        set_input_interceptor(interceptor: Widget | null): void;
 
         /**
          * Sets the desired maximum width in characters of `editable`.
@@ -99262,6 +99383,7 @@ export interface Builder {
             "notify::cursor-position": (pspec: GObject.ParamSpec) => void;
             "notify::editable": (pspec: GObject.ParamSpec) => void;
             "notify::enable-undo": (pspec: GObject.ParamSpec) => void;
+            "notify::input-interceptor": (pspec: GObject.ParamSpec) => void;
             "notify::max-width-chars": (pspec: GObject.ParamSpec) => void;
             "notify::selection-bound": (pspec: GObject.ParamSpec) => void;
             "notify::text": (pspec: GObject.ParamSpec) => void;
@@ -99635,6 +99757,22 @@ export interface Builder {
          */
         get enableUndo(): boolean;
         set enableUndo(val: boolean);
+
+        /**
+         * The widget used to intercept input for this editable
+         * @since 4.24
+          * @category Inherited from Gtk.Editable
+         */
+        get input_interceptor(): Widget | null;
+        set input_interceptor(val: Widget | null);
+
+        /**
+         * The widget used to intercept input for this editable
+         * @since 4.24
+          * @category Inherited from Gtk.Editable
+         */
+        get inputInterceptor(): Widget | null;
+        set inputInterceptor(val: Widget | null);
 
         /**
          * The desired maximum width of the entry, in characters.
@@ -100143,6 +100281,13 @@ export interface Builder {
         get_enable_undo(): boolean;
 
         /**
+         * Retrieves the widget that was previously set up as input interceptor
+         * for `editable`. See {@link Gtk.Editable.set_input_interceptor}.
+         * @returns The editable widget
+         */
+        get_input_interceptor(): Widget | null;
+
+        /**
          * Retrieves the desired maximum width of `editable`, in characters.
          * @returns the maximum width of the entry, in characters
          */
@@ -100247,6 +100392,21 @@ export interface Builder {
          * @param enable_undo if undo/redo should be enabled
          */
         set_enable_undo(enable_undo: boolean): void;
+
+        /**
+         * Sets `interceptor` as the widget that `editable` will intercept key events from.
+         * 
+         * A typical usecase for this is implementing auto-showing search entries, so
+         * that textual input may be intercepted from another widget and handled first
+         * hand by the given editable. The events will be handled in the bubble phase
+         * of `interceptor`, which means that editable child widgets of `interceptor` will
+         * receive the text input before it can be captured.
+         * 
+         * Only those events that would be handled by an input method will be handled,
+         * this excludes combinations of Ctrl/Alt/Mod, and other shortcuts.
+         * @param interceptor the input interceptor widget
+         */
+        set_input_interceptor(interceptor: Widget | null): void;
 
         /**
          * Sets the desired maximum width in characters of `editable`.
@@ -108126,6 +108286,7 @@ export interface Builder {
             "notify::cursor-position": (pspec: GObject.ParamSpec) => void;
             "notify::editable": (pspec: GObject.ParamSpec) => void;
             "notify::enable-undo": (pspec: GObject.ParamSpec) => void;
+            "notify::input-interceptor": (pspec: GObject.ParamSpec) => void;
             "notify::max-width-chars": (pspec: GObject.ParamSpec) => void;
             "notify::selection-bound": (pspec: GObject.ParamSpec) => void;
             "notify::text": (pspec: GObject.ParamSpec) => void;
@@ -108695,6 +108856,22 @@ export interface Builder {
          */
         get enableUndo(): boolean;
         set enableUndo(val: boolean);
+
+        /**
+         * The widget used to intercept input for this editable
+         * @since 4.24
+          * @category Inherited from Gtk.Editable
+         */
+        get input_interceptor(): Widget | null;
+        set input_interceptor(val: Widget | null);
+
+        /**
+         * The widget used to intercept input for this editable
+         * @since 4.24
+          * @category Inherited from Gtk.Editable
+         */
+        get inputInterceptor(): Widget | null;
+        set inputInterceptor(val: Widget | null);
 
         /**
          * The desired maximum width of the entry, in characters.
@@ -109274,6 +109451,13 @@ export interface Builder {
         get_enable_undo(): boolean;
 
         /**
+         * Retrieves the widget that was previously set up as input interceptor
+         * for `editable`. See {@link Gtk.Editable.set_input_interceptor}.
+         * @returns The editable widget
+         */
+        get_input_interceptor(): Widget | null;
+
+        /**
          * Retrieves the desired maximum width of `editable`, in characters.
          * @returns the maximum width of the entry, in characters
          */
@@ -109378,6 +109562,21 @@ export interface Builder {
          * @param enable_undo if undo/redo should be enabled
          */
         set_enable_undo(enable_undo: boolean): void;
+
+        /**
+         * Sets `interceptor` as the widget that `editable` will intercept key events from.
+         * 
+         * A typical usecase for this is implementing auto-showing search entries, so
+         * that textual input may be intercepted from another widget and handled first
+         * hand by the given editable. The events will be handled in the bubble phase
+         * of `interceptor`, which means that editable child widgets of `interceptor` will
+         * receive the text input before it can be captured.
+         * 
+         * Only those events that would be handled by an input method will be handled,
+         * this excludes combinations of Ctrl/Alt/Mod, and other shortcuts.
+         * @param interceptor the input interceptor widget
+         */
+        set_input_interceptor(interceptor: Widget | null): void;
 
         /**
          * Sets the desired maximum width in characters of `editable`.
@@ -116091,6 +116290,7 @@ export interface Builder {
             "notify::cursor-position": (pspec: GObject.ParamSpec) => void;
             "notify::editable": (pspec: GObject.ParamSpec) => void;
             "notify::enable-undo": (pspec: GObject.ParamSpec) => void;
+            "notify::input-interceptor": (pspec: GObject.ParamSpec) => void;
             "notify::max-width-chars": (pspec: GObject.ParamSpec) => void;
             "notify::selection-bound": (pspec: GObject.ParamSpec) => void;
             "notify::text": (pspec: GObject.ParamSpec) => void;
@@ -116923,6 +117123,22 @@ export interface Builder {
         set enableUndo(val: boolean);
 
         /**
+         * The widget used to intercept input for this editable
+         * @since 4.24
+          * @category Inherited from Gtk.Editable
+         */
+        get input_interceptor(): Widget | null;
+        set input_interceptor(val: Widget | null);
+
+        /**
+         * The widget used to intercept input for this editable
+         * @since 4.24
+          * @category Inherited from Gtk.Editable
+         */
+        get inputInterceptor(): Widget | null;
+        set inputInterceptor(val: Widget | null);
+
+        /**
          * The desired maximum width of the entry, in characters.
          * @default -1
           * @category Inherited from Gtk.Editable
@@ -117573,6 +117789,13 @@ export interface Builder {
         get_enable_undo(): boolean;
 
         /**
+         * Retrieves the widget that was previously set up as input interceptor
+         * for `editable`. See {@link Gtk.Editable.set_input_interceptor}.
+         * @returns The editable widget
+         */
+        get_input_interceptor(): Widget | null;
+
+        /**
          * Retrieves the desired maximum width of `editable`, in characters.
          * @returns the maximum width of the entry, in characters
          */
@@ -117677,6 +117900,21 @@ export interface Builder {
          * @param enable_undo if undo/redo should be enabled
          */
         set_enable_undo(enable_undo: boolean): void;
+
+        /**
+         * Sets `interceptor` as the widget that `editable` will intercept key events from.
+         * 
+         * A typical usecase for this is implementing auto-showing search entries, so
+         * that textual input may be intercepted from another widget and handled first
+         * hand by the given editable. The events will be handled in the bubble phase
+         * of `interceptor`, which means that editable child widgets of `interceptor` will
+         * receive the text input before it can be captured.
+         * 
+         * Only those events that would be handled by an input method will be handled,
+         * this excludes combinations of Ctrl/Alt/Mod, and other shortcuts.
+         * @param interceptor the input interceptor widget
+         */
+        set_input_interceptor(interceptor: Widget | null): void;
 
         /**
          * Sets the desired maximum width in characters of `editable`.
@@ -145478,6 +145716,8 @@ export interface Builder {
             editable: boolean;
             enable_undo: boolean;
             enableUndo: boolean;
+            input_interceptor: Widget | null;
+            inputInterceptor: Widget | null;
             max_width_chars: number;
             maxWidthChars: number;
             selection_bound: number;
@@ -145727,6 +145967,20 @@ export interface Builder {
         set enableUndo(val: boolean);
 
         /**
+         * The widget used to intercept input for this editable
+         * @since 4.24
+         */
+        get input_interceptor(): Widget | null;
+        set input_interceptor(val: Widget | null);
+
+        /**
+         * The widget used to intercept input for this editable
+         * @since 4.24
+         */
+        get inputInterceptor(): Widget | null;
+        set inputInterceptor(val: Widget | null);
+
+        /**
          * The desired maximum width of the entry, in characters.
          * @default -1
          */
@@ -145901,6 +146155,13 @@ export interface Builder {
         get_enable_undo(): boolean;
 
         /**
+         * Retrieves the widget that was previously set up as input interceptor
+         * for `editable`. See {@link Gtk.Editable.set_input_interceptor}.
+         * @returns The editable widget
+         */
+        get_input_interceptor(): Widget | null;
+
+        /**
          * Retrieves the desired maximum width of `editable`, in characters.
          * @returns the maximum width of the entry, in characters
          */
@@ -146005,6 +146266,21 @@ export interface Builder {
          * @param enable_undo if undo/redo should be enabled
          */
         set_enable_undo(enable_undo: boolean): void;
+
+        /**
+         * Sets `interceptor` as the widget that `editable` will intercept key events from.
+         * 
+         * A typical usecase for this is implementing auto-showing search entries, so
+         * that textual input may be intercepted from another widget and handled first
+         * hand by the given editable. The events will be handled in the bubble phase
+         * of `interceptor`, which means that editable child widgets of `interceptor` will
+         * receive the text input before it can be captured.
+         * 
+         * Only those events that would be handled by an input method will be handled,
+         * this excludes combinations of Ctrl/Alt/Mod, and other shortcuts.
+         * @param interceptor the input interceptor widget
+         */
+        set_input_interceptor(interceptor: Widget | null): void;
 
         /**
          * Sets the desired maximum width in characters of `editable`.
