@@ -232,6 +232,16 @@ export namespace GDesktopEnums {
     /**
      * @gir-type Enum
      */
+    enum MouseScrollMethod {
+        DEFAULT,
+        NONE,
+        ON_BUTTON_DOWN,
+    }
+
+
+    /**
+     * @gir-type Enum
+     */
     enum PadButtonAction {
         NONE,
         HELP,
