@@ -47603,7 +47603,7 @@ export namespace Adw {
      * @gir-type Class
      * @since 1.4
      */
-    class ViewStackPages<A extends GObject.Object = GObject.Object> extends GObject.Object implements Gio.ListModel<A>, Gtk.SelectionModel<A> {
+    class ViewStackPages<A extends GObject.Object = GObject.Object> extends GObject.Object implements Gio.ListModel<A>, Gtk.SelectionModel {
         static $gtype: GObject.GType<ViewStackPages>;
 
         // Properties
