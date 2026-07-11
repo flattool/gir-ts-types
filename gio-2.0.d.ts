@@ -46345,6 +46345,11 @@ export const _LocalFilePrototype: typeof File.prototype;
     type CredentialsClass = typeof Credentials;
 
     /**
+     * @gir-type Alias
+     */
+    type DBusActionGroupClass = typeof DBusActionGroup;
+
+    /**
      * Information about an annotation.
      * @gir-type Struct
      * @since 2.26
