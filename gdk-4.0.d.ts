@@ -17199,7 +17199,22 @@ export namespace Gdk {
     /**
      * @gir-type Alias
      */
+    type AppLaunchContextClass = typeof AppLaunchContext;
+
+    /**
+     * @gir-type Alias
+     */
+    type CairoContextClass = typeof CairoContext;
+
+    /**
+     * @gir-type Alias
+     */
     type CicpParamsClass = typeof CicpParams;
+
+    /**
+     * @gir-type Alias
+     */
+    type ClipboardClass = typeof Clipboard;
 
     /**
      * Provides information to interpret colors and pixels in a variety of ways.
@@ -17331,6 +17346,11 @@ export namespace Gdk {
         unref(): void;
     }
 
+
+    /**
+     * @gir-type Alias
+     */
+    type ContentDeserializerClass = typeof ContentDeserializer;
 
     /**
      * Used to advertise and negotiate the format of content.
@@ -17595,7 +17615,45 @@ export namespace Gdk {
     /**
      * @gir-type Alias
      */
+    type ContentSerializerClass = typeof ContentSerializer;
+
+    /**
+     * @gir-type Alias
+     */
+    type CursorClass = typeof Cursor;
+
+    /**
+     * @gir-type Alias
+     */
+    type DeviceClass = typeof Device;
+
+    /**
+     * @gir-type Struct
+     */
+    abstract class DevicePadClass {
+        static $gtype: GObject.GType<DevicePadClass>;
+    }
+
+
+    /**
+     * @gir-type Alias
+     */
     type DevicePadInterface = typeof DevicePad;
+
+    /**
+     * @gir-type Alias
+     */
+    type DeviceToolClass = typeof DeviceTool;
+
+    /**
+     * @gir-type Alias
+     */
+    type DisplayClass = typeof Display;
+
+    /**
+     * @gir-type Alias
+     */
+    type DisplayManagerClass = typeof DisplayManager;
 
     /**
      * Provides information about supported DMA buffer formats.
@@ -17687,6 +17745,11 @@ export namespace Gdk {
     /**
      * @gir-type Alias
      */
+    type DragClass = typeof Drag;
+
+    /**
+     * @gir-type Alias
+     */
     type DragSurfaceInterface = typeof DragSurface;
 
     /**
@@ -17706,6 +17769,16 @@ export namespace Gdk {
         set_size(width: number, height: number): void;
     }
 
+
+    /**
+     * @gir-type Alias
+     */
+    type DrawContextClass = typeof DrawContext;
+
+    /**
+     * @gir-type Alias
+     */
+    type DropClass = typeof Drop;
 
     /**
      * An opaque type representing a sequence of related events.
@@ -17746,14 +17819,6 @@ export namespace Gdk {
      * @gir-type Alias
      */
     type FrameClockClass = typeof FrameClock;
-
-    /**
-     * @gir-type Struct
-     */
-    abstract class FrameClockPrivate {
-        static $gtype: GObject.GType<FrameClockPrivate>;
-    }
-
 
     /**
      * Holds timing information for a single frame of the application’s displays.
@@ -17867,6 +17932,11 @@ export namespace Gdk {
         unref(): void;
     }
 
+
+    /**
+     * @gir-type Alias
+     */
+    type GLContextClass = typeof GLContext;
 
     /**
      * @gir-type Alias
@@ -18300,6 +18370,11 @@ export namespace Gdk {
     /**
      * @gir-type Alias
      */
+    type SeatClass = typeof Seat;
+
+    /**
+     * @gir-type Alias
+     */
     type SnapshotClass = typeof Snapshot;
 
     /**
@@ -18612,6 +18687,11 @@ export namespace Gdk {
         set_size(width: number, height: number): void;
     }
 
+
+    /**
+     * @gir-type Alias
+     */
+    type VulkanContextClass = typeof VulkanContext;
 
     namespace DevicePad {
 

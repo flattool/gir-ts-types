@@ -62534,6 +62534,12 @@ export interface Builder {
         focus_out(): void;
 
         /**
+         * Retrieves the client widget for the input context.
+         * @returns The client widget
+         */
+        get_client_widget(): Widget | null;
+
+        /**
          * Retrieve the current preedit string for the input context,
          * and a list of attributes to apply to the string.
          * 
@@ -87822,6 +87828,10 @@ export interface Builder {
         // Properties
         /**
          * Whether to dismiss the popover on outside clicks.
+         * 
+         * If false, the popover won't automatically grab the focus when shown.
+         * This is useful for usecases like entry completion, where the focus is
+         * expected to stay on the entry.
          * @default true
          */
         get autohide(): boolean;
@@ -101277,6 +101287,7 @@ export interface Builder {
             "notify::gtk-interface-color-scheme": (pspec: GObject.ParamSpec) => void;
             "notify::gtk-interface-contrast": (pspec: GObject.ParamSpec) => void;
             "notify::gtk-interface-reduced-motion": (pspec: GObject.ParamSpec) => void;
+            "notify::gtk-keyboard-focus-visible-timeout": (pspec: GObject.ParamSpec) => void;
             "notify::gtk-keynav-use-caret": (pspec: GObject.ParamSpec) => void;
             "notify::gtk-label-select-on-focus": (pspec: GObject.ParamSpec) => void;
             "notify::gtk-long-press-time": (pspec: GObject.ParamSpec) => void;
@@ -101367,6 +101378,8 @@ export interface Builder {
             gtkInterfaceContrast: InterfaceContrast;
             gtk_interface_reduced_motion: ReducedMotion;
             gtkInterfaceReducedMotion: ReducedMotion;
+            gtk_keyboard_focus_visible_timeout: number;
+            gtkKeyboardFocusVisibleTimeout: number;
             gtk_keynav_use_caret: boolean;
             gtkKeynavUseCaret: boolean;
             gtk_label_select_on_focus: boolean;
@@ -102133,6 +102146,22 @@ export interface Builder {
          */
         get gtkInterfaceReducedMotion(): ReducedMotion;
         set gtkInterfaceReducedMotion(val: ReducedMotion);
+
+        /**
+         * Time in seconds that the focus is visible when using keyboard navigation. A zero value means "forever", and a negative
+         * value means "toolkit default timeout".
+         * @default -1
+         */
+        get gtk_keyboard_focus_visible_timeout(): number;
+        set gtk_keyboard_focus_visible_timeout(val: number);
+
+        /**
+         * Time in seconds that the focus is visible when using keyboard navigation. A zero value means "forever", and a negative
+         * value means "toolkit default timeout".
+         * @default -1
+         */
+        get gtkKeyboardFocusVisibleTimeout(): number;
+        set gtkKeyboardFocusVisibleTimeout(val: number);
 
         /**
          * Whether GTK should make sure that text can be navigated with

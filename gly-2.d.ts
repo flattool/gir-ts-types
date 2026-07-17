@@ -175,6 +175,31 @@ export namespace Gly {
     /**
      * @gir-type Enum
      */
+    export namespace PhysicalDimensionUnit {
+        export const $gtype: GObject.GType<PhysicalDimensionUnit>;
+    }
+
+    /**
+     * Sandbox mechanisms
+     * @gir-type Enum
+     * @since 2.2
+     */
+    enum PhysicalDimensionUnit {
+        /**
+         * `GLY_PHYSICAL_DIMENSION_UNIT_PICA`
+         */
+        INCH,
+        PICA,
+        POINT,
+        METER,
+        CENTIMETER,
+        MILLIMETER,
+    }
+
+
+    /**
+     * @gir-type Enum
+     */
     export namespace SandboxSelector {
         export const $gtype: GObject.GType<SandboxSelector>;
     }
@@ -685,6 +710,11 @@ export namespace Gly {
         get_delay(): number;
 
         /**
+         * @returns More information about the frame
+         */
+        get_details(): FrameDetails;
+
+        /**
          * Height for image data in pixels
          * @returns Height in pixels
          */
@@ -707,6 +737,141 @@ export namespace Gly {
          * @returns Width in pixels
          */
         get_width(): number;
+    }
+
+
+    namespace FrameDetails {
+        // Signal signatures
+        interface SignalSignatures extends GObject.Object.SignalSignatures {
+            "notify::pixel-density-x": (pspec: GObject.ParamSpec) => void;
+            "notify::pixel-density-x-unit": (pspec: GObject.ParamSpec) => void;
+            "notify::pixel-density-xunit": (pspec: GObject.ParamSpec) => void;
+            "notify::pixel-density-y": (pspec: GObject.ParamSpec) => void;
+            "notify::pixel-density-y-unit": (pspec: GObject.ParamSpec) => void;
+            "notify::pixel-density-yunit": (pspec: GObject.ParamSpec) => void;
+        }
+
+        // Constructor properties interface
+        interface ConstructorProps extends GObject.Object.ConstructorProps {
+            pixel_density_x: number;
+            pixelDensityX: number;
+            pixel_density_x_unit: PhysicalDimensionUnit;
+            pixelDensityXUnit: PhysicalDimensionUnit;
+            pixel_density_y: number;
+            pixelDensityY: number;
+            pixel_density_y_unit: PhysicalDimensionUnit;
+            pixelDensityYUnit: PhysicalDimensionUnit;
+        }
+    }
+
+    /**
+     * Detailled information about a frame.
+     * @gir-type Class
+     * @since 2.2
+     */
+    class FrameDetails extends GObject.Object {
+        static $gtype: GObject.GType<FrameDetails>;
+
+        // Properties
+        /**
+         * @read-only
+         * @default 0
+         */
+        get pixel_density_x(): number;
+
+        /**
+         * @read-only
+         * @default 0
+         */
+        get pixelDensityX(): number;
+
+        /**
+         * @read-only
+         * @default Inch
+         */
+        get pixel_density_x_unit(): PhysicalDimensionUnit;
+
+        /**
+         * @read-only
+         * @default Inch
+         */
+        get pixelDensityXUnit(): PhysicalDimensionUnit;
+
+        /**
+         * @read-only
+         * @default 0
+         */
+        get pixel_density_y(): number;
+
+        /**
+         * @read-only
+         * @default 0
+         */
+        get pixelDensityY(): number;
+
+        /**
+         * @read-only
+         * @default Inch
+         */
+        get pixel_density_y_unit(): PhysicalDimensionUnit;
+
+        /**
+         * @read-only
+         * @default Inch
+         */
+        get pixelDensityYUnit(): PhysicalDimensionUnit;
+
+        /**
+         * Compile-time signal type information.
+         *
+         * This instance property is generated only for TypeScript type checking.
+         * It is not defined at runtime and should not be accessed in JS code.
+         * @internal
+         */
+        $signals: FrameDetails.SignalSignatures;
+
+        // Constructors
+        constructor(properties?: Partial<FrameDetails.ConstructorProps>, ...args: any[]);
+
+        _init(...args: any[]): void;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof FrameDetails.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FrameDetails.SignalSignatures[K]>): number;
+        connect(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        connect_after<K extends keyof FrameDetails.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FrameDetails.SignalSignatures[K]>): number;
+        connect_after(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        emit<K extends keyof FrameDetails.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FrameDetails.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
+        emit(signal: string, ...args: any[]): void;
+
+        // Methods
+        /**
+         * If the value is `0.0`, no density is set.
+         * @returns Horizontal pixel density
+         */
+        get_pixel_density_x(): number;
+
+        /**
+         * If the value for {@link FrameDetails.pixel_density_x} is zero, the value of this property has no meaning.
+         * @returns Horizontal pixel density unit
+         */
+        get_pixel_density_x_unit(): PhysicalDimensionUnit;
+
+        /**
+         * If the value is `0.0`, no density is set.
+         * @returns Vertical pixel density
+         */
+        get_pixel_density_y(): number;
+
+        /**
+         * If the value for {@link FrameDetails.pixel_density_y} is zero, the value of this property has no meaning.
+         * @returns Horizontal pixel density unit
+         */
+        get_pixel_density_y_unit(): PhysicalDimensionUnit;
     }
 
 
@@ -1341,6 +1506,14 @@ export namespace Gly {
          * @returns `TRUE` if format supports ICC color profiles.
          */
         set_color_icc_profile(icc_profile: GLib.Bytes | Uint8Array): boolean;
+
+        /**
+         * @param x_density 
+         * @param x_unit 
+         * @param y_density 
+         * @param y_unit 
+         */
+        set_pixel_density(x_density: number, x_unit: PhysicalDimensionUnit, y_density: number, y_unit: PhysicalDimensionUnit): void;
     }
 
 
@@ -1391,6 +1564,11 @@ export namespace Gly {
      * @gir-type Alias
      */
     type FrameClass = typeof Frame;
+
+    /**
+     * @gir-type Alias
+     */
+    type FrameDetailsClass = typeof FrameDetails;
 
     /**
      * @gir-type Alias

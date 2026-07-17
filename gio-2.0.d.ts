@@ -5182,6 +5182,12 @@ export const _LocalFilePrototype: typeof File.prototype;
 
     /**
      * Gets the default {@link Gio.NetworkMonitor} for the system.
+     * 
+     * Some implementations complete their initialization asynchronously:
+     * properties such as {@link Gio.NetworkMonitor.network_available} may start at their
+     * default values and update shortly afterwards, with notify emissions, once
+     * the state is resolved from the thread-default main context of this first
+     * call.
      * @returns a {@link Gio.NetworkMonitor}, which will be     a dummy object if no network monitor is available
      * @since 2.32
      */
@@ -60513,6 +60519,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         prototype: NetworkMonitor;
         /**
         * Gets the default {@link Gio.NetworkMonitor} for the system.
+        * 
+        * Some implementations complete their initialization asynchronously:
+        * properties such as {@link Gio.NetworkMonitor.network_available} may start at their
+        * default values and update shortly afterwards, with notify emissions, once
+        * the state is resolved from the thread-default main context of this first
+        * call.
         */
         get_default(): NetworkMonitor;
     }
