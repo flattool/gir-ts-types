@@ -743,24 +743,13 @@ export namespace Gly {
     namespace FrameDetails {
         // Signal signatures
         interface SignalSignatures extends GObject.Object.SignalSignatures {
-            "notify::pixel-density-x": (pspec: GObject.ParamSpec) => void;
-            "notify::pixel-density-x-unit": (pspec: GObject.ParamSpec) => void;
-            "notify::pixel-density-xunit": (pspec: GObject.ParamSpec) => void;
-            "notify::pixel-density-y": (pspec: GObject.ParamSpec) => void;
-            "notify::pixel-density-y-unit": (pspec: GObject.ParamSpec) => void;
-            "notify::pixel-density-yunit": (pspec: GObject.ParamSpec) => void;
+            "notify::pixel-density": (pspec: GObject.ParamSpec) => void;
         }
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {
-            pixel_density_x: number;
-            pixelDensityX: number;
-            pixel_density_x_unit: PhysicalDimensionUnit;
-            pixelDensityXUnit: PhysicalDimensionUnit;
-            pixel_density_y: number;
-            pixelDensityY: number;
-            pixel_density_y_unit: PhysicalDimensionUnit;
-            pixelDensityYUnit: PhysicalDimensionUnit;
+            pixel_density: PixelDensity;
+            pixelDensity: PixelDensity;
         }
     }
 
@@ -775,51 +764,13 @@ export namespace Gly {
         // Properties
         /**
          * @read-only
-         * @default 0
          */
-        get pixel_density_x(): number;
+        get pixel_density(): PixelDensity;
 
         /**
          * @read-only
-         * @default 0
          */
-        get pixelDensityX(): number;
-
-        /**
-         * @read-only
-         * @default Inch
-         */
-        get pixel_density_x_unit(): PhysicalDimensionUnit;
-
-        /**
-         * @read-only
-         * @default Inch
-         */
-        get pixelDensityXUnit(): PhysicalDimensionUnit;
-
-        /**
-         * @read-only
-         * @default 0
-         */
-        get pixel_density_y(): number;
-
-        /**
-         * @read-only
-         * @default 0
-         */
-        get pixelDensityY(): number;
-
-        /**
-         * @read-only
-         * @default Inch
-         */
-        get pixel_density_y_unit(): PhysicalDimensionUnit;
-
-        /**
-         * @read-only
-         * @default Inch
-         */
-        get pixelDensityYUnit(): PhysicalDimensionUnit;
+        get pixelDensity(): PixelDensity;
 
         /**
          * Compile-time signal type information.
@@ -850,28 +801,9 @@ export namespace Gly {
 
         // Methods
         /**
-         * If the value is `0.0`, no density is set.
-         * @returns Horizontal pixel density
+         * @returns Pixel density.
          */
-        get_pixel_density_x(): number;
-
-        /**
-         * If the value for {@link FrameDetails.pixel_density_x} is zero, the value of this property has no meaning.
-         * @returns Horizontal pixel density unit
-         */
-        get_pixel_density_x_unit(): PhysicalDimensionUnit;
-
-        /**
-         * If the value is `0.0`, no density is set.
-         * @returns Vertical pixel density
-         */
-        get_pixel_density_y(): number;
-
-        /**
-         * If the value for {@link FrameDetails.pixel_density_y} is zero, the value of this property has no meaning.
-         * @returns Horizontal pixel density unit
-         */
-        get_pixel_density_y_unit(): PhysicalDimensionUnit;
+        get_pixel_density(): PixelDensity;
     }
 
 
@@ -1508,12 +1440,146 @@ export namespace Gly {
         set_color_icc_profile(icc_profile: GLib.Bytes | Uint8Array): boolean;
 
         /**
-         * @param x_density 
-         * @param x_unit 
-         * @param y_density 
-         * @param y_unit 
+         * @param pixel_density 
          */
-        set_pixel_density(x_density: number, x_unit: PhysicalDimensionUnit, y_density: number, y_unit: PhysicalDimensionUnit): void;
+        set_pixel_density(pixel_density: PixelDensity): void;
+    }
+
+
+    namespace PixelDensity {
+        // Signal signatures
+        interface SignalSignatures extends GObject.Object.SignalSignatures {
+            "notify::x-unit": (pspec: GObject.ParamSpec) => void;
+            "notify::x-value": (pspec: GObject.ParamSpec) => void;
+            "notify::y-unit": (pspec: GObject.ParamSpec) => void;
+            "notify::y-value": (pspec: GObject.ParamSpec) => void;
+        }
+
+        // Constructor properties interface
+        interface ConstructorProps extends GObject.Object.ConstructorProps {
+            x_unit: PhysicalDimensionUnit;
+            xUnit: PhysicalDimensionUnit;
+            x_value: number;
+            xValue: number;
+            y_unit: PhysicalDimensionUnit;
+            yUnit: PhysicalDimensionUnit;
+            y_value: number;
+            yValue: number;
+        }
+    }
+
+    /**
+     * Pixel density.
+     * @gir-type Class
+     * @since 2.2
+     */
+    class PixelDensity extends GObject.Object {
+        static $gtype: GObject.GType<PixelDensity>;
+
+        // Properties
+        /**
+         * @default Inch
+         */
+        get x_unit(): PhysicalDimensionUnit;
+        set x_unit(val: PhysicalDimensionUnit);
+
+        /**
+         * @default Inch
+         */
+        get xUnit(): PhysicalDimensionUnit;
+        set xUnit(val: PhysicalDimensionUnit);
+
+        /**
+         * @default 0
+         */
+        get x_value(): number;
+        set x_value(val: number);
+
+        /**
+         * @default 0
+         */
+        get xValue(): number;
+        set xValue(val: number);
+
+        /**
+         * @default Inch
+         */
+        get y_unit(): PhysicalDimensionUnit;
+        set y_unit(val: PhysicalDimensionUnit);
+
+        /**
+         * @default Inch
+         */
+        get yUnit(): PhysicalDimensionUnit;
+        set yUnit(val: PhysicalDimensionUnit);
+
+        /**
+         * @default 0
+         */
+        get y_value(): number;
+        set y_value(val: number);
+
+        /**
+         * @default 0
+         */
+        get yValue(): number;
+        set yValue(val: number);
+
+        /**
+         * Compile-time signal type information.
+         *
+         * This instance property is generated only for TypeScript type checking.
+         * It is not defined at runtime and should not be accessed in JS code.
+         * @internal
+         */
+        $signals: PixelDensity.SignalSignatures;
+
+        // Constructors
+        constructor(properties?: Partial<PixelDensity.ConstructorProps>, ...args: any[]);
+
+        _init(...args: any[]): void;
+
+        static ["new"](x_value: number, x_unit: PhysicalDimensionUnit, y_value: number, y_unit: PhysicalDimensionUnit): PixelDensity;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof PixelDensity.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, PixelDensity.SignalSignatures[K]>): number;
+        connect(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        connect_after<K extends keyof PixelDensity.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, PixelDensity.SignalSignatures[K]>): number;
+        connect_after(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        emit<K extends keyof PixelDensity.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<PixelDensity.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
+        emit(signal: string, ...args: any[]): void;
+
+        // Methods
+        /**
+         * @param unit 
+         * @returns Converted pixel density
+         */
+        convert(unit: PhysicalDimensionUnit): PixelDensity;
+
+        /**
+         * @returns Horizontal pixel density unit
+         */
+        get_x_unit(): PhysicalDimensionUnit;
+
+        /**
+         * @returns Horizontal pixel density
+         */
+        get_x_value(): number;
+
+        /**
+         * @returns Horizontal pixel density unit
+         */
+        get_y_unit(): PhysicalDimensionUnit;
+
+        /**
+         * @returns Vertical pixel density
+         */
+        get_y_value(): number;
     }
 
 
@@ -1589,6 +1655,11 @@ export namespace Gly {
      * @gir-type Alias
      */
     type NewFrameClass = typeof NewFrame;
+
+    /**
+     * @gir-type Alias
+     */
+    type PixelDensityClass = typeof PixelDensity;
 
     /**
      * Name of the imported GIR library
