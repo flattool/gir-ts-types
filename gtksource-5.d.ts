@@ -1428,6 +1428,10 @@ export namespace GtkSource {
          */
         get_language(): Language | null;
 
+        /**
+         * Whether the buffer is loading.
+         * @returns whether the buffer is loading
+         */
         get_loading(): boolean;
 
         /**

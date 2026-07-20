@@ -35554,6 +35554,7 @@ export namespace Adw {
             "notify::enabled": (pspec: GObject.ParamSpec) => void;
             "notify::icon-name": (pspec: GObject.ParamSpec) => void;
             "notify::icon-paintable": (pspec: GObject.ParamSpec) => void;
+            "notify::prefix": (pspec: GObject.ParamSpec) => void;
             "notify::section": (pspec: GObject.ParamSpec) => void;
             "notify::subtitle": (pspec: GObject.ParamSpec) => void;
             "notify::suffix": (pspec: GObject.ParamSpec) => void;
@@ -35572,6 +35573,7 @@ export namespace Adw {
             iconName: string | null;
             icon_paintable: Gdk.Paintable | null;
             iconPaintable: Gdk.Paintable | null;
+            prefix: Gtk.Widget | null;
             section: SidebarSection | null;
             subtitle: string | null;
             suffix: Gtk.Widget | null;
@@ -35598,9 +35600,10 @@ export namespace Adw {
      * To add a tooltip, use {@link SidebarItem.tooltip}. Tooltips always use
      * Pango markup.
      * 
-     * Items can have an arbitrary suffix widget, set with the
-     * {@link SidebarItem.suffix} properties. It will be displayed at the end of
-     * its row, or before the arrow in the {@link Adw.SidebarMode.PAGE} mode.
+     * Items can have an arbitrary prefix and suffix widgets, set with the
+     * {@link SidebarItem.prefix} and {@link SidebarItem.suffix} properties.
+     * They will be displayed at the start (before icon) and end of its row, and
+     * before the arrow in the {@link Adw.SidebarMode.PAGE} mode.
      * 
      * To hide or disable the item, use the {@link SidebarItem.visible} and
      * {@link SidebarItem.enabled} properties respectively.
@@ -35694,6 +35697,15 @@ export namespace Adw {
          */
         get iconPaintable(): Gdk.Paintable | null;
         set iconPaintable(val: Gdk.Paintable | null);
+
+        /**
+         * The prefix widget for this item.
+         * 
+         * Prefix will be shown at the start of the item's row, before the icon.
+         * @since 1.9
+         */
+        get prefix(): Gtk.Widget | null;
+        set prefix(val: Gtk.Widget | null);
 
         /**
          * The section the item is in.
@@ -35832,6 +35844,12 @@ export namespace Adw {
         get_index(): number;
 
         /**
+         * Gets the prefix widget for `self`.
+         * @returns the prefix widget
+         */
+        get_prefix(): Gtk.Widget | null;
+
+        /**
          * Gets the section `self` is in.
          * @returns the section of `self`
          */
@@ -35919,6 +35937,14 @@ export namespace Adw {
         set_icon_paintable(paintable: Gdk.Paintable | null): void;
 
         /**
+         * Sets the prefix widget for `self`.
+         * 
+         * Prefix will be shown at the start of the item's row, before the icon.
+         * @param prefix the prefix widget
+         */
+        set_prefix(prefix: Gtk.Widget | null): void;
+
+        /**
          * Sets the subtitle of `self`.
          * @param subtitle the subtitle
          */
@@ -35969,6 +35995,7 @@ export namespace Adw {
             "notify::items": (pspec: GObject.ParamSpec) => void;
             "notify::menu-model": (pspec: GObject.ParamSpec) => void;
             "notify::sidebar": (pspec: GObject.ParamSpec) => void;
+            "notify::suffix": (pspec: GObject.ParamSpec) => void;
             "notify::title": (pspec: GObject.ParamSpec) => void;
         }
 
@@ -35978,6 +36005,7 @@ export namespace Adw {
             menu_model: Gio.MenuModel | null;
             menuModel: Gio.MenuModel | null;
             sidebar: Sidebar | null;
+            suffix: Gtk.Widget | null;
             title: string | null;
         }
     }
@@ -35991,6 +36019,10 @@ export namespace Adw {
      * {@link SidebarSection.title} property. If a title is not set, the section
      * will have a separator in front of it, or just spacing in the
      * {@link Adw.SidebarMode.PAGE} mode.
+     * 
+     * Sections can also have an arbitrary suffix widget, set with the
+     * {@link SidebarSection.suffix} properties. It will be displayed at the end
+     * of its header.
      * 
      * To add items, use {@link SidebarSection.append},
      * {@link SidebarSection.prepend} or {@link SidebarSection.insert}.
@@ -36099,6 +36131,15 @@ export namespace Adw {
         get sidebar(): Sidebar | null;
 
         /**
+         * The suffix widget for this section.
+         * 
+         * Suffix will be displayed at the end of the header.
+         * @since 1.10
+         */
+        get suffix(): Gtk.Widget | null;
+        set suffix(val: Gtk.Widget | null);
+
+        /**
          * Title of the section.
          * 
          * If set, it will be displayed instead of the separator before the section.
@@ -36200,6 +36241,12 @@ export namespace Adw {
         get_sidebar(): Sidebar | null;
 
         /**
+         * Gets the suffix widget for `self`.
+         * @returns the suffix widget
+         */
+        get_suffix(): Gtk.Widget | null;
+
+        /**
          * Gets the title of `self`.
          * @returns the title
          */
@@ -36251,6 +36298,14 @@ export namespace Adw {
          * @param menu_model a menu model
          */
         set_menu_model(menu_model: Gio.MenuModel | null): void;
+
+        /**
+         * Sets the suffix widget for `self`.
+         * 
+         * Suffix will be shown at the end of the header.
+         * @param suffix the suffix widget
+         */
+        set_suffix(suffix: Gtk.Widget | null): void;
 
         /**
          * Sets the title of `self`.

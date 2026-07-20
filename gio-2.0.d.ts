@@ -23571,8 +23571,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         has_pending(): boolean;
 
         /**
-         * Checks if a stream is closed.
-         * @returns `true` if the stream is closed.
+         * Checks if a stream has been closed.
+         * 
+         * This only indicates whether the I/O stream has been closed at the top level
+         * by calling {@link Gio.IOStream.close}. If the underlying input and output
+         * streams have been closed separately, this method will still return false.
+         * @returns true if the stream has been closed; false otherwise
          */
         is_closed(): boolean;
 
@@ -24889,8 +24893,14 @@ export const _LocalFilePrototype: typeof File.prototype;
         has_pending(): boolean;
 
         /**
-         * Checks if an input stream is closed.
-         * @returns `true` if the stream is closed.
+         * Checks if an input stream has been closed.
+         * 
+         * This only indicates whether the stream has been closed from this end by
+         * calling {@link Gio.InputStream.close}. If the stream is a pipe or socket,
+         * for example, and the process on the other end has closed its end, this method
+         * will still return false. Methods which try to read from the input stream will
+         * return any remaining data, end-of-file or an error, however.
+         * @returns true if the stream has been closed; false otherwise
          */
         is_closed(): boolean;
 
@@ -29183,8 +29193,14 @@ export const _LocalFilePrototype: typeof File.prototype;
         has_pending(): boolean;
 
         /**
-         * Checks if an output stream has already been closed.
-         * @returns `true` if `stream` is closed. `false` otherwise.
+         * Checks if an output stream has been closed.
+         * 
+         * This only indicates whether the stream has been closed from this end by
+         * calling {@link Gio.OutputStream.close}. If the stream is a pipe or socket,
+         * for example, and the process on the other end has closed its end, this method
+         * will still return false. Methods which try to write to the output stream will
+         * return an error, however.
+         * @returns true if the stream has been closed; false otherwise
          */
         is_closed(): boolean;
 
