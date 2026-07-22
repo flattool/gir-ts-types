@@ -3061,27 +3061,27 @@ export class VariantType<S extends string = any> {
          */
         ZERO_WIDTH_JOINER,
         /**
-         * Aksara (AK). Since: 2.80
+         * Aksara (AK).
          */
         AKSARA,
         /**
-         * Aksara Pre-Base (AP). Since: 2.80
+         * Aksara Pre-Base (AP).
          */
         AKSARA_PRE_BASE,
         /**
-         * Aksara Start (AS). Since: 2.80
+         * Aksara Start (AS).
          */
         AKSARA_START,
         /**
-         * Virama Final (VF). Since: 2.80
+         * Virama Final (VF).
          */
         VIRAMA_FINAL,
         /**
-         * Virama (VI). Since: 2.80
+         * Virama (VI).
          */
         VIRAMA,
         /**
-         * Unambiguous Hyphen (HH). Since: 2.88
+         * Unambiguous Hyphen (HH).
          */
         UNAMBIGUOUS_HYPHEN,
     }
@@ -3764,55 +3764,59 @@ export class VariantType<S extends string = any> {
          */
         MATH,
         /**
-         * Kawi. Since 2.74
+         * Kawi.
+         * 
+         * Since 2.74
          */
         KAWI,
         /**
-         * Nag Mundari. Since 2.74
+         * Nag Mundari.
+         * 
+         * Since 2.74
          */
         NAG_MUNDARI,
         /**
-         * Todhri. Since: 2.84
+         * Todhri.
          */
         TODHRI,
         /**
-         * Garay. Since: 2.84
+         * Garay.
          */
         GARAY,
         /**
-         * Tulu-Tigalari. Since: 2.84
+         * Tulu-Tigalari.
          */
         TULU_TIGALARI,
         /**
-         * Sunuwar. Since: 2.84
+         * Sunuwar.
          */
         SUNUWAR,
         /**
-         * Gurung Khema. Since: 2.84
+         * Gurung Khema.
          */
         GURUNG_KHEMA,
         /**
-         * Kirat Rai. Since: 2.84
+         * Kirat Rai.
          */
         KIRAT_RAI,
         /**
-         * Ol Onal. Since: 2.84
+         * Ol Onal.
          */
         OL_ONAL,
         /**
-         * Sidetic. Since: 2.88
+         * Sidetic.
          */
         SIDETIC,
         /**
-         * Tolong Siki. Since: 2.88
+         * Tolong Siki.
          */
         TOLONG_SIKI,
         /**
-         * Tai Yo. Since: 2.88
+         * Tai Yo.
          */
         TAI_YO,
         /**
-         * Beria Erfe. Since: 2.88
+         * Beria Erfe.
          */
         BERIA_ERFE,
     }
@@ -15442,15 +15446,17 @@ export class VariantType<S extends string = any> {
          */
         BITS,
         /**
-         * return only value, without unit; this should
-         *     not be used together with `G_FORMAT_SIZE_LONG_FORMAT`
-         *     nor `G_FORMAT_SIZE_ONLY_UNIT`. Since: 2.74
+         * Returns only the value, without a unit.
+         * 
+         * This should not be used together with `G_FORMAT_SIZE_LONG_FORMAT` nor
+         * `G_FORMAT_SIZE_ONLY_UNIT`.
          */
         ONLY_VALUE,
         /**
-         * return only unit, without value; this should
-         *     not be used together with `G_FORMAT_SIZE_LONG_FORMAT`
-         *     nor `G_FORMAT_SIZE_ONLY_VALUE`. Since: 2.74
+         * Returns only the unit, without a value.
+         * 
+         * This should not be used together with `G_FORMAT_SIZE_LONG_FORMAT` nor
+         * `G_FORMAT_SIZE_ONLY_VALUE`.
          */
         ONLY_UNIT,
     }
@@ -15522,53 +15528,53 @@ export class VariantType<S extends string = any> {
      */
     enum IOFlags {
         /**
-         * no special flags set. Since: 2.74
+         * No special flags set.
          */
         NONE,
         /**
-         * turns on append mode, corresponds to `O_APPEND`
+         * Turns on append mode, corresponds to `O_APPEND`
          *     (see the documentation of the UNIX `open()` syscall)
          */
         APPEND,
         /**
-         * turns on nonblocking mode, corresponds to
+         * Turns on nonblocking mode, corresponds to
          *     `O_NONBLOCK`/`O_NDELAY` (see the documentation of the UNIX `open()`
          *     syscall)
          */
         NONBLOCK,
         /**
-         * indicates that the io channel is readable.
+         * Indicates that the io channel is readable.
          *     This flag cannot be changed.
          */
         IS_READABLE,
         /**
-         * indicates that the io channel is writable.
+         * Indicates that the io channel is writable.
          *     This flag cannot be changed.
          */
         IS_WRITABLE,
         /**
-         * a misspelled version of `G_IO_FLAG_IS_WRITABLE`
+         * A misspelled version of `G_IO_FLAG_IS_WRITABLE`
          *     that existed before the spelling was fixed in GLib 2.30. It is kept
          *     here for compatibility reasons. Deprecated since 2.30
          */
         IS_WRITEABLE,
         /**
-         * indicates that the io channel is seekable,
+         * Indicates that the io channel is seekable,
          *     i.e. that `g_io_channel_seek_position()` can be used on it.
          *     This flag cannot be changed.
          */
         IS_SEEKABLE,
         /**
-         * the mask that specifies all the valid flags.
+         * The mask that specifies all the valid flags.
          */
         MASK,
         /**
-         * the mask of the flags that are returned from
+         * The mask of the flags that are returned from
          *     `g_io_channel_get_flags()`
          */
         GET_MASK,
         /**
-         * the mask of the flags that the user can modify
+         * The mask of the flags that the user can modify
          *     with `g_io_channel_set_flags()`
          */
         SET_MASK,
@@ -15730,11 +15736,11 @@ export class VariantType<S extends string = any> {
      */
     enum MarkupParseFlags {
         /**
-         * No special behaviour. Since: 2.74
+         * No special behaviour.
          */
         DEFAULT_FLAGS,
         /**
-         * flag you should not use
+         * Flag you should not use
          */
         DO_NOT_USE_THIS_UNSUPPORTED_FLAG,
         /**
@@ -15833,7 +15839,7 @@ export class VariantType<S extends string = any> {
      */
     enum RegexCompileFlags {
         /**
-         * No special options set. Since: 2.74
+         * No special options set.
          */
         DEFAULT,
         /**
@@ -15951,7 +15957,7 @@ export class VariantType<S extends string = any> {
      */
     enum RegexMatchFlags {
         /**
-         * No special options set. Since: 2.74
+         * No special options set.
          */
         DEFAULT,
         /**
@@ -16151,7 +16157,7 @@ export class VariantType<S extends string = any> {
      */
     enum TestSubprocessFlags {
         /**
-         * Default behaviour. Since: 2.74
+         * Default behaviour.
          */
         DEFAULT,
         /**
@@ -16191,7 +16197,7 @@ export class VariantType<S extends string = any> {
      */
     enum TestTrapFlags {
         /**
-         * Default behaviour. Since: 2.74
+         * Default behaviour.
          */
         DEFAULT,
         /**

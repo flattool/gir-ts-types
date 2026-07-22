@@ -2051,8 +2051,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          */
         SERVER_END_POINT,
         /**
-         * [`tls-exporter`](https://www.rfc-editor.org/rfc/rfc9266.html) binding
-         *    type. Since: 2.74
+         * [`tls-exporter`](https://www.rfc-editor.org/rfc/rfc9266.html) binding type.
          */
         EXPORTER,
     }
@@ -6100,12 +6099,15 @@ export const _LocalFilePrototype: typeof File.prototype;
          */
         AUTHENTICATION_REQUIRE_SAME_USER,
         /**
-         * When authenticating, try to use
-         *  protocols that work across a Linux user namespace boundary, even if this
-         *  reduces interoperability with older D-Bus implementations. This currently
-         *  affects client-side `EXTERNAL` authentication, for which this flag makes
-         *  connections to a server in another user namespace succeed, but causes
-         *  a deadlock when connecting to a GDBus server older than 2.73.3. Since: 2.74
+         * Prefers protocols that work across user namespace boundaries during
+         * authentication.
+         * 
+         * When authenticating, try to use protocols that work across a Linux user
+         * namespace boundary, even if this reduces interoperability with older D-Bus
+         * implementations. This currently affects client-side `EXTERNAL`
+         * authentication, for which this flag makes connections to a server in
+         * another user namespace succeed, but causes a deadlock when connecting to a
+         * GDBus server older than 2.73.3.
          */
         CROSS_NAMESPACE,
     }
@@ -7061,7 +7063,7 @@ export const _LocalFilePrototype: typeof File.prototype;
      */
     enum TlsCertificateFlags {
         /**
-         * No flags set. Since: 2.74
+         * No flags set.
          */
         NO_FLAGS,
         /**

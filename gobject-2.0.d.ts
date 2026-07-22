@@ -2812,7 +2812,7 @@ export function registerClass<
      */
     enum ConnectFlags {
         /**
-         * Default behaviour (no special flags). Since: 2.74
+         * Default behaviour (no special flags).
          */
         DEFAULT,
         /**
@@ -3063,7 +3063,7 @@ export function registerClass<
      */
     enum TypeFlags {
         /**
-         * No special flags. Since: 2.74
+         * No special flags.
          */
         NONE,
         /**
