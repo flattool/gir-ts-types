@@ -114881,6 +114881,7 @@ export interface Builder {
             "notify::resource": (pspec: GObject.ParamSpec) => void;
             "notify::state": (pspec: GObject.ParamSpec) => void;
             "notify::stylesheet": (pspec: GObject.ParamSpec) => void;
+            "notify::svg": (pspec: GObject.ParamSpec) => void;
             "notify::can-focus": (pspec: GObject.ParamSpec) => void;
             "notify::can-target": (pspec: GObject.ParamSpec) => void;
             "notify::css-classes": (pspec: GObject.ParamSpec) => void;
@@ -114924,6 +114925,7 @@ export interface Builder {
             resource: string;
             state: number;
             stylesheet: GLib.Bytes | Uint8Array | null;
+            svg: Svg;
         }
     }
 
@@ -114986,6 +114988,18 @@ export interface Builder {
          */
         get stylesheet(): GLib.Bytes | null;
         set stylesheet(val: GLib.Bytes | Uint8Array | null);
+
+        /**
+         * The GtkSvg paintable used for rendering.
+         * 
+         * This property is mainly useful for making details of the
+         * SVG rendering machinery available in the GTK inspector.
+         * 
+         * You should not modify the returned object.
+         * @since 4.24
+         * @read-only
+         */
+        get svg(): Svg;
 
         /**
          * Compile-time signal type information.

@@ -35702,7 +35702,7 @@ export namespace Adw {
          * The prefix widget for this item.
          * 
          * Prefix will be shown at the start of the item's row, before the icon.
-         * @since 1.9
+         * @since 1.10
          */
         get prefix(): Gtk.Widget | null;
         set prefix(val: Gtk.Widget | null);
