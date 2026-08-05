@@ -91,11 +91,11 @@ export namespace Atspi {
          */
         CANONICAL,
         /**
-         * Flow sort order
+         * Flow sort order. reserved for future use.
          */
         FLOW,
         /**
-         * Tab sort order
+         * Tab sort order. Reserved for future use.
          */
         TAB,
         /**
@@ -103,16 +103,18 @@ export namespace Atspi {
          */
         REVERSE_CANONICAL,
         /**
-         * Reverse flow sort order
+         * Reverse flow sort order. Reserved
+         * for future use.
          */
         REVERSE_FLOW,
         /**
-         * Reverse tab sort order
+         * Reverse tab sort order. Reserved
+         * for future use.
          */
         REVERSE_TAB,
         /**
-         * Used only to determine the end of the
-         * enumeration.
+         * Used only to determine the end of
+         * the enumeration.
          */
         LAST_DEFINED,
     }

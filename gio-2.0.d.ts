@@ -44702,19 +44702,36 @@ export const _LocalFilePrototype: typeof File.prototype;
          * system-wide file descriptor limit.
          * 
          * The index of the file descriptor in the list is returned.  If you use
-         * this index with `g_unix_fd_list_get()` then you will receive back a
+         * this index with {@link Gio.UnixFDList.get} then you will receive back a
          * duplicated copy of the same file descriptor.
          * @param fd a valid open file descriptor
-         * @returns the index of the appended fd in case of success, else -1          (and `error` is set)
+         * @returns the index of the appended fd in case of success, else `-1`          (and `error` is set)
          */
         append(fd: number): number;
+
+        /**
+         * Adds a file descriptor to `list`.
+         * 
+         * After this call, `fd` belongs to the `list` and may no longer be closed by the
+         * caller.
+         * 
+         * The file descriptor `fd` should be set to close-on-exec.
+         * 
+         * The index of the file descriptor in the list is returned. If you use this
+         * index with {@link Gio.UnixFDList.get} then you will receive back a
+         * duplicated copy of the same file descriptor.
+         * @param fd a valid open file descriptor
+         * @returns the index of the appended `fd`
+         */
+        append_take(fd: number): number;
 
         /**
          * Gets a file descriptor out of `list`.
          * 
          * `index_` specifies the index of the file descriptor to get.  It is a
-         * programmer error for `index_` to be out of range; see
-         * `g_unix_fd_list_get_length()`.
+         * programmer error for `index_` to be out of range. Either use
+         * {@link Gio.UnixFDList.lookup} to do a checked lookup, or check the index
+         * against the list length using {@link Gio.UnixFDList.get_length}.
          * 
          * The file descriptor is duplicated using `dup()` and set as
          * close-on-exec before being returned.  You must call `close()` on it
@@ -44723,7 +44740,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * A possible cause of failure is exceeding the per-process or
          * system-wide file descriptor limit.
          * @param index_ the index into the list
-         * @returns the file descriptor, or -1 in case of error
+         * @returns the file descriptor, or `-1` in case of error
          */
         get(index_: number): number;
 
@@ -44735,6 +44752,36 @@ export const _LocalFilePrototype: typeof File.prototype;
         get_length(): number;
 
         /**
+         * Looks up a file descriptor in `list` at position `index_`.
+         * 
+         * `index_` specifies the index of the file descriptor to get. If no file
+         * descriptor exists at this index, `-1` is returned.
+         * 
+         * After this call, the descriptor remains the property of `list`. The caller
+         * must not close it. The descriptor is valid only until `list` is changed in any
+         * way.
+         * @param index_ the file descriptor index
+         * @returns the file descriptor, or `-1` if not found
+         */
+        lookup(index_: bigint | number): number;
+
+        /**
+         * Gets a file descriptor out of `list`.
+         * 
+         * `index_` specifies the index of the file descriptor to get. It is a programmer
+         * error for `index_` to be out of range; see {@link Gio.UnixFDList.get_length}.
+         * 
+         * This will always return a valid (non-negative) file descriptor.
+         * 
+         * After this call, the descriptor remains the property of `list`. The caller
+         * must not close it. The descriptor is valid only until `list` is changed in any
+         * way.
+         * @param index_ the index into the list
+         * @returns the file descriptor
+         */
+        peek(index_: bigint | number): number;
+
+        /**
          * Returns the array of file descriptors that is contained in this
          * object.
          * 
@@ -44742,11 +44789,11 @@ export const _LocalFilePrototype: typeof File.prototype;
          * caller must not close them and must not free the array.  The array is
          * valid only until `list` is changed in any way.
          * 
-         * If `length` is non-`null` then it is set to the number of file
+         * If `length` is non-`NULL` then it is set to the number of file
          * descriptors in the returned array. The returned array is also
-         * terminated with -1.
+         * terminated with `-1`.
          * 
-         * This function never returns `null`. In case there are no file
+         * This function never returns `NULL`. In case there are no file
          * descriptors contained in `list`, an empty array is returned.
          * @returns an array of file     descriptors
          */
@@ -44765,11 +44812,11 @@ export const _LocalFilePrototype: typeof File.prototype;
          * descriptors.  The file descriptors in the array are set to
          * close-on-exec.
          * 
-         * If `length` is non-`null` then it is set to the number of file
+         * If `length` is non-`NULL` then it is set to the number of file
          * descriptors in the returned array. The returned array is also
-         * terminated with -1.
+         * terminated with `-1`.
          * 
-         * This function never returns `null`. In case there are no file
+         * This function never returns `NULL`. In case there are no file
          * descriptors contained in `list`, an empty array is returned.
          * @returns an array of file     descriptors
          */

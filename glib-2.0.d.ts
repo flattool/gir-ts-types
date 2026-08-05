@@ -13290,6 +13290,21 @@ export class VariantType<S extends string = any> {
     /**
      * Creates a new timeout source.
      * 
+     * The source will not initially be associated with any {@link GLib.MainContext}
+     * and must be added to one with {@link GLib.Source.attach} before it will be
+     * executed.
+     * 
+     * The interval given is in terms of monotonic time, not wall clock
+     * time.  See {@link GLib.get_monotonic_time_ns}.
+     * @param interval the timeout interval in nanoseconds
+     * @returns the newly-created timeout source
+     * @since 2.90
+     */
+    function timeout_source_new_ns(interval: bigint | number): Source;
+
+    /**
+     * Creates a new timeout source.
+     * 
      * The source will not initially be associated with any
      * {@link GLib.MainContext} and must be added to one with
      * {@link GLib.Source.attach} before it will be executed.
@@ -20992,6 +21007,83 @@ export class VariantType<S extends string = any> {
         load_from_file(file: string, flags: KeyFileFlags): boolean;
 
         /**
+         * Evaluates and merges configuration key/values from multiple Unix directories into a single key file.
+         * 
+         * This function reads and merges all available configuration files based on the rules defined by
+         * the [UAPI Configuration Files Specification](https://github.com/uapi-group/specifications/blob/main/specs/configuration_files_specification.md) (version 1).
+         * 
+         * This API is primarily intended for system daemons or CLI tools that need to load systemd-style
+         * configuration files spread across vendor and customization directories. User applications
+         * should generally use [`GSettings`](../gio/class.Settings.html) instead to manage user preferences.
+         * 
+         * ### Directory Layout Guidance
+         * When choosing paths for `etc_subdir` and `usr_subdir`, you should prefer using your build
+         * system's standard configuration variables (such as `$sysconfdir` and `$libdir`) rather
+         * than hard-coding absolute paths. For context, on a standard Linux layout, `etc_subdir`
+         * typically points to administrative overrides (e.g., `/etc`), `run_subdir` to /run while
+         * `usr_subdir` points to the vendor defaults (e.g., `/usr/lib` or `/usr/share`). Passing `NULL`
+         * will fall back to platform-specific defaults where appropriate.
+         * 
+         * ### Relationship to XDG Base Directory Specification
+         * Note that this function operates independently of the
+         * [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir/latest/)
+         * and {@link GLib.get_system_config_dirs}. While XDG directories (like `$XDG_CONFIG_DIRS`)
+         * are intended to manage desktop session applications and user-facing environments, this
+         * API is strictly designed for low-level system-wide components following the UAPI
+         * specification. Mixing the two concepts should be avoided.
+         * 
+         * Note that this function is synchronous and blocking. Because it may load an arbitrary amount
+         * of files, it is best suited for application startup or non-interactive environments. If called
+         * from a user-interactive UI thread, you must handle asynchronicity yourself if needed.
+         * 
+         * If no file for parsing has been found, {@link GLib.KeyFileError.NOT_FOUND} is returned.
+         * If files have been found but the OS returns an error when opening or reading a
+         * file, a {@link GLib.FileError} is returned. If there is a problem parsing
+         * files, a {@link GLib.KeyFileError} is returned.
+         * 
+         * 
+         * The following example parses files in following order:
+         * 
+         * - `<SYSCONFDIR>/project/mydaemon.conf`
+         * - `/run/project/mydaemon.conf` (if <SYSCONFDIR>/project/mydaemon.conf is not defined)
+         * - `<LIBDIR>/project/mydaemon.conf`
+         *   (if `<SYSCONFDIR>/project/mydaemon.conf` and `/run/project/mydaemon.conf are not defined`)
+         * - valid drop-ins in `<SYSCONFDIR>/project/mydaemon.conf.d/`, `/run/project/mydaemon.conf.d/`, `<LIBDIR>/project/mydaemon.conf.d/`
+         * 
+         * ```
+         * g_autoptr(GKeyFile) kf = g_key_file_new ();
+         * g_autoptr(GError) local_error = NULL;
+         * 
+         * // Using build-configured paths or defaults instead of hardcoded strings
+         * gboolean success = g_key_file_load_unix_configurations (kf,
+         *                                                         "my-daemon",
+         *                                                         SYSCONFDIR,
+         *                                                         RUNDIR,
+         *                                                         LIBDIR,
+         *                                                         "mydaemon",
+         *                                                         "conf",
+         *                                                         G_KEY_FILE_NONE,
+         *                                                         &local_error);
+         * if (!success)
+         *   {
+         *     g_warning ("Failed to load configuration: %s", local_error->message);
+         *     return;
+         *   }
+         * 
+         * g_autofree char *val = g_key_file_get_string (kf, "Management", "Setting", NULL);
+         * ```
+         * @param project name of the project used as subdirectory
+         * @param etc_subdir directory path for administrative configuration files
+         * @param run_subdir directory path for ephemeral overrides
+         * @param usr_subdir directory path for vendor-defined settings
+         * @param config_name basename of the configuration file
+         * @param config_suffix suffix of the configuration file
+         * @param flags flags from {@link GLib.KeyFileFlags}
+         * @returns true on success, false otherwise
+         */
+        load_unix_configurations(project: string | null, etc_subdir: string | null, run_subdir: string | null, usr_subdir: string | null, config_name: string, config_suffix: string | null, flags: KeyFileFlags): boolean;
+
+        /**
          * Increases the reference count of `key_file`.
          * @returns the same `key_file`.
          */
@@ -25930,6 +26022,14 @@ export class VariantType<S extends string = any> {
         attach(context: MainContext | null): number;
 
         /**
+         * Unsets any previously set ready time.
+         * 
+         * If the source does not have a ready time set, this function
+         * does nothing.
+         */
+        clear_ready_time(): void;
+
+        /**
          * Removes a source from its {@link GLib.MainContext}, if any, and marks it as
          * destroyed.
          * 
@@ -26036,6 +26136,18 @@ export class VariantType<S extends string = any> {
         get_ready_time(): number;
 
         /**
+         * Gets the ‘ready time’ of `source`, as set by
+         * {@link GLib.Source.set_ready_time_ns}. If no ready time has been set
+         * or it has been cleared via method@GLib.Source.clear_ready_time], this
+         * function returns false.
+         * 
+         * Any time before or equal to the current monotonic time (including zero)
+         * is an indication that the source will fire immediately.
+         * @returns true if the source has a ready time set.
+         */
+        get_ready_time_ns(): [boolean, number];
+
+        /**
          * Gets the time to be used when checking this source.
          * 
          * The advantage of
@@ -26048,6 +26160,20 @@ export class VariantType<S extends string = any> {
          * @returns the monotonic time in microseconds
          */
         get_time(): number;
+
+        /**
+         * Gets the time to be used when checking this source.
+         * 
+         * The advantage of calling this function over calling
+         * {@link GLib.get_monotonic_time_ns} directly is
+         * that when checking multiple sources, GLib can cache a single value
+         * instead of having to repeatedly get the system monotonic time.
+         * 
+         * The time here is the system monotonic time, if available, or some
+         * other reasonable alternative otherwise.  See {@link GLib.get_monotonic_time_ns}.
+         * @returns the monotonic time in nanoseconds
+         */
+        get_time_ns(): number;
 
         /**
          * Returns whether `source` has been destroyed.
@@ -26318,6 +26444,8 @@ export class VariantType<S extends string = any> {
          * 
          * If `ready_time` is `-1` then the source is never woken up on the basis
          * of the passage of time.
+         * Since GLib 2.90 {@link GLib.Source.clear_ready_time} should be used
+         * instead for this purpose.
          * 
          * Dispatching the source does not reset the ready time.  You should do
          * so yourself, from the source dispatch function.
@@ -26333,9 +26461,37 @@ export class VariantType<S extends string = any> {
          * 
          * This API is only intended to be used by implementations of {@link GLib.Source}.
          * Do not call this API on a {@link GLib.Source} that you did not create.
-         * @param ready_time the monotonic time at which the source will be ready;   `0` for ‘immediately’, `-1` for ‘never’
+         * @param ready_time the monotonic time in microseconds at which the source will   be ready; `0` for ‘immediately’, `-1` for ‘never’
          */
         set_ready_time(ready_time: bigint | number): void;
+
+        /**
+         * Sets a source to be dispatched when the given monotonic time is
+         * reached (or passed).
+         * 
+         * If the monotonic time is in the past (as it
+         * always will be if `ready_time` is `0`) then the source will be
+         * dispatched immediately.
+         * 
+         * Dispatching the source does not reset the ready time.  You should do
+         * so yourself, from the source dispatch function.
+         * 
+         * To reset the ready time, use {@link GLib.Source.clear_ready_time}.
+         * 
+         * Note that if you have a pair of sources where the ready time of one
+         * suggests that it will be delivered first but the priority for the
+         * other suggests that it would be delivered first, and the ready time
+         * for both sources is reached during the same main context iteration,
+         * then the order of dispatch is undefined.
+         * 
+         * It is a no-op to call this function on a {@link GLib.Source} which has
+         * already been destroyed with {@link GLib.Source.destroy}.
+         * 
+         * This API is only intended to be used by implementations of {@link GLib.Source}.
+         * Do not call this API on a {@link GLib.Source} that you did not create.
+         * @param ready_time the monotonic time in nanoseconds at which the source will   be ready; `0` for ‘immediately’
+         */
+        set_ready_time_ns(ready_time: bigint | number): void;
 
         /**
          * A variant of {@link GLib.Source.set_name} that does not
@@ -26567,6 +26723,10 @@ export class VariantType<S extends string = any> {
          * 
          * Instead of passing `false` to this function, consider using
          * `g_string_free_and_steal()`.
+         * 
+         * Similarly, instead of passing `TRUE` to this function,
+         * {@link GLib.String.free_deep} can be used. In particular, it can be used
+         * with {@link GLib.clear_pointer}.
          * @param free_segment if `true`, the actual character data is freed as well
          * @returns the character data of `string`          (i.e. `null` if `free_segment` is `true`)
          */
@@ -26580,6 +26740,19 @@ export class VariantType<S extends string = any> {
          * @returns the character data of `string`
          */
         free_and_steal(): string;
+
+        /**
+         * Frees the memory allocated for the {@link GLib.String} together with its
+         * character data.
+         * 
+         * This is equivalent to calling `g_string_free (string, TRUE)`, but it can
+         * be used with {@link GLib.clear_pointer}:
+         * 
+         * ```c
+         * g_clear_pointer (&my_string, g_string_free_deep);
+         * ```
+         */
+        free_deep(): void;
 
         /**
          * Transfers ownership of the contents of `string` to a newly allocated

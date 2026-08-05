@@ -6881,7 +6881,7 @@ export namespace Adw {
      *         <object class="AdwHeaderBar"/>
      *       </child>
      *       <property name="content">
-     *         <!-- ... -->
+     *         <!-- put your content here -->
      *       </property>
      *     </object>
      *   </property>
@@ -25750,10 +25750,10 @@ export namespace Adw {
      *     </object>
      *   </child>
      *   <child type="primary">
-     *     <!-- ... -->
+     *     <!-- put your primary child here -->
      *   </child>
      *   <child type="secondary">
-     *     <!-- ... -->
+     *     <!-- put your secondary child here -->
      *   </child>
      * </object>
      * ```
@@ -27024,7 +27024,15 @@ export namespace Adw {
      *         <object class="AdwNavigationPage">
      *           <property name="title" translatable="yes">Sidebar</property>
      *           <property name="child">
-     *             <!-- ... -->
+     *             <object class="AdwToolbarView">
+     *               <child type="top">
+     *                 <object class="AdwHeaderBar"/>
+     *               </child>
+     *               <property name="content">
+     *                 <!-- put your sidebar here, e.g.
+     *                      AdwSidebar or AdwViewSwitcherSidebar -->
+     *               </property>
+     *             <object>
      *           </property>
      *         </object>
      *       </property>
@@ -27032,7 +27040,14 @@ export namespace Adw {
      *         <object class="AdwNavigationPage">
      *           <property name="title" translatable="yes">Content</property>
      *           <property name="child">
-     *             <!-- ... -->
+     *             <object class="AdwToolbarView">
+     *               <child type="top">
+     *                 <object class="AdwHeaderBar"/>
+     *               </child>
+     *               <property name="content">
+     *                 <!-- put your content here -->
+     *               </property>
+     *             <object>
      *           </property>
      *         </object>
      *       </property>
@@ -28092,7 +28107,7 @@ export namespace Adw {
      *             <object class="AdwHeaderBar"/>
      *           </child>
      *           <property name="content">
-     *             <!-- ... -->
+     *             <!-- put your content here -->
      *           </property>
      *         </object>
      *       </property>
@@ -29133,10 +29148,10 @@ export namespace Adw {
      *   <property name="content">
      *     <object class="AdwOverlaySplitView" id="split_view">
      *       <property name="sidebar">
-     *         <!-- ... -->
+     *         <!-- put your sidebar here -->
      *       </property>
      *       <property name="content">
-     *         <!-- ... -->
+     *         <!-- put your content here -->
      *       </property>
      *     </object>
      *   </property>
@@ -34592,7 +34607,7 @@ export namespace Adw {
      *     <object class="AdwNavigationSplitView" id="split_view">
      *       <property name="sidebar">
      *         <object class="AdwNavigationPage">
-     *           <property name="title" translatable="yes">Sidebar</property>
+     *           <property name="title" translatable="yes">Items</property>
      *           <property name="child">
      *             <object class="AdwToolbarView">
      *               <child type="top">
@@ -34602,7 +34617,7 @@ export namespace Adw {
      *                 <object class="AdwSidebar" id="sidebar">
      *                   <!-- Calls adw_navigation_split_view_set_show_content (split_view, TRUE); -->
      *                   <signal name="activated" handler="sidebar_activated_cb"/>
-     *                   <!-- ... -->
+     *                   <!-- put your items here -->
      *                 </object>
      *               </property>
      *             </object>
@@ -34611,9 +34626,9 @@ export namespace Adw {
      *       </property>
      *       <property name="content">
      *         <object class="AdwNavigationPage">
-     *           <property name="title" translatable="yes">Content</property>
+     *           <property name="title" translatable="yes">Details</property>
      *           <property name="child">
-     *             <!-- ... -->
+     *             <!-- put your details view here -->
      *           </property>
      *         </object>
      *       </property>
@@ -54593,7 +54608,7 @@ export namespace Adw {
      *         <object class="AdwHeaderBar"/>
      *       </child>
      *       <property name="content">
-     *         <!-- ... -->
+     *         <!-- put your content here -->
      *       </property>
      *     </object>
      *   </property>
@@ -54624,7 +54639,7 @@ export namespace Adw {
      *         <object class="AdwHeaderBar"/>
      *       </child>
      *       <property name="content">
-     *         <!-- ... -->
+     *         <!-- put your content here -->
      *       </property>
      *       <child type="bottom">
      *         <object class="GtkActionBar" id="bottom_bar">

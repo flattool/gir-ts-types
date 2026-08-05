@@ -28,6 +28,34 @@ export namespace Gly {
 
 
     /**
+     * @gir-type Enum
+     */
+    export namespace ColorMode {
+        export const $gtype: GObject.GType<ColorMode>;
+    }
+
+    /**
+     * Specifies what defines the textures color profile.
+     * @gir-type Enum
+     * @since 2.2
+     */
+    enum ColorMode {
+        /**
+         * The frame's texture is in sRGB color profile. No further color inforamtion is available.
+         */
+        SRGB,
+        /**
+         * The frame's texture is in the color profile as specified by {@link Frame.get_color_cicp}.
+         */
+        CICP,
+        /**
+         * The frame's texture is in the color profile as specified by {@link Frame.get_color_icc_profile}.
+         */
+        ICC_PROFILE,
+    }
+
+
+    /**
      * Errors that can appear while loading images.
      * @gir-type Struct
      */
@@ -702,6 +730,19 @@ export namespace Gly {
         get_color_cicp(): Cicp | null;
 
         /**
+         * Returns the ICC profile for the frames texture.
+         * This value is `NULL` if no CICP is used.
+         * @returns Binary ICC profile
+         */
+        get_color_icc_profile(): GLib.Bytes | null;
+
+        /**
+         * This function advertises which property contains the color information for the frame's texture. See [Enum.ColorMode] for details.
+         * @returns Color Mode
+         */
+        get_color_mode(): ColorMode;
+
+        /**
          * Duration to show frame for animations.
          * 
          * If the value is zero, the image is not animated.
@@ -1108,6 +1149,7 @@ export namespace Gly {
             "notify::apply-transformations": (pspec: GObject.ParamSpec) => void;
             "notify::bytes": (pspec: GObject.ParamSpec) => void;
             "notify::cancellable": (pspec: GObject.ParamSpec) => void;
+            "notify::color-convert-icc-srgb": (pspec: GObject.ParamSpec) => void;
             "notify::file": (pspec: GObject.ParamSpec) => void;
             "notify::sandbox-selector": (pspec: GObject.ParamSpec) => void;
             "notify::stream": (pspec: GObject.ParamSpec) => void;
@@ -1121,6 +1163,8 @@ export namespace Gly {
             applyTransformations: boolean;
             bytes: GLib.Bytes | Uint8Array;
             cancellable: Gio.Cancellable;
+            color_convert_icc_srgb: boolean;
+            colorConvertIccSrgb: boolean;
             file: Gio.File;
             sandbox_selector: SandboxSelector;
             sandboxSelector: SandboxSelector;
@@ -1190,6 +1234,18 @@ export namespace Gly {
 
         get cancellable(): Gio.Cancellable;
         set cancellable(val: Gio.Cancellable);
+
+        /**
+         * @write-only
+         * @default false
+         */
+        set color_convert_icc_srgb(val: boolean);
+
+        /**
+         * @write-only
+         * @default false
+         */
+        set colorConvertIccSrgb(val: boolean);
 
         /**
          * @construct-only
@@ -1322,6 +1378,14 @@ export namespace Gly {
          * @param apply_transformations 
          */
         set_apply_transformations(apply_transformations: boolean): void;
+
+        /**
+         * Sets whether to convert textures to sRGB if ICC profile is present
+         * 
+         * This option is enabled by default.
+         * @param convert 
+         */
+        set_color_convert_icc_srgb(convert: boolean): void;
 
         /**
          * Selects which sandbox mechanism should be used. The default without calling this function is {@link SandboxSelector}`.AUTO`.
