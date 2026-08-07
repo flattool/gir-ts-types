@@ -3918,40 +3918,6 @@ export interface Builder {
     /**
      * @gir-type Enum
      */
-    export namespace RestoreReason {
-        export const $gtype: GObject.GType<RestoreReason>;
-    }
-
-    /**
-     * Enumerates possible reasons for an application to restore saved state.
-     * 
-     * See `Gtk.Application::restore-state`.
-     * @gir-type Enum
-     * @since 4.24
-     */
-    enum RestoreReason {
-        /**
-         * Don't restore anything
-         */
-        PRISTINE,
-        /**
-         * This is normal launch. Restore as little as is reasonable
-         */
-        LAUNCH,
-        /**
-         * The application has crashed before. Try to restore the previous state
-         */
-        RECOVER,
-        /**
-         * This is a session restore. Restore the previous state as far as possible
-         */
-        RESTORE,
-    }
-
-
-    /**
-     * @gir-type Enum
-     */
     export namespace RevealerTransitionType {
         export const $gtype: GObject.GType<RevealerTransitionType>;
     }
@@ -13134,66 +13100,6 @@ export interface Builder {
              */
             "query-end": () => void;
             /**
-             * Emitted when application global state is restored.
-             * 
-             * The handler for this signal should do the opposite of what the
-             * corresponding handler for `Gtk.Application::save-state`
-             * does.
-             * 
-             * You must be careful to be robust in the face of app upgrades and downgrades:
-             * the `state` might have been created by a previous or occasionally even a future
-             * version of your app. Do not assume that a given key exists in the state.
-             * Apps must try to restore state saved by a previous version, but are free to
-             * discard state if it was written by a future version.
-             * @signal
-             * @since 4.24
-             * @run-last
-             */
-            "restore-state": (arg0: RestoreReason, arg1: GLib.Variant) => boolean | void;
-            /**
-             * Emitted when an application's per-window state is restored.
-             * 
-             * In response to this signal, you should create a new application
-             * window, add it to `application`, apply the provided `state`, and present it.
-             * The application can use the `reason` to determine how much of the state
-             * should be restored.
-             * 
-             * You must be careful to be robust in the face of app upgrades and downgrades:
-             * the `state` might have been created by a previous or occasionally even a future
-             * version of your app. Do not assume that a given key exists in the state.
-             * Apps must try to restore state saved by a previous version, but are free to
-             * discard state if it was written by a future version.
-             * 
-             * GTK will remember which window the user was using most recently, and will
-             * emit this signal for that window first. Thus, if you decide that the provided
-             * `reason` means that only one window should be restored, you can reliably
-             * ignore emissions if a window already exists
-             * 
-             * This signal will be emitted whenever the application needs to restore its
-             * windows. This normally happens during the initial launch, but it can also
-             * happen in the existing application instance if it is re-activated after all
-             * application windows were closed.
-             * @signal
-             * @since 4.24
-             * @run-first
-             */
-            "restore-window": (arg0: RestoreReason, arg1: GLib.Variant) => void;
-            /**
-             * Emitted when the application is saving global state.
-             * 
-             * The handler for this signal should persist any global state of
-             * `application` into `dict`.
-             * 
-             * See `Gtk.Application::restore-state` for how to
-             * restore global state, and `Gtk.ApplicationWindow::save-state`
-             * and `Gtk.Application::restore-window` for handling
-             * per-window state.
-             * @signal
-             * @since 4.24
-             * @run-last
-             */
-            "save-state": (arg0: GLib.VariantDict) => boolean | void;
-            /**
              * Emitted when a window is added to an application.
              * 
              * See {@link Gtk.Application.add_window}.
@@ -13211,11 +13117,9 @@ export interface Builder {
              */
             "window-removed": (arg0: Window) => void;
             "notify::active-window": (pspec: GObject.ParamSpec) => void;
-            "notify::autosave-interval": (pspec: GObject.ParamSpec) => void;
             "notify::menubar": (pspec: GObject.ParamSpec) => void;
             "notify::register-session": (pspec: GObject.ParamSpec) => void;
             "notify::screensaver-active": (pspec: GObject.ParamSpec) => void;
-            "notify::support-save": (pspec: GObject.ParamSpec) => void;
             "notify::action-group": (pspec: GObject.ParamSpec) => void;
             "notify::application-id": (pspec: GObject.ParamSpec) => void;
             "notify::flags": (pspec: GObject.ParamSpec) => void;
@@ -13231,15 +13135,11 @@ export interface Builder {
         interface ConstructorProps extends Gio.Application.ConstructorProps, Gio.ActionGroup.ConstructorProps, Gio.ActionMap.ConstructorProps {
             active_window: Window | null;
             activeWindow: Window | null;
-            autosave_interval: number;
-            autosaveInterval: number;
             menubar: Gio.MenuModel | null;
             register_session: boolean;
             registerSession: boolean;
             screensaver_active: boolean;
             screensaverActive: boolean;
-            support_save: boolean;
-            supportSave: boolean;
         }
     }
 
@@ -13317,27 +13217,6 @@ export interface Builder {
      * default window icon. Use {@link Gtk.Window.set_default_icon_name} or
      * {@link Gtk.Window.icon_name} to override that behavior.
      * 
-     * ## State saving
-     * 
-     * {@link Gtk.Application} registers with a session manager if possible and
-     * offers various functionality related to the session life-cycle,
-     * such as state saving.
-     * 
-     * State-saving functionality can be enabled by setting the
-     * {@link Gtk.Application.support_save} property to true.
-     * 
-     * In order to save and restore per-window state, applications must
-     * connect to the `Gtk.Application::restore-window` signal and
-     * handle the `Gtk.ApplicationWindow::save-state` signal. There
-     * are also `Gtk.Application::restore-state` and
-     * `Gtk.Application::save-state` signals, which can be used
-     * for global state that is not connected to any window.
-     * 
-     * {@link Gtk.Application} automatically saves state before app shutdown, and by
-     * default periodically auto-saves app state (as configured by the
-     * {@link Gtk.Application.autosave_interval} property). Applications can
-     * also call {@link Gtk.Application.save} themselves at opportune times.
-     * 
      * # Inhibiting
      * 
      * An application can block various ways to end the session with
@@ -13374,24 +13253,6 @@ export interface Builder {
          * @read-only
          */
         get activeWindow(): Window | null;
-
-        /**
-         * The number of seconds between automatic state saves. Defaults to 15.
-         * A value of 0 will opt out of automatic state saving.
-         * @since 4.24
-         * @default 15
-         */
-        get autosave_interval(): number;
-        set autosave_interval(val: number);
-
-        /**
-         * The number of seconds between automatic state saves. Defaults to 15.
-         * A value of 0 will opt out of automatic state saving.
-         * @since 4.24
-         * @default 15
-         */
-        get autosaveInterval(): number;
-        set autosaveInterval(val: number);
 
         /**
          * The menu model to be used for the application's menu bar.
@@ -13444,24 +13305,6 @@ export interface Builder {
         get screensaverActive(): boolean;
 
         /**
-         * Set this property to true if the application supports
-         * state saving and restoring.
-         * @since 4.24
-         * @default false
-         */
-        get support_save(): boolean;
-        set support_save(val: boolean);
-
-        /**
-         * Set this property to true if the application supports
-         * state saving and restoring.
-         * @since 4.24
-         * @default false
-         */
-        get supportSave(): boolean;
-        set supportSave(val: boolean);
-
-        /**
          * Compile-time signal type information.
          *
          * This instance property is generated only for TypeScript type checking.
@@ -13491,29 +13334,6 @@ export interface Builder {
         emit(signal: string, ...args: any[]): void;
 
         // Virtual methods
-        /**
-         * Class closure for the `Gtk.Application::restore-state` signal.
-         * @param reason the reason for restoring state
-         * @param state a dictionary containing the application state to restore
-         * @virtual
-         */
-        vfunc_restore_state(reason: RestoreReason, state: GLib.Variant): boolean;
-
-        /**
-         * Class closure for the `Gtk.Application::restore-window` signal.
-         * @param reason the reason this window is restored
-         * @param state a dictionary containing the application window state to restore
-         * @virtual
-         */
-        vfunc_restore_window(reason: RestoreReason, state: GLib.Variant): void;
-
-        /**
-         * Class closure for the `Gtk.Application::save-state` signal.
-         * @param state a dictionary to populate with application state
-         * @virtual
-         */
-        vfunc_save_state(state: GLib.VariantDict): boolean;
-
         /**
          * Signal emitted when a {@link Gtk.Window} is added to
          *    application through `gtk_application_add_window()`.
@@ -13550,14 +13370,6 @@ export interface Builder {
          * @param window a window
          */
         add_window(window: Window): void;
-
-        /**
-         * Forget state that has been previously saved and prevent further automatic
-         * state saving.
-         * 
-         * In order to re-enable state saving, call {@link Gtk.Application.save}.
-         */
-        forget(): void;
 
         /**
          * Gets the accelerators that are currently associated with
@@ -13696,13 +13508,6 @@ export interface Builder {
          * @param window a window
          */
         remove_window(window: Window): void;
-
-        /**
-         * Saves the state of the application.
-         * 
-         * See {@link Gtk.Application.forget} for a way to forget the state.
-         */
-        save(): void;
 
         /**
          * Sets zero or more keyboard accelerators that will trigger the
@@ -14313,20 +14118,6 @@ export interface Builder {
     namespace ApplicationWindow {
         // Signal signatures
         interface SignalSignatures extends Window.SignalSignatures {
-            /**
-             * The handler for this signal should persist any application-specific
-             * state of `window` into `dict`.
-             * 
-             * Note that window management state such as maximized, fullscreen,
-             * or window size should not be saved as part of this. They are handled
-             * by GTK.
-             * 
-             * See `Gtk.Application::restore-window`.
-             * @signal
-             * @since 4.24
-             * @run-last
-             */
-            "save-state": (arg0: GLib.VariantDict) => boolean | void;
             "notify::show-menubar": (pspec: GObject.ParamSpec) => void;
             "notify::application": (pspec: GObject.ParamSpec) => void;
             "notify::child": (pspec: GObject.ParamSpec) => void;
@@ -14531,14 +14322,6 @@ export interface Builder {
         /** @signal */
         emit<K extends keyof ApplicationWindow.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ApplicationWindow.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
         emit(signal: string, ...args: any[]): void;
-
-        // Virtual methods
-        /**
-         * Class closure for the `Gtk.ApplicationWindow::save-state` signal.
-         * @param dict a dictionary to populate with application window state
-         * @virtual
-         */
-        vfunc_save_state(dict: GLib.VariantDict): boolean;
 
         // Methods
         /**
