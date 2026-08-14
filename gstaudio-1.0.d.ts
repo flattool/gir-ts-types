@@ -506,6 +506,22 @@ export namespace GstAudio {
          */
         F64BE,
         /**
+         * 20 bits in 32 bits, signed, little endian.
+         */
+        S20_32LE,
+        /**
+         * 20 bits in 32 bits, signed, big endian.
+         */
+        S20_32BE,
+        /**
+         * 20 bits in 32 bits, unsigned, little endian.
+         */
+        U20_32LE,
+        /**
+         * 20 bits in 32 bits, unsigned, big endian.
+         */
+        U20_32BE,
+        /**
          * 16 bits in 16 bits, signed, native endianness
          */
         S16,
@@ -545,6 +561,14 @@ export namespace GstAudio {
          * 20 bits in 24 bits, unsigned, native endianness
          */
         U20,
+        /**
+         * 20 bits in 32 bits, signed, native endian.
+         */
+        S20_32,
+        /**
+         * 20 bits in 32 bits, unsigned, native endian.
+         */
+        U20_32,
         /**
          * 18 bits in 24 bits, signed, native endianness
          */
@@ -1526,21 +1550,6 @@ export namespace GstAudio {
     function buffer_add_audio_clipping_meta(buffer: Gst.Buffer, format: Gst.Format, start: bigint | number, end: bigint | number): AudioClippingMeta;
 
     /**
-     * Attaches {@link GstAudio.AudioDownmixMeta} metadata to `buffer` with the given parameters.
-     * 
-     * `matrix` is an two-dimensional array of `to_channels` times `from_channels`
-     * coefficients, i.e. the i-th output channels is constructed by multiplicating
-     * the input channels with the coefficients in `matrix`[i] and taking the sum
-     * of the results.
-     * @param buffer a {@link Gst.Buffer}
-     * @param from_position the channel positions   of the source
-     * @param to_position the channel positions of   the destination
-     * @param matrix The matrix coefficients.
-     * @returns the {@link GstAudio.AudioDownmixMeta} on `buffer`.
-     */
-    function buffer_add_audio_downmix_meta(buffer: Gst.Buffer, from_position: AudioChannelPosition[], to_position: AudioChannelPosition[], matrix: number): AudioDownmixMeta;
-
-    /**
      * Attaches audio level information to `buffer`. (RFC 6464)
      * @param buffer a {@link Gst.Buffer}
      * @param level the -dBov from 0-127 (127 is silence).
@@ -1576,7 +1585,7 @@ export namespace GstAudio {
      * @returns the {@link GstAudio.AudioMeta} that was attached on the `buffer`
      * @since 1.16
      */
-    function buffer_add_audio_meta(buffer: Gst.Buffer, info: AudioInfo, samples: bigint | number, offsets: bigint | number | null): AudioMeta;
+    function buffer_add_audio_meta(buffer: Gst.Buffer, info: AudioInfo, samples: bigint | number, offsets: (bigint | number)[] | null): AudioMeta;
 
     /**
      * Allocates and attaches a {@link GstAudio.DsdPlaneOffsetMeta} on `buffer`, which must be
@@ -1601,13 +1610,12 @@ export namespace GstAudio {
      * 
      * This meta is only needed for non-interleaved (= planar) DSD data.
      * @param buffer a {@link Gst.Buffer}
-     * @param num_channels Number of channels in the DSD data
      * @param num_bytes_per_channel Number of bytes per channel
      * @param offsets the offsets (in bytes) where each channel plane starts   in the buffer
      * @returns the {@link GstAudio.DsdPlaneOffsetMeta} that was attached   on the `buffer`
      * @since 1.24
      */
-    function buffer_add_dsd_plane_offset_meta(buffer: Gst.Buffer, num_channels: number, num_bytes_per_channel: bigint | number, offsets: bigint | number | null): DsdPlaneOffsetMeta;
+    function buffer_add_dsd_plane_offset_meta(buffer: Gst.Buffer, num_bytes_per_channel: bigint | number, offsets: (bigint | number)[] | null): DsdPlaneOffsetMeta;
 
     /**
      * Find the {@link GstAudio.AudioDownmixMeta} on `buffer` for the given destination
@@ -1653,11 +1661,10 @@ export namespace GstAudio {
      * @param input_plane_offsets Plane offsets for non-interleaved input data
      * @param output_plane_offsets Plane offsets for non-interleaved output data
      * @param num_dsd_bytes How many bytes with DSD data to convert
-     * @param num_channels Number of channels (must be at least 1)
      * @param reverse_byte_bits If TRUE, reverse the bits in each DSD byte
      * @since 1.24
      */
-    function dsd_convert(input_data: number, output_data: number, input_format: DsdFormat, output_format: DsdFormat, input_layout: AudioLayout, output_layout: AudioLayout, input_plane_offsets: bigint | number, output_plane_offsets: bigint | number, num_dsd_bytes: bigint | number, num_channels: number, reverse_byte_bits: boolean): void;
+    function dsd_convert(input_data: Uint8Array | string, output_data: Uint8Array | string, input_format: DsdFormat, output_format: DsdFormat, input_layout: AudioLayout, output_layout: AudioLayout, input_plane_offsets: (bigint | number)[] | null, output_plane_offsets: (bigint | number)[] | null, num_dsd_bytes: bigint | number, reverse_byte_bits: boolean): void;
 
     /**
      * Convert the DSD format string `str` to its {@link GstAudio.DsdFormat}.
@@ -2211,6 +2218,9 @@ export namespace GstAudio {
         interface SignalSignatures extends AudioAggregatorPad.SignalSignatures {
             "notify::converter-config": (pspec: GObject.ParamSpec) => void;
             "notify::qos-messages": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-buffers": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-bytes": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-time": (pspec: GObject.ParamSpec) => void;
             "notify::emit-signals": (pspec: GObject.ParamSpec) => void;
             "notify::caps": (pspec: GObject.ParamSpec) => void;
             "notify::direction": (pspec: GObject.ParamSpec) => void;
@@ -2277,6 +2287,9 @@ export namespace GstAudio {
         // Signal signatures
         interface SignalSignatures extends GstBase.AggregatorPad.SignalSignatures {
             "notify::qos-messages": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-buffers": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-bytes": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-time": (pspec: GObject.ParamSpec) => void;
             "notify::emit-signals": (pspec: GObject.ParamSpec) => void;
             "notify::caps": (pspec: GObject.ParamSpec) => void;
             "notify::direction": (pspec: GObject.ParamSpec) => void;
@@ -5719,21 +5732,6 @@ export namespace GstAudio {
          * @returns `true` is `mix` is passthrough.
          */
         is_passthrough(): boolean;
-
-        /**
-         * In case the samples are interleaved, `in` and `out` must point to an
-         * array with a single element pointing to a block of interleaved samples.
-         * 
-         * If non-interleaved samples are used, `in` and `out` must point to an
-         * array with pointers to memory blocks, one for each channel.
-         * 
-         * Perform channel mixing on `in_data` and write the result to `out_data`.
-         * `in_data` and `out_data` need to be in `format` and `layout`.
-         * @param _in input samples
-         * @param out output samples
-         * @param samples number of samples
-         */
-        samples(_in: null, out: null, samples: number): void;
     }
 
 
@@ -5851,32 +5849,6 @@ export namespace GstAudio {
         reset(): void;
 
         /**
-         * Perform the conversion with `in_frames` in `in` to `out_frames` in `out`
-         * using `convert`.
-         * 
-         * In case the samples are interleaved, `in` and `out` must point to an
-         * array with a single element pointing to a block of interleaved samples.
-         * 
-         * If non-interleaved samples are used, `in` and `out` must point to an
-         * array with pointers to memory blocks, one for each channel.
-         * 
-         * `in` may be `null`, in which case `in_frames` of silence samples are processed
-         * by the converter.
-         * 
-         * This function always produces `out_frames` of output and consumes `in_frames` of
-         * input. Use `gst_audio_converter_get_out_frames()` and
-         * `gst_audio_converter_get_in_frames()` to make sure `in_frames` and `out_frames`
-         * are matching and `in` and `out` point to enough memory.
-         * @param flags extra {@link GstAudio.AudioConverterFlags}
-         * @param _in input frames
-         * @param in_frames number of input frames
-         * @param out output frames
-         * @param out_frames number of output frames
-         * @returns `true` is the conversion could be performed.
-         */
-        samples(flags: AudioConverterFlags, _in: null, in_frames: bigint | number, out: null, out_frames: bigint | number): boolean;
-
-        /**
          * Returns whether the audio converter can perform the conversion in-place.
          * The return value would be typically input to `gst_base_transform_set_in_place()`
          * @returns `true` when the conversion can be done in place.
@@ -5935,15 +5907,15 @@ export namespace GstAudio {
         static $gtype: GObject.GType<AudioDownmixMeta>;
 
         // Fields
-        from_position: AudioChannelPosition;
+        from_position: AudioChannelPosition[];
 
-        to_position: AudioChannelPosition;
+        to_position: AudioChannelPosition[];
 
         from_channels: number;
 
         to_channels: number;
 
-        matrix: number;
+        matrix: number[];
 
         // Static methods
         static get_info(): Gst.MetaInfo;
@@ -6142,7 +6114,7 @@ export namespace GstAudio {
         // Fields
         samples: number;
 
-        offsets: number;
+        offsets: number[];
 
         // Static methods
         static get_info(): Gst.MetaInfo;
@@ -6166,23 +6138,6 @@ export namespace GstAudio {
          * history it might have.
          */
         reset(): void;
-
-        /**
-         * Perform quantization on `samples` in `in` and write the result to `out`.
-         * 
-         * In case the samples are interleaved, `in` and `out` must point to an
-         * array with a single element pointing to a block of interleaved samples.
-         * 
-         * If non-interleaved samples are used, `in` and `out` must point to an
-         * array with pointers to memory blocks, one for each channel.
-         * 
-         * `in` and `out` may point to the same memory location, in which case samples will be
-         * modified in-place.
-         * @param _in input samples
-         * @param out output samples
-         * @param samples number of samples
-         */
-        samples(_in: null, out: null, samples: number): void;
     }
 
 

@@ -1387,6 +1387,34 @@ export namespace HarfBuzz {
     /**
      * @gir-type Enum
      */
+    export namespace draw_line_cap_t {
+        export const $gtype: GObject.GType<draw_line_cap_t>;
+    }
+
+    /**
+     * End-cap shape for `hb_draw_line()`.
+     * @gir-type Enum
+     * @since 14.2.0
+     */
+    enum draw_line_cap_t {
+        /**
+         * No cap; the line ends exactly at
+         *   its endpoint.
+         */
+        BUTT,
+        /**
+         * Square cap; the line is extended
+         *   past its endpoint by half the local stroke width.  Useful
+         *   for composing closed shapes from line segments (e.g. a
+         *   rectangle made from four lines).
+         */
+        SQUARE,
+    }
+
+
+    /**
+     * @gir-type Enum
+     */
     export namespace memory_mode_t {
         export const $gtype: GObject.GType<memory_mode_t>;
     }
@@ -1433,6 +1461,62 @@ export namespace HarfBuzz {
          * See above
          */
         READONLY_MAY_MAKE_WRITABLE,
+    }
+
+
+    /**
+     * @gir-type Enum
+     */
+    export namespace ot_bits_tag_t {
+        export const $gtype: GObject.GType<ot_bits_tag_t>;
+    }
+
+    /**
+     * Bit fields that can be fetched with `hb_ot_fetch_bits()`.
+     * @gir-type Enum
+     * @since 14.3.0
+     */
+    enum ot_bits_tag_t {
+        /**
+         * `fsType` of the `OS/2` table.
+         */
+        FS_TYPE,
+        /**
+         * `fsSelection` of the `OS/2` table.
+         */
+        FS_SELECTION,
+        /**
+         * `macStyle` of the `head` table.
+         */
+        MAC_STYLE,
+        /**
+         * `isFixedPitch` of the `post` table.
+         */
+        IS_FIXED_PITCH,
+        /**
+         * `ulUnicodeRange1` of the `OS/2` table.
+         */
+        UNICODE_RANGE_1,
+        /**
+         * `ulUnicodeRange2` of the `OS/2` table.
+         */
+        UNICODE_RANGE_2,
+        /**
+         * `ulUnicodeRange3` of the `OS/2` table.
+         */
+        UNICODE_RANGE_3,
+        /**
+         * `ulUnicodeRange4` of the `OS/2` table.
+         */
+        UNICODE_RANGE_4,
+        /**
+         * `ulCodePageRange1` of the `OS/2` table.
+         */
+        CODE_PAGE_RANGE_1,
+        /**
+         * `ulCodePageRange2` of the `OS/2` table.
+         */
+        CODE_PAGE_RANGE_2,
     }
 
 
@@ -2087,6 +2171,38 @@ export namespace HarfBuzz {
          * Value to represent a nonexistent name ID.
          */
         INVALID,
+    }
+
+
+    /**
+     * @gir-type Enum
+     */
+    export namespace ot_number_tag_t {
+        export const $gtype: GObject.GType<ot_number_tag_t>;
+    }
+
+    /**
+     * Numbers that can be fetched with `hb_ot_fetch_number()`.
+     * @gir-type Enum
+     * @since 14.3.0
+     */
+    enum ot_number_tag_t {
+        /**
+         * `xMin` of the `head` table.
+         */
+        X_MIN,
+        /**
+         * `yMin` of the `head` table.
+         */
+        Y_MIN,
+        /**
+         * `xMax` of the `head` table.
+         */
+        X_MAX,
+        /**
+         * `yMax` of the `head` table.
+         */
+        Y_MAX,
     }
 
 
@@ -2993,6 +3109,22 @@ export namespace HarfBuzz {
          */
         TULU_TIGALARI,
         /**
+         * `Berf`, Since: 11.5.0
+         */
+        BERIA_ERFE,
+        /**
+         * `Sidt`, Since: 11.5.0
+         */
+        SIDETIC,
+        /**
+         * `Tayo`, Since: 11.5.0
+         */
+        TAI_YO,
+        /**
+         * `Tols`, Since: 11.5.0
+         */
+        TOLONG_SIKI,
+        /**
          * No script set
          */
         INVALID,
@@ -3509,6 +3641,15 @@ export namespace HarfBuzz {
     const OT_MAX_TAGS_PER_SCRIPT: number;
 
     /**
+     * The serial number of the current internal buffer format.
+     * 
+     * The serial number will increase when internal {@link HarfBuzz.glyph_info_t} and
+     * {@link HarfBuzz.glyph_position_t} members change their format.
+     * @since 13.2.0
+     */
+    const OT_SHAPE_BUFFER_FORMAT_SERIAL: number;
+
+    /**
      * Do not use.
      * @since 1.4.2
      * @deprecated since 2.2.0
@@ -3571,7 +3712,7 @@ export namespace HarfBuzz {
      * @returns Number of all available feature types.
      * @since 2.2.0
      */
-    function aat_layout_get_feature_types(face: face_t, start_offset: number): [number, aat_layout_feature_type_t[]];
+    function aat_layout_get_feature_types(face: face_t, start_offset: number): [number, aat_layout_feature_type_t[] | null];
 
     /**
      * Tests whether the specified face includes any positioning information
@@ -3815,6 +3956,16 @@ export namespace HarfBuzz {
      * @since 1.5.0
      */
     function buffer_append(buffer: buffer_t, source: buffer_t, start: number, end: number): void;
+
+    /**
+     * Called by a message callback after modifying buffer glyph indices,
+     * to update internal caches.
+     * 
+     * If not called from inside a message callback, does nothing.
+     * @param buffer An {@link HarfBuzz.buffer_t}
+     * @since 13.0.0
+     */
+    function buffer_changed(buffer: buffer_t): void;
 
     /**
      * Similar to `hb_buffer_reset()`, but does not clear the Unicode functions and
@@ -4154,9 +4305,11 @@ export namespace HarfBuzz {
      * A human-readable, plain text format.
      * The serialized glyphs will look something like:
      * 
+     * 
      * ```
      * [uni0651=0@518,0+0|uni0628=0+1897]
      * ```
+     * 
      * 
      * - The serialized glyphs are delimited with `[` and `]`.
      * - Glyphs are separated with `|`
@@ -4164,7 +4317,7 @@ export namespace HarfBuzz {
      *   #HB_BUFFER_SERIALIZE_FLAG_NO_GLYPH_NAMES flag is set. Then,
      *   - If #HB_BUFFER_SERIALIZE_FLAG_NO_CLUSTERS is not set, `=` then {@link HarfBuzz.glyph_info_t}.cluster.
      *   - If #HB_BUFFER_SERIALIZE_FLAG_NO_POSITIONS is not set, the {@link HarfBuzz.glyph_position_t} in the format:
-     *     - If both {@link HarfBuzz.glyph_position_t}.x_offset and {@link HarfBuzz.glyph_position_t}.y_offset are not 0, ``x_offset`,y_offset`. Then,
+     *     - If {@link HarfBuzz.glyph_position_t}.x_offset and {@link HarfBuzz.glyph_position_t}.y_offset are not both 0, ``x_offset`,y_offset`. Then,
      *     - `+x_advance`, then `,y_advance` if {@link HarfBuzz.glyph_position_t}.y_advance is not 0. Then,
      *   - If #HB_BUFFER_SERIALIZE_FLAG_GLYPH_EXTENTS is set, the {@link HarfBuzz.glyph_extents_t} in the format `<x_bearing,y_bearing,width,height>`
      * 
@@ -4172,10 +4325,12 @@ export namespace HarfBuzz {
      * A machine-readable, structured format.
      * The serialized glyphs will look something like:
      * 
+     * 
      * ```
      * [{"g":"uni0651","cl":0,"dx":518,"dy":0,"ax":0,"ay":0},
-     * {"g":"uni0628","cl":0,"dx":0,"dy":0,"ax":1897,"ay":0}]
+     *  {"g":"uni0628","cl":0,"dx":0,"dy":0,"ax":1897,"ay":0}]
      * ```
+     * 
      * 
      * Each glyph is a JSON object, with the following properties:
      * - `g`: the glyph name or glyph index if
@@ -4216,9 +4371,11 @@ export namespace HarfBuzz {
      * A human-readable, plain text format.
      * The serialized codepoints will look something like:
      * 
+     * 
      * ```
      *  <U+0651=0|U+0628=1>
      * ```
+     * 
      * 
      * - Glyphs are separated with `|`
      * - Unicode codepoints are expressed as zero-padded four (or more)
@@ -4236,9 +4393,11 @@ export namespace HarfBuzz {
      * 
      * For example:
      * 
+     * 
      * ```
      * [{u:1617,cl:0},{u:1576,cl:1}]
      * ```
+     * 
      * @param buffer an {@link HarfBuzz.buffer_t} buffer.
      * @param start the first item in `buffer` to serialize.
      * @param end the last item in `buffer` to serialize.
@@ -4536,6 +4695,23 @@ export namespace HarfBuzz {
     function direction_to_string(direction: direction_t): string;
 
     /**
+     * Emits a circle approximated by four cubic Bezier curves.  If
+     * `stroke_width` is a finite positive value, the circle is
+     * rendered as an outlined ring of that thickness centered on
+     * the nominal radius; if `stroke_width` is `NaN`, the circle is
+     * rendered as a filled disc.
+     * @param dfuncs draw functions
+     * @param draw_data associated draw data passed by the caller
+     * @param st current draw state
+     * @param cx center X coordinate
+     * @param cy center Y coordinate
+     * @param r radius
+     * @param stroke_width stroke width, or `NaN` for a filled disc
+     * @since 14.2.0
+     */
+    function draw_circle(dfuncs: draw_funcs_t, draw_data: null, st: draw_state_t, cx: number, cy: number, r: number, stroke_width: number): void;
+
+    /**
      * Perform a "close-path" draw operation.
      * @param dfuncs draw functions
      * @param draw_data associated draw data passed by the caller
@@ -4634,6 +4810,31 @@ export namespace HarfBuzz {
     function draw_funcs_set_quadratic_to_func(dfuncs: draw_funcs_t, func: draw_quadratic_to_func_t, destroy: destroy_func_t | null): void;
 
     /**
+     * Emits a tapered line segment as a filled trapezoid.  `w0` and
+     * `w1` are the full stroke widths at the start and end points
+     * respectively; they may differ for a tapered stroke or match
+     * for a uniform one.  Pass `NaN` for `w1` to use `w0` (uniform
+     * stroke) without repeating the value.
+     * 
+     * With #HB_DRAW_LINE_CAP_SQUARE each endpoint is extended along
+     * the line direction by half its local stroke width, so four
+     * `hb_draw_line()` calls form a closed rectangle without gaps
+     * at the corners.
+     * @param dfuncs draw functions
+     * @param draw_data associated draw data passed by the caller
+     * @param st current draw state
+     * @param x0 start X coordinate
+     * @param y0 start Y coordinate
+     * @param w0 stroke width at the start
+     * @param x1 end X coordinate
+     * @param y1 end Y coordinate
+     * @param w1 stroke width at the end
+     * @param cap end-cap shape (butt or square)
+     * @since 14.2.0
+     */
+    function draw_line(dfuncs: draw_funcs_t, draw_data: null, st: draw_state_t, x0: number, y0: number, w0: number, x1: number, y1: number, w1: number, cap: draw_line_cap_t): void;
+
+    /**
      * Perform a "line-to" draw operation.
      * @param dfuncs draw functions
      * @param draw_data associated draw data passed by the caller
@@ -4667,6 +4868,31 @@ export namespace HarfBuzz {
      * @since 4.0.0
      */
     function draw_quadratic_to(dfuncs: draw_funcs_t, draw_data: null, st: draw_state_t, control_x: number, control_y: number, to_x: number, to_y: number): void;
+
+    /**
+     * Emits an axis-aligned rectangle.  If `stroke_width` is a finite
+     * positive value, the rectangle is rendered as an outlined ring
+     * of that thickness centered on the edges; if `stroke_width` is
+     * `NaN`, the rectangle is rendered filled.
+     * 
+     * Note: stroked rectangles produce a bounding box covering the
+     * full outer rectangle, so if the pen is a GPU fragment-shader
+     * backend, the shader runs for every interior pixel even though
+     * only the outline contributes coverage.  For very thin
+     * outlines where the interior is much larger than the stroke,
+     * emitting four `hb_draw_line()` segments (one per edge) is
+     * considerably cheaper per frame.
+     * @param dfuncs draw functions
+     * @param draw_data associated draw data passed by the caller
+     * @param st current draw state
+     * @param x top-left X coordinate
+     * @param y top-left Y coordinate
+     * @param w width (may be negative)
+     * @param h height (may be negative)
+     * @param stroke_width stroke width, or `NaN` for a filled rectangle
+     * @since 14.2.0
+     */
+    function draw_rectangle(dfuncs: draw_funcs_t, draw_data: null, st: draw_state_t, x: number, y: number, w: number, h: number, stroke_width: number): void;
 
     /**
      * Add table for `tag` with data provided by `blob` to the face.  `face` must
@@ -4861,7 +5087,7 @@ export namespace HarfBuzz {
      * @returns Total number of tables, or zero if it is not possible to list
      * @since 1.6.0
      */
-    function face_get_table_tags(face: face_t, start_offset: number): [number, tag_t[]];
+    function face_get_table_tags(face: face_t, start_offset: number): [number, tag_t[] | null];
 
     /**
      * Fetches the units-per-em (UPEM) value of the specified face object.
@@ -5900,11 +6126,12 @@ export namespace HarfBuzz {
     /**
      * Paints a color glyph.
      * 
-     * This function is similar to, but lower-level than,
-     * `hb_font_paint_glyph()`. It is suitable for clients that
-     * need more control.  If there are no color glyphs available,
-     * it will return `false`. The client can then fall back to
-     * `hb_font_draw_glyph_or_fail()` for the monochrome outline glyph.
+     * Succeeds if `glyph` has color paint layers (COLRv0),
+     * a color paint graph (COLRv1), or a bitmap image that the
+     * font's callbacks render successfully.  Returns `false` if
+     * the font has no color data for `glyph`; the client can then
+     * fall back to `hb_font_draw_glyph_or_fail()` for the monochrome
+     * outline.
      * 
      * The painting instructions are returned by way of calls to
      * the callbacks of the `funcs` object, with `paint_data` passed
@@ -5931,6 +6158,25 @@ export namespace HarfBuzz {
      * @since 1.4.3
      */
     function font_set_face(font: font_t, face: face_t): void;
+
+    /**
+     * Replaces the font-functions structure attached to a font, updating
+     * the font's user-data with `font`-data and the `destroy` callback.
+     * @param font {@link HarfBuzz.font_t} to work upon
+     * @param klass The font-functions structure.
+     * @param destroy The function to call when `font_data` is not needed anymore
+     * @since 0.9.2
+     */
+    function font_set_funcs(font: font_t, klass: font_funcs_t, destroy: destroy_func_t | null): void;
+
+    /**
+     * Replaces the user data attached to a font, updating the font's
+     * `destroy` callback.
+     * @param font {@link HarfBuzz.font_t} to work upon
+     * @param destroy The function to call when `font_data` is not needed anymore
+     * @since 0.9.2
+     */
+    function font_set_funcs_data(font: font_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the font-functions structure to use for a font, based on the
@@ -6146,6 +6392,28 @@ export namespace HarfBuzz {
      * font data, and fonts created from the returned {@link HarfBuzz.face_t} will use the native
      * HarfBuzz font implementation, unless you call `hb_ft_font_set_funcs()` on them.
      * 
+     * This variant of the function does not provide any life-cycle management.
+     * 
+     * Most client programs should use `hb_ft_face_create_referenced()`
+     * (or, perhaps, `hb_ft_face_create_cached()`) instead.
+     * 
+     * If you know you have valid reasons not to use `hb_ft_face_create_referenced()`,
+     * then it is the client program's responsibility to destroy `ft_face`
+     * after the {@link HarfBuzz.face_t} face object has been destroyed.
+     * @param ft_face FT_Face to work upon
+     * @param destroy A callback to call when the face object is not needed anymore
+     * @returns the new {@link HarfBuzz.face_t} face object
+     * @since 0.9.2
+     */
+    function ft_face_create(ft_face: freetype2.Face, destroy: destroy_func_t | null): face_t;
+
+    /**
+     * Creates an {@link HarfBuzz.face_t} face object from the specified FT_Face.
+     * 
+     * Note that this is using the FT_Face object just to get at the underlying
+     * font data, and fonts created from the returned {@link HarfBuzz.face_t} will use the native
+     * HarfBuzz font implementation, unless you call `hb_ft_font_set_funcs()` on them.
+     * 
      * This variant of the function caches the newly created {@link HarfBuzz.face_t}
      * face object, using the `generic` pointer of `ft_face`. Subsequent function
      * calls that are passed the same `ft_face` parameter will have the same
@@ -6164,7 +6432,7 @@ export namespace HarfBuzz {
      * Creates an {@link HarfBuzz.face_t} face object from the specified
      * font blob and face index.
      * 
-     * This is similar in functionality to `hb_face_create_from_blob_or_fail()`,
+     * This is similar in functionality to `hb_face_create_or_fail()`,
      * but uses the FreeType library for loading the font blob. This can
      * be useful, for example, to load WOFF and WOFF2 font data.
      * @param blob A blob
@@ -6216,6 +6484,34 @@ export namespace HarfBuzz {
      * @since 1.0.5
      */
     function ft_font_changed(font: font_t): void;
+
+    /**
+     * Creates an {@link HarfBuzz.font_t} font object from the specified FT_Face.
+     * 
+     * <note>Note: You must set the face size on `ft_face` before calling
+     * `hb_ft_font_create()` on it. HarfBuzz assumes size is always set and will
+     * access `size` member of FT_Face unconditionally.</note>
+     * 
+     * This variant of the function does not provide any life-cycle management.
+     * 
+     * Most client programs should use `hb_ft_font_create_referenced()`
+     * instead.
+     * 
+     * If you know you have valid reasons not to use `hb_ft_font_create_referenced()`,
+     * then it is the client program's responsibility to destroy `ft_face`
+     * only after the {@link HarfBuzz.font_t} font object has been destroyed.
+     * 
+     * HarfBuzz will use the `destroy` callback on the {@link HarfBuzz.font_t} font object
+     * if it is supplied when you use this function. However, even if `destroy`
+     * is provided, it is the client program's responsibility to destroy `ft_face`,
+     * and it is the client program's responsibility to ensure that `ft_face` is
+     * destroyed only after the {@link HarfBuzz.font_t} font object has been destroyed.
+     * @param ft_face FT_Face to work upon
+     * @param destroy A callback to call when the font object is not needed anymore
+     * @returns the new {@link HarfBuzz.font_t} font object
+     * @since 0.9.2
+     */
+    function ft_font_create(ft_face: freetype2.Face, destroy: destroy_func_t | null): font_t;
 
     /**
      * Creates an {@link HarfBuzz.font_t} font object from the specified FT_Face.
@@ -6544,6 +6840,23 @@ export namespace HarfBuzz {
     function map_values(map: map_t, values: set_t): void;
 
     /**
+     * Gets the number of SVG documents in the face `SVG` table.
+     * @param face {@link HarfBuzz.face_t} to work upon.
+     * @returns number of SVG documents in the face.
+     * @since 12.1.0
+     */
+    function ot_color_get_svg_document_count(face: face_t): number;
+
+    /**
+     * Gets the glyph range covered by an `SVG`-table document index.
+     * @param face {@link HarfBuzz.face_t} to work upon.
+     * @param svg_document_index SVG document index.
+     * @returns `true` if `svg_document_index` is valid, `false` otherwise.
+     * @since 13.0.0
+     */
+    function ot_color_get_svg_document_glyph_range(face: face_t, svg_document_index: number): [bool_t, codepoint_t | null, codepoint_t | null];
+
+    /**
      * Fetches a list of all color layers for the specified glyph index in the specified
      * face. The list returned will begin at the offset provided.
      * @param face {@link HarfBuzz.face_t} to work upon
@@ -6553,6 +6866,15 @@ export namespace HarfBuzz {
      * @since 2.1.0
      */
     function ot_color_glyph_get_layers(face: face_t, glyph: codepoint_t, start_offset: number): [number, ot_color_layer_t[] | null];
+
+    /**
+     * Gets the `SVG`-table document index associated with a glyph.
+     * @param face {@link HarfBuzz.face_t} to work upon.
+     * @param glyph glyph ID to query.
+     * @returns `true` if `glyph` maps to an SVG document, `false` otherwise.
+     * @since 12.1.0
+     */
+    function ot_color_glyph_get_svg_document_index(face: face_t, glyph: codepoint_t): [bool_t, number];
 
     /**
      * Tests where a face includes COLRv1 paint
@@ -6694,6 +7016,24 @@ export namespace HarfBuzz {
     function ot_color_palette_get_name_id(face: face_t, palette_index: number): ot_name_id_t;
 
     /**
+     * Fetches a bit field of `face`.
+     * @param face {@link HarfBuzz.face_t} to work upon
+     * @param tag tag of the bit field to fetch
+     * @returns the bit field, or zero if the font does not have it.
+     * @since 14.3.0
+     */
+    function ot_fetch_bits(face: face_t, tag: ot_bits_tag_t): number;
+
+    /**
+     * Fetches a number of `face` in font units.
+     * @param face {@link HarfBuzz.face_t} to work upon
+     * @param tag tag of the number to fetch
+     * @returns the number, or zero if the font does not have it.
+     * @since 14.3.0
+     */
+    function ot_fetch_number(face: face_t, tag: ot_number_tag_t): number;
+
+    /**
      * Sets the font functions to use when working with `font` to
      * the HarfBuzz's native implementation. This is the default
      * for fonts newly created.
@@ -6753,7 +7093,7 @@ export namespace HarfBuzz {
      * @returns Number of total sample characters in the cvXX feature.
      * @since 2.0.0
      */
-    function ot_layout_feature_get_characters(face: face_t, table_tag: tag_t, feature_index: number, start_offset: number): [number, codepoint_t[]];
+    function ot_layout_feature_get_characters(face: face_t, table_tag: tag_t, feature_index: number, start_offset: number): [number, codepoint_t[] | null];
 
     /**
      * Fetches a list of all lookups enumerated for the specified feature, in
@@ -6766,7 +7106,7 @@ export namespace HarfBuzz {
      * @returns Total number of lookups.
      * @since 0.9.7
      */
-    function ot_layout_feature_get_lookups(face: face_t, table_tag: tag_t, feature_index: number, start_offset: number): [number, number[]];
+    function ot_layout_feature_get_lookups(face: face_t, table_tag: tag_t, feature_index: number, start_offset: number): [number, number[] | null];
 
     /**
      * Fetches name indices from feature parameters for "Stylistic Set" ('ssXX') or
@@ -6791,7 +7131,7 @@ export namespace HarfBuzz {
      * @returns Total number of lookups.
      * @since 1.4.0
      */
-    function ot_layout_feature_with_variations_get_lookups(face: face_t, table_tag: tag_t, feature_index: number, variations_index: number, start_offset: number): [number, number[]];
+    function ot_layout_feature_with_variations_get_lookups(face: face_t, table_tag: tag_t, feature_index: number, variations_index: number, start_offset: number): [number, number[] | null];
 
     /**
      * Fetches a list of all attachment points for the specified glyph in the GDEF
@@ -6803,10 +7143,10 @@ export namespace HarfBuzz {
      * @param start_offset offset of the first attachment point to retrieve
      * @returns Total number of attachment points for `glyph`.
      */
-    function ot_layout_get_attach_points(face: face_t, glyph: codepoint_t, start_offset: number): [number, number[]];
+    function ot_layout_get_attach_points(face: face_t, glyph: codepoint_t, start_offset: number): [number, number[] | null];
 
     /**
-     * Fetches a baseline value from the face.
+     * Fetches a baseline value from the font.
      * @param font a font
      * @param baseline_tag a baseline tag
      * @param direction text direction.
@@ -6818,7 +7158,7 @@ export namespace HarfBuzz {
     function ot_layout_get_baseline(font: font_t, baseline_tag: ot_layout_baseline_tag_t, direction: direction_t, script_tag: tag_t, language_tag: tag_t): [bool_t, position_t | null];
 
     /**
-     * Fetches a baseline value from the face.
+     * Fetches a baseline value from the font.
      * 
      * This function is like `hb_ot_layout_get_baseline()` but takes
      * {@link HarfBuzz.script_t} and {@link HarfBuzz.language_t} instead of OpenType {@link HarfBuzz.tag_t}.
@@ -6833,7 +7173,7 @@ export namespace HarfBuzz {
     function ot_layout_get_baseline2(font: font_t, baseline_tag: ot_layout_baseline_tag_t, direction: direction_t, script: script_t, language: language_t | null): [bool_t, position_t | null];
 
     /**
-     * Fetches a baseline value from the face, and synthesizes
+     * Fetches a baseline value from the font, and synthesizes
      * it if the font does not have it.
      * @param font a font
      * @param baseline_tag a baseline tag
@@ -6845,7 +7185,7 @@ export namespace HarfBuzz {
     function ot_layout_get_baseline_with_fallback(font: font_t, baseline_tag: ot_layout_baseline_tag_t, direction: direction_t, script_tag: tag_t, language_tag: tag_t): position_t;
 
     /**
-     * Fetches a baseline value from the face, and synthesizes
+     * Fetches a baseline value from the font, and synthesizes
      * it if the font does not have it.
      * 
      * This function is like `hb_ot_layout_get_baseline_with_fallback()` but takes
@@ -6940,7 +7280,7 @@ export namespace HarfBuzz {
      * @param start_offset offset of the first caret position to retrieve
      * @returns Total number of ligature caret positions for `glyph`.
      */
-    function ot_layout_get_ligature_carets(font: font_t, direction: direction_t, glyph: codepoint_t, start_offset: number): [number, position_t[]];
+    function ot_layout_get_ligature_carets(font: font_t, direction: direction_t, glyph: codepoint_t, start_offset: number): [number, position_t[] | null];
 
     /**
      * Fetches optical-size feature data (i.e., the `size` feature from GPOS). Note that
@@ -7004,7 +7344,7 @@ export namespace HarfBuzz {
      * @returns Total number of features.
      * @since 0.6.0
      */
-    function ot_layout_language_get_feature_indexes(face: face_t, table_tag: tag_t, script_index: number, language_index: number, start_offset: number): [number, number[]];
+    function ot_layout_language_get_feature_indexes(face: face_t, table_tag: tag_t, script_index: number, language_index: number, start_offset: number): [number, number[] | null];
 
     /**
      * Fetches a list of all features in the specified face's GSUB table
@@ -7018,7 +7358,7 @@ export namespace HarfBuzz {
      * @returns Total number of feature tags.
      * @since 0.6.0
      */
-    function ot_layout_language_get_feature_tags(face: face_t, table_tag: tag_t, script_index: number, language_index: number, start_offset: number): [number, tag_t[]];
+    function ot_layout_language_get_feature_tags(face: face_t, table_tag: tag_t, script_index: number, language_index: number, start_offset: number): [number, tag_t[] | null];
 
     /**
      * Fetches the tag of a requested feature index in the given face's GSUB or GPOS table,
@@ -7045,6 +7385,34 @@ export namespace HarfBuzz {
     function ot_layout_language_get_required_feature_index(face: face_t, table_tag: tag_t, script_index: number, language_index: number): [bool_t, number];
 
     /**
+     * Collects alternates of glyphs from a given GSUB lookup index.
+     * 
+     * For one-to-one GSUB glyph substitutions, this function collects the
+     * substituted glyph.
+     * 
+     * For lookups that assign multiple alternates to a glyph, all alternate glyphs are collected.
+     * 
+     * For other lookup types, nothing is performed and `false` is returned.
+     * 
+     * The `alternate_count` mapping will contain the number of alternates for each glyph id.
+     * Upon entry, this mapping should contain the glyph ids as keys, and the number of alternates
+     * currently known for each glyph id as values.
+     * 
+     * The `alternate_glyphs` mapping will contain the alternate glyph ids for each glyph id.
+     * The mapping is encoded in the following way, upon entry and after processing:
+     * If G is the glyph id, and A0, A1, ..., A(n-1) are the alternate glyph ids,
+     * the mapping will contain the following entries: (G + (i << 24)) -> A(i)
+     * for i = 0, 1, ..., n-1 where n is the number of alternates for G as per `alternate_count`.
+     * @param face a face.
+     * @param lookup_index index of the feature lookup to query.
+     * @param alternate_count mapping from glyph index to number of alternates for that glyph.
+     * @param alternate_glyphs mapping from encoded glyph index and alternate index, to alternate glyph ids.
+     * @returns `true` if alternates were collected, `false` otherwise.
+     * @since 12.1.0
+     */
+    function ot_layout_lookup_collect_glyph_alternates(face: face_t, lookup_index: number, alternate_count: map_t, alternate_glyphs: map_t): [bool_t, map_t, map_t];
+
+    /**
      * Fetches a list of all glyphs affected by the specified lookup in the
      * specified face's GSUB table or GPOS table.
      * @param face {@link HarfBuzz.face_t} to work upon
@@ -7064,7 +7432,7 @@ export namespace HarfBuzz {
      * @returns Total number of alternates found in the specific lookup index for the given glyph id.
      * @since 2.6.8
      */
-    function ot_layout_lookup_get_glyph_alternates(face: face_t, lookup_index: number, glyph: codepoint_t, start_offset: number): [number, codepoint_t[]];
+    function ot_layout_lookup_get_glyph_alternates(face: face_t, lookup_index: number, glyph: codepoint_t, start_offset: number): [number, codepoint_t[] | null];
 
     /**
      * Fetches the optical bound of a glyph positioned at the margin of text.
@@ -7133,7 +7501,7 @@ export namespace HarfBuzz {
      * @returns Total number of language tags.
      * @since 0.6.0
      */
-    function ot_layout_script_get_language_tags(face: face_t, table_tag: tag_t, script_index: number, start_offset: number): [number, tag_t[]];
+    function ot_layout_script_get_language_tags(face: face_t, table_tag: tag_t, script_index: number, start_offset: number): [number, tag_t[] | null];
 
     /**
      * Fetches the index of the first language tag fom `language_tags` that is present
@@ -7210,7 +7578,7 @@ export namespace HarfBuzz {
      * @returns Total number of feature tags.
      * @since 0.6.0
      */
-    function ot_layout_table_get_feature_tags(face: face_t, table_tag: tag_t, start_offset: number): [number, tag_t[]];
+    function ot_layout_table_get_feature_tags(face: face_t, table_tag: tag_t, start_offset: number): [number, tag_t[] | null];
 
     /**
      * Fetches the total number of lookups enumerated in the specified
@@ -7230,7 +7598,7 @@ export namespace HarfBuzz {
      * @param start_offset offset of the first script tag to retrieve
      * @returns Total number of script tags.
      */
-    function ot_layout_table_get_script_tags(face: face_t, table_tag: tag_t, start_offset: number): [number, tag_t[]];
+    function ot_layout_table_get_script_tags(face: face_t, table_tag: tag_t, start_offset: number): [number, tag_t[] | null];
 
     /**
      * Selects an OpenType script for `table_tag` from the `script_tags` array.
@@ -7280,7 +7648,7 @@ export namespace HarfBuzz {
      * @returns the total number of parts in the glyph assembly
      * @since 1.3.3
      */
-    function ot_math_get_glyph_assembly(font: font_t, glyph: codepoint_t, direction: direction_t, start_offset: number): [number, ot_math_glyph_part_t[], position_t];
+    function ot_math_get_glyph_assembly(font: font_t, glyph: codepoint_t, direction: direction_t, start_offset: number): [number, ot_math_glyph_part_t[] | null, position_t];
 
     /**
      * Fetches an italics-correction value (if one exists) for the specified
@@ -7331,7 +7699,7 @@ export namespace HarfBuzz {
      * @returns the total number of kern values available or zero
      * @since 3.4.0
      */
-    function ot_math_get_glyph_kernings(font: font_t, glyph: codepoint_t, kern: ot_math_kern_t, start_offset: number): [number, ot_math_kern_entry_t[]];
+    function ot_math_get_glyph_kernings(font: font_t, glyph: codepoint_t, kern: ot_math_kern_t, start_offset: number): [number, ot_math_kern_entry_t[] | null];
 
     /**
      * Fetches a top-accent-attachment value (if one exists) for the specified
@@ -7365,7 +7733,7 @@ export namespace HarfBuzz {
      * @returns the total number of size variants available or zero
      * @since 1.3.3
      */
-    function ot_math_get_glyph_variants(font: font_t, glyph: codepoint_t, direction: direction_t, start_offset: number): [number, ot_math_glyph_variant_t[]];
+    function ot_math_get_glyph_variants(font: font_t, glyph: codepoint_t, direction: direction_t, start_offset: number): [number, ot_math_glyph_variant_t[] | null];
 
     /**
      * Fetches the MathVariants table for the specified font and returns the
@@ -7407,7 +7775,7 @@ export namespace HarfBuzz {
      * @returns Number of all available feature types.
      * @since 2.6.0
      */
-    function ot_meta_get_entry_tags(face: face_t, start_offset: number): [number, ot_meta_tag_t[]];
+    function ot_meta_get_entry_tags(face: face_t, start_offset: number): [number, ot_meta_tag_t[] | null];
 
     /**
      * It fetches metadata entry of a given tag from a font.
@@ -7514,6 +7882,14 @@ export namespace HarfBuzz {
      * @since 2.1.0
      */
     function ot_name_list_names(face: face_t): ot_name_entry_t[];
+
+    /**
+     * Returns the serial number of the current internal buffer format.
+     * See #HB_OT_SHAPE_BUFFER_FORMAT_SERIAL for more information.
+     * @returns The current buffer-format serial number.
+     * @since 13.2.0
+     */
+    function ot_shape_get_buffer_format_serial(): number;
 
     /**
      * Computes the transitive closure of glyphs needed for a specified
@@ -7623,7 +7999,7 @@ export namespace HarfBuzz {
      * @since 1.4.2
      * @deprecated since 2.2.0: use `hb_ot_var_get_axis_infos()` instead
      */
-    function ot_var_get_axes(face: face_t, start_offset: number): [number, ot_var_axis_t[]];
+    function ot_var_get_axes(face: face_t, start_offset: number): [number, ot_var_axis_t[] | null];
 
     /**
      * Fetches the number of OpenType variation axes included in the face.
@@ -7641,7 +8017,7 @@ export namespace HarfBuzz {
      * @returns the number of variation axes in the face
      * @since 2.2.0
      */
-    function ot_var_get_axis_infos(face: face_t, start_offset: number): [number, ot_var_axis_info_t[]];
+    function ot_var_get_axis_infos(face: face_t, start_offset: number): [number, ot_var_axis_info_t[] | null];
 
     /**
      * Fetches the number of named instances included in the face.
@@ -7667,7 +8043,7 @@ export namespace HarfBuzz {
      * @returns the number of variation axes in the face
      * @since 2.2.0
      */
-    function ot_var_named_instance_get_design_coords(face: face_t, instance_index: number): [number, number[]];
+    function ot_var_named_instance_get_design_coords(face: face_t, instance_index: number): [number, number[] | null];
 
     /**
      * Fetches the `name` table Name ID that provides display names for
@@ -7740,14 +8116,27 @@ export namespace HarfBuzz {
     function paint_color_glyph(funcs: paint_funcs_t, paint_data: null, glyph: codepoint_t, font: font_t): bool_t;
 
     /**
-     * Gets the custom palette color for `color_index`.
-     * @param funcs paint functions
-     * @param paint_data associated data passed by the caller
-     * @param color_index color index
-     * @returns `true` if found, `false` otherwise
+     * Gets the custom palette override color for `color_index`.
+     * @param funcs paint functions.
+     * @param paint_data associated data passed by the caller.
+     * @param color_index color index to fetch.
+     * @returns `true` if a custom color is provided, `false` otherwise.
      * @since 7.0.0
      */
     function paint_custom_palette_color(funcs: paint_funcs_t, paint_data: null, color_index: number): [bool_t, color_t];
+
+    /**
+     * Perform a "fill-glyph" paint operation: fill the glyph's shape
+     * with a solid color.
+     * @param funcs paint functions
+     * @param paint_data associated data passed by the caller
+     * @param glyph the glyph ID
+     * @param font the font
+     * @param is_foreground whether the color is the foreground
+     * @param color The color to use
+     * @since 14.3.0
+     */
+    function paint_fill_glyph(funcs: paint_funcs_t, paint_data: null, glyph: codepoint_t, font: font_t, is_foreground: bool_t, color: color_t): void;
 
     /**
      * Creates a new {@link HarfBuzz.paint_funcs_t} structure of paint functions.
@@ -7805,13 +8194,22 @@ export namespace HarfBuzz {
     function paint_funcs_set_color_glyph_func(funcs: paint_funcs_t, func: paint_color_glyph_func_t, destroy: destroy_func_t | null): void;
 
     /**
-     * Sets the custom-palette-color callback on the paint functions struct.
-     * @param funcs A paint functions struct
-     * @param func The custom-palette-color callback
-     * @param destroy Function to call when `user_data` is no longer needed
+     * Sets the custom-palette-color callback on `funcs`.
+     * @param funcs a paint functions struct.
+     * @param func custom-palette-color callback.
+     * @param destroy function to call when `user_data` is no longer needed.
      * @since 7.0.0
      */
     function paint_funcs_set_custom_palette_color_func(funcs: paint_funcs_t, func: paint_custom_palette_color_func_t, destroy: destroy_func_t | null): void;
+
+    /**
+     * Sets the fill-glyph callback on the paint functions struct.
+     * @param funcs A paint functions struct
+     * @param func The fill-glyph callback
+     * @param destroy Function to call when `user_data` is no longer needed
+     * @since 14.3.0
+     */
+    function paint_funcs_set_fill_glyph_func(funcs: paint_funcs_t, func: paint_fill_glyph_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the paint-image callback on the paint functions struct.
@@ -7868,6 +8266,24 @@ export namespace HarfBuzz {
     function paint_funcs_set_push_clip_glyph_func(funcs: paint_funcs_t, func: paint_push_clip_glyph_func_t, destroy: destroy_func_t | null): void;
 
     /**
+     * Sets the push-clip-path-end callback on the paint functions struct.
+     * @param funcs A paint functions struct
+     * @param func The push-clip-path-end callback
+     * @param destroy Function to call when `user_data` is no longer needed
+     * @since 14.2.0
+     */
+    function paint_funcs_set_push_clip_path_end_func(funcs: paint_funcs_t, func: paint_push_clip_path_end_func_t, destroy: destroy_func_t | null): void;
+
+    /**
+     * Sets the push-clip-path-start callback on the paint functions struct.
+     * @param funcs A paint functions struct
+     * @param func The push-clip-path-start callback
+     * @param destroy Function to call when `user_data` is no longer needed
+     * @since 14.2.0
+     */
+    function paint_funcs_set_push_clip_path_start_func(funcs: paint_funcs_t, func: paint_push_clip_path_start_func_t, destroy: destroy_func_t | null): void;
+
+    /**
      * Sets the push-clip-rect callback on the paint functions struct.
      * @param funcs A paint functions struct
      * @param func The push-clip-rectangle callback
@@ -7875,6 +8291,15 @@ export namespace HarfBuzz {
      * @since 7.0.0
      */
     function paint_funcs_set_push_clip_rectangle_func(funcs: paint_funcs_t, func: paint_push_clip_rectangle_func_t, destroy: destroy_func_t | null): void;
+
+    /**
+     * Sets the push-group-for callback on the paint functions struct.
+     * @param funcs A paint functions struct
+     * @param func The push-group-for callback
+     * @param destroy Function to call when `user_data` is no longer needed
+     * @since 14.2.0
+     */
+    function paint_funcs_set_push_group_for_func(funcs: paint_funcs_t, func: paint_push_group_for_func_t, destroy: destroy_func_t | null): void;
 
     /**
      * Sets the push-group callback on the paint functions struct.
@@ -7942,6 +8367,18 @@ export namespace HarfBuzz {
     function paint_linear_gradient(funcs: paint_funcs_t, paint_data: null, color_line: color_line_t, x0: number, y0: number, x1: number, y1: number, x2: number, y2: number): void;
 
     /**
+     * Sorts `stops` by offset and rescales offsets into [0, 1] in
+     * place.  Writes the original (min, max) to `min` / `max` so the
+     * caller can shift the gradient geometry (axis endpoints for
+     * linear, centers+radii for radial, start+end angles for sweep)
+     * to keep the rendered gradient visually unchanged after the
+     * rescale.  Empty input is safe: both out-parameters set to 0.
+     * @param stops color stops.
+     * @since 14.2.0
+     */
+    function paint_normalize_color_line(stops: color_stop_t[]): [color_stop_t[], number, number];
+
+    /**
      * Perform a "pop-clip" paint operation.
      * @param funcs paint functions
      * @param paint_data associated data passed by the caller
@@ -7977,6 +8414,50 @@ export namespace HarfBuzz {
     function paint_push_clip_glyph(funcs: paint_funcs_t, paint_data: null, glyph: codepoint_t, font: font_t): void;
 
     /**
+     * Signal that the arbitrary-clip path started by
+     * `hb_paint_push_clip_path_start()` is fully drawn.  The
+     * accumulated path now acts as a clip on the paint context
+     * until a matching `hb_paint_pop_clip()` call.
+     * @param funcs paint functions
+     * @param paint_data associated data passed by the caller
+     * @since 14.2.0
+     */
+    function paint_push_clip_path_end(funcs: paint_funcs_t, paint_data: null): void;
+
+    /**
+     * Begin clipping to an arbitrary path.  Returns an
+     * {@link HarfBuzz.draw_funcs_t} owned by the backend (the caller must not
+     * free it) that the caller uses to emit the clip outline via
+     * hb_draw_*() calls, using the returned `draw_data` as the
+     * draw data.  The returned draw funcs and draw data are only
+     * valid until the matching `hb_paint_push_clip_path_end()` call;
+     * no other paint calls should be made between start and end
+     * except hb_draw_*() on the returned funcs.  Finish the path
+     * with `hb_paint_push_clip_path_end()`; pop the clip later
+     * with `hb_paint_pop_clip()`.
+     * 
+     * Usage:
+     * 
+     * 
+     * ```
+     * hb_draw_funcs_t *df = hb_paint_push_clip_path_start (pf, pd, &dd);
+     * hb_draw_move_to (df, dd, NULL, ...);
+     * hb_draw_line_to (df, dd, NULL, ...);
+     * ...
+     * hb_draw_close_path (df, dd, NULL);
+     * hb_paint_push_clip_path_end (pf, pd);
+     * /&ast; paint ops here are clipped to the emitted path &ast;/
+     * hb_paint_pop_clip (pf, pd);
+     * ```
+     * 
+     * @param funcs paint functions
+     * @param paint_data associated data passed by the caller
+     * @returns draw funcs that accumulate   the clip path, or `NULL` if the backend does not implement   arbitrary-path clipping.
+     * @since 14.2.0
+     */
+    function paint_push_clip_path_start(funcs: paint_funcs_t, paint_data: null): [draw_funcs_t, null];
+
+    /**
      * Perform a "push-clip-rect" paint operation.
      * @param funcs paint functions
      * @param paint_data associated data passed by the caller
@@ -8005,6 +8486,17 @@ export namespace HarfBuzz {
      * @since 7.0.0
      */
     function paint_push_group(funcs: paint_funcs_t, paint_data: null): void;
+
+    /**
+     * Perform a "push-group" paint operation, with the compositing
+     * mode known in advance.  By default, this calls
+     * `hb_paint_push_group()`.
+     * @param funcs paint functions
+     * @param paint_data associated data passed by the caller
+     * @param mode the compositing mode that will be used when the group is popped
+     * @since 14.2.0
+     */
+    function paint_push_group_for(funcs: paint_funcs_t, paint_data: null, mode: paint_composite_mode_t): void;
 
     /**
      * Push the inverse of the transform reflecting the font's
@@ -8046,6 +8538,24 @@ export namespace HarfBuzz {
     function paint_radial_gradient(funcs: paint_funcs_t, paint_data: null, color_line: color_line_t, x0: number, y0: number, r0: number, x1: number, y1: number, r1: number): void;
 
     /**
+     * Reduces a COLRv1 linear gradient's 3-anchor spec (P0=color
+     * stop 0, P1=color stop 1, P2=rotation reference) to the
+     * 2-point axis (P0, P1') used by SVG / cairo / most software
+     * renderers.  P1' is the foot of P1 on the line through P0
+     * perpendicular to (P2 - P0); the resulting axis is the
+     * gradient's actual direction (perpendicular to the rotation
+     * line).  Degenerate (P0 == P2) passes through unchanged.
+     * @param x0 x coordinate of P0 (color stop 0).
+     * @param y0 y coordinate of P0 (color stop 0).
+     * @param x1 x coordinate of P1 (color stop 1).
+     * @param y1 y coordinate of P1 (color stop 1).
+     * @param x2 x coordinate of P2 (rotation reference).
+     * @param y2 y coordinate of P2 (rotation reference).
+     * @since 14.2.0
+     */
+    function paint_reduce_linear_anchors(x0: number, y0: number, x1: number, y1: number, x2: number, y2: number): [number, number, number, number];
+
+    /**
      * Perform a "sweep-gradient" paint operation.
      * @param funcs paint functions
      * @param paint_data associated data passed by the caller
@@ -8057,6 +8567,22 @@ export namespace HarfBuzz {
      * @since 7.0.0
      */
     function paint_sweep_gradient(funcs: paint_funcs_t, paint_data: null, color_line: color_line_t, x0: number, y0: number, start_angle: number, end_angle: number): void;
+
+    /**
+     * Iterates the full 0..2π sweep produced by a color-stop list,
+     * invoking `emit_patch` once per (start, end) angular segment.
+     * Handles #HB_PAINT_EXTEND_PAD, #HB_PAINT_EXTEND_REPEAT, and
+     * #HB_PAINT_EXTEND_REFLECT.  Stops must be pre-sorted by
+     * offset; use `hb_paint_normalize_color_line()` first if they
+     * aren't.
+     * @param stops color stops (sorted, offsets in [0,1]).
+     * @param extend extend mode.
+     * @param start_angle sweep start angle, in radians.
+     * @param end_angle sweep end angle, in radians.
+     * @param emit_patch callback invoked once per tile.
+     * @since 14.2.0
+     */
+    function paint_sweep_gradient_tiles(stops: color_stop_t[], extend: paint_extend_t, start_angle: number, end_angle: number, emit_patch: paint_sweep_gradient_tile_func_t): color_stop_t[];
 
     /**
      * Reallocates the memory pointed to by `ptr` to `size` bytes, using the
@@ -9017,6 +9543,13 @@ export namespace HarfBuzz {
     /**
      * @gir-type Callback
      */
+    interface paint_fill_glyph_func_t {
+        (funcs: paint_funcs_t, paint_data: null, glyph: codepoint_t, font: font_t, is_foreground: bool_t, color: color_t): void;
+    }
+
+    /**
+     * @gir-type Callback
+     */
     interface paint_image_func_t {
         (funcs: paint_funcs_t, paint_data: null, image: blob_t, width: number, height: number, format: tag_t, slant: number, extents: glyph_extents_t | null): bool_t;
     }
@@ -9059,8 +9592,29 @@ export namespace HarfBuzz {
     /**
      * @gir-type Callback
      */
+    interface paint_push_clip_path_end_func_t {
+        (funcs: paint_funcs_t, paint_data: null): void;
+    }
+
+    /**
+     * @gir-type Callback
+     */
+    interface paint_push_clip_path_start_func_t {
+        (funcs: paint_funcs_t, paint_data: null): draw_funcs_t;
+    }
+
+    /**
+     * @gir-type Callback
+     */
     interface paint_push_clip_rectangle_func_t {
         (funcs: paint_funcs_t, paint_data: null, xmin: number, ymin: number, xmax: number, ymax: number): void;
+    }
+
+    /**
+     * @gir-type Callback
+     */
+    interface paint_push_group_for_func_t {
+        (funcs: paint_funcs_t, paint_data: null, mode: paint_composite_mode_t): void;
     }
 
     /**
@@ -9089,6 +9643,13 @@ export namespace HarfBuzz {
      */
     interface paint_sweep_gradient_func_t {
         (funcs: paint_funcs_t, paint_data: null, color_line: color_line_t, x0: number, y0: number, start_angle: number, end_angle: number): void;
+    }
+
+    /**
+     * @gir-type Callback
+     */
+    interface paint_sweep_gradient_tile_func_t {
+        (a0: number, c0: color_t, a1: number, c1: color_t): void;
     }
 
     /**
@@ -9341,7 +9902,12 @@ export namespace HarfBuzz {
         GLYPH_FLAGS,
         /**
          * do not serialize glyph advances,
-         *  glyph offsets will reflect absolute glyph positions. Since: 1.8.0
+         *  glyph offsets will reflect absolute glyph positions. Since: 1.8.0.
+         *  Note: when this flag is used with a partial range of the buffer (i.e.
+         *  `start` is not 0), calculating the absolute positions has a cost
+         *  proportional to `start`. If the buffer is serialized in many small
+         *  chunks, this can lead to quadratic behavior. It is recommended to
+         *  use a larger `buf_size` to minimize this cost.
          */
         NO_ADVANCES,
         /**
@@ -9609,6 +10175,9 @@ export namespace HarfBuzz {
      * 
      * Color lines typically have offsets ranging between 0 and 1,
      * but that is not required.
+     * 
+     * The `is_foreground` and `color` fields have the same semantics
+     * as in {@link HarfBuzz.paint_color_func_t}.
      * 
      * Note: despite `color` being unpremultiplied here, interpolation in
      * gradients shall happen in premultiplied space. See the OpenType spec

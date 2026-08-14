@@ -609,6 +609,14 @@ export namespace GstController {
         get_count(): number;
 
         /**
+         * Returns an array of {@link Gst.TimedValue} representing the control points
+         * that have been set on this control source. To modify the value of a
+         * control point, use `gst_timed_value_control_source_set`.
+         * @returns an array of control points, or `null` if no control points are set.
+         */
+        list_control_points(): Gst.TimedValue[] | null;
+
+        /**
          * Set the value of given controller-handled property at a certain time.
          * @param timestamp the time the control-change is scheduled for
          * @param value the control-value

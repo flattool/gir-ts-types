@@ -199,34 +199,6 @@ export namespace GstVulkan {
 
 
     /**
-     * @gir-type Enum
-     */
-    export namespace VulkanVideoOperation {
-        export const $gtype: GObject.GType<VulkanVideoOperation>;
-    }
-
-    /**
-     * The type of video operation.
-     * @gir-type Enum
-     * @since 1.24
-     */
-    enum VulkanVideoOperation {
-        /**
-         * decode operation
-         */
-        DECODE,
-        /**
-         * encode operation
-         */
-        ENCODE,
-        /**
-         * unknown
-         */
-        UNKNOWN,
-    }
-
-
-    /**
      * @gir-type Struct
      */
     class VulkanWindowError extends GLib.Error {
@@ -3954,34 +3926,9 @@ export namespace GstVulkan {
     type VulkanTrashListClass = typeof VulkanTrashList;
 
     /**
-     * @gir-type Struct
-     * @since 1.24
-     */
-    class VulkanVideoCapabilities {
-        static $gtype: GObject.GType<VulkanVideoCapabilities>;
-    }
-
-
-    /**
      * @gir-type Alias
      */
     type VulkanVideoFilterClass = typeof VulkanVideoFilter;
-
-    /**
-     * @gir-type Struct
-     * @since 1.24
-     */
-    class VulkanVideoProfile {
-        static $gtype: GObject.GType<VulkanVideoProfile>;
-
-        // Methods
-        /**
-         * @param b another {@link GstVulkan.VulkanVideoProfile}
-         * @returns whether `a` and `b` contains the same information.
-         */
-        is_equal(b: VulkanVideoProfile): boolean;
-    }
-
 
     /**
      * @gir-type Alias

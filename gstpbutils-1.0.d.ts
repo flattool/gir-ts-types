@@ -1609,7 +1609,7 @@ export namespace GstPbutils {
          * back to a {@link GstPbutils.DiscovererInfo}.
          * @param variant A {@link GLib.Variant} to deserialize into a {@link GstPbutils.DiscovererInfo}.
          */
-        static from_variant(variant: GLib.Variant): DiscovererInfo;
+        static from_variant(variant: GLib.Variant): DiscovererInfo | null;
 
         // Methods
         /**

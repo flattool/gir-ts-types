@@ -1497,6 +1497,18 @@ export namespace GstVideo {
          * 10-bit grayscale, packed into 16bit words (6 bits left padding)
          */
         GRAY10_LE16,
+        /**
+         * Fully packed variant of NV16_10LE32
+         */
+        NV16_10LE40,
+        /**
+         * packed 4:4:4 RGB (B-G-R-x), 10 bits for R/G/B channel and MSB 2 bits for padding.
+         */
+        BGR10X2_LE,
+        /**
+         * packed 4:4:4 RGB (R-G-B-x), 10 bits for R/G/B channel and MSB 2 bits for padding.
+         */
+        RGB10X2_LE,
     }
 
 
@@ -2723,11 +2735,10 @@ export namespace GstVideo {
      * @param buffer a {@link Gst.Buffer}
      * @param uuid User Data Unregistered UUID
      * @param data SEI User Data Unregistered buffer
-     * @param size size of the data buffer
      * @returns the {@link GstVideo.VideoSEIUserDataUnregisteredMeta} on `buffer`.
      * @since 1.22
      */
-    function buffer_add_video_sei_user_data_unregistered_meta(buffer: Gst.Buffer, uuid: number, data: number | null, size: bigint | number): VideoSEIUserDataUnregisteredMeta;
+    function buffer_add_video_sei_user_data_unregistered_meta(buffer: Gst.Buffer, uuid: Uint8Array | string, data: Uint8Array | string | null): VideoSEIUserDataUnregisteredMeta;
 
     /**
      * Attaches {@link GstVideo.VideoTimeCodeMeta} metadata to `buffer` with the given
@@ -2985,11 +2996,10 @@ export namespace GstVideo {
 
     /**
      * @param event The {@link Gst.Event} to modify.
-     * @param state a bit-mask representing the state of the modifier keys (e.g. Control, Shift and Alt).
      * @returns TRUE if the event is a {@link GstVideo.Navigation} event with associated modifiers state, otherwise FALSE.
      * @since 1.22
      */
-    function navigation_event_parse_modifier_state(event: Gst.Event, state: NavigationModifierType): boolean;
+    function navigation_event_parse_modifier_state(event: Gst.Event): [boolean, NavigationModifierType];
 
     /**
      * Retrieve the details of either a {@link GstVideo.Navigation} mouse button press event or
@@ -3488,11 +3498,10 @@ export namespace GstVideo {
      * If no matching fourcc found, then DRM_FORMAT_INVALID is returned
      * and `modifier` will be set to DRM_FORMAT_MOD_INVALID.
      * @param format a {@link GstVideo.VideoFormat}
-     * @param modifier return location for the modifier
      * @returns the DRM_FORMAT_* corresponding to `format`.
      * @since 1.26
      */
-    function video_dma_drm_format_from_gst_format(format: VideoFormat, modifier: bigint | number | null): number;
+    function video_dma_drm_format_from_gst_format(format: VideoFormat): [number, number];
 
     /**
      * Converting a dma drm fourcc and modifier pair into a {@link GstVideo.VideoFormat}. If
@@ -3930,6 +3939,13 @@ export namespace GstVideo {
     function video_meta_api_get_type(): GObject.GType;
 
     function video_meta_get_info(): Gst.MetaInfo;
+
+    /**
+     * Get the {@link GLib.Quark} for the "gst-video-matrix" metadata transform operation.
+     * @returns a {@link GLib.Quark}
+     * @since 1.28
+     */
+    function video_meta_transform_matrix_get_quark(): GLib.Quark;
 
     /**
      * Get the {@link GLib.Quark} for the "gst-video-scale" metadata transform operation.
@@ -5129,6 +5145,9 @@ export namespace GstVideo {
             "notify::max-last-buffer-repeat": (pspec: GObject.ParamSpec) => void;
             "notify::repeat-after-eos": (pspec: GObject.ParamSpec) => void;
             "notify::zorder": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-buffers": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-bytes": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-time": (pspec: GObject.ParamSpec) => void;
             "notify::emit-signals": (pspec: GObject.ParamSpec) => void;
             "notify::caps": (pspec: GObject.ParamSpec) => void;
             "notify::direction": (pspec: GObject.ParamSpec) => void;
@@ -5212,6 +5231,9 @@ export namespace GstVideo {
             "notify::max-last-buffer-repeat": (pspec: GObject.ParamSpec) => void;
             "notify::repeat-after-eos": (pspec: GObject.ParamSpec) => void;
             "notify::zorder": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-buffers": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-bytes": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-time": (pspec: GObject.ParamSpec) => void;
             "notify::emit-signals": (pspec: GObject.ParamSpec) => void;
             "notify::caps": (pspec: GObject.ParamSpec) => void;
             "notify::direction": (pspec: GObject.ParamSpec) => void;
@@ -5396,6 +5418,9 @@ export namespace GstVideo {
             "notify::max-last-buffer-repeat": (pspec: GObject.ParamSpec) => void;
             "notify::repeat-after-eos": (pspec: GObject.ParamSpec) => void;
             "notify::zorder": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-buffers": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-bytes": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-time": (pspec: GObject.ParamSpec) => void;
             "notify::emit-signals": (pspec: GObject.ParamSpec) => void;
             "notify::caps": (pspec: GObject.ParamSpec) => void;
             "notify::direction": (pspec: GObject.ParamSpec) => void;
@@ -6400,6 +6425,56 @@ export namespace GstVideo {
     }
 
 
+    namespace VideoDmabufPool {
+        // Signal signatures
+        interface SignalSignatures extends VideoBufferPool.SignalSignatures {
+            "notify::name": (pspec: GObject.ParamSpec) => void;
+            "notify::parent": (pspec: GObject.ParamSpec) => void;
+        }
+
+        // Constructor properties interface
+        interface ConstructorProps extends VideoBufferPool.ConstructorProps {}
+    }
+
+    /**
+     * Using `GstUdmabufAllocator`, setting defaults and implementing implicit sync.
+     * @gir-type Class
+     * @since 1.28
+     */
+    class VideoDmabufPool extends VideoBufferPool {
+        static $gtype: GObject.GType<VideoDmabufPool>;
+
+        /**
+         * Compile-time signal type information.
+         *
+         * This instance property is generated only for TypeScript type checking.
+         * It is not defined at runtime and should not be accessed in JS code.
+         * @internal
+         */
+        $signals: VideoDmabufPool.SignalSignatures;
+
+        // Constructors
+        constructor(properties?: Partial<VideoDmabufPool.ConstructorProps>, ...args: any[]);
+
+        _init(...args: any[]): void;
+
+        static ["new"](): VideoDmabufPool;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof VideoDmabufPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoDmabufPool.SignalSignatures[K]>): number;
+        connect(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        connect_after<K extends keyof VideoDmabufPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoDmabufPool.SignalSignatures[K]>): number;
+        connect_after(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        emit<K extends keyof VideoDmabufPool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoDmabufPool.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
+        emit(signal: string, ...args: any[]): void;
+    }
+
+
     namespace VideoEncoder {
         // Signal signatures
         interface SignalSignatures extends Gst.Element.SignalSignatures {
@@ -7371,7 +7446,7 @@ export namespace GstVideo {
 
         data_count: number;
 
-        data: number;
+        data: number[];
 
         checksum: number;
 
@@ -7977,6 +8052,14 @@ export namespace GstVideo {
          * @returns `true` when `config` could be set.
          */
         set_config(config: Gst.Structure): boolean;
+
+        /**
+         * Transform the GstMeta of `src` into `dest` using `convert`.
+         * @param src a {@link Gst.Buffer}
+         * @param dest a writable {@link Gst.Buffer}
+         * @returns TRUE if any meta was copied
+         */
+        transform_metas(src: Gst.Buffer, dest: Gst.Buffer): boolean;
     }
 
 
@@ -8045,6 +8128,11 @@ export namespace GstVideo {
         line(line: null, x: number, y: number, width: number): void;
     }
 
+
+    /**
+     * @gir-type Alias
+     */
+    type VideoDmabufPoolClass = typeof VideoDmabufPool;
 
     /**
      * @gir-type Alias
@@ -8118,7 +8206,7 @@ export namespace GstVideo {
 
         // Methods
         /**
-         * Fill `components` with the number of all the components packed in plane `p`
+         * Fill `components` with the number of all the components packed in `plane`
          * for the format `info`. A value of -1 in `components` indicates that no more
          * components are packed in the plane.
          * @param plane a plane number
@@ -8704,6 +8792,15 @@ export namespace GstVideo {
         set_alignment(alignment: VideoAlignment): boolean;
 
         /**
+         * Set the alignment of `meta` to `alignment`. This function checks that
+         * the paddings defined in `alignment` are compatible with the strides
+         * defined in `meta` and will fail to update if they are not.
+         * @param alignment a {@link GstVideo.VideoAlignment}
+         * @returns `true` if `alignment`'s meta has been updated, `false` if not
+         */
+        set_alignment_full(alignment: VideoAlignment): boolean;
+
+        /**
          * Unmap a previously mapped plane with `gst_video_meta_map()`.
          * @param plane a plane
          * @param info a {@link Gst.MapInfo}
@@ -8716,6 +8813,9 @@ export namespace GstVideo {
     /**
      * Extra data passed to a video transform {@link Gst.MetaTransformFunction} such as:
      * "gst-video-scale".
+     * 
+     * This transformation can not express letterbox, cropping, or rotations,
+     * use {@link GstVideo.VideoMetaTransformMatrix} instead
      * @gir-type Struct
      */
     class VideoMetaTransform {
@@ -8726,6 +8826,105 @@ export namespace GstVideo {
          * Get the {@link GLib.Quark} for the "gst-video-scale" metadata transform operation.
          */
         static scale_get_quark(): GLib.Quark;
+    }
+
+
+    /**
+     * Extra data passed to a video transform {@link Gst.MetaTransformFunction} such as:
+     * "gst-video-matrix".
+     * 
+     * The matrix represents a transformation that is applied to the content of
+     * `in_rectangle`, and its output is put inside `out_rectangle`. The coordinate
+     * system has it's (0, 0) in the top-left corner of the rectangles and
+     * goes down and right from there..
+     * 
+     * It's a programming error to have a singular matrix.
+     * @gir-type Struct
+     * @since 1.28
+     */
+    class VideoMetaTransformMatrix {
+        static $gtype: GObject.GType<VideoMetaTransformMatrix>;
+
+        // Fields
+        in_rectangle: VideoRectangle;
+
+        out_rectangle: VideoRectangle;
+
+        matrix: number[];
+
+        // Static methods
+        /**
+         * Get the {@link GLib.Quark} for the "gst-video-matrix" metadata transform operation.
+         */
+        static get_quark(): GLib.Quark;
+
+        // Methods
+        /**
+         * Based on the rectangles, initializes the matrix to do a translation and
+         * scaling from `in_rectangle` to `out_rectangle`
+         * @param in_info The {@link GstVideo.VideoInfo} of the input image
+         * @param in_rectangle the input {@link GstVideo.VideoRectangle}
+         * @param out_info the output {@link GstVideo.VideoInfo}
+         * @param out_rectangle the output {@link GstVideo.VideoRectangle}
+         */
+        init(in_info: VideoInfo, in_rectangle: VideoRectangle, out_info: VideoInfo, out_rectangle: VideoRectangle): void;
+
+        /**
+         * Transforms the (`x`, `y`) point from the input coordinates to the
+         * output ones.  The point's coordinates are transformed by first
+         * applying the `transform`.matrix to it using the top left (x, y) of
+         * `transform`.in_rectangle as the origin, then translate it to use
+         * the top-left of `transform`.out_rectangle as new origin.
+         * @param x a non-NULL pointer to the X value of the coordinate
+         * @param y a non-NULL pointer to the Y value of the coordinate
+         * @returns `false` if the point is outside of `transform`.out_rectangle after the transformation has been applied
+         */
+        point(x: number, y: number): [boolean, number, number];
+
+        /**
+         * Transforms the (`x`, `y`) point from the input coordinates to the
+         * output ones.  The point's coordinates are transformed by first
+         * applying the `transform`.matrix to it using the top left (x, y) of
+         * `transform`.in_rectangle as the origin, then translate it to use
+         * the top-left of `transform`.out_rectangle as new origin.
+         * @param x a non-NULL pointer to the X value of the coordinate
+         * @param y a non-NULL pointer to the Y value of the coordinate
+         * @returns `false` if the point is outside of `transform`.out_rectangle after the transformation has been applied
+         */
+        point_clipped(x: number, y: number): [boolean, number, number];
+
+        /**
+         * Transforms `rect` from the input coordinates to the
+         * output ones.  The point's coordinates are transformed by first
+         * applying the `transform`.matrix to it using the top left (x, y) of
+         * `transform`.in_rectangle as the origin, then translate it to use
+         * the top-left of `transform`.out_rectangle as new origin.
+         * 
+         * `rect` is always axis aligned at input and this function only returns
+         * axis aligned rectangles as output, otherwise it returns FALSE.
+         * 
+         * Output rectangle could be in partially or totally outside of
+         * `transform`.out_rectangle.
+         * @param rect a rectangle in the coordinate of the original image
+         * @returns `false` is the output rectangle is not axis aligned
+         */
+        rectangle(rect: VideoRectangle): [boolean, VideoRectangle];
+
+        /**
+         * Transforms `rect` from the input coordinates to the
+         * output ones.  The point's coordinates are transformed by first
+         * applying the `transform`.matrix to it using the top left (x, y) of
+         * `transform`.in_rectangle as the origin, then translate it to use
+         * the top-left of `transform`.out_rectangle as new origin.
+         * 
+         * `rect` is always axis aligned at input and this function only returns
+         * axis aligned rectangles as output, otherwise it returns FALSE.
+         * 
+         * Output rectangle will be clipped to fit inside `transform`.out_rectangle.
+         * @param rect a rectangle in the coordinate of the original image
+         * @returns `false` if the output rectangle is not axis aligned or if  the rectangle is entirely outside of the out_rectangle.
+         */
+        rectangle_clipped(rect: VideoRectangle): [boolean, VideoRectangle];
     }
 
 
@@ -8792,6 +8991,11 @@ export namespace GstVideo {
          * rectangles or change the render co-ordinates or render dimension). The
          * actual overlay pixel data buffers contained in the rectangles are not
          * copied.
+         * 
+         * This should be avoided unless rectangles need to be modified because it
+         * invalidates caching in sinks and compositor elements. To add extra rectangles
+         * it is rather recommended to add an extra composition meta using
+         * `gst_buffer_add_video_overlay_composition_meta()`.
          * @returns a new {@link GstVideo.VideoOverlayComposition} equivalent     to `comp`.
          */
         copy(): VideoOverlayComposition;
@@ -8818,6 +9022,11 @@ export namespace GstVideo {
          * new writable copy of `comp` and unref `comp` itself. All the contained
          * rectangles will also be copied, but the actual overlay pixel data buffers
          * contained in the rectangles are not copied.
+         * 
+         * This should be avoided unless rectangles need to be modified because it
+         * invalidates caching in sinks and compositor elements. To add extra rectangles
+         * it is rather recommended to add an extra composition meta using
+         * `gst_buffer_add_video_overlay_composition_meta()`.
          * @returns a writable {@link GstVideo.VideoOverlayComposition}     equivalent to `comp`.
          */
         make_writable(): VideoOverlayComposition;
@@ -9193,9 +9402,9 @@ export namespace GstVideo {
          * Note that for interlaced content, `in_offset` needs to be incremented with
          * 2 to get the next input line.
          * @param out_offset an output offset
-         * @returns an array of `n_tap` gdouble values with filter coefficients.
+         * @returns an array of `n_taps` gdouble values with filter coefficients.
          */
-        get_coeff(out_offset: number): [number, number, number];
+        get_coeff(out_offset: number): [number[], number];
 
         /**
          * Get the maximum number of taps for `scale`.
@@ -9574,9 +9783,11 @@ export namespace GstVideo {
         free(): void;
 
         /**
-         * @param data 
+         * `data` needs to have the correct size and alignment for the configured video
+         * format of `encoder`.
+         * @param data The line to write to
          */
-        write_line(data: number): void;
+        write_line(data: Uint8Array | string): void;
     }
 
 
@@ -9902,9 +10113,8 @@ export namespace GstVideo {
         event_parse_key_event(event: Gst.Event): [boolean, string];
         /**
         * @param event The {@link Gst.Event} to modify.
-        * @param state a bit-mask representing the state of the modifier keys (e.g. Control, Shift and Alt).
         */
-        event_parse_modifier_state(event: Gst.Event, state: NavigationModifierType): boolean;
+        event_parse_modifier_state(event: Gst.Event): [boolean, NavigationModifierType];
         /**
         * Retrieve the details of either a {@link GstVideo.Navigation} mouse button press event or
         * a mouse button release event. Determine which type the event is using

@@ -1505,6 +1505,11 @@ export namespace GstGL {
          * include emulated formats
          */
         INCLUDE_EMULATED,
+        /**
+         * EGL is responsible for the colorspace conversion. In this case, all
+         * supported modifiers get translated to RGBA.
+         */
+        DIRECT_IMPORT,
     }
 
 
@@ -1842,6 +1847,9 @@ export namespace GstGL {
             "notify::max-last-buffer-repeat": (pspec: GObject.ParamSpec) => void;
             "notify::repeat-after-eos": (pspec: GObject.ParamSpec) => void;
             "notify::zorder": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-buffers": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-bytes": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-time": (pspec: GObject.ParamSpec) => void;
             "notify::emit-signals": (pspec: GObject.ParamSpec) => void;
             "notify::caps": (pspec: GObject.ParamSpec) => void;
             "notify::direction": (pspec: GObject.ParamSpec) => void;
@@ -1988,6 +1996,12 @@ export namespace GstGL {
          * @virtual
          */
         vfunc_gl_stop(): void;
+
+        // Methods
+        /**
+         * @returns the configured {@link GstGL.GLContext}.
+         */
+        get_gl_context(): GLContext | null;
     }
 
 
@@ -3325,6 +3339,9 @@ export namespace GstGL {
             "notify::max-last-buffer-repeat": (pspec: GObject.ParamSpec) => void;
             "notify::repeat-after-eos": (pspec: GObject.ParamSpec) => void;
             "notify::zorder": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-buffers": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-bytes": (pspec: GObject.ParamSpec) => void;
+            "notify::current-level-time": (pspec: GObject.ParamSpec) => void;
             "notify::emit-signals": (pspec: GObject.ParamSpec) => void;
             "notify::caps": (pspec: GObject.ParamSpec) => void;
             "notify::direction": (pspec: GObject.ParamSpec) => void;
@@ -4532,6 +4549,11 @@ export namespace GstGL {
          */
         get_display(): number;
 
+        /**
+         * @returns whether an visible output surface has been requested
+         */
+        get_request_output_surface(): boolean;
+
         get_surface_dimensions(): [number, number];
 
         /**
@@ -4645,6 +4667,12 @@ export namespace GstGL {
          * @returns whether the specified region could be set
          */
         set_render_rectangle(x: number, y: number, width: number, height: number): boolean;
+
+        /**
+         * Configure whether a visible output surface is requested.
+         * @param output_surface whether to request an output surface.
+         */
+        set_request_output_surface(output_surface: boolean): void;
 
         /**
          * Sets the resize callback called every time a resize of the window occurs.

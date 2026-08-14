@@ -5,6 +5,7 @@
 /// <reference path="./glib-2.0.d.ts" />
 /// <reference path="./gmodule-2.0.d.ts" />
 /// <reference path="./gstcodecs-1.0.d.ts" />
+/// <reference path="./gstcodecparsers-1.0.d.ts" />
 
 /**
  * Type Definitions for Gjs (https://gjs.guide/)
@@ -25,6 +26,7 @@ import type GObject from 'gi://GObject?version=2.0';
 import type GLib from 'gi://GLib?version=2.0';
 import type GModule from 'gi://GModule?version=2.0';
 import type GstCodecs from 'gi://GstCodecs?version=1.0';
+import type GstCodecParsers from 'gi://GstCodecParsers?version=1.0';
 
 export namespace GstDxva {
 

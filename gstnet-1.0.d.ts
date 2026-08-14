@@ -352,6 +352,14 @@ export namespace GstNet {
         /** @signal */
         emit<K extends keyof NetClientClock.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<NetClientClock.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
         emit(signal: string, ...args: any[]): void;
+
+        // Static methods
+        /**
+         * Clears any cached {@link GstNet.NetClientClock} clocks.
+         * All references should be released beforehand.
+         * Mainly used for testing.
+         */
+        static deinit(): void;
     }
 
 

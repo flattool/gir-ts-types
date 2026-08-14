@@ -39,6 +39,13 @@ export namespace GstAllocators {
     const ALLOCATOR_SHM: string;
 
     /**
+     * Name of this allocator, to be used for example with `gst_allocator_find()` and
+     * `gst_memory_is_type()`.
+     * @since 1.28
+     */
+    const ALLOCATOR_UDMABUF: string;
+
+    /**
      * Constant that defines the caps feature name for DMA buffer sharing.
      * 
      * It has to be used for non-mappable dma-buf only, i.e. when the underlying
@@ -404,6 +411,17 @@ export namespace GstAllocators {
          * @param flags extra {@link GstAllocators.FdMemoryFlags}
          */
         static alloc(allocator: Gst.Allocator, fd: number, size: bigint | number, flags: FdMemoryFlags): Gst.Memory | null;
+
+        /**
+         * Return a %GstMemory that wraps a generic file descriptor.
+         * @param allocator allocator to be used for this memory
+         * @param fd file descriptor
+         * @param maxsize the total size of the memory represented by `fd`
+         * @param offset the offset of valid data in the memory
+         * @param size the size of valid data in the memory
+         * @param flags extra {@link GstAllocators.FdMemoryFlags}
+         */
+        static alloc_full(allocator: Gst.Allocator, fd: number, maxsize: bigint | number, offset: bigint | number, size: bigint | number, flags: FdMemoryFlags): Gst.Memory | null;
     }
 
 
@@ -476,6 +494,68 @@ export namespace GstAllocators {
     }
 
 
+    namespace UdmabufAllocator {
+        // Signal signatures
+        interface SignalSignatures extends DmaBufAllocator.SignalSignatures {
+            "notify::name": (pspec: GObject.ParamSpec) => void;
+            "notify::parent": (pspec: GObject.ParamSpec) => void;
+        }
+
+        // Constructor properties interface
+        interface ConstructorProps extends DmaBufAllocator.ConstructorProps {}
+    }
+
+    /**
+     * This is a subclass of {@link GstAllocators.DmaBufAllocator} that implements the
+     * `gst_allocator_alloc()` method using `memfd_create()` and `UDMABUF_CREATE`.
+     * Platforms not supporting that (most non-Linux) will always return `null`.
+     * @gir-type Class
+     * @since 1.28
+     */
+    class UdmabufAllocator extends DmaBufAllocator {
+        static $gtype: GObject.GType<UdmabufAllocator>;
+
+        /**
+         * Compile-time signal type information.
+         *
+         * This instance property is generated only for TypeScript type checking.
+         * It is not defined at runtime and should not be accessed in JS code.
+         * @internal
+         */
+        $signals: UdmabufAllocator.SignalSignatures;
+
+        // Constructors
+        constructor(properties?: Partial<UdmabufAllocator.ConstructorProps>, ...args: any[]);
+
+        _init(...args: any[]): void;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof UdmabufAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UdmabufAllocator.SignalSignatures[K]>): number;
+        connect(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        connect_after<K extends keyof UdmabufAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UdmabufAllocator.SignalSignatures[K]>): number;
+        connect_after(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        emit<K extends keyof UdmabufAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UdmabufAllocator.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
+        emit(signal: string, ...args: any[]): void;
+
+        // Static methods
+        /**
+         * Get the {@link GstAllocators.UdmabufAllocator} singleton if available.
+         */
+        static get(): Gst.Allocator | null;
+
+        /**
+         * Register a {@link GstAllocators.UdmabufAllocator} using `gst_allocator_register()` with the name
+         * `GST_ALLOCATOR_UDMABUF`. This is no-op after the first call.
+         */
+        static init_once(): void;
+    }
+
+
     /**
      * @gir-type Alias
      */
@@ -500,6 +580,11 @@ export namespace GstAllocators {
      * @gir-type Alias
      */
     type ShmAllocatorClass = typeof ShmAllocator;
+
+    /**
+     * @gir-type Alias
+     */
+    type UdmabufAllocatorClass = typeof UdmabufAllocator;
 
     namespace PhysMemoryAllocator {
         /**

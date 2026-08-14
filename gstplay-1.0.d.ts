@@ -98,6 +98,29 @@ export namespace GstPlay {
     /**
      * @gir-type Enum
      */
+    export namespace PlayLoop {
+        export const $gtype: GObject.GType<PlayLoop>;
+    }
+
+    /**
+     * @gir-type Enum
+     * @since 1.28
+     */
+    enum PlayLoop {
+        /**
+         * Don't loop.
+         */
+        NONE,
+        /**
+         * Loop over the current track.
+         */
+        TRACK,
+    }
+
+
+    /**
+     * @gir-type Enum
+     */
     export namespace PlayMessage {
         export const $gtype: GObject.GType<PlayMessage>;
     }
@@ -242,6 +265,13 @@ export namespace GstPlay {
      * @since 1.20
      */
     function play_error_quark(): GLib.Quark;
+
+    /**
+     * @param loop a {@link GstPlay.PlayLoop}
+     * @returns a string with the name of the loop.
+     * @since 1.28
+     */
+    function play_loop_get_name(loop: PlayLoop): string;
 
     /**
      * @param message_type a {@link GstPlay.PlayMessage}
@@ -689,6 +719,11 @@ export namespace GstPlay {
         /**
          * @param config a {@link GstPlay.Play} configuration
          */
+        static config_get_loop(config: Gst.Structure): PlayLoop;
+
+        /**
+         * @param config a {@link GstPlay.Play} configuration
+         */
         static config_get_pipeline_dump_in_error_details(config: Gst.Structure): boolean;
 
         /**
@@ -707,6 +742,15 @@ export namespace GstPlay {
          * @param config a {@link GstPlay.Play} configuration
          */
         static config_get_user_agent(config: Gst.Structure): string | null;
+
+        /**
+         * Sets the looping mode.
+         * 
+         * Looping is disabled by default.
+         * @param config a {@link GstPlay.Play} configuration
+         * @param loop {@link GstPlay.PlayLoop}
+         */
+        static config_set_loop(config: Gst.Structure, loop: PlayLoop): void;
 
         /**
          * When enabled, the error message emitted by {@link GstPlay.Play} will include a pipeline

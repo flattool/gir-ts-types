@@ -1197,6 +1197,27 @@ export namespace GstTag {
          * @param mode The mode with which tags are added
          */
         set_tag_merge_mode(mode: Gst.TagMergeMode): void;
+
+        /**
+         * Calls `func` from another thread and passes `user_data` to it. This is to be
+         * used for cases when a state change has to be performed from a streaming
+         * thread, directly via `gst_element_set_state()` or indirectly e.g. via SEEK
+         * events.
+         * 
+         * Calling those functions directly from the streaming thread will cause
+         * deadlocks in many situations, as they might involve waiting for the
+         * streaming thread to shut down from this very streaming thread.
+         * 
+         * MT safe.
+         * @param func Function to call asynchronously from another thread
+         */
+        call_async(func: Gst.ElementCallAsyncFunc): void;
+
+        /**
+         * @param args 
+         */
+        // Conflicted with Gst.Object.call_async
+        call_async(...args: never[]): any;
     }
 
 

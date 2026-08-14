@@ -793,7 +793,7 @@ export namespace AppStream {
     }
 
     /**
-     * Checksums supported by {@link AppStream.Release}
+     * The issue type.
      * @gir-type Enum
      */
     enum IssueKind {
@@ -809,6 +809,10 @@ export namespace AppStream {
          * Common Vulnerabilities and Exposures issue
          */
         CVE,
+        /**
+         * Global CVE Allocation System issue. Since: 1.1.4
+         */
+        GCVE,
     }
 
 
@@ -1426,6 +1430,69 @@ export namespace AppStream {
          * Weblink to detailed release notes.
          */
         DETAILS,
+    }
+
+
+    /**
+     * @gir-type Enum
+     */
+    export namespace ReviewVoteKind {
+        export const $gtype: GObject.GType<ReviewVoteKind>;
+    }
+
+    /**
+     * A vote cast on a user review.
+     * @gir-type Enum
+     * @since 1.1.4
+     */
+    enum ReviewVoteKind {
+        /**
+         * Unknown vote action.
+         */
+        UNKNOWN,
+        /**
+         * Vote the review up, it was helpful.
+         */
+        UP,
+        /**
+         * Vote the review down, it was unhelpful.
+         */
+        DOWN,
+        /**
+         * Report the review as abusive.
+         */
+        REPORT,
+    }
+
+
+    /**
+     * A ratings client error.
+     * @gir-type Struct
+     */
+    class ReviewsClientError extends GLib.Error {
+        static $gtype: GObject.GType<GLib.Error>;
+
+        // Static fields
+        /**
+         * Generic failure.
+         */
+        static FAILED: number;
+
+        /**
+         * Could not communicate with the ratings server.
+         */
+        static NETWORK: number;
+
+        /**
+         * Data received from the server could not be parsed.
+         */
+        static PARSE: number;
+
+        // Constructors
+        constructor(options: { message: string; code: number });
+
+        // Static methods
+        static quark(): GLib.Quark;
     }
 
 
@@ -2464,6 +2531,8 @@ export namespace AppStream {
      * @since 0.12.5
      */
     function release_url_kind_to_string(kind: ReleaseUrlKind): string;
+
+    function reviews_client_error_quark(): GLib.Quark;
 
     /**
      * Converts the text representation to an enumerated value.
@@ -5688,6 +5757,14 @@ export namespace AppStream {
         get_id(): string;
 
         /**
+         * Gets a URL to fetch machine-readable JSON data about this issue
+         * from the Global CVE Allocation System (GCVE) database, if this
+         * issue references a CVE or GCVE entry.
+         * @returns the JSON data URL, or `null` if none exists.
+         */
+        get_json_url(): string | null;
+
+        /**
          * Gets the issue type.
          * @returns the {@link AppStream.IssueKind}
          */
@@ -5696,6 +5773,11 @@ export namespace AppStream {
         /**
          * Gets the URL associacted with this issue, usually
          * referencing a bug report or issue description.
+         * 
+         * If no explicit URL was set for a CVE or GCVE issue, a link to the
+         * respective database entry is synthesized: GCVE identifiers are
+         * resolved via the Global CVE Allocation System (GCVE) database,
+         * legacy CVE identifiers via the CVE Program database.
          * @returns the URL.
          */
         get_url(): string;
@@ -6275,6 +6357,8 @@ export namespace AppStream {
 
         /**
          * Find components in the AppStream data pool which provide a certain item.
+         * Provided items of type {@link AppStream.ProvidedKind.MODALIAS} may contain wildcards,
+         * which are matched against the searched item as well.
          * @param kind An `AsProvidesKind`
          * @param item The value of the provided item.
          * @returns an {@link AppStream.ComponentBox} of found components.
@@ -7568,6 +7652,211 @@ export namespace AppStream {
     }
 
 
+    namespace ReviewsClient {
+        // Signal signatures
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
+
+        // Constructor properties interface
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
+    }
+
+    /**
+     * Fetch user reviews for software components.
+     * 
+     * This class is a client for the Open Desktop Ratings Service (ODRS) or
+     * a compatible service, and can retrieve user reviews and ratings for
+     * software components.
+     * 
+     * All operations do blocking network I/O and this class is not thread-safe:
+     * When calling it from worker threads, use one instance per thread or
+     * serialize access to a shared instance with your own locking.
+     * @gir-type Class
+     */
+    class ReviewsClient extends GObject.Object {
+        static $gtype: GObject.GType<ReviewsClient>;
+
+        /**
+         * Compile-time signal type information.
+         *
+         * This instance property is generated only for TypeScript type checking.
+         * It is not defined at runtime and should not be accessed in JS code.
+         * @internal
+         */
+        $signals: ReviewsClient.SignalSignatures;
+
+        // Constructors
+        constructor(properties?: Partial<ReviewsClient.ConstructorProps>, ...args: any[]);
+
+        _init(...args: any[]): void;
+
+        static ["new"](): ReviewsClient;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof ReviewsClient.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ReviewsClient.SignalSignatures[K]>): number;
+        connect(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        connect_after<K extends keyof ReviewsClient.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ReviewsClient.SignalSignatures[K]>): number;
+        connect_after(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        emit<K extends keyof ReviewsClient.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ReviewsClient.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
+        emit(signal: string, ...args: any[]): void;
+
+        // Methods
+        /**
+         * Fetch the overall user rating for the given software component ID
+         * from the reviews server, as a percentage value (where 100% means
+         * a perfect five-star rating).
+         * This call does blocking network I/O.
+         * @param component_id the ID of the software component to fetch the rating for.
+         * @returns the overall rating percentage, or -1 if no rating was available.
+         */
+        fetch_rating_for_id(component_id: string): number;
+
+        /**
+         * Fetch user reviews for the given software component from the reviews server.
+         * The reviews are sorted by their score (most helpful first), so subsequent
+         * pages can be requested by increasing `start` in steps of `limit`.
+         * This call does blocking network I/O.
+         * @param cpt the component to fetch reviews for.
+         * @param start index of the first review to fetch, for pagination.
+         * @param limit maximum amount of reviews to fetch, or 0 for the default limit.
+         * @returns the fetched reviews, or `null` on error.
+         */
+        fetch_reviews(cpt: Component, start: number, limit: number): Review[];
+
+        /**
+         * Fetch user reviews for the given software component ID from the reviews server.
+         * The reviews are sorted by their score (most helpful first), so subsequent
+         * pages can be requested by increasing `start` in steps of `limit`.
+         * This call does blocking network I/O.
+         * @param component_id the ID of the software component to fetch reviews for.
+         * @param version the version of the component, or `null` if unknown.
+         * @param start index of the first review to fetch, for pagination.
+         * @param limit maximum amount of reviews to fetch, or 0 for the default limit.
+         * @returns the fetched reviews, or `null` on error.
+         */
+        fetch_reviews_for_id(component_id: string, version: string | null, start: number, limit: number): Review[];
+
+        /**
+         * Get the ID of the client application which is fetching reviews.
+         * @returns the client-ID.
+         */
+        get_client_id(): string;
+
+        /**
+         * Get the locale used for filtering reviews.
+         * @returns the current locale, in POSIX format.
+         */
+        get_locale(): string;
+
+        /**
+         * Get the URL of the reviews server that we are communicating with.
+         * @returns the reviews server URL.
+         */
+        get_server_url(): string;
+
+        /**
+         * Get the user agent used for communication with the reviews server.
+         * @returns the user agent string.
+         */
+        get_user_agent(): string | null;
+
+        /**
+         * Get the (salted) hash value used to identify the current user
+         * to the reviews service, generating it if necessary.
+         * The hash is used so the user can only vote once on each application,
+         * and so their own reviews can be identified. It can not easily be traced
+         * back to an individual user.
+         * @returns the user hash, or `null` if none could be generated.
+         */
+        get_user_hash(): string;
+
+        /**
+         * Remove a review that the current user has written from the reviews server.
+         * The review must have been received from the server via a previous fetch
+         * operation, and the server will refuse to remove reviews that were not
+         * written by the current user.
+         * This call does blocking network I/O.
+         * @param review the review to remove.
+         * @returns `true` on success.
+         */
+        remove_review(review: Review): boolean;
+
+        /**
+         * Set an ID for the client application which is fetching reviews.
+         * The ID is used when generating the user hash, so the same user
+         * gets a different identity for each client application they are
+         * submitting reviews from.
+         * 
+         * You should set this value early, before any user hash was generated.
+         * Set it to `null` to restore the default client-ID.
+         * @param client_id the new client-ID.
+         */
+        set_client_id(client_id: string | null): void;
+
+        /**
+         * Set the locale used for filtering reviews, so reviews in the
+         * given (or a compatible) language are preferred.
+         * Set it to `null` to restore the default of using the current
+         * system locale.
+         * @param locale the new locale, in POSIX format.
+         */
+        set_locale(locale: string | null): void;
+
+        /**
+         * Set the URL of the ODRS-compatible reviews server to communicate with.
+         * Set it to `null` to restore the default server.
+         * @param url the new reviews server URL.
+         */
+        set_server_url(url: string | null): void;
+
+        /**
+         * Set the user agent to use when communicating with the reviews server.
+         * Set it to `null` to restore the default user agent.
+         * @param user_agent the new user agent string.
+         */
+        set_user_agent(user_agent: string | null): void;
+
+        /**
+         * Explicitly set the opaque hash value used to identify the current
+         * user to the reviews service.
+         * Set it to `null` to have a suitable hash generated automatically,
+         * which is the default behavior.
+         * @param user_hash the new user hash string.
+         */
+        set_user_hash(user_hash: string | null): void;
+
+        /**
+         * Submit a new user review for a software component to the reviews server.
+         * The `review` must have a rating, summary and description set. If it has no
+         * reviewer name set, a suitable one is chosen automatically based on the
+         * name of the current user.
+         * 
+         * On success, the review is updated with its server-assigned ID and is
+         * marked as written by the current user.
+         * This call does blocking network I/O.
+         * @param component_id the ID of the software component the review is for.
+         * @param review the review to submit.
+         * @returns `true` on success.
+         */
+        submit_review(component_id: string, review: Review): boolean;
+
+        /**
+         * Cast a vote on a review that was previously received from the reviews
+         * server, to mark it as helpful or unhelpful, or to report it as abusive.
+         * On success, the review is marked as voted on by the current user.
+         * This call does blocking network I/O.
+         * @param review the review to vote on.
+         * @param vote the kind of vote to cast, e.g. {@link AppStream.ReviewVoteKind.UP}.
+         * @returns `true` on success.
+         */
+        vote_review(review: Review, vote: ReviewVoteKind): boolean;
+    }
+
+
     namespace Screenshot {
         // Signal signatures
         interface SignalSignatures extends GObject.Object.SignalSignatures {}
@@ -7873,6 +8162,9 @@ export namespace AppStream {
 
         /**
          * Get the current display length for the given side kind.
+         * 
+         * If no value was set explicitly and we are in a Wayland session,
+         * the size of the largest connected display is determined automatically.
          * If the display size is unknown, this function will return 0.
          * @param side the {@link AppStream.DisplaySideKind} to select.
          * @returns the display size in logical pixels.
@@ -7967,6 +8259,9 @@ export namespace AppStream {
          * The size needs to be in device-independent pixels, see the
          * AppStream documentation for more information:
          * https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html#tag-relations-display_length
+         * 
+         * Setting a value explicitly will disable any automatic detection
+         * of the display size.
          * @param side the {@link AppStream.DisplaySideKind} to select.
          * @param value_dip the length value in device-independt pixels.
          */
@@ -8682,6 +8977,11 @@ export namespace AppStream {
      * @gir-type Alias
      */
     type ReviewClass = typeof Review;
+
+    /**
+     * @gir-type Alias
+     */
+    type ReviewsClientClass = typeof ReviewsClient;
 
     /**
      * @gir-type Alias

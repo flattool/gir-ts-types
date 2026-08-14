@@ -32,6 +32,26 @@ export namespace GstAnalytics {
 
 
     /**
+     * @gir-type Enum
+     * @since 1.28
+     */
+    enum ModelInfoTensorDirection {
+        /**
+         * Tensor location is unknown
+         */
+        UNKNOWN,
+        /**
+         * Input tensor
+         */
+        INPUT,
+        /**
+         * Output tensor
+         */
+        OUTPUT,
+    }
+
+
+    /**
      * Enum value describing supported segmentation type
      * @gir-type Enum
      * @since 1.26
@@ -112,6 +132,42 @@ export namespace GstAnalytics {
          * "brain" 16 bit floating point tensor data
          */
         BFLOAT16,
+        /**
+         * UTF-8 string
+         */
+        STRING,
+        /**
+         * A boolean value stored in 1 byte.
+         */
+        BOOL,
+        /**
+         * A 64-bit complex number stored in 2 32-bit values.
+         */
+        COMPLEX64,
+        /**
+         * A 128-bit complex number stored in 2 64-bit values.
+         */
+        COMPLEX128,
+        /**
+         * A non-IEEE 8-bit floating point format with 4 exponent bits and 3 mantissa bits, with NaN and no infinite values (FN).
+         * See [this paper for more details](https://onnx.ai/onnx/technical/float8.html)
+         */
+        FLOAT8E4M3FN,
+        /**
+         * A non-IEEE 8-bit floating point format with 4 exponent bits and 3 mantissa bits, with NaN, no infinite values (FN) and no negative zero (UZ).
+         * See [this paper for more details](https://onnx.ai/onnx/technical/float8.html)
+         */
+        FLOAT8E4M3FNUZ,
+        /**
+         * A non-IEEE 8-bit floating point format with 5 exponent bits and 2 mantissa bits.
+         * See [this paper for more details](https://onnx.ai/onnx/technical/float8.html)
+         */
+        FLOAT8E5M2,
+        /**
+         * A non-IEEE 8-bit floating point format with 5 exponent bits and 2 mantissa bits, with NaN, no infinite values (FN) and no negative zero (UZ).
+         * See [this paper for more details](https://onnx.ai/onnx/technical/float8.html)
+         */
+        FLOAT8E5M2FNUZ,
     }
 
 
@@ -146,6 +202,12 @@ export namespace GstAnalytics {
 
 
     /**
+     * The caps feature to be used on streams that make use of this meta.
+     * @since 1.28
+     */
+    const CAPS_FEATURE_META_GST_ANALYTICS_BATCH_META: string;
+
+    /**
      * Passes to functions asking for a relation span when the span is
      * infinite.
      * @since 1.24
@@ -153,10 +215,43 @@ export namespace GstAnalytics {
     const INF_RELATION_SPAN: number;
 
     /**
+     * The name of the modelinfo header section
+     * @since 1.28
+     */
+    const MODELINFO_SECTION_NAME: string;
+
+    /**
+     * The current major version of the modelinfo format
+     * @since 1.28
+     */
+    const MODELINFO_VERSION_MAJOR: number;
+
+    /**
+     * The current minor version of the modelinfo format
+     * @since 1.28
+     */
+    const MODELINFO_VERSION_MINOR: number;
+
+    /**
+     * The current version string for the modelinfo format.
+     * This MUST be updated whenever the format changes.
+     * @since 1.28
+     */
+    const MODELINFO_VERSION_STR: string;
+
+    /**
      * A wildcard matching any type of analysis
      * @since 1.24
      */
     const MTD_TYPE_ANY: number;
+
+    /**
+     * Adds a {@link GstAnalytics.BatchMeta} to a buffer or returns the existing one
+     * @param buffer A writable {@link Gst.Buffer}
+     * @returns The new {@link GstAnalytics.BatchMeta}
+     * @since 1.28
+     */
+    function buffer_add_analytics_batch_meta(buffer: Gst.Buffer): BatchMeta;
 
     /**
      * Attach a analysis-results-meta-relation  meta ({@link GstAnalytics.RelationMeta})to `buffer`.
@@ -191,6 +286,14 @@ export namespace GstAnalytics {
     function buffer_add_tensor_meta(buffer: Gst.Buffer): TensorMeta;
 
     /**
+     * Gets the {@link GstAnalytics.BatchMeta} from a buffer
+     * @param buffer A {@link Gst.Buffer}
+     * @returns The {@link GstAnalytics.BatchMeta} if there is one
+     * @since 1.28
+     */
+    function buffer_get_analytics_batch_meta(buffer: Gst.Buffer): BatchMeta | null;
+
+    /**
      * Retrives the meta or `null` if it doesn't exist
      * @param buffer a {@link Gst.Buffer}
      * @returns The {@link GstAnalytics.RelationMeta} if there is one
@@ -212,6 +315,58 @@ export namespace GstAnalytics {
      * @since 1.24
      */
     function cls_mtd_get_mtd_type(): MtdType;
+
+    /**
+     * Calculate the intersection over the union (IoU) of the two areas defined by
+     * the bounding box 1 and bounding box 2. IoU is a measure of how much two
+     * regions overlap.
+     * @param bb1_x Bounding box 1, X coordinate
+     * @param bb1_y Bounding box 1, Y coordinate
+     * @param bb1_w Bounding box 1, width
+     * @param bb1_h Bounding box 1, height
+     * @param bb2_x Bounding box 2, X coordinate
+     * @param bb2_y Bounding box 2, Y coordinate
+     * @param bb2_w Bounding box 2, width
+     * @param bb2_h Bounding box 2, height
+     * @returns IoU of bb1 and bb2.
+     * @since 1.28
+     */
+    function image_util_iou_float(bb1_x: number, bb1_y: number, bb1_w: number, bb1_h: number, bb2_x: number, bb2_y: number, bb2_w: number, bb2_h: number): number;
+
+    /**
+     * Calculate the intersection over the union (IoU) of the two areas defined by
+     * the bounding box 1 and bounding box 2. IoU is a measure of how much two
+     * regions overlap.
+     * @param bb1_x Bounding box 1, X coordinate
+     * @param bb1_y Bounding box 1, Y coordinate
+     * @param bb1_w Bounding box 1, width
+     * @param bb1_h Bounding box 1, height
+     * @param bb2_x Bounding box 2, X coordinate
+     * @param bb2_y Bounding box 2, Y coordinate
+     * @param bb2_w Bounding box 2, width
+     * @param bb2_h Bounding box 2, height
+     * @returns IoU of bb1 and bb2.
+     * @since 1.28
+     */
+    function image_util_iou_int(bb1_x: number, bb1_y: number, bb1_w: number, bb1_h: number, bb2_x: number, bb2_y: number, bb2_w: number, bb2_h: number): number;
+
+    /**
+     * Load a modelinfo file associated with the given model file.
+     * 
+     * This function attempts to load a `.modelinfo` file in the following order:
+     * 1. `{model_filename}.modelinfo`
+     * 2. `{model_filename_without_extension}.modelinfo`
+     * 
+     * The modelinfo file contains metadata for the model's input and output tensors,
+     * including normalization ranges, dimension ordering, tensor IDs, etc.
+     * 
+     * The loaded modelinfo must be freed with `gst_analytics_modelinfo_free()`
+     * when no longer needed.
+     * @param model_filename Path to the model file (e.g., "model.onnx", "model.tflite")
+     * @returns A new {@link GstAnalytics.ModelInfo} instance,    or `null` if the modelinfo file could not be found or loaded.
+     * @since 1.28
+     */
+    function modelinfo_load(model_filename: string): ModelInfo | null;
 
     /**
      * Gets the string version of the name of this type of analytics data
@@ -251,6 +406,21 @@ export namespace GstAnalytics {
     function segmentation_mtd_get_mtd_type(): MtdType;
 
     /**
+     * Get a string version of the data type
+     * @param data_type a {@link GstAnalytics.TensorDataType}
+     * @returns a constant string with the name of the data type
+     * @since 1.28
+     */
+    function tensor_data_type_get_name(data_type: TensorDataType): string;
+
+    /**
+     * Get an id that represent tensor metadata type
+     * @returns Opaque id of the {@link GstAnalytics.Mtd} type
+     * @since 1.28
+     */
+    function tensor_mtd_get_mtd_type(): MtdType;
+
+    /**
      * @returns id representing the type of GstAnalyticsRelatableMtd Get the opaque id identifying the relatable type
      * @since 1.24
      */
@@ -286,6 +456,79 @@ export namespace GstAnalytics {
          * Only use for criteria.
          */
         ANY,
+    }
+
+
+    /**
+     * This meta represents a batch of buffers from one or more streams together
+     * with the relevant events to be able to interpret the buffers and to be able
+     * to reconstruct the original streams.
+     * 
+     * When used for multiple streams and batching them temporarily, caps of type
+     * `multistream/x-analytics-batch(meta:GstAnalyticsBatchMeta)` should be used,
+     * with the original caps of each stream in an array-typed `streams` field. The
+     * original caps of each stream might be extended by additional fields and the
+     * order of the streams in the array corresponds to the order of the `streams`
+     * array of the meta. In this case, empty buffers would be used without any
+     * {@link Gst.Memory} and
+     * 
+     * When used for a single stream, the original caps might be used together with
+     * the `meta:GstAnalyticsBatchMeta` caps feature and potentially extended by
+     * additional fields to describe the kind of batching and its configuration,
+     * e.g. that each batch is made of 25% overlapping 320x320 slices of the
+     * original video frame.
+     * 
+     * The timestamp, duration and other metadata of each batch can be retrieved
+     * from the parent buffer of this meta.
+     * @gir-type Struct
+     * @since 1.28
+     */
+    class BatchMeta {
+        static $gtype: GObject.GType<BatchMeta>;
+
+        // Fields
+        streams: BatchStream[];
+
+        n_streams: number;
+    }
+
+
+    /**
+     * @gir-type Struct
+     * @since 1.28
+     */
+    class BatchStream {
+        static $gtype: GObject.GType<BatchStream>;
+
+        // Fields
+        index: number;
+
+        sticky_events: Gst.Event[];
+
+        n_sticky_events: number;
+
+        objects: Gst.MiniObject[];
+
+        n_objects: number;
+
+        // Methods
+        /**
+         * Gets the {@link Gst.Caps} from a stream
+         * @returns The {@link Gst.Caps} if there are any
+         */
+        get_caps(): Gst.Caps | null;
+
+        /**
+         * Gets the {@link Gst.Segment} from a stream
+         * @returns The {@link Gst.Segment} if there is one
+         */
+        get_segment(): Gst.Segment | null;
+
+        /**
+         * Gets the current stream id from a stream
+         * @returns The stream id if there is any
+         */
+        get_stream_id(): string | null;
     }
 
 
@@ -331,6 +574,168 @@ export namespace GstAnalytics {
          * @returns Quark of this class (label) associated with `index`
          */
         get_quark(index: bigint | number): GLib.Quark;
+    }
+
+
+    /**
+     * The {@link GstAnalytics.ModelInfo} is an object storing artifical neural network
+     * model metadata describing the input and output tensors. These information's
+     * are required by inference elements.
+     * @gir-type Struct
+     * @since 1.28
+     */
+    abstract class ModelInfo {
+        static $gtype: GObject.GType<ModelInfo>;
+
+        // Static methods
+        /**
+         * Load a modelinfo file associated with the given model file.
+         * 
+         * This function attempts to load a `.modelinfo` file in the following order:
+         * 1. `{model_filename}.modelinfo`
+         * 2. `{model_filename_without_extension}.modelinfo`
+         * 
+         * The modelinfo file contains metadata for the model's input and output tensors,
+         * including normalization ranges, dimension ordering, tensor IDs, etc.
+         * 
+         * The loaded modelinfo must be freed with `gst_analytics_modelinfo_free()`
+         * when no longer needed.
+         * @param model_filename Path to the model file (e.g., "model.onnx", "model.tflite")
+         */
+        static load(model_filename: string): ModelInfo | null;
+
+        // Methods
+        /**
+         * Find the name of a tensor in the modelinfo that matches the given criteria.
+         * 
+         * The function performs the following checks in order:
+         * 1. If `in_tensor_name` is provided and exists in modelinfo, validate it matches
+         * 2. Search by index for the specified direction and validate
+         * 3. Search by dimensions and data type
+         * @param dir The tensor direction (input or output)
+         * @param index The tensor index within the specified direction
+         * @param in_tensor_name An optional tensor name hint to check first
+         * @param data_type The tensor data type to match
+         * @param dims The dimension sizes. Use -1 for dynamic dimensions.
+         * @returns The tensor name if found, or `null` otherwise.    The caller must free this with `g_free()` when done.
+         */
+        find_tensor_name(dir: ModelInfoTensorDirection, index: bigint | number, in_tensor_name: string | null, data_type: TensorDataType, dims: (bigint | number)[]): string | null;
+
+        /**
+         * Free a modelinfo object allocated by `gst_analytics_modelinfo_load()`.
+         * 
+         * This function should be called when the modelinfo is no longer needed
+         * to release the associated resources.
+         */
+        free(): void;
+
+        /**
+         * Retrieve the dimension ordering for a given tensor.
+         * 
+         * The dimension ordering specifies how multi-dimensional tensor data is
+         * laid out in memory:
+         * - Row-major (C/NumPy style): Last dimension changes fastest in memory
+         * - Column-major (Fortran style): First dimension changes fastest in memory
+         * 
+         * If not specified in the modelinfo, defaults to row-major.
+         * @param tensor_name The name of the tensor
+         * @returns The dimension order as {@link GstAnalytics.TensorDimOrder}
+         */
+        get_dims_order(tensor_name: string): TensorDimOrder;
+
+        /**
+         * Get the group ID that groups related tensors together (e.g., all outputs
+         * from the same model).
+         * 
+         * The group ID is stored in the modelinfo section and is global for all
+         * tensors in the model.
+         * @returns The group ID string, or `null` if not found.    The caller must free this with `g_free()` when done.
+         */
+        get_group_id(): string | null;
+
+        /**
+         * Get the tensor ID from the modelinfo for the specified tensor name.
+         * 
+         * The tensor ID is ideally registered in the [Tensor ID Registry](https://github.com/collabora/tensor-id-registry/blob/main/tensor-id-register.md).
+         * @param tensor_name The name of the tensor
+         * @returns The tensor ID string, or `null` if not found.    The caller must free this with `g_free()` when done.
+         */
+        get_id(tensor_name: string): string | null;
+
+        /**
+         * Calculate normalization scales and offsets to transform input data to the target range.
+         * 
+         * This function calculates transformation parameters to convert from the actual input data range
+         * [input_min, input_max] to the target range expected by the model [target_min, target_max]:
+         *   `normalized_value[i] = input[i] * output_scale[i] + output_offset[i]`
+         * 
+         * The target ranges are read from the modelinfo `ranges` field: Semicolon-separated list of
+         * comma-separated pairs (min,max) for per-channel target ranges
+         * (e.g., "0.0,255.0;-1.0,1.0;0.0,1.0" for RGB channels with different target ranges).
+         * 
+         * Common input ranges:
+         * - [0.0, 255.0]: 8-bit unsigned (uint8)
+         * - [-128.0, 127.0]: 8-bit signed (int8)
+         * - [0.0, 65535.0]: 16-bit unsigned (uint16)
+         * - [-32768.0, 32767.0]: 16-bit signed (int16)
+         * - [0.0, 1.0]: Normalized float
+         * - [-1.0, 1.0]: Normalized signed float
+         * 
+         * The number of input ranges (`num_input_ranges`) must equal the number of target ranges
+         * in the modelinfo. The function will return FALSE if they don't match.
+         * 
+         * The caller must free `output_scales` and `output_offsets` with `g_free()` when done.
+         * @param tensor_name The name of the tensor
+         * @param input_mins The minimum values of the actual input data for each channel
+         * @param input_maxs The maximum values of the actual input data for each channel
+         * @returns `true` on success, `false` on error, if ranges field is not found, or if `num_input_ranges`          doesn't match the number of target ranges in the modelinfo
+         */
+        get_input_scales_offsets(tensor_name: string, input_mins: number[], input_maxs: number[]): [boolean, number[], number[]];
+
+        /**
+         * Get the group ID as a GQuark for efficient string comparison and storage.
+         * 
+         * Using GQuark is more efficient than string comparison when you need to
+         * compare multiple group IDs.
+         * @returns The GQuark of the group ID, or 0 if not found
+         */
+        get_quark_group_id(): GLib.Quark;
+
+        /**
+         * Get the tensor ID as a GQuark for efficient string comparison and storage.
+         * 
+         * Using GQuark is more efficient than string comparison when you need to
+         * compare multiple IDs.
+         * @param tensor_name The name of the tensor
+         * @returns The GQuark of the tensor ID, or 0 if not found
+         */
+        get_quark_id(tensor_name: string): GLib.Quark;
+
+        /**
+         * Retrieve all target ranges (min/max pairs) expected by the model for a given tensor.
+         * 
+         * This function retrieves all target ranges from the `ranges` field in the modelinfo.
+         * Each range represents the expected input range for a channel or dimension that the
+         * model requires.
+         * 
+         * The function reads from the `ranges` field: Semicolon-separated list of
+         * comma-separated pairs (min,max) for per-channel target ranges
+         * (e.g., "0.0,1.0;-1.0,1.0;0.0,1.0" for RGB channels with different normalization targets).
+         * 
+         * The caller must free `mins` and `maxs` with `g_free()` when done.
+         * @param tensor_name The name of the tensor
+         * @returns `true` if range information was found and valid, `false` otherwise
+         */
+        get_target_ranges(tensor_name: string): [boolean, number[], number[]];
+
+        /**
+         * Retrieve the version string of the modelinfo file format.
+         * 
+         * The version is in the format "Major.Minor" and is stored in the
+         * [modelinfo] section of the modelinfo file.
+         * @returns The version string (e.g., "1.0").    The caller must free this with `g_free()` when done.    Defaults to "1.0" if not specified.
+         */
+        get_version(): string;
     }
 
 
@@ -508,6 +913,25 @@ export namespace GstAnalytics {
         add_segmentation_mtd(buffer: Gst.Buffer, segmentation_type: SegmentationType, region_ids: number[], masks_loc_x: number, masks_loc_y: number, masks_loc_w: number, masks_loc_h: number): [boolean, SegmentationMtd];
 
         /**
+         * Add a new {@link GstAnalytics.TensorMtd} holding a {@link GstAnalytics.Tensor} to `instance`. The
+         * {@link GstAnalytics.Tensor} needs to be filled.
+         * @param num_dims The number of dimensions in the tensor
+         * @returns Added successfully
+         */
+        add_tensor_mtd(num_dims: bigint | number): [boolean, TensorMtd | null];
+
+        /**
+         * Add a new {@link GstAnalytics.TensorMtd} holding a {@link GstAnalytics.Tensor} to `instance`.
+         * @param id semantically identify the contents of the tensor
+         * @param data_type {@link GstAnalytics.TensorDataType} of tensor data
+         * @param data {@link Gst.Buffer} holding tensor data
+         * @param dims_order Indicate tensor dimension indexing order
+         * @param dims size of tensor in each dimension.     A value of 0 means the dimension is dynamic.
+         * @returns Added successfully
+         */
+        add_tensor_mtd_simple(id: GLib.Quark, data_type: TensorDataType, data: Gst.Buffer, dims_order: TensorDimOrder, dims: (bigint | number)[]): [boolean, TensorMtd | null];
+
+        /**
          * @param tracking_id Tracking id
          * @param tracking_first_seen Timestamp of first time the object was observed.
          * @returns Added successfully
@@ -578,6 +1002,14 @@ export namespace GstAnalytics {
          * @returns TRUE if successful.
          */
         get_segmentation_mtd(an_meta_id: number): [boolean, SegmentationMtd];
+
+        /**
+         * Fill `rlt` if a analytics-meta with id == `an_meta_id` exist in `meta` instance,
+         * otherwise this method return FALSE and `rlt` is invalid.
+         * @param an_meta_id Id of {@link GstAnalytics.TensorMtd} instance to retrieve
+         * @returns TRUE if successful.
+         */
+        get_tensor_mtd(an_meta_id: number): [boolean, TensorMtd];
 
         /**
          * Fill `rlt` if a analytics-meta with id == `an_meta_id` exist in `meta` instance,
@@ -827,7 +1259,24 @@ export namespace GstAnalytics {
 
         static new_simple(id: GLib.Quark, data_type: TensorDataType, data: Gst.Buffer, dims_order: TensorDimOrder, dims: (bigint | number)[]): Tensor;
 
+        // Static methods
+        /**
+         * Get a string version of the data type
+         * @param data_type a {@link GstAnalytics.TensorDataType}
+         */
+        static data_type_get_name(data_type: TensorDataType): string;
+
         // Methods
+        /**
+         * Validate the tensor whether it mathces the reading order, dimensions and the data type.
+         * Validate whether the {@link Gst.Buffer} has enough size to hold the tensor data.
+         * @param data_type The data type of the tensor
+         * @param order The order of the tensor to read from the memory
+         * @param dims An optional array of dimensions, where G_MAXSIZE means ANY.
+         * @returns TRUE if the {@link GstAnalytics.Tensor} has the reading order from the memory matching `order`, dimensions matching `num_dims`, data type matching `data_type` Otherwise FALSE will be returned.
+         */
+        check_type(data_type: TensorDataType, order: TensorDimOrder, dims: (bigint | number)[] | null): boolean;
+
         /**
          * Create a copy of `tensor`.
          * @returns a new {@link GstAnalytics.Tensor}
@@ -844,6 +1293,21 @@ export namespace GstAnalytics {
          * @returns The dims array form the tensor
          */
         get_dims(): number[];
+
+        /**
+         * Sets the content of a {@link GstAnalytics.Tensor} of `dims_order` ROW_MAJOR or COLUMN_MAJOR and
+         * with an interleaved layout. The {@link GstAnalytics.Tensor} must have exactly num_dims.
+         * 
+         * For example, a two-dimensional tensor with 32 rows and 4 columns, `dims` would
+         * be the two element array `[32, 4]`.
+         * @param id semantically identify the contents of the tensor
+         * @param data_type {@link GstAnalytics.TensorDataType} of tensor data
+         * @param data {@link Gst.Buffer} holding tensor data
+         * @param dims_order Indicate tensor dimension indexing order
+         * @param dims size of tensor in each dimension.     A value of 0 means the dimension is dynamic.
+         * @returns TRUE if it coudl be set correctly
+         */
+        set_simple(id: GLib.Quark, data_type: TensorDataType, data: Gst.Buffer, dims_order: TensorDimOrder, dims: (bigint | number)[]): boolean;
     }
 
 
@@ -867,6 +1331,13 @@ export namespace GstAnalytics {
         get(index: bigint | number): Tensor;
 
         /**
+         * Get the first tensor from the {@link GstAnalytics.TensorMeta} identified by `id`.
+         * @param id A {@link GLib.Quark} identifying tensor-encoding
+         * @returns a GstTensor with id matching `id`. Otherwise NULL will be returned.
+         */
+        get_by_id(id: GLib.Quark): Tensor | null;
+
+        /**
          * Finds the first tensor with the requsted ID in the meta
          * @param id The tensor id to look for
          * @returns The index of the tensor inthe meta, or -1 if  its not found.
@@ -874,10 +1345,60 @@ export namespace GstAnalytics {
         get_index_from_id(id: GLib.Quark): number;
 
         /**
+         * Get the first tensor from the {@link GstAnalytics.TensorMeta} identified by
+         * `tensor_id`, matching the reading order, dimensions and the data
+         * type and optionally the dimensions.  Validate whether the
+         * {@link Gst.Buffer} has enough size to hold the tensor data.
+         * @param tensor_id A {@link GLib.Quark} identifying the tensor-encoding
+         * @param data_type The data type of the tensor
+         * @param order The order of the tensor to read from the memory
+         * @param dims An optional array of dimensions, where G_MAXSIZE means ANY.
+         * @returns a matching {@link GstAnalytics.Tensor}, otherwise NULL
+         */
+        get_typed_tensor(tensor_id: GLib.Quark, data_type: TensorDataType, order: TensorDimOrder, dims: (bigint | number)[] | null): Tensor | null;
+
+        /**
          * Sets tensors into the {@link GstAnalytics.TensorMeta}
          * @param tensors An array of poiners to {@link GstAnalytics.Tensor}
          */
         set(tensors: Tensor[]): void;
+    }
+
+
+    /**
+     * This type of metadata holds a tensor. It can be used to store tensor as
+     * analytics-meta for their ability to relate to each others. For example
+     * in a multi-model analytics pipeline, we sometime have one model input match
+     * the output of the other model. In this context it can be useful to keep the
+     * ancestry relation between first tensor, output of first inference, and the
+     * second tensor, output from second inference. Another use-case for
+     * {@link GstAnalytics.TensorMtd} is to transport tensors from inference element to a
+     * post-processing element using a computing graph framework, like ONNX.
+     * Essentially {@link GstAnalytics.TensorMtd} is a GstBuffer encapsulated by a
+     * analytics-meta with additional parameters describing the tensor.
+     * 
+     * Since 1.28
+     * @gir-type Struct
+     * @since 1.28
+     */
+    class TensorMtd {
+        static $gtype: GObject.GType<TensorMtd>;
+
+        // Fields
+        id: number;
+
+        // Static methods
+        /**
+         * Get an id that represent tensor metadata type
+         */
+        static get_mtd_type(): MtdType;
+
+        // Methods
+        /**
+         * Get tensor
+         * @returns a {@link GstAnalytics.Tensor}
+         */
+        get_tensor(): Tensor;
     }
 
 

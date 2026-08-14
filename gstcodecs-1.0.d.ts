@@ -4,6 +4,7 @@
 /// <reference path="./gobject-2.0.d.ts" />
 /// <reference path="./glib-2.0.d.ts" />
 /// <reference path="./gmodule-2.0.d.ts" />
+/// <reference path="./gstcodecparsers-1.0.d.ts" />
 
 /**
  * Type Definitions for Gjs (https://gjs.guide/)
@@ -23,6 +24,7 @@ import type Gst from 'gi://Gst?version=1.0';
 import type GObject from 'gi://GObject?version=2.0';
 import type GLib from 'gi://GLib?version=2.0';
 import type GModule from 'gi://GModule?version=2.0';
+import type GstCodecParsers from 'gi://GstCodecParsers?version=1.0';
 
 export namespace GstCodecs {
 
@@ -505,6 +507,14 @@ export namespace GstCodecs {
         vfunc_new_picture(frame: GstVideo.VideoCodecFrame, picture: AV1Picture): Gst.FlowReturn;
 
         /**
+         * Notifies subclass of SPS update
+         * @param seq_hdr a {@link GstCodecParsers.AV1SequenceHeaderOBU}
+         * @param max_dpb_size the size of dpb including preferred output delay   by subclass reported via get_preferred_output_delay method.
+         * @virtual
+         */
+        vfunc_new_sequence(seq_hdr: GstCodecParsers.AV1SequenceHeaderOBU, max_dpb_size: number): Gst.FlowReturn;
+
+        /**
          * Called with a {@link GstCodecs.AV1Picture} which is required to be outputted.
          * The {@link GstVideo.VideoCodecFrame} must be consumed by subclass.
          * @param frame a {@link GstVideo.VideoCodecFrame}
@@ -646,6 +656,14 @@ export namespace GstCodecs {
         vfunc_new_picture(frame: GstVideo.VideoCodecFrame, picture: H264Picture): Gst.FlowReturn;
 
         /**
+         * Notifies subclass of SPS update
+         * @param sps a {@link GstCodecParsers.H264SPS}
+         * @param max_dpb_size the size of dpb including preferred output delay   by subclass reported via get_preferred_output_delay method.
+         * @virtual
+         */
+        vfunc_new_sequence(sps: GstCodecParsers.H264SPS, max_dpb_size: number): Gst.FlowReturn;
+
+        /**
          * Called with a {@link GstCodecs.H264Picture} which is required to be outputted.
          * The {@link GstVideo.VideoCodecFrame} must be consumed by subclass.
          * @param frame a {@link GstVideo.VideoCodecFrame}
@@ -773,6 +791,14 @@ export namespace GstCodecs {
         vfunc_new_picture(frame: GstVideo.VideoCodecFrame, picture: H265Picture): Gst.FlowReturn;
 
         /**
+         * Notifies subclass of video sequence update
+         * @param sps a {@link GstCodecParsers.H265SPS}
+         * @param max_dpb_size the size of dpb including preferred output delay   by subclass reported via get_preferred_output_delay method.
+         * @virtual
+         */
+        vfunc_new_sequence(sps: GstCodecParsers.H265SPS, max_dpb_size: number): Gst.FlowReturn;
+
+        /**
          * @param frame 
          * @param picture 
          * @virtual
@@ -797,6 +823,13 @@ export namespace GstCodecs {
          * @returns a {@link GstCodecs.H265Picture} if successful, or `null` otherwise
          */
         get_picture(system_frame_number: number): H265Picture | null;
+
+        /**
+         * Retrieve the extended SPS values attached to the given {@link GstCodecParsers.H265SPS}
+         * @param sps the {@link GstCodecParsers.H265SPS} matching the requested {@link GstCodecParsers.H265SPSEXT}
+         * @returns a {@link GstCodecParsers.H265SPSEXT} if successful, or `null` otherwise
+         */
+        get_sps_ext(sps: GstCodecParsers.H265SPS): GstCodecParsers.H265SPSEXT | null;
 
         /**
          * Called to en/disable reference picture modification process.
@@ -893,6 +926,14 @@ export namespace GstCodecs {
          * @virtual
          */
         vfunc_new_picture(frame: GstVideo.VideoCodecFrame, picture: H266Picture): Gst.FlowReturn;
+
+        /**
+         * Notifies subclass of video sequence update
+         * @param sps a {@link GstCodecParsers.H266SPS}
+         * @param max_dpb_size the size of dpb including preferred output delay   by subclass reported via get_preferred_output_delay method.
+         * @virtual
+         */
+        vfunc_new_sequence(sps: GstCodecParsers.H266SPS, max_dpb_size: number): Gst.FlowReturn;
 
         /**
          * @param frame 
@@ -1012,6 +1053,17 @@ export namespace GstCodecs {
         vfunc_new_picture(frame: GstVideo.VideoCodecFrame, picture: Mpeg2Picture): Gst.FlowReturn;
 
         /**
+         * Notifies subclass of SPS update
+         * @param seq a {@link GstCodecParsers.MpegVideoSequenceHdr}
+         * @param seq_ext a {@link GstCodecParsers.MpegVideoSequenceExt}
+         * @param seq_display_ext 
+         * @param seq_scalable_ext 
+         * @param max_dpb_size the size of dpb including preferred output delay   by subclass reported via get_preferred_output_delay method.
+         * @virtual
+         */
+        vfunc_new_sequence(seq: GstCodecParsers.MpegVideoSequenceHdr, seq_ext: GstCodecParsers.MpegVideoSequenceExt, seq_display_ext: GstCodecParsers.MpegVideoSequenceDisplayExt, seq_scalable_ext: GstCodecParsers.MpegVideoSequenceScalableExt, max_dpb_size: number): Gst.FlowReturn;
+
+        /**
          * Called with a {@link GstCodecs.Mpeg2Picture} which is required to be outputted.
          * The {@link GstVideo.VideoCodecFrame} must be consumed by subclass.
          * @param frame a {@link GstVideo.VideoCodecFrame}
@@ -1086,6 +1138,13 @@ export namespace GstCodecs {
 
         // Virtual methods
         /**
+         * @param picture 
+         * @param parser 
+         * @virtual
+         */
+        vfunc_decode_picture(picture: Vp8Picture, parser: GstCodecParsers.Vp8Parser): Gst.FlowReturn;
+
+        /**
          * Optional.
          *                     Called per one {@link GstCodecs.Vp8Picture} to notify subclass to finish
          *                     decoding process for the {@link GstCodecs.Vp8Picture}
@@ -1112,6 +1171,14 @@ export namespace GstCodecs {
          * @virtual
          */
         vfunc_new_picture(frame: GstVideo.VideoCodecFrame, picture: Vp8Picture): Gst.FlowReturn;
+
+        /**
+         * Notifies subclass of SPS update
+         * @param frame_hdr 
+         * @param max_dpb_size 
+         * @virtual
+         */
+        vfunc_new_sequence(frame_hdr: GstCodecParsers.Vp8FrameHdr, max_dpb_size: number): Gst.FlowReturn;
 
         /**
          * Called with a {@link GstCodecs.Vp8Picture} which is required to be outputted.
@@ -1337,12 +1404,8 @@ export namespace GstCodecs {
     class AV1Tile {
         static $gtype: GObject.GType<AV1Tile>;
 
-        // Constructors
-
-        constructor(properties?: Partial<{
-            tile_group: unknown;
-            obu: unknown;
-        }>);
+        // Fields
+        tile_group: GstCodecParsers.AV1TileGroupOBU;
     }
 
 
@@ -1519,6 +1582,14 @@ export namespace GstCodecs {
         num_ref_frames(): number;
 
         /**
+         * Perform "8.2.5.4 Adaptive memory control decoded reference picture marking process"
+         * @param ref_pic_marking a {@link GstCodecParsers.H264RefPicMarking}
+         * @param picture a {@link GstCodecs.H264Picture}
+         * @returns `true` if successful
+         */
+        perform_memory_management_control_operation(ref_pic_marking: GstCodecParsers.H264RefPicMarking, picture: H264Picture): boolean;
+
+        /**
          * @param interlaced `true` if interlaced
          */
         set_interlaced(interlaced: boolean): void;
@@ -1562,11 +1633,16 @@ export namespace GstCodecs {
     class H264Slice {
         static $gtype: GObject.GType<H264Slice>;
 
+        // Fields
+        header: GstCodecParsers.H264SliceHdr;
+
+        nalu: GstCodecParsers.H264NalUnit;
+
         // Constructors
 
         constructor(properties?: Partial<{
-            header: unknown;
-            nalu: unknown;
+            header: GstCodecParsers.H264SliceHdr;
+            nalu: GstCodecParsers.H264NalUnit;
         }>);
     }
 
@@ -1716,11 +1792,16 @@ export namespace GstCodecs {
     class H265Slice {
         static $gtype: GObject.GType<H265Slice>;
 
+        // Fields
+        header: GstCodecParsers.H265SliceHdr;
+
+        nalu: GstCodecParsers.H265NalUnit;
+
         // Constructors
 
         constructor(properties?: Partial<{
-            header: unknown;
-            nalu: unknown;
+            header: GstCodecParsers.H265SliceHdr;
+            nalu: GstCodecParsers.H265NalUnit;
         }>);
     }
 
@@ -1862,12 +1943,8 @@ export namespace GstCodecs {
     class H266Slice {
         static $gtype: GObject.GType<H266Slice>;
 
-        // Constructors
-
-        constructor(properties?: Partial<{
-            header: unknown;
-            nalu: unknown;
-        }>);
+        // Fields
+        nalu: GstCodecParsers.H266NalUnit;
     }
 
 
@@ -2284,6 +2361,27 @@ export namespace GstCodecs {
          * Frees `parser`.
          */
         free(): void;
+
+        /**
+         * Parses the compressed information in the VP9 bitstream contained in `data`,
+         * and fills in `header` with the parsed values.
+         * The `size` argument represent the whole frame size.
+         * @param header The {@link GstCodecs.Vp9FrameHeader} to fill
+         * @param data The data to parse
+         * @param size The size of the `data` to parse
+         * @returns a {@link GstCodecParsers.Vp9ParserResult}
+         */
+        parse_compressed_frame_header(header: Vp9FrameHeader, data: number, size: bigint | number): GstCodecParsers.Vp9ParserResult;
+
+        /**
+         * Parses the VP9 bitstream contained in `data`, and fills in `header`
+         * with the information. The `size` argument represent the whole frame size.
+         * @param header The {@link GstCodecs.Vp9FrameHeader} to fill
+         * @param data The data to parse
+         * @param size The size of the `data` to parse
+         * @returns a {@link GstCodecParsers.Vp9ParserResult}
+         */
+        parse_uncompressed_frame_header(header: Vp9FrameHeader, data: number, size: bigint | number): GstCodecParsers.Vp9ParserResult;
     }
 
 

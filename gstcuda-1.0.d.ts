@@ -122,6 +122,18 @@ export namespace GstCuda {
     const MAP_CUDA: number;
 
     /**
+     * GstMapFlags value alias for GST_MAP_READ | GST_MAP_CUDA
+     * @since 1.28
+     */
+    const MAP_READ_CUDA: Gst.MapFlags;
+
+    /**
+     * GstMapFlags value alias for GST_MAP_WRITE | GST_MAP_CUDA
+     * @since 1.28
+     */
+    const MAP_WRITE_CUDA: Gst.MapFlags;
+
+    /**
      * Gets configured allocation method
      * @param config a buffer pool config
      * @since 1.24
@@ -351,6 +363,14 @@ export namespace GstCuda {
          */
     // Conflicted with Gst.Allocator.alloc
         alloc(...args: never[]): any;
+
+        /**
+         * @param context a {@link GstCuda.CudaContext}
+         * @param stream a {@link GstCuda.CudaStream}
+         * @param info a {@link GstVideo.VideoInfo}
+         * @returns a newly allocated {@link GstCuda.CudaMemory}
+         */
+        alloc_stream_ordered(context: CudaContext, stream: CudaStream, info: GstVideo.VideoInfo): Gst.Memory | null;
 
         /**
          * Allocates a new memory that wraps the given CUDA device memory.
@@ -631,6 +651,13 @@ export namespace GstCuda {
         emit(signal: string, ...args: any[]): void;
 
         // Static methods
+        /**
+         * Finds the DXGI adapter LUID corresponding to the given CUDA device.
+         * This is useful for matching CUDA devices with Direct3D adapters on Windows.
+         * @param cuda_device a CUDA device index
+         */
+        static find_dxgi_adapter_luid(cuda_device: CudaGst.device): number;
+
         /**
          * Pops the current CUDA context from CPU thread
          * @param cuda_ctx 
