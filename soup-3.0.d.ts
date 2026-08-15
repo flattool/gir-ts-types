@@ -3182,6 +3182,106 @@ export namespace Soup {
     }
 
 
+    namespace CompressionDictionaryRequest {
+        // Signal signatures
+        interface SignalSignatures extends GObject.Object.SignalSignatures {
+            "notify::cancelled": (pspec: GObject.ParamSpec) => void;
+            "notify::dictionary": (pspec: GObject.ParamSpec) => void;
+        }
+
+        // Constructor properties interface
+        interface ConstructorProps extends GObject.Object.ConstructorProps {
+            cancelled: boolean;
+            dictionary: GLib.Bytes | Uint8Array;
+        }
+    }
+
+    /**
+     * Represents a pending request for a compression dictionary.
+     * 
+     * An instance is emitted with the `Soup.Message::request-compression-dictionary`
+     * signal. The handler should either call
+     * {@link CompressionDictionaryRequest.set_dictionary} (synchronously or after
+     * ref-ing the object and completing asynchronously) or call
+     * {@link CompressionDictionaryRequest.cancel}, then return `true`. Return `false`
+     * to let other signal handlers run; if no handler returns `true` the request is
+     * treated as cancelled.
+     * @gir-type Class
+     * @since 3.8
+     */
+    class CompressionDictionaryRequest extends GObject.Object {
+        static $gtype: GObject.GType<CompressionDictionaryRequest>;
+
+        // Properties
+        /**
+         * Whether the request has been cancelled.
+         * 
+         * Set to `true` by {@link CompressionDictionaryRequest.cancel}.
+         * @since 3.8
+         * @read-only
+         * @default false
+         */
+        get cancelled(): boolean;
+
+        /**
+         * The raw dictionary bytes provided to resolve the request, or `null`
+         * if none has been set yet.
+         * 
+         * Set with {@link CompressionDictionaryRequest.set_dictionary}.
+         * @since 3.8
+         * @read-only
+         */
+        get dictionary(): GLib.Bytes;
+
+        /**
+         * Compile-time signal type information.
+         *
+         * This instance property is generated only for TypeScript type checking.
+         * It is not defined at runtime and should not be accessed in JS code.
+         * @internal
+         */
+        $signals: CompressionDictionaryRequest.SignalSignatures;
+
+        // Constructors
+        constructor(properties?: Partial<CompressionDictionaryRequest.ConstructorProps>, ...args: any[]);
+
+        _init(...args: any[]): void;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof CompressionDictionaryRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, CompressionDictionaryRequest.SignalSignatures[K]>): number;
+        connect(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        connect_after<K extends keyof CompressionDictionaryRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, CompressionDictionaryRequest.SignalSignatures[K]>): number;
+        connect_after(signal: string, callback: (...args: any[]) => any): number;
+
+        /** @signal */
+        emit<K extends keyof CompressionDictionaryRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<CompressionDictionaryRequest.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
+        emit(signal: string, ...args: any[]): void;
+
+        // Methods
+        /**
+         * Cancels a pending `Soup.Message::request-compression-dictionary` request,
+         * causing the response to fail.
+         * 
+         * This can be called synchronously inside the signal handler or asynchronously
+         * after ref-ing `request` and returning `true` from the handler.
+         */
+        cancel(): void;
+
+        /**
+         * Provides the dictionary bytes for a pending
+         * `Soup.Message::request-compression-dictionary` request.
+         * 
+         * This can be called synchronously inside the signal handler or asynchronously
+         * after ref-ing `request` and returning `true` from the handler.
+         * @param dictionary the raw dictionary bytes
+         */
+        set_dictionary(dictionary: GLib.Bytes | Uint8Array): void;
+    }
+
+
     namespace ContentDecoder {
         // Signal signatures
         interface SignalSignatures extends GObject.Object.SignalSignatures {}
@@ -4446,6 +4546,21 @@ export namespace Soup {
              */
             "request-certificate-password": (arg0: Gio.TlsPassword) => boolean | void;
             /**
+             * Emitted when the server responds with `Content-Encoding: dcb` or
+             * `Content-Encoding: dcz` and libsoup needs the raw dictionary bytes
+             * to set up decompression.
+             * 
+             * Call {@link CompressionDictionaryRequest.set_dictionary} on `request`
+             * to provide the dictionary, or {@link CompressionDictionaryRequest.cancel}
+             * to abort. Either can be done synchronously inside this handler, or
+             * asynchronously after calling {@link GObject.Object.ref} on `request`
+             * and returning `true`.
+             * @signal
+             * @since 3.8
+             * @run-last
+             */
+            "request-compression-dictionary": (arg0: CompressionDictionaryRequest) => boolean | void;
+            /**
              * Emitted when a request that was already sent once is now
              * being sent again.
              * 
@@ -4856,6 +4971,13 @@ export namespace Soup {
         disable_feature(feature_type: GObject.GType): void;
 
         /**
+         * Gets the SHA-256 hash of the shared dictionary previously set with
+         * {@link Message.set_compression_dictionary_hash}.
+         * @returns the raw 32-byte SHA-256 hash, or `null`
+         */
+        get_compression_dictionary_hash(): GLib.Bytes | null;
+
+        /**
          * Returns the unique idenfier for the last connection used.
          * 
          * This may be 0 if it was a cached resource or it has not gotten
@@ -5039,6 +5161,25 @@ export namespace Soup {
          * @param flags a set of {@link Soup.MessageFlags} values
          */
         remove_flags(flags: MessageFlags): void;
+
+        /**
+         * Sets the SHA-256 hash of the shared dictionary to advertise for Compression
+         * Dictionary Transport (RFC 9842).
+         * 
+         * When set, {@link ContentDecoder} will include `dcb` and/or `dcz` in the
+         * `Accept-Encoding` request header (over HTTPS) and will send an
+         * `Available-Dictionary` header containing the base64-encoded `hash`.
+         * When the server responds with `Content-Encoding: dcb` or `dcz`, the
+         * `Soup.Message::request-compression-dictionary` signal is emitted so the
+         * caller can supply the actual dictionary bytes.
+         * 
+         * The hash does not survive redirects: a dictionary is chosen for a specific
+         * request URL, so when `msg` is redirected the hash and the `Available-Dictionary`
+         * header are cleared. It is the caller's responsibility to select and set a new
+         * dictionary appropriate for the redirect target, if any.
+         * @param hash a {@link GLib.Bytes} containing the raw SHA-256 hash (32 bytes) of the   shared dictionary, or `null` to unset
+         */
+        set_compression_dictionary_hash(hash: GLib.Bytes | Uint8Array | null): void;
 
         /**
          * Sets `first_party` as the main document {@link GLib.Uri} for `msg`.
@@ -8359,6 +8500,11 @@ export namespace Soup {
      * @gir-type Alias
      */
     type CacheClass = typeof Cache;
+
+    /**
+     * @gir-type Alias
+     */
+    type CompressionDictionaryRequestClass = typeof CompressionDictionaryRequest;
 
     /**
      * @gir-type Alias

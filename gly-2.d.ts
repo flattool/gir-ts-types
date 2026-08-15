@@ -100,13 +100,15 @@ export namespace Gly {
     }
 
     /**
-     * Memory format
+     * Describes the formats the image data can have. Orderings like "RGB" are
+     * independent of the systems endianness. Single channels like "R16" follow
+     * the endianness of the system.
      * @gir-type Enum
      * @since 2.0
      */
     enum MemoryFormat {
         /**
-         * 8-bit RGRA premultiplied
+         * 8-bit BGRA premultiplied
          */
         B8G8R8A8_PREMULTIPLIED,
         /**
@@ -118,11 +120,11 @@ export namespace Gly {
          */
         R8G8B8A8_PREMULTIPLIED,
         /**
-         * 8-bit RGBA
+         * 8-bit BGRA
          */
         B8G8R8A8,
         /**
-         * 8-bit AGBR
+         * 8-bit ARGB
          */
         A8R8G8B8,
         /**
