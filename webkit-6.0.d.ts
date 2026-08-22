@@ -4080,6 +4080,7 @@ export namespace WebKit {
              * {@link WebKit.WebView} it's easier to use the {@link WebKit.WebView.favicon}
              * property. See `webkit_web_view_get_favicon()` for more details.
              * @signal
+             * @deprecated since 2.54
              * @run-last
              */
             "favicon-changed": (arg0: string, arg1: string) => void;
@@ -4149,6 +4150,9 @@ export namespace WebKit {
          * This is an asynchronous method. When the operation is finished, callback will
          * be invoked. You can then call `webkit_favicon_database_get_favicon_finish()`
          * to get the result of the operation.
+         * 
+         * New applications should use {@link FaviconDatabase.get_page_icons} and
+         * {@link FaviconDatabase.get_page_icons_finish} instead.
          * @param page_uri URI of the page for which we want to retrieve the favicon
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          */
@@ -4164,6 +4168,9 @@ export namespace WebKit {
          * This is an asynchronous method. When the operation is finished, callback will
          * be invoked. You can then call `webkit_favicon_database_get_favicon_finish()`
          * to get the result of the operation.
+         * 
+         * New applications should use {@link FaviconDatabase.get_page_icons} and
+         * {@link FaviconDatabase.get_page_icons_finish} instead.
          * @param page_uri URI of the page for which we want to retrieve the favicon
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is            satisfied or `null` if you don't care about the result.
@@ -4180,6 +4187,9 @@ export namespace WebKit {
          * This is an asynchronous method. When the operation is finished, callback will
          * be invoked. You can then call `webkit_favicon_database_get_favicon_finish()`
          * to get the result of the operation.
+         * 
+         * New applications should use {@link FaviconDatabase.get_page_icons} and
+         * {@link FaviconDatabase.get_page_icons_finish} instead.
          * @param page_uri URI of the page for which we want to retrieve the favicon
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is            satisfied or `null` if you don't care about the result.
@@ -4188,6 +4198,9 @@ export namespace WebKit {
 
         /**
          * Finishes an operation started with `webkit_favicon_database_get_favicon()`.
+         * 
+         * New applications should use {@link FaviconDatabase.get_page_icons} and
+         * {@link FaviconDatabase.get_page_icons_finish} instead.
          * @param result A {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `webkit_favicon_database_get_favicon()`
          * @returns a new favicon image, or `null` in case of error.
          */
@@ -11656,7 +11669,7 @@ export namespace WebKit {
          * Get the parsed manifest version, or `0` if there is no
          * version specified in the manifest.
          * 
-         * A {@link WebKit.WebExtensionError.UNSUPPORTED_MANIFEST_VERSION} error will be
+         * A {@link WebExtensionError.UNSUPPORTED_MANIFEST_VERSION} error will be
          * reported if the manifest version isn't specified.
          * @returns the parsed manifest version.
          */
@@ -13062,6 +13075,9 @@ export namespace WebKit {
         /**
          * The favicon currently associated to the {@link WebKit.WebView}.
          * See `webkit_web_view_get_favicon()` for more details.
+         * 
+         * New applications should use {@link WebView.page_icons} instead.
+         * @deprecated since 2.54
          * @read-only
          */
         get favicon(): Gdk.Texture;
@@ -14193,6 +14209,8 @@ export namespace WebKit {
          * Returns favicon currently associated to `web_view`, if any. You can
          * connect to notify::favicon signal of `web_view` to be notified when
          * the favicon is available.
+         * 
+         * New applications should use {@link WebView.get_page_icons} instead.
          * @returns the favicon image or `null` if there's no    icon associated with `web_view`.
          */
         get_favicon(): Gdk.Texture;
