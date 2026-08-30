@@ -101039,6 +101039,7 @@ export interface Builder {
     namespace Settings {
         // Signal signatures
         interface SignalSignatures extends GObject.Object.SignalSignatures {
+            "notify::gtk-accent-color": (pspec: GObject.ParamSpec) => void;
             "notify::gtk-alternative-button-order": (pspec: GObject.ParamSpec) => void;
             "notify::gtk-alternative-sort-arrows": (pspec: GObject.ParamSpec) => void;
             "notify::gtk-application-prefer-dark-theme": (pspec: GObject.ParamSpec) => void;
@@ -101099,6 +101100,8 @@ export interface Builder {
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps, StyleProvider.ConstructorProps {
+            gtk_accent_color: Gdk.RGBA;
+            gtkAccentColor: Gdk.RGBA;
             gtk_alternative_button_order: boolean;
             gtkAlternativeButtonOrder: boolean;
             gtk_alternative_sort_arrows: boolean;
@@ -101250,6 +101253,26 @@ export interface Builder {
         static $gtype: GObject.GType<Settings>;
 
         // Properties
+        /**
+         * The desktop accent color (if available).
+         * 
+         * GTK provides this value to the CSS stylesheet as a named color
+         * under the name "accent_color".
+         * @since 4.24
+         */
+        get gtk_accent_color(): Gdk.RGBA;
+        set gtk_accent_color(val: Gdk.RGBA);
+
+        /**
+         * The desktop accent color (if available).
+         * 
+         * GTK provides this value to the CSS stylesheet as a named color
+         * under the name "accent_color".
+         * @since 4.24
+         */
+        get gtkAccentColor(): Gdk.RGBA;
+        set gtkAccentColor(val: Gdk.RGBA);
+
         /**
          * Whether buttons in dialogs should use the alternative button order.
          * @default false
