@@ -2241,6 +2241,7 @@ export namespace Adw {
          * * {@link AboutDialog.add_credit_section}
          * @param name the section name
          * @param people the list of names
+         * @since 1.5
          */
         add_acknowledgement_section(name: string | null, people: string[]): void;
 
@@ -2262,6 +2263,7 @@ export namespace Adw {
          * * {@link AboutDialog.add_acknowledgement_section}
          * @param name the section name
          * @param people the list of names
+         * @since 1.5
          */
         add_credit_section(name: string | null, people: string[]): void;
 
@@ -2310,6 +2312,7 @@ export namespace Adw {
          * @param copyright a copyright string
          * @param license_type the type of license
          * @param license custom license information
+         * @since 1.5
          */
         add_legal_section(title: string, copyright: string | null, license_type: Gtk.License, license: string | null): void;
 
@@ -2323,6 +2326,7 @@ export namespace Adw {
          * See {@link AboutDialog.website}.
          * @param title the link title
          * @param url the link URL
+         * @since 1.5
          */
         add_link(title: string, url: string): void;
 
@@ -2347,132 +2351,154 @@ export namespace Adw {
          * @param appid the application ID
          * @param name the application name
          * @param summary the application summary
+         * @since 1.7
          */
         add_other_app(appid: string, name: string, summary: string): void;
 
         /**
          * Gets the AppStream metadata resource path for `self`.
          * @returns the resource path
+         * @since 1.9
          */
         get_appdata_resource_path(): string | null;
 
         /**
          * Gets the name of the application icon for `self`.
          * @returns the application icon name
+         * @since 1.5
          */
         get_application_icon(): string;
 
         /**
          * Gets the application name for `self`.
          * @returns the application name
+         * @since 1.5
          */
         get_application_name(): string;
 
         /**
          * Gets the list of artists of the application.
          * @returns The list of artists
+         * @since 1.5
          */
         get_artists(): string[] | null;
 
         /**
          * Gets the comments about the application.
          * @returns the comments
+         * @since 1.5
          */
         get_comments(): string;
 
         /**
          * Gets the copyright information for `self`.
          * @returns the copyright information
+         * @since 1.5
          */
         get_copyright(): string;
 
         /**
          * Gets the debug information for `self`.
          * @returns the debug information
+         * @since 1.5
          */
         get_debug_info(): string;
 
         /**
          * Gets the debug information filename for `self`.
          * @returns the debug information filename
+         * @since 1.5
          */
         get_debug_info_filename(): string;
 
         /**
          * Gets the list of designers of the application.
          * @returns The list of designers
+         * @since 1.5
          */
         get_designers(): string[] | null;
 
         /**
          * Gets the developer name for `self`.
          * @returns the developer_name
+         * @since 1.5
          */
         get_developer_name(): string;
 
         /**
          * Gets the list of developers of the application.
          * @returns The list of developers
+         * @since 1.5
          */
         get_developers(): string[] | null;
 
         /**
          * Gets the list of documenters of the application.
          * @returns The list of documenters
+         * @since 1.5
          */
         get_documenters(): string[] | null;
 
         /**
          * Gets the issue tracker URL for `self`.
          * @returns the issue tracker URL
+         * @since 1.5
          */
         get_issue_url(): string;
 
         /**
          * Gets the license for `self`.
          * @returns the license
+         * @since 1.5
          */
         get_license(): string;
 
         /**
          * Gets the license type for `self`.
          * @returns the license type
+         * @since 1.5
          */
         get_license_type(): Gtk.License;
 
         /**
          * Gets the release notes for `self`.
          * @returns the release notes
+         * @since 1.5
          */
         get_release_notes(): string;
 
         /**
          * Gets the version described by the application's release notes.
          * @returns the release notes version
+         * @since 1.5
          */
         get_release_notes_version(): string;
 
         /**
          * Gets the URL of the support page for `self`.
          * @returns the support page URL
+         * @since 1.5
          */
         get_support_url(): string;
 
         /**
          * Gets the translator credits string.
          * @returns The translator credits string
+         * @since 1.5
          */
         get_translator_credits(): string;
 
         /**
          * Gets the version for `self`.
          * @returns the version
+         * @since 1.5
          */
         get_version(): string;
 
         /**
          * Gets the application website URL for `self`.
          * @returns the website URL
+         * @since 1.5
          */
         get_website(): string;
 
@@ -2481,6 +2507,7 @@ export namespace Adw {
          * 
          * The icon is displayed at the top of the main page.
          * @param application_icon the application icon name
+         * @since 1.5
          */
         set_application_icon(application_icon: string): void;
 
@@ -2489,6 +2516,7 @@ export namespace Adw {
          * 
          * The name is displayed at the top of the main page.
          * @param application_name the application name
+         * @since 1.5
          */
         set_application_name(application_name: string): void;
 
@@ -2509,6 +2537,7 @@ export namespace Adw {
          * * {@link AboutDialog.add_credit_section}
          * * {@link AboutDialog.add_acknowledgement_section}
          * @param artists the list of artists
+         * @since 1.5
          */
         set_artists(artists: string[] | null): void;
 
@@ -2520,6 +2549,7 @@ export namespace Adw {
          * Unlike {@link Gtk.AboutDialog.comments}, this string can be long and
          * detailed. It can also contain links and Pango markup.
          * @param comments the comments
+         * @since 1.5
          */
         set_comments(comments: string): void;
 
@@ -2535,6 +2565,7 @@ export namespace Adw {
          * {@link AboutDialog.add_legal_section} can be used to add copyright
          * information for the application dependencies or other components.
          * @param copyright the copyright information
+         * @since 1.5
          */
         set_copyright(copyright: string): void;
 
@@ -2551,6 +2582,7 @@ export namespace Adw {
          * 
          * Debug information cannot contain markup or links.
          * @param debug_info the debug information
+         * @since 1.5
          */
         set_debug_info(debug_info: string): void;
 
@@ -2562,6 +2594,7 @@ export namespace Adw {
          * 
          * See {@link AboutDialog.debug_info}.
          * @param filename the debug info filename
+         * @since 1.5
          */
         set_debug_info_filename(filename: string): void;
 
@@ -2582,6 +2615,7 @@ export namespace Adw {
          * * {@link AboutDialog.add_credit_section}
          * * {@link AboutDialog.add_acknowledgement_section}
          * @param designers the list of designers
+         * @since 1.5
          */
         set_designers(designers: string[] | null): void;
 
@@ -2595,6 +2629,7 @@ export namespace Adw {
          * "The AppName project", and the individual contributors can be listed on the
          * Credits page, with {@link AboutDialog.developers} and related properties.
          * @param developer_name the developer name
+         * @since 1.5
          */
         set_developer_name(developer_name: string): void;
 
@@ -2615,6 +2650,7 @@ export namespace Adw {
          * * {@link AboutDialog.add_credit_section}
          * * {@link AboutDialog.add_acknowledgement_section}
          * @param developers the list of developers
+         * @since 1.5
          */
         set_developers(developers: string[] | null): void;
 
@@ -2635,6 +2671,7 @@ export namespace Adw {
          * * {@link AboutDialog.add_credit_section}
          * * {@link AboutDialog.add_acknowledgement_section}
          * @param documenters the list of documenters
+         * @since 1.5
          */
         set_documenters(documenters: string[] | null): void;
 
@@ -2643,6 +2680,7 @@ export namespace Adw {
          * 
          * The issue tracker link is displayed on the main page.
          * @param issue_url the issue tracker URL
+         * @since 1.5
          */
         set_issue_url(issue_url: string): void;
 
@@ -2663,6 +2701,7 @@ export namespace Adw {
          * {@link AboutDialog.add_legal_section} can be used to add license information
          * for the application dependencies or other components.
          * @param license the license
+         * @since 1.5
          */
         set_license(license: string): void;
 
@@ -2685,6 +2724,7 @@ export namespace Adw {
          * {@link AboutDialog.add_legal_section} can be used to add license information
          * for the application dependencies or other components.
          * @param license_type the license type
+         * @since 1.5
          */
         set_license_type(license_type: Gtk.License): void;
 
@@ -2714,6 +2754,7 @@ export namespace Adw {
          * {@link AboutDialog.release_notes_version} of the property will be used
          * as the version; otherwise, {@link AboutDialog.version} is used.
          * @param release_notes the release notes
+         * @since 1.5
          */
         set_release_notes(release_notes: string): void;
 
@@ -2731,6 +2772,7 @@ export namespace Adw {
          * 
          * See {@link AboutDialog.release_notes}.
          * @param version the release notes version
+         * @since 1.5
          */
         set_release_notes_version(version: string): void;
 
@@ -2739,6 +2781,7 @@ export namespace Adw {
          * 
          * The support page link is displayed on the main page.
          * @param support_url the support page URL
+         * @since 1.5
          */
         set_support_url(support_url: string): void;
 
@@ -2763,6 +2806,7 @@ export namespace Adw {
          * * {@link AboutDialog.add_credit_section}
          * * {@link AboutDialog.add_acknowledgement_section}
          * @param translator_credits the translator credits
+         * @since 1.5
          */
         set_translator_credits(translator_credits: string): void;
 
@@ -2774,6 +2818,7 @@ export namespace Adw {
          * If {@link AboutDialog.release_notes_version} is not set, the version will
          * also be displayed above the release notes on the What's New page.
          * @param version the version
+         * @since 1.5
          */
         set_version(version: string): void;
 
@@ -2785,6 +2830,7 @@ export namespace Adw {
          * 
          * Applications can add other links below, see {@link AboutDialog.add_link}.
          * @param website the website URL
+         * @since 1.5
          */
         set_website(website: string): void;
 
@@ -3713,6 +3759,8 @@ export namespace Adw {
          * * {@link AboutWindow.add_credit_section}
          * @param name the section name
          * @param people the list of names
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         add_acknowledgement_section(name: string | null, people: string[]): void;
 
@@ -3734,6 +3782,8 @@ export namespace Adw {
          * * {@link AboutWindow.add_acknowledgement_section}
          * @param name the section name
          * @param people the list of names
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         add_credit_section(name: string | null, people: string[]): void;
 
@@ -3782,6 +3832,8 @@ export namespace Adw {
          * @param copyright a copyright string
          * @param license_type the type of license
          * @param license custom license information
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         add_legal_section(title: string, copyright: string | null, license_type: Gtk.License, license: string | null): void;
 
@@ -3795,126 +3847,168 @@ export namespace Adw {
          * See {@link AboutWindow.website}.
          * @param title the link title
          * @param url the link URL
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         add_link(title: string, url: string): void;
 
         /**
          * Gets the name of the application icon for `self`.
          * @returns the application icon name
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_application_icon(): string;
 
         /**
          * Gets the application name for `self`.
          * @returns the application name
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_application_name(): string;
 
         /**
          * Gets the list of artists of the application.
          * @returns The list of artists
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_artists(): string[] | null;
 
         /**
          * Gets the comments about the application.
          * @returns the comments
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_comments(): string;
 
         /**
          * Gets the copyright information for `self`.
          * @returns the copyright information
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_copyright(): string;
 
         /**
          * Gets the debug information for `self`.
          * @returns the debug information
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_debug_info(): string;
 
         /**
          * Gets the debug information filename for `self`.
          * @returns the debug information filename
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_debug_info_filename(): string;
 
         /**
          * Gets the list of designers of the application.
          * @returns The list of designers
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_designers(): string[] | null;
 
         /**
          * Gets the developer name for `self`.
          * @returns the developer_name
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_developer_name(): string;
 
         /**
          * Gets the list of developers of the application.
          * @returns The list of developers
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_developers(): string[] | null;
 
         /**
          * Gets the list of documenters of the application.
          * @returns The list of documenters
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_documenters(): string[] | null;
 
         /**
          * Gets the issue tracker URL for `self`.
          * @returns the issue tracker URL
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_issue_url(): string;
 
         /**
          * Gets the license for `self`.
          * @returns the license
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_license(): string;
 
         /**
          * Gets the license type for `self`.
          * @returns the license type
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_license_type(): Gtk.License;
 
         /**
          * Gets the release notes for `self`.
          * @returns the release notes
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_release_notes(): string;
 
         /**
          * Gets the version described by the application's release notes.
          * @returns the release notes version
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_release_notes_version(): string;
 
         /**
          * Gets the URL of the support page for `self`.
          * @returns the support page URL
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_support_url(): string;
 
         /**
          * Gets the translator credits string.
          * @returns The translator credits string
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_translator_credits(): string;
 
         /**
          * Gets the version for `self`.
          * @returns the version
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_version(): string;
 
         /**
          * Gets the application website URL for `self`.
          * @returns the website URL
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         get_website(): string;
 
@@ -3923,6 +4017,8 @@ export namespace Adw {
          * 
          * The icon is displayed at the top of the main page.
          * @param application_icon the application icon name
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_application_icon(application_icon: string): void;
 
@@ -3931,6 +4027,8 @@ export namespace Adw {
          * 
          * The name is displayed at the top of the main page.
          * @param application_name the application name
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_application_name(application_name: string): void;
 
@@ -3951,6 +4049,8 @@ export namespace Adw {
          * * {@link AboutWindow.add_credit_section}
          * * {@link AboutWindow.add_acknowledgement_section}
          * @param artists the list of artists
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_artists(artists: string[] | null): void;
 
@@ -3962,6 +4062,8 @@ export namespace Adw {
          * Unlike {@link Gtk.AboutDialog.comments}, this string can be long and
          * detailed. It can also contain links and Pango markup.
          * @param comments the comments
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_comments(comments: string): void;
 
@@ -3977,6 +4079,8 @@ export namespace Adw {
          * {@link AboutWindow.add_legal_section} can be used to add copyright
          * information for the application dependencies or other components.
          * @param copyright the copyright information
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_copyright(copyright: string): void;
 
@@ -3993,6 +4097,8 @@ export namespace Adw {
          * 
          * Debug information cannot contain markup or links.
          * @param debug_info the debug information
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_debug_info(debug_info: string): void;
 
@@ -4004,6 +4110,8 @@ export namespace Adw {
          * 
          * See {@link AboutWindow.debug_info}.
          * @param filename the debug info filename
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_debug_info_filename(filename: string): void;
 
@@ -4024,6 +4132,8 @@ export namespace Adw {
          * * {@link AboutWindow.add_credit_section}
          * * {@link AboutWindow.add_acknowledgement_section}
          * @param designers the list of designers
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_designers(designers: string[] | null): void;
 
@@ -4037,6 +4147,8 @@ export namespace Adw {
          * "The AppName project", and the individual contributors can be listed on the
          * Credits page, with {@link AboutWindow.developers} and related properties.
          * @param developer_name the developer name
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_developer_name(developer_name: string): void;
 
@@ -4057,6 +4169,8 @@ export namespace Adw {
          * * {@link AboutWindow.add_credit_section}
          * * {@link AboutWindow.add_acknowledgement_section}
          * @param developers the list of developers
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_developers(developers: string[] | null): void;
 
@@ -4077,6 +4191,8 @@ export namespace Adw {
          * * {@link AboutWindow.add_credit_section}
          * * {@link AboutWindow.add_acknowledgement_section}
          * @param documenters the list of documenters
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_documenters(documenters: string[] | null): void;
 
@@ -4085,6 +4201,8 @@ export namespace Adw {
          * 
          * The issue tracker link is displayed on the main page.
          * @param issue_url the issue tracker URL
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_issue_url(issue_url: string): void;
 
@@ -4105,6 +4223,8 @@ export namespace Adw {
          * {@link AboutWindow.add_legal_section} can be used to add license information
          * for the application dependencies or other components.
          * @param license the license
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_license(license: string): void;
 
@@ -4126,6 +4246,8 @@ export namespace Adw {
          * {@link AboutWindow.add_legal_section} can be used to add license information
          * for the application dependencies or other components.
          * @param license_type the license type
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_license_type(license_type: Gtk.License): void;
 
@@ -4155,6 +4277,8 @@ export namespace Adw {
          * {@link AboutWindow.release_notes_version} of the property will be used
          * as the version; otherwise, {@link AboutWindow.version} is used.
          * @param release_notes the release notes
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_release_notes(release_notes: string): void;
 
@@ -4172,6 +4296,8 @@ export namespace Adw {
          * 
          * See {@link AboutWindow.release_notes}.
          * @param version the release notes version
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_release_notes_version(version: string): void;
 
@@ -4180,6 +4306,8 @@ export namespace Adw {
          * 
          * The support page link is displayed on the main page.
          * @param support_url the support page URL
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_support_url(support_url: string): void;
 
@@ -4204,6 +4332,8 @@ export namespace Adw {
          * * {@link AboutWindow.add_credit_section}
          * * {@link AboutWindow.add_acknowledgement_section}
          * @param translator_credits the translator credits
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_translator_credits(translator_credits: string): void;
 
@@ -4215,6 +4345,8 @@ export namespace Adw {
          * If {@link AboutWindow.release_notes_version} is not set, the version will
          * also be displayed above the release notes on the What's New page.
          * @param version the version
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_version(version: string): void;
 
@@ -4226,6 +4358,8 @@ export namespace Adw {
          * 
          * Applications can add other links below, see {@link AboutWindow.add_link}.
          * @param website the website URL
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AboutDialog}.
          */
         set_website(website: string): void;
     }
@@ -4539,6 +4673,7 @@ export namespace Adw {
         /**
          * Gets the icon name for `self`.
          * @returns the icon name for `self`
+         * @deprecated since 1.3: Use {@link ActionRow.add_prefix} to add an icon.
          */
         get_icon_name(): string | null;
 
@@ -4558,6 +4693,7 @@ export namespace Adw {
         /**
          * Gets whether the user can copy the subtitle from the label
          * @returns whether the user can copy the subtitle from the label
+         * @since 1.3
          */
         get_subtitle_selectable(): boolean;
 
@@ -4590,6 +4726,7 @@ export namespace Adw {
         /**
          * Sets the icon name for `self`.
          * @param icon_name the icon name
+         * @deprecated since 1.3: Use {@link ActionRow.add_prefix} to add an icon.
          */
         set_icon_name(icon_name: string | null): void;
 
@@ -4616,6 +4753,7 @@ export namespace Adw {
          * 
          * See also {@link Gtk.Label.selectable}.
          * @param subtitle_selectable `TRUE` if the user can copy the subtitle from the label
+         * @since 1.3
          */
         set_subtitle_selectable(subtitle_selectable: boolean): void;
 
@@ -5893,6 +6031,7 @@ export namespace Adw {
          * responses further.
          * @param id the response ID
          * @param label the response label
+         * @since 1.5
          */
         add_response(id: string, label: string): void;
 
@@ -5903,6 +6042,7 @@ export namespace Adw {
          * will be shown within it. Otherwise, it will be a separate window.
          * @param parent the parent widget
          * @param cancellable a {@link Gio.Cancellable} to cancel the operation
+         * @since 1.5
          */
         choose(parent: Gtk.Widget | null, cancellable: Gio.Cancellable | null): globalThis.Promise<string>;
 
@@ -5914,6 +6054,7 @@ export namespace Adw {
          * @param parent the parent widget
          * @param cancellable a {@link Gio.Cancellable} to cancel the operation
          * @param callback a callback to call when the operation is complete
+         * @since 1.5
          */
         choose(parent: Gtk.Widget | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -5925,6 +6066,7 @@ export namespace Adw {
          * @param parent the parent widget
          * @param cancellable a {@link Gio.Cancellable} to cancel the operation
          * @param callback a callback to call when the operation is complete
+         * @since 1.5
          */
         choose(parent: Gtk.Widget | null, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<string> | void;
 
@@ -5932,54 +6074,63 @@ export namespace Adw {
          * Finishes the {@link AlertDialog.choose} call and returns the response ID.
          * @param result a {@link Gio.AsyncResult}
          * @returns the ID of the response that was selected, or   {@link AlertDialog.close_response} if the call was cancelled.
+         * @since 1.5
          */
         choose_finish(result: Gio.AsyncResult): string;
 
         /**
          * Gets the body text of `self`.
          * @returns the body of `self`.
+         * @since 1.5
          */
         get_body(): string;
 
         /**
          * Gets whether the body text of `self` includes Pango markup.
          * @returns whether `self` uses markup for body text
+         * @since 1.5
          */
         get_body_use_markup(): boolean;
 
         /**
          * Gets the ID of the close response of `self`.
          * @returns the close response ID
+         * @since 1.5
          */
         get_close_response(): string;
 
         /**
          * Gets the ID of the default response of `self`.
          * @returns the default response ID
+         * @since 1.5
          */
         get_default_response(): string | null;
 
         /**
          * Gets the child widget of `self`.
          * @returns the child widget of `self`.
+         * @since 1.5
          */
         get_extra_child(): Gtk.Widget | null;
 
         /**
          * Gets the heading of `self`.
          * @returns the heading of `self`.
+         * @since 1.5
          */
         get_heading(): string | null;
 
         /**
          * Gets whether the heading of `self` includes Pango markup.
          * @returns whether `self` uses markup for heading
+         * @since 1.5
          */
         get_heading_use_markup(): boolean;
 
         /**
          * Gets whether `self` prefers horizontal button layout.
          * @returns whether to prefer wide layout
+         * @since 1.6
          */
         get_prefer_wide_layout(): boolean;
 
@@ -5989,6 +6140,7 @@ export namespace Adw {
          * See {@link AlertDialog.set_response_appearance}.
          * @param response a response ID
          * @returns the appearance of `response`
+         * @since 1.5
          */
         get_response_appearance(response: string): ResponseAppearance;
 
@@ -5998,6 +6150,7 @@ export namespace Adw {
          * See {@link AlertDialog.set_response_enabled}.
          * @param response a response ID
          * @returns whether `response` is enabled
+         * @since 1.5
          */
         get_response_enabled(response: string): boolean;
 
@@ -6007,6 +6160,7 @@ export namespace Adw {
          * See {@link AlertDialog.set_response_label}.
          * @param response a response ID
          * @returns the label of `response`
+         * @since 1.5
          */
         get_response_label(response: string): string;
 
@@ -6014,18 +6168,21 @@ export namespace Adw {
          * Gets whether `self` has a response with the ID `response`.
          * @param response response ID
          * @returns whether `self` has a response with the ID `response`.
+         * @since 1.5
          */
         has_response(response: string): boolean;
 
         /**
          * Removes a response from `self`.
          * @param id the response ID
+         * @since 1.5
          */
         remove_response(id: string): void;
 
         /**
          * Sets the body text of `self`.
          * @param body the body of `self`
+         * @since 1.5
          */
         set_body(body: string): void;
 
@@ -6034,6 +6191,7 @@ export namespace Adw {
          * 
          * See {@link Pango.parse_markup}.
          * @param use_markup whether to use markup for body text
+         * @since 1.5
          */
         set_body_use_markup(use_markup: boolean): void;
 
@@ -6047,6 +6205,7 @@ export namespace Adw {
          * 
          * The default close response is `close`.
          * @param response the close response ID
+         * @since 1.5
          */
         set_close_response(response: string): void;
 
@@ -6061,6 +6220,7 @@ export namespace Adw {
          * 
          * See {@link Dialog.default_widget}.
          * @param response the default response ID
+         * @since 1.5
          */
         set_default_response(response: string | null): void;
 
@@ -6069,12 +6229,14 @@ export namespace Adw {
          * 
          * The child widget is displayed below the heading and body.
          * @param child the child widget
+         * @since 1.5
          */
         set_extra_child(child: Gtk.Widget | null): void;
 
         /**
          * Sets the heading of `self`.
          * @param heading the heading of `self`
+         * @since 1.5
          */
         set_heading(heading: string | null): void;
 
@@ -6083,6 +6245,7 @@ export namespace Adw {
          * 
          * See {@link Pango.parse_markup}.
          * @param use_markup whether to use markup for heading
+         * @since 1.5
          */
         set_heading_use_markup(use_markup: boolean): void;
 
@@ -6103,6 +6266,7 @@ export namespace Adw {
          * Does nothing with just one button, or when the buttons are already
          * horizontal.
          * @param prefer_wide_layout whether to prefer wide layout
+         * @since 1.6
          */
         set_prefer_wide_layout(prefer_wide_layout: boolean): void;
 
@@ -6127,6 +6291,7 @@ export namespace Adw {
          * Negative responses like Cancel or Close should use the default appearance.
          * @param response a response ID
          * @param appearance appearance for `response`
+         * @since 1.5
          */
         set_response_appearance(response: string, appearance: ResponseAppearance): void;
 
@@ -6143,6 +6308,7 @@ export namespace Adw {
          * Responses are enabled by default.
          * @param response a response ID
          * @param enabled whether to enable `response`
+         * @since 1.5
          */
         set_response_enabled(response: string, enabled: boolean): void;
 
@@ -6153,6 +6319,7 @@ export namespace Adw {
          * indicates a mnemonic.
          * @param response a response ID
          * @param label the label of `response`
+         * @since 1.5
          */
         set_response_label(response: string, label: string): void;
 
@@ -6352,6 +6519,7 @@ export namespace Adw {
         /**
          * Gets whether `self` should be skipped when animations are globally disabled.
          * @returns whether to follow the global setting
+         * @since 1.3
          */
         get_follow_enable_animations_setting(): boolean;
 
@@ -6446,6 +6614,7 @@ export namespace Adw {
          * 
          * See {@link Gtk.Settings.gtk_enable_animations}.
          * @param setting whether to follow the global setting
+         * @since 1.3
          */
         set_follow_enable_animations_setting(setting: boolean): void;
 
@@ -6883,12 +7052,14 @@ export namespace Adw {
         /**
          * Adds `breakpoint` to `self`.
          * @param breakpoint the breakpoint to add
+         * @since 1.4
          */
         add_breakpoint(breakpoint: Breakpoint): void;
 
         /**
          * Gets whether adaptive preview for `self` is currently open.
          * @returns whether adaptive preview is open.
+         * @since 1.7
          */
         get_adaptive_preview(): boolean;
 
@@ -6903,6 +7074,7 @@ export namespace Adw {
         /**
          * Gets the current breakpoint.
          * @returns the current breakpoint
+         * @since 1.4
          */
         get_current_breakpoint(): Breakpoint | null;
 
@@ -6911,12 +7083,14 @@ export namespace Adw {
          * 
          * This can be used to keep an up-to-date view.
          * @returns a list model for the dialogs of `self`
+         * @since 1.5
          */
         get_dialogs(): Gio.ListModel;
 
         /**
          * Returns the currently visible dialog in `self`, if there's one.
          * @returns the visible dialog
+         * @since 1.5
          */
         get_visible_dialog(): Dialog | null;
 
@@ -6931,6 +7105,7 @@ export namespace Adw {
          * 
          * Most applications should not use this function.
          * @param adaptive_preview whether to open adaptive preview
+         * @since 1.7
          */
         set_adaptive_preview(adaptive_preview: boolean): void;
 
@@ -6947,6 +7122,7 @@ export namespace Adw {
          * 
          * This function should only be called by {@link Gio.ActionGroup} implementations.
          * @param action_name the name of an action in the group
+         * @since 2.28
          */
         action_added(action_name: string): void;
 
@@ -6956,6 +7132,7 @@ export namespace Adw {
          * This function should only be called by {@link Gio.ActionGroup} implementations.
          * @param action_name the name of an action in the group
          * @param enabled whether the action is now enabled
+         * @since 2.28
          */
         action_enabled_changed(action_name: string, enabled: boolean): void;
 
@@ -6964,6 +7141,7 @@ export namespace Adw {
          * 
          * This function should only be called by {@link Gio.ActionGroup} implementations.
          * @param action_name the name of an action in the group
+         * @since 2.28
          */
         action_removed(action_name: string): void;
 
@@ -6973,6 +7151,7 @@ export namespace Adw {
          * This function should only be called by {@link Gio.ActionGroup} implementations.
          * @param action_name the name of an action in the group
          * @param state the new state of the named action
+         * @since 2.28
          */
         action_state_changed(action_name: string, state: GLib.Variant): void;
 
@@ -7012,6 +7191,7 @@ export namespace Adw {
          * ```
          * @param action_name the name of the action to activate
          * @param parameter parameters to the activation
+         * @since 2.28
          */
         activate_action(action_name: string, parameter: GLib.Variant | null): void;
 
@@ -7035,6 +7215,7 @@ export namespace Adw {
          * If the `value` GVariant is floating, it is consumed.
          * @param action_name the name of the action to request the change on
          * @param value the new state
+         * @since 2.28
          */
         change_action_state(action_name: string, value: GLib.Variant): void;
 
@@ -7045,6 +7226,7 @@ export namespace Adw {
          * have its state changed from outside callers.
          * @param action_name the name of the action to query
          * @returns whether the action is currently enabled
+         * @since 2.28
          */
         get_action_enabled(action_name: string): boolean;
 
@@ -7064,6 +7246,7 @@ export namespace Adw {
          * with the same name but a different parameter type.
          * @param action_name the name of the action to query
          * @returns the parameter type
+         * @since 2.28
          */
         get_action_parameter_type(action_name: string): GLib.VariantType | null;
 
@@ -7078,6 +7261,7 @@ export namespace Adw {
          * {@link GLib.Variant.unref} when it is no longer required.
          * @param action_name the name of the action to query
          * @returns the current state of the action
+         * @since 2.28
          */
         get_action_state(action_name: string): GLib.Variant | null;
 
@@ -7102,6 +7286,7 @@ export namespace Adw {
          * {@link GLib.Variant.unref} when it is no longer required.
          * @param action_name the name of the action to query
          * @returns the state range hint
+         * @since 2.28
          */
         get_action_state_hint(action_name: string): GLib.Variant | null;
 
@@ -7124,6 +7309,7 @@ export namespace Adw {
          * with the same name but a different state type.
          * @param action_name the name of the action to query
          * @returns the state type, if the action is stateful
+         * @since 2.28
          */
         get_action_state_type(action_name: string): GLib.VariantType | null;
 
@@ -7131,6 +7317,7 @@ export namespace Adw {
          * Checks if the named action exists within `action_group`.
          * @param action_name the name of the action to check for
          * @returns whether the named action exists
+         * @since 2.28
          */
         has_action(action_name: string): boolean;
 
@@ -7140,6 +7327,7 @@ export namespace Adw {
          * The caller is responsible for freeing the list with {@link GLib.strfreev} when
          * it is no longer required.
          * @returns a `NULL`-terminated array   of the names of the actions in the group
+         * @since 2.28
          */
         list_actions(): string[];
 
@@ -7173,6 +7361,7 @@ export namespace Adw {
          * fields may or may not have been modified.
          * @param action_name the name of an action in the group
          * @returns `TRUE` if the action exists, else `FALSE`
+         * @since 2.32
          */
         query_action(action_name: string): [boolean, boolean, GLib.VariantType | null, GLib.VariantType | null, GLib.Variant | null, GLib.Variant | null];
 
@@ -7181,6 +7370,7 @@ export namespace Adw {
          * 
          * This function should only be called by {@link Gio.ActionGroup} implementations.
          * @param action_name the name of an action in the group
+         * @since 2.28
          * @virtual
          */
         vfunc_action_added(action_name: string): void;
@@ -7191,6 +7381,7 @@ export namespace Adw {
          * This function should only be called by {@link Gio.ActionGroup} implementations.
          * @param action_name the name of an action in the group
          * @param enabled whether the action is now enabled
+         * @since 2.28
          * @virtual
          */
         vfunc_action_enabled_changed(action_name: string, enabled: boolean): void;
@@ -7200,6 +7391,7 @@ export namespace Adw {
          * 
          * This function should only be called by {@link Gio.ActionGroup} implementations.
          * @param action_name the name of an action in the group
+         * @since 2.28
          * @virtual
          */
         vfunc_action_removed(action_name: string): void;
@@ -7210,6 +7402,7 @@ export namespace Adw {
          * This function should only be called by {@link Gio.ActionGroup} implementations.
          * @param action_name the name of an action in the group
          * @param state the new state of the named action
+         * @since 2.28
          * @virtual
          */
         vfunc_action_state_changed(action_name: string, state: GLib.Variant): void;
@@ -7250,6 +7443,7 @@ export namespace Adw {
          * ```
          * @param action_name the name of the action to activate
          * @param parameter parameters to the activation
+         * @since 2.28
          * @virtual
          */
         vfunc_activate_action(action_name: string, parameter: GLib.Variant | null): void;
@@ -7268,6 +7462,7 @@ export namespace Adw {
          * If the `value` GVariant is floating, it is consumed.
          * @param action_name the name of the action to request the change on
          * @param value the new state
+         * @since 2.28
          * @virtual
          */
         vfunc_change_action_state(action_name: string, value: GLib.Variant): void;
@@ -7278,6 +7473,7 @@ export namespace Adw {
          * An action must be enabled in order to be activated or in order to
          * have its state changed from outside callers.
          * @param action_name the name of the action to query
+         * @since 2.28
          * @virtual
          */
         vfunc_get_action_enabled(action_name: string): boolean;
@@ -7297,6 +7493,7 @@ export namespace Adw {
          * possible for an action to be removed and for a new action to be added
          * with the same name but a different parameter type.
          * @param action_name the name of the action to query
+         * @since 2.28
          * @virtual
          */
         vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null;
@@ -7311,6 +7508,7 @@ export namespace Adw {
          * The return value (if non-`NULL`) should be freed with
          * {@link GLib.Variant.unref} when it is no longer required.
          * @param action_name the name of the action to query
+         * @since 2.28
          * @virtual
          */
         vfunc_get_action_state(action_name: string): GLib.Variant | null;
@@ -7335,6 +7533,7 @@ export namespace Adw {
          * The return value (if non-`NULL`) should be freed with
          * {@link GLib.Variant.unref} when it is no longer required.
          * @param action_name the name of the action to query
+         * @since 2.28
          * @virtual
          */
         vfunc_get_action_state_hint(action_name: string): GLib.Variant | null;
@@ -7357,6 +7556,7 @@ export namespace Adw {
          * possible for an action to be removed and for a new action to be added
          * with the same name but a different state type.
          * @param action_name the name of the action to query
+         * @since 2.28
          * @virtual
          */
         vfunc_get_action_state_type(action_name: string): GLib.VariantType | null;
@@ -7364,6 +7564,7 @@ export namespace Adw {
         /**
          * Checks if the named action exists within `action_group`.
          * @param action_name the name of the action to check for
+         * @since 2.28
          * @virtual
          */
         vfunc_has_action(action_name: string): boolean;
@@ -7373,6 +7574,7 @@ export namespace Adw {
          * 
          * The caller is responsible for freeing the list with {@link GLib.strfreev} when
          * it is no longer required.
+         * @since 2.28
          * @virtual
          */
         vfunc_list_actions(): string[];
@@ -7406,6 +7608,7 @@ export namespace Adw {
          * filled.  If the action doesn’t exist, `FALSE` is returned and the
          * fields may or may not have been modified.
          * @param action_name the name of an action in the group
+         * @since 2.32
          * @virtual
          */
         vfunc_query_action(action_name: string): [boolean, boolean, GLib.VariantType | null, GLib.VariantType | null, GLib.Variant | null, GLib.Variant | null];
@@ -7418,6 +7621,7 @@ export namespace Adw {
          * 
          * The action map takes its own reference on `action`.
          * @param action a {@link Gio.Action}
+         * @since 2.32
          */
         add_action(action: Gio.Action): void;
 
@@ -7434,6 +7638,7 @@ export namespace Adw {
          * If no such action exists, returns `NULL`.
          * @param action_name the name of an action
          * @returns a {@link Gio.Action}
+         * @since 2.32
          */
         lookup_action(action_name: string): Gio.Action | null;
 
@@ -7442,6 +7647,7 @@ export namespace Adw {
          * 
          * If no action of this name is in the map then nothing happens.
          * @param action_name the name of the action
+         * @since 2.32
          */
         remove_action(action_name: string): void;
 
@@ -7469,6 +7675,7 @@ export namespace Adw {
          * }
          * ```
          * @param entries a pointer to   the first item in an array of {@link Gio.ActionEntry} structs
+         * @since 2.78
          */
         remove_action_entries(entries: Gio.ActionEntry[]): void;
 
@@ -7480,6 +7687,7 @@ export namespace Adw {
          * 
          * The action map takes its own reference on `action`.
          * @param action a {@link Gio.Action}
+         * @since 2.32
          * @virtual
          */
         vfunc_add_action(action: Gio.Action): void;
@@ -7489,6 +7697,7 @@ export namespace Adw {
          * 
          * If no such action exists, returns `NULL`.
          * @param action_name the name of an action
+         * @since 2.32
          * @virtual
          */
         vfunc_lookup_action(action_name: string): Gio.Action | null;
@@ -7498,6 +7707,7 @@ export namespace Adw {
          * 
          * If no action of this name is in the map then nothing happens.
          * @param action_name the name of the action
+         * @since 2.32
          * @virtual
          */
         vfunc_remove_action(action_name: string): void;
@@ -7805,6 +8015,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -7817,6 +8028,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -7825,6 +8037,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -7837,6 +8050,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -7847,18 +8061,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -7870,6 +8087,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -7903,6 +8121,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -7912,6 +8131,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -7922,6 +8142,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -7969,6 +8190,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -7977,12 +8199,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -7993,18 +8217,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -8016,6 +8243,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -8354,30 +8582,35 @@ export namespace Adw {
         /**
          * Gets the button label for `self`.
          * @returns the button label for `self`
+         * @since 1.3
          */
         get_button_label(): string | null;
 
         /**
          * Gets the style class in use for the banner button.
          * @returns the current button style
+         * @since 1.7
          */
         get_button_style(): BannerButtonStyle;
 
         /**
          * Gets if a banner is revealed
          * @returns Whether a banner is revealed
+         * @since 1.3
          */
         get_revealed(): boolean;
 
         /**
          * Gets the title for `self`.
          * @returns the title for `self`
+         * @since 1.3
          */
         get_title(): string;
 
         /**
          * Gets whether to use Pango markup for the banner title.
          * @returns whether to use markup
+         * @since 1.3
          */
         get_use_markup(): boolean;
 
@@ -8389,6 +8622,7 @@ export namespace Adw {
          * The button can be used with a {@link Gio.Action}, or with the
          * `Adw.Banner::button-clicked` signal.
          * @param label the label
+         * @since 1.3
          */
         set_button_label(label: string | null): void;
 
@@ -8404,12 +8638,14 @@ export namespace Adw {
          *   <img src="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/banner-suggested.png" alt="banner with suggested button style">
          * </picture>
          * @param style a button style
+         * @since 1.7
          */
         set_button_style(style: BannerButtonStyle): void;
 
         /**
          * Sets whether a banner should be revealed
          * @param revealed whether a banner should be revealed
+         * @since 1.3
          */
         set_revealed(revealed: boolean): void;
 
@@ -8418,6 +8654,7 @@ export namespace Adw {
          * 
          * See also: {@link Banner.use_markup}.
          * @param title the title
+         * @since 1.3
          */
         set_title(title: string): void;
 
@@ -8426,6 +8663,7 @@ export namespace Adw {
          * 
          * See also {@link Pango.parse_markup}.
          * @param use_markup whether to use markup
+         * @since 1.3
          */
         set_use_markup(use_markup: boolean): void;
 
@@ -8491,6 +8729,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -8503,6 +8742,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -8511,6 +8751,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -8523,6 +8764,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -8533,18 +8775,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -8556,6 +8801,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -8589,6 +8835,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -8598,6 +8845,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -8608,6 +8856,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -8655,6 +8904,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -8663,12 +8913,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -8679,18 +8931,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -8702,6 +8957,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -9071,6 +9327,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -9083,6 +9340,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -9091,6 +9349,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -9103,6 +9362,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -9113,18 +9373,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -9136,6 +9399,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -9169,6 +9433,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -9178,6 +9443,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -9188,6 +9454,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -9235,6 +9502,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -9243,12 +9511,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -9259,18 +9529,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -9282,6 +9555,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -9840,12 +10114,14 @@ export namespace Adw {
         /**
          * Gets horizontal alignment of the bottom sheet.
          * @returns the horizontal alignment
+         * @since 1.6
          */
         get_align(): number;
 
         /**
          * Gets the bottom bar widget for `self`.
          * @returns the bottom bar widget
+         * @since 1.6
          */
         get_bottom_bar(): Gtk.Widget | null;
 
@@ -9855,54 +10131,63 @@ export namespace Adw {
          * It can be used to shift the content upwards permanently to accommodate for
          * the bottom bar.
          * @returns the bottom bar height
+         * @since 1.6
          */
         get_bottom_bar_height(): number;
 
         /**
          * Gets whether the bottom sheet can be closed by user.
          * @returns whether the sheet can be closed by user
+         * @since 1.6
          */
         get_can_close(): boolean;
 
         /**
          * Gets whether the bottom sheet can be opened by user.
          * @returns whether the sheet can be opened by user.
+         * @since 1.6
          */
         get_can_open(): boolean;
 
         /**
          * Gets the content widget for `self`.
          * @returns the content widget
+         * @since 1.6
          */
         get_content(): Gtk.Widget | null;
 
         /**
          * Gets whether the bottom sheet takes the full width.
          * @returns whether the sheet takes up the full width
+         * @since 1.6
          */
         get_full_width(): boolean;
 
         /**
          * Gets whether the bottom sheet is modal.
          * @returns whether the sheet is modal
+         * @since 1.6
          */
         get_modal(): boolean;
 
         /**
          * Gets whether the bottom sheet is open.
          * @returns whether the sheet is open
+         * @since 1.6
          */
         get_open(): boolean;
 
         /**
          * Gets whether the bottom bar is revealed.
          * @returns whether the bottom bar is revealed
+         * @since 1.7
          */
         get_reveal_bottom_bar(): boolean;
 
         /**
          * Gets the bottom sheet widget for `self`.
          * @returns the sheet widget
+         * @since 1.6
          */
         get_sheet(): Gtk.Widget | null;
 
@@ -9911,12 +10196,14 @@ export namespace Adw {
          * 
          * It can be used to shift the content upwards when the bottom sheet is open.
          * @returns the sheet height
+         * @since 1.6
          */
         get_sheet_height(): number;
 
         /**
          * Gets whether to show a drag handle in the bottom sheet.
          * @returns whether to show the drag handle
+         * @since 1.6
          */
         get_show_drag_handle(): boolean;
 
@@ -9928,6 +10215,7 @@ export namespace Adw {
          * 
          * Only used when {@link BottomSheet.full_width} is set to `FALSE`.
          * @param align the new alignment
+         * @since 1.6
          */
         set_align(align: number): void;
 
@@ -9940,6 +10228,7 @@ export namespace Adw {
          * Bottom bar can be temporarily hidden using the
          * {@link BottomSheet.reveal_bottom_bar} property.
          * @param bottom_bar the bottom bar widget
+         * @since 1.6
          */
         set_bottom_bar(bottom_bar: Gtk.Widget | null): void;
 
@@ -9951,6 +10240,7 @@ export namespace Adw {
          * 
          * Bottom sheet can still be closed using {@link BottomSheet.open}.
          * @param can_close whether the sheet can be closed by user
+         * @since 1.6
          */
         set_can_close(can_close: boolean): void;
 
@@ -9963,6 +10253,7 @@ export namespace Adw {
          * 
          * Bottom sheet can still be opened using {@link BottomSheet.open}.
          * @param can_open whether the sheet can be opened by user.
+         * @since 1.6
          */
         set_can_open(can_open: boolean): void;
 
@@ -9971,6 +10262,7 @@ export namespace Adw {
          * 
          * It's always shown, and the bottom sheet is overlaid over it.
          * @param content the content widget
+         * @since 1.6
          */
         set_content(content: Gtk.Widget | null): void;
 
@@ -9979,6 +10271,7 @@ export namespace Adw {
          * 
          * When full width, {@link BottomSheet.align} is ignored.
          * @param full_width whether the sheet takes up the full width
+         * @since 1.6
          */
         set_full_width(full_width: boolean): void;
 
@@ -9991,12 +10284,14 @@ export namespace Adw {
          * 
          * Otherwise, the content is accessible even when the bottom sheet is open.
          * @param modal whether the sheet is modal
+         * @since 1.6
          */
         set_modal(modal: boolean): void;
 
         /**
          * Sets whether the bottom sheet is open.
          * @param open whether to open the sheet
+         * @since 1.6
          */
         set_open(open: boolean): void;
 
@@ -10008,6 +10303,7 @@ export namespace Adw {
          * See {@link BottomSheet.bottom_bar} and
          * {@link BottomSheet.bottom_bar_height}.
          * @param reveal whether to reveal the bottom bar
+         * @since 1.7
          */
         set_reveal_bottom_bar(reveal: boolean): void;
 
@@ -10016,6 +10312,7 @@ export namespace Adw {
          * 
          * Only shown when {@link BottomSheet.open} is `TRUE`.
          * @param sheet the sheet widget
+         * @since 1.6
          */
         set_sheet(sheet: Gtk.Widget | null): void;
 
@@ -10030,6 +10327,7 @@ export namespace Adw {
          * Showing drag handle also allows to swipe the bottom sheet down (and to swipe
          * the bottom bar up) with a pointer, instead of just touchscreen.
          * @param show_drag_handle whether to show the drag handle
+         * @since 1.6
          */
         set_show_drag_handle(show_drag_handle: boolean): void;
 
@@ -10154,6 +10452,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -10166,6 +10465,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -10174,6 +10474,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -10186,6 +10487,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -10196,18 +10498,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -10219,6 +10524,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -10252,6 +10558,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -10261,6 +10568,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -10271,6 +10579,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -10318,6 +10627,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -10326,12 +10636,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -10342,18 +10654,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -10365,6 +10680,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -10630,6 +10946,7 @@ export namespace Adw {
          * @param object the target object
          * @param property the target property
          * @param value the value to set
+         * @since 1.4
          */
         add_setter(object: GObject.Object, property: string, value: GObject.Value | any | null): void;
 
@@ -10644,18 +10961,21 @@ export namespace Adw {
          * @param objects setter target object
          * @param names setter target properties
          * @param values setter values
+         * @since 1.4
          */
         add_setters(objects: GObject.Object[], names: string[], values: (GObject.Value | any)[]): void;
 
         /**
          * Gets the condition for `self`.
          * @returns the condition
+         * @since 1.4
          */
         get_condition(): BreakpointCondition | null;
 
         /**
          * Sets the condition for `self`.
          * @param condition the new condition
+         * @since 1.4
          */
         set_condition(condition: BreakpointCondition | null): void;
 
@@ -10983,30 +11303,35 @@ export namespace Adw {
         /**
          * Adds `breakpoint` to `self`.
          * @param breakpoint the breakpoint to add
+         * @since 1.4
          */
         add_breakpoint(breakpoint: Breakpoint): void;
 
         /**
          * Gets the child widget of `self`.
          * @returns the child widget of `self`
+         * @since 1.4
          */
         get_child(): Gtk.Widget | null;
 
         /**
          * Gets the current breakpoint.
          * @returns the current breakpoint
+         * @since 1.4
          */
         get_current_breakpoint(): Breakpoint | null;
 
         /**
          * Removes `breakpoint` from `self`.
          * @param breakpoint a breakpoint to remove
+         * @since 1.5
          */
         remove_breakpoint(breakpoint: Breakpoint): void;
 
         /**
          * Sets the child widget of `self`.
          * @param child the child widget
+         * @since 1.4
          */
         set_child(child: Gtk.Widget | null): void;
 
@@ -11042,6 +11367,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -11054,6 +11380,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -11062,6 +11389,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -11074,6 +11402,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -11084,18 +11413,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -11107,6 +11439,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -11140,6 +11473,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -11149,6 +11483,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -11159,6 +11494,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -11206,6 +11542,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -11214,12 +11551,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -11230,18 +11569,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -11253,6 +11595,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -11569,6 +11912,7 @@ export namespace Adw {
         /**
          * gets whether the button can be smaller than the natural size of its contents.
          * @returns whether the button can shrink
+         * @since 1.4
          */
         get_can_shrink(): boolean;
 
@@ -11597,6 +11941,7 @@ export namespace Adw {
          * 
          * See {@link Gtk.Button.set_can_shrink}.
          * @param can_shrink whether the button can shrink
+         * @since 1.4
          */
         set_can_shrink(can_shrink: boolean): void;
 
@@ -11656,6 +12001,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -11668,6 +12014,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -11676,6 +12023,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -11688,6 +12036,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -11698,18 +12047,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -11721,6 +12073,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -11754,6 +12107,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -11763,6 +12117,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -11773,6 +12128,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -11820,6 +12176,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -11828,12 +12185,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -11844,18 +12203,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -11867,6 +12229,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -12149,24 +12512,28 @@ export namespace Adw {
         /**
          * Gets the end icon name for `self`.
          * @returns the end icon name for `self`
+         * @since 1.6
          */
         get_end_icon_name(): string | null;
 
         /**
          * Gets the start icon name for `self`.
          * @returns the start icon name for `self`
+         * @since 1.6
          */
         get_start_icon_name(): string | null;
 
         /**
          * Sets the end icon name for `self`.
          * @param icon_name the end icon name
+         * @since 1.6
          */
         set_end_icon_name(icon_name: string | null): void;
 
         /**
          * Sets the start icon name for `self`.
          * @param icon_name the start icon name
+         * @since 1.6
          */
         set_start_icon_name(icon_name: string | null): void;
     }
@@ -12790,6 +13157,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -12802,6 +13170,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -12810,6 +13179,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -12822,6 +13192,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -12832,18 +13203,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -12855,6 +13229,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -12888,6 +13263,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -12897,6 +13273,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -12907,6 +13284,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -12954,6 +13332,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -12962,12 +13341,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -12978,18 +13359,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -13001,6 +13385,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -13279,6 +13664,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -13291,6 +13677,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -13299,6 +13686,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -13311,6 +13699,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -13321,18 +13710,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -13344,6 +13736,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -13377,6 +13770,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -13386,6 +13780,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -13396,6 +13791,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -13443,6 +13839,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -13451,12 +13848,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -13467,18 +13866,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -13490,6 +13892,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -13767,6 +14170,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -13779,6 +14183,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -13787,6 +14192,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -13799,6 +14205,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -13809,18 +14216,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -13832,6 +14242,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -13865,6 +14276,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -13874,6 +14286,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -13884,6 +14297,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -13931,6 +14345,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -13939,12 +14354,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -13955,18 +14372,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -13978,6 +14398,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -14310,6 +14731,7 @@ export namespace Adw {
         /**
          * Gets the length unit for maximum size and tightening threshold.
          * @returns the length unit
+         * @since 1.4
          */
         get_unit(): LengthUnit;
 
@@ -14351,6 +14773,7 @@ export namespace Adw {
          * 
          * Allows the sizes to vary depending on the text scale factor.
          * @param unit the length unit
+         * @since 1.4
          */
         set_unit(unit: LengthUnit): void;
 
@@ -14394,6 +14817,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -14406,6 +14830,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -14414,6 +14839,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -14426,6 +14852,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -14436,18 +14863,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -14459,6 +14889,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -14492,6 +14923,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -14501,6 +14933,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -14511,6 +14944,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -14558,6 +14992,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -14566,12 +15001,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -14582,18 +15019,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -14605,6 +15045,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -14885,6 +15326,7 @@ export namespace Adw {
         /**
          * Gets the length unit for maximum size and tightening threshold.
          * @returns the length unit
+         * @since 1.4
          */
         get_unit(): LengthUnit;
 
@@ -14920,6 +15362,7 @@ export namespace Adw {
          * 
          * Allows the sizes to vary depending on the text scale factor.
          * @param unit the length unit
+         * @since 1.4
          */
         set_unit(unit: LengthUnit): void;
 
@@ -15147,6 +15590,7 @@ export namespace Adw {
         /**
          * Gets the length unit for maximum size and tightening threshold.
          * @returns the length unit
+         * @since 1.4
          */
         get_unit(): LengthUnit;
 
@@ -15188,6 +15632,7 @@ export namespace Adw {
          * 
          * Allows the sizes to vary depending on the text scale factor.
          * @param unit the length unit
+         * @since 1.4
          */
         set_unit(unit: LengthUnit): void;
 
@@ -15281,6 +15726,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -15293,6 +15739,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -15301,6 +15748,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -15313,6 +15761,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -15323,18 +15772,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -15346,6 +15798,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -15379,6 +15832,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -15388,6 +15842,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -15398,6 +15853,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -15445,6 +15901,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -15453,12 +15910,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -15469,18 +15928,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -15492,6 +15954,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -16011,6 +16474,7 @@ export namespace Adw {
          * 
          * Search requires {@link ComboRow.expression} to be set.
          * @returns whether the popup includes a search entry
+         * @since 1.4
          */
         get_enable_search(): boolean;
 
@@ -16029,6 +16493,7 @@ export namespace Adw {
         /**
          * Gets the factory that's currently used to create header widgets for the popup.
          * @returns The factory in use
+         * @since 1.6
          */
         get_header_factory(): Gtk.ListItemFactory | null;
 
@@ -16047,6 +16512,7 @@ export namespace Adw {
         /**
          * Returns the match mode that the search filter is using.
          * @returns the match mode of the search filter
+         * @since 1.6
          */
         get_search_match_mode(): Gtk.StringFilterMatchMode;
 
@@ -16076,6 +16542,7 @@ export namespace Adw {
          * 
          * Search requires {@link ComboRow.expression} to be set.
          * @param enable_search whether to enable search
+         * @since 1.4
          */
         set_enable_search(enable_search: boolean): void;
 
@@ -16103,6 +16570,7 @@ export namespace Adw {
         /**
          * Sets the factory to use for creating header widgets for the popup.
          * @param factory the factory to use
+         * @since 1.6
          */
         set_header_factory(factory: Gtk.ListItemFactory | null): void;
 
@@ -16123,6 +16591,7 @@ export namespace Adw {
         /**
          * Sets the match mode for the search filter.
          * @param search_match_mode the new match mode
+         * @since 1.6
          */
         set_search_match_mode(search_match_mode: Gtk.StringFilterMatchMode): void;
 
@@ -16572,6 +17041,7 @@ export namespace Adw {
         /**
          * Adds `breakpoint` to `self`.
          * @param breakpoint the breakpoint to add
+         * @since 1.5
          */
         add_breakpoint(breakpoint: Breakpoint): void;
 
@@ -16583,6 +17053,7 @@ export namespace Adw {
          * 
          * See also: {@link Dialog.force_close}.
          * @returns whether `self` was successfully closed
+         * @since 1.5
          */
         close(): boolean;
 
@@ -16591,66 +17062,77 @@ export namespace Adw {
          * 
          * Unlike {@link Dialog.close}, it succeeds even if {@link Dialog.can_close}
          * is set to `FALSE`.
+         * @since 1.5
          */
         force_close(): void;
 
         /**
          * Gets whether `self` can be closed.
          * @returns whether the dialog can be closed
+         * @since 1.5
          */
         get_can_close(): boolean;
 
         /**
          * Gets the child widget of `self`.
          * @returns the child widget of `self`
+         * @since 1.5
          */
         get_child(): Gtk.Widget | null;
 
         /**
          * Gets the height of the dialog's contents.
          * @returns the content height
+         * @since 1.5
          */
         get_content_height(): number;
 
         /**
          * Gets the width of the dialog's contents.
          * @returns the content width
+         * @since 1.5
          */
         get_content_width(): number;
 
         /**
          * Gets the current breakpoint.
          * @returns the current breakpoint
+         * @since 1.5
          */
         get_current_breakpoint(): Breakpoint | null;
 
         /**
          * Gets the default widget for `self`.
          * @returns the default widget
+         * @since 1.5
          */
         get_default_widget(): Gtk.Widget | null;
 
         /**
          * Gets the focus widget for `self`.
          * @returns the focus widget
+         * @since 1.5
          */
         get_focus(): Gtk.Widget | null;
 
         /**
          * Gets whether to size content of `self` automatically.
          * @returns whether to size content automatically
+         * @since 1.5
          */
         get_follows_content_size(): boolean;
 
         /**
          * Gets presentation mode for `self`.
          * @returns the presentation mode
+         * @since 1.5
          */
         get_presentation_mode(): DialogPresentationMode;
 
         /**
          * Gets the title of `self`.
          * @returns the title
+         * @since 1.5
          */
         get_title(): string;
 
@@ -16662,6 +17144,7 @@ export namespace Adw {
          * If the window is an {@link Window} or {@link ApplicationWindow}, the dialog
          * will be shown within it. Otherwise, it will be a separate window.
          * @param parent a widget within the toplevel
+         * @since 1.5
          */
         present(parent: Gtk.Widget | null): void;
 
@@ -16673,12 +17156,14 @@ export namespace Adw {
          * emitted instead, and bottom sheet close swipe will be disabled.
          * {@link Dialog.force_close} still works.
          * @param can_close whether to allow closing
+         * @since 1.5
          */
         set_can_close(can_close: boolean): void;
 
         /**
          * Sets the child widget of `self`.
          * @param child the child widget
+         * @since 1.5
          */
         set_child(child: Gtk.Widget | null): void;
 
@@ -16689,6 +17174,7 @@ export namespace Adw {
          * 
          * See also: {@link Gtk.Window.default_height}
          * @param content_height the content height
+         * @since 1.5
          */
         set_content_height(content_height: number): void;
 
@@ -16699,6 +17185,7 @@ export namespace Adw {
          * 
          * See also: {@link Gtk.Window.default_width}
          * @param content_width the content width
+         * @since 1.5
          */
         set_content_width(content_width: number): void;
 
@@ -16707,6 +17194,7 @@ export namespace Adw {
          * 
          * It's activated when the user presses Enter.
          * @param default_widget the default widget
+         * @since 1.5
          */
         set_default_widget(default_widget: Gtk.Widget | null): void;
 
@@ -16720,6 +17208,7 @@ export namespace Adw {
          * to a particular widget in the dialog, it is usually more convenient to use
          * {@link Gtk.Widget.grab_focus} instead of this function.
          * @param focus the focus widget
+         * @since 1.5
          */
         set_focus(focus: Gtk.Widget | null): void;
 
@@ -16732,6 +17221,7 @@ export namespace Adw {
          * 
          * See also: {@link Gtk.Window.resizable}
          * @param follows_content_size whether to size content automatically
+         * @since 1.5
          */
         set_follows_content_size(follows_content_size: boolean): void;
 
@@ -16748,12 +17238,14 @@ export namespace Adw {
          * 
          * Presentation mode does nothing for dialogs presented as a window.
          * @param presentation_mode the new presentation mode
+         * @since 1.5
          */
         set_presentation_mode(presentation_mode: DialogPresentationMode): void;
 
         /**
          * Sets the title of `self`.
          * @param title the new title
+         * @since 1.5
          */
         set_title(title: string): void;
 
@@ -16789,6 +17281,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -16801,6 +17294,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -16809,6 +17303,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -16821,6 +17316,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -16831,18 +17327,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -16854,6 +17353,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -16887,6 +17387,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -16896,6 +17397,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -16906,6 +17408,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -16953,6 +17456,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -16961,12 +17465,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -16977,18 +17483,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -17000,6 +17509,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -17447,60 +17957,70 @@ export namespace Adw {
         /**
          * Adds a prefix widget to `self`.
          * @param widget a widget
+         * @since 1.2
          */
         add_prefix(widget: Gtk.Widget): void;
 
         /**
          * Adds a suffix widget to `self`.
          * @param widget a widget
+         * @since 1.2
          */
         add_suffix(widget: Gtk.Widget): void;
 
         /**
          * Gets whether activating the embedded entry can activate the default widget.
          * @returns whether to activate the default widget
+         * @since 1.2
          */
         get_activates_default(): boolean;
 
         /**
          * Gets Pango attributes applied to the text of the embedded entry.
          * @returns the list of attributes
+         * @since 1.2
          */
         get_attributes(): Pango.AttrList | null;
 
         /**
          * Gets whether to suggest emoji replacements on `self`.
          * @returns whether or not emoji completion is enabled
+         * @since 1.2
          */
         get_enable_emoji_completion(): boolean;
 
         /**
          * Gets the additional input hints of `self`.
          * @returns The input hints
+         * @since 1.2
          */
         get_input_hints(): Gtk.InputHints;
 
         /**
          * Gets the input purpose of `self`.
          * @returns the input purpose
+         * @since 1.2
          */
         get_input_purpose(): Gtk.InputPurpose;
 
         /**
          * Retrieves the maximum length of the entry.
          * @returns The maximum length of the entry.
+         * @since 1.6
          */
         get_max_length(): number;
 
         /**
          * Gets whether `self` can show the apply button.
          * @returns whether to show the apply button
+         * @since 1.2
          */
         get_show_apply_button(): boolean;
 
         /**
          * Retrieves the current length of the text in `self`.
          * @returns The current number of characters in `self`, or 0 if there are none.
+         * @since 1.5
          */
         get_text_length(): number;
 
@@ -17509,18 +18029,21 @@ export namespace Adw {
          * 
          * See {@link Gtk.Text.grab_focus_without_selecting} for more information.
          * @returns whether the focus is now inside `self`
+         * @since 1.3
          */
         grab_focus_without_selecting(): boolean;
 
         /**
          * Removes a child from `self`.
          * @param widget the child to be removed
+         * @since 1.2
          */
         remove(widget: Gtk.Widget): void;
 
         /**
          * Sets whether activating the embedded entry can activate the default widget.
          * @param activates whether to activate the default widget
+         * @since 1.2
          */
         set_activates_default(activates: boolean): void;
 
@@ -17530,6 +18053,7 @@ export namespace Adw {
          * The {@link Pango.Attribute}'s `start_index` and `end_index` must refer to
          * the {@link Gtk.EntryBuffer} text, i.e. without the preedit string.
          * @param attributes a list of attributes
+         * @since 1.2
          */
         set_attributes(attributes: Pango.AttrList | null): void;
 
@@ -17538,6 +18062,7 @@ export namespace Adw {
          * 
          * Emoji replacement is done with :-delimited names, like `:heart:`.
          * @param enable_emoji_completion Whether emoji completion should be enabled or not
+         * @since 1.2
          */
         set_enable_emoji_completion(enable_emoji_completion: boolean): void;
 
@@ -17548,6 +18073,7 @@ export namespace Adw {
          * 
          * See also: {@link AdwEntryRow.input_purpose}
          * @param hints the hints
+         * @since 1.2
          */
         set_input_hints(hints: Gtk.InputHints): void;
 
@@ -17556,12 +18082,14 @@ export namespace Adw {
          * 
          * The input purpose can be used by input methods to adjust their behavior.
          * @param purpose the purpose
+         * @since 1.2
          */
         set_input_purpose(purpose: Gtk.InputPurpose): void;
 
         /**
          * Sets the maximum length of the entry.
          * @param max_length maximum length of the entry
+         * @since 1.6
          */
         set_max_length(max_length: number): void;
 
@@ -17576,6 +18104,7 @@ export namespace Adw {
          * operation, e.g. network activity, to avoid triggering it after typing every
          * character.
          * @param show_apply_button whether to show the apply button
+         * @since 1.2
          */
         set_show_apply_button(show_apply_button: boolean): void;
 
@@ -17719,6 +18248,7 @@ export namespace Adw {
          * change your tree to allow this function to work.
          * @param state what kind of accessible state to retrieve
          * @returns the accessible platform state of the delegate
+         * @since 4.10
          */
         delegate_get_accessible_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -18264,6 +18794,7 @@ export namespace Adw {
          * The item type of a {@link Gio.ListModel} can not change during the life of the
          * model.
          * @returns the {@link GObject.GType} of the items contained in `list`.
+         * @since 2.44
          */
         get_item_type(): GObject.GType;
 
@@ -18274,6 +18805,7 @@ export namespace Adw {
          * less efficient than iterating the list with increasing values for
          * `position` until `g_list_model_get_item()` returns `null`.
          * @returns the number of items in `list`.
+         * @since 2.44
          */
         get_n_items(): number;
 
@@ -18292,6 +18824,7 @@ export namespace Adw {
          * See also: `g_list_model_get_n_items()`
          * @param position the position of the item to fetch
          * @returns the object at `position`.
+         * @since 2.44
          */
         get_item(position: number): A | null;
 
@@ -18319,6 +18852,7 @@ export namespace Adw {
          * @param position the position at which `list` changed
          * @param removed the number of items removed
          * @param added the number of items added
+         * @since 2.44
          */
         items_changed(position: number, removed: number, added: number): void;
 
@@ -18331,6 +18865,7 @@ export namespace Adw {
          * 
          * The same {@link GObject.Object} instance may not appear more than once in a {@link Gio.ListModel}.
          * @param position the position of the item to fetch
+         * @since 2.44
          * @virtual
          */
         vfunc_get_item(position: number): A | null;
@@ -18344,6 +18879,7 @@ export namespace Adw {
          * 
          * The item type of a {@link Gio.ListModel} can not change during the life of the
          * model.
+         * @since 2.44
          * @virtual
          */
         vfunc_get_item_type(): GObject.GType;
@@ -18354,6 +18890,7 @@ export namespace Adw {
          * Depending on the model implementation, calling this function may be
          * less efficient than iterating the list with increasing values for
          * `position` until `g_list_model_get_item()` returns `null`.
+         * @since 2.44
          * @virtual
          */
         vfunc_get_n_items(): number;
@@ -18608,6 +19145,7 @@ export namespace Adw {
         /**
          * Adds an action widget to `self`.
          * @param widget a widget
+         * @deprecated since 1.4: Use {@link ExpanderRow.add_suffix} to add a suffix.
          */
         add_action(widget: Gtk.Widget): void;
 
@@ -18628,6 +19166,7 @@ export namespace Adw {
         /**
          * Adds an suffix widget to `self`.
          * @param widget a widget
+         * @since 1.4
          */
         add_suffix(widget: Gtk.Widget): void;
 
@@ -18646,6 +19185,7 @@ export namespace Adw {
         /**
          * Gets the icon name for `self`.
          * @returns the icon name for `self`
+         * @deprecated since 1.3: Use {@link ExpanderRow.add_prefix} to add an icon.
          */
         get_icon_name(): string | null;
 
@@ -18665,6 +19205,7 @@ export namespace Adw {
          * Gets the number of lines at the end of which the subtitle label will be
          * ellipsized.
          * @returns the number of lines at the end of which the subtitle label will be   ellipsized
+         * @since 1.3
          */
         get_subtitle_lines(): number;
 
@@ -18672,6 +19213,7 @@ export namespace Adw {
          * Gets the number of lines at the end of which the title label will be
          * ellipsized.
          * @returns the number of lines at the end of which the title label will be   ellipsized
+         * @since 1.3
          */
         get_title_lines(): number;
 
@@ -18696,6 +19238,7 @@ export namespace Adw {
         /**
          * Sets the icon name for `self`.
          * @param icon_name the icon name
+         * @deprecated since 1.3: Use {@link ExpanderRow.add_prefix} to add an icon.
          */
         set_icon_name(icon_name: string | null): void;
 
@@ -18720,6 +19263,7 @@ export namespace Adw {
          * 
          * If the value is 0, the number of lines won't be limited.
          * @param subtitle_lines the number of lines at the end of which the subtitle label will be ellipsized
+         * @since 1.3
          */
         set_subtitle_lines(subtitle_lines: number): void;
 
@@ -18729,6 +19273,7 @@ export namespace Adw {
          * 
          * If the value is 0, the number of lines won't be limited.
          * @param title_lines the number of lines at the end of which the title label will be ellipsized
+         * @since 1.3
          */
         set_title_lines(title_lines: number): void;
     }
@@ -19204,36 +19749,42 @@ export namespace Adw {
         /**
          * Gets the content widget for `self`.
          * @returns the content widget for `self`
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         get_content(): Gtk.Widget | null;
 
         /**
          * Gets the flap widget for `self`.
          * @returns the flap widget for `self`
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         get_flap(): Gtk.Widget | null;
 
         /**
          * Gets the flap position for `self`.
          * @returns the flap position for `self`
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         get_flap_position(): Gtk.PackType;
 
         /**
          * Gets the fold transition animation duration for `self`, in milliseconds.
          * @returns the fold transition duration
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         get_fold_duration(): number;
 
         /**
          * Gets the fold policy for `self`.
          * @returns the fold policy for `self`
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         get_fold_policy(): FlapFoldPolicy;
 
         /**
          * Gets the fold threshold policy for `self`.
          * @returns the fold threshold policy
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         get_fold_threshold_policy(): FoldThresholdPolicy;
 
@@ -19242,30 +19793,35 @@ export namespace Adw {
          * 
          * See {@link Flap.fold_policy}.
          * @returns `TRUE` if `self` is currently folded
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         get_folded(): boolean;
 
         /**
          * Gets whether `self` is locked.
          * @returns `TRUE` if `self` is locked
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         get_locked(): boolean;
 
         /**
          * Gets whether `self` is modal.
          * @returns `TRUE` if `self` is modal
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         get_modal(): boolean;
 
         /**
          * Gets whether the flap widget is revealed for `self`.
          * @returns `TRUE` if the flap widget is revealed
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         get_reveal_flap(): boolean;
 
         /**
          * Gets the reveal animation spring parameters for `self`.
          * @returns the reveal animation parameters
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         get_reveal_params(): SpringParams;
 
@@ -19276,30 +19832,35 @@ export namespace Adw {
          * 
          * See {@link Flap.reveal_flap}.
          * @returns the current reveal progress for `self`
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         get_reveal_progress(): number;
 
         /**
          * Gets the separator widget for `self`.
          * @returns the separator widget for `self`
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         get_separator(): Gtk.Widget | null;
 
         /**
          * Gets whether `self` can be closed with a swipe gesture.
          * @returns `TRUE` if `self` can be closed with a swipe gesture
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         get_swipe_to_close(): boolean;
 
         /**
          * Gets whether `self` can be opened with a swipe gesture.
          * @returns `TRUE` if `self` can be opened with a swipe gesture
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         get_swipe_to_open(): boolean;
 
         /**
          * Gets the type of animation used for reveal and fold transitions in `self`.
          * @returns the current transition type of `self`
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         get_transition_type(): FlapTransitionType;
 
@@ -19308,6 +19869,7 @@ export namespace Adw {
          * 
          * It's always displayed when unfolded, and partially visible when folded.
          * @param content the content widget
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         set_content(content: Gtk.Widget | null): void;
 
@@ -19316,6 +19878,7 @@ export namespace Adw {
          * 
          * It's only visible when {@link Flap.reveal_progress} is greater than 0.
          * @param flap the flap widget
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         set_flap(flap: Gtk.Widget | null): void;
 
@@ -19325,18 +19888,21 @@ export namespace Adw {
          * If it's set to {@link Gtk.PackType.START}, the flap is displayed before the
          * content, if {@link Gtk.PackType.END}, it's displayed after the content.
          * @param position the new value
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         set_flap_position(position: Gtk.PackType): void;
 
         /**
          * Sets the fold transition animation duration for `self`, in milliseconds.
          * @param duration the new duration, in milliseconds
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         set_fold_duration(duration: number): void;
 
         /**
          * Sets the fold policy for `self`.
          * @param policy the fold policy
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         set_fold_policy(policy: FlapFoldPolicy): void;
 
@@ -19350,6 +19916,7 @@ export namespace Adw {
          * This can be useful if you have a long ellipsizing label and want to let it
          * ellipsize instead of immediately folding.
          * @param policy the policy to use
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         set_fold_threshold_policy(policy: FoldThresholdPolicy): void;
 
@@ -19360,6 +19927,7 @@ export namespace Adw {
          * unfolding it when the flap is not revealed opens it. If `TRUE`,
          * {@link Flap.reveal_flap} value never changes on its own.
          * @param locked the new value
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         set_locked(locked: boolean): void;
 
@@ -19370,12 +19938,14 @@ export namespace Adw {
          * pressing the <kbd>Esc</kbd> key, will close the flap. If `FALSE`, clicks are
          * passed through to the content widget.
          * @param modal whether `self` is modal
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         set_modal(modal: boolean): void;
 
         /**
          * Sets whether the flap widget is revealed for `self`.
          * @param reveal_flap whether to reveal the flap widget
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         set_reveal_flap(reveal_flap: boolean): void;
 
@@ -19388,6 +19958,7 @@ export namespace Adw {
          * adw_spring_params_new (1, 0.5, 500)
          * ```
          * @param params the new parameters
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         set_reveal_params(params: SpringParams): void;
 
@@ -19398,6 +19969,7 @@ export namespace Adw {
          * When exactly it's visible depends on the {@link Flap.transition_type}
          * value.
          * @param separator the separator widget
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         set_separator(separator: Gtk.Widget | null): void;
 
@@ -19407,6 +19979,7 @@ export namespace Adw {
          * The area that can be swiped depends on the {@link Flap.transition_type}
          * value.
          * @param swipe_to_close whether `self` can be closed with a swipe gesture
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         set_swipe_to_close(swipe_to_close: boolean): void;
 
@@ -19416,6 +19989,7 @@ export namespace Adw {
          * The area that can be swiped depends on the {@link Flap.transition_type}
          * value.
          * @param swipe_to_open whether `self` can be opened with a swipe gesture
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         set_swipe_to_open(swipe_to_open: boolean): void;
 
@@ -19427,6 +20001,7 @@ export namespace Adw {
          * the [`.background`](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/style-classes.html#background) style class to it if this
          * is unwanted.
          * @param transition_type the new transition type
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwflap)
          */
         set_transition_type(transition_type: FlapTransitionType): void;
 
@@ -19559,6 +20134,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -19571,6 +20147,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -19579,6 +20156,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -19591,6 +20169,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -19601,18 +20180,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -19624,6 +20206,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -19657,6 +20240,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -19666,6 +20250,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -19676,6 +20261,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -19723,6 +20309,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -19731,12 +20318,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -19747,18 +20336,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -19770,6 +20362,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -20285,6 +20878,7 @@ export namespace Adw {
         /**
          * Gets whether `self` can show the back button.
          * @returns whether to show the back button
+         * @since 1.4
          */
         get_show_back_button(): boolean;
 
@@ -20303,6 +20897,7 @@ export namespace Adw {
         /**
          * Gets whether the title widget should be shown.
          * @returns whether the title widget should be shown.
+         * @since 1.4
          */
         get_show_title(): boolean;
 
@@ -20362,6 +20957,7 @@ export namespace Adw {
          * The back button will never be shown unless the header bar is placed inside an
          * {@link NavigationView}. Usually, there is no reason to set it to `FALSE`.
          * @param show_back_button whether to show the back button
+         * @since 1.4
          */
         set_show_back_button(show_back_button: boolean): void;
 
@@ -20392,6 +20988,7 @@ export namespace Adw {
         /**
          * Sets whether the title widget should be shown.
          * @param show_title whether the title widget is visible
+         * @since 1.4
          */
         set_show_title(show_title: boolean): void;
 
@@ -20448,6 +21045,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -20460,6 +21058,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -20468,6 +21067,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -20480,6 +21080,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -20490,18 +21091,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -20513,6 +21117,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -20546,6 +21151,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -20555,6 +21161,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -20565,6 +21172,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -20612,6 +21220,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -20620,12 +21229,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -20636,18 +21247,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -20659,6 +21273,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -20971,24 +21586,28 @@ export namespace Adw {
          * Gets whether the toggles can be smaller than the natural size of their
          * contents.
          * @returns whether the toggles can shrink
+         * @since 1.7
          */
         get_can_shrink(): boolean;
 
         /**
          * Gets the display mode of `self`.
          * @returns the display mode
+         * @since 1.7
          */
         get_display_mode(): InlineViewSwitcherDisplayMode;
 
         /**
          * Gets whether all toggles within `self` take the same size.
          * @returns whether all toggles take the same size
+         * @since 1.7
          */
         get_homogeneous(): boolean;
 
         /**
          * Gets the stack `self` controls.
          * @returns The stack of `self`
+         * @since 1.7
          */
         get_stack(): ViewStack | null;
 
@@ -21000,6 +21619,7 @@ export namespace Adw {
          * 
          * See {@link ToggleGroup.can_shrink}.
          * @param can_shrink whether the toggles can shrink
+         * @since 1.7
          */
         set_can_shrink(can_shrink: boolean): void;
 
@@ -21013,18 +21633,21 @@ export namespace Adw {
          *   <img src="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/inline-view-switcher-display-modes.png" alt="inline-view-switcher-display-modes">
          * </picture>
          * @param mode the display mode
+         * @since 1.7
          */
         set_display_mode(mode: InlineViewSwitcherDisplayMode): void;
 
         /**
          * Sets whether all toggles within `self` take the same size.
          * @param homogeneous whether all toggles should take the same size
+         * @since 1.7
          */
         set_homogeneous(homogeneous: boolean): void;
 
         /**
          * Sets the stack to control.
          * @param stack a stack
+         * @since 1.7
          */
         set_stack(stack: ViewStack | null): void;
 
@@ -21068,6 +21691,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -21080,6 +21704,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -21088,6 +21713,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -21100,6 +21726,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -21110,18 +21737,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -21133,6 +21763,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -21166,6 +21797,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -21175,6 +21807,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -21185,6 +21818,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -21232,6 +21866,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -21240,12 +21875,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -21256,18 +21893,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -21279,6 +21919,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -21466,18 +22107,21 @@ export namespace Adw {
         /**
          * Gets the content widget.
          * @returns The content
+         * @since 1.6
          */
         get_content(): Gtk.Widget;
 
         /**
          * Gets the name of the layout.
          * @returns the name of the layout
+         * @since 1.6
          */
         get_name(): string | null;
 
         /**
          * Sets the name of the layout.
          * @param name the layout name
+         * @since 1.6
          */
         set_name(name: string | null): void;
 
@@ -21686,6 +22330,7 @@ export namespace Adw {
         /**
          * Gets the slot id of `self`.
          * @returns the slot ID
+         * @since 1.6
          */
         get_slot_id(): string;
 
@@ -21721,6 +22366,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -21733,6 +22379,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -21741,6 +22388,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -21753,6 +22401,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -21763,18 +22412,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -21786,6 +22438,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -21819,6 +22472,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -21828,6 +22482,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -21838,6 +22493,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -21885,6 +22541,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -21893,12 +22550,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -21909,18 +22568,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -21932,6 +22594,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -22494,6 +23157,7 @@ export namespace Adw {
          * Adds a child to `self`.
          * @param child the widget to add
          * @returns the {@link LeafletPage} for `child`
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         append(child: Gtk.Widget): LeafletPage;
 
@@ -22508,24 +23172,28 @@ export namespace Adw {
          * See {@link LeafletPage.navigatable}.
          * @param direction the direction
          * @returns the previous or next child
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_adjacent_child(direction: NavigationDirection): Gtk.Widget | null;
 
         /**
          * Gets whether gestures and shortcuts for navigating backward are enabled.
          * @returns Whether gestures and shortcuts are enabled.
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_can_navigate_back(): boolean;
 
         /**
          * Gets whether gestures and shortcuts for navigating forward are enabled.
          * @returns Whether gestures and shortcuts are enabled.
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_can_navigate_forward(): boolean;
 
         /**
          * Gets whether `self` can unfold.
          * @returns whether `self` can unfold
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_can_unfold(): boolean;
 
@@ -22537,24 +23205,28 @@ export namespace Adw {
          * See {@link LeafletPage.name}.
          * @param name the name of the child to find
          * @returns the requested child of `self`
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_child_by_name(name: string): Gtk.Widget | null;
 
         /**
          * Gets the child transition spring parameters for `self`.
          * @returns the child transition parameters
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_child_transition_params(): SpringParams;
 
         /**
          * Gets whether a child transition is currently running for `self`.
          * @returns whether a transition is currently running
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_child_transition_running(): boolean;
 
         /**
          * Gets the fold threshold policy for `self`.
          * @returns the fold threshold policy
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_fold_threshold_policy(): FoldThresholdPolicy;
 
@@ -22565,18 +23237,21 @@ export namespace Adw {
          * sum of the minimum or natural sizes of the children (see
          * {@link Leaflet.fold_threshold_policy}), it will be unfolded otherwise.
          * @returns whether `self` is folded.
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_folded(): boolean;
 
         /**
          * Gets whether `self` is homogeneous.
          * @returns whether `self` is homogeneous
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_homogeneous(): boolean;
 
         /**
          * Gets the mode transition animation duration for `self`.
          * @returns the mode transition duration, in milliseconds.
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_mode_transition_duration(): number;
 
@@ -22584,6 +23259,7 @@ export namespace Adw {
          * Returns the {@link LeafletPage} object for `child`.
          * @param child a child of `self`
          * @returns the page object for `child`
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_page(child: Gtk.Widget): LeafletPage;
 
@@ -22594,24 +23270,28 @@ export namespace Adw {
          * {@link Gtk.SelectionModel} and can be used to track and change the visible
          * page.
          * @returns a {@link Gtk.SelectionModel} for the leaflet's children
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_pages(): Gtk.SelectionModel;
 
         /**
          * Gets the type of animation used for transitions between modes and children.
          * @returns the current transition type of `self`
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_transition_type(): LeafletTransitionType;
 
         /**
          * Gets the widget currently visible when the leaflet is folded.
          * @returns the visible child
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_visible_child(): Gtk.Widget | null;
 
         /**
          * Gets the name of the currently visible child widget.
          * @returns the name of the visible child
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_visible_child_name(): string | null;
 
@@ -22622,6 +23302,7 @@ export namespace Adw {
          * @param child the widget to insert
          * @param sibling the sibling after which to insert `child`
          * @returns the {@link LeafletPage} for `child`
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         insert_child_after(child: Gtk.Widget, sibling: Gtk.Widget | null): LeafletPage;
 
@@ -22635,6 +23316,7 @@ export namespace Adw {
          * {@link Leaflet.get_adjacent_child} or navigated to via swipe gestures.
          * @param direction the direction
          * @returns whether the visible child was changed
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         navigate(direction: NavigationDirection): boolean;
 
@@ -22642,12 +23324,14 @@ export namespace Adw {
          * Inserts `child` at the first position in `self`.
          * @param child the widget to prepend
          * @returns the {@link LeafletPage} for `child`
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         prepend(child: Gtk.Widget): LeafletPage;
 
         /**
          * Removes a child widget from `self`.
          * @param child the child to remove
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         remove(child: Gtk.Widget): void;
 
@@ -22657,6 +23341,7 @@ export namespace Adw {
          * If `sibling` is `NULL`, moves `child` to the first position.
          * @param child the widget to move, must be a child of `self`
          * @param sibling the sibling to move `child` after
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         reorder_child_after(child: Gtk.Widget, sibling: Gtk.Widget | null): void;
 
@@ -22679,6 +23364,7 @@ export namespace Adw {
          * Only children that have {@link LeafletPage.navigatable} set to `TRUE` can
          * be navigated to.
          * @param can_navigate_back the new value
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         set_can_navigate_back(can_navigate_back: boolean): void;
 
@@ -22701,12 +23387,14 @@ export namespace Adw {
          * Only children that have {@link LeafletPage.navigatable} set to `TRUE` can
          * be navigated to.
          * @param can_navigate_forward the new value
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         set_can_navigate_forward(can_navigate_forward: boolean): void;
 
         /**
          * Sets whether `self` can unfold.
          * @param can_unfold whether `self` can unfold
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         set_can_unfold(can_unfold: boolean): void;
 
@@ -22719,6 +23407,7 @@ export namespace Adw {
          * adw_spring_params_new (1, 0.5, 500)
          * ```
          * @param params the new parameters
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         set_child_transition_params(params: SpringParams): void;
 
@@ -22732,6 +23421,7 @@ export namespace Adw {
          * This can be useful if you have a long ellipsizing label and want to let it
          * ellipsize instead of immediately folding.
          * @param policy the policy to use
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         set_fold_threshold_policy(policy: FoldThresholdPolicy): void;
 
@@ -22741,12 +23431,14 @@ export namespace Adw {
          * If set to `FALSE`, different children can have different size along the
          * opposite orientation.
          * @param homogeneous whether to make `self` homogeneous
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         set_homogeneous(homogeneous: boolean): void;
 
         /**
          * Sets the mode transition animation duration for `self`.
          * @param duration the new duration, in milliseconds
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         set_mode_transition_duration(duration: number): void;
 
@@ -22757,6 +23449,7 @@ export namespace Adw {
          * possible to change the animation based on the mode or child that is about to
          * become current.
          * @param transition the new transition type
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         set_transition_type(transition: LeafletTransitionType): void;
 
@@ -22768,6 +23461,7 @@ export namespace Adw {
          * by the user, in which case visible child will change back to the previously
          * visible child.
          * @param visible_child the new child
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         set_visible_child(visible_child: Gtk.Widget): void;
 
@@ -22776,6 +23470,7 @@ export namespace Adw {
          * 
          * See {@link Leaflet.visible_child}.
          * @param name the name of a child
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         set_visible_child_name(name: string): void;
 
@@ -22908,6 +23603,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -22920,6 +23616,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -22928,6 +23625,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -22940,6 +23638,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -22950,18 +23649,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -22973,6 +23675,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -23006,6 +23709,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -23015,6 +23719,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -23025,6 +23730,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -23072,6 +23778,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -23080,12 +23787,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -23096,18 +23805,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -23119,6 +23831,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -23320,24 +24033,28 @@ export namespace Adw {
         /**
          * Gets the leaflet child to which `self` belongs.
          * @returns the child to which `self` belongs
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_child(): Gtk.Widget;
 
         /**
          * Gets the name of `self`.
          * @returns the name of `self`.
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_name(): string | null;
 
         /**
          * Gets whether the child can be navigated to when folded.
          * @returns whether `self` can be navigated to when folded
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         get_navigatable(): boolean;
 
         /**
          * Sets the name of the `self`.
          * @param name the new value to set
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         set_name(name: string | null): void;
 
@@ -23349,6 +24066,7 @@ export namespace Adw {
          * 
          * This can be used used to prevent switching to widgets like separators.
          * @param navigatable whether `self` can be navigated to when folded
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwleaflet)
          */
         set_navigatable(navigatable: boolean): void;
     }
@@ -24871,6 +25589,8 @@ export namespace Adw {
          * 
          * Used to indicate that the user has responded to the dialog in some way.
          * @param response response ID
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          * @virtual
          */
         vfunc_response(response: string): void;
@@ -24895,12 +25615,16 @@ export namespace Adw {
          * responses further.
          * @param id the response ID
          * @param label the response label
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         add_response(id: string, label: string): void;
 
         /**
          * This function shows `self` to the user.
          * @param cancellable a {@link Gio.Cancellable} to cancel the operation
+         * @since 1.3
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         choose(cancellable: Gio.Cancellable | null): globalThis.Promise<string>;
 
@@ -24908,6 +25632,8 @@ export namespace Adw {
          * This function shows `self` to the user.
          * @param cancellable a {@link Gio.Cancellable} to cancel the operation
          * @param callback a callback to call when the operation is complete
+         * @since 1.3
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         choose(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -24915,6 +25641,8 @@ export namespace Adw {
          * This function shows `self` to the user.
          * @param cancellable a {@link Gio.Cancellable} to cancel the operation
          * @param callback a callback to call when the operation is complete
+         * @since 1.3
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         choose(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<string> | void;
 
@@ -24922,48 +25650,64 @@ export namespace Adw {
          * Finishes the {@link MessageDialog.choose} call and returns the response ID.
          * @param result a {@link Gio.AsyncResult}
          * @returns the ID of the response that was selected, or   {@link MessageDialog.close_response} if the call was cancelled.
+         * @since 1.3
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         choose_finish(result: Gio.AsyncResult): string;
 
         /**
          * Gets the body text of `self`.
          * @returns the body of `self`.
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         get_body(): string;
 
         /**
          * Gets whether the body text of `self` includes Pango markup.
          * @returns whether `self` uses markup for body text
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         get_body_use_markup(): boolean;
 
         /**
          * Gets the ID of the close response of `self`.
          * @returns the close response ID
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         get_close_response(): string;
 
         /**
          * Gets the ID of the default response of `self`.
          * @returns the default response ID
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         get_default_response(): string | null;
 
         /**
          * Gets the child widget of `self`.
          * @returns the child widget of `self`.
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         get_extra_child(): Gtk.Widget | null;
 
         /**
          * Gets the heading of `self`.
          * @returns the heading of `self`.
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         get_heading(): string | null;
 
         /**
          * Gets whether the heading of `self` includes Pango markup.
          * @returns whether `self` uses markup for heading
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         get_heading_use_markup(): boolean;
 
@@ -24973,6 +25717,8 @@ export namespace Adw {
          * See {@link MessageDialog.set_response_appearance}.
          * @param response a response ID
          * @returns the appearance of `response`
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         get_response_appearance(response: string): ResponseAppearance;
 
@@ -24982,6 +25728,8 @@ export namespace Adw {
          * See {@link MessageDialog.set_response_enabled}.
          * @param response a response ID
          * @returns whether `response` is enabled
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         get_response_enabled(response: string): boolean;
 
@@ -24991,6 +25739,8 @@ export namespace Adw {
          * See {@link MessageDialog.set_response_label}.
          * @param response a response ID
          * @returns the label of `response`
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         get_response_label(response: string): string;
 
@@ -24998,12 +25748,16 @@ export namespace Adw {
          * Gets whether `self` has a response with the ID `response`.
          * @param response response ID
          * @returns whether `self` has a response with the ID `response`.
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         has_response(response: string): boolean;
 
         /**
          * Removes a response from `self`.
          * @param id the response ID
+         * @since 1.5
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         remove_response(id: string): void;
 
@@ -25012,12 +25766,16 @@ export namespace Adw {
          * 
          * Used to indicate that the user has responded to the dialog in some way.
          * @param response response ID
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         response(response: string): void;
 
         /**
          * Sets the body text of `self`.
          * @param body the body of `self`
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         set_body(body: string): void;
 
@@ -25026,6 +25784,8 @@ export namespace Adw {
          * 
          * See {@link Pango.parse_markup}.
          * @param use_markup whether to use markup for body text
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         set_body_use_markup(use_markup: boolean): void;
 
@@ -25039,6 +25799,8 @@ export namespace Adw {
          * 
          * The default close response is `close`.
          * @param response the close response ID
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         set_close_response(response: string): void;
 
@@ -25053,6 +25815,8 @@ export namespace Adw {
          * 
          * See {@link Gtk.Window.default_widget}.
          * @param response the default response ID
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         set_default_response(response: string | null): void;
 
@@ -25061,12 +25825,16 @@ export namespace Adw {
          * 
          * The child widget is displayed below the heading and body.
          * @param child the child widget
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         set_extra_child(child: Gtk.Widget | null): void;
 
         /**
          * Sets the heading of `self`.
          * @param heading the heading of `self`
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         set_heading(heading: string | null): void;
 
@@ -25075,6 +25843,8 @@ export namespace Adw {
          * 
          * See {@link Pango.parse_markup}.
          * @param use_markup whether to use markup for heading
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         set_heading_use_markup(use_markup: boolean): void;
 
@@ -25099,6 +25869,8 @@ export namespace Adw {
          * Negative responses like Cancel or Close should use the default appearance.
          * @param response a response ID
          * @param appearance appearance for `response`
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         set_response_appearance(response: string, appearance: ResponseAppearance): void;
 
@@ -25115,6 +25887,8 @@ export namespace Adw {
          * Responses are enabled by default.
          * @param response a response ID
          * @param enabled whether to enable `response`
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         set_response_enabled(response: string, enabled: boolean): void;
 
@@ -25125,6 +25899,8 @@ export namespace Adw {
          * indicates a mnemonic.
          * @param response a response ID
          * @param label the label of `response`
+         * @since 1.2
+         * @deprecated since 1.6: Use {@link AlertDialog}.
          */
         set_response_label(response: string, label: string): void;
 
@@ -25408,6 +26184,7 @@ export namespace Adw {
         /**
          * Adds `layout` to `self`.
          * @param layout the layout to add
+         * @since 1.6
          */
         add_layout(layout: Layout): void;
 
@@ -25415,12 +26192,14 @@ export namespace Adw {
          * Gets the child for `id` to `self`.
          * @param id the id of the child
          * @returns the child for `id`
+         * @since 1.6
          */
         get_child(id: string): Gtk.Widget | null;
 
         /**
          * Gets the currently used layout of `self`.
          * @returns the current layout
+         * @since 1.6
          */
         get_layout(): Layout | null;
 
@@ -25430,18 +26209,21 @@ export namespace Adw {
          * See {@link Layout.name}.
          * @param name the name of the layout
          * @returns the layout with `name`
+         * @since 1.6
          */
         get_layout_by_name(name: string): Layout | null;
 
         /**
          * Returns the name of the currently used layout of `self`.
          * @returns the name of the current layout
+         * @since 1.6
          */
         get_layout_name(): string | null;
 
         /**
          * Removes `layout` from `self`.
          * @param layout the layout to add
+         * @since 1.6
          */
         remove_layout(layout: Layout): void;
 
@@ -25451,12 +26233,14 @@ export namespace Adw {
          * When changing layouts, it will be inserted into the slot with `id`.
          * @param id the id of the child
          * @param child the child to set
+         * @since 1.6
          */
         set_child(id: string, child: Gtk.Widget): void;
 
         /**
          * Makes `layout` the current layout of `self`.
          * @param layout a layout in `self`
+         * @since 1.6
          */
         set_layout(layout: Layout): void;
 
@@ -25465,6 +26249,7 @@ export namespace Adw {
          * 
          * See {@link Layout.name}.
          * @param name the name of the layout
+         * @since 1.6
          */
         set_layout_name(name: string): void;
 
@@ -25500,6 +26285,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -25512,6 +26298,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -25520,6 +26307,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -25532,6 +26320,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -25542,18 +26331,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -25565,6 +26357,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -25598,6 +26391,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -25607,6 +26401,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -25617,6 +26412,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -25664,6 +26460,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -25672,12 +26469,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -25688,18 +26487,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -25711,6 +26513,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -26051,6 +26854,7 @@ export namespace Adw {
         /**
          * Called when the navigation view transition has been completed and the page
          * is fully hidden.
+         * @since 1.4
          * @virtual
          */
         vfunc_hidden(): void;
@@ -26058,6 +26862,7 @@ export namespace Adw {
         /**
          * Called when the page starts hiding at the beginning of the navigation view
          * transition.
+         * @since 1.4
          * @virtual
          */
         vfunc_hiding(): void;
@@ -26065,6 +26870,7 @@ export namespace Adw {
         /**
          * Called when the page shows at the beginning of the navigation view
          * transition.
+         * @since 1.4
          * @virtual
          */
         vfunc_showing(): void;
@@ -26072,6 +26878,7 @@ export namespace Adw {
         /**
          * Called when the navigation view transition has been completed and the page
          * is fully shown.
+         * @since 1.4
          * @virtual
          */
         vfunc_shown(): void;
@@ -26080,24 +26887,28 @@ export namespace Adw {
         /**
          * Gets whether `self` can be popped from navigation stack.
          * @returns whether the page can be popped from navigation stack
+         * @since 1.4
          */
         get_can_pop(): boolean;
 
         /**
          * Gets the child widget of `self`.
          * @returns the child widget of `self`
+         * @since 1.4
          */
         get_child(): Gtk.Widget | null;
 
         /**
          * Gets the tag of `self`.
          * @returns the page tag
+         * @since 1.4
          */
         get_tag(): string | null;
 
         /**
          * Gets the title of `self`.
          * @returns the title of `self`
+         * @since 1.4
          */
         get_title(): string;
 
@@ -26113,12 +26924,14 @@ export namespace Adw {
          * See {@link HeaderBar.show_back_button} for removing only the back button,
          * but not shortcuts.
          * @param can_pop whether the page can be popped from navigation stack
+         * @since 1.4
          */
         set_can_pop(can_pop: boolean): void;
 
         /**
          * Sets the child widget of `self`.
          * @param child the child widget
+         * @since 1.4
          */
         set_child(child: Gtk.Widget | null): void;
 
@@ -26134,6 +26947,7 @@ export namespace Adw {
          * 
          * The tag also must be set to use the `navigation.push` action.
          * @param tag the page tag
+         * @since 1.4
          */
         set_tag(tag: string | null): void;
 
@@ -26143,6 +26957,7 @@ export namespace Adw {
          * It's displayed in {@link HeaderBar} instead of the window title, and used as
          * the tooltip on the next page's back button, as well as by screen reader.
          * @param title the title
+         * @since 1.4
          */
         set_title(title: string): void;
 
@@ -26178,6 +26993,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -26190,6 +27006,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -26198,6 +27015,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -26210,6 +27028,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -26220,18 +27039,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -26243,6 +27065,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -26276,6 +27099,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -26285,6 +27109,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -26295,6 +27120,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -26342,6 +27168,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -26350,12 +27177,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -26366,18 +27195,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -26389,6 +27221,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -26930,54 +27763,63 @@ export namespace Adw {
         /**
          * Gets whether `self` is collapsed.
          * @returns whether `self` is collapsed
+         * @since 1.4
          */
         get_collapsed(): boolean;
 
         /**
          * Sets the content widget for `self`.
          * @returns the content widget
+         * @since 1.4
          */
         get_content(): NavigationPage | null;
 
         /**
          * Gets the maximum sidebar width for `self`.
          * @returns the maximum width
+         * @since 1.4
          */
         get_max_sidebar_width(): number;
 
         /**
          * Gets the minimum sidebar width for `self`.
          * @returns the minimum width
+         * @since 1.4
          */
         get_min_sidebar_width(): number;
 
         /**
          * Gets which page is visible when `self` is collapsed.
          * @returns whether to show content when collapsed
+         * @since 1.4
          */
         get_show_content(): boolean;
 
         /**
          * Gets the sidebar widget for `self`.
          * @returns the sidebar widget
+         * @since 1.4
          */
         get_sidebar(): NavigationPage | null;
 
         /**
          * Gets the sidebar position for `self`.
          * @returns the sidebar position for `self`
+         * @since 1.7
          */
         get_sidebar_position(): Gtk.PackType;
 
         /**
          * Gets the preferred sidebar width fraction for `self`.
          * @returns the preferred width fraction
+         * @since 1.4
          */
         get_sidebar_width_fraction(): number;
 
         /**
          * Gets the length unit for minimum and maximum sidebar widths.
          * @returns the length unit
+         * @since 1.4
          */
         get_sidebar_width_unit(): LengthUnit;
 
@@ -26990,12 +27832,14 @@ export namespace Adw {
          * The {@link NavigationSplitView.show_content} controls which child is
          * visible while collapsed.
          * @param collapsed whether `self` is collapsed
+         * @since 1.4
          */
         set_collapsed(collapsed: boolean): void;
 
         /**
          * Sets the content widget for `self`.
          * @param content the content widget
+         * @since 1.4
          */
         set_content(content: NavigationPage | null): void;
 
@@ -27008,6 +27852,7 @@ export namespace Adw {
          * The sidebar widget can still be allocated with larger width if its own
          * minimum width exceeds it.
          * @param width the maximum width
+         * @since 1.4
          */
         set_max_sidebar_width(width: number): void;
 
@@ -27020,6 +27865,7 @@ export namespace Adw {
          * The sidebar widget can still be allocated with larger width if its own
          * minimum width exceeds it.
          * @param width the minimum width
+         * @since 1.4
          */
         set_min_sidebar_width(width: number): void;
 
@@ -27032,12 +27878,14 @@ export namespace Adw {
          * 
          * If the split view is already collapsed, the visible page changes immediately.
          * @param show_content whether to show content when collapsed
+         * @since 1.4
          */
         set_show_content(show_content: boolean): void;
 
         /**
          * Sets the sidebar widget for `self`.
          * @param sidebar the sidebar widget
+         * @since 1.4
          */
         set_sidebar(sidebar: NavigationPage | null): void;
 
@@ -27050,6 +27898,7 @@ export namespace Adw {
          * If set to {@link Gtk.PackType.END}, the sidebar is displayed after the
          * content, and the content will be the root page.
          * @param position the new position
+         * @since 1.7
          */
         set_sidebar_position(position: Gtk.PackType): void;
 
@@ -27063,6 +27912,7 @@ export namespace Adw {
          * The sidebar widget can be allocated with larger width if its own minimum
          * width exceeds the preferred width.
          * @param fraction the preferred width fraction
+         * @since 1.4
          */
         set_sidebar_width_fraction(fraction: number): void;
 
@@ -27072,6 +27922,7 @@ export namespace Adw {
          * See {@link NavigationSplitView.min_sidebar_width} and
          * {@link NavigationSplitView.max_sidebar_width}.
          * @param unit the length unit
+         * @since 1.4
          */
         set_sidebar_width_unit(unit: LengthUnit): void;
 
@@ -27107,6 +27958,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -27119,6 +27971,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -27127,6 +27980,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -27139,6 +27993,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -27149,18 +28004,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -27172,6 +28030,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -27205,6 +28064,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -27214,6 +28074,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -27224,6 +28085,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -27271,6 +28133,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -27279,12 +28142,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -27295,18 +28160,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -27318,6 +28186,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -27863,6 +28732,7 @@ export namespace Adw {
          * 
          * See {@link NavigationView.remove}.
          * @param page the page to add
+         * @since 1.4
          */
         add(page: NavigationPage): void;
 
@@ -27872,18 +28742,21 @@ export namespace Adw {
          * See {@link NavigationPage.tag}.
          * @param tag a page tag
          * @returns the page with the given tag
+         * @since 1.4
          */
         find_page(tag: string): NavigationPage | null;
 
         /**
          * Gets whether `self` animates page transitions.
          * @returns whether to animate page transitions
+         * @since 1.4
          */
         get_animate_transitions(): boolean;
 
         /**
          * Gets whether `self` is horizontally homogeneous.
          * @returns whether `self` is horizontally homogeneous
+         * @since 1.7
          */
         get_hhomogeneous(): boolean;
 
@@ -27894,12 +28767,14 @@ export namespace Adw {
          * 
          * This can be used to keep an up-to-date view.
          * @returns a list model for the navigation stack
+         * @since 1.4
          */
         get_navigation_stack(): Gio.ListModel;
 
         /**
          * Gets whether pressing Escape pops the current page on `self`.
          * @returns whether to pop the current page
+         * @since 1.4
          */
         get_pop_on_escape(): boolean;
 
@@ -27912,24 +28787,28 @@ export namespace Adw {
          * If `page` is the root page or is not in the navigation stack, returns `NULL`.
          * @param page a page in `self`
          * @returns the previous page
+         * @since 1.4
          */
         get_previous_page(page: NavigationPage): NavigationPage | null;
 
         /**
          * Gets whether `self` is vertically homogeneous.
          * @returns whether `self` is vertically homogeneous
+         * @since 1.7
          */
         get_vhomogeneous(): boolean;
 
         /**
          * Gets the currently visible page in `self`.
          * @returns the currently visible page
+         * @since 1.4
          */
         get_visible_page(): NavigationPage | null;
 
         /**
          * Gets the tag of the currently visible page in `self`.
          * @returns the tag of the currently visible page
+         * @since 1.7
          */
         get_visible_page_tag(): string | null;
 
@@ -27946,6 +28825,7 @@ export namespace Adw {
          * See {@link NavigationView.pop_to_page} and
          * {@link NavigationView.pop_to_tag}.
          * @returns `TRUE` if a page has been popped
+         * @since 1.4
          */
         pop(): boolean;
 
@@ -27963,6 +28843,7 @@ export namespace Adw {
          * See {@link NavigationView.pop} and {@link NavigationView.pop_to_tag}.
          * @param page the page to pop to
          * @returns `TRUE` if any pages have been popped
+         * @since 1.4
          */
         pop_to_page(page: NavigationPage): boolean;
 
@@ -27979,6 +28860,7 @@ export namespace Adw {
          * See {@link NavigationView.pop_to_page} and {@link NavigationPage.tag}.
          * @param tag a page tag
          * @returns `TRUE` if any pages have been popped
+         * @since 1.4
          */
         pop_to_tag(tag: string): boolean;
 
@@ -27992,6 +28874,7 @@ export namespace Adw {
          * 
          * See {@link NavigationView.push_by_tag}.
          * @param page the page to push
+         * @since 1.4
          */
         push(page: NavigationPage): void;
 
@@ -28005,6 +28888,7 @@ export namespace Adw {
          * 
          * See {@link NavigationView.push} and {@link NavigationPage.tag}.
          * @param tag the page tag
+         * @since 1.4
          */
         push_by_tag(tag: string): void;
 
@@ -28016,6 +28900,7 @@ export namespace Adw {
          * 
          * See {@link NavigationView.add}.
          * @param page the page to remove
+         * @since 1.4
          */
         remove(page: NavigationPage): void;
 
@@ -28036,6 +28921,7 @@ export namespace Adw {
          * 
          * See {@link NavigationView.replace_with_tags}.
          * @param pages the new navigation stack
+         * @since 1.4
          */
         replace(pages: NavigationPage[]): void;
 
@@ -28056,6 +28942,7 @@ export namespace Adw {
          * 
          * See {@link NavigationView.replace} and {@link NavigationPage.tag}.
          * @param tags tags of the pages in the   navigation stack
+         * @since 1.4
          */
         replace_with_tags(tags: string[]): void;
 
@@ -28064,6 +28951,7 @@ export namespace Adw {
          * 
          * Gesture-based transitions are always animated.
          * @param animate_transitions whether to animate page transitions
+         * @since 1.4
          */
         set_animate_transitions(animate_transitions: boolean): void;
 
@@ -28075,6 +28963,7 @@ export namespace Adw {
          * 
          * If it's not, the view may change width when a different page becomes visible.
          * @param hhomogeneous whether to make `self` horizontally homogeneous
+         * @since 1.7
          */
         set_hhomogeneous(hhomogeneous: boolean): void;
 
@@ -28084,6 +28973,7 @@ export namespace Adw {
          * Applications using {@link Adw.NavigationView} to implement a browser may want to
          * disable it.
          * @param pop_on_escape whether to pop the current page when pressing Escape
+         * @since 1.4
          */
         set_pop_on_escape(pop_on_escape: boolean): void;
 
@@ -28096,6 +28986,7 @@ export namespace Adw {
          * If it's not, the view may change height when a different page becomes
          * visible.
          * @param vhomogeneous whether to make `self` vertically homogeneous
+         * @since 1.7
          */
         set_vhomogeneous(vhomogeneous: boolean): void;
 
@@ -28220,6 +29111,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -28232,6 +29124,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -28240,6 +29133,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -28252,6 +29146,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -28262,18 +29157,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -28285,6 +29183,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -28318,6 +29217,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -28327,6 +29227,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -28337,6 +29238,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -28384,6 +29286,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -28392,12 +29295,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -28408,18 +29313,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -28431,6 +29339,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -29068,72 +29977,84 @@ export namespace Adw {
         /**
          * Gets whether `self` is collapsed.
          * @returns whether `self` is collapsed
+         * @since 1.4
          */
         get_collapsed(): boolean;
 
         /**
          * Gets the content widget for `self`.
          * @returns the content widget for `self`
+         * @since 1.4
          */
         get_content(): Gtk.Widget | null;
 
         /**
          * Gets whether `self` can be closed with a swipe gesture.
          * @returns `TRUE` if `self` can be closed with a swipe gesture
+         * @since 1.4
          */
         get_enable_hide_gesture(): boolean;
 
         /**
          * Gets whether `self` can be opened with an edge swipe gesture.
          * @returns `TRUE` if `self` can be opened with a swipe gesture
+         * @since 1.4
          */
         get_enable_show_gesture(): boolean;
 
         /**
          * Gets the maximum sidebar width for `self`.
          * @returns the maximum width
+         * @since 1.4
          */
         get_max_sidebar_width(): number;
 
         /**
          * Gets the minimum sidebar width for `self`.
          * @returns the minimum width
+         * @since 1.4
          */
         get_min_sidebar_width(): number;
 
         /**
          * Gets whether the sidebar widget is pinned for `self`.
          * @returns whether if the sidebar widget is pinned
+         * @since 1.4
          */
         get_pin_sidebar(): boolean;
 
         /**
          * Gets whether the sidebar widget is shown for `self`.
          * @returns `TRUE` if the sidebar widget is shown
+         * @since 1.4
          */
         get_show_sidebar(): boolean;
 
         /**
          * Gets the sidebar widget for `self`.
          * @returns the sidebar widget for `self`
+         * @since 1.4
          */
         get_sidebar(): Gtk.Widget | null;
 
         /**
          * Gets the sidebar position for `self`.
          * @returns the sidebar position for `self`
+         * @since 1.4
          */
         get_sidebar_position(): Gtk.PackType;
 
         /**
          * Gets the preferred sidebar width fraction for `self`.
          * @returns the preferred width fraction
+         * @since 1.4
          */
         get_sidebar_width_fraction(): number;
 
         /**
          * Gets the length unit for minimum and maximum sidebar widths.
          * @returns the length unit
+         * @since 1.4
          */
         get_sidebar_width_unit(): LengthUnit;
 
@@ -29143,12 +30064,14 @@ export namespace Adw {
          * When collapsed, the sidebar widget is presented as an overlay above the
          * content widget, otherwise they are displayed side by side.
          * @param collapsed whether `self` is collapsed
+         * @since 1.4
          */
         set_collapsed(collapsed: boolean): void;
 
         /**
          * Sets the content widget for `self`.
          * @param content the content widget
+         * @since 1.4
          */
         set_content(content: Gtk.Widget | null): void;
 
@@ -29157,6 +30080,7 @@ export namespace Adw {
          * 
          * Only touchscreen swipes are supported.
          * @param enable_hide_gesture whether `self` can be closed with a swipe gesture
+         * @since 1.4
          */
         set_enable_hide_gesture(enable_hide_gesture: boolean): void;
 
@@ -29165,6 +30089,7 @@ export namespace Adw {
          * 
          * Only touchscreen swipes are supported.
          * @param enable_show_gesture whether `self` can be opened with a swipe gesture
+         * @since 1.4
          */
         set_enable_show_gesture(enable_show_gesture: boolean): void;
 
@@ -29176,6 +30101,7 @@ export namespace Adw {
          * The sidebar widget can still be allocated with larger width if its own
          * minimum width exceeds it.
          * @param width the maximum width
+         * @since 1.4
          */
         set_max_sidebar_width(width: number): void;
 
@@ -29187,6 +30113,7 @@ export namespace Adw {
          * The sidebar widget can still be allocated with larger width if its own
          * minimum width exceeds it.
          * @param width the minimum width
+         * @since 1.4
          */
         set_min_sidebar_width(width: number): void;
 
@@ -29197,18 +30124,21 @@ export namespace Adw {
          * uncollapsing it shows the sidebar. If set to `TRUE`, sidebar visibility never
          * changes on its own.
          * @param pin_sidebar whether to pin the sidebar widget
+         * @since 1.4
          */
         set_pin_sidebar(pin_sidebar: boolean): void;
 
         /**
          * Sets whether the sidebar widget is shown for `self`.
          * @param show_sidebar whether to show the sidebar widget
+         * @since 1.4
          */
         set_show_sidebar(show_sidebar: boolean): void;
 
         /**
          * Sets the sidebar widget for `self`.
          * @param sidebar the sidebar widget
+         * @since 1.4
          */
         set_sidebar(sidebar: Gtk.Widget | null): void;
 
@@ -29218,6 +30148,7 @@ export namespace Adw {
          * If it's set to {@link Gtk.PackType.START}, the sidebar is displayed before the
          * content; if {@link Gtk.PackType.END}, it's displayed after the content.
          * @param position the new position
+         * @since 1.4
          */
         set_sidebar_position(position: Gtk.PackType): void;
 
@@ -29231,6 +30162,7 @@ export namespace Adw {
          * The sidebar widget can be allocated with larger width if its own minimum
          * width exceeds the preferred width.
          * @param fraction the preferred width fraction
+         * @since 1.4
          */
         set_sidebar_width_fraction(fraction: number): void;
 
@@ -29240,6 +30172,7 @@ export namespace Adw {
          * See {@link OverlaySplitView.min_sidebar_width} and
          * {@link OverlaySplitView.max_sidebar_width}.
          * @param unit the length unit
+         * @since 1.4
          */
         set_sidebar_width_unit(unit: LengthUnit): void;
 
@@ -29364,6 +30297,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -29376,6 +30310,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -29384,6 +30319,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -29396,6 +30332,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -29406,18 +30343,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -29429,6 +30369,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -29462,6 +30403,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -29471,6 +30413,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -29481,6 +30424,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -29528,6 +30472,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -29536,12 +30481,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -29552,18 +30499,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -29575,6 +30525,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -29941,6 +30892,7 @@ export namespace Adw {
          * change your tree to allow this function to work.
          * @param state what kind of accessible state to retrieve
          * @returns the accessible platform state of the delegate
+         * @since 4.10
          */
         delegate_get_accessible_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -30442,6 +31394,7 @@ export namespace Adw {
         /**
          * Adds a preferences page to `self`.
          * @param page the page to add
+         * @since 1.5
          */
         add(page: PreferencesPage): void;
 
@@ -30450,30 +31403,35 @@ export namespace Adw {
          * 
          * See {@link ToastOverlay.add_toast}.
          * @param toast a toast
+         * @since 1.5
          */
         add_toast(toast: Toast): void;
 
         /**
          * Gets whether search is enabled for `self`.
          * @returns whether search is enabled for `self`.
+         * @since 1.5
          */
         get_search_enabled(): boolean;
 
         /**
          * Gets the currently visible page of `self`.
          * @returns the visible page
+         * @since 1.5
          */
         get_visible_page(): PreferencesPage | null;
 
         /**
          * Gets the name of currently visible page of `self`.
          * @returns the name of the visible page
+         * @since 1.5
          */
         get_visible_page_name(): string | null;
 
         /**
          * Pop the visible page from the subpage stack of `self`.
          * @returns `TRUE` if a page has been popped
+         * @since 1.5
          */
         pop_subpage(): boolean;
 
@@ -30482,24 +31440,28 @@ export namespace Adw {
          * 
          * The page will be automatically removed when popped.
          * @param page the subpage
+         * @since 1.5
          */
         push_subpage(page: NavigationPage): void;
 
         /**
          * Removes a page from `self`.
          * @param page the page to remove
+         * @since 1.5
          */
         remove(page: PreferencesPage): void;
 
         /**
          * Sets whether search is enabled for `self`.
          * @param search_enabled whether search is enabled
+         * @since 1.5
          */
         set_search_enabled(search_enabled: boolean): void;
 
         /**
          * Makes `page` the visible page of `self`.
          * @param page a page of `self`
+         * @since 1.5
          */
         set_visible_page(page: PreferencesPage): void;
 
@@ -30508,6 +31470,7 @@ export namespace Adw {
          * 
          * See {@link PreferencesDialog.visible_page}.
          * @param name the name of the page to make visible
+         * @since 1.5
          */
         set_visible_page_name(name: string): void;
 
@@ -30729,6 +31692,7 @@ export namespace Adw {
          * See {@link Gtk.ListBox.bind_model}.
          * @param model a list model to bind
          * @param create_row_func a function creating a row for each item, or `NULL` in case `model` is `NULL`
+         * @since 1.8
          */
         bind_model(model: Gio.ListModel | null, create_row_func: Gtk.ListBoxCreateWidgetFunc | null): void;
 
@@ -30741,6 +31705,7 @@ export namespace Adw {
         /**
          * Gets the suffix for `self`'s header.
          * @returns the suffix for `self`'s header.
+         * @since 1.1
          */
         get_header_suffix(): Gtk.Widget | null;
 
@@ -30750,12 +31715,14 @@ export namespace Adw {
          * Can return `NULL` if `index` is larger than the number of rows in the group.
          * @param index a row index
          * @returns the row at `index`
+         * @since 1.8
          */
         get_row(index: number): Gtk.Widget | null;
 
         /**
          * Gets whether `self`'s rows are separated.
          * @returns whether rows are separated
+         * @since 1.6
          */
         get_separate_rows(): boolean;
 
@@ -30784,6 +31751,7 @@ export namespace Adw {
          * 
          * Suffixes are commonly used to show a button or a spinner for the whole group.
          * @param suffix the suffix to set
+         * @since 1.1
          */
         set_header_suffix(suffix: Gtk.Widget | null): void;
 
@@ -30794,6 +31762,7 @@ export namespace Adw {
          * [`.boxed-list-separate`](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/style-classes.html#boxed-lists-cards) style class
          * on a {@link Gtk.ListBox} instead of `.boxed-list`.
          * @param separate_rows whether to separate rows
+         * @since 1.6
          */
         set_separate_rows(separate_rows: boolean): void;
 
@@ -30835,6 +31804,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -30847,6 +31817,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -30855,6 +31826,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -30867,6 +31839,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -30877,18 +31850,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -30900,6 +31876,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -30933,6 +31910,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -30942,6 +31920,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -30952,6 +31931,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -30999,6 +31979,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -31007,12 +31988,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -31023,18 +32006,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -31046,6 +32032,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -31346,18 +32333,21 @@ export namespace Adw {
         /**
          * Gets the banner displayed at the top of the page.
          * @returns the banner for `self`
+         * @since 1.7
          */
         get_banner(): Banner | null;
 
         /**
          * Gets the description of `self`.
          * @returns the description of `self`.
+         * @since 1.4
          */
         get_description(): string;
 
         /**
          * Gets whether the description is centered.
          * @returns whether the description is centered.
+         * @since 1.6
          */
         get_description_centered(): boolean;
 
@@ -31367,6 +32357,7 @@ export namespace Adw {
          * Can return `NULL` if `index` is larger than the number of groups in the page.
          * @param index a group index
          * @returns the group at `index`
+         * @since 1.8
          */
         get_group(index: number): PreferencesGroup | null;
 
@@ -31407,6 +32398,7 @@ export namespace Adw {
          * same as {@link PreferencesPage.add}.
          * @param group the group to add
          * @param index the index to insert `group` a
+         * @since 1.8
          */
         insert(group: PreferencesGroup, index: number): void;
 
@@ -31418,12 +32410,14 @@ export namespace Adw {
 
         /**
          * Scrolls the scrolled window of `self` to the top.
+         * @since 1.3
          */
         scroll_to_top(): void;
 
         /**
          * Sets the banner displayed at the top of the page.
          * @param banner the banner to display at the top of the page
+         * @since 1.7
          */
         set_banner(banner: Banner | null): void;
 
@@ -31432,12 +32426,14 @@ export namespace Adw {
          * 
          * The description is displayed at the top of the page.
          * @param description the description
+         * @since 1.4
          */
         set_description(description: string): void;
 
         /**
          * Sets whether the description should be centered.
          * @param centered If the description should be centered
+         * @since 1.6
          */
         set_description_centered(centered: boolean): void;
 
@@ -31503,6 +32499,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -31515,6 +32512,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -31523,6 +32521,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -31535,6 +32534,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -31545,18 +32545,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -31568,6 +32571,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -31601,6 +32605,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -31610,6 +32615,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -31620,6 +32626,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -31667,6 +32674,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -31675,12 +32683,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -31691,18 +32701,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -31714,6 +32727,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -32001,12 +33015,14 @@ export namespace Adw {
         /**
          * Gets whether the user can copy the title from the label
          * @returns whether the user can copy the title from the label
+         * @since 1.1
          */
         get_title_selectable(): boolean;
 
         /**
          * Gets whether to use Pango markup for the title label.
          * @returns whether to use markup
+         * @since 1.2
          */
         get_use_markup(): boolean;
 
@@ -32030,6 +33046,7 @@ export namespace Adw {
          * 
          * See also {@link Gtk.Label.selectable}.
          * @param title_selectable `TRUE` if the user can copy the title from the label
+         * @since 1.1
          */
         set_title_selectable(title_selectable: boolean): void;
 
@@ -32040,6 +33057,7 @@ export namespace Adw {
          * 
          * See also {@link Pango.parse_markup}.
          * @param use_markup whether to use markup
+         * @since 1.2
          */
         set_use_markup(use_markup: boolean): void;
 
@@ -32436,6 +33454,7 @@ export namespace Adw {
         /**
          * Adds a preferences page to `self`.
          * @param page the page to add
+         * @deprecated since 1.6: Use {@link PreferencesDialog}.
          */
         add(page: PreferencesPage): void;
 
@@ -32444,6 +33463,7 @@ export namespace Adw {
          * 
          * See {@link ToastOverlay.add_toast}.
          * @param toast a toast
+         * @deprecated since 1.6: Use {@link PreferencesDialog}.
          */
         add_toast(toast: Toast): void;
 
@@ -32451,36 +33471,43 @@ export namespace Adw {
          * Closes the current subpage.
          * 
          * If there is no presented subpage, this does nothing.
+         * @deprecated since 1.4: Use {@link PreferencesWindow.pop_subpage} instead.
          */
         close_subpage(): void;
 
         /**
          * Gets whether gestures and shortcuts for closing subpages are enabled.
          * @returns whether gestures and shortcuts are enabled.
+         * @deprecated since 1.4: Use {@link NavigationPage.get_can_pop} instead.
          */
         get_can_navigate_back(): boolean;
 
         /**
          * Gets whether search is enabled for `self`.
          * @returns whether search is enabled for `self`.
+         * @deprecated since 1.6: Use {@link PreferencesDialog}.
          */
         get_search_enabled(): boolean;
 
         /**
          * Gets the currently visible page of `self`.
          * @returns the visible page
+         * @deprecated since 1.6: Use {@link PreferencesDialog}.
          */
         get_visible_page(): PreferencesPage | null;
 
         /**
          * Gets the name of currently visible page of `self`.
          * @returns the name of the visible page
+         * @deprecated since 1.6: Use {@link PreferencesDialog}.
          */
         get_visible_page_name(): string | null;
 
         /**
          * Pop the visible page from the subpage stack of `self`.
          * @returns `TRUE` if a page has been popped
+         * @since 1.4
+         * @deprecated since 1.6: Use {@link PreferencesDialog}.
          */
         pop_subpage(): boolean;
 
@@ -32490,6 +33517,7 @@ export namespace Adw {
          * The transition can be cancelled by the user, in which case visible child will
          * change back to the previously visible child.
          * @param subpage the subpage
+         * @deprecated since 1.4: Use {@link PreferencesWindow.push_subpage} instead.
          */
         present_subpage(subpage: Gtk.Widget): void;
 
@@ -32498,12 +33526,15 @@ export namespace Adw {
          * 
          * The page will be automatically removed when popped.
          * @param page the subpage
+         * @since 1.4
+         * @deprecated since 1.6: Use {@link PreferencesDialog}.
          */
         push_subpage(page: NavigationPage): void;
 
         /**
          * Removes a page from `self`.
          * @param page the page to remove
+         * @deprecated since 1.6: Use {@link PreferencesDialog}.
          */
         remove(page: PreferencesPage): void;
 
@@ -32523,18 +33554,21 @@ export namespace Adw {
          * 
          * Has no effect for subpages added with {@link PreferencesWindow.push_subpage}.
          * @param can_navigate_back the new value
+         * @deprecated since 1.4: Use {@link NavigationPage.set_can_pop} instead.
          */
         set_can_navigate_back(can_navigate_back: boolean): void;
 
         /**
          * Sets whether search is enabled for `self`.
          * @param search_enabled whether search is enabled
+         * @deprecated since 1.6: Use {@link PreferencesDialog}.
          */
         set_search_enabled(search_enabled: boolean): void;
 
         /**
          * Makes `page` the visible page of `self`.
          * @param page a page of `self`
+         * @deprecated since 1.6: Use {@link PreferencesDialog}.
          */
         set_visible_page(page: PreferencesPage): void;
 
@@ -32543,6 +33577,7 @@ export namespace Adw {
          * 
          * See {@link PreferencesWindow.visible_page}.
          * @param name the name of the page to make visible
+         * @deprecated since 1.6: Use {@link PreferencesDialog}.
          */
         set_visible_page_name(name: string): void;
     }
@@ -32629,12 +33664,14 @@ export namespace Adw {
          * the object; make sure the object is kept alive throughout the target's
          * lifetime.
          * @returns the animated object
+         * @since 1.2
          */
         get_object<T = GObject.Object>(): T;
 
         /**
          * Gets the {@link GObject.ParamSpec} of the property animated by `self`.
          * @returns the animated property's {@link GObject.ParamSpec}
+         * @since 1.2
          */
         get_pspec(): GObject.ParamSpec;
     }
@@ -32817,24 +33854,28 @@ export namespace Adw {
         /**
          * Gets the accelerator displayed by `self`.
          * @returns the displayed accelerator
+         * @since 1.8
          */
         get_accelerator(): string;
 
         /**
          * Gets the text displayed by `self` when no accelerator is set.
          * @returns the text displayed when no accelerator is set
+         * @since 1.8
          */
         get_disabled_text(): string;
 
         /**
          * Sets the accelerator to be displayed by `self`.
          * @param accelerator the accelerator to be displayed
+         * @since 1.8
          */
         set_accelerator(accelerator: string): void;
 
         /**
          * Sets the text to be displayed by `self` when no accelerator is set.
          * @param disabled_text the text displayed when no accelerator is set
+         * @since 1.8
          */
         set_disabled_text(disabled_text: string): void;
 
@@ -32870,6 +33911,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -32882,6 +33924,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -32890,6 +33933,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -32902,6 +33946,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -32912,18 +33957,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -32935,6 +33983,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -32968,6 +34017,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -32977,6 +34027,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -32987,6 +34038,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -33034,6 +34086,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -33042,12 +34095,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -33058,18 +34113,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -33081,6 +34139,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -33364,6 +34423,7 @@ export namespace Adw {
         /**
          * Adds `section` to `self`.
          * @param section the section to add
+         * @since 1.8
          */
         add(section: ShortcutsSection): void;
 
@@ -33512,30 +34572,35 @@ export namespace Adw {
         /**
          * Gets the accelerator of `self`.
          * @returns the accelerator
+         * @since 1.8
          */
         get_accelerator(): string;
 
         /**
          * Gets the action name to get the accelerator from.
          * @returns the action name
+         * @since 1.8
          */
         get_action_name(): string;
 
         /**
          * Gets the direction of `self`.
          * @returns the shortcut direction
+         * @since 1.8
          */
         get_direction(): Gtk.TextDirection;
 
         /**
          * Gets the subtitle of `self`.
          * @returns the subtitle
+         * @since 1.8
          */
         get_subtitle(): string;
 
         /**
          * Gets the title of `self`.
          * @returns the title
+         * @since 1.8
          */
         get_title(): string;
 
@@ -33544,12 +34609,14 @@ export namespace Adw {
          * 
          * `accelerator` must be in the format {@link ShortcutLabel} accepts.
          * @param accelerator the accelerator to use
+         * @since 1.8
          */
         set_accelerator(accelerator: string): void;
 
         /**
          * Sets the action name to get the accelerator from.
          * @param action_name the action name to use
+         * @since 1.8
          */
         set_action_name(action_name: string): void;
 
@@ -33559,18 +34626,21 @@ export namespace Adw {
          * If set to {@link Gtk.TextDirection.LTR} or {@link Gtk.TextDirection.RTL}, the
          * shortcut will only be displayed for this direction.
          * @param direction the shortcut direction
+         * @since 1.8
          */
         set_direction(direction: Gtk.TextDirection): void;
 
         /**
          * Sets the subtitle of `self`.
          * @param subtitle the subtitle to use
+         * @since 1.8
          */
         set_subtitle(subtitle: string): void;
 
         /**
          * Sets the title of `self`.
          * @param title the title to use
+         * @since 1.8
          */
         set_title(title: string): void;
     }
@@ -33684,18 +34754,21 @@ export namespace Adw {
         /**
          * Adds `item` to `self`.
          * @param item the item to add
+         * @since 1.8
          */
         add(item: ShortcutsItem): void;
 
         /**
          * Gets the title of `self`.
          * @returns the title
+         * @since 1.8
          */
         get_title(): string | null;
 
         /**
          * Sets the title of `self`.
          * @param title the title to use
+         * @since 1.8
          */
         set_title(title: string | null): void;
 
@@ -33709,6 +34782,7 @@ export namespace Adw {
          * The item type of a {@link Gio.ListModel} can not change during the life of the
          * model.
          * @returns the {@link GObject.GType} of the items contained in `list`.
+         * @since 2.44
          */
         get_item_type(): GObject.GType;
 
@@ -33719,6 +34793,7 @@ export namespace Adw {
          * less efficient than iterating the list with increasing values for
          * `position` until `g_list_model_get_item()` returns `null`.
          * @returns the number of items in `list`.
+         * @since 2.44
          */
         get_n_items(): number;
 
@@ -33737,6 +34812,7 @@ export namespace Adw {
          * See also: `g_list_model_get_n_items()`
          * @param position the position of the item to fetch
          * @returns the object at `position`.
+         * @since 2.44
          */
         get_item(position: number): A | null;
 
@@ -33764,6 +34840,7 @@ export namespace Adw {
          * @param position the position at which `list` changed
          * @param removed the number of items removed
          * @param added the number of items added
+         * @since 2.44
          */
         items_changed(position: number, removed: number, added: number): void;
 
@@ -33776,6 +34853,7 @@ export namespace Adw {
          * 
          * The same {@link GObject.Object} instance may not appear more than once in a {@link Gio.ListModel}.
          * @param position the position of the item to fetch
+         * @since 2.44
          * @virtual
          */
         vfunc_get_item(position: number): A | null;
@@ -33789,6 +34867,7 @@ export namespace Adw {
          * 
          * The item type of a {@link Gio.ListModel} can not change during the life of the
          * model.
+         * @since 2.44
          * @virtual
          */
         vfunc_get_item_type(): GObject.GType;
@@ -33799,6 +34878,7 @@ export namespace Adw {
          * Depending on the model implementation, calling this function may be
          * less efficient than iterating the list with increasing values for
          * `position` until `g_list_model_get_item()` returns `null`.
+         * @since 2.44
          * @virtual
          */
         vfunc_get_n_items(): number;
@@ -34446,18 +35526,21 @@ export namespace Adw {
         /**
          * Appends `section` to `self`.
          * @param section a section to append
+         * @since 1.9
          */
         append(section: SidebarSection): void;
 
         /**
          * Gets whether drop data should be preloaded on hover.
          * @returns whether drop data should be preloaded on hover
+         * @since 1.9
          */
         get_drop_preload(): boolean;
 
         /**
          * Gets the item filter for `self`.
          * @returns the item filter
+         * @since 1.9
          */
         get_filter(): Gtk.Filter | null;
 
@@ -34470,6 +35553,7 @@ export namespace Adw {
          * Can return `NULL` if `index` is larger or equal to the number of items.
          * @param index index of the item
          * @returns the item at `index`
+         * @since 1.9
          */
         get_item(index: number): SidebarItem | null;
 
@@ -34486,24 +35570,28 @@ export namespace Adw {
          * 
          * To only track sections, use {@link Sidebar.sections} instead.
          * @returns a model containing the items
+         * @since 1.9
          */
         get_items(): Gtk.SelectionModel;
 
         /**
          * Gets the context menu model for `self`'s items.
          * @returns the context menu model
+         * @since 1.9
          */
         get_menu_model(): Gio.MenuModel | null;
 
         /**
          * Gets `self`'s look and behavior.
          * @returns the current mode
+         * @since 1.9
          */
         get_mode(): SidebarMode;
 
         /**
          * Gets the placeholder widget for `self`.
          * @returns the placeholder widget
+         * @since 1.9
          */
         get_placeholder(): Gtk.Widget | null;
 
@@ -34513,6 +35601,7 @@ export namespace Adw {
          * Can return `NULL` if `index` is larger or equal to the number of sections.
          * @param index index of the section
          * @returns the section at `index`
+         * @since 1.9
          */
         get_section(index: number): SidebarSection | null;
 
@@ -34523,6 +35612,7 @@ export namespace Adw {
          * 
          * To track items, use {@link Sidebar.items} instead.
          * @returns a model containing the sections
+         * @since 1.9
          */
         get_sections(): Gio.ListModel;
 
@@ -34531,6 +35621,7 @@ export namespace Adw {
          * 
          * See also: {@link Sidebar.get_selected_item}.
          * @returns index of the currently selected item
+         * @since 1.9
          */
         get_selected(): number;
 
@@ -34542,6 +35633,7 @@ export namespace Adw {
          * 
          * To change selection, use {@link Sidebar.set_selected}.
          * @returns the selected item
+         * @since 1.9
          */
         get_selected_item(): SidebarItem | null;
 
@@ -34552,23 +35644,27 @@ export namespace Adw {
          * the section will be appended to the end.
          * @param section a section to insert
          * @param position position to insert `section` at
+         * @since 1.9
          */
         insert(section: SidebarSection, position: number): void;
 
         /**
          * Prepends `section` to `self`.
          * @param section a section to prepend
+         * @since 1.9
          */
         prepend(section: SidebarSection): void;
 
         /**
          * Removes `section` from `self`.
          * @param section a section to remove
+         * @since 1.9
          */
         remove(section: SidebarSection): void;
 
         /**
          * Removes all sections from `self`.
+         * @since 1.9
          */
         remove_all(): void;
 
@@ -34577,6 +35673,7 @@ export namespace Adw {
          * 
          * See {@link Gtk.DropTarget.preload}.
          * @param preload whether to preload drop data
+         * @since 1.9
          */
         set_drop_preload(preload: boolean): void;
 
@@ -34587,6 +35684,7 @@ export namespace Adw {
          * 
          * Use {@link Sidebar.placeholder} to provide an empty state.
          * @param filter the item filter
+         * @since 1.9
          */
         set_filter(filter: Gtk.Filter | null): void;
 
@@ -34599,6 +35697,7 @@ export namespace Adw {
          * 
          * {@link Sidebar.menu_model} will be preferred over this model if set.
          * @param menu_model a menu model
+         * @since 1.9
          */
         set_menu_model(menu_model: Gio.MenuModel | null): void;
 
@@ -34623,6 +35722,7 @@ export namespace Adw {
          * When used with {@link OverlaySplitView}, the sidebar should stay in sidebar
          * mode, as the sidebar pane is still a sidebar when collapsed.
          * @param mode the new mode
+         * @since 1.9
          */
         set_mode(mode: SidebarMode): void;
 
@@ -34632,6 +35732,7 @@ export namespace Adw {
          * This widget will be shown if `self` has no items, or all of its items have
          * been filtered out by {@link Sidebar.filter}.
          * @param placeholder the placeholder widget
+         * @since 1.9
          */
         set_placeholder(placeholder: Gtk.Widget | null): void;
 
@@ -34646,6 +35747,7 @@ export namespace Adw {
          * 
          * See also: {@link Sidebar.selected_item}.
          * @param selected index of the newly selected item
+         * @since 1.9
          */
         set_selected(selected: number): void;
 
@@ -34657,6 +35759,7 @@ export namespace Adw {
          * The `Adw.Sidebar::drop` signal can be used to handle the drop.
          * @param actions the supported actions
          * @param types all supported {@link GObject.GType}s that can be dropped
+         * @since 1.9
          */
         setup_drop_target(actions: Gdk.DragAction, types: GObject.GType[] | null): void;
 
@@ -34692,6 +35795,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -34704,6 +35808,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -34712,6 +35817,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -34724,6 +35830,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -34734,18 +35841,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -34757,6 +35867,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -34790,6 +35901,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -34799,6 +35911,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -34809,6 +35922,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -34856,6 +35970,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -34864,12 +35979,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -34880,18 +35997,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -34903,6 +36023,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -35256,24 +36377,28 @@ export namespace Adw {
         /**
          * Gets whether `self` will be activated on pointer motion during Drag-and-Drop.
          * @returns whether to enable the item on drag motion
+         * @since 1.9
          */
         get_drag_motion_activate(): boolean;
 
         /**
          * Gets whether `self` is enabled.
          * @returns whether the item is enabled
+         * @since 1.9
          */
         get_enabled(): boolean;
 
         /**
          * Gets the icon name for `item`.
          * @returns the icon name
+         * @since 1.9
          */
         get_icon_name(): string | null;
 
         /**
          * Gets the paintable used as the icon for `item`.
          * @returns the icon paintable
+         * @since 1.9
          */
         get_icon_paintable(): Gdk.Paintable | null;
 
@@ -35288,12 +36413,14 @@ export namespace Adw {
          * The item can later be retrieved by passing this index into
          * {@link Sidebar.get_item}.
          * @returns the index of `self`
+         * @since 1.9
          */
         get_index(): number;
 
         /**
          * Gets the section `self` is in.
          * @returns the section of `self`
+         * @since 1.9
          */
         get_section(): SidebarSection | null;
 
@@ -35305,42 +36432,49 @@ export namespace Adw {
          * The item can later be retrieved by passing this index into
          * {@link SidebarSection.get_item}.
          * @returns the index of `self`
+         * @since 1.9
          */
         get_section_index(): number;
 
         /**
          * Gets the subtitle of `self`.
          * @returns the subtitle
+         * @since 1.9
          */
         get_subtitle(): string | null;
 
         /**
          * Gets the suffix widget for `self`.
          * @returns the suffix widget
+         * @since 1.9
          */
         get_suffix(): Gtk.Widget | null;
 
         /**
          * Gets the title of `self`.
          * @returns the title
+         * @since 1.9
          */
         get_title(): string | null;
 
         /**
          * Gets the tooltip of `self`.
          * @returns the tooltip
+         * @since 1.9
          */
         get_tooltip(): string | null;
 
         /**
          * Gets whether an underline in the title indicates a mnemonic.
          * @returns whether an underline in the text indicates a mnemonic
+         * @since 1.9
          */
         get_use_underline(): boolean;
 
         /**
          * Gets whether `self` is visible.
          * @returns whether the item is visible
+         * @since 1.9
          */
         get_visible(): boolean;
 
@@ -35351,6 +36485,7 @@ export namespace Adw {
          * represents, when the sidebar is used as a page switcher. However, it may be
          * unwanted when dropping content onto the item itself, so it can be disabled.
          * @param drag_motion_activate whether to enable the item on drag motion
+         * @since 1.9
          */
         set_drag_motion_activate(drag_motion_activate: boolean): void;
 
@@ -35359,6 +36494,7 @@ export namespace Adw {
          * 
          * See {@link Gtk.Widget.sensitive}.
          * @param enabled whether to enable the item
+         * @since 1.9
          */
         set_enabled(enabled: boolean): void;
 
@@ -35367,6 +36503,7 @@ export namespace Adw {
          * 
          * Mutually exclusive with {@link SidebarItem.icon_paintable}.
          * @param icon_name the icon name
+         * @since 1.9
          */
         set_icon_name(icon_name: string | null): void;
 
@@ -35375,12 +36512,14 @@ export namespace Adw {
          * 
          * Mutually exclusive with {@link SidebarItem.icon_name}.
          * @param paintable the icon paintable
+         * @since 1.9
          */
         set_icon_paintable(paintable: Gdk.Paintable | null): void;
 
         /**
          * Sets the subtitle of `self`.
          * @param subtitle the subtitle
+         * @since 1.9
          */
         set_subtitle(subtitle: string | null): void;
 
@@ -35390,12 +36529,14 @@ export namespace Adw {
          * Suffix will be shown at the end of the item's row, or before the arrow in
          * the {@link Adw.SidebarMode.PAGE} mode.
          * @param suffix the suffix widget
+         * @since 1.9
          */
         set_suffix(suffix: Gtk.Widget | null): void;
 
         /**
          * Sets the title of `self`.
          * @param title the title
+         * @since 1.9
          */
         set_title(title: string | null): void;
 
@@ -35404,6 +36545,7 @@ export namespace Adw {
          * 
          * The tooltip can be marked up with the Pango text markup language.
          * @param tooltip the tooltip
+         * @since 1.9
          */
         set_tooltip(tooltip: string | null): void;
 
@@ -35412,12 +36554,14 @@ export namespace Adw {
          * 
          * The mnemonic can be used to activate the item.
          * @param use_underline whether an underline in the text indicates a mnemonic
+         * @since 1.9
          */
         set_use_underline(use_underline: boolean): void;
 
         /**
          * Sets whether `self` is visible.
          * @param visible whether the item is visible
+         * @since 1.9
          */
         set_visible(visible: boolean): void;
     }
@@ -35602,6 +36746,7 @@ export namespace Adw {
          * 
          * Cannot be used while a model is bound via {@link SidebarSection.bind_model}.
          * @param item an item to append
+         * @since 1.9
          */
         append(item: SidebarItem): void;
 
@@ -35624,6 +36769,7 @@ export namespace Adw {
          * whenever that part of the model changes, so it's not recommended.
          * @param model the model to be bound
          * @param create_item_func a function that creates {@link SidebarItem} for model items, or `NULL` in     case `model` is also `NULL`
+         * @since 1.9
          */
         bind_model(model: Gio.ListModel | null, create_item_func: SidebarSectionCreateItemFunc | null): void;
 
@@ -35636,6 +36782,7 @@ export namespace Adw {
          * Can return `NULL` if `index` is larger or equal to the number of items.
          * @param index index of the item
          * @returns the item at `index`
+         * @since 1.9
          */
         get_item(index: number): SidebarItem | null;
 
@@ -35644,24 +36791,28 @@ export namespace Adw {
          * 
          * This can be used to keep an up-to-date view.
          * @returns a model containing the items
+         * @since 1.9
          */
         get_items(): Gio.ListModel;
 
         /**
          * Gets the context menu model for `self`'s items.
          * @returns the context menu model
+         * @since 1.9
          */
         get_menu_model(): Gio.MenuModel | null;
 
         /**
          * Gets the sidebar `self` is in.
          * @returns the sidebar of `self`
+         * @since 1.9
          */
         get_sidebar(): Sidebar | null;
 
         /**
          * Gets the title of `self`.
          * @returns the title
+         * @since 1.9
          */
         get_title(): string | null;
 
@@ -35674,6 +36825,7 @@ export namespace Adw {
          * Cannot be used while a model is bound via {@link SidebarSection.bind_model}.
          * @param item an item to insert
          * @param position position to insert `item` at
+         * @since 1.9
          */
         insert(item: SidebarItem, position: number): void;
 
@@ -35682,6 +36834,7 @@ export namespace Adw {
          * 
          * Cannot be used while a model is bound via {@link SidebarSection.bind_model}.
          * @param item an item to prepend
+         * @since 1.9
          */
         prepend(item: SidebarItem): void;
 
@@ -35690,6 +36843,7 @@ export namespace Adw {
          * 
          * Cannot be used while a model is bound via {@link SidebarSection.bind_model}.
          * @param item an item to remove
+         * @since 1.9
          */
         remove(item: SidebarItem): void;
 
@@ -35697,6 +36851,7 @@ export namespace Adw {
          * Removes all items from `self`.
          * 
          * Cannot be used while a model is bound via {@link SidebarSection.bind_model}.
+         * @since 1.9
          */
         remove_all(): void;
 
@@ -35709,6 +36864,7 @@ export namespace Adw {
          * 
          * If not set, {@link Sidebar.menu_model} will be used instead.
          * @param menu_model a menu model
+         * @since 1.9
          */
         set_menu_model(menu_model: Gio.MenuModel | null): void;
 
@@ -35717,6 +36873,7 @@ export namespace Adw {
          * 
          * If set, it will be displayed instead of the separator before the section.
          * @param title the title
+         * @since 1.9
          */
         set_title(title: string | null): void;
 
@@ -36114,78 +37271,91 @@ export namespace Adw {
          * @param adjustment the adjustment that this spin row should use
          * @param climb_rate the new climb rate
          * @param digits the number of decimal places to display
+         * @since 1.4
          */
         configure(adjustment: Gtk.Adjustment | null, climb_rate: number, digits: number): void;
 
         /**
          * Gets the adjustment that holds the value for the spin row.
          * @returns the adjustment that holds the spin row's value
+         * @since 1.4
          */
         get_adjustment(): Gtk.Adjustment;
 
         /**
          * Gets the acceleration rate when you hold down a button or key.
          * @returns the acceleration rate when you hold down a button or key
+         * @since 1.4
          */
         get_climb_rate(): number;
 
         /**
          * Gets the number of decimal places to display.
          * @returns the number of decimal places to display
+         * @since 1.4
          */
         get_digits(): number;
 
         /**
          * Gets whether non-numeric characters should be ignored.
          * @returns whether non-numeric characters should be ignored.
+         * @since 1.4
          */
         get_numeric(): boolean;
 
         /**
          * Gets whether invalid values are snapped to nearest step increment.
          * @returns whether invalid values are snapped to the nearest step increment
+         * @since 1.4
          */
         get_snap_to_ticks(): boolean;
 
         /**
          * Gets the policy for updating the spin row.
          * @returns the policy for updating the spin row
+         * @since 1.4
          */
         get_update_policy(): Gtk.SpinButtonUpdatePolicy;
 
         /**
          * Gets the current value.
          * @returns the current value
+         * @since 1.4
          */
         get_value(): number;
 
         /**
          * Gets whether the spin row should wrap upon reaching its limits.
          * @returns whether the spin row should wrap upon reaching its limits
+         * @since 1.4
          */
         get_wrap(): boolean;
 
         /**
          * Sets the adjustment that holds the value for the spin row.
          * @param adjustment an adjustment
+         * @since 1.4
          */
         set_adjustment(adjustment: Gtk.Adjustment | null): void;
 
         /**
          * Sets the acceleration rate when you hold down a button or key.
          * @param climb_rate the acceleration rate when you hold down a button or key
+         * @since 1.4
          */
         set_climb_rate(climb_rate: number): void;
 
         /**
          * Sets the number of decimal places to display.
          * @param digits the number of decimal places to display
+         * @since 1.4
          */
         set_digits(digits: number): void;
 
         /**
          * Sets whether non-numeric characters should be ignored.
          * @param numeric whether non-numeric characters should be ignored
+         * @since 1.4
          */
         set_numeric(numeric: boolean): void;
 
@@ -36196,12 +37366,14 @@ export namespace Adw {
          * to fit within the range, otherwise it will remain unchanged.
          * @param min minimum allowable value
          * @param max maximum allowable value
+         * @since 1.4
          */
         set_range(min: number, max: number): void;
 
         /**
          * Sets whether invalid values are snapped to the nearest step increment.
          * @param snap_to_ticks whether invalid values are snapped to the nearest step increment
+         * @since 1.4
          */
         set_snap_to_ticks(snap_to_ticks: boolean): void;
 
@@ -36210,23 +37382,27 @@ export namespace Adw {
          * 
          * The options are always, or only when the value is invalid.
          * @param policy the policy for updating the spin row
+         * @since 1.4
          */
         set_update_policy(policy: Gtk.SpinButtonUpdatePolicy): void;
 
         /**
          * Sets the current value.
          * @param value a new value
+         * @since 1.4
          */
         set_value(value: number): void;
 
         /**
          * Sets whether the spin row should wrap upon reaching its limits.
          * @param wrap whether the spin row should wrap upon reaching its limits
+         * @since 1.4
          */
         set_wrap(wrap: boolean): void;
 
         /**
          * Manually force an update of the spin row.
+         * @since 1.4
          */
         update(): void;
 
@@ -36370,6 +37546,7 @@ export namespace Adw {
          * change your tree to allow this function to work.
          * @param state what kind of accessible state to retrieve
          * @returns the accessible platform state of the delegate
+         * @since 4.10
          */
         delegate_get_accessible_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -36870,6 +38047,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -36882,6 +38060,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -36890,6 +38069,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -36902,6 +38082,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -36912,18 +38093,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -36935,6 +38119,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -36968,6 +38153,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -36977,6 +38163,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -36987,6 +38174,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -37034,6 +38222,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -37042,12 +38231,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -37058,18 +38249,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -37081,6 +38275,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -37274,12 +38469,14 @@ export namespace Adw {
         /**
          * Gets the widget used for frame clock.
          * @returns the widget
+         * @since 1.6
          */
         get_widget(): Gtk.Widget | null;
 
         /**
          * Sets the widget used for frame clock.
          * @param widget the widget to use for frame clock
+         * @since 1.6
          */
         set_widget(widget: Gtk.Widget | null): void;
 
@@ -37509,6 +38706,7 @@ export namespace Adw {
          * @param width width to snapshot in
          * @param height height to snapshot in
          * @param colors a pointer to an array of colors
+         * @since 4.6
          */
         snapshot_symbolic(snapshot: Gdk.Snapshot, width: number, height: number, colors: Gdk.RGBA[]): void;
 
@@ -37522,6 +38720,7 @@ export namespace Adw {
          * @param height height to snapshot in
          * @param colors a pointer to an array of colors
          * @param weight The font weight to use (from 1 to 1000, with default 400)
+         * @since 4.22
          */
         snapshot_with_weight(snapshot: Gdk.Snapshot, width: number, height: number, colors: Gdk.RGBA[], weight: number): void;
 
@@ -37534,6 +38733,7 @@ export namespace Adw {
          * @param width width to snapshot in
          * @param height height to snapshot in
          * @param colors a pointer to an array of colors
+         * @since 4.6
          * @virtual
          */
         vfunc_snapshot_symbolic(snapshot: Gdk.Snapshot, width: number, height: number, colors: Gdk.RGBA[]): void;
@@ -37548,6 +38748,7 @@ export namespace Adw {
          * @param height height to snapshot in
          * @param colors a pointer to an array of colors
          * @param weight The font weight to use (from 1 to 1000, with default 400)
+         * @since 4.22
          * @virtual
          */
         vfunc_snapshot_with_weight(snapshot: Gdk.Snapshot, width: number, height: number, colors: Gdk.RGBA[], weight: number): void;
@@ -37885,6 +39086,7 @@ export namespace Adw {
         /**
          * gets whether the button can be smaller than the natural size of its contents.
          * @returns whether the button can shrink
+         * @since 1.4
          */
         get_can_shrink(): boolean;
 
@@ -37909,6 +39111,7 @@ export namespace Adw {
         /**
          * Gets the tooltip of the dropdown button of `self`.
          * @returns the dropdown tooltip of `self`
+         * @since 1.2
          */
         get_dropdown_tooltip(): string;
 
@@ -37960,6 +39163,7 @@ export namespace Adw {
          * See {@link Gtk.Button.set_can_shrink} and
          * {@link Gtk.MenuButton.set_can_shrink}.
          * @param can_shrink whether the button can shrink
+         * @since 1.4
          */
         set_can_shrink(can_shrink: boolean): void;
 
@@ -37996,6 +39200,7 @@ export namespace Adw {
          * 
          * The tooltip can be marked up with the Pango text markup language.
          * @param tooltip the dropdown tooltip of `self`
+         * @since 1.2
          */
         set_dropdown_tooltip(tooltip: string): void;
 
@@ -38113,6 +39318,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -38125,6 +39331,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -38133,6 +39340,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -38145,6 +39353,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -38155,18 +39364,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -38178,6 +39390,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -38211,6 +39424,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -38220,6 +39434,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -38230,6 +39445,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -38277,6 +39493,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -38285,12 +39502,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -38301,18 +39520,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -38324,6 +39546,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -38785,6 +40008,7 @@ export namespace Adw {
          * See also {@link SpringAnimation.calculate_velocity}.
          * @param time elapsed time, in milliseconds
          * @returns the value at `time`
+         * @since 1.3
          */
         calculate_value(time: number): number;
 
@@ -38797,6 +40021,7 @@ export namespace Adw {
          * See also {@link SpringAnimation.calculate_value}.
          * @param time elapsed time, in milliseconds
          * @returns the velocity at `time`
+         * @since 1.3
          */
         calculate_velocity(time: number): number;
 
@@ -39257,24 +40482,28 @@ export namespace Adw {
          * Adds a child to `self`.
          * @param child the widget to add
          * @returns the {@link SqueezerPage} for `child`
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         add(child: Gtk.Widget): SqueezerPage;
 
         /**
          * Gets whether to allow squeezing beyond the last child's minimum size.
          * @returns whether `self` allows squeezing beyond the last child
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         get_allow_none(): boolean;
 
         /**
          * Gets whether all children have the same size for the opposite orientation.
          * @returns whether `self` is homogeneous
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         get_homogeneous(): boolean;
 
         /**
          * Gets whether `self` interpolates its size when changing the visible child.
          * @returns whether the size is interpolated
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         get_interpolate_size(): boolean;
 
@@ -39282,6 +40511,7 @@ export namespace Adw {
          * Returns the {@link SqueezerPage} object for `child`.
          * @param child a child of `self`
          * @returns the page object for `child`
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         get_page(child: Gtk.Widget): SqueezerPage;
 
@@ -39291,18 +40521,21 @@ export namespace Adw {
          * This can be used to keep an up-to-date view. The model also implements
          * {@link Gtk.SelectionModel} and can be used to track the visible page.
          * @returns a {@link Gtk.SelectionModel} for the squeezer's children
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         get_pages(): Gtk.SelectionModel;
 
         /**
          * Gets the switch threshold policy for `self`.
          * @returns the fold threshold policy
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         get_switch_threshold_policy(): FoldThresholdPolicy;
 
         /**
          * Gets the transition animation duration for `self`.
          * @returns the transition duration, in milliseconds
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         get_transition_duration(): number;
 
@@ -39313,36 +40546,42 @@ export namespace Adw {
          * then immediately to `FALSE`, so it's possible to rely on its notifications
          * to know that a transition has happened.
          * @returns whether a transition is currently running
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         get_transition_running(): boolean;
 
         /**
          * Gets the type of animation used for transitions between children in `self`.
          * @returns the current transition type of `self`
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         get_transition_type(): SqueezerTransitionType;
 
         /**
          * Gets the currently visible child of `self`.
          * @returns the visible child
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         get_visible_child(): Gtk.Widget | null;
 
         /**
          * Gets the horizontal alignment, from 0 (start) to 1 (end).
          * @returns the alignment value
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         get_xalign(): number;
 
         /**
          * Gets the vertical alignment, from 0 (top) to 1 (bottom).
          * @returns the alignment value
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         get_yalign(): number;
 
         /**
          * Removes a child widget from `self`.
          * @param child the child to remove
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         remove(child: Gtk.Widget): void;
 
@@ -39353,6 +40592,7 @@ export namespace Adw {
          * shown. This is functionally equivalent to appending a widget with 0×0 minimum
          * size.
          * @param allow_none whether `self` allows squeezing beyond the last child
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         set_allow_none(allow_none: boolean): void;
 
@@ -39363,6 +40603,7 @@ export namespace Adw {
          * the same height for all its children. If it isn't, the squeezer may change
          * size when a different child becomes visible.
          * @param homogeneous whether `self` is homogeneous
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         set_homogeneous(homogeneous: boolean): void;
 
@@ -39374,6 +40615,7 @@ export namespace Adw {
          * set transition duration and the orientation, e.g. if the squeezer is
          * horizontal, it will interpolate the its height.
          * @param interpolate_size whether to interpolate the size
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         set_interpolate_size(interpolate_size: boolean): void;
 
@@ -39389,18 +40631,21 @@ export namespace Adw {
          * This can be useful if you have a long ellipsizing label and want to let it
          * ellipsize instead of immediately switching.
          * @param policy the policy to use
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         set_switch_threshold_policy(policy: FoldThresholdPolicy): void;
 
         /**
          * Sets the transition animation duration for `self`.
          * @param duration the new duration, in milliseconds
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         set_transition_duration(duration: number): void;
 
         /**
          * Sets the type of animation used for transitions between children in `self`.
          * @param transition the new transition type
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         set_transition_type(transition: SqueezerTransitionType): void;
 
@@ -39413,6 +40658,7 @@ export namespace Adw {
          * For example, 0.5 means the child will be centered, 0 means it will keep the
          * start side aligned and overflow the end side, and 1 means the opposite.
          * @param xalign the new alignment value
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         set_xalign(xalign: number): void;
 
@@ -39425,6 +40671,7 @@ export namespace Adw {
          * For example, 0.5 means the child will be centered, 0 means it will keep the
          * top side aligned and overflow the bottom side, and 1 means the opposite.
          * @param yalign the new alignment value
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         set_yalign(yalign: number): void;
 
@@ -39468,6 +40715,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -39480,6 +40728,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -39488,6 +40737,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -39500,6 +40750,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -39510,18 +40761,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -39533,6 +40787,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -39566,6 +40821,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -39575,6 +40831,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -39585,6 +40842,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -39632,6 +40890,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -39640,12 +40899,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -39656,18 +40917,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -39679,6 +40943,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -39873,12 +41138,14 @@ export namespace Adw {
         /**
          * Returns the squeezer child to which `self` belongs.
          * @returns the child to which `self` belongs
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         get_child(): Gtk.Widget;
 
         /**
          * Gets whether `self` is enabled.
          * @returns whether `self` is enabled
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         get_enabled(): boolean;
 
@@ -39894,6 +41161,7 @@ export namespace Adw {
          * This can be used e.g. to ensure a certain child is hidden below a certain
          * window width, or any other constraint you find suitable.
          * @param enabled whether `self` is enabled
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwsqueezer)
          */
         set_enabled(enabled: boolean): void;
     }
@@ -40168,6 +41436,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -40180,6 +41449,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -40188,6 +41458,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -40200,6 +41471,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -40210,18 +41482,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -40233,6 +41508,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -40266,6 +41542,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -40275,6 +41552,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -40285,6 +41563,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -40332,6 +41611,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -40340,12 +41620,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -40356,18 +41638,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -40379,6 +41664,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -40856,6 +42142,7 @@ export namespace Adw {
          * 
          * See also {@link StyleManager.accent_color_rgba}.
          * @returns the current system accent color
+         * @since 1.6
          */
         get_accent_color(): AccentColor;
 
@@ -40867,6 +42154,7 @@ export namespace Adw {
          * 
          * This is a background color. The matching foreground color is white.
          * @returns the current system accent color
+         * @since 1.6
          */
         get_accent_color_rgba(): Gdk.RGBA;
 
@@ -40902,6 +42190,7 @@ export namespace Adw {
          * 
          * Use {@link Pango.FontDescription.from_string} to parse it.
          * @returns the system document font
+         * @since 1.7
          */
         get_document_font_name(): string;
 
@@ -40921,6 +42210,7 @@ export namespace Adw {
          * 
          * Use {@link Pango.FontDescription.from_string} to parse it.
          * @returns the system monospace font
+         * @since 1.7
          */
         get_monospace_font_name(): string;
 
@@ -40933,6 +42223,7 @@ export namespace Adw {
          * 
          * See {@link StyleManager.accent_color}.
          * @returns whether the system supports accent colors
+         * @since 1.6
          */
         get_system_supports_accent_colors(): boolean;
 
@@ -41224,6 +42515,7 @@ export namespace Adw {
         /**
          * Gets whether to allow touchscreen swiping from {@link Gtk.WindowHandle}.
          * @returns whether swiping from window handles is allowed
+         * @since 1.5
          */
         get_allow_window_handle(): boolean;
 
@@ -41236,6 +42528,7 @@ export namespace Adw {
         /**
          * Gets whether to allow swiping past the first available snap point.
          * @returns whether to allow swiping past the first available snap point
+         * @since 1.4
          */
         get_lower_overshoot(): boolean;
 
@@ -41254,6 +42547,7 @@ export namespace Adw {
         /**
          * Gets whether to allow swiping past the last available snap point.
          * @returns whether to allow swiping past the last available snap point
+         * @since 1.4
          */
         get_upper_overshoot(): boolean;
 
@@ -41277,6 +42571,7 @@ export namespace Adw {
          * 
          * Setting it to `TRUE` will make dragging the window impossible.
          * @param allow_window_handle whether to allow swiping from window handles
+         * @since 1.5
          */
         set_allow_window_handle(allow_window_handle: boolean): void;
 
@@ -41292,6 +42587,7 @@ export namespace Adw {
         /**
          * Sets whether to allow swiping past the first available snap point.
          * @param overshoot whether to allow swiping past the first available snap point
+         * @since 1.4
          */
         set_lower_overshoot(overshoot: boolean): void;
 
@@ -41307,6 +42603,7 @@ export namespace Adw {
         /**
          * Sets whether to allow swiping past the last available snap point.
          * @param overshoot whether to allow swiping past the last available snap point
+         * @since 1.4
          */
         set_upper_overshoot(overshoot: boolean): void;
 
@@ -41480,12 +42777,14 @@ export namespace Adw {
         /**
          * Gets whether `self` is in its "on" or "off" position.
          * @returns whether `self` is active or not
+         * @since 1.4
          */
         get_active(): boolean;
 
         /**
          * Sets whether `self` is in its "on" or "off" position
          * @param is_active whether `self` should be active
+         * @since 1.4
          */
         set_active(is_active: boolean): void;
 
@@ -41886,12 +43185,14 @@ export namespace Adw {
          * The action will be a subset of what was originally passed to
          * {@link TabBar.setup_extra_drop_target}.
          * @returns the drag action of the current drop
+         * @since 1.4
          */
         get_extra_drag_preferred_action(): Gdk.DragAction;
 
         /**
          * Gets whether drop data should be preloaded on hover.
          * @returns whether drop data should be preloaded on hover
+         * @since 1.3
          */
         get_extra_drag_preload(): boolean;
 
@@ -41960,6 +43261,7 @@ export namespace Adw {
          * 
          * See {@link Gtk.DropTarget.preload}.
          * @param preload whether to preload drop data
+         * @since 1.3
          */
         set_extra_drag_preload(preload: boolean): void;
 
@@ -42031,6 +43333,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -42043,6 +43346,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -42051,6 +43355,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -42063,6 +43368,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -42073,18 +43379,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -42096,6 +43405,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -42129,6 +43439,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -42138,6 +43449,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -42148,6 +43460,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -42195,6 +43508,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -42203,12 +43517,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -42219,18 +43535,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -42242,6 +43561,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -42491,12 +43811,14 @@ export namespace Adw {
         /**
          * Gets the tab view `self` displays.
          * @returns the tab view
+         * @since 1.3
          */
         get_view(): TabView | null;
 
         /**
          * Sets the tab view to display.
          * @param view a tab view
+         * @since 1.3
          */
         set_view(view: TabView | null): void;
 
@@ -42562,6 +43884,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -42574,6 +43897,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -42582,6 +43906,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -42594,6 +43919,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -42604,18 +43930,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -42627,6 +43956,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -42660,6 +43990,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -42669,6 +44000,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -42679,6 +44011,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -42726,6 +44059,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -42734,12 +44068,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -42750,18 +44086,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -42773,6 +44112,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -43445,24 +44785,28 @@ export namespace Adw {
         /**
          * Gets the child widget of `self`.
          * @returns the child widget of `self`
+         * @since 1.3
          */
         get_child(): Gtk.Widget | null;
 
         /**
          * Gets whether to new tab button is enabled for `self`.
          * @returns whether new tab button is enabled
+         * @since 1.3
          */
         get_enable_new_tab(): boolean;
 
         /**
          * Gets whether search in tabs is enabled for `self`.
          * @returns whether search is enabled
+         * @since 1.3
          */
         get_enable_search(): boolean;
 
         /**
          * Gets the current action during a drop on the extra_drop_target.
          * @returns the drag action of the current drop.
+         * @since 1.4
          */
         get_extra_drag_preferred_action(): Gdk.DragAction;
 
@@ -43475,18 +44819,21 @@ export namespace Adw {
          * The action will be a subset of what was originally passed to
          * {@link TabOverview.setup_extra_drop_target}.
          * @returns the drag action of the current drop
+         * @since 1.3
          */
         get_extra_drag_preload(): boolean;
 
         /**
          * Gets whether thumbnails use inverted layout.
          * @returns whether thumbnails use inverted layout
+         * @since 1.3
          */
         get_inverted(): boolean;
 
         /**
          * Gets whether `self` is open.
          * @returns whether the overview is open
+         * @since 1.3
          */
         get_open(): boolean;
 
@@ -43495,36 +44842,42 @@ export namespace Adw {
          * 
          * See {@link TabOverview.enable_search}.
          * @returns whether search is active
+         * @since 1.3
          */
         get_search_active(): boolean;
 
         /**
          * Gets the secondary menu model for `self`.
          * @returns the secondary menu model
+         * @since 1.3
          */
         get_secondary_menu(): Gio.MenuModel | null;
 
         /**
          * Gets whether end title buttons are shown in `self`'s header bar.
          * @returns whether end title buttons are shown
+         * @since 1.3
          */
         get_show_end_title_buttons(): boolean;
 
         /**
          * Gets whether start title buttons are shown in `self`'s header bar.
          * @returns whether start title buttons are shown
+         * @since 1.3
          */
         get_show_start_title_buttons(): boolean;
 
         /**
          * Gets the tab view `self` controls.
          * @returns the tab view
+         * @since 1.3
          */
         get_view(): TabView | null;
 
         /**
          * Sets the child widget of `self`.
          * @param child the child widget
+         * @since 1.3
          */
         set_child(child: Gtk.Widget | null): void;
 
@@ -43533,6 +44886,7 @@ export namespace Adw {
          * 
          * Connect to the `Adw.TabOverview::create-tab` signal to use it.
          * @param enable_new_tab whether to enable new tab button
+         * @since 1.3
          */
         set_enable_new_tab(enable_new_tab: boolean): void;
 
@@ -43548,6 +44902,7 @@ export namespace Adw {
          * Use {@link TabOverview.search_active} to check out if search is currently
          * active.
          * @param enable_search whether to enable search
+         * @since 1.3
          */
         set_enable_search(enable_search: boolean): void;
 
@@ -43556,6 +44911,7 @@ export namespace Adw {
          * 
          * See {@link Gtk.DropTarget.preload}.
          * @param preload whether to preload drop data
+         * @since 1.3
          */
         set_extra_drag_preload(preload: boolean): void;
 
@@ -43565,12 +44921,14 @@ export namespace Adw {
          * If set to `TRUE`, thumbnails will have the close or unpin button at the
          * beginning and the indicator at the end rather than the other way around.
          * @param inverted whether thumbnails use inverted layout
+         * @since 1.3
          */
         set_inverted(inverted: boolean): void;
 
         /**
          * Sets whether the to open `self`.
          * @param open whether the overview is open
+         * @since 1.3
          */
         set_open(open: boolean): void;
 
@@ -43579,6 +44937,7 @@ export namespace Adw {
          * 
          * Use it to add extra actions, e.g. to open a new window or undo closed tab.
          * @param secondary_menu a menu model
+         * @since 1.3
          */
         set_secondary_menu(secondary_menu: Gio.MenuModel | null): void;
 
@@ -43587,6 +44946,7 @@ export namespace Adw {
          * 
          * See {@link HeaderBar.show_start_title_buttons} for the other side.
          * @param show_end_title_buttons whether to show end title buttons
+         * @since 1.3
          */
         set_show_end_title_buttons(show_end_title_buttons: boolean): void;
 
@@ -43595,6 +44955,7 @@ export namespace Adw {
          * 
          * See {@link HeaderBar.show_end_title_buttons} for the other side.
          * @param show_start_title_buttons whether to show start title buttons
+         * @since 1.3
          */
         set_show_start_title_buttons(show_start_title_buttons: boolean): void;
 
@@ -43603,6 +44964,7 @@ export namespace Adw {
          * 
          * The view must be inside `self`, see {@link TabOverview.child}.
          * @param view a tab view
+         * @since 1.3
          */
         set_view(view: TabView | null): void;
 
@@ -43619,6 +44981,7 @@ export namespace Adw {
          * drop.
          * @param actions the supported actions
          * @param types all supported {@link GObject.GType}s that can be dropped
+         * @since 1.3
          */
         setup_extra_drop_target(actions: Gdk.DragAction, types: GObject.GType[] | null): void;
 
@@ -43654,6 +45017,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -43666,6 +45030,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -43674,6 +45039,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -43686,6 +45052,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -43696,18 +45063,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -43719,6 +45089,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -43752,6 +45123,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -43761,6 +45133,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -43771,6 +45144,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -43818,6 +45192,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -43826,12 +45201,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -43842,18 +45219,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -43865,6 +45245,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -44397,18 +45778,21 @@ export namespace Adw {
         /**
          * Gets the tooltip of the indicator icon of `self`.
          * @returns the indicator tooltip of `self`
+         * @since 1.2
          */
         get_indicator_tooltip(): string;
 
         /**
          * Gets the search keyword of `self`.
          * @returns the search keyword of `self`
+         * @since 1.3
          */
         get_keyword(): string | null;
 
         /**
          * Gets whether to live thumbnail is enabled `self`.
          * @returns whether live thumbnail is enabled
+         * @since 1.3
          */
         get_live_thumbnail(): boolean;
 
@@ -44449,12 +45833,14 @@ export namespace Adw {
         /**
          * Gets the horizontal alignment of the thumbnail for `self`.
          * @returns the horizontal alignment
+         * @since 1.3
          */
         get_thumbnail_xalign(): number;
 
         /**
          * Gets the vertical alignment of the thumbnail for `self`.
          * @returns the vertical alignment
+         * @since 1.3
          */
         get_thumbnail_yalign(): number;
 
@@ -44479,6 +45865,7 @@ export namespace Adw {
          * Does nothing if {@link TabPage.live_thumbnail} is set to `TRUE`.
          * 
          * See also {@link TabView.invalidate_thumbnails}.
+         * @since 1.3
          */
         invalidate_thumbnail(): void;
 
@@ -44534,6 +45921,7 @@ export namespace Adw {
          * 
          * See {@link TabPage.indicator_icon}.
          * @param tooltip the indicator tooltip of `self`
+         * @since 1.2
          */
         set_indicator_tooltip(tooltip: string): void;
 
@@ -44545,6 +45933,7 @@ export namespace Adw {
          * 
          * Keywords allow to include e.g. page URLs into tab search in a web browser.
          * @param keyword the search keyword
+         * @since 1.3
          */
         set_keyword(keyword: string): void;
 
@@ -44559,6 +45948,7 @@ export namespace Adw {
          * {@link TabPage.invalidate_thumbnail} or
          * {@link TabView.invalidate_thumbnails} is called.
          * @param live_thumbnail whether to enable live thumbnail
+         * @since 1.3
          */
         set_live_thumbnail(live_thumbnail: boolean): void;
 
@@ -44602,6 +45992,7 @@ export namespace Adw {
          * 
          * The default horizontal alignment is 0.
          * @param xalign the new value
+         * @since 1.3
          */
         set_thumbnail_xalign(xalign: number): void;
 
@@ -44617,6 +46008,7 @@ export namespace Adw {
          * 
          * The default vertical alignment is 0.
          * @param yalign the new value
+         * @since 1.3
          */
         set_thumbnail_yalign(yalign: number): void;
 
@@ -44676,6 +46068,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -44688,6 +46081,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -44696,6 +46090,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -44708,6 +46103,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -44718,18 +46114,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -44741,6 +46140,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -44774,6 +46174,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -44783,6 +46184,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -44793,6 +46195,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -44840,6 +46243,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -44848,12 +46252,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -44864,18 +46270,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -44887,6 +46296,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -45308,6 +46718,7 @@ export namespace Adw {
          * 
          * See {@link TabView.shortcuts} for details.
          * @param shortcuts the shortcuts to add
+         * @since 1.2
          */
         add_shortcuts(shortcuts: TabViewShortcuts): void;
 
@@ -45466,6 +46877,7 @@ export namespace Adw {
         /**
          * Gets the enabled shortcuts for `self`.
          * @returns the shortcut mask
+         * @since 1.2
          */
         get_shortcuts(): TabViewShortcuts;
 
@@ -45496,6 +46908,7 @@ export namespace Adw {
          * 
          * This is a convenience method, equivalent to calling
          * {@link TabPage.invalidate_thumbnail} on each page.
+         * @since 1.3
          */
         invalidate_thumbnails(): void;
 
@@ -45518,6 +46931,7 @@ export namespace Adw {
          * 
          * See {@link TabView.shortcuts} for details.
          * @param shortcuts the shortcuts to remove
+         * @since 1.2
          */
         remove_shortcuts(shortcuts: TabViewShortcuts): void;
 
@@ -45653,6 +47067,7 @@ export namespace Adw {
          * {@link TabView.add_shortcuts} and {@link TabView.remove_shortcuts} provide
          * a convenient way to manage individual shortcuts.
          * @param shortcuts the new shortcuts
+         * @since 1.2
          */
         set_shortcuts(shortcuts: TabViewShortcuts): void;
 
@@ -45701,6 +47116,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -45713,6 +47129,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -45721,6 +47138,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -45733,6 +47151,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -45743,18 +47162,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -45766,6 +47188,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -45799,6 +47222,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -45808,6 +47232,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -45818,6 +47243,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -45865,6 +47291,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -45873,12 +47300,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -45889,18 +47318,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -45912,6 +47344,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -46690,6 +48123,7 @@ export namespace Adw {
         /**
          * Gets the custom title widget of `self`.
          * @returns the custom title widget
+         * @since 1.2
          */
         get_custom_title(): Gtk.Widget | null;
 
@@ -46717,6 +48151,7 @@ export namespace Adw {
         /**
          * Gets whether to use Pango markup for the toast title.
          * @returns whether the toast uses markup
+         * @since 1.4
          */
         get_use_markup(): boolean;
 
@@ -46759,6 +48194,7 @@ export namespace Adw {
          * 
          * Setting a custom title will unset {@link Toast.title}.
          * @param widget the custom title widget
+         * @since 1.2
          */
         set_custom_title(widget: Gtk.Widget | null): void;
 
@@ -46814,6 +48250,7 @@ export namespace Adw {
          * 
          * See also {@link Pango.parse_markup}.
          * @param use_markup whether to use markup
+         * @since 1.4
          */
         set_use_markup(use_markup: boolean): void;
     }
@@ -46971,6 +48408,7 @@ export namespace Adw {
          * Dismisses all displayed toasts.
          * 
          * Use {@link Toast.dismiss} to dismiss a single toast.
+         * @since 1.7
          */
         dismiss_all(): void;
 
@@ -47018,6 +48456,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -47030,6 +48469,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -47038,6 +48478,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -47050,6 +48491,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -47060,18 +48502,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -47083,6 +48528,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -47116,6 +48562,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -47125,6 +48572,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -47135,6 +48583,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -47182,6 +48631,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -47190,12 +48640,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -47206,18 +48658,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -47229,6 +48684,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -47517,54 +48973,63 @@ export namespace Adw {
         /**
          * Gets the child widget of `self`.
          * @returns the toggle child
+         * @since 1.7
          */
         get_child(): Gtk.Widget | null;
 
         /**
          * Gets the description of `self`.
          * @returns the toggle description
+         * @since 1.9
          */
         get_description(): string;
 
         /**
          * Gets whether `self` is enabled.
          * @returns whether the toggle is enabled
+         * @since 1.7
          */
         get_enabled(): boolean;
 
         /**
          * Gets the icon name of `self`.
          * @returns the toggle icon name
+         * @since 1.7
          */
         get_icon_name(): string | null;
 
         /**
          * Gets the index of `self` within its toggle group.
          * @returns the index, or {@link Gtk.INVALID_LIST_POSITION} if it's not in a group
+         * @since 1.7
          */
         get_index(): number;
 
         /**
          * Gets the label of `self`.
          * @returns the toggle label
+         * @since 1.7
          */
         get_label(): string | null;
 
         /**
          * Gets the name of `self`.
          * @returns the toggle name
+         * @since 1.7
          */
         get_name(): string;
 
         /**
          * Gets the tooltip of `self`.
          * @returns the toggle tooltip
+         * @since 1.7
          */
         get_tooltip(): string;
 
         /**
          * Gets whether `self` uses underlines.
          * @returns whether the toggle uses underlines
+         * @since 1.7
          */
         get_use_underline(): boolean;
 
@@ -47576,6 +49041,7 @@ export namespace Adw {
          * It's recommended to still set the label, as it can still be used by the
          * screen reader.
          * @param child a child widget
+         * @since 1.7
          */
         set_child(child: Gtk.Widget | null): void;
 
@@ -47587,12 +49053,14 @@ export namespace Adw {
          * 
          * See {@link Gtk.AccessibleProperty.DESCRIPTION}.
          * @param description the description
+         * @since 1.9
          */
         set_description(description: string): void;
 
         /**
          * Sets whether `self` is enabled.
          * @param enabled whether the toggle should be enbled
+         * @since 1.7
          */
         set_enabled(enabled: boolean): void;
 
@@ -47602,6 +49070,7 @@ export namespace Adw {
          * The icon will be displayed alone or next to the label, unless
          * {@link Toggle.child} is set.
          * @param icon_name the icon name
+         * @since 1.7
          */
         set_icon_name(icon_name: string | null): void;
 
@@ -47612,6 +49081,7 @@ export namespace Adw {
          * {@link Toggle.child} is set, but will still be read out by the screen
          * reader.
          * @param label a label
+         * @since 1.7
          */
         set_label(label: string | null): void;
 
@@ -47622,6 +49092,7 @@ export namespace Adw {
          * 
          * See {@link ToggleGroup.active_name}.
          * @param name a name
+         * @since 1.7
          */
         set_name(name: string | null): void;
 
@@ -47633,6 +49104,7 @@ export namespace Adw {
          * Tooltip text will also be used as accessible description. Use
          * {@link Toggle.description} to set it separately.
          * @param tooltip the tooltip
+         * @since 1.7
          */
         set_tooltip(tooltip: string): void;
 
@@ -47641,6 +49113,7 @@ export namespace Adw {
          * 
          * See {@link Toggle.label}.
          * @param use_underline whether an underline in the label indicates a mnemonic
+         * @since 1.7
          */
         set_use_underline(use_underline: boolean): void;
     }
@@ -47944,6 +49417,7 @@ export namespace Adw {
         /**
          * Adds a toggle to `self`.
          * @param toggle the toggle to add
+         * @since 1.7
          */
         add(toggle: Toggle): void;
 
@@ -47952,6 +49426,7 @@ export namespace Adw {
          * 
          * Returns {@link Gtk.INVALID_LIST_POSITION} if no toggle is active.
          * @returns the active toggle index
+         * @since 1.7
          */
         get_active(): number;
 
@@ -47962,6 +49437,7 @@ export namespace Adw {
          * 
          * See {@link Toggle.name}.
          * @returns the active toggle name
+         * @since 1.7
          */
         get_active_name(): string | null;
 
@@ -47969,18 +49445,21 @@ export namespace Adw {
          * Gets whether the toggles can be smaller than the natural size of their
          * contents.
          * @returns whether the toggles can shrink
+         * @since 1.7
          */
         get_can_shrink(): boolean;
 
         /**
          * Gets whether all toggles take the same size.
          * @returns whether all toggles take the same size
+         * @since 1.7
          */
         get_homogeneous(): boolean;
 
         /**
          * Gets the number of toggles within `self`.
          * @returns the number of toggles
+         * @since 1.7
          */
         get_n_toggles(): number;
 
@@ -47988,6 +49467,7 @@ export namespace Adw {
          * Gets the toggle with `index` from `self`.
          * @param index toggle's index
          * @returns the toggle
+         * @since 1.7
          */
         get_toggle(index: number): Toggle | null;
 
@@ -47995,6 +49475,7 @@ export namespace Adw {
          * Gets the toggle with the name `name` from `self`.
          * @param name toggle name
          * @returns the toggle
+         * @since 1.7
          */
         get_toggle_by_name(name: string): Toggle | null;
 
@@ -48011,11 +49492,13 @@ export namespace Adw {
         /**
          * Removes `toggle` from `self`.
          * @param toggle a toggle to remove
+         * @since 1.7
          */
         remove(toggle: Toggle): void;
 
         /**
          * Removes all toggles from `self`.
+         * @since 1.7
          */
         remove_all(): void;
 
@@ -48025,6 +49508,7 @@ export namespace Adw {
          * If the index is larger than the number of toggles in `self`, unsets the
          * current active toggle.
          * @param active toggle index
+         * @since 1.7
          */
         set_active(active: number): void;
 
@@ -48035,6 +49519,7 @@ export namespace Adw {
          * 
          * If `name` is `NULL`, unset the current active toggle instead.
          * @param name toggle name
+         * @since 1.7
          */
         set_active_name(name: string | null): void;
 
@@ -48046,12 +49531,14 @@ export namespace Adw {
          * 
          * See {@link Gtk.Button.can_shrink}.
          * @param can_shrink whether the toggles can shrink
+         * @since 1.7
          */
         set_can_shrink(can_shrink: boolean): void;
 
         /**
          * Sets whether all toggles take the same size.
          * @param homogeneous whether all toggles should take the same size
+         * @since 1.7
          */
         set_homogeneous(homogeneous: boolean): void;
 
@@ -48095,6 +49582,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -48107,6 +49595,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -48115,6 +49604,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -48127,6 +49617,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -48137,18 +49628,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -48160,6 +49654,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -48193,6 +49688,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -48202,6 +49698,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -48212,6 +49709,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -48259,6 +49757,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -48267,12 +49766,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -48283,18 +49784,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -48306,6 +49810,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -48934,12 +50439,14 @@ export namespace Adw {
         /**
          * Adds a bottom bar to `self`.
          * @param widget a widget
+         * @since 1.4
          */
         add_bottom_bar(widget: Gtk.Widget): void;
 
         /**
          * Adds a top bar to `self`.
          * @param widget a widget
+         * @since 1.4
          */
         add_top_bar(widget: Gtk.Widget): void;
 
@@ -48951,42 +50458,49 @@ export namespace Adw {
          * 
          * See {@link ToolbarView.get_top_bar_height}.
          * @returns the current bottom bar height
+         * @since 1.4
          */
         get_bottom_bar_height(): number;
 
         /**
          * Gets appearance of the bottom bars for `self`.
          * @returns bottom bar style
+         * @since 1.4
          */
         get_bottom_bar_style(): ToolbarStyle;
 
         /**
          * Gets the content widget for `self`.
          * @returns the content widget
+         * @since 1.4
          */
         get_content(): Gtk.Widget | null;
 
         /**
          * Gets whether the content widget can extend behind bottom bars.
          * @returns whether content extends behind bottom bars
+         * @since 1.4
          */
         get_extend_content_to_bottom_edge(): boolean;
 
         /**
          * Gets whether the content widget can extend behind top bars.
          * @returns whether content extends behind top bars
+         * @since 1.4
          */
         get_extend_content_to_top_edge(): boolean;
 
         /**
          * Gets whether bottom bars are revealed for `self`.
          * @returns whether bottom bars are revealed
+         * @since 1.4
          */
         get_reveal_bottom_bars(): boolean;
 
         /**
          * Gets whether top bars are revealed for `self`.
          * @returns whether top bars are revealed
+         * @since 1.4
          */
         get_reveal_top_bars(): boolean;
 
@@ -48998,18 +50512,21 @@ export namespace Adw {
          * 
          * See {@link ToolbarView.get_bottom_bar_height}.
          * @returns the current top bar height
+         * @since 1.4
          */
         get_top_bar_height(): number;
 
         /**
          * Gets appearance of the top bars for `self`.
          * @returns top bar style
+         * @since 1.4
          */
         get_top_bar_style(): ToolbarStyle;
 
         /**
          * Removes a child from `self`.
          * @param widget the child to be removed
+         * @since 1.4
          */
         remove(widget: Gtk.Widget): void;
 
@@ -49039,12 +50556,14 @@ export namespace Adw {
          * 
          * See also {@link ToolbarView.set_top_bar_style}.
          * @param style bottom bar style
+         * @since 1.4
          */
         set_bottom_bar_style(style: ToolbarStyle): void;
 
         /**
          * Sets the content widget for `self`.
          * @param content the content widget
+         * @since 1.4
          */
         set_content(content: Gtk.Widget | null): void;
 
@@ -49056,6 +50575,7 @@ export namespace Adw {
          * 
          * See {@link ToolbarView.set_extend_content_to_top_edge}.
          * @param extend whether content extends behind bottom bars
+         * @since 1.4
          */
         set_extend_content_to_bottom_edge(extend: boolean): void;
 
@@ -49067,6 +50587,7 @@ export namespace Adw {
          * 
          * See {@link ToolbarView.set_extend_content_to_bottom_edge}.
          * @param extend whether content extends behind top bars
+         * @since 1.4
          */
         set_extend_content_to_top_edge(extend: boolean): void;
 
@@ -49081,6 +50602,7 @@ export namespace Adw {
          * 
          * See {@link ToolbarView.set_reveal_top_bars}.
          * @param reveal whether to reveal bottom bars
+         * @since 1.4
          */
         set_reveal_bottom_bars(reveal: boolean): void;
 
@@ -49095,6 +50617,7 @@ export namespace Adw {
          * 
          * See {@link ToolbarView.set_reveal_bottom_bars}.
          * @param reveal whether to reveal top bars
+         * @since 1.4
          */
         set_reveal_top_bars(reveal: boolean): void;
 
@@ -49124,6 +50647,7 @@ export namespace Adw {
          * 
          * See also {@link ToolbarView.set_bottom_bar_style}.
          * @param style top bar style
+         * @since 1.4
          */
         set_top_bar_style(style: ToolbarStyle): void;
 
@@ -49159,6 +50683,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -49171,6 +50696,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -49179,6 +50705,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -49191,6 +50718,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -49201,18 +50729,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -49224,6 +50755,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -49257,6 +50789,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -49266,6 +50799,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -49276,6 +50810,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -49323,6 +50858,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -49331,12 +50867,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -49347,18 +50885,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -49370,6 +50911,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -49817,6 +51359,7 @@ export namespace Adw {
          * @param title a human-readable title for `child`
          * @param icon_name an icon name for `child`
          * @returns the {@link Adw.ViewStackPage} for `child`
+         * @since 1.2
          */
         add_titled_with_icon(child: Gtk.Widget, name: string | null, title: string, icon_name: string): ViewStackPage;
 
@@ -49834,6 +51377,7 @@ export namespace Adw {
          * {@link ViewStack.transition_running} to know when the transition is
          * running.
          * @returns whether to enable page transitions
+         * @since 1.7
          */
         get_enable_transitions(): boolean;
 
@@ -49867,6 +51411,7 @@ export namespace Adw {
         /**
          * Gets the transition animation duration for `self`.
          * @returns the transition duration, in milliseconds
+         * @since 1.7
          */
         get_transition_duration(): number;
 
@@ -49877,6 +51422,7 @@ export namespace Adw {
          * then immediately to `FALSE`, so it's possible to rely on its notifications
          * to know that a transition has happened.
          * @returns whether a transition is currently running
+         * @since 1.7
          */
         get_transition_running(): boolean;
 
@@ -49907,6 +51453,7 @@ export namespace Adw {
         /**
          * Sets whether `self` uses a crossfade transition between pages.
          * @param enable_transitions whether to enable page transitions
+         * @since 1.7
          */
         set_enable_transitions(enable_transitions: boolean): void;
 
@@ -49927,6 +51474,7 @@ export namespace Adw {
          * 
          * Only used when {@link ViewStack.enable_transitions} is set to `TRUE`.
          * @param duration the new duration, in milliseconds
+         * @since 1.7
          */
         set_transition_duration(duration: number): void;
 
@@ -49988,6 +51536,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -50000,6 +51549,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -50008,6 +51558,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -50020,6 +51571,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -50030,18 +51582,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -50053,6 +51608,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -50086,6 +51642,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -50095,6 +51652,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -50105,6 +51663,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -50152,6 +51711,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -50160,12 +51720,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -50176,18 +51738,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -50199,6 +51764,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -50557,12 +52123,14 @@ export namespace Adw {
         /**
          * Gets the section title for `self`.
          * @returns the section title
+         * @since 1.9
          */
         get_section_title(): string | null;
 
         /**
          * Gets whether `self` starts a section.
          * @returns whether `self` starts a section
+         * @since 1.9
          */
         get_starts_section(): boolean;
 
@@ -50623,6 +52191,7 @@ export namespace Adw {
          * 
          * Does nothing unless {@link ViewStackPage.starts_section} is set.
          * @param section_title the section title
+         * @since 1.9
          */
         set_section_title(section_title: string | null): void;
 
@@ -50635,6 +52204,7 @@ export namespace Adw {
          * If {@link ViewStackPage.section_title} is set, it should be used as a
          * title for the section.
          * @param starts_section whether `self` starts a section
+         * @since 1.9
          */
         set_starts_section(starts_section: boolean): void;
 
@@ -50691,6 +52261,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -50703,6 +52274,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -50711,6 +52283,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -50723,6 +52296,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -50733,18 +52307,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -50756,6 +52333,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -50789,6 +52367,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -50798,6 +52377,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -50808,6 +52388,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -50855,6 +52436,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -50863,12 +52445,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -50879,18 +52463,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -50902,6 +52489,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -51027,6 +52615,7 @@ export namespace Adw {
          * 
          * Returns `NULL` if there's no selected page.
          * @returns the stack page
+         * @since 1.4
          */
         get_selected_page(): ViewStackPage | null;
 
@@ -51035,6 +52624,7 @@ export namespace Adw {
          * 
          * See {@link ViewStack.visible_child}.
          * @param page a stack page within the associated stack
+         * @since 1.4
          */
         set_selected_page(page: ViewStackPage): void;
 
@@ -51048,6 +52638,7 @@ export namespace Adw {
          * The item type of a {@link Gio.ListModel} can not change during the life of the
          * model.
          * @returns the {@link GObject.GType} of the items contained in `list`.
+         * @since 2.44
          */
         get_item_type(): GObject.GType;
 
@@ -51058,6 +52649,7 @@ export namespace Adw {
          * less efficient than iterating the list with increasing values for
          * `position` until `g_list_model_get_item()` returns `null`.
          * @returns the number of items in `list`.
+         * @since 2.44
          */
         get_n_items(): number;
 
@@ -51076,6 +52668,7 @@ export namespace Adw {
          * See also: `g_list_model_get_n_items()`
          * @param position the position of the item to fetch
          * @returns the object at `position`.
+         * @since 2.44
          */
         get_item(position: number): A | null;
 
@@ -51103,6 +52696,7 @@ export namespace Adw {
          * @param position the position at which `list` changed
          * @param removed the number of items removed
          * @param added the number of items added
+         * @since 2.44
          */
         items_changed(position: number, removed: number, added: number): void;
 
@@ -51115,6 +52709,7 @@ export namespace Adw {
          * 
          * The same {@link GObject.Object} instance may not appear more than once in a {@link Gio.ListModel}.
          * @param position the position of the item to fetch
+         * @since 2.44
          * @virtual
          */
         vfunc_get_item(position: number): A | null;
@@ -51128,6 +52723,7 @@ export namespace Adw {
          * 
          * The item type of a {@link Gio.ListModel} can not change during the life of the
          * model.
+         * @since 2.44
          * @virtual
          */
         vfunc_get_item_type(): GObject.GType;
@@ -51138,6 +52734,7 @@ export namespace Adw {
          * Depending on the model implementation, calling this function may be
          * less efficient than iterating the list with increasing values for
          * `position` until `g_list_model_get_item()` returns `null`.
+         * @since 2.44
          * @virtual
          */
         vfunc_get_n_items(): number;
@@ -51149,6 +52746,7 @@ export namespace Adw {
          * If the position is larger than the number of items, a single
          * range from n_items to G_MAXUINT will be returned.
          * @param position the position of the item to query
+         * @since 4.12
          */
         get_section(position: number): [number, number];
 
@@ -51170,6 +52768,7 @@ export namespace Adw {
          * two signals.
          * @param position the first changed item
          * @param n_items the number of changed items
+         * @since 4.12
          */
         sections_changed(position: number, n_items: number): void;
 
@@ -51180,6 +52779,7 @@ export namespace Adw {
          * If the position is larger than the number of items, a single
          * range from n_items to G_MAXUINT will be returned.
          * @param position the position of the item to query
+         * @since 4.12
          * @virtual
          */
         vfunc_get_section(position: number): [number, number];
@@ -51643,6 +53243,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -51655,6 +53256,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -51663,6 +53265,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -51675,6 +53278,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -51685,18 +53289,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -51708,6 +53315,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -51741,6 +53349,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -51750,6 +53359,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -51760,6 +53370,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -51807,6 +53418,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -51815,12 +53427,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -51831,18 +53445,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -51854,6 +53471,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -52176,6 +53794,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -52188,6 +53807,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -52196,6 +53816,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -52208,6 +53829,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -52218,18 +53840,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -52241,6 +53866,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -52274,6 +53900,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -52283,6 +53910,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -52293,6 +53921,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -52340,6 +53969,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -52348,12 +53978,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -52364,18 +53996,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -52387,6 +54022,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -52694,6 +54330,7 @@ export namespace Adw {
         /**
          * Gets the item filter for `self`.
          * @returns the item filter
+         * @since 1.9
          */
         get_filter(): Gtk.Filter | null;
 
@@ -52702,18 +54339,21 @@ export namespace Adw {
          * 
          * See {@link Sidebar.get_mode}.
          * @returns the current mode
+         * @since 1.9
          */
         get_mode(): SidebarMode;
 
         /**
          * Gets the placeholder widget for `self`.
          * @returns the placeholder widget
+         * @since 1.9
          */
         get_placeholder(): Gtk.Widget | null;
 
         /**
          * Gets the stack `self` controls.
          * @returns The stack of `self`
+         * @since 1.9
          */
         get_stack(): ViewStack | null;
 
@@ -52726,6 +54366,7 @@ export namespace Adw {
          * 
          * See {@link Sidebar.set_filter}.
          * @param filter the item filter
+         * @since 1.9
          */
         set_filter(filter: Gtk.Filter | null): void;
 
@@ -52752,6 +54393,7 @@ export namespace Adw {
          * 
          * See {@link Sidebar.set_mode}.
          * @param mode the new mode
+         * @since 1.9
          */
         set_mode(mode: SidebarMode): void;
 
@@ -52763,12 +54405,14 @@ export namespace Adw {
          * 
          * See {@link Sidebar.set_placeholder}.
          * @param placeholder the placeholder widget
+         * @since 1.9
          */
         set_placeholder(placeholder: Gtk.Widget | null): void;
 
         /**
          * Sets the stack to control.
          * @param stack a stack
+         * @since 1.9
          */
         set_stack(stack: ViewStack | null): void;
 
@@ -52804,6 +54448,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -52816,6 +54461,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -52824,6 +54470,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -52836,6 +54483,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -52846,18 +54494,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -52869,6 +54520,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -52902,6 +54554,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -52911,6 +54564,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -52921,6 +54575,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -52968,6 +54623,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -52976,12 +54632,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -52992,18 +54650,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -53015,6 +54676,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -53355,18 +55017,21 @@ export namespace Adw {
         /**
          * Gets the stack controlled by `self`.
          * @returns the stack
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwviewswitchertitle)
          */
         get_stack(): ViewStack | null;
 
         /**
          * Gets the subtitle of `self`.
          * @returns the subtitle
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwviewswitchertitle)
          */
         get_subtitle(): string;
 
         /**
          * Gets the title of `self`.
          * @returns the title
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwviewswitchertitle)
          */
         get_title(): string;
 
@@ -53376,18 +55041,21 @@ export namespace Adw {
          * If the title is visible, it means the view switcher is hidden an it may be
          * wanted to show an alternative switcher, e.g. a {@link ViewSwitcherBar}.
          * @returns whether the title of `self` is currently visible
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwviewswitchertitle)
          */
         get_title_visible(): boolean;
 
         /**
          * Gets whether `self`'s view switcher is enabled.
          * @returns whether the view switcher is enabled
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwviewswitchertitle)
          */
         get_view_switcher_enabled(): boolean;
 
         /**
          * Sets the stack controlled by `self`.
          * @param stack a stack
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwviewswitchertitle)
          */
         set_stack(stack: ViewStack | null): void;
 
@@ -53396,6 +55064,7 @@ export namespace Adw {
          * 
          * The subtitle should give the user additional details.
          * @param subtitle a subtitle
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwviewswitchertitle)
          */
         set_subtitle(subtitle: string): void;
 
@@ -53405,6 +55074,7 @@ export namespace Adw {
          * The title typically identifies the current view or content item, and
          * generally does not use the application name.
          * @param title a title
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwviewswitchertitle)
          */
         set_title(title: string): void;
 
@@ -53418,6 +55088,7 @@ export namespace Adw {
          * This can be used e.g. to ensure the view switcher is hidden below a certain
          * window width, or any other constraint you find suitable.
          * @param enabled whether the view switcher is enabled
+         * @deprecated since 1.4: See [the migration guide](https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/migrating-to-breakpoints.html#replace-adwviewswitchertitle)
          */
         set_view_switcher_enabled(enabled: boolean): void;
 
@@ -53453,6 +55124,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -53465,6 +55137,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -53473,6 +55146,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -53485,6 +55159,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -53495,18 +55170,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -53518,6 +55196,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -53551,6 +55230,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -53560,6 +55240,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -53570,6 +55251,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -53617,6 +55299,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -53625,12 +55308,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -53641,18 +55326,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -53664,6 +55352,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -54046,12 +55735,14 @@ export namespace Adw {
         /**
          * Adds `breakpoint` to `self`.
          * @param breakpoint the breakpoint to add
+         * @since 1.4
          */
         add_breakpoint(breakpoint: Breakpoint): void;
 
         /**
          * Gets whether adaptive preview for `self` is currently open.
          * @returns whether adaptive preview is open.
+         * @since 1.7
          */
         get_adaptive_preview(): boolean;
 
@@ -54066,6 +55757,7 @@ export namespace Adw {
         /**
          * Gets the current breakpoint.
          * @returns the current breakpoint
+         * @since 1.4
          */
         get_current_breakpoint(): Breakpoint | null;
 
@@ -54074,12 +55766,14 @@ export namespace Adw {
          * 
          * This can be used to keep an up-to-date view.
          * @returns a list model for the dialogs of `self`
+         * @since 1.5
          */
         get_dialogs(): Gio.ListModel;
 
         /**
          * Returns the currently visible dialog in `self`, if there's one.
          * @returns the visible dialog
+         * @since 1.5
          */
         get_visible_dialog(): Dialog | null;
 
@@ -54094,6 +55788,7 @@ export namespace Adw {
          * 
          * Most applications should not use this function.
          * @param adaptive_preview whether to open adaptive preview
+         * @since 1.7
          */
         set_adaptive_preview(adaptive_preview: boolean): void;
 
@@ -54364,6 +56059,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -54376,6 +56072,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -54384,6 +56081,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -54396,6 +56094,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -54406,18 +56105,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -54429,6 +56131,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -54462,6 +56165,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -54471,6 +56175,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -54481,6 +56186,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -54528,6 +56234,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -54536,12 +56243,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -54552,18 +56261,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -54575,6 +56287,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -55148,42 +56861,49 @@ export namespace Adw {
         /**
          * Adds `child` as the last child to `self`.
          * @param child the widget to append
+         * @since 1.7
          */
         append(child: Gtk.Widget): void;
 
         /**
          * Gets the alignment of the children within each line.
          * @returns the child alignment
+         * @since 1.7
          */
         get_align(): number;
 
         /**
          * Gets spacing between widgets on the same line.
          * @returns spacing between widgets on the same line
+         * @since 1.7
          */
         get_child_spacing(): number;
 
         /**
          * Gets the length unit for child spacing.
          * @returns the length unit
+         * @since 1.7
          */
         get_child_spacing_unit(): LengthUnit;
 
         /**
          * Gets whether and how each complete line is stretched to fill the entire widget.
          * @returns the justify mode
+         * @since 1.7
          */
         get_justify(): JustifyMode;
 
         /**
          * Gets whether the last line should be stretched to fill the entire widget.
          * @returns whether the last line is justified
+         * @since 1.7
          */
         get_justify_last_line(): boolean;
 
         /**
          * Gets whether all lines should take the same amount of space.
          * @returns whether lines should be homogeneous
+         * @since 1.7
          */
         get_line_homogeneous(): boolean;
 
@@ -55192,42 +56912,49 @@ export namespace Adw {
          * 
          * See {@link WrapBox.line_spacing_unit}.
          * @returns the line spacing
+         * @since 1.7
          */
         get_line_spacing(): number;
 
         /**
          * Gets the length unit for line spacing.
          * @returns the length unit
+         * @since 1.7
          */
         get_line_spacing_unit(): LengthUnit;
 
         /**
          * Gets the natural size for each line.
          * @returns the natural length
+         * @since 1.7
          */
         get_natural_line_length(): number;
 
         /**
          * Gets the length unit for line spacing.
          * @returns the length unit
+         * @since 1.7
          */
         get_natural_line_length_unit(): LengthUnit;
 
         /**
          * Gets the direction children are packed in each line.
          * @returns the line direction
+         * @since 1.7
          */
         get_pack_direction(): PackDirection;
 
         /**
          * Gets the policy for line wrapping.
          * @returns the wrap policy
+         * @since 1.7
          */
         get_wrap_policy(): WrapPolicy;
 
         /**
          * Gets whether wrap direction is reversed.
          * @returns whether wrap direction is reversed
+         * @since 1.7
          */
         get_wrap_reverse(): boolean;
 
@@ -55237,12 +56964,14 @@ export namespace Adw {
          * If `sibling` is `NULL`, inserts `child` at the first position.
          * @param child the widget to insert
          * @param sibling the sibling after which to insert `child`
+         * @since 1.7
          */
         insert_child_after(child: Gtk.Widget, sibling: Gtk.Widget | null): void;
 
         /**
          * Adds `child` as the first child to `self`.
          * @param child the widget to prepend
+         * @since 1.7
          */
         prepend(child: Gtk.Widget): void;
 
@@ -55252,11 +56981,13 @@ export namespace Adw {
          * The child must have been added before with {@link Adw.WrapBox.append},
          * {@link Adw.WrapBox.prepend}, or {@link Adw.WrapBox.insert_child_after}.
          * @param child the child to remove
+         * @since 1.7
          */
         remove(child: Gtk.Widget): void;
 
         /**
          * Removes all children from `self`.
+         * @since 1.8
          */
         remove_all(): void;
 
@@ -55266,6 +56997,7 @@ export namespace Adw {
          * If `sibling` is `NULL`, moves `child` to the first position.
          * @param child the widget to move, must be a child of `self`
          * @param sibling the sibling to move `child` after
+         * @since 1.7
          */
         reorder_child_after(child: Gtk.Widget, sibling: Gtk.Widget | null): void;
 
@@ -55280,6 +57012,7 @@ export namespace Adw {
          * {@link Adw.JustifyMode.NONE}, or on the last line when the
          * {@link WrapBox.justify_last_line} is `FALSE`.
          * @param align the child alignment
+         * @since 1.7
          */
         set_align(align: number): void;
 
@@ -55288,6 +57021,7 @@ export namespace Adw {
          * 
          * See {@link WrapBox.child_spacing_unit}.
          * @param child_spacing the child spacing
+         * @since 1.7
          */
         set_child_spacing(child_spacing: number): void;
 
@@ -55298,6 +57032,7 @@ export namespace Adw {
          * 
          * See {@link WrapBox.child_spacing}.
          * @param unit the length unit
+         * @since 1.7
          */
         set_child_spacing_unit(unit: LengthUnit): void;
 
@@ -55321,6 +57056,7 @@ export namespace Adw {
          * By default this doesn't affect the last line, as it will be incomplete. Use
          * {@link WrapBox.justify_last_line} to justify it as well.
          * @param justify the justify mode
+         * @since 1.7
          */
         set_justify(justify: JustifyMode): void;
 
@@ -55329,18 +57065,21 @@ export namespace Adw {
          * 
          * See {@link WrapBox.justify}.
          * @param justify_last_line whether to justify the last line
+         * @since 1.7
          */
         set_justify_last_line(justify_last_line: boolean): void;
 
         /**
          * Sets whether all lines should take the same amount of space.
          * @param homogeneous whether lines should be homogeneous
+         * @since 1.7
          */
         set_line_homogeneous(homogeneous: boolean): void;
 
         /**
          * Sets the spacing between lines.
          * @param line_spacing the line spacing
+         * @since 1.7
          */
         set_line_spacing(line_spacing: number): void;
 
@@ -55351,6 +57090,7 @@ export namespace Adw {
          * 
          * See {@link WrapBox.line_spacing}.
          * @param unit the length unit
+         * @since 1.7
          */
         set_line_spacing_unit(unit: LengthUnit): void;
 
@@ -55362,6 +57102,7 @@ export namespace Adw {
          * 
          * See {@link WrapBox.natural_line_length_unit}.
          * @param natural_line_length the natural length
+         * @since 1.7
          */
         set_natural_line_length(natural_line_length: number): void;
 
@@ -55372,12 +57113,14 @@ export namespace Adw {
          * 
          * See {@link WrapBox.natural_line_length}.
          * @param unit the length unit
+         * @since 1.7
          */
         set_natural_line_length_unit(unit: LengthUnit): void;
 
         /**
          * Sets the direction children are packed in each line.
          * @param pack_direction the new line direction
+         * @since 1.7
          */
         set_pack_direction(pack_direction: PackDirection): void;
 
@@ -55392,6 +57135,7 @@ export namespace Adw {
          * children into each line as possible, shrinking them down to their minimum\
          * size before wrapping to the next line.
          * @param wrap_policy the new wrap policy
+         * @since 1.7
          */
         set_wrap_policy(wrap_policy: WrapPolicy): void;
 
@@ -55402,6 +57146,7 @@ export namespace Adw {
          * in a vertical box. If set to `TRUE`, they wrap upwards or towards the start
          * respectively.
          * @param wrap_reverse whether to reverse wrap direction
+         * @since 1.7
          */
         set_wrap_reverse(wrap_reverse: boolean): void;
 
@@ -55445,6 +57190,7 @@ export namespace Adw {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -55457,6 +57203,7 @@ export namespace Adw {
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
          * @returns the accessible identifier
+         * @since 4.22
          */
         get_accessible_id(): string | null;
 
@@ -55465,6 +57212,7 @@ export namespace Adw {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -55477,6 +57225,7 @@ export namespace Adw {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -55487,18 +57236,21 @@ export namespace Adw {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -55510,6 +57262,7 @@ export namespace Adw {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -55543,6 +57296,7 @@ export namespace Adw {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -55552,6 +57306,7 @@ export namespace Adw {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -55562,6 +57317,7 @@ export namespace Adw {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -55609,6 +57365,7 @@ export namespace Adw {
          * 
          * It is left to the accessible implementation to define the scope
          * and uniqueness of the identifier.
+         * @since 4.22
          * @virtual
          */
         vfunc_get_accessible_id(): string | null;
@@ -55617,12 +57374,14 @@ export namespace Adw {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -55633,18 +57392,21 @@ export namespace Adw {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -55656,6 +57418,7 @@ export namespace Adw {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -56198,78 +57961,91 @@ export namespace Adw {
         /**
          * Gets the alignment of the children within each line.
          * @returns the child alignment
+         * @since 1.7
          */
         get_align(): number;
 
         /**
          * Gets spacing between widgets on the same line.
          * @returns spacing between widgets on the same line
+         * @since 1.7
          */
         get_child_spacing(): number;
 
         /**
          * Gets the length unit for child spacing.
          * @returns the length unit
+         * @since 1.7
          */
         get_child_spacing_unit(): LengthUnit;
 
         /**
          * Gets whether and how each complete line is stretched to fill the entire widget.
          * @returns the justify mode
+         * @since 1.7
          */
         get_justify(): JustifyMode;
 
         /**
          * Gets whether the last line should be stretched to fill the entire widget.
          * @returns whether the last line is justified
+         * @since 1.7
          */
         get_justify_last_line(): boolean;
 
         /**
          * Gets whether all lines should take the same amount of space.
          * @returns whether lines should be homogeneous
+         * @since 1.7
          */
         get_line_homogeneous(): boolean;
 
         /**
          * Gets the spacing between lines.
          * @returns the line spacing
+         * @since 1.7
          */
         get_line_spacing(): number;
 
         /**
          * Gets the length unit for line spacing.
          * @returns the length unit
+         * @since 1.7
          */
         get_line_spacing_unit(): LengthUnit;
 
         /**
          * Gets the natural size for each line.
          * @returns the natural length
+         * @since 1.7
          */
         get_natural_line_length(): number;
 
         /**
          * Gets the length unit for line spacing.
          * @returns the length unit
+         * @since 1.7
          */
         get_natural_line_length_unit(): LengthUnit;
 
         /**
          * Gets the direction children are packed in each line.
          * @returns the line direction
+         * @since 1.7
          */
         get_pack_direction(): PackDirection;
 
         /**
          * Gets the policy for line wrapping.
          * @returns the wrap policy
+         * @since 1.7
          */
         get_wrap_policy(): WrapPolicy;
 
         /**
          * Gets whether wrap direction is reversed.
          * @returns whether wrap direction is reversed
+         * @since 1.7
          */
         get_wrap_reverse(): boolean;
 
@@ -56284,6 +58060,7 @@ export namespace Adw {
          * {@link Adw.JustifyMode.NONE}, or on the last line when the
          * {@link WrapLayout.justify_last_line} is `FALSE`.
          * @param align the child alignment
+         * @since 1.7
          */
         set_align(align: number): void;
 
@@ -56292,6 +58069,7 @@ export namespace Adw {
          * 
          * See {@link WrapLayout.child_spacing_unit}.
          * @param child_spacing the child spacing
+         * @since 1.7
          */
         set_child_spacing(child_spacing: number): void;
 
@@ -56302,6 +58080,7 @@ export namespace Adw {
          * 
          * See {@link WrapLayout.child_spacing}.
          * @param unit the length unit
+         * @since 1.7
          */
         set_child_spacing_unit(unit: LengthUnit): void;
 
@@ -56325,6 +58104,7 @@ export namespace Adw {
          * By default this doesn't affect the last line, as it will be incomplete. Use
          * {@link WrapLayout.justify_last_line} to justify it as well.
          * @param justify the justify mode
+         * @since 1.7
          */
         set_justify(justify: JustifyMode): void;
 
@@ -56333,12 +58113,14 @@ export namespace Adw {
          * 
          * See {@link WrapLayout.justify}.
          * @param justify_last_line whether to justify the last line
+         * @since 1.7
          */
         set_justify_last_line(justify_last_line: boolean): void;
 
         /**
          * Sets whether all lines should take the same amount of space.
          * @param homogeneous whether lines should be homogeneous
+         * @since 1.7
          */
         set_line_homogeneous(homogeneous: boolean): void;
 
@@ -56347,6 +58129,7 @@ export namespace Adw {
          * 
          * See {@link WrapLayout.line_spacing_unit}.
          * @param line_spacing the line spacing
+         * @since 1.7
          */
         set_line_spacing(line_spacing: number): void;
 
@@ -56357,6 +58140,7 @@ export namespace Adw {
          * 
          * See {@link WrapLayout.line_spacing}.
          * @param unit the length unit
+         * @since 1.7
          */
         set_line_spacing_unit(unit: LengthUnit): void;
 
@@ -56368,6 +58152,7 @@ export namespace Adw {
          * 
          * See {@link WrapLayout.natural_line_length_unit}.
          * @param natural_line_length the natural length
+         * @since 1.7
          */
         set_natural_line_length(natural_line_length: number): void;
 
@@ -56378,12 +58163,14 @@ export namespace Adw {
          * 
          * See {@link WrapLayout.natural_line_length}.
          * @param unit the length unit
+         * @since 1.7
          */
         set_natural_line_length_unit(unit: LengthUnit): void;
 
         /**
          * Sets the direction children are packed in each line.
          * @param pack_direction the new line direction
+         * @since 1.7
          */
         set_pack_direction(pack_direction: PackDirection): void;
 
@@ -56398,6 +58185,7 @@ export namespace Adw {
          * children into each line as possible, shrinking them down to their minimum
          * size before wrapping to the next line.
          * @param wrap_policy the new wrap policy
+         * @since 1.7
          */
         set_wrap_policy(wrap_policy: WrapPolicy): void;
 
@@ -56408,6 +58196,7 @@ export namespace Adw {
          * in a vertical box. If set to `TRUE`, they wrap upwards or towards the start
          * respectively.
          * @param wrap_reverse whether to reverse wrap direction
+         * @since 1.7
          */
         set_wrap_reverse(wrap_reverse: boolean): void;
 
@@ -56580,6 +58369,7 @@ export namespace Adw {
          * 
          * If parentheses are omitted, the first operator takes priority.
          * @param str the string specifying the condition
+         * @since 1.4
          */
         static parse(str: string): BreakpointCondition;
 
@@ -56587,11 +58377,13 @@ export namespace Adw {
         /**
          * Copies `self`.
          * @returns a copy of `self`
+         * @since 1.4
          */
         copy(): BreakpointCondition;
 
         /**
          * Frees `self`.
+         * @since 1.4
          */
         free(): void;
 
@@ -56600,6 +58392,7 @@ export namespace Adw {
          * 
          * The returned string can be parsed by {@link BreakpointCondition.parse}.
          * @returns A newly allocated text string
+         * @since 1.4
          */
         to_string(): string;
     }

@@ -1547,6 +1547,7 @@ export namespace GstRtp {
          * the current output buffer first.
          * 
          * Must be called with the stream lock held.
+         * @since 1.24
          */
         delayed(): void;
 
@@ -1561,6 +1562,7 @@ export namespace GstRtp {
          * dropping an input RTP buffer while waiting for the first keyframe.
          * 
          * Must be called with the stream lock held.
+         * @since 1.24
          */
         dropped(): void;
 
@@ -1582,18 +1584,21 @@ export namespace GstRtp {
          * 
          * Must be called with the stream lock held.
          * @param keep_current if the current RTP buffer shall be kept
+         * @since 1.24
          */
         flush(keep_current: boolean): void;
 
         /**
          * Queries whether header extensions will be aggregated per depayloaded buffers.
          * @returns `true` if aggregate-header-extension is enabled.
+         * @since 1.24
          */
         is_aggregate_hdrext_enabled(): boolean;
 
         /**
          * Queries whether {@link GstRtp.RTPSourceMeta} will be added to depayloaded buffers.
          * @returns `true` if source-info is enabled.
+         * @since 1.16
          */
         is_source_info_enabled(): boolean;
 
@@ -1619,12 +1624,14 @@ export namespace GstRtp {
         /**
          * Enable or disable aggregating header extensions.
          * @param enable whether to aggregate header extensions per output buffer
+         * @since 1.24
          */
         set_aggregate_hdrext_enabled(enable: boolean): void;
 
         /**
          * Enable or disable adding {@link GstRtp.RTPSourceMeta} to depayloaded buffers.
          * @param enable whether to add meta about RTP sources to buffer
+         * @since 1.16
          */
         set_source_info_enabled(enable: boolean): void;
     }
@@ -2071,6 +2078,7 @@ export namespace GstRtp {
          * @param pad_len the amount of padding
          * @param csrc_count the minimum number of CSRC entries
          * @returns A newly allocated buffer that can hold an RTP packet with given parameters.
+         * @since 1.16
          */
         allocate_output_buffer(payload_len: number, pad_len: number, csrc_count: number): Gst.Buffer;
 
@@ -2080,6 +2088,7 @@ export namespace GstRtp {
          * If {@link GstRtp.RTPBasePayload.source_info} is `false` the count will be 0.
          * @param buffer a {@link Gst.Buffer}, typically the buffer to payload
          * @returns The number of sources.
+         * @since 1.16
          */
         get_source_count(buffer: Gst.Buffer): number;
 
@@ -2096,6 +2105,7 @@ export namespace GstRtp {
          * Queries whether the payloader will add contributing sources (CSRCs) to the
          * RTP header from {@link GstRtp.RTPSourceMeta}.
          * @returns `true` if source-info is enabled.
+         * @since 1.16
          */
         is_source_info_enabled(): boolean;
 
@@ -2134,6 +2144,7 @@ export namespace GstRtp {
          * Configure the output caps with the optional fields.
          * @param s a {@link Gst.Structure} with the caps fields
          * @returns `true` if the caps could be set.
+         * @since 1.20
          */
         set_outcaps_structure(s: Gst.Structure | null): boolean;
 
@@ -2141,6 +2152,7 @@ export namespace GstRtp {
          * Enable or disable adding contributing sources to RTP packets from
          * {@link GstRtp.RTPSourceMeta}.
          * @param enable whether to add contributing sources to RTP packets
+         * @since 1.16
          */
         set_source_info_enabled(enable: boolean): void;
     }
@@ -2195,6 +2207,7 @@ export namespace GstRtp {
         // Static methods
         /**
          * @param uri the rtp header extension URI to search for
+         * @since 1.20
          */
         static create_from_uri(uri: string): RTPHeaderExtension | null;
 
@@ -2212,12 +2225,14 @@ export namespace GstRtp {
          * Implementations should return as accurate a value as is possible using the
          * information given in the input `buffer`.
          * @param input_meta a {@link Gst.Buffer}
+         * @since 1.20
          * @virtual
          */
         vfunc_get_max_size(input_meta: Gst.Buffer): bigint | number;
 
         /**
          * retrieve the supported flags
+         * @since 1.20
          * @virtual
          */
         vfunc_get_supported_flags(): RTPHeaderExtensionFlags;
@@ -2227,6 +2242,7 @@ export namespace GstRtp {
          * @param read_flags {@link GstRtp.RTPHeaderExtensionFlags} for how the extension should               be written
          * @param data location to read the rtp header extension from
          * @param buffer a {@link Gst.Buffer} to modify if necessary
+         * @since 1.20
          * @virtual
          */
         vfunc_read(read_flags: RTPHeaderExtensionFlags, data: Uint8Array, buffer: Gst.Buffer): boolean;
@@ -2247,6 +2263,7 @@ export namespace GstRtp {
          * The only current known caps format is based on the SDP standard as produced
          * by `gst_sdp_media_attributes_to_caps()`.
          * @param caps writable {@link Gst.Caps} to modify
+         * @since 1.20
          * @virtual
          */
         vfunc_set_caps_from_attributes(caps: Gst.Caps): boolean;
@@ -2255,6 +2272,7 @@ export namespace GstRtp {
          * Passes RTP payloader's sink (i.e. not payloaded) `caps` to the header
          * extension.
          * @param caps sink {@link Gst.Caps}
+         * @since 1.20
          * @virtual
          */
         vfunc_set_non_rtp_sink_caps(caps: Gst.Caps): boolean;
@@ -2263,6 +2281,7 @@ export namespace GstRtp {
          * Updates depayloader src caps based on the information received in RTP header.
          * `caps` must be writable as this function may modify them.
          * @param caps src {@link Gst.Caps} to modify
+         * @since 1.20
          * @virtual
          */
         vfunc_update_non_rtp_src_caps(caps: Gst.Caps): boolean;
@@ -2275,6 +2294,7 @@ export namespace GstRtp {
          * @param write_flags {@link GstRtp.RTPHeaderExtensionFlags} for how the extension should               be written
          * @param output output RTP {@link Gst.Buffer}
          * @param data location to write the rtp header extension into
+         * @since 1.20
          * @virtual
          */
         vfunc_write(input_meta: Gst.Buffer, write_flags: RTPHeaderExtensionFlags, output: Gst.Buffer, data: Uint8Array): bigint | number;
@@ -2283,11 +2303,13 @@ export namespace GstRtp {
         /**
          * Retrieve the direction
          * @returns The direction
+         * @since 1.20
          */
         get_direction(): RTPHeaderExtensionDirection;
 
         /**
          * @returns the RTP extension id configured on `ext`
+         * @since 1.20
          */
         get_id(): number;
 
@@ -2300,21 +2322,25 @@ export namespace GstRtp {
          * information given in the input `buffer`.
          * @param input_meta a {@link Gst.Buffer}
          * @returns the maximum size of the data written by this extension
+         * @since 1.20
          */
         get_max_size(input_meta: Gst.Buffer): number;
 
         /**
          * @returns the {@link Gst.Structure} field name used in SDP-like {@link Gst.Caps} for this `ext` configuration
+         * @since 1.20
          */
         get_sdp_caps_field_name(): string;
 
         /**
          * @returns the flags supported by this instance of `ext`
+         * @since 1.20
          */
         get_supported_flags(): RTPHeaderExtensionFlags;
 
         /**
          * @returns the RTP extension URI for this object
+         * @since 1.20
          */
         get_uri(): string | null;
 
@@ -2324,6 +2350,7 @@ export namespace GstRtp {
          * @param data location to read the rtp header extension from
          * @param buffer a {@link Gst.Buffer} to modify if necessary
          * @returns whether the extension could be read from `data`
+         * @since 1.20
          */
         read(read_flags: RTPHeaderExtensionFlags, data: Uint8Array | string, buffer: Gst.Buffer): boolean;
 
@@ -2335,6 +2362,7 @@ export namespace GstRtp {
          * by `gst_sdp_media_attributes_to_caps()`.
          * @param caps the {@link Gst.Caps} to configure this extension with
          * @returns whether the `caps` could be successfully set on `ext`.
+         * @since 1.20
          */
         set_attributes_from_caps(caps: Gst.Caps): boolean;
 
@@ -2346,6 +2374,7 @@ export namespace GstRtp {
          * by `gst_sdp_media_attributes_to_caps()`.
          * @param caps writable {@link Gst.Caps} to modify
          * @returns whether the configured attributes on `ext` can successfully be set on 	`caps`
+         * @since 1.20
          */
         set_caps_from_attributes(caps: Gst.Caps): boolean;
 
@@ -2359,6 +2388,7 @@ export namespace GstRtp {
          * @param caps {@link Gst.Caps} to write fields into
          * @param attributes 
          * @returns whether the `ext` attributes could be set on `caps`.
+         * @since 1.20
          */
         set_caps_from_attributes_helper(caps: Gst.Caps, attributes: string): boolean;
 
@@ -2368,12 +2398,14 @@ export namespace GstRtp {
          * direction will not be included in the caps (as it shouldn't be in the
          * extmap line in the SDP).
          * @param direction The direction
+         * @since 1.20
          */
         set_direction(direction: RTPHeaderExtensionDirection): void;
 
         /**
          * sets the RTP extension id on `ext`
          * @param ext_id The id of this extension
+         * @since 1.20
          */
         set_id(ext_id: number): void;
 
@@ -2382,6 +2414,7 @@ export namespace GstRtp {
          * extension.
          * @param caps sink {@link Gst.Caps}
          * @returns Whether `caps` could be read successfully
+         * @since 1.20
          */
         set_non_rtp_sink_caps(caps: Gst.Caps): boolean;
 
@@ -2393,6 +2426,7 @@ export namespace GstRtp {
          * have the caps update applied. Applying the update also flips the internal
          * "wants update" flag back to FALSE.
          * @param state TRUE if caps update is needed
+         * @since 1.20
          */
         set_wants_update_non_rtp_src_caps(state: boolean): void;
 
@@ -2401,6 +2435,7 @@ export namespace GstRtp {
          * `caps` must be writable as this function may modify them.
          * @param caps src {@link Gst.Caps} to modify
          * @returns whether `caps` were modified successfully
+         * @since 1.20
          */
         update_non_rtp_src_caps(caps: Gst.Caps): boolean;
 
@@ -2409,6 +2444,7 @@ export namespace GstRtp {
          * the depayloader's src caps need updating with data received in the last RTP
          * packet.
          * @returns Whether `ext` wants to update depayloader's src caps.
+         * @since 1.20
          */
         wants_update_non_rtp_src_caps(): boolean;
 
@@ -2421,6 +2457,7 @@ export namespace GstRtp {
          * @param output output RTP {@link Gst.Buffer}
          * @param data location to write the rtp header extension into
          * @returns the size of the data written, < 0 on failure
+         * @since 1.20
          */
         write(input_meta: Gst.Buffer, write_flags: RTPHeaderExtensionFlags, output: Gst.Buffer, data: Uint8Array | string): number;
     }
@@ -2500,6 +2537,7 @@ export namespace GstRtp {
          * RFC 5506 and will validate full compound RTCP packets as well as reduced
          * size RTCP packets.
          * @param data the data to validate
+         * @since 1.6
          */
         static validate_data_reduced(data: Uint8Array | string): boolean;
 
@@ -2507,6 +2545,7 @@ export namespace GstRtp {
          * Check if the data pointed to by `buffer` is a valid RTCP packet using
          * `gst_rtcp_buffer_validate_reduced()`.
          * @param buffer the buffer to validate
+         * @since 1.6
          */
         static validate_reduced(buffer: Gst.Buffer): boolean;
 
@@ -2563,6 +2602,7 @@ export namespace GstRtp {
          * extension.
          * @param data profile-specific data
          * @returns `true` if the profile specific extension data was added.
+         * @since 1.10
          */
         add_profile_specific_ext(data: Uint8Array | string): boolean;
 
@@ -2582,6 +2622,7 @@ export namespace GstRtp {
         /**
          * Get the application-dependent data attached to a RTPFB or PSFB `packet`.
          * @returns A pointer to the data
+         * @since 1.10
          */
         app_get_data(): number;
 
@@ -2589,24 +2630,28 @@ export namespace GstRtp {
          * Get the length of the application-dependent data attached to an APP
          * `packet`.
          * @returns The length of data in 32-bit words.
+         * @since 1.10
          */
         app_get_data_length(): number;
 
         /**
          * Get the name field of the APP `packet`.
          * @returns The 4-byte name field, not zero-terminated.
+         * @since 1.10
          */
         app_get_name(): string;
 
         /**
          * Get the SSRC/CSRC field of the APP `packet`.
          * @returns The SSRC/CSRC.
+         * @since 1.10
          */
         app_get_ssrc(): number;
 
         /**
          * Get the subtype field of the APP `packet`.
          * @returns The subtype.
+         * @since 1.10
          */
         app_get_subtype(): number;
 
@@ -2615,24 +2660,28 @@ export namespace GstRtp {
          * `packet`.
          * @param wordlen Length of the data in 32-bit words
          * @returns `true` if there was enough space in the packet to add this much data.
+         * @since 1.10
          */
         app_set_data_length(wordlen: number): boolean;
 
         /**
          * Set the name field of the APP `packet`.
          * @param name 4-byte ASCII name
+         * @since 1.10
          */
         app_set_name(name: string): void;
 
         /**
          * Set the SSRC/CSRC field of the APP `packet`.
          * @param ssrc SSRC/CSRC of the packet
+         * @since 1.10
          */
         app_set_ssrc(ssrc: number): void;
 
         /**
          * Set the subtype field of the APP `packet`.
          * @param subtype subtype of the packet
+         * @since 1.10
          */
         app_set_subtype(subtype: number): void;
 
@@ -2686,6 +2735,7 @@ export namespace GstRtp {
          * The profile-specific extension data is copied into a new allocated
          * memory area `data`. This must be freed with `g_free()` after usage.
          * @returns `true` if there was valid data.
+         * @since 1.10
          */
         copy_profile_specific_ext(): [boolean, Uint8Array];
 
@@ -2767,11 +2817,13 @@ export namespace GstRtp {
 
         /**
          * @returns `true` if there was valid data.
+         * @since 1.10
          */
         get_profile_specific_ext(): [boolean, Uint8Array];
 
         /**
          * @returns The number of 32-bit words containing profile-specific extension          data from `packet`.
+         * @since 1.10
          */
         get_profile_specific_ext_length(): number;
 
@@ -2924,17 +2976,20 @@ export namespace GstRtp {
         /**
          * Move to the first extended report block in XR `packet`.
          * @returns TRUE if there was a first extended report block.
+         * @since 1.16
          */
         xr_first_rb(): boolean;
 
         /**
          * @returns The number of 32-bit words containing type-specific block          data from `packet`.
+         * @since 1.16
          */
         xr_get_block_length(): number;
 
         /**
          * Get the extended report block type of the XR `packet`.
          * @returns The extended report block type.
+         * @since 1.16
          */
         xr_get_block_type(): RTCPXRType;
 
@@ -2945,6 +3000,7 @@ export namespace GstRtp {
          * @param last_rr the last receiver reference timestamp of `ssrc`.
          * @param delay the delay since `last_rr`.
          * @returns `true` if the report block is correctly parsed.
+         * @since 1.16
          */
         xr_get_dlrr_block(nth: number, ssrc: number, last_rr: number, delay: number): boolean;
 
@@ -2953,6 +3009,7 @@ export namespace GstRtp {
          * @param seq the sequence to retrieve the time.
          * @param receipt_time the packet receipt time of `seq`.
          * @returns `true` if the report block returns the receipt time correctly.
+         * @since 1.16
          */
         xr_get_prt_by_seq(seq: number, receipt_time: number): boolean;
 
@@ -2963,6 +3020,7 @@ export namespace GstRtp {
          * @param begin_seq the first sequence number that this block reports on.
          * @param end_seq the last sequence number that this block reports on plus one.
          * @returns `true` if the report block is correctly parsed.
+         * @since 1.16
          */
         xr_get_prt_info(ssrc: number, thinning: number, begin_seq: number, end_seq: number): boolean;
 
@@ -2974,6 +3032,7 @@ export namespace GstRtp {
          * @param end_seq the last sequence number that this block reports on plus one.
          * @param chunk_count the number of chunks calculated by block length.
          * @returns `true` if the report block is correctly parsed.
+         * @since 1.16
          */
         xr_get_rle_info(ssrc: number, thinning: number, begin_seq: number, end_seq: number, chunk_count: number): boolean;
 
@@ -2982,18 +3041,21 @@ export namespace GstRtp {
          * @param nth the index of chunk to retrieve.
          * @param chunk the `nth` chunk.
          * @returns `true` if the report block returns chunk correctly.
+         * @since 1.16
          */
         xr_get_rle_nth_chunk(nth: number, chunk: number): boolean;
 
         /**
          * @param timestamp NTP timestamp
          * @returns `true` if the report block returns the reference time correctly.
+         * @since 1.16
          */
         xr_get_rrt(timestamp: bigint | number): boolean;
 
         /**
          * Get the ssrc field of the XR `packet`.
          * @returns the ssrc.
+         * @since 1.16
          */
         xr_get_ssrc(): number;
 
@@ -3003,6 +3065,7 @@ export namespace GstRtp {
          * @param begin_seq the first sequence number that this block reports on.
          * @param end_seq the last sequence number that this block reports on plus one.
          * @returns `true` if the report block is correctly parsed.
+         * @since 1.16
          */
         xr_get_summary_info(ssrc: number, begin_seq: number, end_seq: number): boolean;
 
@@ -3014,6 +3077,7 @@ export namespace GstRtp {
          * @param mean_jitter the mean relative transit time between two sequences.
          * @param dev_jitter the standard deviation of the relative transit time between two sequences.
          * @returns `true` if the report block is correctly parsed.
+         * @since 1.16
          */
         xr_get_summary_jitter(min_jitter: number, max_jitter: number, mean_jitter: number, dev_jitter: number): boolean;
 
@@ -3023,6 +3087,7 @@ export namespace GstRtp {
          * @param lost_packets the number of lost packets between begin_seq and end_seq.
          * @param dup_packets the number of duplicate packets between begin_seq and end_seq.
          * @returns `true` if the report block is correctly parsed.
+         * @since 1.16
          */
         xr_get_summary_pkt(lost_packets: number, dup_packets: number): boolean;
 
@@ -3034,6 +3099,7 @@ export namespace GstRtp {
          * @param mean_ttl the mean TTL or Hop Limit value of data packets between two sequences.
          * @param dev_ttl the standard deviation of the TTL or Hop Limit value of data packets between two sequences.
          * @returns `true` if the report block is correctly parsed.
+         * @since 1.16
          */
         xr_get_summary_ttl(is_ipv4: boolean, min_ttl: number, max_ttl: number, mean_ttl: number, dev_ttl: number): boolean;
 
@@ -3043,6 +3109,7 @@ export namespace GstRtp {
          * @param burst_duration the mean duration(ms) of the burst periods.
          * @param gap_duration the mean duration(ms) of the gap periods.
          * @returns `true` if the report block is correctly parsed.
+         * @since 1.16
          */
         xr_get_voip_burst_metrics(burst_density: number, gap_density: number, burst_duration: number, gap_duration: number): boolean;
 
@@ -3050,6 +3117,7 @@ export namespace GstRtp {
          * @param gmin the gap threshold.
          * @param rx_config the receiver configuration byte.
          * @returns `true` if the report block is correctly parsed.
+         * @since 1.16
          */
         xr_get_voip_configuration_params(gmin: number, rx_config: number): boolean;
 
@@ -3057,6 +3125,7 @@ export namespace GstRtp {
          * @param roundtrip_delay the most recently calculated round trip time between RTP interfaces(ms)
          * @param end_system_delay the most recently estimated end system delay(ms)
          * @returns `true` if the report block is correctly parsed.
+         * @since 1.16
          */
         xr_get_voip_delay_metrics(roundtrip_delay: number, end_system_delay: number): boolean;
 
@@ -3065,12 +3134,14 @@ export namespace GstRtp {
          * @param jb_maximum the current maximum jitter buffer delay(ms)
          * @param jb_abs_max the absolute maximum delay(ms)
          * @returns `true` if the report block is correctly parsed.
+         * @since 1.16
          */
         xr_get_voip_jitter_buffer_params(jb_nominal: number, jb_maximum: number, jb_abs_max: number): boolean;
 
         /**
          * @param ssrc the SSRC of source
          * @returns `true` if the report block is correctly parsed.
+         * @since 1.16
          */
         xr_get_voip_metrics_ssrc(ssrc: number): boolean;
 
@@ -3078,6 +3149,7 @@ export namespace GstRtp {
          * @param loss_rate the fraction of RTP data packets from the source lost.
          * @param discard_rate the fraction of RTP data packets from the source that have been discarded.
          * @returns `true` if the report block is correctly parsed.
+         * @since 1.16
          */
         xr_get_voip_packet_metrics(loss_rate: number, discard_rate: number): boolean;
 
@@ -3087,6 +3159,7 @@ export namespace GstRtp {
          * @param mos_lq the estimated mean opinion score for listening quality.
          * @param mos_cq the estimated mean opinion score for conversational quality.
          * @returns `true` if the report block is correctly parsed.
+         * @since 1.16
          */
         xr_get_voip_quality_metrics(r_factor: number, ext_r_factor: number, mos_lq: number, mos_cq: number): boolean;
 
@@ -3096,12 +3169,14 @@ export namespace GstRtp {
          * @param rerl the residual echo return loss value.
          * @param gmin the gap threshold.
          * @returns `true` if the report block is correctly parsed.
+         * @since 1.16
          */
         xr_get_voip_signal_metrics(signal_level: number, noise_level: number, rerl: number, gmin: number): boolean;
 
         /**
          * Move to the next extended report block in XR `packet`.
          * @returns TRUE if there was a next extended report block.
+         * @since 1.16
          */
         xr_next_rb(): boolean;
     }
@@ -3240,6 +3315,7 @@ export namespace GstRtp {
          * @param bit_pattern The bit-pattern. Anything but 0xBEDE is rejected.
          * @param id The ID of the header extension to be read (between 1 and 14).
          * @param nth Read the nth extension packet with the requested ID
+         * @since 1.18
          */
         static get_extension_onebyte_header_from_bytes(bytes: GLib.Bytes | Uint8Array, bit_pattern: number, id: number, nth: number): [boolean, Uint8Array];
 
@@ -3346,6 +3422,7 @@ export namespace GstRtp {
          * `bits` unchanged. If there is an extension header but no extension data then
          * an empty {@link GLib.Bytes} will be returned.
          * @returns A new {@link GLib.Bytes} if an extension header was present and `null` otherwise.
+         * @since 1.2
          */
         get_extension_data(): [GLib.Bytes | null, number];
 
@@ -3405,6 +3482,7 @@ export namespace GstRtp {
          * bindings usage. The return value is a pointer to a {@link GLib.Bytes} structure
          * containing the payload data in `rtp`.
          * @returns A new {@link GLib.Bytes} containing the payload data in `rtp`.
+         * @since 1.2
          */
         get_payload(): GLib.Bytes | null;
 
@@ -3470,6 +3548,7 @@ export namespace GstRtp {
          * If the RTP buffer has no header extension data, the action has no effect.
          * The RTP buffer must be mapped READWRITE only once and the underlying
          * GstBuffer must be writable.
+         * @since 1.20
          */
         remove_extension_data(): void;
 
@@ -3637,12 +3716,14 @@ export namespace GstRtp {
          * Appends `csrc` to the list of contributing sources in `meta`.
          * @param csrc the csrcs to append
          * @returns `true` if all elements in `csrc` was added, `false` otherwise.
+         * @since 1.16
          */
         append_csrc(csrc: number[]): boolean;
 
         /**
          * Count the total number of RTP sources found in `meta`, both SSRC and CSRC.
          * @returns The number of RTP sources
+         * @since 1.16
          */
         get_source_count(): number;
 
@@ -3650,6 +3731,7 @@ export namespace GstRtp {
          * Sets `ssrc` in `meta`. If `ssrc` is `null` the ssrc of `meta` will be unset.
          * @param ssrc pointer to the SSRC
          * @returns `true` on success, `false` otherwise.
+         * @since 1.16
          */
         set_ssrc(ssrc: number | null): boolean;
     }

@@ -766,6 +766,7 @@ export namespace Dex {
          * the future is discarded. This happens when no more futures are awaiting
          * the completion of this future.
          * @param cancel_on_discard if the operation should cancel when the future is discarded
+         * @since 0.4
          */
         set_cancel_on_discard(cancel_on_discard: boolean): void;
     }
@@ -875,6 +876,7 @@ export namespace Dex {
          * pointer indicating the function `res` was created by).
          * @param source_tag an application-defined tag
          * @returns `TRUE` if `res` has the indicated `source_tag`, `FALSE` if   not.
+         * @since 2.34
          */
         is_tagged(source_tag: null): boolean;
 
@@ -890,6 +892,7 @@ export namespace Dex {
          * set by virtual methods should also be extracted by virtual methods,
          * to enable subclasses to chain up correctly.
          * @returns `TRUE` if `error` is has been filled in with an error from   `res`, `FALSE` if not.
+         * @since 2.34
          */
         legacy_propagate_error(): boolean;
 
@@ -909,6 +912,7 @@ export namespace Dex {
          * Checks if `res` has the given `source_tag` (generally a function
          * pointer indicating the function `res` was created by).
          * @param source_tag an application-defined tag
+         * @since 2.34
          * @virtual
          */
         vfunc_is_tagged(source_tag: null): boolean;
@@ -1146,6 +1150,7 @@ export namespace Dex {
         // Methods
         /**
          * Cancels all in-flight fibers.
+         * @since 1.1
          */
         cancel(): void;
 
@@ -1153,6 +1158,7 @@ export namespace Dex {
          * Gets the {@link Dex.DBusInterfaceSkeletonFlags} that describes the behavior
          * of `interface_`
          * @returns One or more flags from the {@link Dex.DBusInterfaceSkeletonFlags} enumeration.
+         * @since 1.1
          */
         get_flags(): DBusInterfaceSkeletonFlags;
 
@@ -1165,6 +1171,7 @@ export namespace Dex {
         /**
          * Sets flags describing what the behavior of `interface_` should be.
          * @param flags Flags from the {@link Dex.DBusInterfaceSkeletonFlags} enumeration.
+         * @since 1.1
          */
         set_flags(flags: DBusInterfaceSkeletonFlags): void;
 
@@ -1177,6 +1184,7 @@ export namespace Dex {
         /**
          * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
          * @returns A {@link Gio.DBusObject} or `null`. The returned reference should be freed with `g_object_unref()`.
+         * @since 2.32
          */
         get_object(): Gio.DBusObject | null;
 
@@ -1189,6 +1197,7 @@ export namespace Dex {
          * For example, {@link Gio.DBusProxy} implements {@link Gio.DBusInterface} but allows for a `null`
          * {@link Gio.DBusInterfaceInfo}.
          * @returns A {@link Gio.DBusInterfaceInfo}. Do not free.
+         * @since 2.30
          */
         get_info(): Gio.DBusInterfaceInfo | null;
 
@@ -1203,11 +1212,13 @@ export namespace Dex {
          * 
          * Note that `interface_` will hold a weak reference to `object`.
          * @param object A {@link Gio.DBusObject} or `null`.
+         * @since 2.30
          */
         set_object(object: Gio.DBusObject | null): void;
 
         /**
          * Gets the {@link Gio.DBusObject} that `interface_` belongs to, if any.
+         * @since 2.32
          * @virtual
          */
         vfunc_dup_object(): Gio.DBusObject | null;
@@ -1220,6 +1231,7 @@ export namespace Dex {
          * construction of `interface_` and is also not made available otherwise.
          * For example, {@link Gio.DBusProxy} implements {@link Gio.DBusInterface} but allows for a `null`
          * {@link Gio.DBusInterfaceInfo}.
+         * @since 2.30
          * @virtual
          */
         vfunc_get_info(): Gio.DBusInterfaceInfo | null;
@@ -1236,6 +1248,7 @@ export namespace Dex {
          * 
          * Note that `interface_` will hold a weak reference to `object`.
          * @param object A {@link Gio.DBusObject} or `null`.
+         * @since 2.30
          * @virtual
          */
         vfunc_set_object(object: Gio.DBusObject | null): void;
@@ -1488,6 +1501,7 @@ export namespace Dex {
          * 
          * The resolved value must be of type `DEX_TYPE_FD` or `error` is set.
          * @returns a valid file descriptor or -1. you may get -1 without   error being set if there was no rejected future.
+         * @since 0.10
          */
         await_fd(): number;
 
@@ -1564,12 +1578,14 @@ export namespace Dex {
         /**
          * Awaits on `future` and returns the `G_TYPE_VARIANT` based result.
          * @returns the variant result, or `null` and `error` is set.
+         * @since 0.4
          */
         await_variant(): GLib.Variant;
 
         /**
          * Disowns a future, allowing it to run to completion even though there may
          * be no observer interested in the futures completion or rejection.
+         * @since 0.4
          */
         disown(): void;
 
@@ -1604,6 +1620,7 @@ export namespace Dex {
          * Creates a new list model that will initially be empty and after
          * `future` resolves contain the items within it.
          * @returns a new {@link Dex.FutureListModel}
+         * @since 1.1
          */
         list_model_new(): Gio.ListModel;
     }
@@ -1658,6 +1675,7 @@ export namespace Dex {
         /**
          * Gets the future provided when creating the list model.
          * @returns a {@link Dex.Future} that resolves to a   {@link Gio.ListModel} or rejects with error.
+         * @since 1.1
          */
         dup_future(): Future;
 
@@ -1671,6 +1689,7 @@ export namespace Dex {
          * The item type of a {@link Gio.ListModel} can not change during the life of the
          * model.
          * @returns the {@link GObject.GType} of the items contained in `list`.
+         * @since 2.44
          */
         get_item_type(): GObject.GType;
 
@@ -1681,6 +1700,7 @@ export namespace Dex {
          * less efficient than iterating the list with increasing values for
          * `position` until `g_list_model_get_item()` returns `null`.
          * @returns the number of items in `list`.
+         * @since 2.44
          */
         get_n_items(): number;
 
@@ -1699,6 +1719,7 @@ export namespace Dex {
          * See also: `g_list_model_get_n_items()`
          * @param position the position of the item to fetch
          * @returns the object at `position`.
+         * @since 2.44
          */
         get_item(position: number): A | null;
 
@@ -1726,6 +1747,7 @@ export namespace Dex {
          * @param position the position at which `list` changed
          * @param removed the number of items removed
          * @param added the number of items added
+         * @since 2.44
          */
         items_changed(position: number, removed: number, added: number): void;
 
@@ -1738,6 +1760,7 @@ export namespace Dex {
          * 
          * The same {@link GObject.Object} instance may not appear more than once in a {@link Gio.ListModel}.
          * @param position the position of the item to fetch
+         * @since 2.44
          * @virtual
          */
         vfunc_get_item(position: number): A | null;
@@ -1751,6 +1774,7 @@ export namespace Dex {
          * 
          * The item type of a {@link Gio.ListModel} can not change during the life of the
          * model.
+         * @since 2.44
          * @virtual
          */
         vfunc_get_item_type(): GObject.GType;
@@ -1761,6 +1785,7 @@ export namespace Dex {
          * Depending on the model implementation, calling this function may be
          * less efficient than iterating the list with increasing values for
          * `position` until `g_list_model_get_item()` returns `null`.
+         * @since 2.44
          * @virtual
          */
         vfunc_get_n_items(): number;
@@ -1989,6 +2014,7 @@ export namespace Dex {
         /**
          * @param boxed_type a {@link GObject.GType} of `G_TYPE_BOXED`
          * @param instance the boxed value to store
+         * @since 0.10
          */
         resolve_boxed(boxed_type: GObject.GType, instance: null): void;
 
@@ -2064,6 +2090,7 @@ export namespace Dex {
         /**
          * If `variant` is floating, its reference is consumed.
          * @param variant a {@link GLib.Variant}
+         * @since 0.8
          */
         resolve_variant(variant: GLib.Variant | null): void;
     }
@@ -2368,6 +2395,7 @@ export namespace Dex {
         // Methods
         /**
          * Get the signal number that the future represents.
+         * @since 1.0
          */
         get_signum(): number;
     }

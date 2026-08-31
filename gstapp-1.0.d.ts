@@ -587,6 +587,7 @@ export namespace GstApp {
          * Note that future releases may extend this API to return other object types
          * so make sure that your code is checking for the actual type it is handling.
          * @param timeout the maximum amount of time to wait for a sample
+         * @since 1.20
          * @virtual
          */
         vfunc_try_pull_object(timeout: Gst.ClockTime): Gst.MiniObject | null;
@@ -612,6 +613,7 @@ export namespace GstApp {
          * This function blocks until a preroll sample or EOS is received, the appsink
          * element is set to the READY/NULL state, or the timeout expires.
          * @param timeout the maximum amount of time to wait for the preroll sample
+         * @since 1.10
          * @virtual
          */
         vfunc_try_pull_preroll(timeout: Gst.ClockTime): Gst.Sample | null;
@@ -630,6 +632,7 @@ export namespace GstApp {
          * this function returns `null`. Use gst_app_sink_is_eos () to check for the EOS
          * condition.
          * @param timeout the maximum amount of time to wait for a sample
+         * @since 1.10
          * @virtual
          */
         vfunc_try_pull_sample(timeout: Gst.ClockTime): Gst.Sample | null;
@@ -638,6 +641,7 @@ export namespace GstApp {
         /**
          * Check if `appsink` supports buffer lists.
          * @returns `true` if `appsink` supports buffer lists.
+         * @since 1.12
          */
         get_buffer_list_support(): boolean;
 
@@ -669,12 +673,14 @@ export namespace GstApp {
         /**
          * Get the maximum total size, in bytes, that can be queued in `appsink`.
          * @returns The maximum amount of bytes that can be queued
+         * @since 1.24
          */
         get_max_bytes(): number;
 
         /**
          * Get the maximum total duration that can be queued in `appsink`.
          * @returns The maximum total duration that can be queued.
+         * @since 1.24
          */
         get_max_time(): Gst.ClockTime;
 
@@ -716,6 +722,7 @@ export namespace GstApp {
          * Note that future releases may extend this API to return other object types
          * so make sure that your code is checking for the actual type it is handling.
          * @returns a {@link Gst.Sample}, or a {@link Gst.Event} or NULL when the appsink is stopped or EOS.          Call `gst_mini_object_unref()` after usage.
+         * @since 1.20
          */
         pull_object(): Gst.MiniObject | null;
 
@@ -764,6 +771,7 @@ export namespace GstApp {
          * For backwards-compatibility reasons applications need to opt in
          * to indicate that they will be able to handle buffer lists.
          * @param enable_lists enable or disable buffer list support
+         * @since 1.12
          */
         set_buffer_list_support(enable_lists: boolean): void;
 
@@ -806,6 +814,7 @@ export namespace GstApp {
          * elements until a sample is pulled from `appsink`, unless 'drop' is set, in which
          * case new buffers will be discarded.
          * @param max the maximum total size of buffers to queue, in bytes
+         * @since 1.24
          */
         set_max_bytes(max: bigint | number): void;
 
@@ -815,6 +824,7 @@ export namespace GstApp {
          * elements until a sample is pulled from `appsink`, unless 'drop' is set, in which
          * case new buffers will be discarded.
          * @param max the maximum total duration to queue
+         * @since 1.24
          */
         set_max_time(max: Gst.ClockTime): void;
 
@@ -846,6 +856,7 @@ export namespace GstApp {
          * so make sure that your code is checking for the actual type it is handling.
          * @param timeout the maximum amount of time to wait for a sample
          * @returns a {@link Gst.Sample}, or {@link Gst.Event} or NULL when the appsink is stopped or EOS or the timeout expires. Call `gst_mini_object_unref()` after usage.
+         * @since 1.20
          */
         try_pull_object(timeout: Gst.ClockTime): Gst.MiniObject | null;
 
@@ -871,6 +882,7 @@ export namespace GstApp {
          * element is set to the READY/NULL state, or the timeout expires.
          * @param timeout the maximum amount of time to wait for the preroll sample
          * @returns a {@link Gst.Sample} or NULL when the appsink is stopped or EOS or the timeout expires.          Call `gst_sample_unref()` after usage.
+         * @since 1.10
          */
         try_pull_preroll(timeout: Gst.ClockTime): Gst.Sample | null;
 
@@ -889,6 +901,7 @@ export namespace GstApp {
          * condition.
          * @param timeout the maximum amount of time to wait for a sample
          * @returns a {@link Gst.Sample} or NULL when the appsink is stopped or EOS or the timeout expires.          Call `gst_sample_unref()` after usage.
+         * @since 1.10
          */
         try_pull_sample(timeout: Gst.ClockTime): Gst.Sample | null;
 
@@ -1550,6 +1563,7 @@ export namespace GstApp {
          * When the block property is TRUE, this function can block until free
          * space becomes available in the queue.
          * @param buffer_list a {@link Gst.BufferList} to push
+         * @since 1.14
          * @virtual
          */
         vfunc_push_buffer_list(buffer_list: Gst.BufferList): Gst.FlowReturn;
@@ -1566,6 +1580,7 @@ export namespace GstApp {
          * When the block property is TRUE, this function can block until free
          * space becomes available in the queue.
          * @param sample a {@link Gst.Sample} from which buffer and caps may be extracted
+         * @since 1.6
          * @virtual
          */
         vfunc_push_sample(sample: Gst.Sample): Gst.FlowReturn;
@@ -1593,18 +1608,21 @@ export namespace GstApp {
         /**
          * Get the number of currently queued buffers inside `appsrc`.
          * @returns The number of currently queued buffers.
+         * @since 1.20
          */
         get_current_level_buffers(): number;
 
         /**
          * Get the number of currently queued bytes inside `appsrc`.
          * @returns The number of currently queued bytes.
+         * @since 1.2
          */
         get_current_level_bytes(): number;
 
         /**
          * Get the amount of currently queued time inside `appsrc`.
          * @returns The amount of currently queued time.
+         * @since 1.20
          */
         get_current_level_time(): Gst.ClockTime;
 
@@ -1612,6 +1630,7 @@ export namespace GstApp {
          * Get the duration of the stream in nanoseconds. A value of GST_CLOCK_TIME_NONE means that the duration is
          * not known.
          * @returns the duration of the stream previously set with `gst_app_src_set_duration()`;
+         * @since 1.10
          */
         get_duration(): Gst.ClockTime;
 
@@ -1630,12 +1649,14 @@ export namespace GstApp {
          * Returns the currently set {@link GstApp.AppLeakyType}. See `gst_app_src_set_leaky_type()`
          * for more details.
          * @returns The currently set {@link GstApp.AppLeakyType}.
+         * @since 1.20
          */
         get_leaky_type(): AppLeakyType;
 
         /**
          * Get the maximum amount of buffers that can be queued in `appsrc`.
          * @returns The maximum amount of buffers that can be queued.
+         * @since 1.20
          */
         get_max_buffers(): number;
 
@@ -1648,6 +1669,7 @@ export namespace GstApp {
         /**
          * Get the maximum amount of time that can be queued in `appsrc`.
          * @returns The maximum amount of time that can be queued.
+         * @since 1.20
          */
         get_max_time(): Gst.ClockTime;
 
@@ -1685,6 +1707,7 @@ export namespace GstApp {
          * space becomes available in the queue.
          * @param buffer_list a {@link Gst.BufferList} to push
          * @returns #GST_FLOW_OK when the buffer list was successfully queued. #GST_FLOW_FLUSHING when `appsrc` is not PAUSED or PLAYING. #GST_FLOW_EOS when EOS occurred.
+         * @since 1.14
          */
         push_buffer_list(buffer_list: Gst.BufferList): Gst.FlowReturn;
 
@@ -1701,6 +1724,7 @@ export namespace GstApp {
          * space becomes available in the queue.
          * @param sample a {@link Gst.Sample} from which buffer and caps may be extracted
          * @returns #GST_FLOW_OK when the buffer was successfully queued. #GST_FLOW_FLUSHING when `appsrc` is not PAUSED or PLAYING. #GST_FLOW_EOS when EOS occurred.
+         * @since 1.6
          */
         push_sample(sample: Gst.Sample): Gst.FlowReturn;
 
@@ -1723,6 +1747,7 @@ export namespace GstApp {
          * Set the duration of the stream in nanoseconds. A value of GST_CLOCK_TIME_NONE means that the duration is
          * not known.
          * @param duration the duration to set
+         * @since 1.10
          */
         set_duration(duration: Gst.ClockTime): void;
 
@@ -1748,6 +1773,7 @@ export namespace GstApp {
          * full. The selected type defines whether to drop the oldest or new
          * buffers.
          * @param leaky the {@link GstApp.AppLeakyType}
+         * @since 1.20
          */
         set_leaky_type(leaky: AppLeakyType): void;
 
@@ -1756,6 +1782,7 @@ export namespace GstApp {
          * After the maximum amount of buffers are queued, `appsrc` will emit the
          * "enough-data" signal.
          * @param max the maximum number of buffers to queue
+         * @since 1.20
          */
         set_max_buffers(max: bigint | number): void;
 
@@ -1772,6 +1799,7 @@ export namespace GstApp {
          * After the maximum amount of time are queued, `appsrc` will emit the
          * "enough-data" signal.
          * @param max the maximum amonut of time to queue
+         * @since 1.20
          */
         set_max_time(max: Gst.ClockTime): void;
 

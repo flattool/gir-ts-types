@@ -562,6 +562,7 @@ export namespace Tsparql {
          * @param format RDF format of data in stream
          * @param default_graph Default graph that will receive the RDF data
          * @param stream Input stream with RDF data
+         * @since 3.6
          */
         add_rdf(flags: DeserializeFlags, format: RdfFormat, default_graph: string, stream: Gio.InputStream): void;
 
@@ -569,12 +570,14 @@ export namespace Tsparql {
          * Adds the RDF represented by `resource` to `batch`.
          * @param graph RDF graph to insert the resource to
          * @param resource A {@link Resource}
+         * @since 3.1
          */
         add_resource(graph: string | null, resource: Resource): void;
 
         /**
          * Adds an SPARQL update string to `batch`.
          * @param sparql A SPARQL update string
+         * @since 3.1
          */
         add_sparql(sparql: string): void;
 
@@ -613,6 +616,7 @@ export namespace Tsparql {
          * @param stmt A {@link SparqlStatement} containing a SPARQL update
          * @param variable_names The names of each bound parameter
          * @param values The values of each bound parameter
+         * @since 3.5
          */
         add_statement(stmt: SparqlStatement, variable_names: string[], values: (GObject.Value | any)[]): void;
 
@@ -620,6 +624,7 @@ export namespace Tsparql {
          * Executes the batch. This operations happens synchronously.
          * @param cancellable Optional {@link Gio.Cancellable}
          * @returns `true` of there were no errors, `false` otherwise
+         * @since 3.1
          */
         execute(cancellable: Gio.Cancellable | null): boolean;
 
@@ -627,6 +632,7 @@ export namespace Tsparql {
          * Executes the batch. This operation happens asynchronously, when
          * finished `callback` will be executed.
          * @param cancellable Optional {@link Gio.Cancellable}
+         * @since 3.1
          */
         execute_async(cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
@@ -635,6 +641,7 @@ export namespace Tsparql {
          * finished `callback` will be executed.
          * @param cancellable Optional {@link Gio.Cancellable}
          * @param callback User-defined {@link Gio.AsyncReadyCallback} to be called when            the asynchronous operation is finished.
+         * @since 3.1
          */
         execute_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -643,6 +650,7 @@ export namespace Tsparql {
          * finished `callback` will be executed.
          * @param cancellable Optional {@link Gio.Cancellable}
          * @param callback User-defined {@link Gio.AsyncReadyCallback} to be called when            the asynchronous operation is finished.
+         * @since 3.1
          */
         execute_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
@@ -650,6 +658,7 @@ export namespace Tsparql {
          * Finishes the operation started with {@link Batch.execute_async}.
          * @param res A {@link Gio.AsyncResult} with the result of the operation
          * @returns `true` of there were no errors, `false` otherwise
+         * @since 3.1
          */
         execute_finish(res: Gio.AsyncResult): boolean;
 
@@ -806,6 +815,7 @@ export namespace Tsparql {
          * Returns the list of RDF graphs that the endpoint allows
          * access for.
          * @returns The list of allowed RDF graphs
+         * @since 3.7
          */
         get_allowed_graphs(): string[];
 
@@ -813,6 +823,7 @@ export namespace Tsparql {
          * Returns the list of external SPARQL endpoints that are
          * allowed to be accessed through this endpoint.
          * @returns The list of allowed services
+         * @since 3.7
          */
         get_allowed_services(): string[];
 
@@ -820,6 +831,7 @@ export namespace Tsparql {
          * Returns whether the endpoint is readonly, thus SPARQL update
          * queries are disallowed.
          * @returns `true` if the endpoint is readonly
+         * @since 3.7
          */
         get_readonly(): boolean;
 
@@ -846,6 +858,7 @@ export namespace Tsparql {
          * to the stock anonymous graph. All graph names are otherwise dependent
          * on the endpoint and its contained data.
          * @param graphs List of allowed graphs, or `null` to allow all graphs
+         * @since 3.7
          */
         set_allowed_graphs(graphs: string): void;
 
@@ -868,6 +881,7 @@ export namespace Tsparql {
          * bus. If the object path is omitted, the `/org/freedesktop/Tracker3/Endpoint`
          * {@link EndpointDBus} default will be assumed.
          * @param services List of allowed services, or `null` to allow all services
+         * @since 3.7
          */
         set_allowed_services(services: string): void;
 
@@ -877,6 +891,7 @@ export namespace Tsparql {
          * {@link SparqlConnection} may be readonly of its own, this
          * method does not change its behavior in any way.
          * @param readonly Whether the endpoint will be readonly
+         * @since 3.7
          */
         set_readonly(readonly: boolean): void;
     }
@@ -1050,6 +1065,7 @@ export namespace Tsparql {
          * instance.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
+         * @since 2.22
          */
         init(cancellable: Gio.Cancellable | null): boolean;
 
@@ -1093,6 +1109,7 @@ export namespace Tsparql {
          * on the result of `g_object_new()`, regardless of whether it is in fact a new
          * instance.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @since 2.22
          * @virtual
          */
         vfunc_init(cancellable: Gio.Cancellable | null): boolean;
@@ -1272,6 +1289,7 @@ export namespace Tsparql {
          * instance.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
+         * @since 2.22
          */
         init(cancellable: Gio.Cancellable | null): boolean;
 
@@ -1315,6 +1333,7 @@ export namespace Tsparql {
          * on the result of `g_object_new()`, regardless of whether it is in fact a new
          * instance.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @since 2.22
          * @virtual
          */
         vfunc_init(cancellable: Gio.Cancellable | null): boolean;
@@ -1383,6 +1402,7 @@ export namespace Tsparql {
          * Note that the list of prefixes and namespaces is hardcoded in
          * libtracker-sparql. It may not correspond with the installed set of
          * ontologies, if they have been modified since they were installed.
+         * @deprecated since 3.3: Use {@link SparqlConnection.get_namespace_manager} instead.
          */
         static get_default(): NamespaceManager;
 
@@ -1404,6 +1424,7 @@ export namespace Tsparql {
          * compressed URI. Otherwise, `null` will be returned.
          * @param uri a URI or compact URI
          * @returns (nullable): the compressed URI
+         * @since 3.3
          */
         compress_uri(uri: string): string;
 
@@ -1688,6 +1709,7 @@ export namespace Tsparql {
          * [xsd:dateTime](xsd-ontology.html#xsd:dateTime).
          * @param property_uri a string identifying the property to modify
          * @param value the property object
+         * @since 3.2
          */
         add_datetime(property_uri: string, value: GLib.DateTime): void;
 
@@ -1815,6 +1837,7 @@ export namespace Tsparql {
          * Returns the first {@link GLib.DateTime} previously assigned to a property.
          * @param property_uri a string identifying the property to look up
          * @returns the first GDateTime object
+         * @since 3.2
          */
         get_first_datetime(property_uri: string): GLib.DateTime | null;
 
@@ -1880,6 +1903,7 @@ export namespace Tsparql {
          * in the SPARQL issued by `resource`.
          * @param property_uri a string identifying the property to query
          * @returns `TRUE` if the property would be overwritten
+         * @since 3.1
          */
         get_property_overwrite(property_uri: string): boolean;
 
@@ -1909,6 +1933,7 @@ export namespace Tsparql {
          * from the connection that is the intended recipient of this data.
          * @param namespaces a set of prefixed URLs, or `null` to use the     Nepomuk set
          * @returns a newly-allocated string containing JSON-LD data.
+         * @deprecated since 3.5: Use {@link Resource.print_rdf} instead.
          */
         print_jsonld(namespaces: NamespaceManager | null): string;
 
@@ -1922,6 +1947,7 @@ export namespace Tsparql {
          * @param format RDF format of the printed string
          * @param graph target graph of the resource RDF, or `null` for the default graph
          * @returns a newly-allocated string containing RDF data in the requested format.
+         * @since 3.4
          */
         print_rdf(namespaces: NamespaceManager, format: RdfFormat, graph: string | null): string;
 
@@ -1949,6 +1975,7 @@ export namespace Tsparql {
          * from the connection that is the intended recipient of this data.
          * @param namespaces a set of prefixed URLs, or `null` to use the     Nepomuk set
          * @returns a newly-allocated string
+         * @deprecated since 3.4: Use {@link Resource.print_rdf} instead.
          */
         print_turtle(namespaces: NamespaceManager | null): string;
 
@@ -1976,6 +2003,7 @@ export namespace Tsparql {
          * [xsd:dateTime](xsd-ontology.html#xsd:dateTime).
          * @param property_uri a string identifying the property to modify
          * @param value the property object
+         * @since 3.2
          */
         set_datetime(property_uri: string, value: GLib.DateTime): void;
 
@@ -2212,6 +2240,7 @@ export namespace Tsparql {
          * @param dbus_connection The {@link Gio.DBusConnection} to use, or `null` to use the session bus
          * @param cancellable Optional {@link Gio.Cancellable}
          * @param callback User-defined {@link Gio.AsyncReadyCallback} to be called when            the asynchronous operation is finished.
+         * @since 3.1
          */
         static bus_new_async(service_name: string, object_path: string | null, dbus_connection: Gio.DBusConnection | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<SparqlConnection> | null): void;
 
@@ -2236,6 +2265,7 @@ export namespace Tsparql {
          * @param rdf_stream RDF Schema definition of the database format
          * @param cancellable Optional {@link Gio.Cancellable}
          * @param callback User-defined {@link Gio.AsyncReadyCallback} to be called when            the asynchronous operation is finished.
+         * @since 3.11
          */
         static new_from_rdf_async(flags: SparqlConnectionFlags, store: Gio.File | null, deserialize_flags: DeserializeFlags, rdf_format: RdfFormat, rdf_stream: Gio.InputStream, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<SparqlConnection> | null): void;
 
@@ -2321,6 +2351,7 @@ export namespace Tsparql {
          * @param default_graph Default graph that will receive the RDF data
          * @param stream Input stream with RDF data
          * @param cancellable Optional {@link Gio.Cancellable}
+         * @since 3.4
          */
         deserialize_async(flags: DeserializeFlags, format: RdfFormat, default_graph: string, stream: Gio.InputStream, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
@@ -2343,6 +2374,7 @@ export namespace Tsparql {
          * @param stream Input stream with RDF data
          * @param cancellable Optional {@link Gio.Cancellable}
          * @param callback User-defined {@link Gio.AsyncReadyCallback} to be called when            the asynchronous operation is finished.
+         * @since 3.4
          */
         deserialize_async(flags: DeserializeFlags, format: RdfFormat, default_graph: string, stream: Gio.InputStream, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -2365,6 +2397,7 @@ export namespace Tsparql {
          * @param stream Input stream with RDF data
          * @param cancellable Optional {@link Gio.Cancellable}
          * @param callback User-defined {@link Gio.AsyncReadyCallback} to be called when            the asynchronous operation is finished.
+         * @since 3.4
          */
         deserialize_async(flags: DeserializeFlags, format: RdfFormat, default_graph: string, stream: Gio.InputStream, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
@@ -2372,6 +2405,7 @@ export namespace Tsparql {
          * Finishes the operation started with {@link SparqlConnection.deserialize_async}.
          * @param result A {@link Gio.AsyncResult} with the result of the operation
          * @returns `true` if all data was inserted successfully.
+         * @since 3.4
          */
         deserialize_finish(result: Gio.AsyncResult): boolean;
 
@@ -2392,6 +2426,7 @@ export namespace Tsparql {
          * @param resource_path The resource path of the file to parse.
          * @param cancellable Optional {@link Gio.Cancellable}
          * @returns A prepared statement
+         * @since 3.3
          */
         load_statement_from_gresource(resource_path: string, cancellable: Gio.Cancellable | null): SparqlStatement;
 
@@ -2423,6 +2458,7 @@ export namespace Tsparql {
          * {@link SparqlConnection.new} and {@link SparqlConnection.new_async}.
          * @param handle_name Handle name for `service_connection`
          * @param service_connection a {@link Tsparql.SparqlConnection} to use from `connection`
+         * @since 3.3
          */
         map_connection(handle_name: string, service_connection: SparqlConnection): void;
 
@@ -2523,6 +2559,7 @@ export namespace Tsparql {
          * @param format Output RDF format
          * @param query SPARQL query
          * @param cancellable Optional {@link Gio.Cancellable}
+         * @since 3.3
          */
         serialize_async(flags: SerializeFlags, format: RdfFormat, query: string, cancellable: Gio.Cancellable | null): globalThis.Promise<Gio.InputStream>;
 
@@ -2542,6 +2579,7 @@ export namespace Tsparql {
          * @param query SPARQL query
          * @param cancellable Optional {@link Gio.Cancellable}
          * @param callback User-defined {@link Gio.AsyncReadyCallback} to be called when            the asynchronous operation is finished.
+         * @since 3.3
          */
         serialize_async(flags: SerializeFlags, format: RdfFormat, query: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -2561,6 +2599,7 @@ export namespace Tsparql {
          * @param query SPARQL query
          * @param cancellable Optional {@link Gio.Cancellable}
          * @param callback User-defined {@link Gio.AsyncReadyCallback} to be called when            the asynchronous operation is finished.
+         * @since 3.3
          */
         serialize_async(flags: SerializeFlags, format: RdfFormat, query: string, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Gio.InputStream> | void;
 
@@ -2568,6 +2607,7 @@ export namespace Tsparql {
          * Finishes the operation started with {@link SparqlConnection.serialize_async}.
          * @param result A {@link Gio.AsyncResult} with the result of the operation
          * @returns A {@link Gio.InputStream} to read RDF content.
+         * @since 3.3
          */
         serialize_finish(result: Gio.AsyncResult): Gio.InputStream;
 
@@ -2733,6 +2773,7 @@ export namespace Tsparql {
          * @param sparql String containing the SPARQL update query
          * @param cancellable Optional {@link Gio.Cancellable}
          * @returns a {@link GLib.Variant} with the generated URNs.
+         * @deprecated since 3.5: This function makes the expectation that blank nodes have a durable name that persist. The SPARQL and RDF specs define a much more reduced scope for blank node labels. This function advises a behavior that goes against that reduced scope, and will directly make the returned values meaningless if the #TRACKER_SPARQL_CONNECTION_FLAGS_ANONYMOUS_BNODES flag is defined in the connection. Users that want names generated for them, should look for other methods (e.g. IRIs containing UUIDv4 strings).
          */
         update_blank(sparql: string, cancellable: Gio.Cancellable | null): GLib.Variant;
 
@@ -2743,6 +2784,7 @@ export namespace Tsparql {
          * learn the differences with {@link SparqlConnection.update}.
          * @param sparql String containing the SPARQL update query
          * @param cancellable Optional {@link Gio.Cancellable}
+         * @deprecated since 3.5: See {@link SparqlConnection.update_blank}.
          */
         update_blank_async(sparql: string, cancellable: Gio.Cancellable | null): globalThis.Promise<GLib.Variant>;
 
@@ -2754,6 +2796,7 @@ export namespace Tsparql {
          * @param sparql String containing the SPARQL update query
          * @param cancellable Optional {@link Gio.Cancellable}
          * @param callback User-defined {@link Gio.AsyncReadyCallback} to be called when            the asynchronous operation is finished.
+         * @deprecated since 3.5: See {@link SparqlConnection.update_blank}.
          */
         update_blank_async(sparql: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -2765,6 +2808,7 @@ export namespace Tsparql {
          * @param sparql String containing the SPARQL update query
          * @param cancellable Optional {@link Gio.Cancellable}
          * @param callback User-defined {@link Gio.AsyncReadyCallback} to be called when            the asynchronous operation is finished.
+         * @deprecated since 3.5: See {@link SparqlConnection.update_blank}.
          */
         update_blank_async(sparql: string, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<GLib.Variant> | void;
 
@@ -2776,6 +2820,7 @@ export namespace Tsparql {
          * of the returned {@link GLib.Variant}.
          * @param res A {@link Gio.AsyncResult} with the result of the operation
          * @returns a {@link GLib.Variant} with the generated URNs.
+         * @deprecated since 3.5: See {@link SparqlConnection.update_blank}.
          */
         update_blank_finish(res: Gio.AsyncResult): GLib.Variant;
 
@@ -2799,6 +2844,7 @@ export namespace Tsparql {
          * @param resource A {@link Resource}
          * @param cancellable Optional {@link Gio.Cancellable}
          * @returns `TRUE` if there were no errors.
+         * @since 3.1
          */
         update_resource(graph: string | null, resource: Resource, cancellable: Gio.Cancellable | null): boolean;
 
@@ -2811,6 +2857,7 @@ export namespace Tsparql {
          * @param graph RDF graph where the resource should be inserted/updated, or `null` for the default graph
          * @param resource A {@link Resource}
          * @param cancellable Optional {@link Gio.Cancellable}
+         * @since 3.1
          */
         update_resource_async(graph: string | null, resource: Resource, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
@@ -2824,6 +2871,7 @@ export namespace Tsparql {
          * @param resource A {@link Resource}
          * @param cancellable Optional {@link Gio.Cancellable}
          * @param callback User-defined {@link Gio.AsyncReadyCallback} to be called when            the asynchronous operation is finished.
+         * @since 3.1
          */
         update_resource_async(graph: string | null, resource: Resource, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -2837,6 +2885,7 @@ export namespace Tsparql {
          * @param resource A {@link Resource}
          * @param cancellable Optional {@link Gio.Cancellable}
          * @param callback User-defined {@link Gio.AsyncReadyCallback} to be called when            the asynchronous operation is finished.
+         * @since 3.1
          */
         update_resource_async(graph: string | null, resource: Resource, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
@@ -2844,6 +2893,7 @@ export namespace Tsparql {
          * Finishes the operation started with {@link SparqlConnection.update_resource_async}.
          * @param res A {@link Gio.AsyncResult} with the result of the operation
          * @returns `TRUE` if there were no errors.
+         * @since 3.1
          */
         update_resource_finish(res: Gio.AsyncResult): boolean;
 
@@ -2855,6 +2905,7 @@ export namespace Tsparql {
          * @param sparql The SPARQL update
          * @param cancellable Optional {@link Gio.Cancellable}
          * @returns A prepared statement
+         * @since 3.5
          */
         update_statement(sparql: string, cancellable: Gio.Cancellable | null): SparqlStatement;
     }
@@ -2981,6 +3032,7 @@ export namespace Tsparql {
          * Retrieves a {@link GLib.DateTime} pointer for the current row in `column`.
          * @param column Column number to retrieve (first one is 0)
          * @returns {@link GLib.DateTime} object, or `null` if the given column does not   contain a [xsd:date](xsd-ontology.html#xsd:date) or [xsd:dateTime](xsd-ontology.html#xsd:dateTime).
+         * @since 3.2
          */
         get_datetime(column: number): GLib.DateTime | null;
 
@@ -3013,6 +3065,7 @@ export namespace Tsparql {
          * [RFC 5646](https://www.rfc-editor.org/rfc/rfc5646.html).
          * @param column column number to retrieve
          * @returns a string which must not be freed. `null` is returned if the column is not in the `[0, n_columns]` range, or if the row/column refer to a nullable optional value in the result set.
+         * @since 3.7
          */
         get_langstring(column: number): [string | null, string, number];
 
@@ -3140,6 +3193,7 @@ export namespace Tsparql {
 
         /**
          * Resets the iterator to point back to the first result.
+         * @deprecated since 3.5: This function only works on cursors from direct {@link SparqlConnection} objects and cannot work reliably across all cursor types. Issue a different query to obtain a new cursor.
          */
         rewind(): void;
     }
@@ -3248,6 +3302,7 @@ export namespace Tsparql {
          * Binds the {@link GLib.DateTime} `value` to the parameterized variable given by `name`.
          * @param name variable name
          * @param value value
+         * @since 3.2
          */
         bind_datetime(name: string, value: GLib.DateTime): void;
 
@@ -3273,6 +3328,7 @@ export namespace Tsparql {
          * @param name variable name
          * @param value value
          * @param langtag language tag
+         * @since 3.7
          */
         bind_langstring(name: string, value: string, langtag: string): void;
 
@@ -3396,6 +3452,7 @@ export namespace Tsparql {
          * @param flags serialization flags
          * @param format RDF format of the serialized data
          * @param cancellable Optional {@link Gio.Cancellable}
+         * @since 3.3
          */
         serialize_async(flags: SerializeFlags, format: RdfFormat, cancellable: Gio.Cancellable | null): globalThis.Promise<Gio.InputStream>;
 
@@ -3417,6 +3474,7 @@ export namespace Tsparql {
          * @param format RDF format of the serialized data
          * @param cancellable Optional {@link Gio.Cancellable}
          * @param callback user-defined {@link Gio.AsyncReadyCallback} to be called when            the asynchronous operation is finished.
+         * @since 3.3
          */
         serialize_async(flags: SerializeFlags, format: RdfFormat, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -3438,6 +3496,7 @@ export namespace Tsparql {
          * @param format RDF format of the serialized data
          * @param cancellable Optional {@link Gio.Cancellable}
          * @param callback user-defined {@link Gio.AsyncReadyCallback} to be called when            the asynchronous operation is finished.
+         * @since 3.3
          */
         serialize_async(flags: SerializeFlags, format: RdfFormat, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Gio.InputStream> | void;
 
@@ -3446,6 +3505,7 @@ export namespace Tsparql {
          * {@link SparqlStatement.serialize_async}.
          * @param result a {@link Gio.AsyncResult} with the result of the operation
          * @returns a {@link Gio.InputStream} to read RDF content.
+         * @since 3.3
          */
         serialize_finish(result: Gio.AsyncResult): Gio.InputStream;
 
@@ -3460,6 +3520,7 @@ export namespace Tsparql {
          * `SELECT`/`ASK`/`DESCRIBE`/`CONSTRUCT` SPARQL queries.
          * @param cancellable Optional {@link Gio.Cancellable}
          * @returns `true` if the update finished with no errors, `false` otherwise
+         * @since 3.5
          */
         update(cancellable: Gio.Cancellable | null): boolean;
 
@@ -3473,6 +3534,7 @@ export namespace Tsparql {
          * An error will be raised if this method is called on
          * `SELECT`/`ASK`/`DESCRIBE`/`CONSTRUCT` SPARQL queries.
          * @param cancellable Optional {@link Gio.Cancellable}
+         * @since 3.5
          */
         update_async(cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
@@ -3487,6 +3549,7 @@ export namespace Tsparql {
          * `SELECT`/`ASK`/`DESCRIBE`/`CONSTRUCT` SPARQL queries.
          * @param cancellable Optional {@link Gio.Cancellable}
          * @param callback user-defined {@link Gio.AsyncReadyCallback} to be called when            the asynchronous operation is finished.
+         * @since 3.5
          */
         update_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -3501,6 +3564,7 @@ export namespace Tsparql {
          * `SELECT`/`ASK`/`DESCRIBE`/`CONSTRUCT` SPARQL queries.
          * @param cancellable Optional {@link Gio.Cancellable}
          * @param callback user-defined {@link Gio.AsyncReadyCallback} to be called when            the asynchronous operation is finished.
+         * @since 3.5
          */
         update_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
@@ -3509,6 +3573,7 @@ export namespace Tsparql {
          * {@link SparqlStatement.update_async}.
          * @param result a {@link Gio.AsyncResult} with the result of the operation
          * @returns `true` if the update finished with no errors, `false` otherwise
+         * @since 3.5
          */
         update_finish(result: Gio.AsyncResult): boolean;
     }

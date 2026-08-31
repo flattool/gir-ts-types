@@ -1226,6 +1226,9 @@ export namespace AppStream {
         constructor(options: { message: string; code: number });
 
         // Static methods
+        /**
+         * @since 0.16.0
+         */
         static quark(): GLib.Quark;
     }
 
@@ -1560,6 +1563,9 @@ export namespace AppStream {
         constructor(options: { message: string; code: number });
 
         // Static methods
+        /**
+         * @since 0.16.0
+         */
         static quark(): GLib.Quark;
     }
 
@@ -1698,6 +1704,9 @@ export namespace AppStream {
         constructor(options: { message: string; code: number });
 
         // Static methods
+        /**
+         * @since 0.14.0
+         */
         static quark(): GLib.Quark;
     }
 
@@ -1729,6 +1738,9 @@ export namespace AppStream {
         constructor(options: { message: string; code: number });
 
         // Static methods
+        /**
+         * @since 0.15.4
+         */
         static quark(): GLib.Quark;
     }
 
@@ -3139,36 +3151,42 @@ export namespace AppStream {
         /**
          * Gets the agreement kind.
          * @returns a string, e.g. {@link AppStream.AgreementKind.EULA}
+         * @since 0.12.1
          */
         get_kind(): AgreementKind;
 
         /**
          * Gets the first section in the agreement.
          * @returns agreement section, or `null`
+         * @since 0.12.1
          */
         get_section_default(): AgreementSection | null;
 
         /**
          * Gets all the sections in the agreement.
          * @returns array
+         * @since 0.12.1
          */
         get_sections(): AgreementSection[];
 
         /**
          * Gets the agreement version_id.
          * @returns a string, e.g. "1.4a", or NULL
+         * @since 0.12.1
          */
         get_version_id(): string;
 
         /**
          * Sets the agreement kind.
          * @param kind the agreement kind, e.g. {@link AppStream.AgreementKind.EULA}
+         * @since 0.12.1
          */
         set_kind(kind: AgreementKind): void;
 
         /**
          * Sets the agreement version identifier.
          * @param version_id the agreement version ID, e.g. "1.4a"
+         * @since 0.12.1
          */
         set_version_id(version_id: string): void;
     }
@@ -3222,24 +3240,28 @@ export namespace AppStream {
          * Returns the {@link AppStream.Context} associated with this section.
          * This function may return `null` if no context is set.
          * @returns the {@link AppStream.Context} used by this agreement section.
+         * @since 0.12.1
          */
         get_context(): Context | null;
 
         /**
          * Gets the agreement section desc.
          * @returns a string, e.g. "GDPR", or NULL
+         * @since 0.12.1
          */
         get_description(): string;
 
         /**
          * Gets the agreement section kind.
          * @returns a string, e.g. "GDPR", or NULL
+         * @since 0.12.1
          */
         get_kind(): string;
 
         /**
          * Gets the agreement section name.
          * @returns a string, e.g. "GDPR", or NULL
+         * @since 0.12.1
          */
         get_name(): string;
 
@@ -3247,6 +3269,7 @@ export namespace AppStream {
          * Sets the document context this release is associated
          * with.
          * @param context the {@link AppStream.Context}.
+         * @since 0.12.1
          */
         set_context(context: Context): void;
 
@@ -3254,12 +3277,14 @@ export namespace AppStream {
          * Sets the agreement section desc.
          * @param desc the agreement description, e.g. "GDPR"
          * @param locale the locale in BCP47 format. e.g. "en-GB"
+         * @since 0.12.1
          */
         set_description(desc: string, locale: string | null): void;
 
         /**
          * Sets the agreement section kind.
          * @param kind the agreement kind, e.g. "GDPR"
+         * @since 0.12.1
          */
         set_kind(kind: string): void;
 
@@ -3267,6 +3292,7 @@ export namespace AppStream {
          * Sets the agreement section name.
          * @param name the agreement name, e.g. "GDPR"
          * @param locale the locale. e.g. "en_GB"
+         * @since 0.12.1
          */
         set_name(name: string, locale: string | null): void;
     }
@@ -3463,6 +3489,7 @@ export namespace AppStream {
          * @param kind the {@link AppStream.ColorKind}, e.g. {@link AppStream.ColorKind.PRIMARY}.
          * @param scheme_kind Color scheme preference for the color, e.g. {@link AppStream.ColorSchemeKind.LIGHT}
          * @returns The HTML color code of the found color, or `null` if no color was found.
+         * @since 0.15.2
          */
         get_color(kind: ColorKind, scheme_kind: ColorSchemeKind): string | null;
 
@@ -3470,6 +3497,7 @@ export namespace AppStream {
          * Deletes a color that matches the given type and scheme preference.
          * @param kind the {@link AppStream.ColorKind}, e.g. {@link AppStream.ColorKind.PRIMARY}.
          * @param scheme_preference Type of color scheme preferred for this color, e.g. {@link AppStream.ColorSchemeKind.LIGHT}
+         * @since 0.15.2
          */
         remove_color(kind: ColorKind, scheme_preference: ColorSchemeKind): void;
 
@@ -3479,6 +3507,7 @@ export namespace AppStream {
          * @param kind the {@link AppStream.ColorKind}, e.g. {@link AppStream.ColorKind.PRIMARY}.
          * @param scheme_preference Type of color scheme preferred for this color, e.g. {@link AppStream.ColorSchemeKind.LIGHT}
          * @param colorcode a HTML color code.
+         * @since 0.15.2
          */
         set_color(kind: ColorKind, scheme_preference: ColorSchemeKind, colorcode: string): void;
     }
@@ -3531,24 +3560,28 @@ export namespace AppStream {
         /**
          * Gets the ID for this bundle.
          * @returns ID, e.g. "foobar-1.0.2"
+         * @since 0.10
          */
         get_id(): string;
 
         /**
          * Gets the bundle kind.
          * @returns the {@link AppStream.BundleKind}
+         * @since 0.10
          */
         get_kind(): BundleKind;
 
         /**
          * Sets the ID for this bundle.
          * @param id the URL.
+         * @since 0.10
          */
         set_id(id: string): void;
 
         /**
          * Sets the bundle kind.
          * @param kind the {@link AppStream.BundleKind}, e.g. {@link AppStream.BundleKind.LIMBA}.
+         * @since 0.10
          */
         set_kind(kind: BundleKind): void;
     }
@@ -3989,18 +4022,21 @@ export namespace AppStream {
         /**
          * Add a reference to the addon that is enhancing this component.
          * @param addon The {@link AppStream.Component} that extends `cpt`
+         * @since 0.9.2
          */
         add_addon(addon: Component): void;
 
         /**
          * Adds an agreement to the software component.
          * @param agreement an {@link AppStream.Agreement} instance.
+         * @since 0.12.1
          */
         add_agreement(agreement: Agreement): void;
 
         /**
          * Adds a bundle to the component.
          * @param bundle The {@link AppStream.Bundle} to add.
+         * @since 0.8.0
          */
         add_bundle(bundle: Bundle): void;
 
@@ -4013,12 +4049,14 @@ export namespace AppStream {
         /**
          * Adds a content rating to this component.
          * @param content_rating a {@link AppStream.ContentRating} instance.
+         * @since 0.11.0
          */
         add_content_rating(content_rating: ContentRating): void;
 
         /**
          * Add a reference to the extended component
          * @param cpt_id The id of a component which is extended by this component
+         * @since 0.15.5
          */
         add_extends(cpt_id: string): void;
 
@@ -4040,18 +4078,21 @@ export namespace AppStream {
          * Adds a language to the component.
          * @param locale the BCP47 locale, or `null`. e.g. "en-GB"
          * @param percentage the percentage completion of the translation, 0 for locales with unknown amount of translation
+         * @since 0.7.0
          */
         add_language(locale: string | null, percentage: number): void;
 
         /**
          * Adds a {@link AppStream.Launchable} containing launchables entries for this component.
          * @param launchable a {@link AppStream.Launchable} instance.
+         * @since 0.11.0
          */
         add_launchable(launchable: Launchable): void;
 
         /**
          * Add a set of provided items to this component.
          * @param prov a {@link AppStream.Provided} instance.
+         * @since 0.6.2
          */
         add_provided(prov: Provided): void;
 
@@ -4066,6 +4107,7 @@ export namespace AppStream {
         /**
          * Adds an external reference to the software component.
          * @param reference an {@link AppStream.Reference} instance.
+         * @since 1.0.0
          */
         add_reference(reference: Reference): void;
 
@@ -4073,6 +4115,7 @@ export namespace AppStream {
          * Adds a {@link AppStream.Relation} to set a recommends or requires relation of
          * component `cpt` on the item mentioned in the {@link AppStream.Relation}.
          * @param relation a {@link AppStream.Relation} instance.
+         * @since 0.12.0
          */
         add_relation(relation: Relation): void;
 
@@ -4091,6 +4134,7 @@ export namespace AppStream {
         /**
          * Adds a user review to a software component.
          * @param review a {@link AppStream.Review} instance.
+         * @since 0.14.0
          */
         add_review(review: Review): void;
 
@@ -4111,6 +4155,7 @@ export namespace AppStream {
          * @param ns The namespace the tag belongs to
          * @param tag The tag name
          * @returns `true` if the tag was added.
+         * @since 0.15.0
          */
         add_tag(ns: string, tag: string): boolean;
 
@@ -4118,6 +4163,7 @@ export namespace AppStream {
          * Assign an {@link AppStream.Translation} object describing the translation system used
          * by this component.
          * @param tr an {@link AppStream.Translation} instance.
+         * @since 0.9.2
          */
         add_translation(tr: Translation): void;
 
@@ -4125,6 +4171,7 @@ export namespace AppStream {
          * Adds some URL data to the component.
          * @param url_kind the URL kind, e.g. {@link AppStream.UrlKind.HOMEPAGE}
          * @param url the full URL.
+         * @since 0.6.2
          */
         add_url(url_kind: UrlKind, url: string): void;
 
@@ -4135,6 +4182,7 @@ export namespace AppStream {
          * @param pool an {@link AppStream.Pool} to find component dependencies in.
          * @param rel_kind the kind of relations to check
          * @returns An array of {@link AppStream.RelationCheckResult}
+         * @since 1.0.0
          */
         check_relations(sysinfo: SystemInfo | null, pool: Pool | null, rel_kind: RelationKind): RelationCheckResult[];
 
@@ -4146,11 +4194,13 @@ export namespace AppStream {
 
         /**
          * Remove all registered language translation information.
+         * @since 0.14.5
          */
         clear_languages(): void;
 
         /**
          * Remove all tags associated with this component.
+         * @since 0.15.0
          */
         clear_tags(): void;
 
@@ -4160,6 +4210,7 @@ export namespace AppStream {
          * 
          * This is the reverse of %as_component_get_extends()
          * @returns An array of {@link AppStream.Component}.
+         * @since 0.9.2
          */
         get_addons(): Component[];
 
@@ -4167,18 +4218,21 @@ export namespace AppStream {
          * Gets an agreement the component has specified for the particular kind.
          * @param kind an agreement kind, e.g. {@link AppStream.AgreementKind.EULA}
          * @returns a {@link AppStream.Agreement} or `null` for not found
+         * @since 0.12.1
          */
         get_agreement_by_kind(kind: AgreementKind): Agreement | null;
 
         /**
          * Get a list of all agreements registered with this software component.
          * @returns An array of {@link AppStream.Agreement}.
+         * @since 0.15.0
          */
         get_agreements(): Agreement[];
 
         /**
          * Gets the branch for the application.
          * @returns string, or `null` if unset
+         * @since 0.14.0
          */
         get_branch(): string;
 
@@ -4186,6 +4240,7 @@ export namespace AppStream {
          * Get the branding associated with this component, or `null`
          * in case this component has no special branding.
          * @returns An {@link AppStream.Branding}.
+         * @since 0.15.2
          */
         get_branding(): Branding | null;
 
@@ -4193,12 +4248,14 @@ export namespace AppStream {
          * Gets a bundle identifier string.
          * @param bundle_kind the bundle kind, e.g. {@link AppStream.BundleKind.LIMBA}.
          * @returns An {@link AppStream.Bundle}, or `null` if not set.
+         * @since 0.8.0
          */
         get_bundle(bundle_kind: BundleKind): Bundle | null;
 
         /**
          * Get a list of all software bundles associated with this component.
          * @returns A list of {@link AppStream.Bundle}.
+         * @since 0.10
          */
         get_bundles(): Bundle[];
 
@@ -4216,12 +4273,14 @@ export namespace AppStream {
          * Gets a content ratings of a specific type that are defined for this component.
          * @param kind a ratings kind, e.g. "oars-1.0"
          * @returns a {@link AppStream.ContentRating} or `null` if not found
+         * @since 0.11.0
          */
         get_content_rating(kind: string): ContentRating | null;
 
         /**
          * Gets all content ratings defined for this software.
          * @returns an array
+         * @since 0.11.0
          */
         get_content_ratings(): ContentRating[];
 
@@ -4231,17 +4290,20 @@ export namespace AppStream {
          * (which will be the case if the component was not loaded from
          * a file or cache but constructed in memory).
          * @returns the associated {@link AppStream.Context} or `null`
+         * @since 0.11.2
          */
         get_context(): Context | null;
 
         /**
          * @returns Hash table of custom user defined data fields.
+         * @since 0.10.5
          */
         get_custom(): never;
 
         /**
          * Retrieve value for a custom data entry with the given key.
          * @param key Field name.
+         * @since 0.10.5
          */
         get_custom_value(key: string): string;
 
@@ -4263,6 +4325,7 @@ export namespace AppStream {
         /**
          * Gets the end-of-life date for the entire component.
          * @returns The EOL date as string in ISO8601 format.
+         * @since 0.15.2
          */
         get_date_eol(): string;
 
@@ -4286,6 +4349,7 @@ export namespace AppStream {
          * 
          * See %as_component_get_extends() for the reverse.
          * @returns A {@link GLib.PtrArray} or `null` if not set.
+         * @since 0.15.5
          */
         get_extends(): string[] | null;
 
@@ -4349,12 +4413,14 @@ export namespace AppStream {
          * Gets the translation coverage in percent for a specific locale
          * @param locale the BCP47 locale, or `null`. e.g. "en-GB"
          * @returns a percentage value, -1 if locale was not found
+         * @since 0.7.0
          */
         get_language(locale: string | null): number;
 
         /**
          * Get a list of all languages.
          * @returns list of locales
+         * @since 0.7.0
          */
         get_languages(): string[];
 
@@ -4363,11 +4429,13 @@ export namespace AppStream {
          * this component.
          * @param kind a launch kind, e.g. {@link AppStream.LaunchableKind.DESKTOP_ID}
          * @returns a {@link AppStream.Launchable} or `null` if not found
+         * @since 0.11.0
          */
         get_launchable(kind: LaunchableKind): Launchable | null;
 
         /**
          * @returns an array
+         * @since 0.11.0
          */
         get_launchables(): Launchable[];
 
@@ -4375,6 +4443,7 @@ export namespace AppStream {
          * Get the merge method which should apply to duplicate components
          * with this ID.
          * @returns the {@link AppStream.MergeKind} of this component.
+         * @since 0.9.8
          */
         get_merge_kind(): MergeKind;
 
@@ -4401,6 +4470,7 @@ export namespace AppStream {
          * Get variant suffix for the component name
          * (only to be displayed if two components have the same name).
          * @returns the variant suffix
+         * @since 0.12.10
          */
         get_name_variant_suffix(): string;
 
@@ -4429,6 +4499,7 @@ export namespace AppStream {
         /**
          * Returns the priority of this component.
          * This method is used internally.
+         * @since 0.6.1
          */
         get_priority(): number;
 
@@ -4462,12 +4533,14 @@ export namespace AppStream {
         /**
          * Get an array of items that are recommended by this component.
          * @returns an array
+         * @since 0.12.0
          */
         get_recommends(): Relation[];
 
         /**
          * Get a list of external references and citation information for this component.
          * @returns An array of {@link AppStream.Reference}.
+         * @since 1.0.0
          */
         get_references(): Reference[];
 
@@ -4487,17 +4560,20 @@ export namespace AppStream {
         /**
          * Get an array of items that are required by this component.
          * @returns an array
+         * @since 0.12.0
          */
         get_requires(): Relation[];
 
         /**
          * Gets any reviews associated with the component.
          * @returns an array
+         * @since 0.14.0
          */
         get_reviews(): Review[];
 
         /**
          * @returns the {@link AppStream.ComponentScope} of this component.
+         * @since 0.10.2
          */
         get_scope(): ComponentScope;
 
@@ -4510,6 +4586,7 @@ export namespace AppStream {
         /**
          * Returns all search tokens for this component.
          * @returns The string search tokens
+         * @since 0.9.7
          */
         get_search_tokens(): string[];
 
@@ -4526,6 +4603,7 @@ export namespace AppStream {
          * The returned value is an arbitrary integer value, valid only for
          * the search terms involved in the search operation that yielded
          * this component as a result.
+         * @since 0.12.11
          */
         get_sort_score(): number;
 
@@ -4557,6 +4635,7 @@ export namespace AppStream {
          * Get an array of items that are supported by this component,
          * e.g. to indicate support for a specific piece of hardware.
          * @returns an array
+         * @since 0.15.0
          */
         get_supports(): Relation[];
 
@@ -4576,6 +4655,7 @@ export namespace AppStream {
          * is out of support (end-of-life) and will receive no more
          * updates, not even security fixes.
          * @returns UNIX timestamp, or 0 for unset or invalid.
+         * @since 0.15.2
          */
         get_timestamp_eol(): number;
 
@@ -4586,6 +4666,7 @@ export namespace AppStream {
          * 
          * Only set for metainfo files.
          * @returns An array of {@link AppStream.Translation} objects.
+         * @since 0.9.2
          */
         get_translations(): Translation[];
 
@@ -4593,6 +4674,7 @@ export namespace AppStream {
          * Gets a URL.
          * @param url_kind the URL kind, e.g. {@link AppStream.UrlKind.HOMEPAGE}.
          * @returns string, or `null` if unset
+         * @since 0.6.2
          */
         get_url(url_kind: UrlKind): string | null;
 
@@ -4614,6 +4696,7 @@ export namespace AppStream {
          * @param ns The namespace the tag belongs to
          * @param tag The tag name
          * @returns `true` if tag exists.
+         * @since 0.15.0
          */
         has_tag(ns: string, tag: string): boolean;
 
@@ -4622,6 +4705,7 @@ export namespace AppStream {
          * @param key Key name.
          * @param value A string value.
          * @returns `true` if the key did not exist yet.
+         * @since 0.10.5
          */
         insert_custom_value(key: string, value: string): boolean;
 
@@ -4638,11 +4722,13 @@ export namespace AppStream {
          * from a vetted free-software-only source or whether its licenses
          * are only free software licenses.
          * @returns `true` if this component is free software.
+         * @since 0.15.5
          */
         is_floss(): boolean;
 
         /**
          * @returns Whether this component's metadata should be ignored.
+         * @since 0.10.2
          */
         is_ignored(): boolean;
 
@@ -4671,6 +4757,7 @@ export namespace AppStream {
          * @param format the format of the data to load, e.g. {@link AppStream.FormatKind.XML}
          * @param bytes the data to load.
          * @returns `true` on success.
+         * @since 0.14.0
          */
         load_from_bytes(context: Context, format: FormatKind, bytes: GLib.Bytes | Uint8Array): boolean;
 
@@ -4687,6 +4774,7 @@ export namespace AppStream {
          * @param ns The namespace the tag belongs to
          * @param tag The tag name
          * @returns `true` if the tag was removed.
+         * @since 0.15.0
          */
         remove_tag(ns: string, tag: string): boolean;
 
@@ -4694,6 +4782,7 @@ export namespace AppStream {
          * Searches component data for a specific keyword.
          * @param term the search term.
          * @returns a match scrore, where 0 is no match and 100 is the best match.
+         * @since 0.9.7
          */
         search_matches(term: string): number;
 
@@ -4701,18 +4790,21 @@ export namespace AppStream {
          * Searches component data for all the specific keywords.
          * @param terms the search terms.
          * @returns a match score, where 0 is no match and larger numbers are better matches.
+         * @since 0.9.8
          */
         search_matches_all(terms: string): number;
 
         /**
          * Set the branch that the component instance was sourced from.
          * @param branch the branch, e.g. "master" or "3-16".
+         * @since 0.14.0
          */
         set_branch(branch: string): void;
 
         /**
          * Set branding for this component.
          * @param branding an {@link AppStream.Branding} instance.
+         * @since 0.15.2
          */
         set_branding(branding: Branding): void;
 
@@ -4726,6 +4818,7 @@ export namespace AppStream {
          * Sets the document context this component is associated
          * with.
          * @param context the {@link AppStream.Context}.
+         * @since 0.11.2
          */
         set_context(context: Context): void;
 
@@ -4754,6 +4847,7 @@ export namespace AppStream {
         /**
          * Sets an end-of-life date for this component.
          * @param date the EOL date in ISO8601 format.
+         * @since 0.15.2
          */
         set_date_eol(date: string): void;
 
@@ -4793,6 +4887,7 @@ export namespace AppStream {
         /**
          * Sets the {@link AppStream.MergeKind} for this component.
          * @param kind the {@link AppStream.MergeKind}.
+         * @since 0.9.8
          */
         set_merge_kind(kind: MergeKind): void;
 
@@ -4814,6 +4909,7 @@ export namespace AppStream {
          * (only to be displayed if components have the same name).
          * @param value the developer or developer team name
          * @param locale the BCP47 locale, or `null`. e.g. "en-GB"
+         * @since 0.12.10
          */
         set_name_variant_suffix(value: string, locale: string | null): void;
 
@@ -4825,6 +4921,7 @@ export namespace AppStream {
         /**
          * Set the package name that provides this component.
          * @param pkgname the package name
+         * @since 0.14.5
          */
         set_pkgname(pkgname: string): void;
 
@@ -4839,6 +4936,7 @@ export namespace AppStream {
          * Sets the priority of this component.
          * This method is used internally.
          * @param priority the given priority
+         * @since 0.6.1
          */
         set_priority(priority: number): void;
 
@@ -4869,6 +4967,7 @@ export namespace AppStream {
         /**
          * Sets the sorting score of this component.
          * @param score the given sorting score
+         * @since 0.9.8
          */
         set_sort_score(score: number): void;
 
@@ -4908,6 +5007,7 @@ export namespace AppStream {
          * convenient API of {@link AppStream.Metadata} to serialize components.
          * @param context an {@link AppStream.Context} instance.
          * @returns `true` on success.
+         * @since 0.12.10
          */
         to_xml_data(context: Context): string;
     }
@@ -5093,6 +5193,7 @@ export namespace AppStream {
          * return {@link AppStream.ContentRatingValue.INTENSE}.
          * @param id the subsection ID e.g. `violence-cartoon`
          * @param age the CSM age
+         * @since 0.12.12
          */
         static attribute_from_csm_age(id: string, age: number): ContentRatingValue;
 
@@ -5101,6 +5202,7 @@ export namespace AppStream {
          * require the content rating attribute given by `id` and `value`.
          * @param id the subsection ID e.g. `violence-cartoon`
          * @param value the {@link AppStream.ContentRatingValue}, e.g. {@link AppStream.ContentRatingValue.INTENSE}
+         * @since 0.12.12
          */
         static attribute_get_description(id: string, value: ContentRatingValue): string;
 
@@ -5108,6 +5210,7 @@ export namespace AppStream {
          * Gets the Common Sense Media approved age for a specific rating level.
          * @param id the subsection ID e.g. `violence-cartoon`
          * @param value the {@link AppStream.ContentRatingValue}, e.g. {@link AppStream.ContentRatingValue.INTENSE}
+         * @since 0.12.10
          */
         static attribute_to_csm_age(id: string, value: ContentRatingValue): number;
 
@@ -5115,6 +5218,7 @@ export namespace AppStream {
          * Returns a list of all the valid OARS content rating attribute IDs as could
          * be passed to `as_content_rating_add_attribute()` or
          * `as_content_rating_attribute_to_csm_age()`.
+         * @since 0.12.10
          */
         static get_all_rating_ids(): string[];
 
@@ -5123,12 +5227,14 @@ export namespace AppStream {
          * Adds an attribute value to the content rating.
          * @param id a content rating ID, e.g. `money-gambling`.
          * @param value a {@link AppStream.ContentRatingValue}, e.g. {@link AppStream.ContentRatingValue.MODERATE}.
+         * @since 0.14.0
          */
         add_attribute(id: string, value: ContentRatingValue): void;
 
         /**
          * Gets the content_rating kind.
          * @returns a string, e.g. "oars-1.0", or NULL
+         * @since 0.11.0
          */
         get_kind(): string;
 
@@ -5143,6 +5249,7 @@ export namespace AppStream {
          * here. Some 13 year olds may be fine with the concept of mutilation of body
          * parts; others may get nightmares.
          * @returns The age in years, 0 for no rating, or G_MAXUINT for no details.
+         * @since 0.11.0
          */
         get_minimum_age(): number;
 
@@ -5152,6 +5259,7 @@ export namespace AppStream {
          * 
          * The IDs are returned in lexicographical order.
          * @returns `null`-terminated    array of ratings IDs; each ratings ID is owned by the {@link AppStream.ContentRating} and    must not be freed, but the container must be freed with `g_free()`
+         * @since 0.12.10
          */
         get_rating_ids(): string[];
 
@@ -5159,12 +5267,14 @@ export namespace AppStream {
          * Gets the value of a content rating key.
          * @param id A ratings ID, e.g. `violence-bloodshed`.
          * @returns the {@link AppStream.ContentRatingValue}, or {@link AppStream.ContentRatingValue.UNKNOWN}
+         * @since 0.11.0
          */
         get_value(id: string): ContentRatingValue;
 
         /**
          * Sets the content rating kind.
          * @param kind the rating kind, e.g. "oars-1.0"
+         * @since 0.11.0
          */
         set_kind(kind: string): void;
 
@@ -5172,6 +5282,7 @@ export namespace AppStream {
          * Sets the value of a content rating key.
          * @param id A ratings ID, e.g. `violence-bloodshed`.
          * @param value A {@link AppStream.ContentRatingValue}, e.g. {@link AppStream.ContentRatingValue.INTENSE}
+         * @since 0.11.0
          */
         set_value(id: string, value: ContentRatingValue): void;
     }
@@ -5460,6 +5571,7 @@ export namespace AppStream {
 
         /**
          * @returns The icon scaling factor.
+         * @since 0.11.0
          */
         get_scale(): number;
 
@@ -5502,6 +5614,7 @@ export namespace AppStream {
         /**
          * Sets the icon scaling factor used for HiDPI displays.
          * @param scale the icon scaling factor.
+         * @since 0.11.0
          */
         set_scale(scale: number): void;
 
@@ -5578,6 +5691,7 @@ export namespace AppStream {
         /**
          * Get locale for this image.
          * @returns Locale string
+         * @since 0.9.5
          */
         get_locale(): string;
 
@@ -5614,6 +5728,7 @@ export namespace AppStream {
         /**
          * Sets the locale for this image.
          * @param locale the BCP47 locale string.
+         * @since 0.9.5
          */
         set_locale(locale: string): void;
 
@@ -5767,12 +5882,14 @@ export namespace AppStream {
         /**
          * Add a new launchable entry.
          * @param entry 
+         * @since 0.11.0
          */
         add_entry(entry: string): void;
 
         /**
          * Get an array of launchable entries.
          * @returns An string list of launch entries.
+         * @since 0.11.0
          */
         get_entries(): string[];
 
@@ -5780,6 +5897,7 @@ export namespace AppStream {
          * The launch system for the entries this {@link AppStream.Launchable}
          * object stores.
          * @returns an enum of type {@link AppStream.LaunchableKind}
+         * @since 0.11.0
          */
         get_kind(): LaunchableKind;
 
@@ -5787,6 +5905,7 @@ export namespace AppStream {
          * Set the launch system for the entries this {@link AppStream.Launchable}
          * object stores.
          * @param kind the new {@link AppStream.LaunchableKind}
+         * @since 0.11.0
          */
         set_kind(kind: LaunchableKind): void;
     }
@@ -5840,6 +5959,7 @@ export namespace AppStream {
          * Guesses the AppStream metadata style (metainfo or catalog) based on
          * the filename.
          * @param filename a file name
+         * @since 0.14.0
          */
         static file_guess_style(filename: string): FormatStyle;
 
@@ -5961,6 +6081,7 @@ export namespace AppStream {
          * @param bytes Metadata describing one or more software components.
          * @param format The format of the data (XML or YAML).
          * @returns `true` on success.
+         * @since 0.14.0
          */
         parse_bytes(bytes: GLib.Bytes | Uint8Array, format: FormatKind): boolean;
 
@@ -6002,6 +6123,7 @@ export namespace AppStream {
          * You can retrieve the last parsed {@link AppStream.ReleaseList} using %as_metadata_get_release_list.
          * @param bytes Metadata describing release notes.
          * @returns `true` on success.
+         * @since 0.16.0
          */
         parse_releases_bytes(bytes: GLib.Bytes | Uint8Array): boolean;
 
@@ -6011,6 +6133,7 @@ export namespace AppStream {
          * You can retrieve the last parsed {@link AppStream.ReleaseList} using %as_metadata_get_release_list.
          * @param file {@link Gio.File} for the release metadata
          * @returns `true` on success.
+         * @since 0.16.0
          */
         parse_releases_file(file: Gio.File): boolean;
 
@@ -6018,6 +6141,7 @@ export namespace AppStream {
          * Convert a releases of an {@link AppStream.ReleaseList} entity into a release metadata XML representation.
          * @param releases the {@link AppStream.ReleaseList} to convert.
          * @returns The XML representation or `null` on error.
+         * @since 0.16.0
          */
         releases_to_data(releases: ReleaseList): string;
 
@@ -6175,6 +6299,7 @@ export namespace AppStream {
          * Data from components added like this will not be cached.
          * @param cbox Components to add to the pool.
          * @returns `true` if the new components were successfully added to the pool.
+         * @since 0.15.0
          */
         add_components(cbox: ComponentBox): boolean;
 
@@ -6191,6 +6316,7 @@ export namespace AppStream {
          * Convenience function to add one or multiple {@link AppStream.PoolFlags} to
          * the flag set of this data pool.
          * @param flags The {@link AppStream.PoolFlags} to add.
+         * @since 0.15.0
          */
         add_flags(flags: PoolFlags): void;
 
@@ -6227,6 +6353,7 @@ export namespace AppStream {
          * @param bundle_id The bundle ID to match, as specified in {@link AppStream.Bundle}
          * @param match_prefix `true` to match the ID by prefix, `false` to perform an absolute match.
          * @returns an {@link AppStream.ComponentBox}.
+         * @since 0.16.0
          */
         get_components_by_bundle_id(kind: BundleKind, bundle_id: string, match_prefix: boolean): ComponentBox;
 
@@ -6245,6 +6372,7 @@ export namespace AppStream {
          * this flag if you will be resolving addon information later anyway).
          * @param extended_id The ID of the component to search extensions for.
          * @returns an {@link AppStream.ComponentBox}.
+         * @since 0.15.0
          */
         get_components_by_extends(extended_id: string): ComponentBox;
 
@@ -6270,6 +6398,7 @@ export namespace AppStream {
          * @param kind An {@link AppStream.LaunchableKind}
          * @param id The ID of the launchable.
          * @returns an {@link AppStream.ComponentBox} of found components.
+         * @since 0.11.4
          */
         get_components_by_launchable(kind: LaunchableKind, id: string): ComponentBox;
 
@@ -6314,6 +6443,7 @@ export namespace AppStream {
          * Asynchronously loads data from all registered locations.
          * Equivalent to `as_pool_load()` (but asynchronous)
          * @param cancellable a {@link Gio.Cancellable}.
+         * @since 0.12.10
          */
         load_async(cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
@@ -6322,6 +6452,7 @@ export namespace AppStream {
          * Equivalent to `as_pool_load()` (but asynchronous)
          * @param cancellable a {@link Gio.Cancellable}.
          * @param callback A {@link Gio.AsyncReadyCallback}
+         * @since 0.12.10
          */
         load_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -6330,6 +6461,7 @@ export namespace AppStream {
          * Equivalent to `as_pool_load()` (but asynchronous)
          * @param cancellable a {@link Gio.Cancellable}.
          * @param callback A {@link Gio.AsyncReadyCallback}
+         * @since 0.12.10
          */
         load_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
@@ -6337,6 +6469,7 @@ export namespace AppStream {
          * Retrieve the result of `as_pool_load_async()`.
          * @param result A {@link Gio.AsyncResult}
          * @returns `true` for success
+         * @since 0.12.10
          */
         load_finish(result: Gio.AsyncResult): boolean;
 
@@ -6344,11 +6477,13 @@ export namespace AppStream {
          * Convenience function to remove one or multiple {@link AppStream.PoolFlags} from
          * the flag set of this data pool.
          * @param flags The {@link AppStream.PoolFlags} to remove.
+         * @since 0.15.0
          */
         remove_flags(flags: PoolFlags): void;
 
         /**
          * Remove all explicitly added metadata locations.
+         * @since 0.15.0
          */
         reset_extra_data_locations(): void;
 
@@ -6357,6 +6492,7 @@ export namespace AppStream {
          * The list will be ordered by match score.
          * @param search A search string
          * @returns an {@link AppStream.ComponentBox} of the found components.
+         * @since 0.9.7
          */
         search(search: string): ComponentBox;
 
@@ -6374,6 +6510,7 @@ export namespace AppStream {
          * files and Flatpak data.
          * If you need more fine-grained control, set the {@link AppStream.PoolFlags} explicitly.
          * @param enabled Whether loading of data from standard locations should be enabled.
+         * @since 0.15.0
          */
         set_load_std_data_locations(enabled: boolean): void;
 
@@ -6510,6 +6647,7 @@ export namespace AppStream {
         /**
          * Gets the reference kind.
          * @returns the {@link AppStream.ReferenceKind}
+         * @since 1.0.0
          */
         get_kind(): ReferenceKind;
 
@@ -6532,6 +6670,7 @@ export namespace AppStream {
         /**
          * Sets the reference kind.
          * @param kind the {@link AppStream.ReferenceKind}, e.g. {@link AppStream.ReferenceKind.DOI}.
+         * @since 1.0.0
          */
         set_kind(kind: ReferenceKind): void;
 
@@ -6608,6 +6747,7 @@ export namespace AppStream {
         /**
          * The version comparison type.
          * @returns an enum of type {@link AppStream.RelationCompare}
+         * @since 0.12.0
          */
         get_compare(): RelationCompare;
 
@@ -6615,18 +6755,21 @@ export namespace AppStream {
          * Gets the display side kind, in case this item is of
          * kind {@link AppStream.RelationItemKind.DISPLAY_LENGTH}
          * @returns a {@link AppStream.DisplaySideKind} or {@link AppStream.DisplaySideKind.UNKNOWN}
+         * @since 0.12.12
          */
         get_display_side_kind(): DisplaySideKind;
 
         /**
          * The kind of the item of this {@link AppStream.Relation}.
          * @returns an enum of type {@link AppStream.RelationItemKind}
+         * @since 0.12.0
          */
         get_item_kind(): RelationItemKind;
 
         /**
          * The type (and thereby strength) of this {@link AppStream.Relation}.
          * @returns an enum of type {@link AppStream.RelationKind}
+         * @since 0.12.0
          */
         get_kind(): RelationKind;
 
@@ -6635,11 +6778,13 @@ export namespace AppStream {
          * type of this relation is {@link AppStream.RelationItemKind.CONTROL}.
          * Otherwise return {@link AppStream.ControlKind.UNKNOWN}
          * @returns a {@link AppStream.ControlKind} or {@link AppStream.ControlKind.UNKNOWN} in case the item is not of the right kind.
+         * @since 0.12.11
          */
         get_value_control_kind(): ControlKind;
 
         /**
          * @returns The value of this {@link AppStream.Relation} item as an integer. Returns 0 if the value was no integer.
+         * @since 0.12.0
          */
         get_value_int(): number;
 
@@ -6650,6 +6795,7 @@ export namespace AppStream {
          * If the relation is of a different kind, or the requirement isn’t set, this
          * returns `0`.
          * @returns The minimum bandwidth requirement, in Mbit/s.
+         * @since 0.15.5
          */
         get_value_internet_bandwidth(): number;
 
@@ -6658,6 +6804,7 @@ export namespace AppStream {
          * type of this relation is {@link AppStream.RelationItemKind.INTERNET}.
          * Otherwise return {@link AppStream.InternetKind.UNKNOWN}
          * @returns a {@link AppStream.InternetKind} or {@link AppStream.InternetKind.UNKNOWN} in case the item is not of the right kind.
+         * @since 0.15.5
          */
         get_value_internet_kind(): InternetKind;
 
@@ -6665,16 +6812,19 @@ export namespace AppStream {
          * In case this {@link AppStream.Relation} is of kind {@link AppStream.RelationItemKind.DISPLAY_LENGTH},
          * return the set logical pixel amount.
          * @returns The logical pixel amount for this display length, value <= 0 on error.
+         * @since 0.12.12
          */
         get_value_px(): number;
 
         /**
          * @returns The value of the item this {@link AppStream.Relation} is about, as a string.
+         * @since 0.12.12
          */
         get_value_str(): string;
 
         /**
          * @returns The version of the item this {@link AppStream.Relation} is about.
+         * @since 0.12.0
          */
         get_version(): string;
 
@@ -6692,6 +6842,7 @@ export namespace AppStream {
         /**
          * Set the version comparison type of this {@link AppStream.Relation}.
          * @param compare the new {@link AppStream.RelationCompare}
+         * @since 0.12.0
          */
         set_compare(compare: RelationCompare): void;
 
@@ -6699,24 +6850,28 @@ export namespace AppStream {
          * Sets the display side kind, in case this item is of
          * kind {@link AppStream.RelationItemKind.DISPLAY_LENGTH}
          * @param kind the new {@link AppStream.DisplaySideKind}.
+         * @since 0.12.12
          */
         set_display_side_kind(kind: DisplaySideKind): void;
 
         /**
          * Set the kind of the item this {@link AppStream.Relation} is about.
          * @param kind the new {@link AppStream.RelationItemKind}
+         * @since 0.12.0
          */
         set_item_kind(kind: RelationItemKind): void;
 
         /**
          * Set the kind of this {@link AppStream.Relation}.
          * @param kind the new {@link AppStream.RelationKind}
+         * @since 0.12.0
          */
         set_kind(kind: RelationKind): void;
 
         /**
          * Set relation item value from an {@link AppStream.ControlKind}.
          * @param kind an {@link AppStream.ControlKind}
+         * @since 0.12.12
          */
         set_value_control_kind(kind: ControlKind): void;
 
@@ -6724,6 +6879,7 @@ export namespace AppStream {
          * Sets the item value as an integer, if the given item type
          * of this {@link AppStream.Relation} permits integer values.
          * @param value the new value.
+         * @since 0.12.12
          */
         set_value_int(value: number): void;
 
@@ -6735,6 +6891,7 @@ export namespace AppStream {
         /**
          * Set relation item value from an {@link AppStream.InternetKind}.
          * @param kind an {@link AppStream.InternetKind}
+         * @since 0.15.5
          */
         set_value_internet_kind(kind: InternetKind): void;
 
@@ -6742,6 +6899,7 @@ export namespace AppStream {
          * Sets the item value as logical pixel count. This requires the relation
          * to be of item kind {@link AppStream.RelationItemKind.DISPLAY_LENGTH}.
          * @param logical_px logical pixel count.
+         * @since 0.12.12
          */
         set_value_px(logical_px: number): void;
 
@@ -6749,12 +6907,14 @@ export namespace AppStream {
          * Sets the item value as a string, if the given item type
          * of this {@link AppStream.Relation} permits string values.
          * @param value the new value.
+         * @since 0.12.12
          */
         set_value_str(value: string): void;
 
         /**
          * Sets the item version.
          * @param version the new version.
+         * @since 0.12.0
          */
         set_version(version: string): void;
 
@@ -6764,6 +6924,7 @@ export namespace AppStream {
          * requirement of this {@link AppStream.Relation} is determined by its comparison resraint.
          * @param version a version number, e.g. `1.2.0`
          * @returns `true` if the version from the parameter is sufficient.
+         * @since 0.12.0
          */
         version_compare(version: string): boolean;
     }
@@ -6907,12 +7068,14 @@ export namespace AppStream {
         /**
          * Add an artifact (binary / source download) for this release.
          * @param artifact The {@link AppStream.Artifact}.
+         * @since 0.12.6
          */
         add_artifact(artifact: Artifact): void;
 
         /**
          * Add information about a (resolved) issue to this release.
          * @param issue The {@link AppStream.Issue}.
+         * @since 0.12.9
          */
         add_issue(issue: Issue): void;
 
@@ -6921,11 +7084,13 @@ export namespace AppStream {
          * @param ns The namespace the tag belongs to
          * @param tag The tag name
          * @returns `true` if the tag was added.
+         * @since 1.0.0
          */
         add_tag(ns: string, tag: string): boolean;
 
         /**
          * Remove all tags associated with this release.
+         * @since 1.0.0
          */
         clear_tags(): void;
 
@@ -6933,23 +7098,27 @@ export namespace AppStream {
          * Get a list of all downloadable artifacts that are associated with
          * this release.
          * @returns an array of {@link AppStream.Artifact} objects.
+         * @since 0.12.6
          */
         get_artifacts(): Artifact[];
 
         /**
          * @returns the {@link AppStream.Context} associated with this release. This function may return `null` if no context is set.
+         * @since 0.11.2
          */
         get_context(): Context | null;
 
         /**
          * Gets the release date.
          * @returns The date in ISO8601 format.
+         * @since 0.12.5
          */
         get_date(): string | null;
 
         /**
          * Gets the end-of-life date for this release.
          * @returns The EOL date in ISO8601 format.
+         * @since 0.12.5
          */
         get_date_eol(): string | null;
 
@@ -6962,12 +7131,14 @@ export namespace AppStream {
         /**
          * Get a list of all issues resolved by this release.
          * @returns an array of {@link AppStream.Issue} objects.
+         * @since 0.12.9
          */
         get_issues(): Issue[];
 
         /**
          * Gets the type of the release.
          * (development or stable release)
+         * @since 0.12.0
          */
         get_kind(): ReleaseKind;
 
@@ -6981,6 +7152,7 @@ export namespace AppStream {
          * Gets the UNIX timestamp for the date when this
          * release is out of support (end-of-life).
          * @returns UNIX timestamp, or 0 for unset or invalid.
+         * @since 0.12.5
          */
         get_timestamp_eol(): number;
 
@@ -6988,6 +7160,7 @@ export namespace AppStream {
          * Gets the urgency of the release
          * (showing how important it is to update to a more recent release)
          * @returns {@link AppStream.UrgencyKind}, or {@link AppStream.UrgencyKind.UNKNOWN} for not set
+         * @since 0.6.5
          */
         get_urgency(): UrgencyKind;
 
@@ -6995,6 +7168,7 @@ export namespace AppStream {
          * Gets an URL.
          * @param url_kind the URL kind, e.g. {@link AppStream.ReleaseUrlKind.DETAILS}.
          * @returns string, or `null` if unset
+         * @since 0.12.5
          */
         get_url(url_kind: ReleaseUrlKind): string | null;
 
@@ -7009,6 +7183,7 @@ export namespace AppStream {
          * @param ns The namespace the tag belongs to
          * @param tag The tag name
          * @returns `true` if tag exists.
+         * @since 1.0.0
          */
         has_tag(ns: string, tag: string): boolean;
 
@@ -7017,6 +7192,7 @@ export namespace AppStream {
          * @param ns The namespace the tag belongs to
          * @param tag The tag name
          * @returns `true` if the tag was removed.
+         * @since 1.0.0
          */
         remove_tag(ns: string, tag: string): boolean;
 
@@ -7024,18 +7200,21 @@ export namespace AppStream {
          * Sets the document context this release is associated
          * with.
          * @param context the {@link AppStream.Context}.
+         * @since 0.11.2
          */
         set_context(context: Context): void;
 
         /**
          * Sets the release date.
          * @param date the date in ISO8601 format.
+         * @since 0.12.5
          */
         set_date(date: string): void;
 
         /**
          * Sets the end-of-life date for this release.
          * @param date the EOL date in ISO8601 format.
+         * @since 0.12.5
          */
         set_date_eol(date: string): void;
 
@@ -7050,6 +7229,7 @@ export namespace AppStream {
          * Sets the release kind to distinguish between end-user ready
          * stable releases and development prereleases..
          * @param kind the {@link AppStream.ReleaseKind}
+         * @since 0.12.0
          */
         set_kind(kind: ReleaseKind): void;
 
@@ -7063,12 +7243,14 @@ export namespace AppStream {
          * Sets the UNIX timestamp for the date when this
          * release is out of support (end-of-life).
          * @param timestamp the timestamp value.
+         * @since 0.12.5
          */
         set_timestamp_eol(timestamp: bigint | number): void;
 
         /**
          * Sets the release urgency.
          * @param urgency the urgency of this release/update (as {@link AppStream.UrgencyKind})
+         * @since 0.6.5
          */
         set_urgency(urgency: UrgencyKind): void;
 
@@ -7076,6 +7258,7 @@ export namespace AppStream {
          * Sets an URL for this release.
          * @param url_kind the URL kind, e.g. {@link AppStream.ReleaseUrlKind.DETAILS}
          * @param url the full URL.
+         * @since 0.12.5
          */
         set_url(url_kind: ReleaseUrlKind, url: string): void;
 
@@ -7166,6 +7349,7 @@ export namespace AppStream {
          * Returns the {@link AppStream.ReleaseListKind} of the release metadata
          * associated with this component.
          * @returns The kind.
+         * @since 0.16.0
          */
         get_kind(): ReleaseListKind;
 
@@ -7178,6 +7362,7 @@ export namespace AppStream {
         /**
          * Get the remote URL to obtain release information from.
          * @returns The URL of external release data, or `null`
+         * @since 0.16.0
          */
         get_url(): string | null;
 
@@ -7200,6 +7385,7 @@ export namespace AppStream {
          * @param context the attached {@link AppStream.Context} or `null` to use the current context
          * @param bytes the release XML data as {@link GLib.Bytes}
          * @returns `true` on success.
+         * @since 0.16.0
          */
         load_from_bytes(context: Context | null, bytes: GLib.Bytes | Uint8Array): boolean;
 
@@ -7213,6 +7399,7 @@ export namespace AppStream {
          * Sets the {@link AppStream.ReleaseListKind} of the release metadata
          * associated with this component.
          * @param kind the {@link AppStream.ComponentKind}.
+         * @since 0.16.0
          */
         set_kind(kind: ReleaseListKind): void;
 
@@ -7225,6 +7412,7 @@ export namespace AppStream {
         /**
          * Set a remote URL pointing to an AppStream release info file.
          * @param url the web URL where release data is found.
+         * @since 0.16.0
          */
         set_url(url: string): void;
 
@@ -7402,6 +7590,7 @@ export namespace AppStream {
         /**
          * Adds flags to an existing review without replacing the other flags.
          * @param flags a {@link AppStream.ReviewFlags}, e.g. {@link AppStream.ReviewFlags.SELF}
+         * @since 0.14.0
          */
         add_flags(flags: ReviewFlags): void;
 
@@ -7411,6 +7600,7 @@ export namespace AppStream {
          * typical use would be to store some secure authentication token.
          * @param key a string
          * @param value a string
+         * @since 0.14.0
          */
         add_metadata(key: string, value: string): void;
 
@@ -7418,18 +7608,21 @@ export namespace AppStream {
          * Checks if two reviews are the same.
          * @param review2 a {@link AppStream.Review} instance.
          * @returns `true` for success
+         * @since 0.14.0
          */
         equal(review2: Review): boolean;
 
         /**
          * Gets the date the review was originally submitted.
          * @returns the {@link GLib.DateTime}, or `null` for unset
+         * @since 0.14.0
          */
         get_date(): GLib.DateTime;
 
         /**
          * Gets the multi-line review text that forms the body of the review.
          * @returns the string, or `null`
+         * @since 0.14.0
          */
         get_description(): string;
 
@@ -7437,18 +7630,21 @@ export namespace AppStream {
          * Gets any flags set on the review, for example if the user has already
          * voted on the review or if the user wrote the review themselves.
          * @returns a {@link AppStream.ReviewFlags}, e.g. {@link AppStream.ReviewFlags.SELF}
+         * @since 0.14.0
          */
         get_flags(): ReviewFlags;
 
         /**
          * Gets the review id.
          * @returns the review identifier, e.g. "deadbeef"
+         * @since 0.14.0
          */
         get_id(): string;
 
         /**
          * Gets the locale for the review.
          * @returns the string, or `null`
+         * @since 0.14.0
          */
         get_locale(): string;
 
@@ -7458,6 +7654,7 @@ export namespace AppStream {
          * typical use would be to retrieve some secure authentication token.
          * @param key a string
          * @returns A string value, or `null` for not found
+         * @since 0.14.0
          */
         get_metadata_item(key: string): string;
 
@@ -7465,48 +7662,56 @@ export namespace AppStream {
          * This allows the UI to sort reviews into the correct order.
          * Higher numbers indicate a more important or relevant review.
          * @returns the review priority, or 0 for unset.
+         * @since 0.14.0
          */
         get_priority(): number;
 
         /**
          * Gets the star rating of the review, where 100 is 5 stars.
          * @returns integer as a percentage, or 0 for unset
+         * @since 0.14.0
          */
         get_rating(): number;
 
         /**
          * Gets the name of the reviewer.
          * @returns the reviewer ID, e.g. "deadbeef", or `null`
+         * @since 0.14.0
          */
         get_reviewer_id(): string;
 
         /**
          * Gets the name of the reviewer.
          * @returns the reviewer name, e.g. "David Smith", or `null`
+         * @since 0.14.0
          */
         get_reviewer_name(): string;
 
         /**
          * Gets the review summary.
          * @returns the one-line summary, e.g. "Awesome application"
+         * @since 0.14.0
          */
         get_summary(): string;
 
         /**
          * Gets the version string for the application being reviewed..
          * @returns the version string, e.g. "0.1.2", or `null` for unset
+         * @since 0.14.0
          */
         get_version(): string;
 
         /**
          * Sets the date the review was originally submitted.
          * @param date a {@link GLib.DateTime}, or `null`
+         * @since 0.14.0
          */
         set_date(date: GLib.DateTime): void;
 
         /**
          * Sets the multi-line review text that forms the body of the review.
          * @param description multi-line description
+         * @since 0.14.0
          */
         set_description(description: string): void;
 
@@ -7514,18 +7719,21 @@ export namespace AppStream {
          * Gets any flags set on the review, for example if the user has already
          * voted on the review or if the user wrote the review themselves.
          * @param flags a {@link AppStream.ReviewFlags}, e.g. {@link AppStream.ReviewFlags.SELF}
+         * @since 0.14.0
          */
         set_flags(flags: ReviewFlags): void;
 
         /**
          * Sets the review identifier that is unique to each review.
          * @param id review identifier, e.g. "deadbeef"
+         * @since 0.14.0
          */
         set_id(id: string): void;
 
         /**
          * Sets the locale for the review.
          * @param locale a BCP47 locale, e.g. "en-GB"
+         * @since 0.14.0
          */
         set_locale(locale: string): void;
 
@@ -7533,36 +7741,42 @@ export namespace AppStream {
          * Sets the priority for the review, where positive numbers indicate
          * a better review for the specific user.
          * @param priority a priority value
+         * @since 0.14.0
          */
         set_priority(priority: number): void;
 
         /**
          * Sets the star rating of the review, where 100 is 5 stars..
          * @param rating a integer as a percentage, or 0 for unset
+         * @since 0.14.0
          */
         set_rating(rating: number): void;
 
         /**
          * Sets the name of the reviewer, which can be left unset.
          * @param reviewer_id the reviewer ID, e.g. "deadbeef"
+         * @since 0.14.0
          */
         set_reviewer_id(reviewer_id: string): void;
 
         /**
          * Sets the name of the reviewer, which can be left unset.
          * @param reviewer_name the reviewer name, e.g. "David Smith"
+         * @since 0.14.0
          */
         set_reviewer_name(reviewer_name: string): void;
 
         /**
          * Sets the one-line summary that may be displayed in bold.
          * @param summary a one-line summary, e.g. "Awesome application"
+         * @since 0.14.0
          */
         set_summary(summary: string): void;
 
         /**
          * Sets the version string for the application being reviewed.
          * @param version a version string, e.g. "0.1.2"
+         * @since 0.14.0
          */
         set_version(version: string): void;
     }
@@ -7626,6 +7840,7 @@ export namespace AppStream {
 
         /**
          * Remove all images associated with this screenshot.
+         * @since 0.15.4
          */
         clear_images(): void;
 
@@ -7639,6 +7854,7 @@ export namespace AppStream {
          * Returns the {@link AppStream.Context} associated with this screenshot.
          * This function may return `null` if no context is set.
          * @returns the {@link AppStream.Context} used by this screenshot.
+         * @since 0.11.2
          */
         get_context(): Context | null;
 
@@ -7659,6 +7875,7 @@ export namespace AppStream {
          * @param height target height
          * @param scale the target scaling factor.
          * @returns an {@link AppStream.Image}, or `null`
+         * @since 0.14.0
          */
         get_image(width: number, height: number, scale: number): Image | null;
 
@@ -7673,6 +7890,7 @@ export namespace AppStream {
          * Returns an array of all images we have, regardless of their
          * size and language.
          * @returns an array
+         * @since 0.10
          */
         get_images_all(): Image[];
 
@@ -7719,6 +7937,7 @@ export namespace AppStream {
          * Sets the document context this screenshot is associated
          * with.
          * @param context the {@link AppStream.Context}.
+         * @since 0.11.2
          */
         set_context(context: Context): void;
 
@@ -8046,6 +8265,7 @@ export namespace AppStream {
          * The locale of the source strings for this component. If this has not been
          * explicitly specified, `en_US` will be returned.
          * @returns The locale of the source strings for this component.
+         * @since 0.14.6
          */
         get_source_locale(): string;
 
@@ -8066,6 +8286,7 @@ export namespace AppStream {
          * referred to as the `C` locale. It’s almost always `en_US`, but for some
          * components it may not be.
          * @param locale The POSIX locale that the source strings are in, or `null` if unknown or default.
+         * @since 0.14.6
          */
         set_source_locale(locale: string | null): void;
     }
@@ -8124,6 +8345,7 @@ export namespace AppStream {
          * Increasing the severity of any tag is always allowed.
          * @param tag the issue tag to override, e.g. "release-time-missing"
          * @param severity_override the new severity for the tag.
+         * @since 0.15.4
          */
         add_override(tag: string, severity_override: IssueSeverity): boolean;
 
@@ -8131,12 +8353,14 @@ export namespace AppStream {
          * Add release metadata explicitly from bytes.
          * @param release_fname File basename of the release metadata file to add.
          * @param release_metadata Data of the release metadata file.
+         * @since 0.16.0
          */
         add_release_bytes(release_fname: string, release_metadata: GLib.Bytes | Uint8Array): boolean;
 
         /**
          * Add a release metadata file to the validation process.
          * @param release_file Release metadata file to add.
+         * @since 0.16.0
          */
         add_release_file(release_file: Gio.File): boolean;
 
@@ -8155,6 +8379,7 @@ export namespace AppStream {
         /**
          * Clear all release information that was explicitly added to the
          * validation process.
+         * @since 0.16.0
          */
         clear_release_data(): void;
 
@@ -8166,6 +8391,7 @@ export namespace AppStream {
         /**
          * Get the number of files for which issues have been found.
          * @returns The number of files that have issues.
+         * @since 0.16.0
          */
         get_issue_files_count(): number;
 
@@ -8180,6 +8406,7 @@ export namespace AppStream {
          * This is useful if validation was requested for multiple files and
          * a list of issues per-file is desired without prior explicit sorting.
          * @returns a file to issue list mapping
+         * @since 0.12.8
          */
         get_issues_per_file(): { [key: string]: any };
 
@@ -8187,6 +8414,7 @@ export namespace AppStream {
 
         /**
          * @returns `true` in case we are in strict mode and consider any issues as fatal.
+         * @since 0.15.4
          */
         get_strict(): boolean;
 
@@ -8222,6 +8450,7 @@ export namespace AppStream {
          * in a failed validation (except for issues of "pedantic" severity).
          * Otherwise, only a "warning" or "error" will cause the validation to fail.
          * @param is_strict `true` to enable strict mode.
+         * @since 0.15.4
          */
         set_strict(is_strict: boolean): void;
 
@@ -8231,6 +8460,7 @@ export namespace AppStream {
          * validation runs to affect the outcome of this validation.
          * @param metadata XML metadata as {@link GLib.Bytes}.
          * @returns `true` if bytes validated successfully.
+         * @since 0.14.0
          */
         validate_bytes(metadata: GLib.Bytes | Uint8Array): boolean;
 
@@ -8311,6 +8541,7 @@ export namespace AppStream {
          * Get an extended explanation on this issue, or return `null`
          * if none is available.
          * @returns the explanation
+         * @since 0.12.8
          */
         get_explanation(): string;
 
@@ -8323,6 +8554,7 @@ export namespace AppStream {
         /**
          * Get a short context hint for this issue.
          * @returns the hint
+         * @since 0.12.8
          */
         get_hint(): string;
 
@@ -8348,6 +8580,7 @@ export namespace AppStream {
         /**
          * Gets the issue tag string for this issue.
          * @returns the tag
+         * @since 0.12.8
          */
         get_tag(): string;
 
@@ -8360,6 +8593,7 @@ export namespace AppStream {
         /**
          * Set explanatory text for this issue.
          * @param explanation the explanation.
+         * @since 0.12.8
          */
         set_explanation(explanation: string): void;
 
@@ -8372,6 +8606,7 @@ export namespace AppStream {
         /**
          * Sets short issue hint.
          * @param hint the hint.
+         * @since 0.12.8
          */
         set_hint(hint: string): void;
 
@@ -8390,6 +8625,7 @@ export namespace AppStream {
         /**
          * Sets the issue tag.
          * @param tag the tag.
+         * @since 0.12.8
          */
         set_tag(tag: string): void;
     }
