@@ -8221,6 +8221,7 @@ export namespace Gdk {
          * The returned context is guaranteed to be valid until
          * {@link Gdk.DrawContext.end_frame} is called.
          * @returns a Cairo context   to draw on `GdkSurface
+         * @deprecated since 4.18: Drawing content with Cairo should be done via   Cairo rendernodes, not by using renderers.
          */
         cairo_create(): cairo.Context | null;
     }
@@ -8425,6 +8426,7 @@ export namespace Gdk {
          * supported by GTK. In that case, `NULL` is returned, and `error` is set
          * with an error message that can be presented to the user.
          * @returns A newly allocated {@link Gdk.ColorState}
+         * @since 4.16
          */
         build_color_state(): ColorState;
 
@@ -8432,30 +8434,35 @@ export namespace Gdk {
          * Returns the value of the color-primaries property
          * of `self`.
          * @returns the color-primaries value
+         * @since 4.16
          */
         get_color_primaries(): number;
 
         /**
          * Gets the matrix-coefficients property of `self`.
          * @returns the matrix-coefficients value
+         * @since 4.16
          */
         get_matrix_coefficients(): number;
 
         /**
          * Gets the range property of `self`.
          * @returns the range value
+         * @since 4.16
          */
         get_range(): CicpRange;
 
         /**
          * Gets the transfer-function property of `self`.
          * @returns the transfer-function value
+         * @since 4.16
          */
         get_transfer_function(): number;
 
         /**
          * Sets the color-primaries property of `self`.
          * @param color_primaries the new color primaries value
+         * @since 4.16
          */
         set_color_primaries(color_primaries: number): void;
 
@@ -8463,18 +8470,21 @@ export namespace Gdk {
          * `self` a {@link Gdk.CicpParams}
          * Sets the matrix-coefficients property of `self`.
          * @param matrix_coefficients the new matrix-coefficients value
+         * @since 4.16
          */
         set_matrix_coefficients(matrix_coefficients: number): void;
 
         /**
          * Sets the range property of `self`
          * @param range the range value
+         * @since 4.16
          */
         set_range(range: CicpRange): void;
 
         /**
          * Sets the transfer-function property of `self`.
          * @param transfer_function the new transfer-function value
+         * @since 4.16
          */
         set_transfer_function(transfer_function: number): void;
     }
@@ -9028,6 +9038,7 @@ export namespace Gdk {
          * pointer indicating the function `res` was created by).
          * @param source_tag an application-defined tag
          * @returns `TRUE` if `res` has the indicated `source_tag`, `FALSE` if   not.
+         * @since 2.34
          */
         is_tagged(source_tag: null): boolean;
 
@@ -9043,6 +9054,7 @@ export namespace Gdk {
          * set by virtual methods should also be extracted by virtual methods,
          * to enable subclasses to chain up correctly.
          * @returns `TRUE` if `error` is has been filled in with an error from   `res`, `FALSE` if not.
+         * @since 2.34
          */
         legacy_propagate_error(): boolean;
 
@@ -9062,6 +9074,7 @@ export namespace Gdk {
          * Checks if `res` has the given `source_tag` (generally a function
          * pointer indicating the function `res` was created by).
          * @param source_tag an application-defined tag
+         * @since 2.34
          * @virtual
          */
         vfunc_is_tagged(source_tag: null): boolean;
@@ -9466,6 +9479,7 @@ export namespace Gdk {
          * pointer indicating the function `res` was created by).
          * @param source_tag an application-defined tag
          * @returns `TRUE` if `res` has the indicated `source_tag`, `FALSE` if   not.
+         * @since 2.34
          */
         is_tagged(source_tag: null): boolean;
 
@@ -9481,6 +9495,7 @@ export namespace Gdk {
          * set by virtual methods should also be extracted by virtual methods,
          * to enable subclasses to chain up correctly.
          * @returns `TRUE` if `error` is has been filled in with an error from   `res`, `FALSE` if not.
+         * @since 2.34
          */
         legacy_propagate_error(): boolean;
 
@@ -9500,6 +9515,7 @@ export namespace Gdk {
          * Checks if `res` has the given `source_tag` (generally a function
          * pointer indicating the function `res` was created by).
          * @param source_tag an application-defined tag
+         * @since 2.34
          * @virtual
          */
         vfunc_is_tagged(source_tag: null): boolean;
@@ -10212,6 +10228,7 @@ export namespace Gdk {
          * 
          * This is only relevant for keyboard devices.
          * @returns The layout index of the active layout or -1.
+         * @since 4.18
          */
         get_active_layout_index(): number;
 
@@ -10260,6 +10277,7 @@ export namespace Gdk {
          * 
          * This is only relevant for keyboard devices.
          * @returns `null`-terminated array of strings of layouts,
+         * @since 4.18
          */
         get_layout_names(): string[] | null;
 
@@ -10338,6 +10356,7 @@ export namespace Gdk {
          * events for a device that are not received from the OS, and will not
          * update the timestamp).
          * @returns the timestamp of the last activity for this device
+         * @since 4.2
          */
         get_timestamp(): number;
 
@@ -10713,6 +10732,7 @@ export namespace Gdk {
          * Before using the returned {@link Gdk.GLContext}, you will need to
          * call {@link Gdk.GLContext.make_current} or {@link Gdk.GLContext.realize}.
          * @returns the newly created {@link Gdk.GLContext}
+         * @since 4.6
          */
         create_gl_context(): GLContext;
 
@@ -10772,6 +10792,7 @@ export namespace Gdk {
          * 
          * This function is threadsafe. It can be called from any thread.
          * @returns a {@link Gdk.DmabufFormats} object
+         * @since 4.14
          */
         get_dmabuf_formats(): DmabufFormats;
 
@@ -10823,6 +10844,7 @@ export namespace Gdk {
          * Gets the startup notification ID for a Wayland display, or `null`
          * if no ID has been defined.
          * @returns the startup notification ID for `display`
+         * @deprecated since 4.10
          */
         get_startup_notification_id(): string | null;
 
@@ -10914,6 +10936,7 @@ export namespace Gdk {
          * [gtk_window_set_auto_startup_notification()](../gtk4/method.Window.set_auto_startup_notification.html)
          * is called to disable that feature.
          * @param startup_id a startup-notification identifier, for which   notification process should be completed
+         * @deprecated since 4.10: Using {@link Gdk.Toplevel.set_startup_id} is sufficient
          */
         notify_startup_complete(startup_id: string): void;
 
@@ -10933,12 +10956,14 @@ export namespace Gdk {
          * as needed. But you can use it as a check when setting up code that
          * might make use of OpenGL.
          * @returns `true` if the display supports OpenGL
+         * @since 4.4
          */
         prepare_gl(): boolean;
 
         /**
          * Adds the given event to the event queue for `display`.
          * @param event a {@link Gdk.Event}
+         * @deprecated since 4.10: This function is only useful in very special situations and should not be used by applications.
          */
         put_event(event: Event): void;
 
@@ -10959,6 +10984,7 @@ export namespace Gdk {
          * If `true` is returned the application decides if it wants to draw shadows.
          * If `false` is returned, the compositor decides if it wants to draw shadows.
          * @returns `true` if surfaces can draw shadows or   `false` if the display does not support this functionality.
+         * @since 4.14
          */
         supports_shadow_width(): boolean;
 
@@ -11444,6 +11470,7 @@ export namespace Gdk {
          * makes sense to transfer the {@link GLib.Variant} between processes on the same machine,
          * (as opposed to over the network), and within the same file system namespace.
          * @returns a {@link GLib.Variant}, or `null` when serialization fails. The {@link GLib.Variant} will not be floating.
+         * @since 2.38
          */
         serialize(): GLib.Variant | null;
 
@@ -11465,6 +11492,7 @@ export namespace Gdk {
          * - If `icon` is a {@link Gio.ThemedIcon} with exactly one name and no fallbacks,
          *   the encoding is simply the name (such as `network-server`).
          * @returns An allocated NUL-terminated UTF8 string or `null` if `icon` can't be serialized. Use `g_free()` to free.
+         * @since 2.20
          */
         to_string(): string | null;
 
@@ -11487,6 +11515,7 @@ export namespace Gdk {
          * As serialization will avoid using raw icon data when possible, it only
          * makes sense to transfer the {@link GLib.Variant} between processes on the same machine,
          * (as opposed to over the network), and within the same file system namespace.
+         * @since 2.38
          * @virtual
          */
         vfunc_serialize(): GLib.Variant | null;
@@ -11494,6 +11523,7 @@ export namespace Gdk {
         /**
          * Serializes the `icon` into string tokens.
          * This is can be invoked when `g_icon_new_for_string()` is called.
+         * @since 2.20
          * @virtual
          */
         vfunc_to_tokens(): [boolean, string[], number];
@@ -11834,12 +11864,14 @@ export namespace Gdk {
          * possibly with changing properties in between.
          * @param data user data to pass to the destroy function
          * @returns a newly built {@link Gdk.Texture} or `NULL`   if the format is not supported
+         * @since 4.14
          */
         build(data: null): Texture | null;
 
         /**
          * Gets the color state previously set via `gdk_dmabuf_texture_builder_set_color_state()`.
          * @returns the color state
+         * @since 4.16
          */
         get_color_state(): ColorState | null;
 
@@ -11847,6 +11879,7 @@ export namespace Gdk {
          * Returns the display that this texture builder is
          * associated with.
          * @returns the display
+         * @since 4.14
          */
         get_display(): Display;
 
@@ -11854,6 +11887,7 @@ export namespace Gdk {
          * Gets the file descriptor for a plane or -1 if none.
          * @param plane the plane to get the fd for
          * @returns the file descriptor
+         * @since 4.14
          */
         get_fd(plane: number): number;
 
@@ -11863,6 +11897,7 @@ export namespace Gdk {
          * 
          * The format is specified as a fourcc code.
          * @returns The format
+         * @since 4.14
          */
         get_fourcc(): number;
 
@@ -11870,18 +11905,21 @@ export namespace Gdk {
          * Gets the height previously set via `gdk_dmabuf_texture_builder_set_height()` or
          * 0 if the height wasn't set.
          * @returns The height
+         * @since 4.14
          */
         get_height(): number;
 
         /**
          * Gets the modifier value.
          * @returns the modifier
+         * @since 4.14
          */
         get_modifier(): number;
 
         /**
          * Gets the number of planes.
          * @returns The number of planes
+         * @since 4.14
          */
         get_n_planes(): number;
 
@@ -11889,12 +11927,14 @@ export namespace Gdk {
          * Gets the offset value for a plane.
          * @param plane the plane to get the offset for
          * @returns the offset
+         * @since 4.14
          */
         get_offset(plane: number): number;
 
         /**
          * Whether the data is premultiplied.
          * @returns whether the data is premultiplied
+         * @since 4.14
          */
         get_premultiplied(): boolean;
 
@@ -11902,6 +11942,7 @@ export namespace Gdk {
          * Gets the stride value for a plane.
          * @param plane the plane to get the stride for
          * @returns the stride
+         * @since 4.14
          */
         get_stride(plane: number): number;
 
@@ -11909,6 +11950,7 @@ export namespace Gdk {
          * Gets the region previously set via `gdk_dmabuf_texture_builder_set_update_region()` or
          * `null` if none was set.
          * @returns The region
+         * @since 4.14
          */
         get_update_region(): cairo.Region | null;
 
@@ -11916,6 +11958,7 @@ export namespace Gdk {
          * Gets the texture previously set via `gdk_dmabuf_texture_builder_set_update_texture()` or
          * `null` if none was set.
          * @returns The texture
+         * @since 4.14
          */
         get_update_texture(): Texture | null;
 
@@ -11923,6 +11966,7 @@ export namespace Gdk {
          * Gets the width previously set via `gdk_dmabuf_texture_builder_set_width()` or
          * 0 if the width wasn't set.
          * @returns The width
+         * @since 4.14
          */
         get_width(): number;
 
@@ -11933,6 +11977,7 @@ export namespace Gdk {
          * correct colorstate based on the format.
          * If you don't know what colorstates are, this is probably the right thing.
          * @param color_state a {@link Gdk.ColorState} or `NULL` to unset the colorstate.
+         * @since 4.16
          */
         set_color_state(color_state: ColorState | null): void;
 
@@ -11943,6 +11988,7 @@ export namespace Gdk {
          * The display is used to determine the supported
          * dma-buf formats.
          * @param display the display
+         * @since 4.14
          */
         set_display(display: Display): void;
 
@@ -11950,6 +11996,7 @@ export namespace Gdk {
          * Sets the file descriptor for a plane or to -1 to unset it.
          * @param plane the plane to set the fd for
          * @param fd the file descriptor
+         * @since 4.14
          */
         set_fd(plane: number, fd: number): void;
 
@@ -11960,6 +12007,7 @@ export namespace Gdk {
          * 
          * The format must be set before calling {@link Gdk.DmabufTextureBuilder.build}.
          * @param fourcc the texture's format or 0 to unset
+         * @since 4.14
          */
         set_fourcc(fourcc: number): void;
 
@@ -11968,18 +12016,21 @@ export namespace Gdk {
          * 
          * The height must be set before calling {@link Gdk.DmabufTextureBuilder.build}.
          * @param height the texture's height or 0 to unset
+         * @since 4.14
          */
         set_height(height: number): void;
 
         /**
          * Sets the modifier.
          * @param modifier the modifier value
+         * @since 4.14
          */
         set_modifier(modifier: bigint | number): void;
 
         /**
          * Sets the number of planes of the texture.
          * @param n_planes the number of planes
+         * @since 4.14
          */
         set_n_planes(n_planes: number): void;
 
@@ -11987,6 +12038,7 @@ export namespace Gdk {
          * Sets the offset for a plane.
          * @param plane the plane to set the offset for
          * @param offset the offset value
+         * @since 4.14
          */
         set_offset(plane: number, offset: number): void;
 
@@ -11996,6 +12048,7 @@ export namespace Gdk {
          * Unless otherwise specified, all formats including alpha channels are assumed
          * to be premultiplied.
          * @param premultiplied whether the data is premultiplied
+         * @since 4.14
          */
         set_premultiplied(premultiplied: boolean): void;
 
@@ -12005,6 +12058,7 @@ export namespace Gdk {
          * The stride must be set for all planes before calling {@link Gdk.DmabufTextureBuilder.build}.
          * @param plane the plane to set the stride for
          * @param stride the stride value
+         * @since 4.14
          */
         set_stride(plane: number, stride: number): void;
 
@@ -12020,6 +12074,7 @@ export namespace Gdk {
          * 
          * An example would be a screen recording where only the mouse pointer moves.
          * @param region the region to update
+         * @since 4.14
          */
         set_update_region(region: cairo.Region | null): void;
 
@@ -12027,6 +12082,7 @@ export namespace Gdk {
          * Sets the texture to be updated by this texture. See
          * {@link Gdk.DmabufTextureBuilder.set_update_region} for an explanation.
          * @param texture the texture to update
+         * @since 4.14
          */
         set_update_texture(texture: Texture | null): void;
 
@@ -12035,6 +12091,7 @@ export namespace Gdk {
          * 
          * The width must be set before calling {@link Gdk.DmabufTextureBuilder.build}.
          * @param width The texture's width or 0 to unset
+         * @since 4.14
          */
         set_width(width: number): void;
     }
@@ -12384,6 +12441,7 @@ export namespace Gdk {
          * use of [GskRenderer](../gsk4/class.Renderer.html)s, so application code
          * does not need to call these functions explicitly.
          * @param region minimum region that should be drawn
+         * @deprecated since 4.16: Drawing directly to the surface is no longer recommended.   Use `GskRenderNode` and `GskRenderer`.
          */
         begin_frame(region: cairo.Region): void;
 
@@ -12396,6 +12454,7 @@ export namespace Gdk {
          * When using a {@link Gdk.GLContext}, this function may call `glFlush()`
          * implicitly before returning; it is not recommended to call `glFlush()`
          * explicitly before calling this function.
+         * @deprecated since 4.16: Drawing directly to the surface is no longer recommended.   Use `GskRenderNode` and `GskRenderer`.
          */
         end_frame(): void;
 
@@ -12415,6 +12474,7 @@ export namespace Gdk {
          * If `context` is not in between calls to {@link Gdk.DrawContext.begin_frame}
          * and {@link Gdk.DrawContext.end_frame}, `null` will be returned.
          * @returns a Cairo region
+         * @deprecated since 4.16: Drawing directly to the surface is no longer recommended.   Use `GskRenderNode` and `GskRenderer`.
          */
         get_frame_region(): cairo.Region | null;
 
@@ -12431,6 +12491,7 @@ export namespace Gdk {
          * and {@link Gdk.DrawContext.end_frame}. In this situation, drawing commands
          * may be effecting the contents of the `context`'s surface.
          * @returns `true` if the context is between {@link Gdk.DrawContext.begin_frame}   and {@link Gdk.DrawContext.end_frame} calls.
+         * @deprecated since 4.16: Drawing directly to the surface is no longer recommended.   Use `GskRenderNode` and `GskRenderer`.
          */
         is_in_frame(): boolean;
     }
@@ -13389,6 +13450,7 @@ export namespace Gdk {
         /**
          * Gets the allowed APIs set via `gdk_gl_context_set_allowed_apis()`.
          * @returns the allowed APIs
+         * @since 4.6
          */
         get_allowed_apis(): GLAPI;
 
@@ -13397,6 +13459,7 @@ export namespace Gdk {
          * 
          * If the renderer has not been realized yet, 0 is returned.
          * @returns the currently used API
+         * @since 4.6
          */
         get_api(): GLAPI;
 
@@ -13438,6 +13501,7 @@ export namespace Gdk {
          * As many contexts can share data now and no single shared context exists
          * anymore, this function has been deprecated and now always returns `null`.
          * @returns `null`
+         * @deprecated since 4.4: Use {@link Gdk.GLContext.is_shared} to check if contexts   can be shared.
          */
         get_shared_context(): GLContext | null;
 
@@ -13496,6 +13560,7 @@ export namespace Gdk {
          * is not, this function will return `false`.
          * @param other the {@link Gdk.GLContext} that should be compatible with `self`
          * @returns `true` if the two GL contexts are compatible.
+         * @since 4.4
          */
         is_shared(other: GLContext): boolean;
 
@@ -13521,6 +13586,7 @@ export namespace Gdk {
          * 
          * By default, all APIs are allowed.
          * @param apis the allowed APIs
+         * @since 4.6
          */
         set_allowed_apis(apis: GLAPI): void;
 
@@ -13580,6 +13646,7 @@ export namespace Gdk {
          * after calling {@link Gdk.GLContext.realize} to decide whether to use
          * the OpenGL or OpenGL ES API, extensions, or shaders.
          * @param use_es whether the context should use OpenGL ES instead of OpenGL,   or -1 to allow auto-detection
+         * @deprecated since 4.6
          */
         set_use_es(use_es: number): void;
     }
@@ -13880,6 +13947,7 @@ export namespace Gdk {
          * makes sense to transfer the {@link GLib.Variant} between processes on the same machine,
          * (as opposed to over the network), and within the same file system namespace.
          * @returns a {@link GLib.Variant}, or `null` when serialization fails. The {@link GLib.Variant} will not be floating.
+         * @since 2.38
          */
         serialize(): GLib.Variant | null;
 
@@ -13901,6 +13969,7 @@ export namespace Gdk {
          * - If `icon` is a {@link Gio.ThemedIcon} with exactly one name and no fallbacks,
          *   the encoding is simply the name (such as `network-server`).
          * @returns An allocated NUL-terminated UTF8 string or `null` if `icon` can't be serialized. Use `g_free()` to free.
+         * @since 2.20
          */
         to_string(): string | null;
 
@@ -13923,6 +13992,7 @@ export namespace Gdk {
          * As serialization will avoid using raw icon data when possible, it only
          * makes sense to transfer the {@link GLib.Variant} between processes on the same machine,
          * (as opposed to over the network), and within the same file system namespace.
+         * @since 2.38
          * @virtual
          */
         vfunc_serialize(): GLib.Variant | null;
@@ -13930,6 +14000,7 @@ export namespace Gdk {
         /**
          * Serializes the `icon` into string tokens.
          * This is can be invoked when `g_icon_new_for_string()` is called.
+         * @since 2.20
          * @virtual
          */
         vfunc_to_tokens(): [boolean, string[], number];
@@ -14212,12 +14283,14 @@ export namespace Gdk {
          * possibly with changing properties in between.
          * @param data user data to pass to the destroy function
          * @returns a newly built {@link Gdk.Texture}
+         * @since 4.12
          */
         build(data: null): Texture;
 
         /**
          * Gets the color state previously set via `gdk_gl_texture_builder_set_color_state()`.
          * @returns the color state
+         * @since 4.16
          */
         get_color_state(): ColorState;
 
@@ -14225,18 +14298,21 @@ export namespace Gdk {
          * Gets the context previously set via `gdk_gl_texture_builder_set_context()` or
          * `null` if none was set.
          * @returns The context
+         * @since 4.12
          */
         get_context(): GLContext | null;
 
         /**
          * Gets the format previously set via `gdk_gl_texture_builder_set_format()`.
          * @returns The format
+         * @since 4.12
          */
         get_format(): MemoryFormat;
 
         /**
          * Gets whether the texture has a mipmap.
          * @returns Whether the texture has a mipmap
+         * @since 4.12
          */
         get_has_mipmap(): boolean;
 
@@ -14244,6 +14320,7 @@ export namespace Gdk {
          * Gets the height previously set via `gdk_gl_texture_builder_set_height()` or
          * 0 if the height wasn't set.
          * @returns The height
+         * @since 4.12
          */
         get_height(): number;
 
@@ -14251,12 +14328,14 @@ export namespace Gdk {
          * Gets the texture id previously set via `gdk_gl_texture_builder_set_id()` or
          * 0 if the id wasn't set.
          * @returns The id
+         * @since 4.12
          */
         get_id(): number;
 
         /**
          * Gets the `GLsync` previously set via `gdk_gl_texture_builder_set_sync()`.
          * @returns the `GLSync`
+         * @since 4.12
          */
         get_sync(): null;
 
@@ -14264,6 +14343,7 @@ export namespace Gdk {
          * Gets the region previously set via `gdk_gl_texture_builder_set_update_region()` or
          * `null` if none was set.
          * @returns The region
+         * @since 4.12
          */
         get_update_region(): cairo.Region | null;
 
@@ -14271,6 +14351,7 @@ export namespace Gdk {
          * Gets the texture previously set via `gdk_gl_texture_builder_set_update_texture()` or
          * `null` if none was set.
          * @returns The texture
+         * @since 4.12
          */
         get_update_texture(): Texture | null;
 
@@ -14278,6 +14359,7 @@ export namespace Gdk {
          * Gets the width previously set via `gdk_gl_texture_builder_set_width()` or
          * 0 if the width wasn't set.
          * @returns The width
+         * @since 4.12
          */
         get_width(): number;
 
@@ -14287,6 +14369,7 @@ export namespace Gdk {
          * By default, the sRGB colorstate is used. If you don't know what
          * colorstates are, this is probably the right thing.
          * @param color_state a {@link Gdk.ColorState}
+         * @since 4.16
          */
         set_color_state(color_state: ColorState): void;
 
@@ -14296,6 +14379,7 @@ export namespace Gdk {
          * 
          * The context must be set before calling {@link Gdk.GLTextureBuilder.build}.
          * @param context The context the texture belongs to or `null` to unset
+         * @since 4.12
          */
         set_context(context: GLContext | null): void;
 
@@ -14317,6 +14401,7 @@ export namespace Gdk {
          * Non-RGBA textures need to have swizzling parameters set up properly to be usable
          * in GSK's shaders.
          * @param format The texture's format
+         * @since 4.12
          */
         set_format(format: MemoryFormat): void;
 
@@ -14326,6 +14411,7 @@ export namespace Gdk {
          * 
          * Typically, the `glGenerateMipmap` function is used to generate a mimap.
          * @param has_mipmap Whether the texture has a mipmap
+         * @since 4.12
          */
         set_has_mipmap(has_mipmap: boolean): void;
 
@@ -14334,6 +14420,7 @@ export namespace Gdk {
          * 
          * The height must be set before calling {@link Gdk.GLTextureBuilder.build}.
          * @param height The texture's height or 0 to unset
+         * @since 4.12
          */
         set_height(height: number): void;
 
@@ -14344,6 +14431,7 @@ export namespace Gdk {
          * 
          * The id must be set before calling {@link Gdk.GLTextureBuilder.build}.
          * @param id The texture id to be used for creating the texture
+         * @since 4.12
          */
         set_id(id: number): void;
 
@@ -14357,6 +14445,7 @@ export namespace Gdk {
          * The texture builder does not destroy it and it is the callers
          * responsibility to make sure it doesn't leak.
          * @param sync the GLSync object
+         * @since 4.12
          */
         set_sync(sync: null): void;
 
@@ -14372,6 +14461,7 @@ export namespace Gdk {
          * 
          * An example would be a screen recording where only the mouse pointer moves.
          * @param region the region to update
+         * @since 4.12
          */
         set_update_region(region: cairo.Region | null): void;
 
@@ -14379,6 +14469,7 @@ export namespace Gdk {
          * Sets the texture to be updated by this texture. See
          * {@link Gdk.GLTextureBuilder.set_update_region} for an explanation.
          * @param texture the texture to update
+         * @since 4.12
          */
         set_update_texture(texture: Texture | null): void;
 
@@ -14387,6 +14478,7 @@ export namespace Gdk {
          * 
          * The width must be set before calling {@link Gdk.GLTextureBuilder.build}.
          * @param width The texture's width or 0 to unset
+         * @since 4.12
          */
         set_width(width: number): void;
     }
@@ -14811,6 +14903,7 @@ export namespace Gdk {
          * makes sense to transfer the {@link GLib.Variant} between processes on the same machine,
          * (as opposed to over the network), and within the same file system namespace.
          * @returns a {@link GLib.Variant}, or `null` when serialization fails. The {@link GLib.Variant} will not be floating.
+         * @since 2.38
          */
         serialize(): GLib.Variant | null;
 
@@ -14832,6 +14925,7 @@ export namespace Gdk {
          * - If `icon` is a {@link Gio.ThemedIcon} with exactly one name and no fallbacks,
          *   the encoding is simply the name (such as `network-server`).
          * @returns An allocated NUL-terminated UTF8 string or `null` if `icon` can't be serialized. Use `g_free()` to free.
+         * @since 2.20
          */
         to_string(): string | null;
 
@@ -14854,6 +14948,7 @@ export namespace Gdk {
          * As serialization will avoid using raw icon data when possible, it only
          * makes sense to transfer the {@link GLib.Variant} between processes on the same machine,
          * (as opposed to over the network), and within the same file system namespace.
+         * @since 2.38
          * @virtual
          */
         vfunc_serialize(): GLib.Variant | null;
@@ -14861,6 +14956,7 @@ export namespace Gdk {
         /**
          * Serializes the `icon` into string tokens.
          * This is can be invoked when `g_icon_new_for_string()` is called.
+         * @since 2.20
          * @virtual
          */
         vfunc_to_tokens(): [boolean, string[], number];
@@ -15110,6 +15206,7 @@ export namespace Gdk {
          * It is possible to call this function multiple times to create multiple textures,
          * possibly with changing properties in between.
          * @returns a newly built {@link Gdk.Texture}
+         * @since 4.16
          */
         build(): Texture;
 
@@ -15117,18 +15214,21 @@ export namespace Gdk {
          * Gets the bytes previously set via `gdk_memory_texture_builder_set_bytes()`
          * or `null` if none was set.
          * @returns The bytes
+         * @since 4.16
          */
         get_bytes(): GLib.Bytes | null;
 
         /**
          * Gets the colorstate previously set via `gdk_memory_texture_builder_set_color_state()`.
          * @returns The colorstate
+         * @since 4.16
          */
         get_color_state(): ColorState;
 
         /**
          * Gets the format previously set via `gdk_memory_texture_builder_set_format()`.
          * @returns The format
+         * @since 4.16
          */
         get_format(): MemoryFormat;
 
@@ -15136,6 +15236,7 @@ export namespace Gdk {
          * Gets the height previously set via `gdk_memory_texture_builder_set_height()`
          * or 0 if the height wasn't set.
          * @returns The height
+         * @since 4.16
          */
         get_height(): number;
 
@@ -15143,12 +15244,14 @@ export namespace Gdk {
          * Gets the offset previously set via `gdk_memory_texture_builder_set_offset()`.
          * @param plane a plane
          * @returns The offset associated to a `plane`
+         * @since 4.20
          */
         get_offset(plane: number): number;
 
         /**
          * Gets the stride previously set via `gdk_memory_texture_builder_set_stride()`.
          * @returns the stride
+         * @since 4.16
          */
         get_stride(): number;
 
@@ -15156,6 +15259,7 @@ export namespace Gdk {
          * Gets the stride previously set via `gdk_memory_texture_builder_set_stride_for_plane()`.
          * @param plane a plane
          * @returns The stride associated to a `plane`
+         * @since 4.20
          */
         get_stride_for_plane(plane: number): number;
 
@@ -15163,6 +15267,7 @@ export namespace Gdk {
          * Gets the region previously set via `gdk_memory_texture_builder_set_update_region()`
          * or `null` if none was set.
          * @returns The update region
+         * @since 4.16
          */
         get_update_region(): cairo.Region | null;
 
@@ -15170,6 +15275,7 @@ export namespace Gdk {
          * Gets the texture previously set via `gdk_memory_texture_builder_set_update_texture()`
          * or `null` if none was set.
          * @returns The update texture
+         * @since 4.16
          */
         get_update_texture(): Texture | null;
 
@@ -15177,6 +15283,7 @@ export namespace Gdk {
          * Gets the width previously set via `gdk_memory_texture_builder_set_width()`
          * or 0 if the width wasn't set.
          * @returns The width
+         * @since 4.16
          */
         get_width(): number;
 
@@ -15185,6 +15292,7 @@ export namespace Gdk {
          * 
          * The bytes must be set before calling {@link Gdk.MemoryTextureBuilder.build}.
          * @param bytes The bytes the texture shows or `null` to unset
+         * @since 4.16
          */
         set_bytes(bytes: GLib.Bytes | Uint8Array | null): void;
 
@@ -15194,6 +15302,7 @@ export namespace Gdk {
          * By default, the sRGB colorstate is used. If you don't know
          * what colorstates are, this is probably the right thing.
          * @param color_state The colorstate describing the data
+         * @since 4.16
          */
         set_color_state(color_state: ColorState): void;
 
@@ -15202,6 +15311,7 @@ export namespace Gdk {
          * 
          * The default is `GDK_MEMORY_R8G8B8A8_PREMULTIPLIED`.
          * @param format The texture's format
+         * @since 4.16
          */
         set_format(format: MemoryFormat): void;
 
@@ -15211,6 +15321,7 @@ export namespace Gdk {
          * The height must be set before calling {@link Gdk.MemoryTextureBuilder.build}
          * and conform to size requirements of the provided format.
          * @param height The texture's height or 0 to unset
+         * @since 4.16
          */
         set_height(height: number): void;
 
@@ -15218,6 +15329,7 @@ export namespace Gdk {
          * Sets the offset of the texture for `plane`.
          * @param plane a plane
          * @param offset the texture's offset for `plane`
+         * @since 4.20
          */
         set_offset(plane: number, offset: bigint | number): void;
 
@@ -15226,6 +15338,7 @@ export namespace Gdk {
          * 
          * The rowstride must be set before calling {@link Gdk.MemoryTextureBuilder.build}.
          * @param stride the stride or 0 to unset
+         * @since 4.16
          */
         set_stride(stride: bigint | number): void;
 
@@ -15233,6 +15346,7 @@ export namespace Gdk {
          * Sets the stride of the texture for `plane`.
          * @param plane a plane
          * @param stride the texture's stride for `plane`
+         * @since 4.20
          */
         set_stride_for_plane(plane: number, stride: bigint | number): void;
 
@@ -15249,6 +15363,7 @@ export namespace Gdk {
          * 
          * An example would be a screen recording where only the mouse pointer moves.
          * @param region the region to update
+         * @since 4.16
          */
         set_update_region(region: cairo.Region | null): void;
 
@@ -15257,6 +15372,7 @@ export namespace Gdk {
          * 
          * See {@link Gdk.MemoryTextureBuilder.set_update_region} for an explanation.
          * @param texture the texture to update
+         * @since 4.16
          */
         set_update_texture(texture: Texture | null): void;
 
@@ -15266,6 +15382,7 @@ export namespace Gdk {
          * The width must be set before calling {@link Gdk.MemoryTextureBuilder.build}
          * and conform to size requirements of the provided format.
          * @param width The texture's width or 0 to unset
+         * @since 4.16
          */
         set_width(width: number): void;
     }
@@ -15506,6 +15623,7 @@ export namespace Gdk {
          * 
          * This can be used to identify a monitor in the UI.
          * @returns the monitor description
+         * @since 4.10
          */
         get_description(): string | null;
 
@@ -15565,6 +15683,7 @@ export namespace Gdk {
          * particular monitor, but most of the time you’re drawing to a surface
          * where it is better to use {@link Gdk.Surface.get_scale} instead.
          * @returns the scale
+         * @since 4.14
          */
         get_scale(): number;
 
@@ -15764,6 +15883,7 @@ export namespace Gdk {
         /**
          * Extracts the scroll direction relative to the physical motion.
          * @returns the relative scroll direction.
+         * @since 4.20
          */
         get_relative_direction(): ScrollRelativeDirection;
 
@@ -15773,6 +15893,7 @@ export namespace Gdk {
          * The unit will always be {@link Gdk.ScrollUnit.WHEEL} if the scroll direction is not
          * {@link Gdk.ScrollDirection.SMOOTH}.
          * @returns the scroll unit.
+         * @since 4.8
          */
         get_unit(): ScrollUnit;
 
@@ -16155,6 +16276,7 @@ export namespace Gdk {
         /**
          * Creates a new {@link Gdk.CairoContext} for rendering on `surface`.
          * @returns the newly created {@link Gdk.CairoContext}
+         * @deprecated since 4.18: Drawing content with Cairo should be done via   Cairo rendernodes, not by using the Cairo renderer.
          */
         create_cairo_context(): CairoContext;
 
@@ -16189,12 +16311,14 @@ export namespace Gdk {
          * @param width width of the new surface
          * @param height height of the new surface
          * @returns a pointer to the newly allocated surface. The caller   owns the surface and should call `cairo_surface_destroy()` when done   with it.
+         * @deprecated since 4.12: Create a suitable cairo image surface yourself
          */
         create_similar_surface(content: cairo.Content, width: number, height: number): cairo.Surface;
 
         /**
          * Sets an error and returns `null`.
          * @returns `null`
+         * @deprecated since 4.14: GTK does not expose any Vulkan internals. This   function is a leftover that was accidentally exposed.
          */
         create_vulkan_context(): VulkanContext;
 
@@ -16292,6 +16416,7 @@ export namespace Gdk {
          * 
          * The scale may change during the lifetime of the surface.
          * @returns the scale
+         * @since 4.12
          */
         get_scale(): number;
 
@@ -16414,6 +16539,7 @@ export namespace Gdk {
          * background is not opaque, please update this property in your
          * [GtkWidgetClass.css_changed](../gtk4/vfunc.Widget.css_changed.html) handler.
          * @param region a region, or `null` to make the entire   surface opaque
+         * @deprecated since 4.16: GDK can figure out the opaque parts of a window itself   by inspecting the contents that are drawn.
          */
         set_opaque_region(region: cairo.Region | null): void;
 
@@ -16578,6 +16704,7 @@ export namespace Gdk {
         /**
          * Returns the color state associated with the texture.
          * @returns the color state of the {@link Gdk.Texture}
+         * @since 4.16
          */
         get_color_state(): ColorState;
 
@@ -16592,6 +16719,7 @@ export namespace Gdk {
          * of the texture and is useful to determine the best format for
          * downloading the texture.
          * @returns the preferred format for the texture's data
+         * @since 4.10
          */
         get_format(): MemoryFormat;
 
@@ -16636,6 +16764,7 @@ export namespace Gdk {
          * might also want to consider {@link Gdk.Texture.save_to_tiff_bytes}
          * instead.
          * @returns a newly allocated {@link GLib.Bytes} containing PNG data
+         * @since 4.6
          */
         save_to_png_bytes(): GLib.Bytes;
 
@@ -16645,6 +16774,7 @@ export namespace Gdk {
          * GTK will attempt to store data without loss.
          * @param filename the filename to store to
          * @returns `true` if saving succeeded, `false` on failure.
+         * @since 4.6
          */
         save_to_tiff(filename: string): boolean;
 
@@ -16662,6 +16792,7 @@ export namespace Gdk {
          * smaller size and a more portable format, you might want to
          * use {@link Gdk.Texture.save_to_png_bytes}.
          * @returns a newly allocated {@link GLib.Bytes} containing TIFF data
+         * @since 4.6
          */
         save_to_tiff_bytes(): GLib.Bytes;
 
@@ -16902,6 +17033,7 @@ export namespace Gdk {
          * makes sense to transfer the {@link GLib.Variant} between processes on the same machine,
          * (as opposed to over the network), and within the same file system namespace.
          * @returns a {@link GLib.Variant}, or `null` when serialization fails. The {@link GLib.Variant} will not be floating.
+         * @since 2.38
          */
         serialize(): GLib.Variant | null;
 
@@ -16923,6 +17055,7 @@ export namespace Gdk {
          * - If `icon` is a {@link Gio.ThemedIcon} with exactly one name and no fallbacks,
          *   the encoding is simply the name (such as `network-server`).
          * @returns An allocated NUL-terminated UTF8 string or `null` if `icon` can't be serialized. Use `g_free()` to free.
+         * @since 2.20
          */
         to_string(): string | null;
 
@@ -16945,6 +17078,7 @@ export namespace Gdk {
          * As serialization will avoid using raw icon data when possible, it only
          * makes sense to transfer the {@link GLib.Variant} between processes on the same machine,
          * (as opposed to over the network), and within the same file system namespace.
+         * @since 2.38
          * @virtual
          */
         vfunc_serialize(): GLib.Variant | null;
@@ -16952,6 +17086,7 @@ export namespace Gdk {
         /**
          * Serializes the `icon` into string tokens.
          * This is can be invoked when `g_icon_new_for_string()` is called.
+         * @since 2.20
          * @virtual
          */
         vfunc_to_tokens(): [boolean, string[], number];
@@ -17237,6 +17372,7 @@ export namespace Gdk {
          * Returns the color state object representing the oklab color space.
          * 
          * This is a perceptually uniform color state.
+         * @since 4.18
          */
         static get_oklab(): ColorState;
 
@@ -17245,6 +17381,7 @@ export namespace Gdk {
          * 
          * This is the polar variant of oklab, in which the hue is encoded as
          * a polar coordinate.
+         * @since 4.18
          */
         static get_oklch(): ColorState;
 
@@ -17258,6 +17395,7 @@ export namespace Gdk {
          * 
          * See e.g. [the CSS HDR Module](https://drafts.csswg.org/css-color-hdr/#valdef-color-rec2100-linear)
          * for details about this colorstate.
+         * @since 4.16
          */
         static get_rec2100_linear(): ColorState;
 
@@ -17271,6 +17409,7 @@ export namespace Gdk {
          * 
          * See e.g. [the CSS HDR Module](https://drafts.csswg.org/css-color-hdr/#valdef-color-rec2100-pq)
          * for details about this colorstate.
+         * @since 4.16
          */
         static get_rec2100_pq(): ColorState;
 
@@ -17284,6 +17423,7 @@ export namespace Gdk {
          * 
          * See e.g. [the CSS Color Module](https://www.w3.org/TR/css-color-4/#predefined-sRGB)
          * for details about this colorstate.
+         * @since 4.16
          */
         static get_srgb(): ColorState;
 
@@ -17296,6 +17436,7 @@ export namespace Gdk {
          * 
          * See e.g. [the CSS Color Module](https://www.w3.org/TR/css-color-4/#predefined-sRGB-linear)
          * for details about this colorstate.
+         * @since 4.16
          */
         static get_srgb_linear(): ColorState;
 
@@ -17307,6 +17448,7 @@ export namespace Gdk {
          * represented with Cicp parameters. If that is the case,
          * this function returns `NULL`.
          * @returns A new {@link Gdk.CicpParams}
+         * @since 4.16
          */
         create_cicp_params(): CicpParams | null;
 
@@ -17318,6 +17460,7 @@ export namespace Gdk {
          * color states will never compare equal.
          * @param other another `GdkColorStatee`
          * @returns `true` if the two color states compare equal
+         * @since 4.16
          */
         equal(other: ColorState): boolean;
 
@@ -17328,12 +17471,14 @@ export namespace Gdk {
          * even though they may not be equal in the sense of {@link Gdk.ColorState.equal}.
          * @param other another `GdkColorStatee`
          * @returns `true` if the two color states are equivalent
+         * @since 4.20
          */
         equivalent(other: ColorState): boolean;
 
         /**
          * Increase the reference count of `self`.
          * @returns the object that was passed in
+         * @since 4.16
          */
         ref(): ColorState;
 
@@ -17342,6 +17487,7 @@ export namespace Gdk {
          * 
          * Unless `self` is static, it will be freed
          * when the reference count reaches zero.
+         * @since 4.16
          */
         unref(): void;
     }
@@ -17407,6 +17553,7 @@ export namespace Gdk {
          * If `string` does not describe valid content formats, `null`
          * is returned.
          * @param string the string to parse
+         * @since 4.4
          */
         static parse(string: string): ContentFormats | null;
 
@@ -17446,6 +17593,7 @@ export namespace Gdk {
         /**
          * Returns whether the content formats contain any formats.
          * @returns true if `formats` contains no mime types and no GTypes
+         * @since 4.18
          */
         is_empty(): boolean;
 
@@ -17687,6 +17835,7 @@ export namespace Gdk {
          * @param fourcc a format code
          * @param modifier a format modifier
          * @returns `TRUE` if the format specified by the arguments   is part of `formats`
+         * @since 4.14
          */
         contains(fourcc: number, modifier: bigint | number): boolean;
 
@@ -17695,6 +17844,7 @@ export namespace Gdk {
          * same dmabuf formats, in the same order.
          * @param formats2 another {@link Gdk.DmabufFormats}
          * @returns `TRUE` if `formats1` and `formats2` are equal
+         * @since 4.14
          */
         equal(formats2: DmabufFormats | null): boolean;
 
@@ -17702,6 +17852,7 @@ export namespace Gdk {
          * Gets the fourcc code and modifier for a format
          * that is contained in `formats`.
          * @param idx the index of the format to return
+         * @since 4.14
          */
         get_format(idx: bigint | number): [number, number];
 
@@ -17713,12 +17864,14 @@ export namespace Gdk {
          * platforms, {@link Gdk.DmabufFormats.get_n_formats} will
          * always return zero.
          * @returns the number of formats
+         * @since 4.14
          */
         get_n_formats(): number;
 
         /**
          * Increases the reference count of `formats`.
          * @returns the passed-in object
+         * @since 4.14
          */
         ref(): DmabufFormats;
 
@@ -17727,6 +17880,7 @@ export namespace Gdk {
          * 
          * When the reference count reaches zero,
          * the object is freed.
+         * @since 4.14
          */
         unref(): void;
     }
@@ -17765,6 +17919,7 @@ export namespace Gdk {
          * Sets the size the drag surface prefers to be resized to.
          * @param width the width
          * @param height the height
+         * @since 4.12
          */
         set_size(width: number, height: number): void;
     }
@@ -17810,6 +17965,7 @@ export namespace Gdk {
          * 
          * This function is meant for language bindings.
          * @returns the files inside the list
+         * @since 4.6
          */
         get_files(): Gio.File[];
     }
@@ -17915,6 +18071,7 @@ export namespace Gdk {
          * available at all. Looking at the result of the timings gives
          * an explanation for why a value is not available.
          * @returns The result of the frame these timings have been recorded for.
+         * @since 4.24
          */
         get_result(): FrameResult;
 
@@ -18080,6 +18237,7 @@ export namespace Gdk {
 
         /**
          * Obtains the shadow widths of this layout.
+         * @since 4.2
          */
         get_shadow_width(): [number, number, number, number];
 
@@ -18136,6 +18294,7 @@ export namespace Gdk {
          * @param right width of the right part of the shadow
          * @param top height of the top part of the shadow
          * @param bottom height of the bottom part of the shadow
+         * @since 4.2
          */
         set_shadow_width(left: number, right: number, top: number, bottom: number): void;
 
@@ -18261,6 +18420,7 @@ export namespace Gdk {
          * Appends a representation of `rgba` to `string`.
          * @param string the string to print to
          * @returns A newly allocated text string
+         * @since 4.22
          */
         print(string: GLib.String): GLib.String;
 
@@ -18414,6 +18574,7 @@ export namespace Gdk {
          * 
          * This function is meant for language bindings.
          * @returns A copy of the downloader
+         * @since 4.10
          */
         copy(): TextureDownloader;
 
@@ -18429,6 +18590,7 @@ export namespace Gdk {
          * This function cannot be used with a multiplanar format. Use
          * {@link Gdk.TextureDownloader.download_bytes_with_planes} for that purpose.
          * @returns The downloaded pixels
+         * @since 4.10
          */
         download_bytes(): [GLib.Bytes, number];
 
@@ -18439,6 +18601,7 @@ export namespace Gdk {
          * If the format does have less than 4 planes, the remaining offsets and strides will be
          * set to `0`.
          * @returns The downloaded pixels
+         * @since 4.20
          */
         download_bytes_with_planes(): [GLib.Bytes, number[], number[]];
 
@@ -18448,29 +18611,34 @@ export namespace Gdk {
          * This function cannot be used with a multiplanar format.
          * @param data pointer to enough memory to be filled with the   downloaded data of the texture
          * @param stride rowstride in bytes
+         * @since 4.10
          */
         download_into(data: Uint8Array | string, stride: bigint | number): void;
 
         /**
          * Frees the given downloader and all its associated resources.
+         * @since 4.10
          */
         free(): void;
 
         /**
          * Gets the color state that the data will be downloaded in.
          * @returns The color state of the download
+         * @since 4.16
          */
         get_color_state(): ColorState;
 
         /**
          * Gets the format that the data will be downloaded in.
          * @returns The format of the download
+         * @since 4.10
          */
         get_format(): MemoryFormat;
 
         /**
          * Gets the texture that the downloader will download.
          * @returns The texture to download
+         * @since 4.10
          */
         get_texture(): Texture;
 
@@ -18480,6 +18648,7 @@ export namespace Gdk {
          * By default, the sRGB colorstate returned by {@link ColorState.get_srgb}
          * is used.
          * @param color_state the color state to use
+         * @since 4.16
          */
         set_color_state(color_state: ColorState): void;
 
@@ -18488,12 +18657,14 @@ export namespace Gdk {
          * 
          * By default, GDK_MEMORY_DEFAULT is set.
          * @param format the format to use
+         * @since 4.10
          */
         set_format(format: MemoryFormat): void;
 
         /**
          * Changes the texture the downloader will download.
          * @param texture the new texture to download
+         * @since 4.10
          */
         set_texture(texture: Texture): void;
     }
@@ -19420,6 +19591,7 @@ export namespace Gdk {
         /**
          * The capabilities that are available for this toplevel.
          * @returns the capabilities of the {@link Gdk.Toplevel}.
+         * @since 4.20
          */
         get_capabilities(): ToplevelCapabilities;
 
@@ -19427,6 +19599,7 @@ export namespace Gdk {
          * Returns the gravity that is used when changing the toplevel
          * size programmatically.
          * @returns the gravity
+         * @since 4.20
          */
         get_gravity(): Gravity;
 
@@ -19526,6 +19699,7 @@ export namespace Gdk {
          * Sets the gravity that is used when changing the toplevel
          * size programmatically.
          * @param gravity the new gravity
+         * @since 4.20
          */
         set_gravity(gravity: Gravity): void;
 
@@ -19613,6 +19787,7 @@ export namespace Gdk {
          * Performs a title bar gesture.
          * @param gesture a {@link Gdk.TitlebarGesture}
          * @returns whether the gesture was performed
+         * @since 4.4
          */
         titlebar_gesture(gesture: TitlebarGesture): boolean;
     }

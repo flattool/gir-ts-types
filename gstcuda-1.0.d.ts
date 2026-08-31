@@ -345,6 +345,7 @@ export namespace GstCuda {
          * 
          * This method is conceptually identical to gst_buffer_pool_set_active method.
          * @param active the new active state
+         * @since 1.24
          * @virtual
          */
         vfunc_set_active(active: boolean): boolean;
@@ -355,6 +356,7 @@ export namespace GstCuda {
          * @param stream a {@link GstCuda.CudaStream}
          * @param info a {@link GstVideo.VideoInfo}
          * @returns a newly allocated {@link GstCuda.CudaMemory}
+         * @since 1.22
          */
         alloc(context: CudaContext, stream: CudaStream | null, info: GstVideo.VideoInfo): Gst.Memory | null;
 
@@ -369,6 +371,7 @@ export namespace GstCuda {
          * @param stream a {@link GstCuda.CudaStream}
          * @param info a {@link GstVideo.VideoInfo}
          * @returns a newly allocated {@link GstCuda.CudaMemory}
+         * @since 1.28
          */
         alloc_stream_ordered(context: CudaContext, stream: CudaStream, info: GstVideo.VideoInfo): Gst.Memory | null;
 
@@ -388,6 +391,7 @@ export namespace GstCuda {
          * @param dev_ptr a CUdeviceptr CUDA device memory
          * @param notify Called with `user_data` when the memory is freed
          * @returns a new {@link Gst.Memory}
+         * @since 1.24
          */
         alloc_wrapped(context: CudaContext, stream: CudaStream | null, info: GstVideo.VideoInfo, dev_ptr: CudaGst.deviceptr, notify: GLib.DestroyNotify | null): Gst.Memory;
 
@@ -400,6 +404,7 @@ export namespace GstCuda {
          * This method is conceptually identical to gst_buffer_pool_set_active method.
          * @param active the new active state
          * @returns `true` if active state of `allocator` was successfully updated.
+         * @since 1.24
          */
         set_active(active: boolean): boolean;
 
@@ -411,6 +416,7 @@ export namespace GstCuda {
          * @param prop allocation property
          * @param granularity_flags allocation flags
          * @returns a newly allocated memory object or `null` if allocation is not supported
+         * @since 1.24
          */
         virtual_alloc(context: CudaContext, stream: CudaStream, info: GstVideo.VideoInfo, prop: CudaGst.memAllocationProp, granularity_flags: CudaGst.memAllocationGranularity_flags): Gst.Memory | null;
     }
@@ -655,12 +661,14 @@ export namespace GstCuda {
          * Finds the DXGI adapter LUID corresponding to the given CUDA device.
          * This is useful for matching CUDA devices with Direct3D adapters on Windows.
          * @param cuda_device a CUDA device index
+         * @since 1.28.2
          */
         static find_dxgi_adapter_luid(cuda_device: CudaGst.device): number;
 
         /**
          * Pops the current CUDA context from CPU thread
          * @param cuda_ctx 
+         * @since 1.22
          */
         static pop(cuda_ctx: CudaGst.context): boolean;
 
@@ -669,6 +677,7 @@ export namespace GstCuda {
          * Query whether `ctx` can access any memory which belongs to `peer` directly.
          * @param peer a {@link GstCuda.CudaContext}
          * @returns `true` if `ctx` can access `peer` directly
+         * @since 1.22
          */
         can_access_peer(peer: CudaContext): boolean;
 
@@ -676,12 +685,14 @@ export namespace GstCuda {
          * Get CUDA device context. Caller must not modify and/or destroy
          * returned device context.
          * @returns the {@link CudaGst.context} of `ctx`
+         * @since 1.22
          */
         get_handle(): null;
 
         /**
          * Get required texture alignment by device
          * @returns the {@link CudaGst.context} of `ctx`
+         * @since 1.22
          */
         get_texture_alignment(): number;
 
@@ -690,6 +701,7 @@ export namespace GstCuda {
          * The specified context becomes the CPU thread's current context,
          * so all CUDA functions that operate on the current context are affected.
          * @returns `true` if `ctx` was pushed without error.
+         * @since 1.22
          */
         push(): boolean;
     }
@@ -755,6 +767,7 @@ export namespace GstCuda {
          * Acquires a {@link Gst.Memory} from `allocator`. `memory` should point to a memory
          * location that can hold a pointer to the new {@link Gst.Memory}.
          * @returns a {@link Gst.FlowReturn} such as {@link Gst.FlowReturn.FLUSHING} when the allocator is inactive.
+         * @since 1.24
          */
         acquire_memory(): [Gst.FlowReturn, Gst.Memory];
     }
@@ -824,6 +837,7 @@ export namespace GstCuda {
         // Methods
         /**
          * Free `resource`
+         * @since 1.22
          */
         free(): void;
     }
@@ -842,6 +856,7 @@ export namespace GstCuda {
         // Static methods
         /**
          * Ensures that the {@link GstCuda.CudaAllocator} is initialized and ready to be used.
+         * @since 1.22
          */
         static init_once(): void;
 
@@ -855,17 +870,20 @@ export namespace GstCuda {
          * The returned `os_handle` is owned by `mem` and therefore caller shouldn't
          * close the handle.
          * @returns `true` if successful
+         * @since 1.24
          */
         ["export"](): [boolean, null];
 
         /**
          * Query allocation method
+         * @since 1.24
          */
         get_alloc_method(): CudaMemoryAllocMethod;
 
         /**
          * Gets CUDA stream object associated with `mem`
          * @returns a {@link GstCuda.CudaStream} or `null` if default CUDA stream is in use
+         * @since 1.24
          */
         get_stream(): CudaStream | null;
 
@@ -874,6 +892,7 @@ export namespace GstCuda {
          * @param plane the plane index
          * @param filter_mode filter mode
          * @returns `true` if successful
+         * @since 1.24
          */
         get_texture(plane: number, filter_mode: CudaGst.filter_mode): [boolean, CudaGst.texObject];
 
@@ -881,12 +900,14 @@ export namespace GstCuda {
          * Gets back user data pointer stored via `gst_cuda_memory_set_token_data()`
          * @param token an user token
          * @returns user data pointer or `null`
+         * @since 1.24
          */
         get_token_data(token: bigint | number): null;
 
         /**
          * Gets user data pointer stored via `gst_cuda_allocator_alloc_wrapped()`
          * @returns the user data pointer
+         * @since 1.24
          */
         get_user_data(): null;
 
@@ -894,11 +915,13 @@ export namespace GstCuda {
          * Sets an opaque user data on a {@link GstCuda.CudaMemory}
          * @param token an user token
          * @param data an user data
+         * @since 1.24
          */
         set_token_data(token: bigint | number, data: null): void;
 
         /**
          * Performs synchronization if needed
+         * @since 1.24
          */
         sync(): void;
     }
@@ -923,17 +946,20 @@ export namespace GstCuda {
         /**
          * Get CUDA memory pool handle
          * @returns a CUmemoryPool handle
+         * @since 1.26
          */
         get_handle(): CudaGst.memoryPool;
 
         /**
          * Increase the reference count of `pool`.
          * @returns `pool`
+         * @since 1.26
          */
         ref(): CudaMemoryPool;
 
         /**
          * Decrease the reference count of `pool`.
+         * @since 1.26
          */
         unref(): void;
     }
@@ -987,17 +1013,20 @@ export namespace GstCuda {
         /**
          * Get CUDA stream handle
          * @returns a {@link CudaGst.stream} handle of `stream` or `null` if `stream` is `null`
+         * @since 1.24
          */
         get_handle(): CudaGst.stream;
 
         /**
          * Increase the reference count of `stream`.
          * @returns `stream`
+         * @since 1.24
          */
         ref(): CudaStream;
 
         /**
          * Decrease the reference count of `stream`.
+         * @since 1.24
          */
         unref(): void;
     }

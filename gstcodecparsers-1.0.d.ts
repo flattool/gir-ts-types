@@ -5477,6 +5477,7 @@ export namespace GstCodecParsers {
          * If parser is not `null`, frees its allocated memory.
          * 
          * It cannot be used afterwards.
+         * @since 1.18
          */
         free(): void;
 
@@ -5487,6 +5488,7 @@ export namespace GstCodecParsers {
          * @param size the size of `data`
          * @param obu a {@link GstCodecParsers.AV1OBU} to store the identified result
          * @returns The {@link GstCodecParsers.AV1ParserResult}.
+         * @since 1.18
          */
         identify_one_obu(data: number, size: number, obu: AV1OBU): [AV1ParserResult, number];
 
@@ -5496,6 +5498,7 @@ export namespace GstCodecParsers {
          * @param obu a {@link GstCodecParsers.AV1OBU} to be parsed
          * @param frame_header a {@link GstCodecParsers.AV1FrameHeaderOBU} to store the parsed result.
          * @returns The {@link GstCodecParsers.AV1ParserResult}.
+         * @since 1.18
          */
         parse_frame_header_obu(obu: AV1OBU, frame_header: AV1FrameHeaderOBU): AV1ParserResult;
 
@@ -5505,6 +5508,7 @@ export namespace GstCodecParsers {
          * @param obu a {@link GstCodecParsers.AV1OBU} to be parsed
          * @param frame a {@link GstCodecParsers.AV1FrameOBU} to store the parsed result.
          * @returns The {@link GstCodecParsers.AV1ParserResult}.
+         * @since 1.18
          */
         parse_frame_obu(obu: AV1OBU, frame: AV1FrameOBU): AV1ParserResult;
 
@@ -5513,6 +5517,7 @@ export namespace GstCodecParsers {
          * @param obu a {@link GstCodecParsers.AV1OBU} to be parsed
          * @param metadata a {@link GstCodecParsers.AV1MetadataOBU} to store the parsed result.
          * @returns The {@link GstCodecParsers.AV1ParserResult}.
+         * @since 1.18
          */
         parse_metadata_obu(obu: AV1OBU, metadata: AV1MetadataOBU): AV1ParserResult;
 
@@ -5522,6 +5527,7 @@ export namespace GstCodecParsers {
          * @param obu a {@link GstCodecParsers.AV1OBU} to be parsed
          * @param seq_header a {@link GstCodecParsers.AV1SequenceHeaderOBU} to store the parsed result.
          * @returns The {@link GstCodecParsers.AV1ParserResult}.
+         * @since 1.18
          */
         parse_sequence_header_obu(obu: AV1OBU, seq_header: AV1SequenceHeaderOBU): AV1ParserResult;
 
@@ -5530,6 +5536,7 @@ export namespace GstCodecParsers {
          * The temporal delimiter is just delimiter and contains no content.
          * @param obu a {@link GstCodecParsers.AV1OBU} to be parsed
          * @returns The {@link GstCodecParsers.AV1ParserResult}.
+         * @since 1.18
          */
         parse_temporal_delimiter_obu(obu: AV1OBU): AV1ParserResult;
 
@@ -5539,6 +5546,7 @@ export namespace GstCodecParsers {
          * @param obu a {@link GstCodecParsers.AV1OBU} to be parsed
          * @param tile_group a {@link GstCodecParsers.AV1TileGroupOBU} to store the parsed result.
          * @returns The {@link GstCodecParsers.AV1ParserResult}.
+         * @since 1.18
          */
         parse_tile_group_obu(obu: AV1OBU, tile_group: AV1TileGroupOBU): AV1ParserResult;
 
@@ -5548,6 +5556,7 @@ export namespace GstCodecParsers {
          * @param obu a {@link GstCodecParsers.AV1OBU} to be parsed
          * @param tile_list a {@link GstCodecParsers.AV1TileListOBU} to store the parsed result.
          * @returns The {@link GstCodecParsers.AV1ParserResult}.
+         * @since 1.18
          */
         parse_tile_list_obu(obu: AV1OBU, tile_list: AV1TileListOBU): AV1ParserResult;
 
@@ -5557,18 +5566,21 @@ export namespace GstCodecParsers {
          * such as reference, global parameters.
          * @param frame_header a {@link GstCodecParsers.AV1FrameHeaderOBU} to load
          * @returns The {@link GstCodecParsers.AV1ParserResult}.
+         * @since 1.18
          */
         reference_frame_update(frame_header: AV1FrameHeaderOBU): AV1ParserResult;
 
         /**
          * Reset the current {@link GstCodecParsers.AV1Parser}'s state totally.
          * @param annex_b indicate whether conforms to annex b
+         * @since 1.18
          */
         reset(annex_b: boolean): void;
 
         /**
          * Only reset the current {@link GstCodecParsers.AV1Parser}'s annex b context.
          * The other part of the state is kept.
+         * @since 1.20
          */
         reset_annex_b(): void;
 
@@ -5576,6 +5588,7 @@ export namespace GstCodecParsers {
          * Set the operating point to filter OBUs.
          * @param operating_point the operating point to set
          * @returns The {@link GstCodecParsers.AV1ParserResult}.
+         * @since 1.20
          */
         set_operating_point(operating_point: number): AV1ParserResult;
     }
@@ -6261,6 +6274,7 @@ export namespace GstCodecParsers {
         // Methods
         /**
          * Free `config` data
+         * @since 1.22
          */
         free(): void;
     }
@@ -6611,6 +6625,7 @@ export namespace GstCodecParsers {
         // Methods
         /**
          * Clears all `pps` internal resources.
+         * @since 1.4
          */
         clear(): void;
     }
@@ -7012,6 +7027,7 @@ export namespace GstCodecParsers {
         // Methods
         /**
          * Clears all `sps` internal resources.
+         * @since 1.6
          */
         clear(): void;
     }
@@ -7640,6 +7656,7 @@ export namespace GstCodecParsers {
         // Methods
         /**
          * Free `config` data
+         * @since 1.24
          */
         free(): void;
     }
@@ -8131,6 +8148,7 @@ export namespace GstCodecParsers {
          * @param nalus a caller allocated GArray of {@link GstCodecParsers.H265NalUnit} where to store parsed nal headers
          * @param consumed the size of consumed bytes
          * @returns a {@link GstCodecParsers.H265ParserResult}
+         * @since 1.22
          */
         identify_and_split_nalu_hevc(data: number, offset: number, size: bigint | number, nal_length_size: number, nalus: H265NalUnit[], consumed: bigint | number): H265ParserResult;
 
@@ -8178,6 +8196,7 @@ export namespace GstCodecParsers {
          * @param au a {@link Gst.Buffer} containing AU data
          * @param sei a {@link Gst.Memory} containing a SEI nal
          * @returns a SEI inserted {@link Gst.Buffer} or `null`   if cannot figure out proper position to insert a `sei`
+         * @since 1.18
          */
         insert_sei(au: Gst.Buffer, sei: Gst.Memory): Gst.Buffer | null;
 
@@ -8190,6 +8209,7 @@ export namespace GstCodecParsers {
          * @param au a {@link Gst.Buffer} containing AU data
          * @param sei a {@link Gst.Memory} containing a SEI nal
          * @returns a SEI inserted {@link Gst.Buffer} or `null`   if cannot figure out proper position to insert a `sei`
+         * @since 1.18
          */
         insert_sei_hevc(nal_length_size: number, au: Gst.Buffer, sei: Gst.Memory): Gst.Buffer | null;
 
@@ -8198,6 +8218,7 @@ export namespace GstCodecParsers {
          * already by `parser` or other {@link GstCodecParsers.H265Parser}
          * @param slice The {@link GstCodecParsers.H265SliceHdr} to fill.
          * @returns a {@link GstCodecParsers.H265ParserResult}
+         * @since 1.28
          */
         link_slice_hdr(slice: H265SliceHdr): H265ParserResult;
 
@@ -8210,6 +8231,7 @@ export namespace GstCodecParsers {
          * @param data the data to parse
          * @param size the size of `data`
          * @returns a {@link GstCodecParsers.H265ParserResult}
+         * @since 1.24
          */
         parse_decoder_config_record(data: number, size: bigint | number): [H265ParserResult, H265DecoderConfigRecord];
 
@@ -8256,6 +8278,7 @@ export namespace GstCodecParsers {
          * @param slice The {@link GstCodecParsers.H265SliceHdr} to fill.
          * @param sps_ext The {@link GstCodecParsers.H265SPSEXT} to fill.
          * @returns a {@link GstCodecParsers.H265ParserResult}
+         * @since 1.28
          */
         parse_slice_hdr_ext(nalu: H265NalUnit, slice: H265SliceHdr, sps_ext: H265SPSEXT): H265ParserResult;
 
@@ -8275,6 +8298,7 @@ export namespace GstCodecParsers {
          * @param sps_ext The {@link GstCodecParsers.H265SPSEXT} matching the {@link GstCodecParsers.H265SPS} to fill.
          * @param parse_vui_params Whether to parse the vui_params or not
          * @returns a {@link GstCodecParsers.H265ParserResult}
+         * @since 1.28
          */
         parse_sps_ext(nalu: H265NalUnit, sps: H265SPS, sps_ext: H265SPSEXT, parse_vui_params: boolean): H265ParserResult;
 
@@ -8291,6 +8315,7 @@ export namespace GstCodecParsers {
          * with `pps`. `nalparser` will mark `pps` as last parsed sps.
          * @param pps a {@link GstCodecParsers.H265PPS}.
          * @returns a {@link GstCodecParsers.H265ParserResult}
+         * @since 1.18
          */
         update_pps(pps: H265PPS): H265ParserResult;
 
@@ -8299,6 +8324,7 @@ export namespace GstCodecParsers {
          * with `sps`. `nalparser` will mark `sps` as last parsed sps.
          * @param sps a {@link GstCodecParsers.H265SPS}.
          * @returns a {@link GstCodecParsers.H265ParserResult}
+         * @since 1.18
          */
         update_sps(sps: H265SPS): H265ParserResult;
 
@@ -8307,6 +8333,7 @@ export namespace GstCodecParsers {
          * with `vps`. `nalparser` will mark `vps` as last parsed vps.
          * @param vps a {@link GstCodecParsers.H265VPS}.
          * @returns a {@link GstCodecParsers.H265ParserResult}
+         * @since 1.18
          */
         update_vps(vps: H265VPS): H265ParserResult;
     }
@@ -8522,6 +8549,7 @@ export namespace GstCodecParsers {
         /**
          * Return the H265 profile defined in `ptl`.
          * @returns a {@link GstCodecParsers.H265Profile}
+         * @since 1.14
          */
         get_profile(): H265Profile;
     }
@@ -9953,6 +9981,7 @@ export namespace GstCodecParsers {
         // Methods
         /**
          * Free `config` data
+         * @since 1.26
          */
         free(): void;
     }
@@ -10755,6 +10784,7 @@ export namespace GstCodecParsers {
         // Methods
         /**
          * Frees the `parser`
+         * @since 1.26
          */
         free(): void;
 
@@ -10770,6 +10800,7 @@ export namespace GstCodecParsers {
          * @param nalus a caller allocated {@link GLib.Array} of {@link GstCodecParsers.H266NalUnit} where to store parsed nal headers
          * @param consumed the size of consumed bytes
          * @returns a {@link GstCodecParsers.H266ParserResult}
+         * @since 1.28
          */
         identify_and_split_nalu_vvc(data: number, offset: number, size: bigint | number, nal_length_size: number, nalus: H266NalUnit[], consumed: bigint | number): H266ParserResult;
 
@@ -10780,6 +10811,7 @@ export namespace GstCodecParsers {
          * @param size the size of `data`
          * @param nalu The {@link GstCodecParsers.H266NalUnit} where to store parsed nal headers
          * @returns a {@link GstCodecParsers.H266ParserResult}
+         * @since 1.26
          */
         identify_nalu(data: number, offset: number, size: bigint | number, nalu: H266NalUnit): H266ParserResult;
 
@@ -10796,6 +10828,7 @@ export namespace GstCodecParsers {
          * @param size the size of `data`
          * @param nalu The {@link GstCodecParsers.H266NalUnit} where to store parsed nal headers
          * @returns a {@link GstCodecParsers.H266ParserResult}
+         * @since 1.26
          */
         identify_nalu_unchecked(data: number, offset: number, size: bigint | number, nalu: H266NalUnit): H266ParserResult;
 
@@ -10807,6 +10840,7 @@ export namespace GstCodecParsers {
          * @param nal_length_size the size in bytes of the VVC nal length prefix.
          * @param nalu The {@link GstCodecParsers.H266NalUnit} where to store parsed nal headers
          * @returns a {@link GstCodecParsers.H266ParserResult}
+         * @since 1.26
          */
         identify_nalu_vvc(data: number, offset: number, size: bigint | number, nal_length_size: number, nalu: H266NalUnit): H266ParserResult;
 
@@ -10815,6 +10849,7 @@ export namespace GstCodecParsers {
          * @param nalu The APS {@link GstCodecParsers.H266NalUnit} to parse
          * @param aps The {@link GstCodecParsers.H266APS} to fill.
          * @returns a {@link GstCodecParsers.H266ParserResult}
+         * @since 1.26
          */
         parse_aps(nalu: H266NalUnit, aps: H266APS): H266ParserResult;
 
@@ -10823,6 +10858,7 @@ export namespace GstCodecParsers {
          * @param nalu The AUD {@link GstCodecParsers.H266NalUnit} to parse
          * @param aud The {@link GstCodecParsers.H266AUD} to fill.
          * @returns a {@link GstCodecParsers.H266ParserResult}
+         * @since 1.26
          */
         parse_aud(nalu: H266NalUnit, aud: H266AUD): H266ParserResult;
 
@@ -10831,6 +10867,7 @@ export namespace GstCodecParsers {
          * @param nalu The DCI {@link GstCodecParsers.H266NalUnit} to parse
          * @param dci The {@link GstCodecParsers.H266DCI} to fill.
          * @returns a {@link GstCodecParsers.H266ParserResult}
+         * @since 1.26
          */
         parse_dci(nalu: H266NalUnit, dci: H266DCI): H266ParserResult;
 
@@ -10843,6 +10880,7 @@ export namespace GstCodecParsers {
          * @param data the data to parse
          * @param size the size of `data`
          * @returns a {@link GstCodecParsers.H266ParserResult}
+         * @since 1.26
          */
         parse_decoder_config_record(data: number, size: bigint | number): [H266ParserResult, H266DecoderConfigRecord];
 
@@ -10852,6 +10890,7 @@ export namespace GstCodecParsers {
          * sure `parser` is up to date.
          * @param nalu The {@link GstCodecParsers.H266NalUnit} to parse
          * @returns a {@link GstCodecParsers.H266ParserResult}
+         * @since 1.26
          */
         parse_nal(nalu: H266NalUnit): H266ParserResult;
 
@@ -10860,6 +10899,7 @@ export namespace GstCodecParsers {
          * @param nalu The OPI {@link GstCodecParsers.H266NalUnit} to parse
          * @param opi The {@link GstCodecParsers.H266OPI} to fill.
          * @returns a {@link GstCodecParsers.H266ParserResult}
+         * @since 1.26
          */
         parse_opi(nalu: H266NalUnit, opi: H266OPI): H266ParserResult;
 
@@ -10868,6 +10908,7 @@ export namespace GstCodecParsers {
          * @param nalu The picture header {@link GstCodecParsers.H266NalUnit} to parse
          * @param picture The {@link GstCodecParsers.H266PicHdr} to fill.
          * @returns a {@link GstCodecParsers.H266ParserResult}
+         * @since 1.26
          */
         parse_picture_hdr(nalu: H266NalUnit, picture: H266PicHdr): H266ParserResult;
 
@@ -10876,6 +10917,7 @@ export namespace GstCodecParsers {
          * @param nalu The #GST_H266_NAL_PPS {@link GstCodecParsers.H266NalUnit} to parse
          * @param pps The {@link GstCodecParsers.H266PPS} to fill.
          * @returns a {@link GstCodecParsers.H266ParserResult}
+         * @since 1.26
          */
         parse_pps(nalu: H266NalUnit, pps: H266PPS): H266ParserResult;
 
@@ -10884,6 +10926,7 @@ export namespace GstCodecParsers {
          * @param nalu The `GST_H266_NAL_*_SEI` {@link GstCodecParsers.H266NalUnit} to parse
          * @param messages The GArray of {@link GstCodecParsers.H266SEIMessage} to fill. The caller must free  it when done.
          * @returns a {@link GstCodecParsers.H266ParserResult}
+         * @since 1.26
          */
         parse_sei(nalu: H266NalUnit, messages: H266SEIMessage[]): H266ParserResult;
 
@@ -10892,6 +10935,7 @@ export namespace GstCodecParsers {
          * @param nalu The slice {@link GstCodecParsers.H266NalUnit} to parse
          * @param slice The {@link GstCodecParsers.H266SliceHdr} to fill.
          * @returns a {@link GstCodecParsers.H266ParserResult}
+         * @since 1.26
          */
         parse_slice_hdr(nalu: H266NalUnit, slice: H266SliceHdr): H266ParserResult;
 
@@ -10900,6 +10944,7 @@ export namespace GstCodecParsers {
          * @param nalu The #GST_H266_NAL_SPS {@link GstCodecParsers.H266NalUnit} to parse
          * @param sps The {@link GstCodecParsers.H266SPS} to fill.
          * @returns a {@link GstCodecParsers.H266ParserResult}
+         * @since 1.26
          */
         parse_sps(nalu: H266NalUnit, sps: H266SPS): H266ParserResult;
 
@@ -10908,6 +10953,7 @@ export namespace GstCodecParsers {
          * @param nalu The #GST_H266_NAL_VPS {@link GstCodecParsers.H266NalUnit} to parse
          * @param vps The {@link GstCodecParsers.H266VPS} to fill.
          * @returns a {@link GstCodecParsers.H266ParserResult}
+         * @since 1.26
          */
         parse_vps(nalu: H266NalUnit, vps: H266VPS): H266ParserResult;
     }
@@ -12438,6 +12484,7 @@ export namespace GstCodecParsers {
          * The caller must make sure there is enough data for the whole segment
          * available.
          * @returns TRUE if the frame header was correctly parsed.
+         * @since 1.6
          */
         parse_frame_header(): [boolean, JpegFrameHdr];
 
@@ -12453,6 +12500,7 @@ export namespace GstCodecParsers {
          * the `valid` flag of the specified Huffman table will also be set to
          * `true`;
          * @returns TRUE if the Huffman table was correctly parsed.
+         * @since 1.6
          */
         parse_huffman_table(): [boolean, JpegHuffmanTables];
 
@@ -12468,6 +12516,7 @@ export namespace GstCodecParsers {
          * (Tq). While doing so, the `valid` flag of the specified quantization
          * table will also be set to `true`.
          * @returns TRUE if the quantization table was correctly parsed.
+         * @since 1.6
          */
         parse_quantization_table(): [boolean, JpegQuantTables];
 
@@ -12475,6 +12524,7 @@ export namespace GstCodecParsers {
          * The caller must make sure there is enough data for the whole segment
          * available.
          * @returns TRUE if the restart interval value was correctly parsed.
+         * @since 1.6
          */
         parse_restart_interval(): [boolean, number];
 
@@ -12484,6 +12534,7 @@ export namespace GstCodecParsers {
          * The caller must make sure there is enough data for the whole segment
          * available.
          * @returns TRUE if the scan header was correctly parsed
+         * @since 1.6
          */
         parse_scan_header(): [boolean, JpegScanHdr];
     }
@@ -12503,6 +12554,7 @@ export namespace GstCodecParsers {
         // Static methods
         /**
          * Gets the {@link Gst.MetaInfo} of the LCEVC meta.
+         * @since 1.26
          */
         static get_info(): Gst.MetaInfo;
     }
@@ -13059,6 +13111,7 @@ export namespace GstCodecParsers {
          * Parses the `gop` MPEG Video Group of Picture structure members from
          * video `packet`
          * @returns `true` if the gop could be parsed correctly, `false` otherwise.
+         * @since 1.2
          */
         parse_gop(): [boolean, MpegVideoGop];
 
@@ -13066,6 +13119,7 @@ export namespace GstCodecParsers {
          * Parse the `ext` MPEG Video Picture Extension structure members from
          * video `packet`
          * @returns `true` if the picture extension could be parsed correctly, `false` otherwise.
+         * @since 1.2
          */
         parse_picture_extension(): [boolean, MpegVideoPictureExt];
 
@@ -13073,6 +13127,7 @@ export namespace GstCodecParsers {
          * Parsers the `pichdr` MPEG Video Picture Header structure members
          * from video `packet`
          * @returns `true` if the picture sequence could be parsed correctly, `false` otherwise.
+         * @since 1.2
          */
         parse_picture_header(): [boolean, MpegVideoPictureHdr];
 
@@ -13080,6 +13135,7 @@ export namespace GstCodecParsers {
          * Parses the `quant` MPEG Video Quantization Matrix Extension
          * structure members from video `packet`
          * @returns `true` if the quant matrix extension could be parsed correctly, `false` otherwise.
+         * @since 1.2
          */
         parse_quant_matrix_extension(): [boolean, MpegVideoQuantMatrixExt];
 
@@ -13087,6 +13143,7 @@ export namespace GstCodecParsers {
          * Parses the `seqext` MPEG Video Sequence Display Extension structure
          * members from video `packet`
          * @returns `true` if the seqext could be parsed correctly, `false` otherwise.
+         * @since 1.2
          */
         parse_sequence_display_extension(): [boolean, MpegVideoSequenceDisplayExt];
 
@@ -13094,6 +13151,7 @@ export namespace GstCodecParsers {
          * Parses the `seqext` MPEG Video Sequence Extension structure members
          * from video `packet`
          * @returns `true` if the seqext could be parsed correctly, `false` otherwise.
+         * @since 1.2
          */
         parse_sequence_extension(): [boolean, MpegVideoSequenceExt];
 
@@ -13101,6 +13159,7 @@ export namespace GstCodecParsers {
          * Parses the `seqhdr` MPEG Video Sequence Header structure members
          * from video `packet`
          * @returns `true` if the seqhdr could be parsed correctly, `false` otherwise.
+         * @since 1.2
          */
         parse_sequence_header(): [boolean, MpegVideoSequenceHdr];
 
@@ -13108,6 +13167,7 @@ export namespace GstCodecParsers {
          * Parses the `seqscaleext` MPEG Video Sequence Scalable Extension structure
          * members from video `packet`
          * @returns `true` if the seqext could be parsed correctly, `false` otherwise.
+         * @since 1.2
          */
         parse_sequence_scalable_extension(): [boolean, MpegVideoSequenceScalableExt];
 
@@ -13116,6 +13176,7 @@ export namespace GstCodecParsers {
          * @param seq_hdr The {@link GstCodecParsers.MpegVideoSequenceHdr} header
          * @param seqscaleext The {@link GstCodecParsers.MpegVideoSequenceScalableExt} header
          * @returns `true` if the slice could be parsed correctly, `false` otherwise.
+         * @since 1.2
          */
         parse_slice_header(seq_hdr: MpegVideoSequenceHdr, seqscaleext: MpegVideoSequenceScalableExt): [boolean, MpegVideoSliceHdr];
     }
@@ -14419,6 +14480,7 @@ export namespace GstCodecParsers {
         // Methods
         /**
          * Initializes the supplied `parser` structure with its default values.
+         * @since 1.4
          */
         init(): void;
 
@@ -14431,6 +14493,7 @@ export namespace GstCodecParsers {
          * @param data The data to parse
          * @param size The size of the `data` to parse
          * @returns a {@link GstCodecParsers.Vp8ParserResult}
+         * @since 1.4
          */
         parse_frame_header(frame_hdr: Vp8FrameHdr, data: number, size: bigint | number): Vp8ParserResult;
     }
@@ -14782,6 +14845,7 @@ export namespace GstCodecParsers {
         // Methods
         /**
          * Frees `parser`.
+         * @since 1.8
          */
         free(): void;
 
@@ -14792,6 +14856,7 @@ export namespace GstCodecParsers {
          * @param data The data to parse
          * @param size The size of the `data` to parse
          * @returns a {@link GstCodecParsers.Vp9ParserResult}
+         * @since 1.8
          */
         parse_frame_header(frame_hdr: Vp9FrameHdr, data: number, size: bigint | number): Vp9ParserResult;
 
@@ -14806,6 +14871,7 @@ export namespace GstCodecParsers {
          * @param data The data to parse
          * @param size The size of the `data` to parse
          * @returns a {@link GstCodecParsers.Vp9ParserResult}
+         * @since 1.18
          */
         parse_superframe_info(superframe_info: Vp9SuperframeInfo, data: number, size: bigint | number): Vp9ParserResult;
     }

@@ -84,6 +84,7 @@ export namespace GstMse {
         // Static methods
         /**
          * Any error type that can be reported by the Media Source API.
+         * @since 1.24
          */
         static quark(): GLib.Quark;
     }
@@ -369,6 +370,7 @@ export namespace GstMse {
          * Determines whether the current Media Source configuration can process media
          * of the supplied `type`.
          * @param type A MIME type value
+         * @since 1.24
          */
         static is_type_supported(type: string): boolean;
 
@@ -380,6 +382,7 @@ export namespace GstMse {
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-mediasource-addsourcebuffer)
          * @param type A MIME type describing the format of the incoming media
          * @returns a new {@link GstMse.SourceBuffer} instance on success, otherwise `NULL`
+         * @since 1.24
          */
         add_source_buffer(type: string): SourceBuffer;
 
@@ -393,6 +396,7 @@ export namespace GstMse {
          * 
          * [Specification](https://www.w3.org/TR/media-source-2/#dfn-attaching-to-a-media-element)
          * @param element {@link GstMse.MseSrc} source Element
+         * @since 1.24
          */
         attach(element: MseSrc): void;
 
@@ -405,11 +409,13 @@ export namespace GstMse {
          * 
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-mediasource-clearliveseekablerange)
          * @returns `TRUE` on success, `FALSE` otherwise
+         * @since 1.24
          */
         clear_live_seekable_range(): boolean;
 
         /**
          * Detaches `self` from any {@link GstMse.MseSrc} element that it may be associated with.
+         * @since 1.24
          */
         detach(): void;
 
@@ -419,6 +425,7 @@ export namespace GstMse {
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-mediasource-endofstream)
          * @param eos_error The error type, if any
          * @returns `TRUE` on success, `FALSE` otherwise
+         * @since 1.24
          */
         end_of_stream(eos_error: MediaSourceEOSError): boolean;
 
@@ -432,6 +439,7 @@ export namespace GstMse {
          * 
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-mediasource-activesourcebuffers)
          * @returns a new {@link GstMse.SourceBufferList} instance
+         * @since 1.24
          */
         get_active_source_buffers(): SourceBufferList;
 
@@ -440,18 +448,21 @@ export namespace GstMse {
          * 
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-mediasource-duration)
          * @returns the current duration as a {@link Gst.ClockTime}
+         * @since 1.24
          */
         get_duration(): Gst.ClockTime;
 
         /**
          * Get the live seekable range of `self`. Will fill in the supplied `range` with
          * the current live seekable range.
+         * @since 1.24
          */
         get_live_seekable_range(): MediaSourceRange;
 
         /**
          * Gets the current playback position of the Media Source.
          * @returns the current playback position as a {@link Gst.ClockTime}
+         * @since 1.24
          */
         get_position(): Gst.ClockTime;
 
@@ -460,6 +471,7 @@ export namespace GstMse {
          * 
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-mediasource-readystate)
          * @returns the current {@link GstMse.MediaSourceReadyState} value
+         * @since 1.24
          */
         get_ready_state(): MediaSourceReadyState;
 
@@ -470,6 +482,7 @@ export namespace GstMse {
          * 
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-mediasource-sourcebuffers)
          * @returns a {@link GstMse.SourceBufferList} instance
+         * @since 1.24
          */
         get_source_buffers(): SourceBufferList;
 
@@ -482,6 +495,7 @@ export namespace GstMse {
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-mediasource-removesourcebuffer)
          * @param buffer {@link GstMse.SourceBuffer} instance
          * @returns `TRUE` on success, `FALSE` otherwise
+         * @since 1.24
          */
         remove_source_buffer(buffer: SourceBuffer): boolean;
 
@@ -491,6 +505,7 @@ export namespace GstMse {
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-mediasource-duration)
          * @param duration The new duration to apply to `self`.
          * @returns `TRUE` on success, `FALSE` otherwise
+         * @since 1.24
          */
         set_duration(duration: Gst.ClockTime): boolean;
 
@@ -505,6 +520,7 @@ export namespace GstMse {
          * @param start The earliest point in the stream considered seekable
          * @param end The latest point in the stream considered seekable
          * @returns `TRUE` on success, `FALSE` otherwise
+         * @since 1.24
          */
         set_live_seekable_range(start: Gst.ClockTime, end: Gst.ClockTime): boolean;
     }
@@ -683,21 +699,25 @@ export namespace GstMse {
          * 
          * [Specification](https://html.spec.whatwg.org/multipage/media.html#dom-media-duration)
          * @returns The duration of this stream as a {@link Gst.ClockTime}
+         * @since 1.24
          */
         get_duration(): Gst.ClockTime;
 
         /**
          * @returns the number of audio tracks available from this source
+         * @since 1.24
          */
         get_n_audio(): number;
 
         /**
          * @returns the number of text tracks available from this source
+         * @since 1.24
          */
         get_n_text(): number;
 
         /**
          * @returns the number of video tracks available from this source
+         * @since 1.24
          */
         get_n_video(): number;
 
@@ -706,6 +726,7 @@ export namespace GstMse {
          * 
          * [Specification](https://html.spec.whatwg.org/multipage/media.html#current-playback-position)
          * @returns The playback position of this Element as a {@link Gst.ClockTime}
+         * @since 1.24
          */
         get_position(): Gst.ClockTime;
 
@@ -717,6 +738,7 @@ export namespace GstMse {
          * 
          * [Specification](https://html.spec.whatwg.org/multipage/media.html#ready-states)
          * @returns the current {@link GstMse.MseSrcReadyState}
+         * @since 1.24
          */
         get_ready_state(): MseSrcReadyState;
 
@@ -1122,6 +1144,7 @@ export namespace GstMse {
          * 
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-sourcebuffer-abort)
          * @returns `TRUE` on success, `FALSE` otherwise
+         * @since 1.24
          */
         abort(): boolean;
 
@@ -1133,6 +1156,7 @@ export namespace GstMse {
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-sourcebuffer-appendbuffer)
          * @param buf The media data to append
          * @returns `TRUE` on success, `FALSE` otherwise
+         * @since 1.24
          */
         append_buffer(buf: Gst.Buffer): boolean;
 
@@ -1141,12 +1165,14 @@ export namespace GstMse {
          * to the Source Buffer must be of the supplied `type` afterward.
          * @param type the desired content type
          * @returns `TRUE` on success, `FALSE` otherwise
+         * @since 1.24
          */
         change_content_type(type: string): boolean;
 
         /**
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-sourcebuffer-mode)
          * @returns The current {@link GstMse.SourceBufferAppendMode}
+         * @since 1.24
          */
         get_append_mode(): SourceBufferAppendMode;
 
@@ -1156,6 +1182,7 @@ export namespace GstMse {
          * 
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-sourcebuffer-appendwindowend)
          * @returns The current Append Window end time as a {@link Gst.ClockTime}
+         * @since 1.24
          */
         get_append_window_end(): Gst.ClockTime;
 
@@ -1165,6 +1192,7 @@ export namespace GstMse {
          * 
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-sourcebuffer-appendwindowstart)
          * @returns The current Append Window start time as a {@link Gst.ClockTime}
+         * @since 1.24
          */
         get_append_window_start(): Gst.ClockTime;
 
@@ -1174,24 +1202,28 @@ export namespace GstMse {
          * 
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-sourcebuffer-buffered)
          * @returns a {@link GLib.Array} of {@link GstMse.MediaSourceRange} values.
+         * @since 1.24
          */
         get_buffered(): MediaSourceRange[];
 
         /**
          * Returns the current content type of `self`.
          * @returns a string representing the content type
+         * @since 1.24
          */
         get_content_type(): string;
 
         /**
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-sourcebuffer-timestampoffset)
          * @returns The current timestamp offset as a {@link Gst.ClockTime}
+         * @since 1.24
          */
         get_timestamp_offset(): Gst.ClockTime;
 
         /**
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-sourcebuffer-updating)
          * @returns Whether `self` is currently adding or removing media content.
+         * @since 1.24
          */
         get_updating(): boolean;
 
@@ -1202,6 +1234,7 @@ export namespace GstMse {
          * @param start The beginning timestamp of data to remove
          * @param end The end timestamp of data to remove
          * @returns `TRUE` on success, `FALSE` otherwise
+         * @since 1.24
          */
         remove(start: Gst.ClockTime, end: Gst.ClockTime): boolean;
 
@@ -1215,6 +1248,7 @@ export namespace GstMse {
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-sourcebuffer-mode)
          * @param mode {@link GstMse.SourceBufferAppendMode} the desired Append Mode
          * @returns `TRUE` on success, `FALSE` otherwise
+         * @since 1.24
          */
         set_append_mode(mode: SourceBufferAppendMode): boolean;
 
@@ -1226,6 +1260,7 @@ export namespace GstMse {
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-sourcebuffer-appendwindowend)
          * @param end the append window end
          * @returns `TRUE` on success, `FALSE` otherwise
+         * @since 1.24
          */
         set_append_window_end(end: Gst.ClockTime): boolean;
 
@@ -1237,6 +1272,7 @@ export namespace GstMse {
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-sourcebuffer-appendwindowstart)
          * @param start the append window start
          * @returns `TRUE` on success, `FALSE` otherwise
+         * @since 1.24
          */
         set_append_window_start(start: Gst.ClockTime): boolean;
 
@@ -1247,6 +1283,7 @@ export namespace GstMse {
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-sourcebuffer-timestampoffset)
          * @param offset The new timestamp offset
          * @returns `TRUE` on success, `FALSE` otherwise
+         * @since 1.24
          */
         set_timestamp_offset(offset: Gst.ClockTime): boolean;
     }
@@ -1342,6 +1379,7 @@ export namespace GstMse {
         /**
          * [Specification](https://www.w3.org/TR/media-source-2/#dom-sourcebufferlist-length)
          * @returns The number of {@link GstMse.SourceBuffer} objects in the list
+         * @since 1.24
          */
         get_length(): number;
 
@@ -1352,6 +1390,7 @@ export namespace GstMse {
          * [Specification](https://www.w3.org/TR/media-source-2/#dfn-sourcebufferlist-getter)
          * @param index index of requested Source Buffer
          * @returns The requested {@link GstMse.SourceBuffer} or `NULL`
+         * @since 1.24
          */
         index(index: number): SourceBuffer | null;
     }

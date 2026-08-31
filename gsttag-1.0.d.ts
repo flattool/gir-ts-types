@@ -1210,6 +1210,8 @@ export namespace GstTag {
          * 
          * MT safe.
          * @param func Function to call asynchronously from another thread
+         * @since 1.10
+         * @deprecated since 1.28: Use `gst_object_call_async()` or `gst_call_async()` instead.
          */
         call_async(func: Gst.ElementCallAsyncFunc): void;
 

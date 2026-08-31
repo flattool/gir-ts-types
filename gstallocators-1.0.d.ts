@@ -269,6 +269,7 @@ export namespace GstAllocators {
          * @param width padded width for this allocation
          * @param height padded height for this allocation
          * @returns a new DRM Dumb {@link Gst.Memory}. Use `gst_memory_unref()`   to release the memory after usage.
+         * @since 1.24
          */
         alloc(drm_fourcc: number, width: number, height: number): [Gst.Memory, number];
 
@@ -281,6 +282,7 @@ export namespace GstAllocators {
         /**
          * This function allow verifying if the driver support dma-buf exportation.
          * @returns `true` if the allocator support exporting dma-buf.
+         * @since 1.24
          */
         has_prime_export(): boolean;
     }
@@ -340,6 +342,7 @@ export namespace GstAllocators {
          * @param allocator allocator to be used for this memory
          * @param fd dmabuf file descriptor
          * @param size memory size
+         * @since 1.2
          */
         static alloc(allocator: Gst.Allocator, fd: number, size: bigint | number): Gst.Memory | null;
 
@@ -349,6 +352,7 @@ export namespace GstAllocators {
          * @param fd dmabuf file descriptor
          * @param size memory size
          * @param flags extra {@link GstAllocators.FdMemoryFlags}
+         * @since 1.16
          */
         static alloc_with_flags(allocator: Gst.Allocator, fd: number, size: bigint | number, flags: FdMemoryFlags): Gst.Memory | null;
     }
@@ -409,6 +413,7 @@ export namespace GstAllocators {
          * @param fd file descriptor
          * @param size memory size
          * @param flags extra {@link GstAllocators.FdMemoryFlags}
+         * @since 1.6
          */
         static alloc(allocator: Gst.Allocator, fd: number, size: bigint | number, flags: FdMemoryFlags): Gst.Memory | null;
 
@@ -420,6 +425,7 @@ export namespace GstAllocators {
          * @param offset the offset of valid data in the memory
          * @param size the size of valid data in the memory
          * @param flags extra {@link GstAllocators.FdMemoryFlags}
+         * @since 1.28
          */
         static alloc_full(allocator: Gst.Allocator, fd: number, maxsize: bigint | number, offset: bigint | number, size: bigint | number, flags: FdMemoryFlags): Gst.Memory | null;
     }
@@ -483,12 +489,14 @@ export namespace GstAllocators {
         /**
          * Get the {@link GstAllocators.ShmAllocator} singleton previously registered with
          * `gst_shm_allocator_init_once()`.
+         * @since 1.24
          */
         static get(): Gst.Allocator | null;
 
         /**
          * Register a {@link GstAllocators.ShmAllocator} using `gst_allocator_register()` with the name
          * `GST_ALLOCATOR_SHM`. This is no-op after the first call.
+         * @since 1.24
          */
         static init_once(): void;
     }
@@ -545,12 +553,14 @@ export namespace GstAllocators {
         // Static methods
         /**
          * Get the {@link GstAllocators.UdmabufAllocator} singleton if available.
+         * @since 1.28
          */
         static get(): Gst.Allocator | null;
 
         /**
          * Register a {@link GstAllocators.UdmabufAllocator} using `gst_allocator_register()` with the name
          * `GST_ALLOCATOR_UDMABUF`. This is no-op after the first call.
+         * @since 1.28
          */
         static init_once(): void;
     }

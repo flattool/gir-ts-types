@@ -124,6 +124,7 @@ export namespace Soup {
         // Static methods
         /**
          * Registers error quark for SoupCookieJar.
+         * @since 3.8
          */
         static quark(): GLib.Quark;
     }
@@ -3267,6 +3268,7 @@ export namespace Soup {
          * 
          * This can be called synchronously inside the signal handler or asynchronously
          * after ref-ing `request` and returning `true` from the handler.
+         * @since 3.8
          */
         cancel(): void;
 
@@ -3277,6 +3279,7 @@ export namespace Soup {
          * This can be called synchronously inside the signal handler or asynchronously
          * after ref-ing `request` and returning `true` from the handler.
          * @param dictionary the raw dictionary bytes
+         * @since 3.8
          */
         set_dictionary(dictionary: GLib.Bytes | Uint8Array): void;
     }
@@ -3804,6 +3807,7 @@ export namespace Soup {
          * This method returns the currently configured max database file size. A return value of zero
          * indicates that no limit is configured.
          * @returns Database max file size
+         * @since 3.8
          */
         get_max_size(): number;
 
@@ -3828,6 +3832,7 @@ export namespace Soup {
          * the property again or it will use the default value.
          * @param max_size Max database file size, in bytes `error` A {@link GLib.Error}
          * @returns `true` is configuration was successful, otherwise `false` and `error` will be set.
+         * @since 3.8
          */
         set_max_size(max_size: bigint | number): boolean;
 
@@ -3872,6 +3877,7 @@ export namespace Soup {
          * instance.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
+         * @since 2.22
          */
         init(cancellable: Gio.Cancellable | null): boolean;
 
@@ -3915,6 +3921,7 @@ export namespace Soup {
          * on the result of `g_object_new()`, regardless of whether it is in fact a new
          * instance.
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @since 2.22
          * @virtual
          */
         vfunc_init(cancellable: Gio.Cancellable | null): boolean;
@@ -4974,6 +4981,7 @@ export namespace Soup {
          * Gets the SHA-256 hash of the shared dictionary previously set with
          * {@link Message.set_compression_dictionary_hash}.
          * @returns the raw 32-byte SHA-256 hash, or `null`
+         * @since 3.8
          */
         get_compression_dictionary_hash(): GLib.Bytes | null;
 
@@ -5001,6 +5009,7 @@ export namespace Soup {
         /**
          * Returns whether HTTP/1 version is currently demanded for the `msg` send.
          * @returns `true`, when HTTP/1 is demanded, `false` otherwise.
+         * @since 3.4
          */
         get_force_http1(): boolean;
 
@@ -5178,6 +5187,7 @@ export namespace Soup {
          * header are cleared. It is the caller's responsibility to select and set a new
          * dictionary appropriate for the redirect target, if any.
          * @param hash a {@link GLib.Bytes} containing the raw SHA-256 hash (32 bytes) of the   shared dictionary, or `null` to unset
+         * @since 3.8
          */
         set_compression_dictionary_hash(hash: GLib.Bytes | Uint8Array | null): void;
 
@@ -5202,6 +5212,7 @@ export namespace Soup {
          * 
          * Note the value is unset after the message send is finished.
          * @param value value to set
+         * @since 3.4
          */
         set_force_http1(value: boolean): void;
 
@@ -5465,6 +5476,7 @@ export namespace Soup {
          * For any given stream, the value returned by this method is constant;
          * a stream cannot switch from pollable to non-pollable or vice versa.
          * @returns `true` if `stream` is pollable, `false` if not.
+         * @since 2.28
          */
         can_poll(): boolean;
 
@@ -5482,6 +5494,7 @@ export namespace Soup {
          * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a new {@link GLib.Source}
+         * @since 2.28
          */
         create_source(cancellable: Gio.Cancellable | null): GLib.Source;
 
@@ -5498,6 +5511,7 @@ export namespace Soup {
          * The behaviour of this method is undefined if
          * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
          * @returns `true` if `stream` is readable, `false` if not. If an error   has occurred on `stream`, this will result in   `g_pollable_input_stream_is_readable()` returning `true`, and the   next attempt to read will return the error.
+         * @since 2.28
          */
         is_readable(): boolean;
 
@@ -5529,6 +5543,7 @@ export namespace Soup {
          * 
          * For any given stream, the value returned by this method is constant;
          * a stream cannot switch from pollable to non-pollable or vice versa.
+         * @since 2.28
          * @virtual
          */
         vfunc_can_poll(): boolean;
@@ -5546,6 +5561,7 @@ export namespace Soup {
          * The behaviour of this method is undefined if
          * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @since 2.28
          * @virtual
          */
         vfunc_create_source(cancellable: Gio.Cancellable | null): GLib.Source;
@@ -5562,6 +5578,7 @@ export namespace Soup {
          * 
          * The behaviour of this method is undefined if
          * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
+         * @since 2.28
          * @virtual
          */
         vfunc_is_readable(): boolean;
@@ -6222,6 +6239,7 @@ export namespace Soup {
          * {@link ServerCallback} or emitted in a `Soup.Server::request-read`
          * signal.
          * @param msg a {@link Soup.ServerMessage} associated with `server`.
+         * @deprecated since 3.2: Use `soup_server_message_pause()` instead.
          */
         pause_message(msg: ServerMessage): void;
 
@@ -6275,6 +6293,7 @@ export namespace Soup {
          * {@link ServerCallback} or emitted in a `Soup.Server::request-read`
          * signal.
          * @param msg a {@link Soup.ServerMessage} associated with `server`.
+         * @deprecated since 3.2: Use `soup_server_message_unpause()` instead.
          */
         unpause_message(msg: ServerMessage): void;
     }
@@ -6549,6 +6568,7 @@ export namespace Soup {
          * Note that this is not set yet during the emission of
          * SoupServerMessage::accept-certificate signal.
          * @returns `msg`'s TLS peer certificate,    or `null` if `msg`'s connection is not SSL.
+         * @since 3.2
          */
         get_tls_peer_certificate(): Gio.TlsCertificate | null;
 
@@ -6557,6 +6577,7 @@ export namespace Soup {
          * Note that this is not set yet during the emission of
          * SoupServerMessage::accept-certificate signal.
          * @returns a {@link Gio.TlsCertificateFlags} with `msg`'s TLS peer certificate errors.
+         * @since 3.2
          */
         get_tls_peer_certificate_errors(): Gio.TlsCertificateFlags;
 
@@ -6578,6 +6599,7 @@ export namespace Soup {
          * This can be used when you need to return from the server handler without
          * having the full response ready yet. Use {@link ServerMessage.unpause} to
          * resume I/O.
+         * @since 3.2
          */
         pause(): void;
 
@@ -6641,6 +6663,7 @@ export namespace Soup {
          * Use this to resume after calling {@link ServerMessage.pause}, or after
          * adding a new chunk to a chunked response. I/O won't actually resume until you
          * return to the main loop.
+         * @since 3.2
          */
         unpause(): void;
     }
@@ -7438,6 +7461,7 @@ export namespace Soup {
          * @param flags a set of {@link Gio.OutputStreamSpliceFlags}
          * @param cancellable a {@link Gio.Cancellable}
          * @returns a `gssize` containing the size of the data spliced, or -1 if an error occurred.
+         * @since 3.4
          */
         send_and_splice(msg: Message, out_stream: Gio.OutputStream, flags: Gio.OutputStreamSpliceFlags, cancellable: Gio.Cancellable | null): number;
 
@@ -7452,6 +7476,7 @@ export namespace Soup {
          * @param flags a set of {@link Gio.OutputStreamSpliceFlags}
          * @param io_priority the I/O priority of the request
          * @param cancellable a {@link Gio.Cancellable}
+         * @since 3.4
          */
         send_and_splice_async(msg: Message, out_stream: Gio.OutputStream, flags: Gio.OutputStreamSpliceFlags, io_priority: number, cancellable: Gio.Cancellable | null): globalThis.Promise<number>;
 
@@ -7467,6 +7492,7 @@ export namespace Soup {
          * @param io_priority the I/O priority of the request
          * @param cancellable a {@link Gio.Cancellable}
          * @param callback the callback to invoke
+         * @since 3.4
          */
         send_and_splice_async(msg: Message, out_stream: Gio.OutputStream, flags: Gio.OutputStreamSpliceFlags, io_priority: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -7482,6 +7508,7 @@ export namespace Soup {
          * @param io_priority the I/O priority of the request
          * @param cancellable a {@link Gio.Cancellable}
          * @param callback the callback to invoke
+         * @since 3.4
          */
         send_and_splice_async(msg: Message, out_stream: Gio.OutputStream, flags: Gio.OutputStreamSpliceFlags, io_priority: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<number> | void;
 
@@ -7489,6 +7516,7 @@ export namespace Soup {
          * Gets the response to a {@link Session.send_and_splice_async}.
          * @param result the {@link Gio.AsyncResult} passed to your callback
          * @returns a `gssize` containing the size of the data spliced, or -1 if an error occurred.
+         * @since 3.4
          */
         send_and_splice_finish(result: Gio.AsyncResult): number;
 
@@ -8104,6 +8132,7 @@ export namespace Soup {
         /**
          * Gets the keepalive pong timeout in seconds or 0 if disabled.
          * @returns the keepalive pong timeout.
+         * @since 3.6
          */
         get_keepalive_pong_timeout(): number;
 
@@ -8116,6 +8145,7 @@ export namespace Soup {
         /**
          * Gets the maximum total message size allowed for packets.
          * @returns the maximum total message size.
+         * @since 3.8
          */
         get_max_total_message_size(): number;
 
@@ -8195,6 +8225,7 @@ export namespace Soup {
          * 
          * If set to 0 then the absence of pongs from keepalive pings is ignored.
          * @param pong_timeout the timeout in seconds
+         * @since 3.6
          */
         set_keepalive_pong_timeout(pong_timeout: number): void;
 
@@ -8211,6 +8242,7 @@ export namespace Soup {
          * 
          * It does not limit the outgoing packet size.
          * @param max_total_message_size the maximum total message size
+         * @since 3.8
          */
         set_max_total_message_size(max_total_message_size: bigint | number): void;
     }

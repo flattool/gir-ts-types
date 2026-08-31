@@ -8497,6 +8497,7 @@ export namespace Gst {
 
         /**
          * @returns the bin's suppressed {@link Gst.ElementFlags}.
+         * @since 1.10
          */
         get_suppressed_flags(): ElementFlags;
 
@@ -8506,6 +8507,7 @@ export namespace Gst {
          * {@link Gst.Element}.
          * @param factory_name the name of the {@link Gst.ElementFactory}
          * @returns a {@link Gst.Iterator} of {@link Gst.Element}     for all elements in the bin with the given element factory name
+         * @since 1.18
          */
         iterate_all_by_element_factory_name(factory_name: string): Iterator;
 
@@ -8591,6 +8593,7 @@ export namespace Gst {
          * When suppressed flags are set, those specified flags will
          * not be propagated to the bin.
          * @param flags the {@link Gst.ElementFlags} to suppress
+         * @since 1.10
          */
         set_suppressed_flags(flags: ElementFlags): void;
 
@@ -8598,6 +8601,7 @@ export namespace Gst {
          * Synchronizes the state of every child of `bin` with the state
          * of `bin`. See also `gst_element_sync_state_with_parent()`.
          * @returns `true` if syncing the state was successful for all children,  otherwise `false`.
+         * @since 1.6
          */
         sync_children_states(): boolean;
 
@@ -8644,6 +8648,7 @@ export namespace Gst {
          * element names only and should not contain any property names.
          * @param name the full-path child's name
          * @returns the child object or `null` if     not found.
+         * @since 1.22
          */
         get_child_by_name_recurse<T = GObject.Object>(name: string): T;
 
@@ -8953,6 +8958,7 @@ export namespace Gst {
          * @param size the expected size of each buffer, not including prefix and padding
          * @param min_buffers the expected minimum amount of buffers to allocate.
          * @param max_buffers the expect maximum amount of buffers to allocate or 0 for unlimited.
+         * @since 1.4
          */
         static config_validate_params(config: Structure, caps: Caps | null, size: number, min_buffers: number, max_buffers: number): boolean;
 
@@ -8983,12 +8989,14 @@ export namespace Gst {
 
         /**
          * Enter the flushing state.
+         * @since 1.4
          * @virtual
          */
         vfunc_flush_start(): void;
 
         /**
          * Leave the flushing state.
+         * @since 1.4
          * @virtual
          */
         vfunc_flush_stop(): void;
@@ -9164,6 +9172,7 @@ export namespace Gst {
          * Enables or disables the flushing state of a `pool` without freeing or
          * allocating buffers.
          * @param flushing whether to start or stop flushing
+         * @since 1.4
          */
         set_flushing(flushing: boolean): void;
     }
@@ -9509,6 +9518,7 @@ export namespace Gst {
          * Warning: NEVER read or write anything to the returned fd but only use it
          * for getting notifications via `g_poll()` or similar and then use the normal
          * GstBus API, e.g. `gst_bus_pop()`.
+         * @since 1.14
          */
         get_pollfd(): GLib.PollFD;
 
@@ -9599,6 +9609,7 @@ export namespace Gst {
         /**
          * Removes an installed bus watch from `bus`.
          * @returns `true` on success or `false` if `bus` has no event source.
+         * @since 1.6
          */
         remove_watch(): boolean;
 
@@ -9843,6 +9854,7 @@ export namespace Gst {
         /**
          * This function returns the underlying clock.
          * @param id a {@link Gst.ClockID}
+         * @since 1.16
          */
         static id_get_clock(id: ClockID): Clock | null;
 
@@ -9881,6 +9893,7 @@ export namespace Gst {
          * no longer usable and should be freed.
          * @param id a {@link Gst.ClockID} to check
          * @param clock a {@link Gst.Clock} to compare against
+         * @since 1.16
          */
         static id_uses_clock(id: ClockID, clock: Clock): boolean;
 
@@ -9990,6 +10003,7 @@ export namespace Gst {
          * @param observation_internal a time on the internal clock
          * @param observation_external a time on the external clock
          * @returns `true` if enough observations were added to run the regression algorithm.
+         * @since 1.6
          */
         add_observation_unapplied(observation_internal: ClockTime, observation_external: ClockTime): [boolean, number, ClockTime | null, ClockTime | null, ClockTime | null, ClockTime | null];
 
@@ -10019,6 +10033,7 @@ export namespace Gst {
          * @param cnum the numerator of the rate of the clock relative to its        internal time
          * @param cdenom the denominator of the rate of the clock
          * @returns the converted time of the clock.
+         * @since 1.6
          */
         adjust_with_calibration(internal_target: ClockTime, cinternal: ClockTime, cexternal: ClockTime, cnum: ClockTime, cdenom: ClockTime): ClockTime;
 
@@ -10070,6 +10085,7 @@ export namespace Gst {
          * Checks if the clock is currently synced, by looking at whether
          * {@link Gst.ClockFlags.NEEDS_STARTUP_SYNC} is set.
          * @returns `true` if the clock is currently synced
+         * @since 1.6
          */
         is_synced(): boolean;
 
@@ -10077,6 +10093,7 @@ export namespace Gst {
          * Checks that `clock` is the default system clock, as returned by
          * `gst_system_clock_obtain()`, and is of type {@link Gst.ClockType.MONOTONIC}.
          * @returns `true` if `clock` is the default system monotonic clock,   `false` otherwise.
+         * @since 1.28
          */
         is_system_monotonic(): boolean;
 
@@ -10171,6 +10188,7 @@ export namespace Gst {
          * This function must only be called if {@link Gst.ClockFlags.NEEDS_STARTUP_SYNC}
          * is set on the clock, and is intended to be called by subclasses only.
          * @param synced if the clock is synced
+         * @since 1.6
          */
         set_synced(synced: boolean): void;
 
@@ -10215,6 +10233,7 @@ export namespace Gst {
          * @param cnum the numerator of the rate of the clock relative to its        internal time
          * @param cdenom the denominator of the rate of the clock
          * @returns the converted time of the clock.
+         * @since 1.8
          */
         unadjust_with_calibration(external_target: ClockTime, cinternal: ClockTime, cexternal: ClockTime, cnum: ClockTime, cdenom: ClockTime): ClockTime;
 
@@ -10229,6 +10248,7 @@ export namespace Gst {
          * is not set on the clock, or if the clock is already synced.
          * @param timeout timeout for waiting or `GST_CLOCK_TIME_NONE`
          * @returns `true` if waiting was successful, or `false` on timeout
+         * @since 1.6
          */
         wait_for_sync(timeout: ClockTime): boolean;
     }
@@ -10593,6 +10613,7 @@ export namespace Gst {
          * Creates the element with all of the required parameters set to use
          * this device.
          * @param name name of new element, or `null` to automatically create a unique name.
+         * @since 1.4
          * @virtual
          */
         vfunc_create_element(name: string | null): Element | null;
@@ -10605,6 +10626,7 @@ export namespace Gst {
          * Note: This should only be implemented for elements can change their
          * device in the PLAYING state.
          * @param element a {@link Gst.Element}
+         * @since 1.4
          * @virtual
          */
         vfunc_reconfigure_element(element: Element): boolean;
@@ -10615,12 +10637,14 @@ export namespace Gst {
          * this device.
          * @param name name of new element, or `null` to automatically create a unique name.
          * @returns a new {@link Gst.Element} configured to use this device
+         * @since 1.4
          */
         create_element(name: string | null): Element | null;
 
         /**
          * Getter for the {@link Gst.Caps} that this device supports.
          * @returns The {@link Gst.Caps} supported by this device. Unref with `gst_caps_unref()` when done.
+         * @since 1.4
          */
         get_caps(): Caps | null;
 
@@ -10629,18 +10653,21 @@ export namespace Gst {
          * classes that represent this device. They are a subset of the
          * classes of the {@link Gst.DeviceProvider} that produced this device.
          * @returns The device class. Free with `g_free()` after use.
+         * @since 1.4
          */
         get_device_class(): string;
 
         /**
          * Gets the user-friendly name of the device.
          * @returns The device name. Free with `g_free()` after use.
+         * @since 1.4
          */
         get_display_name(): string;
 
         /**
          * Gets the extra properties of a device.
          * @returns The extra properties or `null` when there are none.          Free with `gst_structure_free()` after use.
+         * @since 1.6
          */
         get_properties(): Structure | null;
 
@@ -10648,6 +10675,7 @@ export namespace Gst {
          * Check if `device` matches all of the given classes
          * @param classes a "/"-separated list of device classes to match, only match if  all classes are matched
          * @returns `true` if `device` matches.
+         * @since 1.4
          */
         has_classes(classes: string): boolean;
 
@@ -10655,6 +10683,7 @@ export namespace Gst {
          * Check if `factory` matches all of the given classes
          * @param classes a `null` terminated array of classes   to match, only match if all classes are matched
          * @returns `true` if `device` matches.
+         * @since 1.4
          */
         has_classesv(classes: string[]): boolean;
 
@@ -10667,6 +10696,7 @@ export namespace Gst {
          * device in the PLAYING state.
          * @param element a {@link Gst.Element}
          * @returns `true` if the element could be reconfigured to use this device, `false` otherwise.
+         * @since 1.4
          */
         reconfigure_element(element: Element): boolean;
     }
@@ -10815,12 +10845,14 @@ export namespace Gst {
          * @param classes device classes to use as filter or `null` for any class
          * @param caps the {@link Gst.Caps} to filter or `null` for ANY
          * @returns The id of the new filter or 0 if no provider matched the filter's  classes.
+         * @since 1.4
          */
         add_filter(classes: string | null, caps: Caps | null): number;
 
         /**
          * Gets the {@link Gst.Bus} of this {@link Gst.DeviceMonitor}
          * @returns a {@link Gst.Bus}
+         * @since 1.4
          */
         get_bus(): Bus;
 
@@ -10831,6 +10863,7 @@ export namespace Gst {
          * Since 1.28.3, this function will block until the monitor has finished
          * starting if `gst_device_monitor_start()` has been called.
          * @returns a {@link GLib.List} of   {@link Gst.Device}
+         * @since 1.4
          */
         get_devices(): Device[] | null;
 
@@ -10839,6 +10872,7 @@ export namespace Gst {
          * 
          * This
          * @returns A list of device provider factory names that are currently being     monitored by `monitor` or `null` when nothing is being monitored.
+         * @since 1.6
          */
         get_providers(): string[];
 
@@ -10846,6 +10880,7 @@ export namespace Gst {
          * Get if `monitor` is currently showing all devices, even those from hidden
          * providers.
          * @returns `true` when all devices will be shown.
+         * @since 1.6
          */
         get_show_all_devices(): boolean;
 
@@ -10854,6 +10889,7 @@ export namespace Gst {
          * by `gst_device_monitor_add_filter()`.
          * @param filter_id the id of the filter
          * @returns `true` of the filter id was valid, `false` otherwise
+         * @since 1.4
          */
         remove_filter(filter_id: number): boolean;
 
@@ -10861,6 +10897,7 @@ export namespace Gst {
          * Set if all devices should be visible, even those devices from hidden
          * providers. Setting `show_all` to true might show some devices multiple times.
          * @param show_all show all devices
+         * @since 1.6
          */
         set_show_all_devices(show_all: boolean): void;
 
@@ -10878,11 +10915,13 @@ export namespace Gst {
          * devices asynchronously, so you must call `gst_device_monitor_stop()` before
          * unreffing if you want monitoring to stop immediately.
          * @returns `true` if the device monitoring could be started, i.e. at least a     single device provider was started successfully.
+         * @since 1.4
          */
         start(): boolean;
 
         /**
          * Stops monitoring the devices.
+         * @since 1.4
          */
         stop(): void;
     }
@@ -10963,6 +11002,7 @@ export namespace Gst {
          * @param name name of device providers of this type
          * @param rank rank of device provider (higher rank means more importance when autoplugging)
          * @param type GType of device provider to register
+         * @since 1.4
          */
         static register(plugin: Plugin | null, name: string, rank: number, type: GObject.GType): boolean;
 
@@ -11013,6 +11053,7 @@ export namespace Gst {
          * After this function has been called, `gst_device_provider_get_devices()` will
          * return the same objects that have been received from the
          * #GST_MESSAGE_DEVICE_ADDED messages and will no longer probe.
+         * @since 1.4
          * @virtual
          */
         vfunc_start(): boolean;
@@ -11021,6 +11062,7 @@ export namespace Gst {
          * Decreases the use-count by one. If the use count reaches zero, this
          * {@link Gst.DeviceProvider} will stop providering the devices. This needs to be
          * called the same number of times that `gst_device_provider_start()` was called.
+         * @since 1.4
          * @virtual
          */
         vfunc_stop(): void;
@@ -11037,6 +11079,7 @@ export namespace Gst {
          * `device`'s reference count will be incremented, and any floating reference
          * will be removed (see `gst_object_ref_sink()`).
          * @param device a {@link Gst.Device} that has been added
+         * @since 1.4
          */
         device_add(device: Device): void;
 
@@ -11048,6 +11091,7 @@ export namespace Gst {
          * know when a device was modified.
          * @param device the new version of `changed_device`
          * @param changed_device the old version of the device that has been updated
+         * @since 1.16
          */
         device_changed(device: Device, changed_device: Device): void;
 
@@ -11057,12 +11101,14 @@ export namespace Gst {
          * 
          * This is for use by subclasses.
          * @param device a {@link Gst.Device} that has been removed
+         * @since 1.4
          */
         device_remove(device: Device): void;
 
         /**
          * Gets the {@link Gst.Bus} of this {@link Gst.DeviceProvider}
          * @returns a {@link Gst.Bus}
+         * @since 1.4
          */
         get_bus(): Bus;
 
@@ -11073,12 +11119,14 @@ export namespace Gst {
          * If the provider has been started, this will return the same {@link Gst.Device}
          * objects that have been returned by the #GST_MESSAGE_DEVICE_ADDED messages.
          * @returns a {@link GLib.List} of   {@link Gst.Device}
+         * @since 1.4
          */
         get_devices(): Device[];
 
         /**
          * Retrieves the factory that was used to create this device provider.
          * @returns the {@link Gst.DeviceProviderFactory} used for     creating this device provider. no refcounting is needed.
+         * @since 1.4
          */
         get_factory(): DeviceProviderFactory | null;
 
@@ -11086,6 +11134,7 @@ export namespace Gst {
          * Get the provider factory names of the {@link Gst.DeviceProvider} instances that
          * are hidden by `provider`.
          * @returns a list of hidden providers factory names or `null` when   nothing is hidden by `provider`. Free with g_strfreev.
+         * @since 1.6
          */
         get_hidden_providers(): string[];
 
@@ -11093,6 +11142,7 @@ export namespace Gst {
          * Get metadata with `key` in `provider`.
          * @param key the key to get
          * @returns the metadata for `key`.
+         * @since 1.14
          */
         get_metadata(key: string): string;
 
@@ -11103,11 +11153,13 @@ export namespace Gst {
          * by provider factory `name`. A monitor should stop monitoring the
          * device provider with `name` to avoid duplicate devices.
          * @param name a provider factory name
+         * @since 1.6
          */
         hide_provider(name: string): void;
 
         /**
          * This function can be used to know if the `provider` was successfully started.
+         * @since 1.20
          */
         is_started(): boolean;
 
@@ -11125,6 +11177,7 @@ export namespace Gst {
          * return the same objects that have been received from the
          * #GST_MESSAGE_DEVICE_ADDED messages and will no longer probe.
          * @returns `true` if the device providering could be started
+         * @since 1.4
          */
         start(): boolean;
 
@@ -11132,6 +11185,7 @@ export namespace Gst {
          * Decreases the use-count by one. If the use count reaches zero, this
          * {@link Gst.DeviceProvider} will stop providering the devices. This needs to be
          * called the same number of times that `gst_device_provider_start()` was called.
+         * @since 1.4
          */
         stop(): void;
 
@@ -11143,6 +11197,7 @@ export namespace Gst {
          * monitoring the devices from provider factory `name` in order to see
          * all devices again.
          * @param name a provider factory name
+         * @since 1.6
          */
         unhide_provider(name: string): void;
     }
@@ -11206,6 +11261,7 @@ export namespace Gst {
          * Search for an device provider factory of the given name. Refs the returned
          * device provider factory; caller is responsible for unreffing.
          * @param name name of factory to find
+         * @since 1.4
          */
         static find(name: string): DeviceProviderFactory | null;
 
@@ -11213,6 +11269,7 @@ export namespace Gst {
          * Returns the device provider of the type defined by the given device
          * provider factory.
          * @param factoryname a named factory to instantiate
+         * @since 1.4
          */
         static get_by_name(factoryname: string): DeviceProvider | null;
 
@@ -11220,6 +11277,7 @@ export namespace Gst {
          * Get a list of factories with a rank greater or equal to `minrank`.
          * The list of factories is returned by decreasing rank.
          * @param minrank Minimum rank
+         * @since 1.4
          */
         static list_get_device_providers(minrank: Rank): DeviceProviderFactory[];
 
@@ -11228,6 +11286,7 @@ export namespace Gst {
          * Returns the device provider of the type defined by the given device
          * providerfactory.
          * @returns the {@link Gst.DeviceProvider} or `null` if the device provider couldn't be created
+         * @since 1.4
          */
         get(): DeviceProvider | null;
 
@@ -11236,6 +11295,7 @@ export namespace Gst {
          * only be retrieved if the device provider factory is loaded, which can be
          * assured with `gst_plugin_feature_load()`.
          * @returns the {@link GObject.GType} for device providers managed by this factory.
+         * @since 1.4
          */
         get_device_provider_type(): GObject.GType;
 
@@ -11243,12 +11303,14 @@ export namespace Gst {
          * Get the metadata on `factory` with `key`.
          * @param key a key
          * @returns the metadata with `key` on `factory` or `null` when there was no metadata with the given `key`.
+         * @since 1.4
          */
         get_metadata(key: string): string | null;
 
         /**
          * Get the available keys for the metadata on `factory`.
          * @returns a `null`-terminated array of key strings, or `null` when there is no metadata. Free with `g_strfreev()` when no longer needed.
+         * @since 1.4
          */
         get_metadata_keys(): string[] | null;
 
@@ -11256,6 +11318,7 @@ export namespace Gst {
          * Check if `factory` matches all of the given `classes`
          * @param classes a "/" separate list of classes to match, only match     if all classes are matched
          * @returns `true` if `factory` matches or if `classes` is `null`.
+         * @since 1.4
          */
         has_classes(classes: string | null): boolean;
 
@@ -11263,6 +11326,7 @@ export namespace Gst {
          * Check if `factory` matches all of the given classes
          * @param classes a `null` terminated array   of classes to match, only match if all classes are matched
          * @returns `true` if `factory` matches.
+         * @since 1.4
          */
         has_classesv(classes: string[] | null): boolean;
     }
@@ -11548,12 +11612,14 @@ export namespace Gst {
         /**
          * Gets a string representing the given state change result.
          * @param state_ret a {@link Gst.StateChangeReturn} to get the name of.
+         * @deprecated since 1.28: Use `gst_state_change_return_get_name()` instead.
          */
         static state_change_return_get_name(state_ret: StateChangeReturn): string;
 
         /**
          * Gets a string representing the given state.
          * @param state a {@link Gst.State} to get the name of.
+         * @deprecated since 1.28: Use `gst_state_get_name()` instead.
          */
         static state_get_name(state: State): string;
 
@@ -11576,6 +11642,7 @@ export namespace Gst {
          * gst_element_register (plugin, "my-plugin-feature-name", rank, my_type);
          * ```
          * @param type a {@link GObject.GType} of element
+         * @since 1.20
          */
         static type_set_skip_documentation(type: GObject.GType): void;
 
@@ -11849,6 +11916,7 @@ export namespace Gst {
          * @param property_name name of property to watch for changes, or     NULL to watch all properties
          * @param include_value whether to include the new property value in the message
          * @returns a watch id, which can be used in connection with     `gst_element_remove_property_notify_watch()` to remove the watch again.
+         * @since 1.10
          */
         add_property_deep_notify_watch(property_name: string | null, include_value: boolean): number;
 
@@ -11856,6 +11924,7 @@ export namespace Gst {
          * @param property_name name of property to watch for changes, or     NULL to watch all properties
          * @param include_value whether to include the new property value in the message
          * @returns a watch id, which can be used in connection with     `gst_element_remove_property_notify_watch()` to remove the watch again.
+         * @since 1.10
          */
         add_property_notify_watch(property_name: string | null, include_value: boolean): number;
 
@@ -11871,6 +11940,8 @@ export namespace Gst {
          * 
          * MT safe.
          * @param func Function to call asynchronously from another thread
+         * @since 1.10
+         * @deprecated since 1.28: Use `gst_object_call_async()` or `gst_call_async()` instead.
          */
         call_async(func: ElementCallAsyncFunc): void;
 
@@ -11932,6 +12003,7 @@ export namespace Gst {
          * by using the format \%03u instead of \%u.
          * @param stream_id The stream-id
          * @returns A stream-id for `element`.
+         * @since 1.24
          */
         decorate_stream_id(stream_id: string): string;
 
@@ -11944,6 +12016,7 @@ export namespace Gst {
          * next time this function is used.
          * @param func function to call for each pad
          * @returns `false` if `element` had no pads or if one of the calls to `func`   returned `false`.
+         * @since 1.14
          */
         foreach_pad(func: ElementForeachPadFunc): boolean;
 
@@ -11956,6 +12029,7 @@ export namespace Gst {
          * into account until next time this function is used.
          * @param func function to call for each sink pad
          * @returns `false` if `element` had no sink pads or if one of the calls to `func`   returned `false`.
+         * @since 1.14
          */
         foreach_sink_pad(func: ElementForeachPadFunc): boolean;
 
@@ -11968,6 +12042,7 @@ export namespace Gst {
          * into account until next time this function is used.
          * @param func function to call for each source pad
          * @returns `false` if `element` had no source pads or if one of the calls   to `func` returned `false`.
+         * @since 1.14
          */
         foreach_src_pad(func: ElementForeachPadFunc): boolean;
 
@@ -12025,6 +12100,7 @@ export namespace Gst {
          * MT safe.
          * @param context_type a name of a context to retrieve
          * @returns A {@link Gst.Context} or NULL
+         * @since 1.8
          */
         get_context(context_type: string): Context | null;
 
@@ -12032,6 +12108,7 @@ export namespace Gst {
          * Gets the context with `context_type` set on the element or NULL.
          * @param context_type a name of a context to retrieve
          * @returns A {@link Gst.Context} or NULL
+         * @since 1.8
          */
         get_context_unlocked(context_type: string): Context | null;
 
@@ -12040,6 +12117,7 @@ export namespace Gst {
          * 
          * MT safe.
          * @returns List of {@link Gst.Context}
+         * @since 1.8
          */
         get_contexts(): Context[];
 
@@ -12047,6 +12125,7 @@ export namespace Gst {
          * Returns the current clock time of the element, as in, the time of the
          * element's clock, or GST_CLOCK_TIME_NONE if there is no clock.
          * @returns the clock time of the element, or GST_CLOCK_TIME_NONE if there is no clock.
+         * @since 1.18
          */
         get_current_clock_time(): ClockTime;
 
@@ -12055,6 +12134,7 @@ export namespace Gst {
          * element's clock time minus its base time. Will return GST_CLOCK_TIME_NONE
          * if the element has no clock, or if its base time has not been set.
          * @returns the running time of the element, or GST_CLOCK_TIME_NONE if the element has no clock or its base time has not been set.
+         * @since 1.18
          */
         get_current_running_time(): ClockTime;
 
@@ -12068,6 +12148,7 @@ export namespace Gst {
          * Get metadata with `key` in `klass`.
          * @param key the key to get
          * @returns the metadata for `key`.
+         * @since 1.14
          */
         get_metadata(key: string): string;
 
@@ -12075,6 +12156,7 @@ export namespace Gst {
          * Retrieves a padtemplate from `element` with the given name.
          * @param name the name of the {@link Gst.PadTemplate} to get.
          * @returns the {@link Gst.PadTemplate} with the     given name, or `null` if none was found. No unreferencing is     necessary.
+         * @since 1.14
          */
         get_pad_template(name: string): PadTemplate | null;
 
@@ -12082,6 +12164,7 @@ export namespace Gst {
          * Retrieves a list of the pad templates associated with `element`. The
          * list must not be modified by the calling code.
          * @returns the {@link GLib.List} of     pad templates.
+         * @since 1.14
          */
         get_pad_template_list(): PadTemplate[];
 
@@ -12091,6 +12174,7 @@ export namespace Gst {
          * a simplified `gst_element_request_pad()`.
          * @param name the name of the request {@link Gst.Pad} to retrieve.
          * @returns requested {@link Gst.Pad} if found,     otherwise `null`.  Release after usage.
+         * @deprecated since 1.20: Prefer using `gst_element_request_pad_simple()` which provides the exact same functionality.
          */
         get_request_pad(name: string): Pad | null;
 
@@ -12306,6 +12390,7 @@ export namespace Gst {
          * @param _function the source code function where the error was generated
          * @param line the source code line where the error was generated
          * @param structure optional details structure
+         * @since 1.10
          */
         message_full_with_details(type: MessageType, domain: GLib.Quark, code: number, text: string | null, debug: string | null, file: string, _function: string, line: number, structure: Structure): void;
 
@@ -12427,6 +12512,7 @@ export namespace Gst {
 
         /**
          * @param watch_id watch id to remove
+         * @since 1.10
          */
         remove_property_notify_watch(watch_id: bigint | number): void;
 
@@ -12458,6 +12544,7 @@ export namespace Gst {
          * functionality.
          * @param name the name of the request {@link Gst.Pad} to retrieve.
          * @returns requested {@link Gst.Pad} if found,     otherwise `null`.  Release after usage.
+         * @since 1.20
          */
         request_pad_simple(name: string): Pad | null;
 
@@ -12745,6 +12832,7 @@ export namespace Gst {
          * @param factoryname a named factory to instantiate
          * @param names array of properties names
          * @param values array of associated properties values
+         * @since 1.20
          */
         static make_with_properties(factoryname: string, names: string[] | null, values: (GObject.Value | any)[] | null): Element | null;
 
@@ -12792,6 +12880,7 @@ export namespace Gst {
          * @param names array of properties names
          * @param values array of associated properties values
          * @returns new {@link Gst.Element} or `null`     if the element couldn't be created
+         * @since 1.20
          */
         create_with_properties(names: string[] | null, values: (GObject.Value | any)[] | null): Element | null;
 
@@ -12826,6 +12915,7 @@ export namespace Gst {
          * Queries whether registered element managed by `factory` needs to
          * be excluded from documentation system or not.
          * @returns `true` if documentation should be skipped
+         * @since 1.20
          */
         get_skip_documentation(): boolean;
 
@@ -12901,6 +12991,7 @@ export namespace Gst {
          * which will pretty-print the human-readable flags
          * when serializing, for easier debugging.
          * @param flags_type a {@link GObject.GType} of a #G_TYPE_FLAGS type.
+         * @since 1.6
          */
         static register(flags_type: GObject.GType): GObject.GType;
     }
@@ -13074,6 +13165,7 @@ export namespace Gst {
          * function. Call this function directly after a call to g_object_new
          * (GST_TYPE_GHOST_PAD, "direction", `dir`, ..., NULL).
          * @returns `true` if the construction succeeds, `false` otherwise.
+         * @deprecated This function is deprecated since 1.18 and does nothing anymore.
          */
         construct(): boolean;
 
@@ -13223,6 +13315,7 @@ export namespace Gst {
         /**
          * Loads a previously registered {@link Gst.MetaInfo} from the registry.
          * @param factoryname The name of the {@link Gst.MetaInfo} to load
+         * @since 1.28
          */
         static load(factoryname: string): MetaInfo;
 
@@ -13230,6 +13323,7 @@ export namespace Gst {
          * Registers a new {@link Gst.MetaInfo} in the registry
          * @param plugin The {@link Gst.Plugin} to register `meta_info` for
          * @param meta_info The {@link Gst.MetaInfo} to register
+         * @since 1.28
          */
         static register(plugin: Plugin, meta_info: MetaInfo): boolean;
     }
@@ -13444,6 +13538,7 @@ export namespace Gst {
          * Equivalent to `gst_element_call_async()` but this API allows `func` to be called
          * with {@link Gst.Object}. See also `gst_element_call_async()`
          * @param func function to call asynchronously from another thread
+         * @since 1.28
          */
         call_async(func: ObjectCallAsyncFunc): void;
 
@@ -13526,6 +13621,7 @@ export namespace Gst {
          * Returns the toplevel parent of `object`. This function increases the refcount
          * of the toplevel object so you should `gst_object_unref()` it after usage.
          * @returns toplevel of `object`, or `object` itself if it has no   parent. unref after usage. MT safe. Grabs and releases `object`'s LOCK.
+         * @since 1.28
          */
         get_toplevel(): Object;
 
@@ -13548,6 +13644,7 @@ export namespace Gst {
          * the hierarchy. One can e.g. check if a {@link Gst.Element} is inside a {@link Gst.Pipeline}.
          * @param ancestor a {@link Gst.Object} to check as ancestor
          * @returns `true` if `ancestor` is an ancestor of `object`.
+         * @deprecated Use `gst_object_has_as_ancestor()` instead. MT safe. Grabs and releases `object`'s locks.
          */
         has_ancestor(ancestor: Object): boolean;
 
@@ -13564,6 +13661,7 @@ export namespace Gst {
          * E.g. a {@link Gst.Element} can check if it owns a given {@link Gst.Pad}.
          * @param parent a {@link Gst.Object} to check as parent
          * @returns `false` if either `object` or `parent` is `null`. `true` if `parent` is          the parent of `object`. Otherwise `false`. MT safe. Grabs and releases `object`'s locks.
+         * @since 1.6
          */
         has_as_parent(parent: Object): boolean;
 
@@ -13835,6 +13933,7 @@ export namespace Gst {
         /**
          * Gets a string representing the given pad-link return.
          * @param ret a {@link Gst.PadLinkReturn} to get the name of.
+         * @since 1.4
          */
         static link_get_name(ret: PadLinkReturn): string;
 
@@ -14021,6 +14120,7 @@ export namespace Gst {
 
         /**
          * Gets the {@link Gst.FlowReturn} return from the last data passed by this pad.
+         * @since 1.4
          */
         get_last_flow_return(): FlowReturn;
 
@@ -14094,6 +14194,7 @@ export namespace Gst {
          * If there is a single internal link of the given pad, this function will
          * return it. Otherwise, it will return NULL.
          * @returns a {@link Gst.Pad}, or `null` if `pad` has none or more than one internal links. Unref returned pad with `gst_object_unref()`.
+         * @since 1.18
          */
         get_single_internal_link(): Pad | null;
 
@@ -14113,6 +14214,7 @@ export namespace Gst {
          * This is a convenience wrapper around `gst_pad_get_sticky_event()` and
          * `gst_event_parse_stream()`.
          * @returns the current {@link Gst.Stream} for `pad`, or `null`.     unref the returned stream when no longer needed.
+         * @since 1.10
          */
         get_stream(): Stream | null;
 
@@ -14126,6 +14228,7 @@ export namespace Gst {
          * The returned stream-id string should be treated as an opaque string, its
          * contents should not be interpreted.
          * @returns a newly-allocated copy of the stream-id for     `pad`, or `null`.  `g_free()` the returned string when no longer     needed.
+         * @since 1.2
          */
         get_stream_id(): string | null;
 
@@ -14133,6 +14236,7 @@ export namespace Gst {
          * Get `pad` task state. If no task is currently
          * set, #GST_TASK_STOPPED is returned.
          * @returns The current state of `pad`'s task.
+         * @since 1.12
          */
         get_task_state(): TaskState;
 
@@ -14226,6 +14330,7 @@ export namespace Gst {
          * ancestor, the link will fail.
          * @param sink a {@link Gst.Pad}
          * @returns whether the link succeeded.
+         * @since 1.10
          */
         link_maybe_ghosting(sink: Pad): boolean;
 
@@ -14244,6 +14349,7 @@ export namespace Gst {
          * @param sink a {@link Gst.Pad}
          * @param flags some {@link Gst.PadLinkCheck} flags
          * @returns whether the link succeeded.
+         * @since 1.10
          */
         link_maybe_ghosting_full(sink: Pad, flags: PadLinkCheck): boolean;
 
@@ -14599,6 +14705,7 @@ export namespace Gst {
         /**
          * Sets the given event handler for the pad.
          * @param event the {@link Gst.PadEventFullFunction} to set.
+         * @since 1.8
          */
         set_event_full_function_full(event: PadEventFullFunction): void;
 
@@ -14699,6 +14806,7 @@ export namespace Gst {
          * Store the sticky `event` on `pad`
          * @param event a {@link Gst.Event}
          * @returns #GST_FLOW_OK on success, #GST_FLOW_FLUSHING when the pad was flushing or #GST_FLOW_EOS when the pad was EOS.
+         * @since 1.2
          */
         store_sticky_event(event: Event): FlowReturn;
 
@@ -14918,6 +15026,7 @@ export namespace Gst {
         /**
          * See `gst_pad_template_set_documentation_caps()`.
          * @returns The caps to document. For convenience, this will return   `gst_pad_template_get_caps()` when no documentation caps were set.
+         * @since 1.18
          */
         get_documentation_caps(): Caps;
 
@@ -14933,6 +15042,7 @@ export namespace Gst {
          * into the documentation, element authors should use this method to
          * expose "stable" caps to the reader.
          * @param caps the documented capabilities
+         * @since 1.18
          */
         set_documentation_caps(caps: Caps): void;
     }
@@ -15122,6 +15232,7 @@ export namespace Gst {
         /**
          * Return the configured latency on `pipeline`.
          * @returns `pipeline` configured latency, or `GST_CLOCK_TIME_NONE` if none has been configured because `pipeline` did not reach the PLAYING state yet. MT safe.
+         * @since 1.24
          */
         get_configured_latency(): ClockTime;
 
@@ -15135,6 +15246,7 @@ export namespace Gst {
          * Gets the latency that should be configured on the pipeline. See
          * `gst_pipeline_set_latency()`.
          * @returns Latency to configure on the pipeline or GST_CLOCK_TIME_NONE
+         * @since 1.6
          */
         get_latency(): ClockTime;
 
@@ -15144,12 +15256,14 @@ export namespace Gst {
          * Unlike `gst_element_get_clock()`, this function will always return a
          * clock, even if the pipeline is not in the PLAYING state.
          * @returns a {@link Gst.Clock}, unref after usage.
+         * @since 1.6
          */
         get_pipeline_clock(): Clock;
 
         /**
          * Check if `pipeline` is live.
          * @returns `true` if `pipeline` is live, `false` if not or if it did not reach the PAUSED state yet. MT safe.
+         * @since 1.24
          */
         is_live(): boolean;
 
@@ -15196,6 +15310,7 @@ export namespace Gst {
          * Setting a too low latency, especially lower than the minimum latency from
          * the LATENCY query, will most likely cause the pipeline to fail.
          * @param latency latency to configure
+         * @since 1.6
          */
         set_latency(latency: ClockTime): void;
 
@@ -15255,6 +15370,7 @@ export namespace Gst {
          * element names only and should not contain any property names.
          * @param name the full-path child's name
          * @returns the child object or `null` if     not found.
+         * @since 1.22
          */
         get_child_by_name_recurse<T = GObject.Object>(name: string): T;
 
@@ -15526,16 +15642,19 @@ export namespace Gst {
 
         /**
          * @param message the status error message
+         * @since 1.24
          */
         add_status_error(message: string): void;
 
         /**
          * @param message the status info message
+         * @since 1.24
          */
         add_status_info(message: string): void;
 
         /**
          * @param message the status warning message
+         * @since 1.24
          */
         add_status_warning(message: string): void;
 
@@ -15609,16 +15728,19 @@ export namespace Gst {
 
         /**
          * @returns an array of plugin status error messages, or NULL
+         * @since 1.24
          */
         get_status_errors(): string[] | null;
 
         /**
          * @returns an array of plugin status info messages, or NULL
+         * @since 1.24
          */
         get_status_infos(): string[] | null;
 
         /**
          * @returns an array of plugin status warning messages, or NULL
+         * @since 1.24
          */
         get_status_warnings(): string[] | null;
 
@@ -15760,6 +15882,7 @@ export namespace Gst {
         /**
          * Get the name of the plugin that provides this feature.
          * @returns the name of the plugin that provides this     feature, or `null` if the feature is not associated with a     plugin.
+         * @since 1.2
          */
         get_plugin_name(): string | null;
 
@@ -16230,6 +16353,7 @@ export namespace Gst {
         // Methods
         /**
          * @returns the maximum number of threads `pool` is configured to spawn
+         * @since 1.20
          */
         get_max_threads(): number;
 
@@ -16240,6 +16364,7 @@ export namespace Gst {
          * 
          * Setting `max_threads` to 0 effectively freezes the pool.
          * @param max_threads Maximum number of threads to spawn.
+         * @since 1.20
          */
         set_max_threads(max_threads: number): void;
     }
@@ -16377,54 +16502,63 @@ export namespace Gst {
         /**
          * Retrieve the caps for `stream`, if any
          * @returns The {@link Gst.Caps} for `stream`
+         * @since 1.10
          */
         get_caps(): Caps | null;
 
         /**
          * Retrieve the current stream flags for `stream`
          * @returns The {@link Gst.StreamFlags} for `stream`
+         * @since 1.10
          */
         get_stream_flags(): StreamFlags;
 
         /**
          * Returns the stream ID of `stream`.
          * @returns the stream ID of `stream`. Only valid during the lifetime of `stream`.
+         * @since 1.10
          */
         get_stream_id(): string | null;
 
         /**
          * Retrieve the stream type for `stream`
          * @returns The {@link Gst.StreamType} for `stream`
+         * @since 1.10
          */
         get_stream_type(): StreamType;
 
         /**
          * Retrieve the tags for `stream`, if any
          * @returns The {@link Gst.TagList} for `stream`
+         * @since 1.10
          */
         get_tags(): TagList | null;
 
         /**
          * Set the caps for the {@link Gst.Stream}
          * @param caps a {@link Gst.Caps}
+         * @since 1.10
          */
         set_caps(caps: Caps | null): void;
 
         /**
          * Set the `flags` for the `stream`.
          * @param flags the flags to set on `stream`
+         * @since 1.10
          */
         set_stream_flags(flags: StreamFlags): void;
 
         /**
          * Set the stream type of `stream`
          * @param stream_type the type to set on `stream`
+         * @since 1.10
          */
         set_stream_type(stream_type: StreamType): void;
 
         /**
          * Set the tags for the {@link Gst.Stream}
          * @param tags a {@link Gst.TagList}
+         * @since 1.10
          */
         set_tags(tags: TagList | null): void;
     }
@@ -16559,12 +16693,14 @@ export namespace Gst {
          * Add the given `stream` to the `collection`.
          * @param stream the {@link Gst.Stream} to add
          * @returns `true` if the `stream` was properly added, else `false`
+         * @since 1.10
          */
         add_stream(stream: Stream): boolean;
 
         /**
          * Get the number of streams this collection contains
          * @returns The number of streams that `collection` contains
+         * @since 1.10
          */
         get_size(): number;
 
@@ -16574,12 +16710,14 @@ export namespace Gst {
          * The caller should not modify the returned {@link Gst.Stream}
          * @param index Index of the stream to retrieve
          * @returns A {@link Gst.Stream}
+         * @since 1.10
          */
         get_stream(index: number): Stream | null;
 
         /**
          * Returns the upstream id of the `collection`.
          * @returns The upstream id
+         * @since 1.10
          */
         get_upstream_id(): string | null;
     }
@@ -16679,6 +16817,7 @@ export namespace Gst {
          * 
          * MT safe.
          * @param new_clock a {@link Gst.Clock}
+         * @since 1.4
          */
         static set_default(new_clock: Clock | null): void;
     }
@@ -16835,6 +16974,7 @@ export namespace Gst {
          * Resume `task` in case it was paused. If the task was stopped, it will
          * remain in that state and this function will return `false`.
          * @returns `true` if the task could be resumed. MT safe.
+         * @since 1.18
          */
         resume(): boolean;
 
@@ -16979,6 +17119,7 @@ export namespace Gst {
          * This method should only be called with the same `pool` instance that provided
          * `id`.
          * @param id the id
+         * @since 1.20
          * @virtual
          */
         vfunc_dispose_handle(id: null): void;
@@ -17030,6 +17171,7 @@ export namespace Gst {
          * This method should only be called with the same `pool` instance that provided
          * `id`.
          * @param id the id
+         * @since 1.20
          */
         dispose_handle(id: null): void;
 
@@ -17193,6 +17335,7 @@ export namespace Gst {
          * The returned factories are sorted by factory name.
          * 
          * Free-function: gst_plugin_feature_list_free
+         * @since 1.8
          */
         static get_list(): TracerFactory[];
 
@@ -17202,6 +17345,7 @@ export namespace Gst {
          * only be retrieved if the element factory is loaded, which can be
          * assured with `gst_plugin_feature_load()`.
          * @returns the {@link GObject.GType} for tracers managed by this factory or 0 if the factory is not loaded.
+         * @since 1.14
          */
         get_tracer_type(): GObject.GType;
     }
@@ -17428,6 +17572,7 @@ export namespace Gst {
          * Appends `append_value` to the GstValueArray in `value`.
          * @param value a {@link GObject.Value} of type #GST_TYPE_ARRAY
          * @param append_value the value to append
+         * @since 1.2
          */
         static append_and_take_value(value: GObject.Value | any, append_value: GObject.Value | any): void;
 
@@ -17456,6 +17601,7 @@ export namespace Gst {
          * Initializes and pre-allocates a {@link GObject.Value} of type #GST_TYPE_ARRAY.
          * @param value A zero-filled (uninitialized) {@link GObject.Value} structure
          * @param prealloc The number of entries to pre-allocate in the array
+         * @since 1.18
          */
         static init(value: GObject.Value | any, prealloc: number): unknown;
 
@@ -17501,6 +17647,7 @@ export namespace Gst {
          * Appends `append_value` to the GstValueList in `value`.
          * @param value a {@link GObject.Value} of type #GST_TYPE_LIST
          * @param append_value the value to append
+         * @since 1.2
          */
         static append_and_take_value(value: GObject.Value | any, append_value: GObject.Value | any): void;
 
@@ -17538,6 +17685,7 @@ export namespace Gst {
          * Initializes and pre-allocates a {@link GObject.Value} of type #GST_TYPE_LIST.
          * @param value A zero-filled (uninitialized) {@link GObject.Value} structure
          * @param prealloc The number of entries to pre-allocate in the list
+         * @since 1.18
          */
         static init(value: GObject.Value | any, prealloc: number): unknown;
 
@@ -17596,6 +17744,7 @@ export namespace Gst {
          * Appends `append_value` to the GstValueUniqueList in `value`.
          * @param value a {@link GObject.Value} of type #GST_TYPE_UNIQUE_LIST
          * @param append_value the value to append
+         * @since 1.28
          */
         static append_and_take_value(value: GObject.Value | any, append_value: GObject.Value | any): void;
 
@@ -17603,6 +17752,7 @@ export namespace Gst {
          * Appends `append_value` to the GstValueUniqueList in `value`.
          * @param value a {@link GObject.Value} of type #GST_TYPE_UNIQUE_LIST
          * @param append_value the value to append
+         * @since 1.28
          */
         static append_value(value: GObject.Value | any, append_value: GObject.Value | any): void;
 
@@ -17612,12 +17762,14 @@ export namespace Gst {
          * `dest` will be initialized to the type #GST_TYPE_UNIQUE_LIST.
          * @param value1 a {@link GObject.Value}
          * @param value2 a {@link GObject.Value}
+         * @since 1.28
          */
         static concat(value1: GObject.Value | any, value2: GObject.Value | any): unknown;
 
         /**
          * Gets the number of values contained in `value`.
          * @param value a {@link GObject.Value} of type #GST_TYPE_UNIQUE_LIST
+         * @since 1.28
          */
         static get_size(value: GObject.Value | any): number;
 
@@ -17626,6 +17778,7 @@ export namespace Gst {
          * has the index `index`.
          * @param value a {@link GObject.Value} of type #GST_TYPE_UNIQUE_LIST
          * @param index index of value to get from the set
+         * @since 1.28
          */
         static get_value(value: GObject.Value | any, index: number): unknown;
 
@@ -17633,6 +17786,7 @@ export namespace Gst {
          * Prepends `prepend_value` to the GstValueUniqueList in `value`.
          * @param value a {@link GObject.Value} of type #GST_TYPE_UNIQUE_LIST
          * @param prepend_value the value to prepend
+         * @since 1.28
          */
         static prepend_value(value: GObject.Value | any, prepend_value: GObject.Value | any): void;
     }
@@ -17898,6 +18052,7 @@ export namespace Gst {
          * 
          * When more memory blocks are added, existing memory blocks will be merged
          * together to make room for the new block.
+         * @since 1.2
          */
         static get_max_memory(): number;
 
@@ -17907,6 +18062,7 @@ export namespace Gst {
          * been successfully registered with `gst_meta_register_custom()`.
          * @param name the registered name of the desired custom meta
          * @returns The {@link Gst.CustomMeta} that was added to the buffer
+         * @since 1.20
          */
         add_custom_meta(name: string): CustomMeta | null;
 
@@ -17923,6 +18079,7 @@ export namespace Gst {
          * `ref` until the buffer is freed.
          * @param ref a {@link Gst.Buffer} to ref
          * @returns The {@link Gst.ParentBufferMeta} that was added to the buffer
+         * @since 1.6
          */
         add_parent_buffer_meta(ref: Buffer): ParentBufferMeta | null;
 
@@ -17930,6 +18087,7 @@ export namespace Gst {
          * Attaches protection metadata to a {@link Gst.Buffer}.
          * @param info a {@link Gst.Structure} holding cryptographic     information relating to the sample contained in `buffer`. This     function takes ownership of `info`.
          * @returns a pointer to the added {@link Gst.ProtectionMeta} if successful
+         * @since 1.6
          */
         add_protection_meta(info: Structure): ProtectionMeta;
 
@@ -17941,6 +18099,7 @@ export namespace Gst {
          * @param timestamp timestamp
          * @param duration duration, or `GST_CLOCK_TIME_NONE`
          * @returns The {@link Gst.ReferenceTimestampMeta} that was added to the buffer
+         * @since 1.14
          */
         add_reference_timestamp_meta(reference: Caps, timestamp: ClockTime, duration: ClockTime): ReferenceTimestampMeta | null;
 
@@ -17987,6 +18146,7 @@ export namespace Gst {
          * Creates a copy of the given buffer. This will make a newly allocated
          * copy of the data the source buffer contains.
          * @returns a new copy of `buf` if the copy succeeded, `null` otherwise.
+         * @since 1.6
          */
         copy_deep(): Buffer | null;
 
@@ -18033,6 +18193,7 @@ export namespace Gst {
          * newly-allocated memory. `dest` must be freed using `g_free()` when done.
          * @param offset the offset to extract
          * @param size the size to extract
+         * @since 1.0.10
          */
         extract_dup(offset: bigint | number, size: bigint | number): Uint8Array;
 
@@ -18083,12 +18244,14 @@ export namespace Gst {
          * Finds the first {@link Gst.CustomMeta} on `buffer` for the desired `name`.
          * @param name the registered name of the custom meta to retrieve.
          * @returns the {@link Gst.CustomMeta}
+         * @since 1.20
          */
         get_custom_meta(name: string): CustomMeta | null;
 
         /**
          * Gets the {@link Gst.BufferFlags} flags set on this buffer.
          * @returns the flags set on this buffer.
+         * @since 1.10
          */
         get_flags(): BufferFlags;
 
@@ -18124,6 +18287,7 @@ export namespace Gst {
         /**
          * @param api_type the {@link GObject.GType} of an API
          * @returns number of metas of type `api_type` on `buffer`.
+         * @since 1.14
          */
         get_n_meta(api_type: GObject.GType): number;
 
@@ -18135,6 +18299,7 @@ export namespace Gst {
          * Buffers can contain multiple {@link Gst.ReferenceTimestampMeta} metadata items.
          * @param reference a reference {@link Gst.Caps}
          * @returns the {@link Gst.ReferenceTimestampMeta} or `null` when there is no such metadata on `buffer`.
+         * @since 1.14
          */
         get_reference_timestamp_meta(reference: Caps | null): ReferenceTimestampMeta | null;
 
@@ -18175,6 +18340,7 @@ export namespace Gst {
          * Gives the status of a specific flag on a buffer.
          * @param flags the {@link Gst.BufferFlags} flag to check.
          * @returns `true` if all flags in `flags` are found on `buffer`.
+         * @since 1.10
          */
         has_flags(flags: BufferFlags): boolean;
 
@@ -18196,6 +18362,7 @@ export namespace Gst {
          * Note that this function does not check if `buffer` is writable, use
          * `gst_buffer_is_writable()` to check that if needed.
          * @returns `true` if all memory blocks in `buffer` are writable
+         * @since 1.4
          */
         is_all_memory_writable(): boolean;
 
@@ -18209,6 +18376,7 @@ export namespace Gst {
          * @param idx an index
          * @param length a length, should not be 0
          * @returns `true` if the memory range is writable
+         * @since 1.4
          */
         is_memory_range_writable(idx: number, length: number): boolean;
 
@@ -18381,6 +18549,7 @@ export namespace Gst {
          * Sets one or more buffer flags on a buffer.
          * @param flags the {@link Gst.BufferFlags} to set.
          * @returns `true` if `flags` were successfully set on buffer.
+         * @since 1.10
          */
         set_flags(flags: BufferFlags): boolean;
 
@@ -18406,6 +18575,7 @@ export namespace Gst {
          * Clears one or more buffer flags.
          * @param flags the {@link Gst.BufferFlags} to clear
          * @returns true if `flags` is successfully cleared from buffer.
+         * @since 1.10
          */
         unset_flags(flags: BufferFlags): boolean;
     }
@@ -18442,6 +18612,7 @@ export namespace Gst {
          * Either `new_list` or the {@link Gst.BufferList} pointed to by `old_list` may be `null`.
          * @param old_list pointer to a pointer to a     {@link Gst.BufferList} to be replaced.
          * @param new_list pointer to a {@link Gst.BufferList} that     will replace the buffer list pointed to by `old_list`.
+         * @since 1.16
          */
         static replace(old_list: BufferList | null, new_list: BufferList | null): [boolean, BufferList | null];
 
@@ -18451,6 +18622,7 @@ export namespace Gst {
          * that it takes ownership of `new_list`.
          * @param old_list pointer to a pointer to a {@link Gst.BufferList}     to be replaced.
          * @param new_list pointer to a {@link Gst.BufferList}     that will replace the bufferlist pointed to by `old_list`.
+         * @since 1.16
          */
         static take(old_list: BufferList, new_list: BufferList | null): [boolean, BufferList];
 
@@ -18459,6 +18631,7 @@ export namespace Gst {
          * Calculates the size of the data contained in `list` by adding the
          * size of all buffers.
          * @returns the size of the data contained in `list` in bytes.
+         * @since 1.14
          */
         calculate_size(): number;
 
@@ -18474,6 +18647,7 @@ export namespace Gst {
          * Creates a copy of the given buffer list. This will make a newly allocated
          * copy of the buffers that the source buffer list contains.
          * @returns a new copy of `list`.
+         * @since 1.6
          */
         copy_deep(): BufferList;
 
@@ -18505,6 +18679,7 @@ export namespace Gst {
          * buffers available.
          * @param idx the index
          * @returns the buffer at `idx` in `group`.     The returned buffer remains valid as long as `list` is valid and     the buffer is not removed from the list.
+         * @since 1.14
          */
         get_writable(idx: number): Buffer;
 
@@ -18731,6 +18906,7 @@ export namespace Gst {
          * becomes the owner of `structure`.
          * @param structure the {@link Gst.Structure} to append
          * @param features the {@link Gst.CapsFeatures} to append
+         * @since 1.2
          */
         append_structure_full(structure: Structure, features: CapsFeatures | null): void;
 
@@ -18758,6 +18934,7 @@ export namespace Gst {
          * contained in `caps`.
          * @param nth the nth structure to copy
          * @returns the new {@link Gst.Caps}
+         * @since 1.16
          */
         copy_nth(nth: number): Caps;
 
@@ -18768,6 +18945,7 @@ export namespace Gst {
          * and features are removed from the caps if `false` is returned from the
          * function. The caps must be mutable.
          * @param func a function to call for each field
+         * @since 1.6
          */
         filter_and_map_in_place(func: CapsFilterMapFunc): void;
 
@@ -18795,6 +18973,7 @@ export namespace Gst {
          * Also see `gst_caps_map_in_place()` and `gst_caps_filter_and_map_in_place()`.
          * @param func a function to call for each field
          * @returns `true` if the supplied function returns `true` for each call, `false` otherwise.
+         * @since 1.6
          */
         foreach(func: CapsForeachFunc): boolean;
 
@@ -18811,6 +18990,7 @@ export namespace Gst {
          * `gst_caps_features_add()`.
          * @param index the index of the structure
          * @returns a pointer to the {@link Gst.CapsFeatures}     corresponding to `index`
+         * @since 1.2
          */
         get_features(index: number): CapsFeatures | null;
 
@@ -18842,6 +19022,7 @@ export namespace Gst {
          * all structures of `caps`.
          * @param field name of the field to set
          * @param value value to set the field to
+         * @since 1.26
          */
         id_str_set_value(field: IdStr, value: GObject.Value | any): void;
 
@@ -18935,6 +19116,7 @@ export namespace Gst {
          * @param structure a potential {@link Gst.Structure} subset of `caps`
          * @param features a {@link Gst.CapsFeatures} for `structure`
          * @returns `true` if `structure` is a subset of `caps`
+         * @since 1.2
          */
         is_subset_structure_full(structure: Structure, features: CapsFeatures | null): boolean;
 
@@ -18966,6 +19148,7 @@ export namespace Gst {
          * delete the structures and features. The caps must be mutable.
          * @param func a function to call for each field
          * @returns `true` if the supplied function returns `true` for each call, `false` otherwise.
+         * @since 1.6
          */
         map_in_place(func: CapsMapFunc): boolean;
 
@@ -18991,6 +19174,7 @@ export namespace Gst {
          * @param structure the {@link Gst.Structure} to merge
          * @param features the {@link Gst.CapsFeatures} to merge
          * @returns the merged caps.
+         * @since 1.2
          */
         merge_structure_full(structure: Structure, features: CapsFeatures | null): Caps;
 
@@ -19038,6 +19222,7 @@ export namespace Gst {
          * as `flag`.
          * @param flags a {@link Gst.SerializeFlags}
          * @returns a newly allocated string representing `caps`.
+         * @since 1.20
          */
         serialize(flags: SerializeFlags): string;
 
@@ -19045,12 +19230,14 @@ export namespace Gst {
          * Sets the `features` for the structure at `index`.
          * @param index the index of the structure
          * @param features the {@link Gst.CapsFeatures} to set
+         * @since 1.2
          */
         set_features(index: number, features: CapsFeatures | null): void;
 
         /**
          * Sets the `features` for all the structures of `caps`.
          * @param features the {@link Gst.CapsFeatures} to set
+         * @since 1.16
          */
         set_features_simple(features: CapsFeatures | null): void;
 
@@ -19072,6 +19259,7 @@ export namespace Gst {
          * has to be a static string.
          * @param field name of the field to set
          * @param value value to set the field to
+         * @since 1.26
          */
         set_value_static_str(field: string, value: GObject.Value | any): void;
 
@@ -19188,6 +19376,7 @@ export namespace Gst {
         /**
          * Creates a {@link Gst.CapsFeatures} from a string representation.
          * @param features a string representation of a {@link Gst.CapsFeatures}.
+         * @since 1.2
          */
         static from_string(features: string): CapsFeatures | null;
 
@@ -19195,18 +19384,22 @@ export namespace Gst {
         /**
          * Adds `feature` to `features`.
          * @param feature a feature.
+         * @since 1.2
          */
         add(feature: string): void;
 
         /**
          * Adds `feature` to `features`.
          * @param feature a feature.
+         * @since 1.2
+         * @deprecated since 1.26: Use `gst_caps_features_add_id_str()`.
          */
         add_id(feature: GLib.Quark): void;
 
         /**
          * Adds `feature` to `features`.
          * @param feature a feature.
+         * @since 1.26
          */
         add_id_str(feature: IdStr): void;
 
@@ -19216,6 +19409,7 @@ export namespace Gst {
          * `feature` needs to be valid for the remaining lifetime of the process, e.g. has
          * to be a static string.
          * @param feature a feature.
+         * @since 1.26
          */
         add_static_str(feature: string): void;
 
@@ -19223,6 +19417,7 @@ export namespace Gst {
          * Checks if `features` contains `feature`.
          * @param feature a feature
          * @returns `true` if `features` contains `feature`.
+         * @since 1.2
          */
         contains(feature: string): boolean;
 
@@ -19230,6 +19425,8 @@ export namespace Gst {
          * Checks if `features` contains `feature`.
          * @param feature a feature
          * @returns `true` if `features` contains `feature`.
+         * @since 1.2
+         * @deprecated since 1.26: Use `gst_caps_features_contains_id_str()`.
          */
         contains_id(feature: GLib.Quark): boolean;
 
@@ -19237,18 +19434,21 @@ export namespace Gst {
          * Checks if `features` contains `feature`.
          * @param feature a feature
          * @returns `true` if `features` contains `feature`.
+         * @since 1.26
          */
         contains_id_str(feature: IdStr): boolean;
 
         /**
          * Duplicates a {@link Gst.CapsFeatures} and all its values.
          * @returns a new {@link Gst.CapsFeatures}.
+         * @since 1.2
          */
         copy(): CapsFeatures;
 
         /**
          * Frees a {@link Gst.CapsFeatures} and all its values. The caps features must not
          * have a parent when this function is called.
+         * @since 1.2
          */
         free(): void;
 
@@ -19256,6 +19456,7 @@ export namespace Gst {
          * Returns the `i`-th feature of `features`.
          * @param i index of the feature
          * @returns The `i`-th feature of `features`.
+         * @since 1.2
          */
         get_nth(i: number): string | null;
 
@@ -19263,6 +19464,8 @@ export namespace Gst {
          * Returns the `i`-th feature of `features`.
          * @param i index of the feature
          * @returns The `i`-th feature of `features`.
+         * @since 1.2
+         * @deprecated since 1.26: Use `gst_caps_features_get_nth_id_str()`.
          */
         get_nth_id(i: number): GLib.Quark;
 
@@ -19270,18 +19473,21 @@ export namespace Gst {
          * Returns the `i`-th feature of `features`.
          * @param i index of the feature
          * @returns The `i`-th feature of `features`.
+         * @since 1.26
          */
         get_nth_id_str(i: number): IdStr;
 
         /**
          * Returns the number of features in `features`.
          * @returns The number of features in `features`.
+         * @since 1.2
          */
         get_size(): number;
 
         /**
          * Checks if `features` is `GST_CAPS_FEATURES_ANY`.
          * @returns `true` if `features` is `GST_CAPS_FEATURES_ANY`.
+         * @since 1.2
          */
         is_any(): boolean;
 
@@ -19289,24 +19495,29 @@ export namespace Gst {
          * Checks if `features1` and `features2` are equal.
          * @param features2 a {@link Gst.CapsFeatures}.
          * @returns `true` if `features1` and `features2` are equal.
+         * @since 1.2
          */
         is_equal(features2: CapsFeatures): boolean;
 
         /**
          * Removes `feature` from `features`.
          * @param feature a feature.
+         * @since 1.2
          */
         remove(feature: string): void;
 
         /**
          * Removes `feature` from `features`.
          * @param feature a feature.
+         * @since 1.2
+         * @deprecated since 1.26: Use `gst_caps_features_remove_id_str()`.
          */
         remove_id(feature: GLib.Quark): void;
 
         /**
          * Removes `feature` from `features`.
          * @param feature a feature.
+         * @since 1.26
          */
         remove_id_str(feature: IdStr): void;
 
@@ -19321,6 +19532,7 @@ export namespace Gst {
          * 
          * This prints the features in human readable form.
          * @returns a pointer to string allocated by `g_malloc()`.
+         * @since 1.2
          */
         to_string(): string;
     }
@@ -19410,6 +19622,7 @@ export namespace Gst {
          * Either `new_context` or the {@link Gst.Context} pointed to by `old_context` may be `null`.
          * @param old_context pointer to a pointer to a {@link Gst.Context}     to be replaced.
          * @param new_context pointer to a {@link Gst.Context} that will     replace the context pointed to by `old_context`.
+         * @since 1.2
          */
         static replace(old_context: Context, new_context: Context | null): [boolean, Context];
 
@@ -19417,24 +19630,28 @@ export namespace Gst {
         /**
          * Creates a copy of the context. Returns a copy of the context.
          * @returns a new copy of `context`. MT safe
+         * @since 1.2
          */
         copy(): Context;
 
         /**
          * Gets the type of `context`.
          * @returns The type of the context.
+         * @since 1.2
          */
         get_context_type(): string;
 
         /**
          * Accesses the structure of the context.
          * @returns The structure of the context. The structure is still owned by the context, which means that you should not modify it, free it and that the pointer becomes invalid when you free the context.
+         * @since 1.2
          */
         get_structure(): Structure;
 
         /**
          * Gets the task pool from `context`.
          * @returns `true` if a task pool was set on `context`
+         * @since 1.28
          */
         get_task_pool(): [boolean, TaskPool | null];
 
@@ -19442,12 +19659,14 @@ export namespace Gst {
          * Checks if `context` has `context_type`.
          * @param context_type Context type to check.
          * @returns `true` if `context` has `context_type`.
+         * @since 1.2
          */
         has_context_type(context_type: string): boolean;
 
         /**
          * Checks if `context` is persistent.
          * @returns `true` if the context is persistent.
+         * @since 1.2
          */
         is_persistent(): boolean;
 
@@ -19476,6 +19695,7 @@ export namespace Gst {
         /**
          * Convenience macro to increase the reference count of the context.
          * @returns `context` (for convenience when doing assignments)
+         * @since 1.2
          */
         ref(): Context;
 
@@ -19484,18 +19704,21 @@ export namespace Gst {
          * If `pool` is `null`, any previously set task pool will be removed from
          * the context.
          * @param pool a {@link Gst.TaskPool} or `null` to unset
+         * @since 1.28
          */
         set_task_pool(pool: TaskPool | null): void;
 
         /**
          * Convenience macro to decrease the reference count of the context, possibly
          * freeing it.
+         * @since 1.2
          */
         unref(): void;
 
         /**
          * Gets a writable version of the structure.
          * @returns The structure of the context. The structure is still owned by the context, which means that you should not free it and that the pointer becomes invalid when you free the context. This function checks if `context` is writable.
+         * @since 1.2
          */
         writable_structure(): Structure;
     }
@@ -19537,6 +19760,7 @@ export namespace Gst {
          * Retrieve the {@link Gst.Structure} backing a custom meta, the structure's mutability
          * is conditioned to the writability of the {@link Gst.Buffer} `meta` is attached to.
          * @returns the {@link Gst.Structure} backing `meta`
+         * @since 1.20
          */
         get_structure(): Structure;
 
@@ -19544,6 +19768,7 @@ export namespace Gst {
          * Checks whether the name of the custom meta is `name`
          * @param name 
          * @returns Whether `name` is the name of the custom meta
+         * @since 1.20
          */
         has_name(name: string): boolean;
     }
@@ -19716,6 +19941,7 @@ export namespace Gst {
         // Methods
         /**
          * Removes and frees the category and all associated resources.
+         * @deprecated This function can easily cause memory corruption, don't use it.
          */
         free(): void;
 
@@ -19784,6 +20010,7 @@ export namespace Gst {
          * Get the id of the object that emitted this message. This function is used in
          * debug handlers. Can be empty.
          * @returns The emitter of a {@link Gst.DebugMessage}.
+         * @since 1.22
          */
         get_id(): string | null;
     }
@@ -19990,6 +20217,7 @@ export namespace Gst {
          * running time, this information will need to be updated
          * before usage with this offset.
          * @returns The event's running time offset MT safe.
+         * @since 1.4
          */
         get_running_time_offset(): number;
 
@@ -20029,6 +20257,8 @@ export namespace Gst {
          * check the name of a custom event.
          * @param name name to check as a GQuark
          * @returns `true` if `name` matches the name of the event structure.
+         * @since 1.18
+         * @deprecated since 1.26: Use `gst_event_has_name()`.
          */
         has_name_id(name: GLib.Quark): boolean;
 
@@ -20078,21 +20308,25 @@ export namespace Gst {
         /**
          * Retrieve the gap flags that may have been set on a gap event with
          * `gst_event_set_gap_flags()`.
+         * @since 1.20
          */
         parse_gap_flags(): GapFlags | null;
 
         /**
          * @returns `true` if a group id was set on the event and could be parsed,   `false` otherwise.
+         * @since 1.2
          */
         parse_group_id(): [boolean, number];
 
         /**
          * Extract rate and flags from an instant-rate-change event.
+         * @since 1.18
          */
         parse_instant_rate_change(): [number, SegmentFlags | null];
 
         /**
          * Extract the rate multiplier and running times from an instant-rate-sync-time event.
+         * @since 1.18
          */
         parse_instant_rate_sync_time(): [number, ClockTime | null, ClockTime | null];
 
@@ -20105,6 +20339,7 @@ export namespace Gst {
          * Parses an event containing protection system specific information and stores
          * the results in `system_id`, `data` and `origin`. The data stored in `system_id`,
          * `origin` and `data` are valid until `event` is released.
+         * @since 1.6
          */
         parse_protection(): [string, Buffer | null, string];
 
@@ -20124,6 +20359,7 @@ export namespace Gst {
         /**
          * Retrieve the trickmode interval that may have been set on a
          * seek event with `gst_event_set_seek_trickmode_interval()`.
+         * @since 1.16
          */
         parse_seek_trickmode_interval(): ClockTime | null;
 
@@ -20141,6 +20377,7 @@ export namespace Gst {
 
         /**
          * Parse the SELECT_STREAMS event and retrieve the contained streams.
+         * @since 1.10
          */
         parse_select_streams(): string[] | null;
 
@@ -20156,19 +20393,25 @@ export namespace Gst {
 
         /**
          * Parse a stream-start `event` and extract the {@link Gst.Stream} from it.
+         * @since 1.10
          */
         parse_stream(): Stream | null;
 
         /**
          * Retrieve new {@link Gst.StreamCollection} from STREAM_COLLECTION event `event`.
+         * @since 1.10
          */
         parse_stream_collection(): StreamCollection | null;
 
+        /**
+         * @since 1.2
+         */
         parse_stream_flags(): StreamFlags | null;
 
         /**
          * Parse a stream-group-done `event` and store the result in the given
          * `group_id` location.
+         * @since 1.10
          */
         parse_stream_group_done(): number;
 
@@ -20208,6 +20451,7 @@ export namespace Gst {
          * Sets `flags` on `event` to give additional information about the reason for
          * the #GST_EVENT_GAP.
          * @param flags a {@link Gst.GapFlags}
+         * @since 1.20
          */
         set_gap_flags(flags: GapFlags): void;
 
@@ -20220,6 +20464,7 @@ export namespace Gst {
          * 
          * Use `gst_util_group_id_next()` to get a new group id.
          * @param group_id the group id to set
+         * @since 1.2
          */
         set_group_id(group_id: number): void;
 
@@ -20229,6 +20474,7 @@ export namespace Gst {
          * 
          * MT safe.
          * @param offset A the new running time offset
+         * @since 1.4
          */
         set_running_time_offset(offset: bigint | number): void;
 
@@ -20237,6 +20483,7 @@ export namespace Gst {
          * that support TRICKMODE_KEY_UNITS seeks SHOULD use this as the minimal
          * interval between each frame they may output.
          * @param interval 
+         * @since 1.16
          */
         set_seek_trickmode_interval(interval: ClockTime): void;
 
@@ -20255,11 +20502,13 @@ export namespace Gst {
         /**
          * Set the `stream` on the stream-start `event`
          * @param stream the stream object to set
+         * @since 1.10
          */
         set_stream(stream: Stream): void;
 
         /**
          * @param flags the stream flags to set
+         * @since 1.2
          */
         set_stream_flags(flags: StreamFlags): void;
 
@@ -20336,40 +20585,47 @@ export namespace Gst {
         // Methods
         /**
          * @returns the NUL-terminated string representation of `s`.
+         * @since 1.26
          */
         as_str(): string;
 
         /**
          * Clears `s` and sets it to the empty string.
+         * @since 1.26
          */
         clear(): void;
 
         /**
          * Copies `s` into newly allocated heap memory.
          * @returns A heap-allocated copy of `s`.
+         * @since 1.26
          */
         copy(): IdStr;
 
         /**
          * Copies `s` into `d`.
          * @param s The source %GstIdStr
+         * @since 1.26
          */
         copy_into(s: IdStr): void;
 
         /**
          * Frees `s`. This should only be called for heap-allocated {@link Gst.IdStr}.
+         * @since 1.26
          */
         free(): void;
 
         /**
          * Returns the length of `s`, exluding the NUL-terminator. This is equivalent to
          * calling `strcmp()` but potentially faster.
+         * @since 1.26
          */
         get_len(): number;
 
         /**
          * Initializes a (usually stack-allocated) id string `s`. The newly-initialized
          * id string will contain an empty string by default as value.
+         * @since 1.26
          */
         init(): void;
 
@@ -20377,6 +20633,7 @@ export namespace Gst {
          * Compares `s1` and `s2` for equality.
          * @param s2 A %GstIdStr
          * @returns `true` if `s1` and `s2` are equal.
+         * @since 1.26
          */
         is_equal(s2: IdStr): boolean;
 
@@ -20384,6 +20641,7 @@ export namespace Gst {
          * Compares `s1` and `s2` for equality.
          * @param s2 A string
          * @returns `true` if `s1` and `s2` are equal.
+         * @since 1.26
          */
         is_equal_to_str(s2: string): boolean;
 
@@ -20396,18 +20654,21 @@ export namespace Gst {
          * @param s2 A string
          * @param len Length of `s2`.
          * @returns `true` if `s1` and `s2` are equal.
+         * @since 1.26
          */
         is_equal_to_str_with_len(s2: string, len: bigint | number): boolean;
 
         /**
          * Moves `s` into `d` and resets `s`.
          * @param s The source %GstIdStr
+         * @since 1.26
          */
         move(s: IdStr): void;
 
         /**
          * Sets `s` to the string `value`.
          * @param value A NUL-terminated string
+         * @since 1.26
          */
         set(value: string): void;
 
@@ -20415,6 +20676,7 @@ export namespace Gst {
          * Sets `s` to the string `value`. `value` needs to be valid for the remaining
          * lifetime of the process, e.g. has to be a static string.
          * @param value A NUL-terminated string
+         * @since 1.26
          */
         set_static_str(value: string): void;
 
@@ -20426,6 +20688,7 @@ export namespace Gst {
          * NUL-terminator.
          * @param value A string
          * @param len Length of the string
+         * @since 1.26
          */
         set_static_str_with_len(value: string, len: bigint | number): void;
 
@@ -20434,6 +20697,7 @@ export namespace Gst {
          * NUL-terminated and `len` should not include the NUL-terminator.
          * @param value A string
          * @param len Length of the string
+         * @since 1.26
          */
         set_with_len(value: string, len: bigint | number): void;
     }
@@ -20681,11 +20945,13 @@ export namespace Gst {
         // Methods
         /**
          * Free the logging context, clearing all tracked messages.
+         * @since 1.28
          */
         free(): void;
 
         /**
          * Resets the logging context, clearing all tracked messages.
+         * @since 1.28
          */
         reset(): void;
     }
@@ -20729,16 +20995,19 @@ export namespace Gst {
         // Methods
         /**
          * Release the memory obtained with `gst_memory_map()`
+         * @since 1.28
          */
         clear(): void;
 
         /**
          * @returns Data of `info`.
+         * @since 1.28
          */
         get_data(): Uint8Array | null;
 
         /**
          * Initializes `info`.
+         * @since 1.28
          */
         init(): void;
     }
@@ -20835,6 +21104,7 @@ export namespace Gst {
          * Check if `mem` if allocated with an allocator for `mem_type`.
          * @param mem_type a memory type
          * @returns `true` if `mem` was allocated from an allocator for `mem_type`.
+         * @since 1.2
          */
         is_type(mem_type: string): boolean;
 
@@ -21061,6 +21331,7 @@ export namespace Gst {
          * of `new_message`.
          * @param old_message pointer to a pointer to a {@link Gst.Message}     to be replaced.
          * @param new_message pointer to a {@link Gst.Message} that     will replace the message pointed to by `old_message`.
+         * @since 1.16
          */
         static take(old_message: Message, new_message: Message | null): [boolean, Message];
 
@@ -21073,6 +21344,7 @@ export namespace Gst {
          * @param location location string for the new entry
          * @param tag_list tag list for the new entry
          * @param entry_struct structure for the new entry
+         * @since 1.10
          */
         add_redirect_entry(location: string, tag_list: TagList | null, entry_struct: Structure | null): void;
 
@@ -21087,11 +21359,13 @@ export namespace Gst {
          * 
          * The returned structure must not be freed.
          * @returns The details, or NULL if none.
+         * @since 1.26
          */
         get_details(): Structure | null;
 
         /**
          * @returns the number of entries stored in the message
+         * @since 1.10
          */
         get_num_redirect_entries(): number;
 
@@ -21193,6 +21467,7 @@ export namespace Gst {
         /**
          * Parse a context type from an existing GST_MESSAGE_NEED_CONTEXT message.
          * @returns a `gboolean` indicating if the parsing succeeded.
+         * @since 1.2
          */
         parse_context_type(): [boolean, string];
 
@@ -21200,6 +21475,7 @@ export namespace Gst {
          * Parses a device-added message. The device-added message is produced by
          * {@link Gst.DeviceProvider} or a {@link Gst.DeviceMonitor}. It announces the appearance
          * of monitored devices.
+         * @since 1.4
          */
         parse_device_added(): Device | null;
 
@@ -21208,6 +21484,7 @@ export namespace Gst {
          * {@link Gst.DeviceProvider} or a {@link Gst.DeviceMonitor}. It announces the
          * disappearance of monitored devices. * It announce that a device properties has
          * changed and `device` represents the new modified version of `changed_device`.
+         * @since 1.16
          */
         parse_device_changed(): [Device | null, Device | null];
 
@@ -21215,6 +21492,7 @@ export namespace Gst {
          * Parses a device-monitor-started message. The device-monitor-started message
          * is produced by a {@link Gst.DeviceMonitor} once at least one {@link Gst.DeviceProvider}
          * successfully starts probing.
+         * @since 1.28
          */
         parse_device_monitor_started(): boolean;
 
@@ -21222,6 +21500,7 @@ export namespace Gst {
          * Parses a device-removed message. The device-removed message is produced by
          * {@link Gst.DeviceProvider} or a {@link Gst.DeviceMonitor}. It announces the
          * disappearance of monitored devices.
+         * @since 1.4
          */
         parse_device_removed(): Device | null;
 
@@ -21259,18 +21538,21 @@ export namespace Gst {
         /**
          * Returns the optional details structure, may be NULL if none.
          * The returned structure must not be freed.
+         * @since 1.10
          */
         parse_error_details(): Structure | null;
 
         /**
          * Returns the details structure if present or will create one if not present.
          * The returned structure must not be freed.
+         * @since 1.26
          */
         parse_error_writable_details(): Structure | null;
 
         /**
          * Extract the group from the STREAM_START message.
          * @returns `true` if the message had a group id set, `false` otherwise MT safe.
+         * @since 1.2
          */
         parse_group_id(): [boolean, number];
 
@@ -21278,6 +21560,7 @@ export namespace Gst {
          * Extract the context from the HAVE_CONTEXT message.
          * 
          * MT safe.
+         * @since 1.2
          */
         parse_have_context(): Context | null;
 
@@ -21292,17 +21575,20 @@ export namespace Gst {
         /**
          * Returns the optional details structure, may be NULL if none
          * The returned structure must not be freed.
+         * @since 1.10
          */
         parse_info_details(): Structure | null;
 
         /**
          * Returns the details structure if present or will create one if not present.
          * The returned structure must not be freed.
+         * @since 1.26
          */
         parse_info_writable_details(): Structure | null;
 
         /**
          * Parses the rate_multiplier from the instant-rate-request message.
+         * @since 1.18
          */
         parse_instant_rate_request(): number;
 
@@ -21323,6 +21609,7 @@ export namespace Gst {
          * Parses a property-notify message. These will be posted on the bus only
          * when set up with `gst_element_add_property_notify_watch()` or
          * `gst_element_add_property_deep_notify_watch()`.
+         * @since 1.10
          */
         parse_property_notify(): [Object | null, string, unknown | null];
 
@@ -21360,6 +21647,7 @@ export namespace Gst {
          * The index must be between 0 and `gst_message_get_num_redirect_entries()` - 1.
          * Returned pointers are valid for as long as this message exists.
          * @param entry_index index of the entry to parse
+         * @since 1.10
          */
         parse_redirect_entry(entry_index: bigint | number): [string, TagList | null, Structure | null];
 
@@ -21435,6 +21723,7 @@ export namespace Gst {
 
         /**
          * Parses a stream-collection message.
+         * @since 1.10
          */
         parse_stream_collection(): StreamCollection | null;
 
@@ -21449,6 +21738,7 @@ export namespace Gst {
 
         /**
          * Parses a streams-selected message.
+         * @since 1.10
          */
         parse_streams_selected(): StreamCollection | null;
 
@@ -21507,12 +21797,14 @@ export namespace Gst {
         /**
          * Returns the optional details structure, may be NULL if none
          * The returned structure must not be freed.
+         * @since 1.10
          */
         parse_warning_details(): Structure | null;
 
         /**
          * Returns the details structure if present or will create one if not present.
          * The returned structure must not be freed.
+         * @since 1.26
          */
         parse_warning_writable_details(): Structure | null;
 
@@ -21535,6 +21827,7 @@ export namespace Gst {
          * Add `details` to `message`. Will fail if the message already has details set on
          * it or if it is not writable.
          * @param details A GstStructure with details
+         * @since 1.26
          */
         set_details(details: Structure | null): void;
 
@@ -21549,6 +21842,7 @@ export namespace Gst {
          * 
          * MT safe.
          * @param group_id the group id
+         * @since 1.2
          */
         set_group_id(group_id: number): void;
 
@@ -21598,12 +21892,14 @@ export namespace Gst {
         /**
          * Adds the `stream` to the `message`.
          * @param stream a {@link Gst.Stream} to add to `message`
+         * @since 1.10
          */
         streams_selected_add(stream: Stream): void;
 
         /**
          * Returns the number of streams contained in the `message`.
          * @returns The number of streams contained within.
+         * @since 1.10
          */
         streams_selected_get_size(): number;
 
@@ -21611,6 +21907,7 @@ export namespace Gst {
          * Retrieves the {@link Gst.Stream} with index `index` from the `message`.
          * @param idx Index of the stream to retrieve
          * @returns A {@link Gst.Stream}
+         * @since 1.10
          */
         streams_selected_get_stream(idx: number): Stream | null;
 
@@ -21627,12 +21924,14 @@ export namespace Gst {
          * 
          * The returned structure must not be freed.
          * @returns The details
+         * @since 1.26
          */
         writable_details(): Structure;
 
         /**
          * Get a writable version of the structure.
          * @returns The structure of the message. The structure is still owned by the message, which means that you should not free it and that the pointer becomes invalid when you free the message. This function ensures that `message` is writable, and if so, will never return `null`. MT safe.
+         * @since 1.14
          */
         writable_structure(): Structure;
     }
@@ -21677,11 +21976,13 @@ export namespace Gst {
          * @param aggregated_params This structure will be updated with the                     combined parameters from both `params0` and `params1`.
          * @param params0 a {@link Gst.Structure} containing the new parameters to be aggregated.
          * @param params1 a {@link Gst.Structure} containing the new parameters to be aggregated.
+         * @since 1.26
          */
         static api_type_aggregate_params(api: GObject.GType, aggregated_params: Structure, params0: Structure, params1: Structure): boolean;
 
         /**
          * @param api an API
+         * @since 1.2
          */
         static api_type_get_tags(api: GObject.GType): string[];
 
@@ -21704,12 +22005,14 @@ export namespace Gst {
          * This function sets the aggregator function for a specific API type.
          * @param api the {@link GObject.GType} of the API for which the aggregator function is being set.
          * @param aggregator the aggregator function to be associated with the given API              type.
+         * @since 1.26
          */
         static api_type_set_params_aggregator(api: GObject.GType, aggregator: AllocationMetaParamsAggregator): void;
 
         /**
          * @param api an API
          * @param valid_tags a list of valid tags
+         * @since 1.28
          */
         static api_type_tags_contain_only(api: GObject.GType, valid_tags: string[]): boolean;
 
@@ -21725,6 +22028,7 @@ export namespace Gst {
          * not allow to determine that size, `consumed` is set to 0.
          * @param buffer a {@link Gst.Buffer}
          * @param data serialization data obtained from `gst_meta_serialize()`
+         * @since 1.24
          */
         static deserialize(buffer: Buffer, data: Uint8Array | string): [Meta | null, number];
 
@@ -21752,6 +22056,7 @@ export namespace Gst {
          * @param name the name of the {@link Gst.Meta} implementation
          * @param tags tags for `api`
          * @param transform_func a {@link Gst.MetaTransformFunction}
+         * @since 1.20
          */
         static register_custom(name: string, tags: string[], transform_func: CustomMetaTransformFunction | null): MetaInfo;
 
@@ -21759,6 +22064,7 @@ export namespace Gst {
          * Simplified version of `gst_meta_register_custom()`, with no tags and no
          * transform function.
          * @param name the name of the {@link Gst.Meta} implementation
+         * @since 1.24
          */
         static register_custom_simple(name: string): MetaInfo;
 
@@ -21768,11 +22074,13 @@ export namespace Gst {
          * or a {@link GLib.CompareDataFunc}.
          * @param meta2 a {@link Gst.Meta}
          * @returns a negative number if `meta1` comes before `meta2`, 0 if both metas   have an equal sequence number, or a positive integer if `meta1` comes   after `meta2`.
+         * @since 1.16
          */
         compare_seqnum(meta2: Meta): number;
 
         /**
          * Gets seqnum for this meta.
+         * @since 1.16
          */
         get_seqnum(): number;
 
@@ -21791,6 +22099,7 @@ export namespace Gst {
          * to remember the size of previous data to preallocate the next.
          * @param data {@link Gst.ByteArrayInterface} to append serialization data
          * @returns `true` on success, `false` otherwise.
+         * @since 1.24
          */
         serialize(data: ByteArrayInterface): boolean;
 
@@ -21799,6 +22108,7 @@ export namespace Gst {
          * {@link Gst.ByteArrayInterface}.
          * @param data {@link GLib.ByteArray} to append serialization data
          * @returns `true` on success, `false` otherwise.
+         * @since 1.24
          */
         serialize_simple(data: Uint8Array | string): boolean;
     }
@@ -21839,6 +22149,7 @@ export namespace Gst {
         // Methods
         /**
          * @returns whether `info` was registered as a {@link Gst.CustomMeta} with   `gst_meta_register_custom()`
+         * @since 1.20
          */
         is_custom(): boolean;
 
@@ -21849,6 +22160,7 @@ export namespace Gst {
          * structure shouldnt be used after. The one returned by the function can be
          * kept.
          * @returns the registered meta
+         * @since 1.24
          */
         register(): MetaInfo;
     }
@@ -21950,6 +22262,7 @@ export namespace Gst {
          * take an additional reference. It is the responsibility of the caller to
          * remove the parent again at a later time.
          * @param parent a parent {@link Gst.MiniObject}
+         * @since 1.16
          */
         add_parent(parent: MiniObject): void;
 
@@ -22008,6 +22321,7 @@ export namespace Gst {
          * This removes `parent` as a parent for `object`. See
          * `gst_mini_object_add_parent()`.
          * @param parent a parent {@link Gst.MiniObject}
+         * @since 1.16
          */
         remove_parent(parent: MiniObject): void;
 
@@ -22106,16 +22420,19 @@ export namespace Gst {
 
         /**
          * @returns The {@link Gst.FlowReturn} from the probe
+         * @since 1.28
          */
         get_flow_return(): FlowReturn;
 
         /**
          * @returns The probe ID from the probe
+         * @since 1.28
          */
         get_id(): number;
 
         /**
          * @returns The offset from the probe
+         * @since 1.28
          */
         get_offset(): number;
 
@@ -22126,35 +22443,41 @@ export namespace Gst {
 
         /**
          * @returns The size from the probe
+         * @since 1.28
          */
         get_size(): number;
 
         /**
          * @returns The {@link Gst.PadProbeType} from the probe
+         * @since 1.28
          */
         get_type(): PadProbeType;
 
         /**
          * Updates `info` with `buffer` or `null`.
          * @param buffer a {@link Gst.Buffer}
+         * @since 1.28
          */
         set_buffer(buffer: Buffer | null): void;
 
         /**
          * Updates `info` with `list` or `null`.
          * @param list a {@link Gst.BufferList}
+         * @since 1.28
          */
         set_buffer_list(list: BufferList | null): void;
 
         /**
          * Updates `info` with `event` or `null`.
          * @param event a {@link Gst.Event}
+         * @since 1.28
          */
         set_event(event: Event | null): void;
 
         /**
          * Updates `info` with `flow_ret`.
          * @param flow_ret A {@link Gst.FlowReturn}
+         * @since 1.28
          */
         set_flow_return(flow_ret: FlowReturn): void;
     }
@@ -22218,6 +22541,7 @@ export namespace Gst {
         // Static methods
         /**
          * Gets the global {@link Gst.MetaInfo} describing  the {@link Gst.ParentBufferMeta} meta.
+         * @since 1.6
          */
         static get_info(): MetaInfo;
     }
@@ -22239,6 +22563,7 @@ export namespace Gst {
         /**
          * Copies the `context`.
          * @returns A copied {@link Gst.ParseContext}
+         * @since 1.12.1
          */
         copy(): ParseContext | null;
 
@@ -22375,6 +22700,7 @@ export namespace Gst {
          * @param fd a file descriptor.
          * @param active a new status.
          * @returns `true` if the descriptor was successfully updated.
+         * @since 1.16
          */
         fd_ctl_pri(fd: PollFD, active: boolean): boolean;
 
@@ -22416,6 +22742,7 @@ export namespace Gst {
          * Not implemented on Windows (will just return `false` there).
          * @param fd a file descriptor.
          * @returns `true` if the descriptor has an exceptional condition.
+         * @since 1.16
          */
         fd_has_pri(fd: PollFD): boolean;
 
@@ -22636,6 +22963,7 @@ export namespace Gst {
          * Expire a `promise`.  This will wake up any waiters with
          * {@link Gst.PromiseResult.EXPIRED}.  Called by a message loop when the parent
          * message is handled and/or destroyed (possibly unanswered).
+         * @since 1.14
          */
         expire(): void;
 
@@ -22643,6 +22971,7 @@ export namespace Gst {
          * Retrieve the reply set on `promise`.  `promise` must be in
          * {@link Gst.PromiseResult.REPLIED} and the returned structure is owned by `promise`
          * @returns The reply set on `promise`
+         * @since 1.14
          */
         get_reply(): Structure | null;
 
@@ -22650,12 +22979,14 @@ export namespace Gst {
          * Interrupt waiting for a `promise`.  This will wake up any waiters with
          * {@link Gst.PromiseResult.INTERRUPTED}.  Called when the consumer does not want
          * the value produced anymore.
+         * @since 1.14
          */
         interrupt(): void;
 
         /**
          * Increases the refcount of the given `promise` by one.
          * @returns `promise`
+         * @since 1.14
          */
         ref(): Promise;
 
@@ -22667,12 +22998,14 @@ export namespace Gst {
          * If `promise` has already been interrupted by the consumer, then this reply
          * is not visible to the consumer.
          * @param s a {@link Gst.Structure} with the the reply contents
+         * @since 1.14
          */
         reply(s: Structure | null): void;
 
         /**
          * Decreases the refcount of the promise. If the refcount reaches 0, the
          * promise will be freed.
+         * @since 1.14
          */
         unref(): void;
 
@@ -22681,6 +23014,7 @@ export namespace Gst {
          * If `promise` is not in {@link Gst.PromiseResult.PENDING} then it will return
          * immediately with the current result.
          * @returns the result of the promise
+         * @since 1.14
          */
         wait(): PromiseResult;
     }
@@ -22799,6 +23133,7 @@ export namespace Gst {
          * Either `new_query` or the {@link Gst.Query} pointed to by `old_query` may be `null`.
          * @param old_query pointer to a     pointer to a {@link Gst.Query} to be stolen.
          * @param new_query pointer to a {@link Gst.Query} that will     replace the query pointed to by `old_query`.
+         * @since 1.16
          */
         static take(old_query: Query | null, new_query: Query | null): [boolean, Query | null];
 
@@ -22971,6 +23306,7 @@ export namespace Gst {
 
         /**
          * Get the results of a bitrate query. See also `gst_query_set_bitrate()`.
+         * @since 1.16
          */
         parse_bitrate(): number;
 
@@ -23007,12 +23343,14 @@ export namespace Gst {
         /**
          * Get the context from the context `query`. The context remains valid as long as
          * `query` remains valid.
+         * @since 1.2
          */
         parse_context(): Context | null;
 
         /**
          * Parse a context type from an existing GST_QUERY_CONTEXT query.
          * @returns a `gboolean` indicating if the parsing succeeded.
+         * @since 1.2
          */
         parse_context_type(): [boolean, string];
 
@@ -23113,6 +23451,7 @@ export namespace Gst {
 
         /**
          * Get the results of a selectable query. See also `gst_query_set_selectable()`.
+         * @since 1.22
          */
         parse_selectable(): boolean;
 
@@ -23127,6 +23466,7 @@ export namespace Gst {
          * Parse an URI query, writing the URI into `uri` as a newly
          * allocated string, if the respective parameters are non-`null`.
          * Free the string with `g_free()` after usage.
+         * @since 1.2
          */
         parse_uri_redirection(): string;
 
@@ -23135,6 +23475,7 @@ export namespace Gst {
          * and it should be considered permanent. If a redirection is permanent,
          * applications should update their internal storage of the URI, otherwise
          * they should make all future requests to the original URI.
+         * @since 1.4
          */
         parse_uri_redirection_permanent(): boolean;
 
@@ -23153,12 +23494,14 @@ export namespace Gst {
         /**
          * Remove the allocation param at `index` of the allocation param array.
          * @param index position in the allocation param array to remove
+         * @since 1.2
          */
         remove_nth_allocation_param(index: number): void;
 
         /**
          * Remove the allocation pool at `index` of the allocation pool array.
          * @param index position in the allocation pool array to remove
+         * @since 1.2
          */
         remove_nth_allocation_pool(index: number): void;
 
@@ -23173,6 +23516,7 @@ export namespace Gst {
          * bitrate expected over the length of the stream as advertised in file
          * headers (or similar).
          * @param nominal_bitrate the nominal bitrate in bits per second
+         * @since 1.16
          */
         set_bitrate(nominal_bitrate: number): void;
 
@@ -23211,6 +23555,7 @@ export namespace Gst {
         /**
          * Answer a context query by setting the requested context.
          * @param context the requested {@link Gst.Context}
+         * @since 1.2
          */
         set_context(context: Context | null): void;
 
@@ -23312,6 +23657,7 @@ export namespace Gst {
          * Set the results of a selectable query. If the element answering the query can
          * handle stream selection, `selectable` should be set to `true`.
          * @param selectable Whether the element can handle stream selection.
+         * @since 1.22
          */
         set_selectable(selectable: boolean): void;
 
@@ -23324,6 +23670,7 @@ export namespace Gst {
         /**
          * Answer a URI query by setting the requested URI redirection.
          * @param uri the URI to set
+         * @since 1.2
          */
         set_uri_redirection(uri: string | null): void;
 
@@ -23331,6 +23678,7 @@ export namespace Gst {
          * Answer a URI query by setting the requested URI redirection
          * to permanent or not.
          * @param permanent whether the redirect is permanent or not
+         * @since 1.4
          */
         set_uri_redirection_permanent(permanent: boolean): void;
 
@@ -23392,6 +23740,7 @@ export namespace Gst {
         // Static methods
         /**
          * Gets the global {@link Gst.MetaInfo} describing the {@link Gst.ReferenceTimestampMeta} meta.
+         * @since 1.14
          */
         static get_info(): MetaInfo;
     }
@@ -23428,6 +23777,7 @@ export namespace Gst {
          * Create a copy of the given sample. This will also make a newly allocated
          * copy of the data the source sample contains.
          * @returns a new copy of `sample`.
+         * @since 1.2
          */
         copy(): Sample;
 
@@ -23440,6 +23790,7 @@ export namespace Gst {
         /**
          * Get the buffer list associated with `sample`
          * @returns the buffer list of `sample` or `null`  when there is no buffer list. The buffer list remains valid as long as  `sample` is valid.  If you need to hold on to it for longer than  that, take a ref to the buffer list with gst_mini_object_ref ().
+         * @since 1.6
          */
         get_buffer_list(): BufferList | null;
 
@@ -23463,6 +23814,7 @@ export namespace Gst {
 
         /**
          * Tests if you can safely set the buffer and / or buffer list of `sample`.
+         * @since 1.16
          */
         is_writable(): boolean;
 
@@ -23484,6 +23836,7 @@ export namespace Gst {
          * that it returns. Don't access the argument after calling this function unless
          * you have an additional reference to it.
          * @returns a writable sample which may or may not be the     same as `sample`
+         * @since 1.16
          */
         make_writable(): Sample;
 
@@ -23496,18 +23849,21 @@ export namespace Gst {
         /**
          * Set the buffer associated with `sample`. `sample` must be writable.
          * @param buffer A {@link Gst.Buffer}
+         * @since 1.16
          */
         set_buffer(buffer: Buffer): void;
 
         /**
          * Set the buffer list associated with `sample`. `sample` must be writable.
          * @param buffer_list a {@link Gst.BufferList}
+         * @since 1.6
          */
         set_buffer_list(buffer_list: BufferList): void;
 
         /**
          * Set the caps associated with `sample`. `sample` must be writable.
          * @param caps A {@link Gst.Caps}
+         * @since 1.16
          */
         set_caps(caps: Caps): void;
 
@@ -23515,12 +23871,14 @@ export namespace Gst {
          * Set the info structure associated with `sample`. `sample` must be writable,
          * and `info` must not have a parent set already.
          * @param info A {@link Gst.Structure}
+         * @since 1.16
          */
         set_info(info: Structure): boolean;
 
         /**
          * Set the segment associated with `sample`. `sample` must be writable.
          * @param segment A {@link Gst.Segment}
+         * @since 1.16
          */
         set_segment(segment: Segment): void;
 
@@ -23720,6 +24078,7 @@ export namespace Gst {
          * as perfect equality, including floating point values.
          * @param s1 a {@link Gst.Segment} structure.
          * @returns `true` if the segments are equal, `false` otherwise.
+         * @since 1.6
          */
         is_equal(s1: Segment): boolean;
 
@@ -23729,6 +24088,7 @@ export namespace Gst {
          * @param format the format of the segment.
          * @param offset the offset to apply in the segment
          * @returns `true` if the segment could be updated successfully. If `false` is returned, `offset` is not in `segment`.
+         * @since 1.2.3
          */
         offset_running_time(format: Format, offset: bigint | number): boolean;
 
@@ -23738,6 +24098,7 @@ export namespace Gst {
          * @param format the format of the segment.
          * @param running_time the running_time in the segment
          * @returns the position in the segment for `running_time`. This function returns -1 when `running_time` is -1 or when it is not inside `segment`.
+         * @since 1.8
          */
         position_from_running_time(format: Format, running_time: bigint | number): number;
 
@@ -23761,6 +24122,7 @@ export namespace Gst {
          * @param format the format of the segment.
          * @param running_time the running-time
          * @returns a 1 or -1 on success, 0 on failure.
+         * @since 1.8
          */
         position_from_running_time_full(format: Format, running_time: bigint | number): [number, number];
 
@@ -23770,6 +24132,7 @@ export namespace Gst {
          * @param format the format of the segment.
          * @param stream_time the stream_time in the segment
          * @returns the position in the segment for `stream_time`. This function returns -1 when `stream_time` is -1 or when it is not inside `segment`.
+         * @since 1.8
          */
         position_from_stream_time(format: Format, stream_time: bigint | number): number;
 
@@ -23792,6 +24155,7 @@ export namespace Gst {
          * @param format the format of the segment.
          * @param stream_time the stream-time
          * @returns a 1 or -1 on success, 0 on failure.
+         * @since 1.8
          */
         position_from_stream_time_full(format: Format, stream_time: bigint | number): [number, number];
 
@@ -23810,6 +24174,7 @@ export namespace Gst {
          * @param format the format of the segment.
          * @param running_time the running_time in the segment
          * @returns the position in the segment for `running_time`. This function returns -1 when `running_time` is -1 or when it is not inside `segment`.
+         * @deprecated Use `gst_segment_position_from_running_time()` instead.
          */
         to_position(format: Format, running_time: bigint | number): number;
 
@@ -23848,6 +24213,7 @@ export namespace Gst {
          * @param format the format of the segment.
          * @param position the position in the segment
          * @returns a 1 or -1 on success, 0 on failure.
+         * @since 1.6
          */
         to_running_time_full(format: Format, position: bigint | number): [number, number];
 
@@ -23865,6 +24231,7 @@ export namespace Gst {
          * @param format the format of the segment.
          * @param position the position in the segment
          * @returns the position in stream_time or -1 when an invalid position was given.
+         * @since 1.8
          */
         to_stream_time(format: Format, position: bigint | number): number;
 
@@ -23887,6 +24254,7 @@ export namespace Gst {
          * @param format the format of the segment.
          * @param position the position in the segment
          * @returns a 1 or -1 on success, 0 on failure.
+         * @since 1.8
          */
         to_stream_time_full(format: Format, position: bigint | number): [number, number];
     }
@@ -24129,6 +24497,7 @@ export namespace Gst {
          * `oldstr_ptr` refer to the same, non-`null` structure.
          * @param oldstr_ptr pointer to a place of     a {@link Gst.Structure} to take
          * @param newstr a new {@link Gst.Structure}
+         * @since 1.18
          */
         static take(oldstr_ptr: Structure | null, newstr: Structure | null): [boolean, Structure | null];
 
@@ -24156,6 +24525,8 @@ export namespace Gst {
          * the structure if `false` is returned from the function.
          * The structure must be mutable.
          * @param func a function to call for each field
+         * @since 1.6
+         * @deprecated since 1.26: Use `gst_structure_filter_and_map_in_place_id_str()`.
          */
         filter_and_map_in_place(func: StructureFilterMapFunc): void;
 
@@ -24166,6 +24537,7 @@ export namespace Gst {
          * the structure if `false` is returned from the function.
          * The structure must be mutable.
          * @param func a function to call for each field
+         * @since 1.26
          */
         filter_and_map_in_place_id_str(func: StructureFilterMapIdStrFunc): void;
 
@@ -24235,6 +24607,7 @@ export namespace Gst {
          * and `gst_structure_filter_and_map_in_place()`.
          * @param func a function to call for each field
          * @returns `true` if the supplied function returns `true` For each of the fields, `false` otherwise.
+         * @deprecated since 1.26: Use `gst_structure_foreach_id_str()`.
          */
         foreach(func: StructureForeachFunc): boolean;
 
@@ -24244,6 +24617,7 @@ export namespace Gst {
          * and `gst_structure_filter_and_map_in_place_id_str()`.
          * @param func a function to call for each field
          * @returns `true` if the supplied function returns `true` For each of the fields, `false` otherwise.
+         * @since 1.26
          */
         foreach_id_str(func: StructureForeachIdStrFunc): boolean;
 
@@ -24260,6 +24634,7 @@ export namespace Gst {
          * slower then getting the {@link GObject.Value} directly.
          * @param fieldname the name of a field
          * @returns `true` if the value could be set correctly. If there was no field with `fieldname` or the existing field did not contain a `GST_TYPE_ARRAY`, this function returns `false`.
+         * @since 1.12
          */
         get_array(fieldname: string): [boolean, GObject.ValueArray];
 
@@ -24278,6 +24653,7 @@ export namespace Gst {
          * for making sure the field exists and has the correct type.
          * @param fieldname the name of the field
          * @returns `true` if could be set correctly. If there was no field with `fieldname` or the existing field did not contain a caps, this function return `false`.
+         * @since 1.28
          */
         get_caps(fieldname: string): [boolean, Caps];
 
@@ -24353,6 +24729,7 @@ export namespace Gst {
          * @param fieldname the name of a field
          * @param flags_type the flags type of a field
          * @returns `true` if the value could be set correctly. If there was no field with `fieldname` or the existing field did not contain flags or did not contain flags of the given type, this function returns `false`.
+         * @since 1.22
          */
         get_flags(fieldname: string, flags_type: GObject.GType): [boolean, number];
 
@@ -24361,6 +24738,7 @@ export namespace Gst {
          * provided pointers.
          * @param fieldname the name of a field
          * @returns `true` if the values could be set correctly. If there was no field with `fieldname` or the existing field did not contain a GstFlagSet, this function returns `false`.
+         * @since 1.6
          */
         get_flagset(fieldname: string): [boolean, number, number];
 
@@ -24388,6 +24766,7 @@ export namespace Gst {
          * and has the correct type.
          * @param fieldname the name of a field
          * @returns `true` if the value could be set correctly. If there was no field with `fieldname` or the existing field did not contain a `gint64`, this function returns `false`.
+         * @since 1.4
          */
         get_int64(fieldname: string): [boolean, number];
 
@@ -24398,6 +24777,7 @@ export namespace Gst {
          * slower then getting the {@link GObject.Value} directly.
          * @param fieldname the name of a field
          * @returns `true` if the value could be set correctly. If there was no field with `fieldname` or the existing field did not contain a `GST_TYPE_LIST`, this function returns `false`.
+         * @since 1.12
          */
         get_list(fieldname: string): [boolean, GObject.ValueArray];
 
@@ -24410,12 +24790,14 @@ export namespace Gst {
         /**
          * Get the name of `structure` as a GQuark.
          * @returns the quark representing the name of the structure.
+         * @deprecated since 1.26: Use `gst_structure_get_name_id_str()`.
          */
         get_name_id(): GLib.Quark;
 
         /**
          * Get the name of `structure` as a GstIdStr.
          * @returns the name of the structure.
+         * @since 1.26
          */
         get_name_id_str(): IdStr;
 
@@ -24446,6 +24828,7 @@ export namespace Gst {
          * and has the correct type.
          * @param fieldname the name of a field
          * @returns `true` if the value could be set correctly. If there was no field with `fieldname` or the existing field did not contain a `guint64`, this function returns `false`.
+         * @since 1.4
          */
         get_uint64(fieldname: string): [boolean, number];
 
@@ -24489,6 +24872,7 @@ export namespace Gst {
          * Check if `structure` contains a field named `field`.
          * @param field {@link GLib.Quark} of the field name
          * @returns `true` if the structure contains a field with the given name
+         * @deprecated since 1.26: Use `gst_structure_id_str_has_field()`.
          */
         id_has_field(field: GLib.Quark): boolean;
 
@@ -24497,6 +24881,7 @@ export namespace Gst {
          * @param field {@link GLib.Quark} of the field name
          * @param type the type of a value
          * @returns `true` if the structure contains a field with the given name and type
+         * @deprecated since 1.26: Use `gst_structure_id_str_has_field_typed()`.
          */
         id_has_field_typed(field: GLib.Quark, type: GObject.GType): boolean;
 
@@ -24506,6 +24891,7 @@ export namespace Gst {
          * value is replaced and freed.
          * @param field a {@link GLib.Quark} representing a field
          * @param value the new value of the field
+         * @deprecated since 1.26: Use `gst_structure_id_str_set_value()`.
          */
         id_set_value(field: GLib.Quark, value: GObject.Value | any): void;
 
@@ -24515,6 +24901,7 @@ export namespace Gst {
          * returned.
          * @param fieldname the name of the field
          * @returns the {@link GObject.Value} of the field
+         * @since 1.26
          */
         id_str_get_field_type(fieldname: IdStr): GObject.GType;
 
@@ -24522,6 +24909,7 @@ export namespace Gst {
          * Get the value of the field with name `fieldname`.
          * @param fieldname the name of the field to get
          * @returns the {@link GObject.Value} corresponding to the field with the given name.
+         * @since 1.26
          */
         id_str_get_value(fieldname: IdStr): unknown | null;
 
@@ -24529,6 +24917,7 @@ export namespace Gst {
          * Check if `structure` contains a field named `fieldname`.
          * @param fieldname the name of a field
          * @returns `true` if the structure contains a field with the given name
+         * @since 1.26
          */
         id_str_has_field(fieldname: IdStr): boolean;
 
@@ -24537,6 +24926,7 @@ export namespace Gst {
          * @param fieldname the name of a field
          * @param type the type of a value
          * @returns `true` if the structure contains a field with the given name and type
+         * @since 1.26
          */
         id_str_has_field_typed(fieldname: IdStr, type: GObject.GType): boolean;
 
@@ -24545,6 +24935,7 @@ export namespace Gst {
          * counting from 0 onwards.
          * @param index the index to get the name of
          * @returns the name of the given field number
+         * @since 1.26
          */
         id_str_nth_field_name(index: number): IdStr;
 
@@ -24552,6 +24943,7 @@ export namespace Gst {
          * Removes the field with the given name.  If the field with the given
          * name does not exist, the structure is unchanged.
          * @param fieldname the name of the field to remove
+         * @since 1.26
          */
         id_str_remove_field(fieldname: IdStr): void;
 
@@ -24561,6 +24953,7 @@ export namespace Gst {
          * value is replaced and freed.
          * @param fieldname the name of the field to set
          * @param value the new value of the field
+         * @since 1.26
          */
         id_str_set_value(fieldname: IdStr, value: GObject.Value | any): void;
 
@@ -24570,6 +24963,7 @@ export namespace Gst {
          * value is replaced and freed.
          * @param fieldname the name of the field to set
          * @param value the new value of the field
+         * @since 1.26
          */
         id_str_take_value(fieldname: IdStr, value: GObject.Value | any): void;
 
@@ -24579,6 +24973,7 @@ export namespace Gst {
          * value is replaced and freed.
          * @param field a {@link GLib.Quark} representing a field
          * @param value the new value of the field
+         * @deprecated since 1.26: Use `gst_structure_id_str_take_value()`.
          */
         id_take_value(field: GLib.Quark, value: GObject.Value | any): void;
 
@@ -24609,6 +25004,7 @@ export namespace Gst {
          * Checks if the structure is writable. `true` if parent
          * is not set or its refcount is 1, `false` otherwise.
          * @returns `true` if the structure is writable.
+         * @since 1.28
          */
         is_writable(): boolean;
 
@@ -24618,6 +25014,7 @@ export namespace Gst {
          * fields. The structure must be mutable.
          * @param func a function to call for each field
          * @returns `true` if the supplied function returns `true` For each of the fields, `false` otherwise.
+         * @deprecated since 1.26: Use `gst_structure_map_in_place_id_str()`.
          */
         map_in_place(func: StructureMapFunc): boolean;
 
@@ -24627,6 +25024,7 @@ export namespace Gst {
          * fields. The structure must be mutable.
          * @param func a function to call for each field
          * @returns `true` if the supplied function returns `true` For each of the fields, `false` otherwise.
+         * @since 1.26
          */
         map_in_place_id_str(func: StructureMapIdStrFunc): boolean;
 
@@ -24670,6 +25068,8 @@ export namespace Gst {
          * Free-function: g_free
          * @param flags The flags to use to serialize structure
          * @returns a pointer to string allocated by `g_malloc()`.     `g_free()` after usage.
+         * @since 1.20
+         * @deprecated Use `gst_structure_serialize_full()` instead.
          */
         serialize(flags: SerializeFlags): string;
 
@@ -24678,6 +25078,7 @@ export namespace Gst {
          * can return `null` when {@link Gst.SerializeFlags.STRICT} flag is set.
          * @param flags The flags to use to serialize structure
          * @returns a pointer to string allocated by `g_malloc()`.     `g_free()` after usage.
+         * @since 1.24
          */
         serialize_full(flags: SerializeFlags): string | null;
 
@@ -24688,6 +25089,7 @@ export namespace Gst {
          * `GST_TYPE_ARRAY` in a {@link GObject.Value} directly.
          * @param fieldname the name of a field
          * @param array a pointer to a {@link GObject.ValueArray}
+         * @since 1.12
          */
         set_array(fieldname: string, array: GObject.ValueArray): void;
 
@@ -24698,6 +25100,7 @@ export namespace Gst {
          * `GST_TYPE_LIST` in a {@link GObject.Value} directly.
          * @param fieldname the name of a field
          * @param array a pointer to a {@link GObject.ValueArray}
+         * @since 1.12
          */
         set_list(fieldname: string, array: GObject.ValueArray): void;
 
@@ -24714,6 +25117,7 @@ export namespace Gst {
          * provided is copied before being used. It must not be empty, start with a
          * letter and can be followed by letters, numbers and any of "/-_.:".
          * @param name the new name of the structure
+         * @since 1.26
          */
         set_name_id_str(name: IdStr): void;
 
@@ -24725,6 +25129,7 @@ export namespace Gst {
          * `name` needs to be valid for the remaining lifetime of the process, e.g. has
          * to be a static string.
          * @param name the new name of the structure
+         * @since 1.26
          */
         set_name_static_str(name: string): void;
 
@@ -24746,6 +25151,7 @@ export namespace Gst {
          * has to be a static string.
          * @param fieldname the name of the field to set
          * @param value the new value of the field
+         * @since 1.26
          */
         set_value_static_str(fieldname: string, value: GObject.Value | any): void;
 
@@ -24767,6 +25173,7 @@ export namespace Gst {
          * has to be a static string.
          * @param fieldname the name of the field to set
          * @param value the new value of the field
+         * @since 1.26
          */
         take_value_static_str(fieldname: string, value: GObject.Value | any): void;
 
@@ -24845,6 +25252,7 @@ export namespace Gst {
          * `null`.
          * @param old_taglist pointer to a pointer to a     {@link Gst.TagList} to be replaced.
          * @param new_taglist pointer to a {@link Gst.TagList} that     will replace the tag list pointed to by `old_taglist`.
+         * @since 1.16
          */
         static replace(old_taglist: TagList | null, new_taglist: TagList | null): [boolean, TagList | null];
 
@@ -24854,6 +25262,7 @@ export namespace Gst {
          * ownership of `new_taglist`.
          * @param old_taglist pointer to a pointer to a {@link Gst.TagList}     to be replaced.
          * @param new_taglist pointer to a {@link Gst.TagList} that     will replace the taglist pointed to by `old_taglist`.
+         * @since 1.16
          */
         static take(old_taglist: TagList, new_taglist: TagList | null): [boolean, TagList];
 
@@ -25437,6 +25846,7 @@ export namespace Gst {
          * is not automatically applying the loop. The application can process this
          * meta data and use it e.g. to send a seek-event to loop a section.
          * @returns `true` if all non-`null` storage pointers were filled with appropriate values, `false` otherwise.
+         * @since 1.4
          */
         get_loop(): [boolean, TocLoopType | null, number];
 
@@ -25498,6 +25908,7 @@ export namespace Gst {
          * Set `loop_type` and `repeat_count` values for the `entry`.
          * @param loop_type loop_type value to set.
          * @param repeat_count repeat_count value to set.
+         * @since 1.4
          */
         set_loop(loop_type: TocLoopType, repeat_count: number): void;
 
@@ -25611,6 +26022,7 @@ export namespace Gst {
          * a {@link Gst.Caps} with no fields.
          * @param probability The probability in percent that the suggestion is right
          * @param media_type the media type of the suggested caps
+         * @since 1.20
          */
         suggest_empty_simple(probability: number, media_type: string): void;
     }
@@ -25647,6 +26059,7 @@ export namespace Gst {
          * Free-function: g_free
          * @param protocol Protocol for URI
          * @param location Location for URI
+         * @deprecated Use GstURI instead.
          */
         static construct(protocol: string, location: string): string;
 
@@ -25654,6 +26067,7 @@ export namespace Gst {
          * Parses a URI string into a new {@link Gst.Uri} object. Will return NULL if the URI
          * cannot be parsed.
          * @param uri The URI string to parse.
+         * @since 1.6
          */
         static from_string(uri: string): Uri | null;
 
@@ -25672,6 +26086,7 @@ export namespace Gst {
          * The same applies to the fragment component of the URI, such as
          * https://example.com/path#fragment which may contain a URI-escaped '#'.
          * @param uri The URI string to parse.
+         * @since 1.18
          */
         static from_string_escaped(uri: string): Uri | null;
 
@@ -25712,6 +26127,7 @@ export namespace Gst {
          * The returned string should be `g_free()`'d after use.
          * @param base_uri The percent-encoded base URI.
          * @param ref_uri The percent-encoded reference URI to join to the `base_uri`.
+         * @since 1.6
          */
         static join_strings(base_uri: string, ref_uri: string): string | null;
 
@@ -25738,6 +26154,7 @@ export namespace Gst {
          * normalized, call `gst_uri_normalize`() to normalize the path.
          * @param relative_path Relative path to append to the end of the current path.
          * @returns `true` if the path was appended successfully.
+         * @since 1.6
          */
         append_path(relative_path: string | null): boolean;
 
@@ -25745,6 +26162,7 @@ export namespace Gst {
          * Append a single path segment onto the end of the URI path.
          * @param path_segment The path segment string to append to the URI path.
          * @returns `true` if the path was appended successfully.
+         * @since 1.6
          */
         append_path_segment(path_segment: string | null): boolean;
 
@@ -25752,6 +26170,7 @@ export namespace Gst {
          * Create a new {@link Gst.Uri} object with the same data as this {@link Gst.Uri} object.
          * If `uri` is `null` then returns `null`.
          * @returns A new {@link Gst.Uri} object which is a copy of this          {@link Gst.Uri} or `null`.
+         * @since 1.6
          */
         copy(): Uri;
 
@@ -25760,6 +26179,7 @@ export namespace Gst {
          * URI.
          * @param second Second {@link Gst.Uri} to compare.
          * @returns `true` if the normalized versions of the two URI's would be equal.
+         * @since 1.6
          */
         equal(second: Uri): boolean;
 
@@ -25767,6 +26187,7 @@ export namespace Gst {
          * Like `gst_uri_from_string()` but also joins with a base URI.
          * @param uri The URI string to parse.
          * @returns A new {@link Gst.Uri} object.
+         * @since 1.6
          */
         from_string_with_base(uri: string): Uri | null;
 
@@ -25774,6 +26195,7 @@ export namespace Gst {
          * Get the fragment name from the URI or `null` if it doesn't exist.
          * If `uri` is `null` then returns `null`.
          * @returns The host name from the {@link Gst.Uri} object or `null`.
+         * @since 1.6
          */
         get_fragment(): string | null;
 
@@ -25781,6 +26203,7 @@ export namespace Gst {
          * Get the host name from the URI or `null` if it doesn't exist.
          * If `uri` is `null` then returns `null`.
          * @returns The host name from the {@link Gst.Uri} object or `null`.
+         * @since 1.6
          */
         get_host(): string | null;
 
@@ -25797,24 +26220,28 @@ export namespace Gst {
          * 
          * See more about Media Fragments URI 1.0 (W3C) at https://www.w3.org/TR/media-frags/
          * @returns The          fragment hash table from the URI.
+         * @since 1.12
          */
         get_media_fragment_table(): { [key: string]: string } | null;
 
         /**
          * Extract the path string from the URI object.
          * @returns The path from the URI. Once finished                                      with the string should be `g_free()`'d.
+         * @since 1.6
          */
         get_path(): string | null;
 
         /**
          * Get a list of path segments from the URI.
          * @returns A {@link GLib.List} of path segment          strings or `null` if no path segments are available. Free the list          when no longer needed with g_list_free_full(list, g_free).
+         * @since 1.6
          */
         get_path_segments(): string[];
 
         /**
          * Extract the path string from the URI object as a percent encoded URI path.
          * @returns The path from the URI. Once finished                                      with the string should be `g_free()`'d.
+         * @since 1.6
          */
         get_path_string(): string | null;
 
@@ -25822,18 +26249,21 @@ export namespace Gst {
          * Get the port number from the URI or `GST_URI_NO_PORT` if it doesn't exist.
          * If `uri` is `null` then returns `GST_URI_NO_PORT`.
          * @returns The port number from the {@link Gst.Uri} object or `GST_URI_NO_PORT`.
+         * @since 1.6
          */
         get_port(): number;
 
         /**
          * Get a list of the query keys from the URI.
          * @returns A list of keys from          the URI query. Free the list with `g_list_free()`.
+         * @since 1.6
          */
         get_query_keys(): string[];
 
         /**
          * Get a percent encoded URI query string from the `uri`.
          * @returns A percent encoded query string. Use                                      `g_free()` when no longer needed.
+         * @since 1.6
          */
         get_query_string(): string | null;
 
@@ -25845,6 +26275,7 @@ export namespace Gst {
          * example.
          * @param keys A GList containing the   query argument key strings.
          * @returns A percent encoded query string. Use `g_free()` when no longer needed.
+         * @since 1.24
          */
         get_query_string_ordered(keys: string[] | null): string | null;
 
@@ -25856,6 +26287,7 @@ export namespace Gst {
          * no longer required. Modifying this hash table will modify the query in the
          * URI.
          * @returns The query          hash table from the URI.
+         * @since 1.6
          */
         get_query_table(): { [key: string]: string } | null;
 
@@ -25867,6 +26299,7 @@ export namespace Gst {
          * query.
          * @param query_key The key to lookup.
          * @returns The value for the given key, or `null` if not found.
+         * @since 1.6
          */
         get_query_value(query_key: string): string | null;
 
@@ -25881,6 +26314,7 @@ export namespace Gst {
          * Get the userinfo (usually in the form "username:password") from the URI
          * or `null` if it doesn't exist. If `uri` is `null` then returns `null`.
          * @returns The userinfo from the {@link Gst.Uri} object or `null`.
+         * @since 1.6
          */
         get_userinfo(): string | null;
 
@@ -25888,6 +26322,7 @@ export namespace Gst {
          * Tests the `uri` to see if it is normalized. A `null` `uri` is considered to be
          * normalized.
          * @returns TRUE if the URI is normalized or is `null`.
+         * @since 1.6
          */
         is_normalized(): boolean;
 
@@ -25900,6 +26335,7 @@ export namespace Gst {
          * Modification of a {@link Gst.Uri} should only be done after verifying that it is
          * writable.
          * @returns `true` if it is safe to write to the object.
+         * @since 1.6
          */
         is_writable(): boolean;
 
@@ -25909,6 +26345,7 @@ export namespace Gst {
          * increased.
          * @param ref_uri The reference URI to join onto the                                       base URI.
          * @returns A {@link Gst.Uri} which represents the base                                      with the reference URI joined on.
+         * @since 1.6
          */
         join(ref_uri: Uri | null): Uri | null;
 
@@ -25920,6 +26357,7 @@ export namespace Gst {
          * reference to `uri` and returns a reference to the new {@link Gst.Uri}.
          * If `uri` is `null` then `null` is returned.
          * @returns A writable version of `uri`.
+         * @since 1.6
          */
         make_writable(): Uri;
 
@@ -25933,6 +26371,7 @@ export namespace Gst {
          * @param query The query string for the new URI with '&' separating                       query elements. Elements containing '&' characters                       should encode them as "&percnt;26".
          * @param fragment The fragment name for the new URI.
          * @returns The new URI joined onto `base`.
+         * @since 1.6
          */
         new_with_base(scheme: string | null, userinfo: string | null, host: string | null, port: number, path: string | null, query: string | null, fragment: string | null): Uri;
 
@@ -25944,6 +26383,7 @@ export namespace Gst {
          * The {@link Gst.Uri} object must be writable. Check with `gst_uri_is_writable()` or use
          * `gst_uri_make_writable()` first.
          * @returns TRUE if the URI was modified.
+         * @since 1.6
          */
         normalize(): boolean;
 
@@ -25951,6 +26391,7 @@ export namespace Gst {
          * Check if there is a query table entry for the `query_key` key.
          * @param query_key The key to lookup.
          * @returns `true` if `query_key` exists in the URI query table.
+         * @since 1.6
          */
         query_has_key(query_key: string): boolean;
 
@@ -25958,6 +26399,7 @@ export namespace Gst {
          * Add a reference to this {@link Gst.Uri} object. See `gst_mini_object_ref()` for further
          * info.
          * @returns This object with the reference count incremented.
+         * @since 1.6
          */
         ref(): Uri;
 
@@ -25965,6 +26407,7 @@ export namespace Gst {
          * Remove an entry from the query table by key.
          * @param query_key The key to remove.
          * @returns `true` if the key existed in the table and was removed.
+         * @since 1.6
          */
         remove_query_key(query_key: string): boolean;
 
@@ -25973,6 +26416,7 @@ export namespace Gst {
          * unset the fragment string.
          * @param fragment The fragment string to set.
          * @returns `true` if the fragment was set/unset successfully.
+         * @since 1.6
          */
         set_fragment(fragment: string | null): boolean;
 
@@ -25980,6 +26424,7 @@ export namespace Gst {
          * Set or unset the host for the URI.
          * @param host The new host string to set or `null` to unset.
          * @returns `true` if the host was set/unset successfully.
+         * @since 1.6
          */
         set_host(host: string): boolean;
 
@@ -25987,6 +26432,7 @@ export namespace Gst {
          * Sets or unsets the path in the URI.
          * @param path The new path to set with path segments separated by '/', or use `null`        to unset the path.
          * @returns `true` if the path was set successfully.
+         * @since 1.6
          */
         set_path(path: string | null): boolean;
 
@@ -25994,6 +26440,7 @@ export namespace Gst {
          * Replace the path segments list in the URI.
          * @param path_segments The new                 path list to set.
          * @returns `true` if the path segments were set successfully.
+         * @since 1.6
          */
         set_path_segments(path_segments: string[] | null): boolean;
 
@@ -26001,6 +26448,7 @@ export namespace Gst {
          * Sets or unsets the path in the URI.
          * @param path The new percent encoded path to set with path segments separated by '/', or use `null` to unset the path.
          * @returns `true` if the path was set successfully.
+         * @since 1.6
          */
         set_path_string(path: string): boolean;
 
@@ -26008,6 +26456,7 @@ export namespace Gst {
          * Set or unset the port number for the URI.
          * @param port The new port number to set or `GST_URI_NO_PORT` to unset.
          * @returns `true` if the port number was set/unset successfully.
+         * @since 1.6
          */
         set_port(port: number): boolean;
 
@@ -26015,6 +26464,7 @@ export namespace Gst {
          * Sets or unsets the query table in the URI.
          * @param query The new percent encoded query string to use to populate the query        table, or use `null` to unset the query table.
          * @returns `true` if the query table was set successfully.
+         * @since 1.6
          */
         set_query_string(query: string | null): boolean;
 
@@ -26024,6 +26474,7 @@ export namespace Gst {
          * will remove the query string from the URI.
          * @param query_table The new               query table to use.
          * @returns `true` if the new table was successfully used for the query table.
+         * @since 1.6
          */
         set_query_table(query_table: { [key: string]: string } | null): boolean;
 
@@ -26034,6 +26485,7 @@ export namespace Gst {
          * @param query_key The key for the query entry.
          * @param query_value The value for the key.
          * @returns `true` if the query table was successfully updated.
+         * @since 1.6
          */
         set_query_value(query_key: string, query_value: string | null): boolean;
 
@@ -26041,6 +26493,7 @@ export namespace Gst {
          * Set or unset the scheme for the URI.
          * @param scheme The new scheme to set or `null` to unset the scheme.
          * @returns `true` if the scheme was set/unset successfully.
+         * @since 1.6
          */
         set_scheme(scheme: string): boolean;
 
@@ -26048,6 +26501,7 @@ export namespace Gst {
          * Set or unset the user information for the URI.
          * @param userinfo The new user-information string to set or `null` to unset.
          * @returns `true` if the user information was set/unset successfully.
+         * @since 1.6
          */
         set_userinfo(userinfo: string): boolean;
 
@@ -26058,6 +26512,7 @@ export namespace Gst {
          * The caller should `g_free()` the string once they are finished with it.
          * The string is put together as described in RFC 3986.
          * @returns The string version of the URI.
+         * @since 1.6
          */
         to_string(): string;
 
@@ -26070,6 +26525,7 @@ export namespace Gst {
          * The string is put together as described in RFC 3986.
          * @param keys A GList containing   the query argument key strings.
          * @returns The string version of the URI.
+         * @since 1.24
          */
         to_string_with_keys(keys: string[] | null): string;
 
@@ -26079,6 +26535,7 @@ export namespace Gst {
          * If the reference count drops to 0 then finalize this object.
          * 
          * See `gst_mini_object_unref()` for further info.
+         * @since 1.6
          */
         unref(): void;
     }
@@ -26226,6 +26683,7 @@ export namespace Gst {
          * element names only and should not contain any property names.
          * @param name the full-path child's name
          * @returns the child object or `null` if     not found.
+         * @since 1.22
          */
         get_child_by_name_recurse<T = GObject.Object>(name: string): T;
 
@@ -26421,6 +26879,7 @@ export namespace Gst {
         /**
          * Check if one can add new presets, change existing ones and remove presets.
          * @returns `true` if presets are editable or `false` if they are static
+         * @since 1.6
          */
         is_editable(): boolean;
 

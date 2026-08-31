@@ -631,6 +631,7 @@ export namespace GstSdp {
          * @param ssrc the SSRC that must be used for the stream
          * @param roc current rollover counter
          * @returns `true` on success
+         * @since 1.4
          */
         add_cs_srtp(policy: number, ssrc: number, roc: number): boolean;
 
@@ -638,6 +639,7 @@ export namespace GstSdp {
          * Add a new payload to `msg`.
          * @param payload a {@link GstSdp.MIKEYPayload}
          * @returns `true` on success
+         * @since 1.4
          */
         add_payload(payload: MIKEYPayload): boolean;
 
@@ -646,6 +648,7 @@ export namespace GstSdp {
          * @param C envelope key cache indicator
          * @param data the encrypted envelope key
          * @returns `true` on success
+         * @since 1.4
          */
         add_pke(C: MIKEYCacheType, data: Uint8Array | string): boolean;
 
@@ -653,6 +656,7 @@ export namespace GstSdp {
          * Add a new RAND payload to `msg` with the given parameters.
          * @param rand random data
          * @returns `true` on success
+         * @since 1.4
          */
         add_rand(rand: Uint8Array | string): boolean;
 
@@ -660,6 +664,7 @@ export namespace GstSdp {
          * Add a new RAND payload to `msg` with `len` random bytes.
          * @param len length
          * @returns `true` on success
+         * @since 1.4
          */
         add_rand_len(len: number): boolean;
 
@@ -668,6 +673,7 @@ export namespace GstSdp {
          * @param type specifies the timestamp type used
          * @param ts_value The timestamp value of the specified `type`
          * @returns `true` on success
+         * @since 1.4
          */
         add_t(type: MIKEYTSType, ts_value: Uint8Array | string): boolean;
 
@@ -675,11 +681,13 @@ export namespace GstSdp {
          * Add a new T payload to `msg` that contains the current time
          * in NTP-UTC format.
          * @returns `true` on success
+         * @since 1.4
          */
         add_t_now_ntp_utc(): boolean;
 
         /**
          * @returns a `gchar`, base64-encoded data
+         * @since 1.8
          */
         base64_encode(): string;
 
@@ -688,6 +696,7 @@ export namespace GstSdp {
          * @param type a {@link GstSdp.MIKEYPayloadType}
          * @param nth payload to find
          * @returns the `nth` {@link GstSdp.MIKEYPayload} of `type`.
+         * @since 1.4
          */
         find_payload(type: MIKEYPayloadType, nth: number): MIKEYPayload | null;
 
@@ -695,18 +704,21 @@ export namespace GstSdp {
          * Get the policy information of `msg` at `idx`.
          * @param idx an index
          * @returns a {@link GstSdp.MIKEYMapSRTP}
+         * @since 1.4
          */
         get_cs_srtp(idx: number): MIKEYMapSRTP | null;
 
         /**
          * Get the number of crypto sessions in `msg`.
          * @returns the number of crypto sessions
+         * @since 1.4
          */
         get_n_cs(): number;
 
         /**
          * Get the number of payloads in `msg`.
          * @returns the number of payloads in `msg`
+         * @since 1.4
          */
         get_n_payloads(): number;
 
@@ -714,6 +726,7 @@ export namespace GstSdp {
          * Get the {@link GstSdp.MIKEYPayload} at `idx` in `msg`
          * @param idx an index
          * @returns the {@link GstSdp.MIKEYPayload} at `idx`. The payload remains valid for as long as it is part of `msg`.
+         * @since 1.4
          */
         get_payload(idx: number): MIKEYPayload | null;
 
@@ -724,6 +737,7 @@ export namespace GstSdp {
          * @param idx the index to insert at
          * @param map the map info
          * @returns `true` on success
+         * @since 1.4
          */
         insert_cs_srtp(idx: number, map: MIKEYMapSRTP): boolean;
 
@@ -733,6 +747,7 @@ export namespace GstSdp {
          * @param idx an index
          * @param payload a {@link GstSdp.MIKEYPayload}
          * @returns `true` on success
+         * @since 1.4
          */
         insert_payload(idx: number, payload: MIKEYPayload): boolean;
 
@@ -740,6 +755,7 @@ export namespace GstSdp {
          * Remove the SRTP policy at `idx`.
          * @param idx the index to remove
          * @returns `true` on success
+         * @since 1.4
          */
         remove_cs_srtp(idx: number): boolean;
 
@@ -747,6 +763,7 @@ export namespace GstSdp {
          * Remove the payload in `msg` at `idx`
          * @param idx an index
          * @returns `true` on success
+         * @since 1.4
          */
         remove_payload(idx: number): boolean;
 
@@ -755,6 +772,7 @@ export namespace GstSdp {
          * @param idx the index to insert at
          * @param map the map info
          * @returns `true` on success
+         * @since 1.4
          */
         replace_cs_srtp(idx: number, map: MIKEYMapSRTP): boolean;
 
@@ -763,6 +781,7 @@ export namespace GstSdp {
          * @param idx an index
          * @param payload a {@link GstSdp.MIKEYPayload}
          * @returns `true` on success
+         * @since 1.4
          */
         replace_payload(idx: number, payload: MIKEYPayload): boolean;
 
@@ -775,6 +794,7 @@ export namespace GstSdp {
          * @param CSB_id the Crypto Session Bundle id
          * @param map_type the {@link GstSdp.MIKEYMapType}
          * @returns `true` on success
+         * @since 1.4
          */
         set_info(version: number, type: MIKEYType, V: boolean, prf_func: MIKEYPRFFunc, CSB_id: number, map_type: MIKEYMapType): boolean;
 
@@ -782,12 +802,14 @@ export namespace GstSdp {
          * Convert `msg` to a {@link GLib.Bytes}.
          * @param info a {@link GstSdp.MIKEYEncryptInfo}
          * @returns a new {@link GLib.Bytes} for `msg`.
+         * @since 1.4
          */
         to_bytes(info: MIKEYEncryptInfo): GLib.Bytes;
 
         /**
          * @param caps a {@link Gst.Caps} to be filled with SRTP parameters (srtp/srtcp cipher, authorization, key data)
          * @returns `true` on success
+         * @since 1.8.1
          */
         to_caps(caps: Gst.Caps): boolean;
     }
@@ -815,6 +837,7 @@ export namespace GstSdp {
          * Add a new sub payload to `payload`.
          * @param newpay a {@link GstSdp.MIKEYPayload} to add
          * @returns `true` on success.
+         * @since 1.4
          */
         kemac_add_sub(newpay: MIKEYPayload): boolean;
 
@@ -822,6 +845,7 @@ export namespace GstSdp {
          * Get the number of sub payloads of `payload`. `payload` should be of type
          * {@link GstSdp.MIKEYPayloadType.KEMAC}.
          * @returns the number of sub payloads in `payload`
+         * @since 1.4
          */
         kemac_get_n_sub(): number;
 
@@ -830,6 +854,7 @@ export namespace GstSdp {
          * {@link GstSdp.MIKEYPayloadType.KEMAC}.
          * @param idx an index
          * @returns the {@link GstSdp.MIKEYPayload} at `idx`.
+         * @since 1.4
          */
         kemac_get_sub(idx: number): MIKEYPayload | null;
 
@@ -837,6 +862,7 @@ export namespace GstSdp {
          * Remove the sub payload at `idx` in `payload`.
          * @param idx the index to remove
          * @returns `true` on success.
+         * @since 1.4
          */
         kemac_remove_sub(idx: number): boolean;
 
@@ -846,6 +872,7 @@ export namespace GstSdp {
          * @param enc_alg the {@link GstSdp.MIKEYEncAlg}
          * @param mac_alg a {@link GstSdp.MIKEYMacAlg}
          * @returns `true` on success
+         * @since 1.4
          */
         kemac_set(enc_alg: MIKEYEncAlg, mac_alg: MIKEYMacAlg): boolean;
 
@@ -854,6 +881,7 @@ export namespace GstSdp {
          * @param vf_data the Valid From data
          * @param vt_data the Valid To data
          * @returns `true` on success
+         * @since 1.4
          */
         key_data_set_interval(vf_data: Uint8Array | string, vt_data: Uint8Array | string): boolean;
 
@@ -863,6 +891,7 @@ export namespace GstSdp {
          * @param key_type a {@link GstSdp.MIKEYKeyDataType}
          * @param key_data the key of type `key_type`
          * @returns `true` on success
+         * @since 1.4
          */
         key_data_set_key(key_type: MIKEYKeyDataType, key_data: Uint8Array | string): boolean;
 
@@ -871,6 +900,7 @@ export namespace GstSdp {
          * salt data will be removed.
          * @param salt_data the salt
          * @returns `true` on success
+         * @since 1.4
          */
         key_data_set_salt(salt_data: Uint8Array | string | null): boolean;
 
@@ -878,6 +908,7 @@ export namespace GstSdp {
          * Set the SPI/MKI validity in the {@link GstSdp.MIKEYPayloadType.KEY_DATA} `payload`.
          * @param spi_data the SPI/MKI data
          * @returns `true` on success
+         * @since 1.4
          */
         key_data_set_spi(spi_data: Uint8Array | string): boolean;
 
@@ -887,6 +918,7 @@ export namespace GstSdp {
          * @param C envelope key cache indicator
          * @param data the encrypted envelope key
          * @returns `true` on success
+         * @since 1.4
          */
         pke_set(C: MIKEYCacheType, data: Uint8Array | string): boolean;
 
@@ -894,6 +926,7 @@ export namespace GstSdp {
          * Set the random values in a {@link GstSdp.MIKEYPayloadType.RAND} `payload`.
          * @param rand random values
          * @returns `true` on success
+         * @since 1.4
          */
         rand_set(rand: Uint8Array | string): boolean;
 
@@ -903,6 +936,7 @@ export namespace GstSdp {
          * @param type a type
          * @param val `len` bytes of data
          * @returns `true` on success
+         * @since 1.4
          */
         sp_add_param(type: number, val: Uint8Array | string): boolean;
 
@@ -910,6 +944,7 @@ export namespace GstSdp {
          * Get the number of security policy parameters in a {@link GstSdp.MIKEYPayloadType.SP}
          * `payload`.
          * @returns the number of parameters in `payload`
+         * @since 1.4
          */
         sp_get_n_params(): number;
 
@@ -918,6 +953,7 @@ export namespace GstSdp {
          * at `idx`.
          * @param idx an index
          * @returns the {@link GstSdp.MIKEYPayloadSPParam} at `idx` in `payload`
+         * @since 1.4
          */
         sp_get_param(idx: number): MIKEYPayloadSPParam | null;
 
@@ -926,6 +962,7 @@ export namespace GstSdp {
          * `payload` at `idx`.
          * @param idx an index
          * @returns `true` on success
+         * @since 1.4
          */
         sp_remove_param(idx: number): boolean;
 
@@ -934,6 +971,7 @@ export namespace GstSdp {
          * @param policy the policy number
          * @param proto a {@link GstSdp.MIKEYSecProto}
          * @returns `true` on success
+         * @since 1.4
          */
         sp_set(policy: number, proto: MIKEYSecProto): boolean;
 
@@ -942,6 +980,7 @@ export namespace GstSdp {
          * @param type the {@link GstSdp.MIKEYTSType}
          * @param ts_value the timestamp value
          * @returns `true` on success
+         * @since 1.4
          */
         t_set(type: MIKEYTSType, ts_value: Uint8Array | string): boolean;
     }
@@ -1101,6 +1140,7 @@ export namespace GstSdp {
         /**
          * Clear the attribute.
          * @returns `GST_SDP_OK`.
+         * @since 1.2
          */
         clear(): SDPResult;
 
@@ -1109,6 +1149,7 @@ export namespace GstSdp {
          * @param key the key
          * @param value the value
          * @returns `GST_SDP_OK`.
+         * @since 1.2
          */
         set(key: string, value: string | null): SDPResult;
     }
@@ -1138,6 +1179,7 @@ export namespace GstSdp {
         /**
          * Reset the bandwidth information in `bw`.
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         clear(): SDPResult;
 
@@ -1146,6 +1188,7 @@ export namespace GstSdp {
          * @param bwtype the bandwidth modifier type
          * @param bandwidth the bandwidth in kilobits per second
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         set(bwtype: string, bandwidth: number): SDPResult;
     }
@@ -1183,6 +1226,7 @@ export namespace GstSdp {
         /**
          * Clear the connection.
          * @returns `GST_SDP_OK`.
+         * @since 1.2
          */
         clear(): SDPResult;
 
@@ -1194,6 +1238,7 @@ export namespace GstSdp {
          * @param ttl the time to live of the address
          * @param addr_number the number of layers
          * @returns `GST_SDP_OK`.
+         * @since 1.2
          */
         set(nettype: string, addrtype: string, address: string, ttl: number, addr_number: number): SDPResult;
     }
@@ -1278,6 +1323,7 @@ export namespace GstSdp {
          * 
          * a=extmap:(id)[/direction] (extensionname) (extensionattributes)
          * @param structure a {@link Gst.Structure} belonging to a {@link Gst.Caps} SDP mapping, see also `gst_sdp_media_get_caps_from_media()`
+         * @since 1.28
          */
         static add_media_from_structure(structure: Gst.Structure): [SDPResult, SDPMedia];
 
@@ -1311,6 +1357,7 @@ export namespace GstSdp {
          * 
          * Only the first {@link Gst.Structure} of the `caps` is used.
          * @param caps a {@link Gst.Caps}
+         * @since 1.8
          */
         static set_media_from_caps(caps: Gst.Caps): [SDPResult, SDPMedia];
 
@@ -1365,6 +1412,7 @@ export namespace GstSdp {
          * Mapping of attributes of {@link GstSdp.SDPMedia} to {@link Gst.Caps}
          * @param caps a {@link Gst.Caps}
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.8
          */
         attributes_to_caps(caps: Gst.Caps): SDPResult;
 
@@ -1384,6 +1432,7 @@ export namespace GstSdp {
          * Allocate a new copy of `media` and store the result in `copy`. The value in
          * `copy` should be release with gst_sdp_media_free function.
          * @returns a {@link GstSdp.SDPResult}
+         * @since 1.2
          */
         copy(): [SDPResult, SDPMedia];
 
@@ -1442,6 +1491,7 @@ export namespace GstSdp {
          * Note that the extmap, ssrc and rid attributes are set only by `gst_sdp_media_attributes_to_caps()`.
          * @param pt a payload type
          * @returns a {@link Gst.Caps}, or `null` if an error happened
+         * @since 1.8
          */
         get_caps_from_media(pt: number): Gst.Caps | null;
 
@@ -1501,6 +1551,7 @@ export namespace GstSdp {
          * @param idx an index
          * @param attr a {@link GstSdp.SDPAttribute}
          * @returns #GST_SDP_OK.
+         * @since 1.2
          */
         insert_attribute(idx: number, attr: SDPAttribute): SDPResult;
 
@@ -1510,6 +1561,7 @@ export namespace GstSdp {
          * @param idx an index
          * @param bw a {@link GstSdp.SDPBandwidth}
          * @returns #GST_SDP_OK.
+         * @since 1.2
          */
         insert_bandwidth(idx: number, bw: SDPBandwidth): SDPResult;
 
@@ -1519,6 +1571,7 @@ export namespace GstSdp {
          * @param idx an index
          * @param conn a {@link GstSdp.SDPConnection}
          * @returns #GST_SDP_OK.
+         * @since 1.2
          */
         insert_connection(idx: number, conn: SDPConnection): SDPResult;
 
@@ -1528,6 +1581,7 @@ export namespace GstSdp {
          * @param idx an index
          * @param format the format
          * @returns #GST_SDP_OK.
+         * @since 1.2
          */
         insert_format(idx: number, format: string): SDPResult;
 
@@ -1535,6 +1589,7 @@ export namespace GstSdp {
          * Creates a new {@link GstSdp.MIKEYMessage} after parsing the key-mgmt attribute
          * from a {@link GstSdp.SDPMedia}.
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.8.1
          */
         parse_keymgmt(): [SDPResult, MIKEYMessage];
 
@@ -1542,6 +1597,7 @@ export namespace GstSdp {
          * Remove the attribute in `media` at `idx`.
          * @param idx an index
          * @returns #GST_SDP_OK.
+         * @since 1.2
          */
         remove_attribute(idx: number): SDPResult;
 
@@ -1549,6 +1605,7 @@ export namespace GstSdp {
          * Remove the bandwidth information in `media` at `idx`.
          * @param idx an index
          * @returns #GST_SDP_OK.
+         * @since 1.2
          */
         remove_bandwidth(idx: number): SDPResult;
 
@@ -1556,6 +1613,7 @@ export namespace GstSdp {
          * Remove the connection information in `media` at `idx`.
          * @param idx an index
          * @returns #GST_SDP_OK.
+         * @since 1.2
          */
         remove_connection(idx: number): SDPResult;
 
@@ -1563,6 +1621,7 @@ export namespace GstSdp {
          * Remove the format information in `media` at `idx`.
          * @param idx an index
          * @returns #GST_SDP_OK.
+         * @since 1.2
          */
         remove_format(idx: number): SDPResult;
 
@@ -1571,6 +1630,7 @@ export namespace GstSdp {
          * @param idx an index
          * @param attr a {@link GstSdp.SDPAttribute}
          * @returns #GST_SDP_OK.
+         * @since 1.2
          */
         replace_attribute(idx: number, attr: SDPAttribute): SDPResult;
 
@@ -1579,6 +1639,7 @@ export namespace GstSdp {
          * @param idx an index
          * @param bw a {@link GstSdp.SDPBandwidth}
          * @returns #GST_SDP_OK.
+         * @since 1.2
          */
         replace_bandwidth(idx: number, bw: SDPBandwidth): SDPResult;
 
@@ -1587,6 +1648,7 @@ export namespace GstSdp {
          * @param idx an index
          * @param conn a {@link GstSdp.SDPConnection}
          * @returns #GST_SDP_OK.
+         * @since 1.2
          */
         replace_connection(idx: number, conn: SDPConnection): SDPResult;
 
@@ -1595,6 +1657,7 @@ export namespace GstSdp {
          * @param idx an index
          * @param format the format
          * @returns #GST_SDP_OK.
+         * @since 1.2
          */
         replace_format(idx: number, format: string): SDPResult;
 
@@ -1731,6 +1794,7 @@ export namespace GstSdp {
         /**
          * Parse `text` and create a new SDPMessage from these.
          * @param text A dynamically allocated string representing the SDP description
+         * @since 1.16
          */
         static new_from_text(text: string): [SDPResult, SDPMessage];
 
@@ -1830,6 +1894,7 @@ export namespace GstSdp {
          * Mapping of attributes of {@link GstSdp.SDPMessage} to {@link Gst.Caps}
          * @param caps a {@link Gst.Caps}
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.8
          */
         attributes_to_caps(caps: Gst.Caps): SDPResult;
 
@@ -1843,6 +1908,7 @@ export namespace GstSdp {
          * Allocate a new copy of `msg` and store the result in `copy`. The value in
          * `copy` should be release with gst_sdp_message_free function.
          * @returns a {@link GstSdp.SDPResult}
+         * @since 1.2
          */
         copy(): [SDPResult, SDPMessage];
 
@@ -1979,6 +2045,7 @@ export namespace GstSdp {
          * @param idx an index
          * @param attr a {@link GstSdp.SDPAttribute}
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         insert_attribute(idx: number, attr: SDPAttribute): SDPResult;
 
@@ -1989,6 +2056,7 @@ export namespace GstSdp {
          * @param idx an index
          * @param bw the bandwidth
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         insert_bandwidth(idx: number, bw: SDPBandwidth): SDPResult;
 
@@ -1998,6 +2066,7 @@ export namespace GstSdp {
          * @param idx an index
          * @param email an email
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         insert_email(idx: number, email: string): SDPResult;
 
@@ -2007,6 +2076,7 @@ export namespace GstSdp {
          * @param idx a phone index
          * @param phone a phone
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         insert_phone(idx: number, phone: string): SDPResult;
 
@@ -2017,6 +2087,7 @@ export namespace GstSdp {
          * @param idx an index
          * @param t a {@link GstSdp.SDPTime}
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         insert_time(idx: number, t: SDPTime): SDPResult;
 
@@ -2027,6 +2098,7 @@ export namespace GstSdp {
          * @param idx an index
          * @param zone a {@link GstSdp.SDPZone}
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         insert_zone(idx: number, zone: SDPZone): SDPResult;
 
@@ -2040,6 +2112,7 @@ export namespace GstSdp {
          * Creates a new {@link GstSdp.MIKEYMessage} after parsing the key-mgmt attribute
          * from a {@link GstSdp.SDPMessage}.
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.8.1
          */
         parse_keymgmt(): [SDPResult, MIKEYMessage];
 
@@ -2053,6 +2126,7 @@ export namespace GstSdp {
          * Remove the attribute in `msg` at index `idx`.
          * @param idx the index
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         remove_attribute(idx: number): SDPResult;
 
@@ -2060,6 +2134,7 @@ export namespace GstSdp {
          * Remove the bandwidth information in `msg` at index `idx`.
          * @param idx the bandwidth index
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         remove_bandwidth(idx: number): SDPResult;
 
@@ -2067,6 +2142,7 @@ export namespace GstSdp {
          * Remove the email in `msg` at index `idx`.
          * @param idx an email index
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         remove_email(idx: number): SDPResult;
 
@@ -2074,6 +2150,7 @@ export namespace GstSdp {
          * Remove the media at `idx` from the array of medias in `msg` if found.
          * @param idx the media index
          * @returns #GST_SDP_OK when the specified media is found at `idx` and removed, #GST_SDP_EINVAL otherwise.
+         * @since 1.24
          */
         remove_media(idx: number): SDPResult;
 
@@ -2081,6 +2158,7 @@ export namespace GstSdp {
          * Remove the phone number in `msg` at index `idx`.
          * @param idx a phone index
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         remove_phone(idx: number): SDPResult;
 
@@ -2088,6 +2166,7 @@ export namespace GstSdp {
          * Remove the time information in `msg` at index `idx`.
          * @param idx the index
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         remove_time(idx: number): SDPResult;
 
@@ -2095,6 +2174,7 @@ export namespace GstSdp {
          * Remove the zone information in `msg` at index `idx`.
          * @param idx the index
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         remove_zone(idx: number): SDPResult;
 
@@ -2103,6 +2183,7 @@ export namespace GstSdp {
          * @param idx the index
          * @param attr a {@link GstSdp.SDPAttribute}
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         replace_attribute(idx: number, attr: SDPAttribute): SDPResult;
 
@@ -2111,6 +2192,7 @@ export namespace GstSdp {
          * @param idx the bandwidth index
          * @param bw the bandwidth
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         replace_bandwidth(idx: number, bw: SDPBandwidth): SDPResult;
 
@@ -2119,6 +2201,7 @@ export namespace GstSdp {
          * @param idx an email index
          * @param email an email
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         replace_email(idx: number, email: string): SDPResult;
 
@@ -2127,6 +2210,7 @@ export namespace GstSdp {
          * @param idx a phone index
          * @param phone a phone
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         replace_phone(idx: number, phone: string): SDPResult;
 
@@ -2135,6 +2219,7 @@ export namespace GstSdp {
          * @param idx the index
          * @param t a {@link GstSdp.SDPTime}
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         replace_time(idx: number, t: SDPTime): SDPResult;
 
@@ -2143,6 +2228,7 @@ export namespace GstSdp {
          * @param idx the index
          * @param zone a {@link GstSdp.SDPZone}
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         replace_zone(idx: number, zone: SDPZone): SDPResult;
 
@@ -2289,6 +2375,7 @@ export namespace GstSdp {
         /**
          * Reset the time information in `t`.
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         clear(): SDPResult;
 
@@ -2298,6 +2385,7 @@ export namespace GstSdp {
          * @param stop the stop time
          * @param repeat the repeat times
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         set(start: string, stop: string, repeat: string[]): SDPResult;
     }
@@ -2328,6 +2416,7 @@ export namespace GstSdp {
         /**
          * Reset the zone information in `zone`.
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         clear(): SDPResult;
 
@@ -2336,6 +2425,7 @@ export namespace GstSdp {
          * @param adj_time the NTP time that a time zone adjustment happens
          * @param typed_time the offset from the time when the session was first scheduled
          * @returns a {@link GstSdp.SDPResult}.
+         * @since 1.2
          */
         set(adj_time: string, typed_time: string): SDPResult;
     }

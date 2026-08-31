@@ -181,6 +181,7 @@ export namespace GstInsertBin {
          * Same as the {@link GstInsertBin.InsertBin.SignalSignatures.append | GstInsertBin.InsertBin::append} signal.
          * @param element the {@link Gst.Element} to add
          * @param callback the callback to call when the element has been  added or not, or `null`
+         * @since 1.2
          */
         append(element: Gst.Element, callback: InsertBinCallback): void;
 
@@ -192,6 +193,7 @@ export namespace GstInsertBin {
          * @param element the {@link Gst.Element} to add
          * @param sibling the {@link Gst.Element} to add `element` after
          * @param callback the callback to call when the element has been  added or not, or `null`
+         * @since 1.2
          */
         insert_after(element: Gst.Element, sibling: Gst.Element, callback: InsertBinCallback): void;
 
@@ -203,6 +205,7 @@ export namespace GstInsertBin {
          * @param element the {@link Gst.Element} to add
          * @param sibling the {@link Gst.Element} to add `element` before
          * @param callback the callback to call when the element has been  added or not, or `null`
+         * @since 1.2
          */
         insert_before(element: Gst.Element, sibling: Gst.Element, callback: InsertBinCallback): void;
 
@@ -213,6 +216,7 @@ export namespace GstInsertBin {
          * Same as the {@link GstInsertBin.InsertBin.SignalSignatures.prepend | GstInsertBin.InsertBin::prepend} signal.
          * @param element the {@link Gst.Element} to add
          * @param callback the callback to call when the element has been  added or not, or `null`
+         * @since 1.2
          */
         prepend(element: Gst.Element, callback: InsertBinCallback): void;
 
@@ -222,6 +226,7 @@ export namespace GstInsertBin {
          * Same as the {@link GstInsertBin.InsertBin.SignalSignatures.remove | GstInsertBin.InsertBin::remove} signal.
          * @param element the {@link Gst.Element} to remove
          * @param callback the callback to call when the element has been  removed or not, or `null`
+         * @since 1.2
          */
         remove(element: Gst.Element, callback: InsertBinCallback): void;
 
@@ -274,6 +279,7 @@ export namespace GstInsertBin {
          * element names only and should not contain any property names.
          * @param name the full-path child's name
          * @returns the child object or `null` if     not found.
+         * @since 1.22
          */
         get_child_by_name_recurse<T = GObject.Object>(name: string): T;
 

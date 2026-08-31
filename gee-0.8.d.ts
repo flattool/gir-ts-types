@@ -2828,11 +2828,13 @@ export namespace Gee {
 
         /**
          * @param key 
+         * @deprecated
          */
         contains(key: never): boolean;
 
         /**
          * @param key 
+         * @deprecated
          */
         remove(key: never): [boolean, null];
 
@@ -2848,6 +2850,7 @@ export namespace Gee {
 
         /**
          * @param map 
+         * @deprecated
          */
         remove_all(map: Map): boolean;
 
@@ -2858,6 +2861,7 @@ export namespace Gee {
 
         /**
          * @param map 
+         * @deprecated
          */
         contains_all(map: Map): boolean;
 
@@ -4826,6 +4830,7 @@ export namespace Gee {
 
         /**
          * @param key 
+         * @deprecated
          */
         contains(key: never): boolean;
 
@@ -4859,6 +4864,7 @@ export namespace Gee {
 
         /**
          * @param key 
+         * @deprecated
          */
         remove(key: never): [boolean, null];
 
@@ -4878,6 +4884,7 @@ export namespace Gee {
 
         /**
          * @param map 
+         * @deprecated
          */
         remove_all(map: Map): boolean;
 
@@ -4888,6 +4895,7 @@ export namespace Gee {
 
         /**
          * @param map 
+         * @deprecated
          */
         contains_all(map: Map): boolean;
 
@@ -10055,6 +10063,7 @@ export namespace Gee {
 
         /**
          * @param key 
+         * @deprecated
          */
         contains(key: never): boolean;
 
@@ -10088,6 +10097,7 @@ export namespace Gee {
 
         /**
          * @param key 
+         * @deprecated
          */
         remove(key: never): [boolean, null];
 
@@ -10107,6 +10117,7 @@ export namespace Gee {
 
         /**
          * @param map 
+         * @deprecated
          */
         remove_all(map: Map): boolean;
 
@@ -10117,6 +10128,7 @@ export namespace Gee {
 
         /**
          * @param map 
+         * @deprecated
          */
         contains_all(map: Map): boolean;
 
