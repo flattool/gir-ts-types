@@ -207,6 +207,7 @@ export namespace GstGLEGL {
          * This function will return the same value for multiple calls with the same
          * `display`.
          * @param display an existing {@link GstGL.GLDisplay}
+         * @since 1.12
          */
         static from_gl_display(display: GstGL.GLDisplay): GLDisplayEGL | null;
 
@@ -216,6 +217,7 @@ export namespace GstGLEGL {
          * `display` must be 0. `type` must not be {@link GstGL.GLDisplayType.NONE}.
          * @param type a {@link GstGL.GLDisplayType}
          * @param display pointer to a display (or 0)
+         * @since 1.12
          */
         static get_from_native(type: GstGL.GLDisplayType, display: bigint | number): null;
     }
@@ -392,6 +394,7 @@ export namespace GstGLEGL {
          * @param offset Array of offsets, relative to the DMABuf
          * @param in_info the {@link GstVideo.VideoInfo}
          * @param target GL texture target this GstEGLImage is intended for
+         * @since 1.18
          */
         static from_dmabuf_direct_target(context: GstGL.GLContext, fd: number, offset: bigint | number, in_info: GstVideo.VideoInfo, target: GstGL.GLTextureTarget): EGLImage | null;
 
@@ -408,6 +411,7 @@ export namespace GstGLEGL {
          * @param offset Array of offsets, relative to the DMABuf
          * @param in_info_dma the {@link GstVideo.VideoInfoDmaDrm}
          * @param target GL texture target this GstEGLImage is intended for
+         * @since 1.24
          */
         static from_dmabuf_direct_target_with_dma_drm(context: GstGL.GLContext, n_planes: number, fd: number, offset: bigint | number, in_info_dma: GstVideo.VideoInfoDmaDrm, target: GstGL.GLTextureTarget): EGLImage | null;
 
@@ -455,17 +459,20 @@ export namespace GstGLEGL {
         /**
          * Initializes the GL Memory allocator. It is safe to call this function
          * multiple times.  This must be called before any other GstGLMemoryEGL operation.
+         * @since 1.10
          */
         static init_once(): void;
 
         // Methods
         /**
          * @returns The EGLDisplay `mem` is associated with
+         * @since 1.10
          */
         get_display(): null;
 
         /**
          * @returns The EGLImage held by `mem`
+         * @since 1.10
          */
         get_image(): null;
     }

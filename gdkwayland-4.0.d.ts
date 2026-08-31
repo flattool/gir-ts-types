@@ -133,6 +133,7 @@ export namespace GdkWayland {
         /**
          * Returns the `xkb_keymap` of a {@link Gdk.Device}.
          * @returns a `struct xkb_keymap`
+         * @since 4.4
          */
         get_xkb_keymap(): null;
     }
@@ -198,6 +199,7 @@ export namespace GdkWayland {
         /**
          * Retrieves the EGL display connection object for the given GDK display.
          * @returns the EGL display
+         * @since 4.4
          */
         get_egl_display(): null;
 
@@ -205,6 +207,7 @@ export namespace GdkWayland {
          * Gets the startup notification ID for a Wayland display, or `null`
          * if no ID has been defined.
          * @returns the startup notification ID for `display`
+         * @deprecated since 4.10.
          */
         get_startup_notification_id(): string | null;
 
@@ -220,6 +223,7 @@ export namespace GdkWayland {
          * Sets the cursor theme for the given `display`.
          * @param name the new cursor theme
          * @param size the size to use for cursors
+         * @deprecated since 4.16: Use the cursor-related properties of   [GtkSettings](../gtk4/class.Settings.html) to set the cursor theme
          */
         set_cursor_theme(name: string, size: number): void;
 
@@ -234,6 +238,7 @@ export namespace GdkWayland {
          * complete (for example, when opening a window or when calling
          * {@link Gdk.Display.notify_startup_complete}).
          * @param startup_id the startup notification ID (must be valid utf8)
+         * @deprecated since 4.10.: Use {@link Gdk.Toplevel.set_startup_id}
          */
         set_startup_notification_id(startup_id: string): void;
     }
@@ -594,6 +599,7 @@ export namespace GdkWayland {
         // Methods
         /**
          * Forces next commit.
+         * @since 4.18
          */
         force_next_commit(): void;
     }
@@ -672,6 +678,7 @@ export namespace GdkWayland {
          * Note that this API depends on an unstable Wayland protocol,
          * and thus may require changes in the future.
          * @param handle the handle to drop
+         * @since 4.12
          */
         drop_exported_handle(handle: string): void;
 
@@ -737,6 +744,7 @@ export namespace GdkWayland {
          * 
          * Note that this API depends on an unstable Wayland protocol,
          * and thus may require changes in the future.
+         * @deprecated since 4.12: Use {@link GdkWayland.WaylandToplevel.drop_exported_handle}   instead, this function does nothing
          */
         unexport_handle(): void;
 
@@ -1073,6 +1081,7 @@ export namespace GdkWayland {
          * Performs a title bar gesture.
          * @param gesture a {@link Gdk.TitlebarGesture}
          * @returns whether the gesture was performed
+         * @since 4.4
          */
         titlebar_gesture(gesture: Gdk.TitlebarGesture): boolean;
     }

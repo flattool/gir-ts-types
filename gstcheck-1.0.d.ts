@@ -636,6 +636,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param pending_list List     of of pending `GstClockIDs`
+         * @since 1.4
          */
         static id_list_get_latest_time(pending_list: Gst.ClockID[] | null): Gst.ClockTime;
 
@@ -647,6 +648,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param delta a positive {@link Gst.ClockTimeDiff} to be added to the time of the clock
+         * @since 1.2
          */
         advance_time(delta: Gst.ClockTimeDiff): void;
 
@@ -659,6 +661,7 @@ export namespace GstCheck {
          * A "crank" can be though of as the notion of
          * manually driving the clock forward to its next logical step.
          * @returns `true` if the crank was successful, `false` otherwise. MT safe.
+         * @since 1.8
          */
         crank(): boolean;
 
@@ -667,6 +670,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a {@link Gst.ClockTime} set to the time of the next pending clock notification. If no clock notifications have been requested `GST_CLOCK_TIME_NONE` will be returned.
+         * @since 1.2
          */
         get_next_entry_time(): Gst.ClockTime;
 
@@ -677,6 +681,7 @@ export namespace GstCheck {
          * MT safe.
          * @param id a {@link Gst.ClockID} clock notification
          * @returns `true` if the clock has been asked to provide the given clock notification, `false` otherwise.
+         * @since 1.2
          */
         has_id(id: Gst.ClockID): boolean;
 
@@ -686,6 +691,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns the number of pending clock notifications.
+         * @since 1.2
          */
         peek_id_count(): number;
 
@@ -695,6 +701,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns `true` if `pending_id` is the next clock notification to be triggered, `false` otherwise.
+         * @since 1.2
          */
         peek_next_pending_id(): [boolean, Gst.ClockID | null];
 
@@ -703,6 +710,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param pending_id {@link Gst.ClockID}
+         * @since 1.18
          */
         process_id(pending_id: Gst.ClockID): boolean;
 
@@ -711,12 +719,14 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param pending_list List     of pending `GstClockIDs`
+         * @since 1.4
          */
         process_id_list(pending_list: Gst.ClockID[] | null): number;
 
         /**
          * MT safe.
          * @returns a {@link Gst.ClockID} containing the next pending clock notification.
+         * @since 1.2
          */
         process_next_clock_id(): Gst.ClockID | null;
 
@@ -728,6 +738,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param new_time a {@link Gst.ClockTime} later than that returned by `gst_clock_get_time()`
+         * @since 1.2
          */
         set_time(new_time: Gst.ClockTime): void;
 
@@ -739,6 +750,7 @@ export namespace GstCheck {
          * @param count the number of pending clock notifications to wait for
          * @param timeout_ms the timeout in milliseconds
          * @returns a `gboolean` `true` if the waits have been registered, `false` if not. (Could be that it timed out waiting or that more waits than waits was found)
+         * @since 1.16
          */
         timed_wait_for_multiple_pending_ids(count: number, timeout_ms: number): [boolean, Gst.ClockID[] | null];
 
@@ -749,6 +761,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param count the number of pending clock notifications to wait for
+         * @since 1.4
          */
         wait_for_multiple_pending_ids(count: number): Gst.ClockID[] | null;
 
@@ -758,6 +771,7 @@ export namespace GstCheck {
          * to the pending clock notification is stored in `pending_id`.
          * 
          * MT safe.
+         * @since 1.2
          */
         wait_for_next_pending_id(): Gst.ClockID | null;
 
@@ -766,6 +780,8 @@ export namespace GstCheck {
          * `test_clock`. There is no timeout for this wait, see the main description of
          * {@link GstCheck.TestClock}.
          * @param count the number of pending clock notifications to wait for
+         * @since 1.2
+         * @deprecated use `gst_test_clock_wait_for_multiple_pending_ids()` instead.
          */
         wait_for_pending_id_count(count: number): void;
     }
@@ -922,6 +938,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param t a {@link GstCheck.HarnessThread}
+         * @since 1.6
          */
         static stress_thread_stop(t: HarnessThread): number;
 
@@ -931,6 +948,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param sinkpad a {@link Gst.Pad} to link to the harness srcpad
+         * @since 1.6
          */
         add_element_sink_pad(sinkpad: Gst.Pad): void;
 
@@ -941,6 +959,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param srcpad a {@link Gst.Pad} to link to the harness sinkpad
+         * @since 1.6
          */
         add_element_src_pad(srcpad: Gst.Pad): void;
 
@@ -954,6 +973,7 @@ export namespace GstCheck {
          * @param pad_name a `gchar` with the name of the pad to attach the probe to
          * @param mask a {@link Gst.PadProbeType} (see gst_pad_add_probe)
          * @param callback a {@link Gst.PadProbeCallback} (see gst_pad_add_probe)
+         * @since 1.6
          */
         add_probe(element_name: string, pad_name: string, mask: Gst.PadProbeType, callback: Gst.PadProbeCallback): void;
 
@@ -964,6 +984,7 @@ export namespace GstCheck {
          * MT safe.
          * @param api a metadata API
          * @param params API specific parameters
+         * @since 1.16
          */
         add_propose_allocation_meta(api: GObject.GType, params: Gst.Structure | null): void;
 
@@ -973,6 +994,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param sink_element_name a `gchar` with the name of a {@link Gst.Element}
+         * @since 1.6
          */
         add_sink(sink_element_name: string): void;
 
@@ -988,6 +1010,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param sink_harness a {@link GstCheck.Harness} to be added as a sink-harness.
+         * @since 1.6
          */
         add_sink_harness(sink_harness: Harness): void;
 
@@ -997,6 +1020,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param launchline a `gchar` with the name of a {@link Gst.Element}
+         * @since 1.6
          */
         add_sink_parse(launchline: string): void;
 
@@ -1007,6 +1031,7 @@ export namespace GstCheck {
          * MT safe.
          * @param src_element_name a `gchar` with the name of a {@link Gst.Element}
          * @param has_clock_wait a `gboolean` specifying if the {@link Gst.Element} uses gst_clock_wait_id internally.
+         * @since 1.6
          */
         add_src(src_element_name: string, has_clock_wait: boolean): void;
 
@@ -1024,6 +1049,7 @@ export namespace GstCheck {
          * MT safe.
          * @param src_harness a {@link GstCheck.Harness} to be added as a src-harness.
          * @param has_clock_wait a `gboolean` specifying if the {@link Gst.Element} uses gst_clock_wait_id internally.
+         * @since 1.6
          */
         add_src_harness(src_harness: Harness, has_clock_wait: boolean): void;
 
@@ -1037,6 +1063,7 @@ export namespace GstCheck {
          * MT safe.
          * @param launchline a `gchar` describing a gst-launch type line
          * @param has_clock_wait a `gboolean` specifying if the {@link Gst.Element} uses gst_clock_wait_id internally.
+         * @since 1.6
          */
         add_src_parse(launchline: string, has_clock_wait: boolean): void;
 
@@ -1045,6 +1072,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a `guint` number of buffers in the queue
+         * @since 1.6
          */
         buffers_in_queue(): number;
 
@@ -1055,6 +1083,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a `guint` number of buffers received
+         * @since 1.6
          */
         buffers_received(): number;
 
@@ -1069,6 +1098,7 @@ export namespace GstCheck {
          * MT safe.
          * @param waits a `guint` describing the number of `GstClockIDs` to crank
          * @returns a `gboolean` `true` if the "crank" was successful, `false` if not.
+         * @since 1.6
          */
         crank_multiple_clock_waits(waits: number): boolean;
 
@@ -1084,6 +1114,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a `gboolean` `true` if the "crank" was successful, `false` if not.
+         * @since 1.6
          */
         crank_single_clock_wait(): boolean;
 
@@ -1094,6 +1125,7 @@ export namespace GstCheck {
          * MT safe.
          * @param size a `gsize` specifying the size of the buffer
          * @returns a {@link Gst.Buffer} of size `size`
+         * @since 1.6
          */
         create_buffer(size: bigint | number): Gst.Buffer;
 
@@ -1103,6 +1135,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param filename a `gchar` with a the name of a file
+         * @since 1.6
          */
         dump_to_file(filename: string): void;
 
@@ -1111,6 +1144,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a `guint` number of events in the queue
+         * @since 1.6
          */
         events_in_queue(): number;
 
@@ -1121,6 +1155,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a `guint` number of events received
+         * @since 1.6
          */
         events_received(): number;
 
@@ -1133,6 +1168,7 @@ export namespace GstCheck {
          * MT safe.
          * @param element_name a `gchar` with a {@link Gst.ElementFactory} name
          * @returns a {@link Gst.Element} or `null` if not found
+         * @since 1.6
          */
         find_element(element_name: string): Gst.Element | null;
 
@@ -1141,6 +1177,7 @@ export namespace GstCheck {
          * allocation query.
          * 
          * MT safe.
+         * @since 1.6
          */
         get_allocator(): [Gst.Allocator | null, Gst.AllocationParams | null];
 
@@ -1150,6 +1187,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a {@link Gst.ClockTime} with the timestamp or `GST_CLOCK_TIME_NONE` if no {@link Gst.Buffer} has been pushed on the {@link GstCheck.Harness} srcpad
+         * @since 1.6
          */
         get_last_pushed_timestamp(): Gst.ClockTime;
 
@@ -1159,6 +1197,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a {@link GstCheck.TestClock}, or `null` if the testclock is not present.
+         * @since 1.6
          */
         get_testclock(): TestClock | null;
 
@@ -1172,6 +1211,7 @@ export namespace GstCheck {
          * Hence, for src {@link Gst.Element} you must call `gst_harness_play()` explicitly.
          * 
          * MT safe.
+         * @since 1.6
          */
         play(): void;
 
@@ -1182,6 +1222,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a {@link Gst.Buffer} or `null` if timed out.
+         * @since 1.6
          */
         pull(): Gst.Buffer | null;
 
@@ -1191,6 +1232,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a {@link Gst.Event} or `null` if timed out.
+         * @since 1.6
          */
         pull_event(): Gst.Event | null;
 
@@ -1199,6 +1241,7 @@ export namespace GstCheck {
          * will block until an EOS event is received, or timeout in 60 seconds.
          * MT safe.
          * @returns `true` on success, `false` on timeout.
+         * @since 1.18
          */
         pull_until_eos(): [boolean, Gst.Buffer | null];
 
@@ -1208,6 +1251,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a {@link Gst.Event} or `null` if timed out.
+         * @since 1.6
          */
         pull_upstream_event(): Gst.Event | null;
 
@@ -1218,6 +1262,7 @@ export namespace GstCheck {
          * MT safe.
          * @param buffer a {@link Gst.Buffer} to push
          * @returns a {@link Gst.FlowReturn} with the result from the push
+         * @since 1.6
          */
         push(buffer: Gst.Buffer): Gst.FlowReturn;
 
@@ -1229,6 +1274,7 @@ export namespace GstCheck {
          * MT safe.
          * @param buffer a {@link Gst.Buffer} to push
          * @returns a {@link Gst.Buffer} or `null` if timed out.
+         * @since 1.6
          */
         push_and_pull(buffer: Gst.Buffer): Gst.Buffer | null;
 
@@ -1238,6 +1284,7 @@ export namespace GstCheck {
          * MT safe.
          * @param event a {@link Gst.Event} to push
          * @returns a `gboolean` with the result from the push
+         * @since 1.6
          */
         push_event(event: Gst.Event): boolean;
 
@@ -1251,6 +1298,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a {@link Gst.FlowReturn} with the result of the push
+         * @since 1.6
          */
         push_from_src(): Gst.FlowReturn;
 
@@ -1260,6 +1308,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a {@link Gst.FlowReturn} with the result of the push
+         * @since 1.6
          */
         push_to_sink(): Gst.FlowReturn;
 
@@ -1269,6 +1318,7 @@ export namespace GstCheck {
          * MT safe.
          * @param event a {@link Gst.Event} to push
          * @returns a `gboolean` with the result from the push
+         * @since 1.6
          */
         push_upstream_event(event: Gst.Event): boolean;
 
@@ -1277,6 +1327,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a {@link Gst.ClockTime} with min latency
+         * @since 1.6
          */
         query_latency(): Gst.ClockTime;
 
@@ -1288,6 +1339,7 @@ export namespace GstCheck {
          * it otherwise would produce buffers as fast as possible.
          * 
          * MT safe.
+         * @since 1.6
          */
         set_blocking_push_mode(): void;
 
@@ -1297,6 +1349,7 @@ export namespace GstCheck {
          * MT safe.
          * @param _in a {@link Gst.Caps} to set on the harness srcpad
          * @param out a {@link Gst.Caps} to set on the harness sinkpad
+         * @since 1.6
          */
         set_caps(_in: Gst.Caps, out: Gst.Caps): void;
 
@@ -1306,6 +1359,7 @@ export namespace GstCheck {
          * MT safe.
          * @param _in a `gchar` describing a {@link Gst.Caps} to set on the harness srcpad
          * @param out a `gchar` describing a {@link Gst.Caps} to set on the harness sinkpad
+         * @since 1.6
          */
         set_caps_str(_in: string, out: string): void;
 
@@ -1315,6 +1369,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param drop_buffers a `gboolean` specifying to drop outgoing buffers or not
+         * @since 1.6
          */
         set_drop_buffers(drop_buffers: boolean): void;
 
@@ -1335,6 +1390,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param forwarding a `gboolean` to enable/disable forwarding
+         * @since 1.6
          */
         set_forwarding(forwarding: boolean): void;
 
@@ -1342,6 +1398,7 @@ export namespace GstCheck {
          * Sets the liveness reported by {@link GstCheck.Harness} when receiving a latency-query.
          * The default is `true`.
          * @param is_live `true` for live, `false` for non-live
+         * @since 1.20
          */
         set_live(is_live: boolean): void;
 
@@ -1352,6 +1409,7 @@ export namespace GstCheck {
          * MT safe.
          * @param allocator a {@link Gst.Allocator}
          * @param params a {@link Gst.AllocationParams}
+         * @since 1.6
          */
         set_propose_allocator(allocator: Gst.Allocator | null, params: Gst.AllocationParams | null): void;
 
@@ -1360,6 +1418,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param caps a {@link Gst.Caps} to set on the harness sinkpad
+         * @since 1.6
          */
         set_sink_caps(caps: Gst.Caps): void;
 
@@ -1368,6 +1427,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param str a `gchar` describing a {@link Gst.Caps} to set on the harness sinkpad
+         * @since 1.6
          */
         set_sink_caps_str(str: string): void;
 
@@ -1377,6 +1437,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param caps a {@link Gst.Caps} to set on the harness srcpad
+         * @since 1.6
          */
         set_src_caps(caps: Gst.Caps): void;
 
@@ -1386,6 +1447,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @param str a `gchar` describing a {@link Gst.Caps} to set on the harness srcpad
+         * @since 1.6
          */
         set_src_caps_str(str: string): void;
 
@@ -1395,12 +1457,14 @@ export namespace GstCheck {
          * MT safe.
          * @param time a {@link Gst.ClockTime} to advance the clock to
          * @returns a `gboolean` `true` if the time could be set. `false` if not.
+         * @since 1.6
          */
         set_time(time: Gst.ClockTime): boolean;
 
         /**
          * Sets the min latency reported by {@link GstCheck.Harness} when receiving a latency-query
          * @param latency a {@link Gst.ClockTime} specifying the latency
+         * @since 1.6
          */
         set_upstream_latency(latency: Gst.ClockTime): void;
 
@@ -1411,6 +1475,7 @@ export namespace GstCheck {
          * MT safe.
          * @param pushes a `gint` with the number of calls to gst_harness_push_to_sink
          * @returns a {@link Gst.FlowReturn} with the result of the push
+         * @since 1.6
          */
         sink_push_many(pushes: number): Gst.FlowReturn;
 
@@ -1425,6 +1490,7 @@ export namespace GstCheck {
          * @param cranks a `gint` with the number of calls to gst_harness_crank_single_clock_wait
          * @param pushes a `gint` with the number of calls to gst_harness_push
          * @returns a {@link Gst.FlowReturn} with the result of the push
+         * @since 1.6
          */
         src_crank_and_push_many(cranks: number, pushes: number): Gst.FlowReturn;
 
@@ -1436,18 +1502,21 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a `gboolean` with the result of the push
+         * @since 1.6
          */
         src_push_event(): boolean;
 
         /**
          * Pulls all pending data from the harness and returns it as a single buffer.
          * @returns the data as a buffer. Unref with `gst_buffer_unref()`     when no longer needed.
+         * @since 1.14
          */
         take_all_data_as_buffer(): Gst.Buffer;
 
         /**
          * Pulls all pending data from the harness and returns it as a single {@link GLib.Bytes}.
          * @returns a pointer to the data, newly allocated. Free     with `g_free()` when no longer needed.
+         * @since 1.14
          */
         take_all_data(): GLib.Bytes;
 
@@ -1455,6 +1524,7 @@ export namespace GstCheck {
          * Tears down a `GstHarness`, freeing all resources allocated using it.
          * 
          * MT safe.
+         * @since 1.6
          */
         teardown(): void;
 
@@ -1465,6 +1535,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a {@link Gst.Buffer} or `null` if no buffers are present in the {@link GLib.AsyncQueue}
+         * @since 1.6
          */
         try_pull(): Gst.Buffer | null;
 
@@ -1474,6 +1545,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a {@link Gst.Event} or `null` if no buffers are present in the {@link GLib.AsyncQueue}
+         * @since 1.6
          */
         try_pull_event(): Gst.Event | null;
 
@@ -1483,6 +1555,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a {@link Gst.Event} or `null` if no buffers are present in the {@link GLib.AsyncQueue}
+         * @since 1.6
          */
         try_pull_upstream_event(): Gst.Event | null;
 
@@ -1491,6 +1564,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a `guint` number of events in the queue
+         * @since 1.6
          */
         upstream_events_in_queue(): number;
 
@@ -1501,6 +1575,7 @@ export namespace GstCheck {
          * 
          * MT safe.
          * @returns a `guint` number of events received
+         * @since 1.6
          */
         upstream_events_received(): number;
 
@@ -1508,6 +1583,7 @@ export namespace GstCheck {
          * Sets the system {@link Gst.Clock} on the `GstHarness` {@link Gst.Element}
          * 
          * MT safe.
+         * @since 1.6
          */
         use_systemclock(): void;
 
@@ -1515,6 +1591,7 @@ export namespace GstCheck {
          * Sets the {@link GstCheck.TestClock} on the {@link GstCheck.Harness} {@link Gst.Element}
          * 
          * MT safe.
+         * @since 1.6
          */
         use_testclock(): void;
 
@@ -1528,6 +1605,7 @@ export namespace GstCheck {
          * @param waits a `guint` describing the numbers of {@link Gst.ClockID} registered with the {@link GstCheck.TestClock}
          * @param timeout a `guint` describing how many seconds to wait for `waits` to be true
          * @returns a `gboolean` `true` if the waits have been registered, `false` if not. (Could be that it timed out waiting or that more waits than waits was found)
+         * @since 1.6
          */
         wait_for_clock_id_waits(waits: number, timeout: number): boolean;
     }

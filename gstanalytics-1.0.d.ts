@@ -160,6 +160,7 @@ export namespace GstAnalytics {
         // Static methods
         /**
          * Get an id identifying {@link GstAnalytics.Mtd} type.
+         * @since 1.24
          */
         static get_mtd_type(): MtdType;
 
@@ -167,11 +168,13 @@ export namespace GstAnalytics {
         /**
          * @param quark Quark of the class Get index of class represented by `quark`
          * @returns index of the class associated with `quarks` ( and label) or     a negative value on failure.
+         * @since 1.24
          */
         get_index_by_quark(quark: GLib.Quark): number;
 
         /**
          * @returns Number of classes in this classification instance
+         * @since 1.24
          */
         get_length(): number;
 
@@ -179,12 +182,14 @@ export namespace GstAnalytics {
          * Get confidence level for class at `index`
          * @param index Object class index
          * @returns confidence level for `index`, <0.0 if the call failed.
+         * @since 1.24
          */
         get_level(index: bigint | number): number;
 
         /**
          * @param index index of the class Get quark of the class at `index`
          * @returns Quark of this class (label) associated with `index`
+         * @since 1.24
          */
         get_quark(index: bigint | number): GLib.Quark;
     }
@@ -206,6 +211,7 @@ export namespace GstAnalytics {
         /**
          * Gets the string version of the name of this type of analytics data
          * @param type The type of analytics data
+         * @since 1.24
          */
         static type_get_name(type: MtdType): string;
 
@@ -213,17 +219,20 @@ export namespace GstAnalytics {
         /**
          * Get instance id
          * @returns Id of `instance`
+         * @since 1.24
          */
         get_id(): number;
 
         /**
          * @returns opaque id of the type
+         * @since 1.24
          */
         get_mtd_type(): MtdType;
 
         /**
          * Get instance size
          * @returns Size (in bytes) of this instance or 0 on failure.
+         * @since 1.24
          */
         get_size(): number;
     }
@@ -264,6 +273,7 @@ export namespace GstAnalytics {
         // Static methods
         /**
          * Get an id that represent object-detection metadata type
+         * @since 1.24
          */
         static get_mtd_type(): MtdType;
 
@@ -271,18 +281,21 @@ export namespace GstAnalytics {
         /**
          * Retrieve location confidence level.
          * @returns TRUE on success, otherwise FALSE.
+         * @since 1.24
          */
         get_confidence_lvl(): [boolean, number];
 
         /**
          * Retrieve location and location confidence level.
          * @returns TRUE on success, otherwise FALSE.
+         * @since 1.24
          */
         get_location(): [boolean, number, number, number, number, number];
 
         /**
          * Quark of the class of object associated with this location.
          * @returns Quark different from on success and 0 on failure.
+         * @since 1.24
          */
         get_obj_type(): GLib.Quark;
     }
@@ -305,6 +318,7 @@ export namespace GstAnalytics {
          * @param confidence_levels confidence levels
          * @param class_quarks labels of this    classification. Order define index, quark, labels relation. This array    need to exist as long has this classification meta exist.
          * @returns Added successfully
+         * @since 1.24
          */
         add_cls_mtd(confidence_levels: number[], class_quarks: GLib.Quark[]): [boolean, ClsMtd];
 
@@ -316,6 +330,7 @@ export namespace GstAnalytics {
          * @param h bounding box height
          * @param loc_conf_lvl confidence level on the object location
          * @returns Added successfully
+         * @since 1.24
          */
         add_od_mtd(type: GLib.Quark, x: number, y: number, w: number, h: number, loc_conf_lvl: number): [boolean, ODMtd | null];
 
@@ -324,6 +339,7 @@ export namespace GstAnalytics {
          * @param confidence_level confidence levels
          * @param class_quark labels of this    classification. Order define index, quark, labels relation. This array    need to exist as long has this classification meta exist.
          * @returns Added successfully
+         * @since 1.24
          */
         add_one_cls_mtd(confidence_level: number, class_quark: GLib.Quark): [boolean, ClsMtd];
 
@@ -331,6 +347,7 @@ export namespace GstAnalytics {
          * @param tracking_id Tracking id
          * @param tracking_first_seen Timestamp of first time the object was observed.
          * @returns Added successfully
+         * @since 1.24
          */
         add_tracking_mtd(tracking_id: bigint | number, tracking_first_seen: Gst.ClockTime): [boolean, TrackingMtd];
 
@@ -344,6 +361,7 @@ export namespace GstAnalytics {
          * @param max_relation_span Maximum number of relation between `an_meta_first_id` and    `an_meta_second_id`.    A value of 1 mean only only consider direct relation.
          * @param cond_types condition on relation types.
          * @returns TRUE if a relation between exit between `an_meta_first_id` and  `an_meta_second_id`, otherwise FALSE.
+         * @since 1.24
          */
         exist(an_meta_first_id: number, an_meta_second_id: number, max_relation_span: number, cond_types: RelTypes): [boolean, number[] | null];
 
@@ -352,6 +370,7 @@ export namespace GstAnalytics {
          * otherwise this method return FALSE and `rlt` is invalid.
          * @param an_meta_id Id of {@link GstAnalytics.ClsMtd} instance to retrieve
          * @returns TRUE if successful.
+         * @since 1.24
          */
         get_cls_mtd(an_meta_id: number): [boolean, ClsMtd];
 
@@ -362,6 +381,7 @@ export namespace GstAnalytics {
          * @param state Opaque data to store state of the query.    If `state` point to NULL, the first analytics-metadata directly related    to `an_meta_id` will be set in `rlt_mtd`. Doesn't need to be free.
          * @param rlt_mtd Handle updated to directly related relatable meta.
          * @returns TRUE if `rlt_mtd` was updated, other wise FALSE
+         * @since 1.24
          */
         get_direct_related(an_meta_id: number, relation_type: RelTypes, type: MtdType, state: never, rlt_mtd: Mtd): [boolean, null];
 
@@ -371,6 +391,7 @@ export namespace GstAnalytics {
          * @param an_meta_id Id of GstAnalyticsMtd instance to retrieve
          * @param type Filter on a specific type of analysis, use  `GST_ANALYTICS_MTD_TYPE_ANY` to match any type
          * @returns TRUE if successful.
+         * @since 1.24
          */
         get_mtd(an_meta_id: number, type: MtdType): [boolean, Mtd];
 
@@ -379,6 +400,7 @@ export namespace GstAnalytics {
          * otherwise this method return FALSE and `rlt` is invalid.
          * @param an_meta_id Id of {@link GstAnalytics.ODMtd} instance to retrieve
          * @returns TRUE if successful.
+         * @since 1.24
          */
         get_od_mtd(an_meta_id: number): [boolean, ODMtd];
 
@@ -389,6 +411,7 @@ export namespace GstAnalytics {
          * @param an_meta_first_id Id of first analysis-meta
          * @param an_meta_second_id Id of second  analysis-meta
          * @returns relation description between first and second analysis-meta.
+         * @since 1.24
          */
         get_relation(an_meta_first_id: number, an_meta_second_id: number): RelTypes;
 
@@ -397,6 +420,7 @@ export namespace GstAnalytics {
          * otherwise this method return FALSE and `rlt` is invalid.
          * @param an_meta_id Id of GstAnalyticsMtd instance to retrieve
          * @returns TRUE if successful.
+         * @since 1.24
          */
         get_tracking_mtd(an_meta_id: number): [boolean, TrackingMtd];
 
@@ -405,6 +429,7 @@ export namespace GstAnalytics {
          * @param type Type of GstAnalyticsMtd to iterate on or use  `GST_ANALYTICS_MTD_TYPE_ANY` for any.
          * @param rlt_mtd Handle updated to iterated GstAnalyticsRelatableMtd.
          * @returns FALSE if end was reached and iteration is completed.
+         * @since 1.24
          */
         iterate(state: null, type: MtdType, rlt_mtd: Mtd): boolean;
 
@@ -417,6 +442,7 @@ export namespace GstAnalytics {
          * @param an_meta_first_id first meta id
          * @param an_meta_second_id second meta id
          * @returns TRUE on success and FALSE on failure.
+         * @since 1.24
          */
         set_relation(type: RelTypes, an_meta_first_id: number, an_meta_second_id: number): boolean;
     }
@@ -449,22 +475,28 @@ export namespace GstAnalytics {
         id: number;
 
         // Static methods
+        /**
+         * @since 1.24
+         */
         static get_mtd_type(): MtdType;
 
         // Methods
         /**
          * Retrieve tracking information.
          * @returns Successfully retrieved info.
+         * @since 1.24
          */
         get_info(): [boolean, number, Gst.ClockTime, Gst.ClockTime, boolean];
 
         /**
          * @returns Update successful
+         * @since 1.24
          */
         set_lost(): boolean;
 
         /**
          * @param last_seen Timestamp of last time this object was tracked
+         * @since 1.24
          */
         update_last_seen(last_seen: Gst.ClockTime): boolean;
     }

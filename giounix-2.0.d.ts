@@ -785,6 +785,7 @@ export namespace GioUnix {
          * action.
          * @param info a {@link Gio.DesktopAppInfo}
          * @param action_name the name of the action as from   {@link Gio.DesktopAppInfo.list_actions}
+         * @since 2.38
          */
         static get_action_name(info: Gio.DesktopAppInfo, action_name: string): string;
 
@@ -794,6 +795,7 @@ export namespace GioUnix {
          * The `key` is looked up in the `Desktop Entry` group.
          * @param info a {@link Gio.DesktopAppInfo}
          * @param key the key to look up
+         * @since 2.36
          */
         static get_boolean(info: Gio.DesktopAppInfo, key: string): boolean;
 
@@ -808,6 +810,7 @@ export namespace GioUnix {
          * situations such as a {@link Gio.DesktopAppInfo} returned from
          * {@link Gio.DesktopAppInfo.new_from_keyfile}, this function will return `NULL`.
          * @param info a {@link Gio.DesktopAppInfo}
+         * @since 2.24
          */
         static get_filename(info: Gio.DesktopAppInfo): string | null;
 
@@ -823,6 +826,7 @@ export namespace GioUnix {
          * An application implements an interface if that interface is listed in
          * the `Implements` line of the desktop file of the application.
          * @param _interface the name of the interface
+         * @since 2.42
          */
         static get_implementations(_interface: string): Gio.DesktopAppInfo[];
 
@@ -837,6 +841,7 @@ export namespace GioUnix {
         /**
          * Gets the keywords from the desktop file.
          * @param info a {@link Gio.DesktopAppInfo}
+         * @since 2.32
          */
         static get_keywords(info: Gio.DesktopAppInfo): string[];
 
@@ -847,6 +852,7 @@ export namespace GioUnix {
          * The `key` is looked up in the `Desktop Entry` group.
          * @param info a {@link Gio.DesktopAppInfo}
          * @param key the key to look up
+         * @since 2.56
          */
         static get_locale_string(info: Gio.DesktopAppInfo, key: string): string | null;
 
@@ -856,6 +862,7 @@ export namespace GioUnix {
          *  which helps determine if the application info should be shown in menus. See
          * `G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY` and {@link Gio.AppInfo.should_show}.
          * @param info a {@link Gio.DesktopAppInfo}
+         * @since 2.30
          */
         static get_nodisplay(info: Gio.DesktopAppInfo): boolean;
 
@@ -875,6 +882,7 @@ export namespace GioUnix {
          * (with `NULL` for `desktop_env`) as well as additional checks.
          * @param info a {@link Gio.DesktopAppInfo}
          * @param desktop_env a string specifying a desktop name
+         * @since 2.30
          */
         static get_show_in(info: Gio.DesktopAppInfo, desktop_env: string | null): boolean;
 
@@ -883,6 +891,7 @@ export namespace GioUnix {
          * `WM_CLASS` property of the main window of the application, if launched
          * through `info`.
          * @param info a {@link Gio.DesktopAppInfo} that supports startup notify
+         * @since 2.34
          */
         static get_startup_wm_class(info: Gio.DesktopAppInfo): string | null;
 
@@ -892,6 +901,7 @@ export namespace GioUnix {
          * The `key` is looked up in the `Desktop Entry` group.
          * @param info a {@link Gio.DesktopAppInfo}
          * @param key the key to look up
+         * @since 2.36
          */
         static get_string(info: Gio.DesktopAppInfo, key: string): string | null;
 
@@ -901,6 +911,7 @@ export namespace GioUnix {
          * The `key` is looked up in the `Desktop Entry` group.
          * @param info a {@link Gio.DesktopAppInfo}
          * @param key the key to look up
+         * @since 2.60
          */
         static get_string_list(info: Gio.DesktopAppInfo, key: string): string[];
 
@@ -909,6 +920,7 @@ export namespace GioUnix {
          * of the keyfile backing `info`.
          * @param info a {@link Gio.DesktopAppInfo}
          * @param key the key to look up
+         * @since 2.36
          */
         static has_key(info: Gio.DesktopAppInfo, key: string): boolean;
 
@@ -932,6 +944,7 @@ export namespace GioUnix {
          * @param info a {@link Gio.DesktopAppInfo}
          * @param action_name the name of the action as from   {@link Gio.DesktopAppInfo.list_actions}
          * @param launch_context a {@link Gio.AppLaunchContext}
+         * @since 2.38
          */
         static launch_action(info: Gio.DesktopAppInfo, action_name: string, launch_context: Gio.AppLaunchContext | null): void;
 
@@ -977,6 +990,7 @@ export namespace GioUnix {
          * @param stdin_fd file descriptor to use for child’s stdin, or `-1`
          * @param stdout_fd file descriptor to use for child’s stdout, or `-1`
          * @param stderr_fd file descriptor to use for child’s stderr, or `-1`
+         * @since 2.58
          */
         static launch_uris_as_manager_with_fds(appinfo: Gio.DesktopAppInfo, uris: string[], launch_context: Gio.AppLaunchContext | null, spawn_flags: GLib.SpawnFlags, user_setup: GLib.SpawnChildSetupFunc | null, pid_callback: Gio.DesktopAppLaunchCallback | null, stdin_fd: number, stdout_fd: number, stderr_fd: number): boolean;
 
@@ -988,6 +1002,7 @@ export namespace GioUnix {
          * As per the specification, this is the list of actions that are
          * explicitly listed in the `Actions` key of the `Desktop Entry` group.
          * @param info a {@link Gio.DesktopAppInfo}
+         * @since 2.38
          */
         static list_actions(info: Gio.DesktopAppInfo): string[];
 
@@ -1022,6 +1037,7 @@ export namespace GioUnix {
          * 
          * Should be called only once; subsequent calls are ignored.
          * @param desktop_env a string specifying what desktop this is
+         * @deprecated since 2.42: do not use this API.  Since 2.42 the value of the   `XDG_CURRENT_DESKTOP` environment variable will be used.
          */
         static set_desktop_env(desktop_env: string): void;
 
@@ -1037,6 +1053,7 @@ export namespace GioUnix {
          * Obtains the information whether the {@link Gio.AppInfo} can be deleted.
          * See {@link Gio.AppInfo.delete}.
          * @returns `TRUE` if `appinfo` can be deleted
+         * @since 2.20
          */
         can_delete(): boolean;
 
@@ -1053,6 +1070,7 @@ export namespace GioUnix {
          * {@link Gio.AppInfo}s which can be deleted, and system-wide ones which cannot.
          * See {@link Gio.AppInfo.can_delete}.
          * @returns `TRUE` if `appinfo` has been deleted
+         * @since 2.20
          */
         ["delete"](): boolean;
 
@@ -1077,6 +1095,7 @@ export namespace GioUnix {
          * Gets the commandline with which the application will be
          * started.
          * @returns a string containing the `appinfo`’s   commandline, or `NULL` if this information is not available
+         * @since 2.20
          */
         get_commandline(): string | null;
 
@@ -1090,6 +1109,7 @@ export namespace GioUnix {
          * Gets the display name of the application. The display name is often more
          * descriptive to the user than the name itself.
          * @returns the display name of the application for `appinfo`, or the name if no display name is available.
+         * @since 2.24
          */
         get_display_name(): string;
 
@@ -1135,6 +1155,7 @@ export namespace GioUnix {
          * {@link Gio.AppInfo.add_supports_type}, but only those exported directly by
          * the application.
          * @returns a list of content types.
+         * @since 2.34
          */
         get_supported_types(): string[];
 
@@ -1201,6 +1222,7 @@ export namespace GioUnix {
          * @param uris a list of URIs to launch.
          * @param context the launch context
          * @param cancellable a {@link Gio.Cancellable}
+         * @since 2.60
          */
         launch_uris_async(uris: string[] | null, context: Gio.AppLaunchContext | null, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
@@ -1215,6 +1237,7 @@ export namespace GioUnix {
          * @param context the launch context
          * @param cancellable a {@link Gio.Cancellable}
          * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
+         * @since 2.60
          */
         launch_uris_async(uris: string[] | null, context: Gio.AppLaunchContext | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -1229,6 +1252,7 @@ export namespace GioUnix {
          * @param context the launch context
          * @param cancellable a {@link Gio.Cancellable}
          * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
+         * @since 2.60
          */
         launch_uris_async(uris: string[] | null, context: Gio.AppLaunchContext | null, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
@@ -1236,6 +1260,7 @@ export namespace GioUnix {
          * Finishes a {@link Gio.AppInfo.launch_uris_async} operation.
          * @param result the async result
          * @returns `TRUE` on successful launch, `FALSE` otherwise.
+         * @since 2.60
          */
         launch_uris_finish(result: Gio.AsyncResult): boolean;
 
@@ -1300,6 +1325,7 @@ export namespace GioUnix {
         /**
          * Obtains the information whether the {@link Gio.AppInfo} can be deleted.
          * See {@link Gio.AppInfo.delete}.
+         * @since 2.20
          * @virtual
          */
         vfunc_can_delete(): boolean;
@@ -1316,6 +1342,7 @@ export namespace GioUnix {
          * On some platforms, there may be a difference between user-defined
          * {@link Gio.AppInfo}s which can be deleted, and system-wide ones which cannot.
          * See {@link Gio.AppInfo.can_delete}.
+         * @since 2.20
          * @virtual
          */
         vfunc_do_delete(): boolean;
@@ -1340,6 +1367,7 @@ export namespace GioUnix {
         /**
          * Gets the commandline with which the application will be
          * started.
+         * @since 2.20
          * @virtual
          */
         vfunc_get_commandline(): string | null;
@@ -1353,6 +1381,7 @@ export namespace GioUnix {
         /**
          * Gets the display name of the application. The display name is often more
          * descriptive to the user than the name itself.
+         * @since 2.24
          * @virtual
          */
         vfunc_get_display_name(): string;
@@ -1398,6 +1427,7 @@ export namespace GioUnix {
          * This function does not take in consideration associations added with
          * {@link Gio.AppInfo.add_supports_type}, but only those exported directly by
          * the application.
+         * @since 2.34
          * @virtual
          */
         vfunc_get_supported_types(): string[];
@@ -1466,6 +1496,7 @@ export namespace GioUnix {
          * @param context the launch context
          * @param cancellable a {@link Gio.Cancellable}
          * @param callback a {@link Gio.AsyncReadyCallback} to call   when the request is done
+         * @since 2.60
          * @virtual
          */
         vfunc_launch_uris_async(uris: string[] | null, context: Gio.AppLaunchContext | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
@@ -1473,6 +1504,7 @@ export namespace GioUnix {
         /**
          * Finishes a {@link Gio.AppInfo.launch_uris_async} operation.
          * @param result the async result
+         * @since 2.60
          * @virtual
          */
         vfunc_launch_uris_finish(result: Gio.AsyncResult): boolean;
@@ -1619,6 +1651,7 @@ export namespace GioUnix {
          * system-wide file descriptor limit.
          * @param message a {@link GioUnix.FDMessage}
          * @param fd a valid open file descriptor
+         * @since 2.22
          */
         static append_fd(message: Gio.UnixFDMessage, fd: number): boolean;
 
@@ -1627,6 +1660,7 @@ export namespace GioUnix {
          * return a reference to the caller, but the returned list is valid for
          * the lifetime of `message`.
          * @param message a {@link GioUnix.FDMessage}
+         * @since 2.24
          */
         static get_fd_list(message: Gio.UnixFDMessage): Gio.UnixFDList;
 
@@ -1649,6 +1683,7 @@ export namespace GioUnix {
          * This function never returns `null`. In case there are no file
          * descriptors contained in `message`, an empty array is returned.
          * @param message a {@link GioUnix.FDMessage}
+         * @since 2.22
          */
         static steal_fds(message: Gio.UnixFDMessage): number[];
     }
@@ -1743,12 +1778,14 @@ export namespace GioUnix {
          * Returns whether the file descriptor of `stream` will be
          * closed when the stream is closed.
          * @param stream a {@link GioUnix.InputStream}
+         * @since 2.20
          */
         static get_close_fd(stream: Gio.UnixInputStream): boolean;
 
         /**
          * Return the UNIX file descriptor that the stream reads from.
          * @param stream a {@link GioUnix.InputStream}
+         * @since 2.20
          */
         static get_fd(stream: Gio.UnixInputStream): number;
 
@@ -1757,6 +1794,7 @@ export namespace GioUnix {
          * when the stream is closed.
          * @param stream a {@link GioUnix.InputStream}
          * @param close_fd `true` to close the file descriptor when done
+         * @since 2.20
          */
         static set_close_fd(stream: Gio.UnixInputStream, close_fd: boolean): void;
 
@@ -1769,6 +1807,7 @@ export namespace GioUnix {
          * For any given stream, the value returned by this method is constant;
          * a stream cannot switch from pollable to non-pollable or vice versa.
          * @returns `true` if `stream` is pollable, `false` if not.
+         * @since 2.28
          */
         can_poll(): boolean;
 
@@ -1786,6 +1825,7 @@ export namespace GioUnix {
          * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a new {@link GLib.Source}
+         * @since 2.28
          */
         create_source(cancellable: Gio.Cancellable | null): GLib.Source;
 
@@ -1802,6 +1842,7 @@ export namespace GioUnix {
          * The behaviour of this method is undefined if
          * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
          * @returns `true` if `stream` is readable, `false` if not. If an error   has occurred on `stream`, this will result in   `g_pollable_input_stream_is_readable()` returning `true`, and the   next attempt to read will return the error.
+         * @since 2.28
          */
         is_readable(): boolean;
 
@@ -1833,6 +1874,7 @@ export namespace GioUnix {
          * 
          * For any given stream, the value returned by this method is constant;
          * a stream cannot switch from pollable to non-pollable or vice versa.
+         * @since 2.28
          * @virtual
          */
         vfunc_can_poll(): boolean;
@@ -1850,6 +1892,7 @@ export namespace GioUnix {
          * The behaviour of this method is undefined if
          * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @since 2.28
          * @virtual
          */
         vfunc_create_source(cancellable: Gio.Cancellable | null): GLib.Source;
@@ -1866,6 +1909,7 @@ export namespace GioUnix {
          * 
          * The behaviour of this method is undefined if
          * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
+         * @since 2.28
          * @virtual
          */
         vfunc_is_readable(): boolean;
@@ -1966,6 +2010,7 @@ export namespace GioUnix {
          * 
          * You must only call {@link GObject.Object.unref} on the return value from
          * under the same main context as you called this function.
+         * @since 2.44
          */
         static get(): Gio.UnixMountMonitor;
 
@@ -1979,6 +2024,8 @@ export namespace GioUnix {
          * the monitor.
          * @param mount_monitor a {@link GioUnix.MountMonitor}
          * @param limit_msec a integer with the limit (in milliseconds) to poll for changes
+         * @since 2.18
+         * @deprecated since 2.44: This function does nothing. Don’t call it.
          */
         static set_rate_limit(mount_monitor: Gio.UnixMountMonitor, limit_msec: number): void;
     }
@@ -2073,12 +2120,14 @@ export namespace GioUnix {
          * Returns whether the file descriptor of `stream` will be
          * closed when the stream is closed.
          * @param stream a {@link GioUnix.OutputStream}
+         * @since 2.20
          */
         static get_close_fd(stream: Gio.UnixOutputStream): boolean;
 
         /**
          * Return the UNIX file descriptor that the stream writes to.
          * @param stream a {@link GioUnix.OutputStream}
+         * @since 2.20
          */
         static get_fd(stream: Gio.UnixOutputStream): number;
 
@@ -2087,6 +2136,7 @@ export namespace GioUnix {
          * when the stream is closed.
          * @param stream a {@link GioUnix.OutputStream}
          * @param close_fd `true` to close the file descriptor when done
+         * @since 2.20
          */
         static set_close_fd(stream: Gio.UnixOutputStream, close_fd: boolean): void;
 
@@ -2099,6 +2149,7 @@ export namespace GioUnix {
          * For any given stream, the value returned by this method is constant;
          * a stream cannot switch from pollable to non-pollable or vice versa.
          * @returns `true` if `stream` is pollable, `false` if not.
+         * @since 2.28
          */
         can_poll(): boolean;
 
@@ -2116,6 +2167,7 @@ export namespace GioUnix {
          * `g_pollable_output_stream_can_poll()` returns `false` for `stream`.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a new {@link GLib.Source}
+         * @since 2.28
          */
         create_source(cancellable: Gio.Cancellable | null): GLib.Source;
 
@@ -2132,6 +2184,7 @@ export namespace GioUnix {
          * The behaviour of this method is undefined if
          * `g_pollable_output_stream_can_poll()` returns `false` for `stream`.
          * @returns `true` if `stream` is writable, `false` if not. If an error   has occurred on `stream`, this will result in   `g_pollable_output_stream_is_writable()` returning `true`, and the   next attempt to write will return the error.
+         * @since 2.28
          */
         is_writable(): boolean;
 
@@ -2183,6 +2236,7 @@ export namespace GioUnix {
          * @param vectors the buffer containing the `GOutputVectors` to write.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns %`G_POLLABLE_RETURN_OK` on success, {@link Gio.PollableReturn.WOULD_BLOCK} if the stream is not currently writable (and `error` is *not* set), or {@link Gio.PollableReturn.FAILED} if there was an error in which case `error` will be set.
+         * @since 2.60
          */
         writev_nonblocking(vectors: Gio.OutputVector[], cancellable: Gio.Cancellable | null): [Gio.PollableReturn, number];
 
@@ -2194,6 +2248,7 @@ export namespace GioUnix {
          * 
          * For any given stream, the value returned by this method is constant;
          * a stream cannot switch from pollable to non-pollable or vice versa.
+         * @since 2.28
          * @virtual
          */
         vfunc_can_poll(): boolean;
@@ -2211,6 +2266,7 @@ export namespace GioUnix {
          * The behaviour of this method is undefined if
          * `g_pollable_output_stream_can_poll()` returns `false` for `stream`.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
+         * @since 2.28
          * @virtual
          */
         vfunc_create_source(cancellable: Gio.Cancellable | null): GLib.Source;
@@ -2227,6 +2283,7 @@ export namespace GioUnix {
          * 
          * The behaviour of this method is undefined if
          * `g_pollable_output_stream_can_poll()` returns `false` for `stream`.
+         * @since 2.28
          * @virtual
          */
         vfunc_is_writable(): boolean;
@@ -2276,6 +2333,7 @@ export namespace GioUnix {
          * The behaviour of this method is undefined if
          * `g_pollable_output_stream_can_poll()` returns `false` for `stream`.
          * @param vectors the buffer containing the `GOutputVectors` to write.
+         * @since 2.60
          * @virtual
          */
         vfunc_writev_nonblocking(vectors: Gio.OutputVector[]): [Gio.PollableReturn, bigint | number];
@@ -2344,6 +2402,7 @@ export namespace GioUnix {
          * 
          * This will return `NULL` if there is no mount point at `mount_path`.
          * @param mount_path path for a possible Unix mount
+         * @since 2.84
          */
         static at(mount_path: string): [Gio.UnixMountEntry | null, number];
 
@@ -2351,12 +2410,14 @@ export namespace GioUnix {
          * Compares two Unix mounts.
          * @param mount1 first {@link GioUnix.MountEntry} to compare
          * @param mount2 second {@link GioUnix.MountEntry} to compare
+         * @since 2.84
          */
         static compare(mount1: Gio.UnixMountEntry, mount2: Gio.UnixMountEntry): number;
 
         /**
          * Makes a copy of `mount_entry`.
          * @param mount_entry a {@link GioUnix.MountEntry}
+         * @since 2.84
          */
         static copy(mount_entry: Gio.UnixMountEntry): Gio.UnixMountEntry;
 
@@ -2373,30 +2434,35 @@ export namespace GioUnix {
          * This will return `NULL` if looking up the mount entry fails, if
          * `file_path` doesn’t exist or there is an I/O error.
          * @param file_path file path on some Unix mount
+         * @since 2.84
          */
         static ["for"](file_path: string): [Gio.UnixMountEntry | null, number];
 
         /**
          * Frees a Unix mount.
          * @param mount_entry a {@link GioUnix.MountEntry}
+         * @since 2.84
          */
         static free(mount_entry: Gio.UnixMountEntry): void;
 
         /**
          * Gets the device path for a Unix mount.
          * @param mount_entry a {@link GioUnix.MountEntry}
+         * @since 2.84
          */
         static get_device_path(mount_entry: Gio.UnixMountEntry): string;
 
         /**
          * Gets the filesystem type for the Unix mount.
          * @param mount_entry a {@link GioUnix.MountEntry}
+         * @since 2.84
          */
         static get_fs_type(mount_entry: Gio.UnixMountEntry): string;
 
         /**
          * Gets the mount path for a Unix mount.
          * @param mount_entry a {@link GioUnix.MountEntry} to get the mount path for
+         * @since 2.84
          */
         static get_mount_path(mount_entry: Gio.UnixMountEntry): string;
 
@@ -2408,6 +2474,7 @@ export namespace GioUnix {
          * This is similar to {@link GioUnix.MountPoint.get_options}, but it takes
          * a {@link GioUnix.MountEntry} as an argument.
          * @param mount_entry a {@link GioUnix.MountEntry}
+         * @since 2.84
          */
         static get_options(mount_entry: Gio.UnixMountEntry): string | null;
 
@@ -2419,18 +2486,21 @@ export namespace GioUnix {
          * `mount /dev/sda1 /mnt/foo` and `/bar` for
          * `mount --bind /mnt/foo/bar /mnt/bar`.
          * @param mount_entry a {@link GioUnix.MountEntry}
+         * @since 2.84
          */
         static get_root_path(mount_entry: Gio.UnixMountEntry): string | null;
 
         /**
          * Guesses whether a Unix mount entry can be ejected.
          * @param mount_entry a {@link GioUnix.MountEntry}
+         * @since 2.84
          */
         static guess_can_eject(mount_entry: Gio.UnixMountEntry): boolean;
 
         /**
          * Guesses the icon of a Unix mount entry.
          * @param mount_entry a {@link GioUnix.MountEntry}
+         * @since 2.84
          */
         static guess_icon(mount_entry: Gio.UnixMountEntry): Gio.Icon;
 
@@ -2439,24 +2509,28 @@ export namespace GioUnix {
          * 
          * The result is a translated string.
          * @param mount_entry a {@link GioUnix.MountEntry}
+         * @since 2.84
          */
         static guess_name(mount_entry: Gio.UnixMountEntry): string;
 
         /**
          * Guesses whether a Unix mount entry should be displayed in the UI.
          * @param mount_entry a {@link GioUnix.MountEntry}
+         * @since 2.84
          */
         static guess_should_display(mount_entry: Gio.UnixMountEntry): boolean;
 
         /**
          * Guesses the symbolic icon of a Unix mount entry.
          * @param mount_entry a {@link GioUnix.MountEntry}
+         * @since 2.84
          */
         static guess_symbolic_icon(mount_entry: Gio.UnixMountEntry): Gio.Icon;
 
         /**
          * Checks if a Unix mount is mounted read only.
          * @param mount_entry a {@link GioUnix.MountEntry}
+         * @since 2.84
          */
         static is_readonly(mount_entry: Gio.UnixMountEntry): boolean;
 
@@ -2470,6 +2544,7 @@ export namespace GioUnix {
          * The definition of what a ‘system’ mount entry is may change over time as new
          * file system types and device paths are ignored.
          * @param mount_entry a {@link GioUnix.MountEntry}
+         * @since 2.84
          */
         static is_system_internal(mount_entry: Gio.UnixMountEntry): boolean;
     }
@@ -2499,6 +2574,7 @@ export namespace GioUnix {
          * If more mount points have the same mount path, the last matching mount point
          * is returned.
          * @param mount_path path for a possible Unix mount point
+         * @since 2.66
          */
         static at(mount_path: string): [Gio.UnixMountPoint | null, number];
 
@@ -2512,6 +2588,7 @@ export namespace GioUnix {
         /**
          * Makes a copy of `mount_point`.
          * @param mount_point a {@link GioUnix.MountPoint}
+         * @since 2.54
          */
         static copy(mount_point: Gio.UnixMountPoint): Gio.UnixMountPoint;
 
@@ -2542,6 +2619,7 @@ export namespace GioUnix {
         /**
          * Gets the options for the mount point.
          * @param mount_point a {@link GioUnix.MountPoint}
+         * @since 2.32
          */
         static get_options(mount_point: Gio.UnixMountPoint): string | null;
 
@@ -2568,6 +2646,7 @@ export namespace GioUnix {
         /**
          * Guesses the symbolic icon of a Unix mount point.
          * @param mount_point a {@link GioUnix.MountPoint}
+         * @since 2.34
          */
         static guess_symbolic_icon(mount_point: Gio.UnixMountPoint): Gio.Icon;
 

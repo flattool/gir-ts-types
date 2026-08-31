@@ -720,12 +720,14 @@ export namespace GdkPixbuf {
          * @param bits_per_sample Number of bits per color sample
          * @param width Width of image in pixels, must be > 0
          * @param height Height of image in pixels, must be > 0
+         * @since 2.36.8
          */
         static calculate_rowstride(colorspace: Colorspace, has_alpha: boolean, bits_per_sample: number, width: number, height: number): number;
 
         /**
          * Parses an image file far enough to determine its format and size.
          * @param filename The name of the file to identify.
+         * @since 2.4
          */
         static get_file_info(filename: string): [PixbufFormat | null, number, number];
 
@@ -742,6 +744,7 @@ export namespace GdkPixbuf {
          * @param filename The name of the file to identify
          * @param cancellable optional {@link Gio.Cancellable} object, `NULL` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the file info is available
+         * @since 2.32
          */
         static get_file_info_async(filename: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Pixbuf> | null): void;
 
@@ -749,12 +752,14 @@ export namespace GdkPixbuf {
          * Finishes an asynchronous pixbuf parsing operation started with
          * `gdk_pixbuf_get_file_info_async()`.
          * @param async_result a {@link Gio.AsyncResult}
+         * @since 2.32
          */
         static get_file_info_finish(async_result: Gio.AsyncResult): [PixbufFormat | null, number, number];
 
         /**
          * Obtains the available information about the image formats supported
          * by GdkPixbuf.
+         * @since 2.2
          */
         static get_formats(): PixbufFormat[];
 
@@ -773,6 +778,7 @@ export namespace GdkPixbuf {
          * with the application in a separate directory from the OS or runtime-
          * provided modules.
          * @param path Path to directory where the `loaders.cache` is installed
+         * @since 2.40
          */
         static init_modules(path: string): boolean;
 
@@ -788,6 +794,7 @@ export namespace GdkPixbuf {
          * @param stream a {@link Gio.InputStream} from which to load the pixbuf
          * @param cancellable optional {@link Gio.Cancellable} object, `NULL` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the pixbuf is loaded
+         * @since 2.24
          */
         static new_from_stream_async(stream: Gio.InputStream, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Pixbuf> | null): void;
 
@@ -805,6 +812,7 @@ export namespace GdkPixbuf {
          * @param preserve_aspect_ratio `TRUE` to preserve the image's aspect ratio
          * @param cancellable optional {@link Gio.Cancellable} object, `NULL` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the pixbuf is loaded
+         * @since 2.24
          */
         static new_from_stream_at_scale_async(stream: Gio.InputStream, width: number, height: number, preserve_aspect_ratio: boolean, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<Pixbuf> | null): void;
 
@@ -812,6 +820,7 @@ export namespace GdkPixbuf {
          * Finishes an asynchronous pixbuf save operation started with
          * `gdk_pixbuf_save_to_stream_async()`.
          * @param async_result a {@link Gio.AsyncResult}
+         * @since 2.24
          */
         static save_to_stream_finish(async_result: Gio.AsyncResult): boolean;
 
@@ -850,6 +859,7 @@ export namespace GdkPixbuf {
          * If an orientation option/tag is present, the appropriate transform
          * will be performed so that the pixbuf is oriented correctly.
          * @returns A newly-created pixbuf
+         * @since 2.12
          */
         apply_embedded_orientation(): Pixbuf | null;
 
@@ -965,6 +975,7 @@ export namespace GdkPixbuf {
          * applied, such as the "orientation" option after rotating the image.
          * @param dest_pixbuf the destination pixbuf
          * @returns `TRUE` on success.
+         * @since 2.36
          */
         copy_options(dest_pixbuf: Pixbuf): boolean;
 
@@ -983,6 +994,7 @@ export namespace GdkPixbuf {
          * result in a new pixbuf.
          * @param horizontal `TRUE` to flip horizontally, `FALSE` to flip vertically
          * @returns the new pixbuf
+         * @since 2.6
          */
         flip(horizontal: boolean): Pixbuf | null;
 
@@ -995,6 +1007,7 @@ export namespace GdkPixbuf {
         /**
          * Returns the length of the pixel data, in bytes.
          * @returns The length of the pixel data.
+         * @since 2.26
          */
         get_byte_length(): number;
 
@@ -1048,6 +1061,7 @@ export namespace GdkPixbuf {
          * attached to the `pixbuf` when it was loaded, or that may have been
          * attached by another function using {@link GdkPixbuf.Pixbuf.set_option}.
          * @returns a {@link GLib.HashTable}   of key/values pairs
+         * @since 2.32
          */
         get_options(): { [key: string]: string };
 
@@ -1060,6 +1074,7 @@ export namespace GdkPixbuf {
          * Please see the section on [image data](https://docs.gtk.org/gdk-pixbuf/class.Pixbuf.html#image-data) for information
          * about how the pixel data is stored in memory.
          * @returns A pointer to the pixbuf's pixel data.
+         * @since 2.26
          */
         get_pixels(): Uint8Array;
 
@@ -1101,6 +1116,7 @@ export namespace GdkPixbuf {
          * This function allows skipping the implicit copy that must be made
          * if `gdk_pixbuf_get_pixels()` is called on a read-only pixbuf.
          * @returns A new reference to a read-only copy of   the pixel data.  Note that for mutable pixbufs, this function will   incur a one-time copy of the pixel data for conversion into the   returned {@link GLib.Bytes}.
+         * @since 2.32
          */
         read_pixel_bytes(): GLib.Bytes;
 
@@ -1110,6 +1126,7 @@ export namespace GdkPixbuf {
          * This function allows skipping the implicit copy that must be made
          * if `gdk_pixbuf_get_pixels()` is called on a read-only pixbuf.
          * @returns a read-only pointer to the raw pixel data
+         * @since 2.32
          */
         read_pixels(): number;
 
@@ -1117,6 +1134,7 @@ export namespace GdkPixbuf {
          * Removes the key/value pair option attached to a {@link GdkPixbuf.Pixbuf}.
          * @param key a nul-terminated string representing the key to remove.
          * @returns `TRUE` if an option was removed, `FALSE` if not.
+         * @since 2.36
          */
         remove_option(key: string): boolean;
 
@@ -1127,6 +1145,7 @@ export namespace GdkPixbuf {
          * If `angle` is 0, this function will return a copy of `src`.
          * @param angle the angle to rotate by
          * @returns the new pixbuf
+         * @since 2.6
          */
         rotate_simple(angle: PixbufRotation): Pixbuf | null;
 
@@ -1162,6 +1181,7 @@ export namespace GdkPixbuf {
          * @param option_keys name of options to set
          * @param option_values values for named options
          * @returns whether an error was set
+         * @since 2.4
          */
         save_to_bufferv(type: string, option_keys: string[] | null, option_values: string[] | null): [boolean, Uint8Array];
 
@@ -1179,6 +1199,7 @@ export namespace GdkPixbuf {
          * @param option_keys name of options to set
          * @param option_values values for named options
          * @returns whether an error was set
+         * @since 2.4
          */
         save_to_callbackv(save_func: PixbufSaveFunc, type: string, option_keys: string[] | null, option_values: string[] | null): boolean;
 
@@ -1195,6 +1216,7 @@ export namespace GdkPixbuf {
          * @param option_values values for named options
          * @param cancellable optional {@link Gio.Cancellable} object, `NULL` to ignore
          * @returns `TRUE` if the pixbuf was saved successfully, `FALSE` if an   error was set.
+         * @since 2.36
          */
         save_to_streamv(stream: Gio.OutputStream, type: string, option_keys: string[] | null, option_values: string[] | null, cancellable: Gio.Cancellable | null): boolean;
 
@@ -1214,6 +1236,7 @@ export namespace GdkPixbuf {
          * @param option_values values for named options
          * @param cancellable optional {@link Gio.Cancellable} object, `NULL` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the pixbuf is saved
+         * @since 2.36
          */
         save_to_streamv_async(stream: Gio.OutputStream, type: string, option_keys: string[] | null, option_values: string[] | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -1294,6 +1317,7 @@ export namespace GdkPixbuf {
          * @param key a nul-terminated string.
          * @param value a nul-terminated string.
          * @returns `TRUE` on success
+         * @since 2.2
          */
         set_option(key: string, value: string): boolean;
 
@@ -1317,6 +1341,7 @@ export namespace GdkPixbuf {
          * makes sense to transfer the {@link GLib.Variant} between processes on the same machine,
          * (as opposed to over the network), and within the same file system namespace.
          * @returns a {@link GLib.Variant}, or `null` when serialization fails. The {@link GLib.Variant} will not be floating.
+         * @since 2.38
          */
         serialize(): GLib.Variant | null;
 
@@ -1338,6 +1363,7 @@ export namespace GdkPixbuf {
          * - If `icon` is a {@link Gio.ThemedIcon} with exactly one name and no fallbacks,
          *   the encoding is simply the name (such as `network-server`).
          * @returns An allocated NUL-terminated UTF8 string or `null` if `icon` can't be serialized. Use `g_free()` to free.
+         * @since 2.20
          */
         to_string(): string | null;
 
@@ -1360,6 +1386,7 @@ export namespace GdkPixbuf {
          * As serialization will avoid using raw icon data when possible, it only
          * makes sense to transfer the {@link GLib.Variant} between processes on the same machine,
          * (as opposed to over the network), and within the same file system namespace.
+         * @since 2.38
          * @virtual
          */
         vfunc_serialize(): GLib.Variant | null;
@@ -1367,6 +1394,7 @@ export namespace GdkPixbuf {
         /**
          * Serializes the `icon` into string tokens.
          * This is can be invoked when `g_icon_new_for_string()` is called.
+         * @since 2.20
          * @virtual
          */
         vfunc_to_tokens(): [boolean, string[], number];
@@ -1520,6 +1548,7 @@ export namespace GdkPixbuf {
          * @param stream a {@link Gio.InputStream} from which to load the animation
          * @param cancellable optional {@link Gio.Cancellable} object
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the pixbuf is loaded
+         * @since 2.28
          */
         static new_from_stream_async(stream: Gio.InputStream, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<PixbufAnimation> | null): void;
 
@@ -2076,6 +2105,7 @@ export namespace GdkPixbuf {
          * Obtains the available information about the format of the
          * currently loading image file.
          * @returns A {@link GdkPixbuf.PixbufFormat}
+         * @since 2.2
          */
         get_format(): PixbufFormat | null;
 
@@ -2110,6 +2140,7 @@ export namespace GdkPixbuf {
          * emission of the ::size-prepared signal.
          * @param width The desired width of the image being loaded.
          * @param height The desired height of the image being loaded.
+         * @since 2.2
          */
         set_size(width: number, height: number): void;
 
@@ -2124,6 +2155,7 @@ export namespace GdkPixbuf {
          * Parses the next contents of the given image buffer.
          * @param buffer The image data as a {@link GLib.Bytes} buffer.
          * @returns `TRUE` if the write was successful, or `FALSE` if   the loader cannot parse the buffer
+         * @since 2.30
          */
         write_bytes(buffer: GLib.Bytes | Uint8Array): boolean;
     }
@@ -2237,18 +2269,21 @@ export namespace GdkPixbuf {
          * have the dimensions specified when the animation
          * was constructed.
          * @param pixbuf the pixbuf to add
+         * @since 2.8
          */
         add_frame(pixbuf: Pixbuf): void;
 
         /**
          * Gets whether `animation` should loop indefinitely when it reaches the end.
          * @returns `true` if the animation loops forever, `false` otherwise
+         * @since 2.18
          */
         get_loop(): boolean;
 
         /**
          * Sets whether `animation` should loop indefinitely when it reaches the end.
          * @param loop whether to loop the animation
+         * @since 2.18
          */
         set_loop(loop: boolean): void;
     }
@@ -2355,18 +2390,21 @@ export namespace GdkPixbuf {
         /**
          * Creates a copy of `format`.
          * @returns the newly allocated copy of a {@link GdkPixbuf.PixbufFormat}. Use   `gdk_pixbuf_format_free()` to free the resources when done
+         * @since 2.22
          */
         copy(): PixbufFormat | null;
 
         /**
          * Frees the resources allocated when copying a {@link GdkPixbuf.PixbufFormat}
          * using `gdk_pixbuf_format_copy()`
+         * @since 2.22
          */
         free(): void;
 
         /**
          * Returns a description of the format.
          * @returns a description of the format.
+         * @since 2.2
          */
         get_description(): string | null;
 
@@ -2374,6 +2412,7 @@ export namespace GdkPixbuf {
          * Returns the filename extensions typically used for files in the
          * given format.
          * @returns an array of   filename extensions
+         * @since 2.2
          */
         get_extensions(): string[] | null;
 
@@ -2383,18 +2422,21 @@ export namespace GdkPixbuf {
          * The returned string should be a shorthand for a well known license, e.g.
          * "LGPL", "GPL", "QPL", "GPL/QPL", or "other" to indicate some other license.
          * @returns a string describing the license of the pixbuf format
+         * @since 2.6
          */
         get_license(): string | null;
 
         /**
          * Returns the mime types supported by the format.
          * @returns an array of mime types
+         * @since 2.2
          */
         get_mime_types(): string[] | null;
 
         /**
          * Returns the name of the format.
          * @returns the name of the format.
+         * @since 2.2
          */
         get_name(): string | null;
 
@@ -2403,6 +2445,7 @@ export namespace GdkPixbuf {
          * 
          * See `gdk_pixbuf_format_set_disabled()`.
          * @returns whether this image format is disabled.
+         * @since 2.6
          */
         is_disabled(): boolean;
 
@@ -2413,6 +2456,7 @@ export namespace GdkPixbuf {
          * See `gdk_pixbuf_save()` for more information about option keys.
          * @param option_key the name of an option
          * @returns `TRUE` if the specified option is supported
+         * @since 2.36
          */
         is_save_option_supported(option_key: string): boolean;
 
@@ -2423,12 +2467,14 @@ export namespace GdkPixbuf {
          * the desired size, rather than loading it at the default size and
          * scaling the resulting pixbuf to the desired size.
          * @returns whether this image format is scalable.
+         * @since 2.6
          */
         is_scalable(): boolean;
 
         /**
          * Returns whether pixbufs can be saved in the given format.
          * @returns whether pixbufs can be saved in the given format.
+         * @since 2.2
          */
         is_writable(): boolean;
 
@@ -2441,6 +2487,7 @@ export namespace GdkPixbuf {
          * Applications can use this to avoid using image loaders with an
          * inappropriate license, see `gdk_pixbuf_format_get_license()`.
          * @param disabled `TRUE` to disable the format `format`
+         * @since 2.6
          */
         set_disabled(disabled: boolean): void;
     }

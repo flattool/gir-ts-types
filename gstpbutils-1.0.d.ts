@@ -1278,6 +1278,7 @@ export namespace GstPbutils {
         /**
          * Loads the serialized info from the given uri.
          * @param uri the uri to load the info from
+         * @since 1.24
          * @virtual
          */
         vfunc_load_serialize_info(uri: string): DiscovererInfo;
@@ -1381,6 +1382,7 @@ export namespace GstPbutils {
 
         /**
          * @returns the channel-mask of the stream, refer to `gst_audio_channel_positions_from_mask()` for more information.
+         * @since 1.14
          */
         get_channel_mask(): number;
 
@@ -1461,6 +1463,7 @@ export namespace GstPbutils {
 
         /**
          * @returns tags specific to the given container. If you wish to use the tags after the life-time of `info`, you will need to copy them.
+         * @since 1.20
          */
         get_tags(): Gst.TagList | null;
     }
@@ -1513,6 +1516,7 @@ export namespace GstPbutils {
          * Parses a {@link GLib.Variant} as produced by `gst_discoverer_info_to_variant()`
          * back to a {@link GstPbutils.DiscovererInfo}.
          * @param variant A {@link GLib.Variant} to deserialize into a {@link GstPbutils.DiscovererInfo}.
+         * @since 1.6
          */
         static from_variant(variant: GLib.Variant): DiscovererInfo;
 
@@ -1541,17 +1545,20 @@ export namespace GstPbutils {
 
         /**
          * @returns whether the URI is live.
+         * @since 1.14
          */
         get_live(): boolean;
 
         /**
          * @returns Miscellaneous information stored as a {@link Gst.Structure} (for example: information about missing plugins). If you wish to use the {@link Gst.Structure} after the life-time of `info`, you will need to copy it.
+         * @deprecated This functions is deprecated since version 1.4, use `gst_discoverer_info_get_missing_elements_installer_details`
          */
         get_misc(): Gst.Structure | null;
 
         /**
          * Get the installer details for missing elements
          * @returns An array of strings containing information about how to install the various missing elements for `info` to be usable. If you wish to use the strings after the life-time of `info`, you will need to copy them.
+         * @since 1.4
          */
         get_missing_elements_installer_details(): string[];
 
@@ -1591,6 +1598,7 @@ export namespace GstPbutils {
 
         /**
          * @returns all tags contained in the URI. If you wish to use the tags after the life-time of `info`, you will need to copy them.
+         * @deprecated since 1.20: Use gst_discoverer_{container,stream}_info_get_tags() instead.
          */
         get_tags(): Gst.TagList | null;
 
@@ -1618,6 +1626,7 @@ export namespace GstPbutils {
          * for now.
          * @param flags A combination of {@link GstPbutils.DiscovererSerializeFlags} to specify what needs to be serialized.
          * @returns A newly-allocated {@link GLib.Variant} representing `info`.
+         * @since 1.6
          */
         to_variant(flags: DiscovererSerializeFlags): GLib.Variant;
     }
@@ -1695,6 +1704,7 @@ export namespace GstPbutils {
 
         /**
          * @returns additional information regarding the stream (for example codec version, profile, etc..). If you wish to use the {@link Gst.Structure} after the life-time of `info` you will need to copy it.
+         * @deprecated This functions is deprecated since version 1.4, use `gst_discoverer_info_get_missing_elements_installer_details`
          */
         get_misc(): Gst.Structure | null;
 
@@ -1715,6 +1725,7 @@ export namespace GstPbutils {
 
         /**
          * @returns the stream number, -1 if no index could be determined. This property acts as a unique identifier as a 'int' for the stream.
+         * @since 1.20
          */
         get_stream_number(): number;
 
@@ -2115,6 +2126,7 @@ export namespace GstPbutils {
         /**
          * Makes a deep copy of `self`
          * @returns The copy of `self`
+         * @since 1.12
          */
         copy(): EncodingProfile;
 
@@ -2131,6 +2143,7 @@ export namespace GstPbutils {
 
         /**
          * @returns The properties that are going to be set on the underlying element
+         * @since 1.20
          */
         get_element_properties(): Gst.Structure | null;
 
@@ -2177,6 +2190,7 @@ export namespace GstPbutils {
 
         /**
          * @returns `TRUE` if the stream represented by `profile` should use a single segment before the encoder, `FALSE` otherwise. This means that buffers will be retimestamped and segments will be eat so as to appear as one segment.
+         * @since 1.18
          */
         get_single_segment(): boolean;
 
@@ -2226,12 +2240,14 @@ export namespace GstPbutils {
          *  }
          * ```
          * @param element_properties A {@link Gst.Structure} defining the properties to be set to the element the profile represents.
+         * @since 1.20
          */
         set_element_properties(element_properties: Gst.Structure): void;
 
         /**
          * Set whether the profile should be used or not.
          * @param enabled `false` to disable `profile`, `true` to enable it
+         * @since 1.6
          */
         set_enabled(enabled: boolean): void;
 
@@ -2284,6 +2300,7 @@ export namespace GstPbutils {
          * > *NOTE*: Single segment is not property supported when using
          * > #encodebin:avoid-reencoding
          * @param single_segment `TRUE` if the stream represented by `profile` should use a single segment before the encoder, `FALSE` otherwise.
+         * @since 1.18
          */
         set_single_segment(single_segment: boolean): void;
     }
@@ -2384,6 +2401,7 @@ export namespace GstPbutils {
 
         /**
          * @returns The path to the `target` file.
+         * @since 1.18
          */
         get_path(): string | null;
 
@@ -2556,6 +2574,7 @@ export namespace GstPbutils {
         /**
          * Copies a {@link GstPbutils.InstallPluginsContext}.
          * @returns A copy of `ctx`
+         * @since 1.12.1
          */
         copy(): InstallPluginsContext;
 
@@ -2571,6 +2590,7 @@ export namespace GstPbutils {
          * If set, this option will be passed to the installer via a
          * --interaction=[show-confirm-search|hide-confirm-search] command line option.
          * @param confirm_search whether to ask for confirmation before searching for plugins
+         * @since 1.6
          */
         set_confirm_search(confirm_search: boolean): void;
 
@@ -2584,6 +2604,7 @@ export namespace GstPbutils {
          * If set, the desktop file ID will be passed to the installer via a
          * --desktop-id= command line option.
          * @param desktop_id the desktop file ID of the calling application
+         * @since 1.6
          */
         set_desktop_id(desktop_id: string): void;
 
@@ -2609,6 +2630,7 @@ export namespace GstPbutils {
          * ```
          * 
          * @param startup_id the startup notification ID
+         * @since 1.6
          */
         set_startup_notification_id(startup_id: string): void;
 

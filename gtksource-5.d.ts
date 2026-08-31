@@ -1731,6 +1731,7 @@ export namespace GtkSource {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -1739,6 +1740,7 @@ export namespace GtkSource {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -1751,6 +1753,7 @@ export namespace GtkSource {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -1761,18 +1764,21 @@ export namespace GtkSource {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -1784,6 +1790,7 @@ export namespace GtkSource {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -1817,6 +1824,7 @@ export namespace GtkSource {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -1826,6 +1834,7 @@ export namespace GtkSource {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -1836,6 +1845,7 @@ export namespace GtkSource {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -1879,12 +1889,14 @@ export namespace GtkSource {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -1895,18 +1907,21 @@ export namespace GtkSource {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -1918,6 +1933,7 @@ export namespace GtkSource {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -2187,6 +2203,7 @@ export namespace GtkSource {
          * notifications about when the model has been replaced by a new model.
          * @param provider a {@link GtkSource.CompletionProvider}
          * @returns a {@link Gio.ListModel} or `null`
+         * @since 5.6
          */
         get_proposals_for_provider(provider: CompletionProvider): Gio.ListModel | null;
 
@@ -2205,6 +2222,7 @@ export namespace GtkSource {
         /**
          * Gets the providers that are associated with the context.
          * @returns a {@link Gio.ListModel} of {@link GtkSource.CompletionProvider}
+         * @since 5.6
          */
         list_providers(): Gio.ListModel;
 
@@ -2230,6 +2248,7 @@ export namespace GtkSource {
          * The item type of a {@link Gio.ListModel} can not change during the life of the
          * model.
          * @returns the {@link GObject.GType} of the items contained in `list`.
+         * @since 2.44
          */
         get_item_type(): GObject.GType;
 
@@ -2240,6 +2259,7 @@ export namespace GtkSource {
          * less efficient than iterating the list with increasing values for
          * `position` until `g_list_model_get_item()` returns `null`.
          * @returns the number of items in `list`.
+         * @since 2.44
          */
         get_n_items(): number;
 
@@ -2258,6 +2278,7 @@ export namespace GtkSource {
          * See also: `g_list_model_get_n_items()`
          * @param position the position of the item to fetch
          * @returns the object at `position`.
+         * @since 2.44
          */
         get_item(position: number): A | null;
 
@@ -2285,6 +2306,7 @@ export namespace GtkSource {
          * @param position the position at which `list` changed
          * @param removed the number of items removed
          * @param added the number of items added
+         * @since 2.44
          */
         items_changed(position: number, removed: number, added: number): void;
 
@@ -2297,6 +2319,7 @@ export namespace GtkSource {
          * 
          * The same {@link GObject.Object} instance may not appear more than once in a {@link Gio.ListModel}.
          * @param position the position of the item to fetch
+         * @since 2.44
          * @virtual
          */
         vfunc_get_item(position: number): A | null;
@@ -2310,6 +2333,7 @@ export namespace GtkSource {
          * 
          * The item type of a {@link Gio.ListModel} can not change during the life of the
          * model.
+         * @since 2.44
          * @virtual
          */
         vfunc_get_item_type(): GObject.GType;
@@ -2320,6 +2344,7 @@ export namespace GtkSource {
          * Depending on the model implementation, calling this function may be
          * less efficient than iterating the list with increasing values for
          * `position` until `g_list_model_get_item()` returns `null`.
+         * @since 2.44
          * @virtual
          */
         vfunc_get_n_items(): number;
@@ -3930,6 +3955,7 @@ export namespace GtkSource {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -3938,6 +3964,7 @@ export namespace GtkSource {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -3950,6 +3977,7 @@ export namespace GtkSource {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -3960,18 +3988,21 @@ export namespace GtkSource {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -3983,6 +4014,7 @@ export namespace GtkSource {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -4016,6 +4048,7 @@ export namespace GtkSource {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -4025,6 +4058,7 @@ export namespace GtkSource {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -4035,6 +4069,7 @@ export namespace GtkSource {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -4078,12 +4113,14 @@ export namespace GtkSource {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -4094,18 +4131,21 @@ export namespace GtkSource {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -4117,6 +4157,7 @@ export namespace GtkSource {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -4353,6 +4394,7 @@ export namespace GtkSource {
          * been set on the class.
          * @param line a line contained within `lines`
          * @returns `true` if any quark was set for the line
+         * @since 5.6
          */
         has_any_class(line: number): boolean;
 
@@ -4862,6 +4904,7 @@ export namespace GtkSource {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -4870,6 +4913,7 @@ export namespace GtkSource {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -4882,6 +4926,7 @@ export namespace GtkSource {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -4892,18 +4937,21 @@ export namespace GtkSource {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -4915,6 +4963,7 @@ export namespace GtkSource {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -4948,6 +4997,7 @@ export namespace GtkSource {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -4957,6 +5007,7 @@ export namespace GtkSource {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -4967,6 +5018,7 @@ export namespace GtkSource {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -5010,12 +5062,14 @@ export namespace GtkSource {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -5026,18 +5080,21 @@ export namespace GtkSource {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -5049,6 +5106,7 @@ export namespace GtkSource {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -5787,6 +5845,7 @@ export namespace GtkSource {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -5795,6 +5854,7 @@ export namespace GtkSource {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -5807,6 +5867,7 @@ export namespace GtkSource {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -5817,18 +5878,21 @@ export namespace GtkSource {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -5840,6 +5904,7 @@ export namespace GtkSource {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -5873,6 +5938,7 @@ export namespace GtkSource {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -5882,6 +5948,7 @@ export namespace GtkSource {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -5892,6 +5959,7 @@ export namespace GtkSource {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -5935,12 +6003,14 @@ export namespace GtkSource {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -5951,18 +6021,21 @@ export namespace GtkSource {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -5974,6 +6047,7 @@ export namespace GtkSource {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -6336,6 +6410,7 @@ export namespace GtkSource {
          * 
          * See {@link LanguageManager.set_search_path} for details.
          * @param path a directory or a filename.
+         * @since 5.4
          */
         append_search_path(path: string): void;
 
@@ -6423,6 +6498,7 @@ export namespace GtkSource {
          * 
          * See {@link LanguageManager.set_search_path} for details.
          * @param path a directory or a filename.
+         * @since 5.4
          */
         prepend_search_path(path: string): void;
 
@@ -7504,6 +7580,7 @@ export namespace GtkSource {
          * Specifies a tag whose style should be ignored when compositing the
          * document to the printable page.
          * @param tag a {@link Gtk.TextTag}
+         * @since 5.2
          */
         ignore_tag(tag: Gtk.TextTag): void;
 
@@ -8631,6 +8708,7 @@ export namespace GtkSource {
 
         /**
          * @returns whether to exclude invisible text from the search.
+         * @since 5.12
          */
         get_visible_only(): boolean;
 
@@ -8686,6 +8764,7 @@ export namespace GtkSource {
          * If enabled, only visible text will be searched.
          * A search match may have invisible text interspersed.
          * @param visible_only the setting.
+         * @since 5.12
          */
         set_visible_only(visible_only: boolean): void;
 
@@ -9372,6 +9451,7 @@ export namespace GtkSource {
          * This can be used to get an unfiltered list of all of the snippets
          * known to the snippet manager.
          * @returns a {@link Gio.ListModel} of {@link GtkSource.Snippet}
+         * @since 5.6
          */
         list_all(): Gio.ListModel;
 
@@ -10078,6 +10158,7 @@ export namespace GtkSource {
          * Gets a metadata property from the style scheme.
          * @param name metadata property name.
          * @returns value of property `name` stored in   the metadata of `scheme` or `null` if `scheme` does not contain the   specified metadata property.
+         * @since 5.4
          */
         get_metadata(name: string): string | null;
 
@@ -10525,6 +10606,7 @@ export namespace GtkSource {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -10533,6 +10615,7 @@ export namespace GtkSource {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -10545,6 +10628,7 @@ export namespace GtkSource {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -10555,18 +10639,21 @@ export namespace GtkSource {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -10578,6 +10665,7 @@ export namespace GtkSource {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -10611,6 +10699,7 @@ export namespace GtkSource {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -10620,6 +10709,7 @@ export namespace GtkSource {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -10630,6 +10720,7 @@ export namespace GtkSource {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -10673,12 +10764,14 @@ export namespace GtkSource {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -10689,18 +10782,21 @@ export namespace GtkSource {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -10712,6 +10808,7 @@ export namespace GtkSource {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -11094,6 +11191,7 @@ export namespace GtkSource {
         /**
          * Gets the {@link GtkSource.StyleScheme} previewed by the widget.
          * @returns a {@link GtkSource.StyleScheme}
+         * @since 5.4
          */
         get_scheme(): StyleScheme;
 
@@ -11166,6 +11264,7 @@ export namespace GtkSource {
          * does not interrupts the user's current screen reader output.
          * @param message the string to announce
          * @param priority the priority of the announcement
+         * @since 4.14
          */
         announce(message: string, priority: Gtk.AccessibleAnnouncementPriority): void;
 
@@ -11174,6 +11273,7 @@ export namespace GtkSource {
          * 
          * This function returns `NULL` for top level widgets.
          * @returns the accessible parent
+         * @since 4.10
          */
         get_accessible_parent(): Gtk.Accessible | null;
 
@@ -11186,6 +11286,7 @@ export namespace GtkSource {
         /**
          * Retrieves the implementation for the given accessible object.
          * @returns the accessible implementation object
+         * @since 4.10
          */
         get_at_context(): Gtk.ATContext;
 
@@ -11196,18 +11297,21 @@ export namespace GtkSource {
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
          * @returns true if the bounds are valid, and false otherwise
+         * @since 4.10
          */
         get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
          * @returns the first accessible child
+         * @since 4.10
          */
         get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
          * @returns the next accessible sibling
+         * @since 4.10
          */
         get_next_accessible_sibling(): Gtk.Accessible | null;
 
@@ -11219,6 +11323,7 @@ export namespace GtkSource {
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
          * @returns the value of state for the accessible
+         * @since 4.10
          */
         get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
 
@@ -11252,6 +11357,7 @@ export namespace GtkSource {
          * object is the container widget.
          * @param parent the parent accessible object
          * @param next_sibling the sibling accessible object
+         * @since 4.10
          */
         set_accessible_parent(parent: Gtk.Accessible | null, next_sibling: Gtk.Accessible | null): void;
 
@@ -11261,6 +11367,7 @@ export namespace GtkSource {
          * That might be useful when a new child of a custom accessible
          * is created, and it needs to be linked to a previous child.
          * @param new_sibling the new next accessible sibling to set
+         * @since 4.10
          */
         update_next_accessible_sibling(new_sibling: Gtk.Accessible | null): void;
 
@@ -11271,6 +11378,7 @@ export namespace GtkSource {
          * have a platform state but are not widgets. Widgets handle platform
          * states automatically.
          * @param state the platform state to update
+         * @since 4.18
          */
         update_platform_state(state: Gtk.AccessiblePlatformState): void;
 
@@ -11314,12 +11422,14 @@ export namespace GtkSource {
          * Retrieves the accessible parent for an accessible object.
          * 
          * This function returns `NULL` for top level widgets.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_accessible_parent(): Gtk.Accessible | null;
 
         /**
          * Retrieves the implementation for the given accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_at_context(): Gtk.ATContext | null;
@@ -11330,18 +11440,21 @@ export namespace GtkSource {
          * This functionality can be overridden by {@link Gtk.Accessible}
          * implementations, e.g. to get the bounds from an ignored
          * child widget.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_bounds(): [boolean, number, number, number, number];
 
         /**
          * Retrieves the first accessible child of an accessible object.
+         * @since 4.10
          * @virtual
          */
         vfunc_get_first_accessible_child(): Gtk.Accessible | null;
 
         /**
          * Retrieves the next accessible sibling of an accessible object
+         * @since 4.10
          * @virtual
          */
         vfunc_get_next_accessible_sibling(): Gtk.Accessible | null;
@@ -11353,6 +11466,7 @@ export namespace GtkSource {
          * implementations, e.g. to get platform state from an ignored
          * child widget, as is the case for {@link Gtk.Text} wrappers.
          * @param state platform state to query
+         * @since 4.10
          * @virtual
          */
         vfunc_get_platform_state(state: Gtk.AccessiblePlatformState): boolean;
@@ -12729,6 +12843,7 @@ export namespace GtkSource {
          * Implementations of the {@link Gtk.AccessibleText} interface should call this
          * function every time the caret has moved, in order to notify assistive
          * technologies.
+         * @since 4.14
          */
         update_caret_position(): void;
 
@@ -12745,6 +12860,7 @@ export namespace GtkSource {
          * @param change the type of change in the contents
          * @param start the starting offset of the change, in characters
          * @param end the end offset of the change, in characters
+         * @since 4.14
          */
         update_contents(change: Gtk.AccessibleTextContentChange, start: number, end: number): void;
 
@@ -12754,6 +12870,7 @@ export namespace GtkSource {
          * Implementations of the {@link Gtk.AccessibleText} interface should call this
          * function every time the selection has moved, in order to notify assistive
          * technologies.
+         * @since 4.14
          */
         update_selection_bound(): void;
 
@@ -12776,12 +12893,14 @@ export namespace GtkSource {
          * greater than or equal to one, `ranges` will be set to a newly
          * allocated array of [struct#Gtk.AccessibleTextRange].
          * @param offset the offset, in characters
+         * @since 4.14
          * @virtual
          */
         vfunc_get_attributes(offset: number): [boolean, Gtk.AccessibleTextRange[] | null, string[] | null, string[] | null];
 
         /**
          * Retrieves the position of the caret inside the accessible object.
+         * @since 4.14
          * @virtual
          */
         vfunc_get_caret_position(): number;
@@ -12794,6 +12913,7 @@ export namespace GtkSource {
          * of the accessible object.
          * @param start the beginning of the range, in characters
          * @param end the end of the range, in characters
+         * @since 4.14
          * @virtual
          */
         vfunc_get_contents(start: number, end: number): GLib.Bytes | Uint8Array;
@@ -12805,6 +12925,7 @@ export namespace GtkSource {
          * The `start` and `end` values contain the boundaries of the text.
          * @param offset the offset, in characters
          * @param granularity the granularity of the query
+         * @since 4.14
          * @virtual
          */
         vfunc_get_contents_at(offset: number, granularity: Gtk.AccessibleTextGranularity): [GLib.Bytes | Uint8Array, number, number];
@@ -12822,6 +12943,7 @@ export namespace GtkSource {
          * 
          * GTK provides support for various text attribute names and values, but
          * implementations of this interface are free to add their own attributes.
+         * @since 4.14
          * @virtual
          */
         vfunc_get_default_attributes(): [string[] | null, string[] | null];
@@ -12831,6 +12953,7 @@ export namespace GtkSource {
          * @param start the start offset, in characters
          * @param end the end offset, in characters, `extents` (out caller-allocates): return location for the extents
          * @param extents 
+         * @since 4.16
          * @virtual
          */
         vfunc_get_extents(start: number, end: number, extents: Graphene.Rect): boolean;
@@ -12838,6 +12961,7 @@ export namespace GtkSource {
         /**
          * Gets the text offset at a given point.
          * @param point a point in widget coordinates of `self`
+         * @since 4.16
          * @virtual
          */
         vfunc_get_offset(point: Graphene.Point): [boolean, number];
@@ -12848,6 +12972,7 @@ export namespace GtkSource {
          * If this function returns true, `n_ranges` will be set to a value
          * greater than or equal to one, and `ranges` will be set to a newly
          * allocated array of [struct#Gtk.AccessibleTextRange].
+         * @since 4.14
          * @virtual
          */
         vfunc_get_selection(): [boolean, Gtk.AccessibleTextRange[] | null];
@@ -13127,18 +13252,21 @@ export namespace GtkSource {
          * user except that this does not emit the
          * `GtkSource.VimIMContext::execute-command` signal.
          * @param command the command text
+         * @since 5.4
          */
         execute_command(command: string): void;
 
         /**
          * Gets the current command-bar text as it is entered by the user.
          * @returns A string containing the command-bar text
+         * @since 5.4
          */
         get_command_bar_text(): string;
 
         /**
          * Gets the current command text as it is entered by the user.
          * @returns A string containing the command text
+         * @since 5.4
          */
         get_command_text(): string;
     }
@@ -13490,6 +13618,7 @@ export namespace GtkSource {
              * 
              * Implementing this virtual-function is optional, but can be useful to allow
              * external tooling to compare results.
+             * @since 5.6
              * @virtual
              */
             vfunc_get_typed_text(): string | null;
@@ -13525,6 +13654,7 @@ export namespace GtkSource {
          * Implementing this virtual-function is optional, but can be useful to allow
          * external tooling to compare results.
          * @returns a newly allocated string, or `null`
+         * @since 5.6
          */
         get_typed_text(): string | null;
     }

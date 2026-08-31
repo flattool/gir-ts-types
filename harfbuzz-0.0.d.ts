@@ -9319,6 +9319,7 @@ export namespace HarfBuzz {
          * Converts a {@link HarfBuzz.feature_t} into a `NULL`-terminated string in the format
          * understood by `hb_feature_from_string()`. The client in responsible for
          * allocating big enough size for `buf`, 128 bytes is more than enough.
+         * @since 0.9.5
          */
         _string(): string[];
     }
@@ -9468,6 +9469,7 @@ export namespace HarfBuzz {
         /**
          * Converts an {@link HarfBuzz.language_t} to a string.
          * @returns A `NULL`-terminated string representing the `language`. Must not be freed by the caller.
+         * @since 0.9.2
          */
         _string(): string;
     }
@@ -9779,6 +9781,7 @@ export namespace HarfBuzz {
          * Converts an {@link HarfBuzz.variation_t} into a `NULL`-terminated string in the format
          * understood by `hb_variation_from_string()`. The client in responsible for
          * allocating big enough size for `buf`, 128 bytes is more than enough.
+         * @since 1.4.2
          */
         _string(): string[];
     }
