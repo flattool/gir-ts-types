@@ -687,6 +687,7 @@ export namespace Handy {
         // Virtual methods
         /**
          * Activates `self`.
+         * @since 1.0
          * @virtual
          */
         vfunc_activate(): void;
@@ -694,6 +695,7 @@ export namespace Handy {
         // Methods
         /**
          * Activates `self`.
+         * @since 1.0
          */
         activate(): void;
 
@@ -706,24 +708,28 @@ export namespace Handy {
         /**
          * Adds a prefix widget to `self`.
          * @param widget the prefix widget
+         * @since 1.0
          */
         add_prefix(widget: Gtk.Widget): void;
 
         /**
          * Gets the widget activated when `self` is activated.
          * @returns the activatable widget for `self`
+         * @since 1.0
          */
         get_activatable_widget(): Gtk.Widget | null;
 
         /**
          * Gets the icon name for `self`.
          * @returns the icon name for `self`
+         * @since 1.0
          */
         get_icon_name(): string;
 
         /**
          * Gets the subtitle for `self`.
          * @returns the subtitle for `self`
+         * @since 1.0
          */
         get_subtitle(): string | null;
 
@@ -733,6 +739,7 @@ export namespace Handy {
          * 
          * If the value is 0, the number of lines won't be limited.
          * @returns the number of lines at the end of which the subtitle label will be   ellipsized
+         * @since 1.2
          */
         get_subtitle_lines(): number;
 
@@ -742,6 +749,7 @@ export namespace Handy {
          * 
          * If the value is 0, the number of lines won't be limited.
          * @returns the number of lines at the end of which the title label will be   ellipsized
+         * @since 1.2
          */
         get_title_lines(): number;
 
@@ -749,24 +757,28 @@ export namespace Handy {
          * Gets whether an embedded underline in the title or subtitle indicates a
          * mnemonic.
          * @returns whether an embedded underline in the title or subtitle indicates a   mnemonic
+         * @since 1.0
          */
         get_use_underline(): boolean;
 
         /**
          * Sets the widget to activate when `self` is activated.
          * @param widget the target widget
+         * @since 1.0
          */
         set_activatable_widget(widget: Gtk.Widget | null): void;
 
         /**
          * Sets the icon name for `self`.
          * @param icon_name the icon name
+         * @since 1.0
          */
         set_icon_name(icon_name: string): void;
 
         /**
          * Sets the subtitle for `self`.
          * @param subtitle the subtitle
+         * @since 1.0
          */
         set_subtitle(subtitle: string | null): void;
 
@@ -776,6 +788,7 @@ export namespace Handy {
          * 
          * If the value is 0, the number of lines won't be limited.
          * @param subtitle_lines the number of lines at the end of which the subtitle label will be ellipsized
+         * @since 1.2
          */
         set_subtitle_lines(subtitle_lines: number): void;
 
@@ -785,6 +798,7 @@ export namespace Handy {
          * 
          * If the value is 0, the number of lines won't be limited.
          * @param title_lines the number of lines at the end of which the title label will be ellipsized
+         * @since 1.2
          */
         set_title_lines(title_lines: number): void;
 
@@ -792,6 +806,7 @@ export namespace Handy {
          * Sets whether an embedded underline in the title or subtitle indicates a
          * mnemonic.
          * @param use_underline `TRUE` if underlines in the text indicate mnemonics
+         * @since 1.0
          */
         set_use_underline(use_underline: boolean): void;
 
@@ -951,6 +966,7 @@ export namespace Handy {
          * 
          * This function should only be called by {@link Gio.ActionGroup} implementations.
          * @param action_name the name of an action in the group
+         * @since 2.28
          */
         action_added(action_name: string): void;
 
@@ -960,6 +976,7 @@ export namespace Handy {
          * This function should only be called by {@link Gio.ActionGroup} implementations.
          * @param action_name the name of an action in the group
          * @param enabled whether the action is now enabled
+         * @since 2.28
          */
         action_enabled_changed(action_name: string, enabled: boolean): void;
 
@@ -968,6 +985,7 @@ export namespace Handy {
          * 
          * This function should only be called by {@link Gio.ActionGroup} implementations.
          * @param action_name the name of an action in the group
+         * @since 2.28
          */
         action_removed(action_name: string): void;
 
@@ -977,6 +995,7 @@ export namespace Handy {
          * This function should only be called by {@link Gio.ActionGroup} implementations.
          * @param action_name the name of an action in the group
          * @param state the new state of the named action
+         * @since 2.28
          */
         action_state_changed(action_name: string, state: GLib.Variant): void;
 
@@ -1016,6 +1035,7 @@ export namespace Handy {
          * ```
          * @param action_name the name of the action to activate
          * @param parameter parameters to the activation
+         * @since 2.28
          */
         activate_action(action_name: string, parameter: GLib.Variant | null): void;
 
@@ -1033,6 +1053,7 @@ export namespace Handy {
          * If the `value` GVariant is floating, it is consumed.
          * @param action_name the name of the action to request the change on
          * @param value the new state
+         * @since 2.28
          */
         change_action_state(action_name: string, value: GLib.Variant): void;
 
@@ -1043,6 +1064,7 @@ export namespace Handy {
          * have its state changed from outside callers.
          * @param action_name the name of the action to query
          * @returns whether the action is currently enabled
+         * @since 2.28
          */
         get_action_enabled(action_name: string): boolean;
 
@@ -1062,6 +1084,7 @@ export namespace Handy {
          * with the same name but a different parameter type.
          * @param action_name the name of the action to query
          * @returns the parameter type
+         * @since 2.28
          */
         get_action_parameter_type(action_name: string): GLib.VariantType | null;
 
@@ -1076,6 +1099,7 @@ export namespace Handy {
          * {@link GLib.Variant.unref} when it is no longer required.
          * @param action_name the name of the action to query
          * @returns the current state of the action
+         * @since 2.28
          */
         get_action_state(action_name: string): GLib.Variant | null;
 
@@ -1100,6 +1124,7 @@ export namespace Handy {
          * {@link GLib.Variant.unref} when it is no longer required.
          * @param action_name the name of the action to query
          * @returns the state range hint
+         * @since 2.28
          */
         get_action_state_hint(action_name: string): GLib.Variant | null;
 
@@ -1122,6 +1147,7 @@ export namespace Handy {
          * with the same name but a different state type.
          * @param action_name the name of the action to query
          * @returns the state type, if the action is stateful
+         * @since 2.28
          */
         get_action_state_type(action_name: string): GLib.VariantType | null;
 
@@ -1129,6 +1155,7 @@ export namespace Handy {
          * Checks if the named action exists within `action_group`.
          * @param action_name the name of the action to check for
          * @returns whether the named action exists
+         * @since 2.28
          */
         has_action(action_name: string): boolean;
 
@@ -1138,6 +1165,7 @@ export namespace Handy {
          * The caller is responsible for freeing the list with {@link GLib.strfreev} when
          * it is no longer required.
          * @returns a `NULL`-terminated array   of the names of the actions in the group
+         * @since 2.28
          */
         list_actions(): string[];
 
@@ -1171,6 +1199,7 @@ export namespace Handy {
          * fields may or may not have been modified.
          * @param action_name the name of an action in the group
          * @returns `TRUE` if the action exists, else `FALSE`
+         * @since 2.32
          */
         query_action(action_name: string): [boolean, boolean, GLib.VariantType | null, GLib.VariantType | null, GLib.Variant | null, GLib.Variant | null];
 
@@ -1179,6 +1208,7 @@ export namespace Handy {
          * 
          * This function should only be called by {@link Gio.ActionGroup} implementations.
          * @param action_name the name of an action in the group
+         * @since 2.28
          * @virtual
          */
         vfunc_action_added(action_name: string): void;
@@ -1189,6 +1219,7 @@ export namespace Handy {
          * This function should only be called by {@link Gio.ActionGroup} implementations.
          * @param action_name the name of an action in the group
          * @param enabled whether the action is now enabled
+         * @since 2.28
          * @virtual
          */
         vfunc_action_enabled_changed(action_name: string, enabled: boolean): void;
@@ -1198,6 +1229,7 @@ export namespace Handy {
          * 
          * This function should only be called by {@link Gio.ActionGroup} implementations.
          * @param action_name the name of an action in the group
+         * @since 2.28
          * @virtual
          */
         vfunc_action_removed(action_name: string): void;
@@ -1208,6 +1240,7 @@ export namespace Handy {
          * This function should only be called by {@link Gio.ActionGroup} implementations.
          * @param action_name the name of an action in the group
          * @param state the new state of the named action
+         * @since 2.28
          * @virtual
          */
         vfunc_action_state_changed(action_name: string, state: GLib.Variant): void;
@@ -1248,6 +1281,7 @@ export namespace Handy {
          * ```
          * @param action_name the name of the action to activate
          * @param parameter parameters to the activation
+         * @since 2.28
          * @virtual
          */
         vfunc_activate_action(action_name: string, parameter: GLib.Variant | null): void;
@@ -1266,6 +1300,7 @@ export namespace Handy {
          * If the `value` GVariant is floating, it is consumed.
          * @param action_name the name of the action to request the change on
          * @param value the new state
+         * @since 2.28
          * @virtual
          */
         vfunc_change_action_state(action_name: string, value: GLib.Variant): void;
@@ -1276,6 +1311,7 @@ export namespace Handy {
          * An action must be enabled in order to be activated or in order to
          * have its state changed from outside callers.
          * @param action_name the name of the action to query
+         * @since 2.28
          * @virtual
          */
         vfunc_get_action_enabled(action_name: string): boolean;
@@ -1295,6 +1331,7 @@ export namespace Handy {
          * possible for an action to be removed and for a new action to be added
          * with the same name but a different parameter type.
          * @param action_name the name of the action to query
+         * @since 2.28
          * @virtual
          */
         vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null;
@@ -1309,6 +1346,7 @@ export namespace Handy {
          * The return value (if non-`NULL`) should be freed with
          * {@link GLib.Variant.unref} when it is no longer required.
          * @param action_name the name of the action to query
+         * @since 2.28
          * @virtual
          */
         vfunc_get_action_state(action_name: string): GLib.Variant | null;
@@ -1333,6 +1371,7 @@ export namespace Handy {
          * The return value (if non-`NULL`) should be freed with
          * {@link GLib.Variant.unref} when it is no longer required.
          * @param action_name the name of the action to query
+         * @since 2.28
          * @virtual
          */
         vfunc_get_action_state_hint(action_name: string): GLib.Variant | null;
@@ -1355,6 +1394,7 @@ export namespace Handy {
          * possible for an action to be removed and for a new action to be added
          * with the same name but a different state type.
          * @param action_name the name of the action to query
+         * @since 2.28
          * @virtual
          */
         vfunc_get_action_state_type(action_name: string): GLib.VariantType | null;
@@ -1362,6 +1402,7 @@ export namespace Handy {
         /**
          * Checks if the named action exists within `action_group`.
          * @param action_name the name of the action to check for
+         * @since 2.28
          * @virtual
          */
         vfunc_has_action(action_name: string): boolean;
@@ -1371,6 +1412,7 @@ export namespace Handy {
          * 
          * The caller is responsible for freeing the list with {@link GLib.strfreev} when
          * it is no longer required.
+         * @since 2.28
          * @virtual
          */
         vfunc_list_actions(): string[];
@@ -1404,6 +1446,7 @@ export namespace Handy {
          * filled.  If the action doesn’t exist, `FALSE` is returned and the
          * fields may or may not have been modified.
          * @param action_name the name of an action in the group
+         * @since 2.32
          * @virtual
          */
         vfunc_query_action(action_name: string): [boolean, boolean, GLib.VariantType | null, GLib.VariantType | null, GLib.Variant | null, GLib.Variant | null];
@@ -1416,6 +1459,7 @@ export namespace Handy {
          * 
          * The action map takes its own reference on `action`.
          * @param action a {@link Gio.Action}
+         * @since 2.32
          */
         add_action(action: Gio.Action): void;
 
@@ -1432,6 +1476,7 @@ export namespace Handy {
          * If no such action exists, returns `NULL`.
          * @param action_name the name of an action
          * @returns a {@link Gio.Action}
+         * @since 2.32
          */
         lookup_action(action_name: string): Gio.Action | null;
 
@@ -1440,6 +1485,7 @@ export namespace Handy {
          * 
          * If no action of this name is in the map then nothing happens.
          * @param action_name the name of the action
+         * @since 2.32
          */
         remove_action(action_name: string): void;
 
@@ -1467,6 +1513,7 @@ export namespace Handy {
          * }
          * ```
          * @param entries a pointer to   the first item in an array of {@link Gio.ActionEntry} structs
+         * @since 2.78
          */
         remove_action_entries(entries: Gio.ActionEntry[]): void;
 
@@ -1478,6 +1525,7 @@ export namespace Handy {
          * 
          * The action map takes its own reference on `action`.
          * @param action a {@link Gio.Action}
+         * @since 2.32
          * @virtual
          */
         vfunc_add_action(action: Gio.Action): void;
@@ -1487,6 +1535,7 @@ export namespace Handy {
          * 
          * If no such action exists, returns `NULL`.
          * @param action_name the name of an action
+         * @since 2.32
          * @virtual
          */
         vfunc_lookup_action(action_name: string): Gio.Action | null;
@@ -1496,6 +1545,7 @@ export namespace Handy {
          * 
          * If no action of this name is in the map then nothing happens.
          * @param action_name the name of the action
+         * @since 2.32
          * @virtual
          */
         vfunc_remove_action(action_name: string): void;
@@ -1706,6 +1756,7 @@ export namespace Handy {
          * @param size the size of the pixbuf
          * @param scale_factor the scale factor
          * @returns the pixbuf
+         * @since 1.2
          */
         draw_to_pixbuf(size: number, scale_factor: number): GdkPixbuf.Pixbuf;
 
@@ -1716,6 +1767,7 @@ export namespace Handy {
          * @param size the size of the pixbuf
          * @param scale_factor the scale factor
          * @param cancellable a cancellable
+         * @since 1.2
          */
         draw_to_pixbuf_async(size: number, scale_factor: number, cancellable: Gio.Cancellable | null): globalThis.Promise<GdkPixbuf.Pixbuf>;
 
@@ -1727,6 +1779,7 @@ export namespace Handy {
          * @param scale_factor the scale factor
          * @param cancellable a cancellable
          * @param callback a {@link Gio.AsyncReadyCallback} to call when   the avatar is generated
+         * @since 1.2
          */
         draw_to_pixbuf_async(size: number, scale_factor: number, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -1738,6 +1791,7 @@ export namespace Handy {
          * @param scale_factor the scale factor
          * @param cancellable a cancellable
          * @param callback a {@link Gio.AsyncReadyCallback} to call when   the avatar is generated
+         * @since 1.2
          */
         draw_to_pixbuf_async(size: number, scale_factor: number, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<GdkPixbuf.Pixbuf> | void;
 
@@ -1745,36 +1799,42 @@ export namespace Handy {
          * Finishes an asynchronous draw of an avatar to a pixbuf.
          * @param async_result a {@link Gio.AsyncResult}
          * @returns the resulting pixbuf
+         * @since 1.2
          */
         draw_to_pixbuf_finish(async_result: Gio.AsyncResult): GdkPixbuf.Pixbuf;
 
         /**
          * Gets the name of an icon to use as a fallback.
          * @returns the icon name
+         * @since 1.0
          */
         get_icon_name(): string | null;
 
         /**
          * Gets the {@link Gio.LoadableIcon} set via {@link Avatar.set_loadable_icon}.
          * @returns the {@link Gio.LoadableIcon}
+         * @since 1.2
          */
         get_loadable_icon(): Gio.LoadableIcon | null;
 
         /**
          * Gets whether initials are used instead of an icon on the fallback avatar.
          * @returns whether initials are used instead of an icon as fallback
+         * @since 1.0
          */
         get_show_initials(): boolean;
 
         /**
          * Gets the size of the avatar.
          * @returns the size of the avatar
+         * @since 1.0
          */
         get_size(): number;
 
         /**
          * Gets the text used to generate the fallback initials and color.
          * @returns the text used to generate the fallback initials and   color
+         * @since 1.0
          */
         get_text(): string | null;
 
@@ -1783,6 +1843,7 @@ export namespace Handy {
          * 
          * If no name is set, `avatar-default-symbolic` will be used.
          * @param icon_name the name of the icon from the icon theme
+         * @since 1.0
          */
         set_icon_name(icon_name: string | null): void;
 
@@ -1792,6 +1853,8 @@ export namespace Handy {
          * It will be called on {@link Avatar.size} or
          * {@link Gtk.Widget.scale_factor} changes.
          * @param load_image callback to set a custom image
+         * @since 1.0
+         * @deprecated since 1.2: use {@link Avatar.set_loadable_icon} instead.
          */
         set_image_load_func(load_image: AvatarImageLoadFunc | null): void;
 
@@ -1804,24 +1867,28 @@ export namespace Handy {
          * The {@link Gio.LoadableIcon} set via this function is preferred over a set
          * {@link AvatarImageLoadFunc}.
          * @param icon a {@link Gio.LoadableIcon}
+         * @since 1.2
          */
         set_loadable_icon(icon: Gio.LoadableIcon | null): void;
 
         /**
          * Sets whether to use initials instead of an icon on the fallback avatar.
          * @param show_initials whether to use initials instead of an icon as fallback
+         * @since 1.0
          */
         set_show_initials(show_initials: boolean): void;
 
         /**
          * Sets the size of the avatar.
          * @param size the size to be used for the avatar
+         * @since 1.0
          */
         set_size(size: number): void;
 
         /**
          * Set the text used to generate the fallback initials color.
          * @param text the text used to get the initials and color
+         * @since 1.0
          */
         set_text(text: string | null): void;
     }
@@ -2105,42 +2172,49 @@ export namespace Handy {
         /**
          * Gets whether to allow swiping for more than one page at a time.
          * @returns `TRUE` if long swipes are allowed
+         * @since 1.2
          */
         get_allow_long_swipes(): boolean;
 
         /**
          * Sets whether `self` can be dragged with mouse pointer.
          * @returns `TRUE` if `self` can be dragged with mouse
+         * @since 1.0
          */
         get_allow_mouse_drag(): boolean;
 
         /**
          * Gets whether `self` will respond to scroll wheel events.
          * @returns `TRUE` if `self` will respond to scroll wheel events
+         * @since 1.4
          */
         get_allow_scroll_wheel(): boolean;
 
         /**
          * Gets animation duration used by {@link Carousel.scroll_to}.
          * @returns animation duration, in milliseconds
+         * @since 1.0
          */
         get_animation_duration(): number;
 
         /**
          * Gets whether `self` can be navigated.
          * @returns `TRUE` if `self` can be swiped
+         * @since 1.0
          */
         get_interactive(): boolean;
 
         /**
          * Gets the number of pages in `self`.
          * @returns the number of pages in `self`
+         * @since 1.0
          */
         get_n_pages(): number;
 
         /**
          * Gets current scroll position in `self`. It's unitless, 1 matches 1 page.
          * @returns the scroll position
+         * @since 1.0
          */
         get_position(): number;
 
@@ -2148,12 +2222,14 @@ export namespace Handy {
          * Gets duration of the animation used when adding or removing pages, in
          * milliseconds.
          * @returns the duration
+         * @since 1.0
          */
         get_reveal_duration(): number;
 
         /**
          * Gets spacing between pages in pixels.
          * @returns spacing between pages
+         * @since 1.0
          */
         get_spacing(): number;
 
@@ -2164,12 +2240,14 @@ export namespace Handy {
          * appended to the end.
          * @param child a widget to add
          * @param position the position to insert `child` in
+         * @since 1.0
          */
         insert(child: Gtk.Widget, position: number): void;
 
         /**
          * Prepends `child` to `self`.
          * @param child a widget to add
+         * @since 1.0
          */
         prepend(child: Gtk.Widget): void;
 
@@ -2180,6 +2258,7 @@ export namespace Handy {
          * to the end.
          * @param child a widget to add
          * @param position the position to move `child` to
+         * @since 1.0
          */
         reorder(child: Gtk.Widget, position: number): void;
 
@@ -2189,6 +2268,7 @@ export namespace Handy {
          * {@link Carousel.animation_duration} property can be used for controlling
          * the duration.
          * @param widget a child of `self`
+         * @since 1.0
          */
         scroll_to(widget: Gtk.Widget): void;
 
@@ -2196,12 +2276,14 @@ export namespace Handy {
          * Scrolls to `widget` position with an animation.
          * @param widget a child of `self`
          * @param duration animation duration, in milliseconds
+         * @since 1.0
          */
         scroll_to_full(widget: Gtk.Widget, duration: bigint | number): void;
 
         /**
          * Sets whether to allow swiping for more than one page at a time.
          * @param allow_long_swipes whether to allow long swipes
+         * @since 1.2
          */
         set_allow_long_swipes(allow_long_swipes: boolean): void;
 
@@ -2210,18 +2292,21 @@ export namespace Handy {
          * 
          * If `allow_mouse_drag` is `FALSE`, dragging is only available on touch.
          * @param allow_mouse_drag whether `self` can be dragged with mouse pointer
+         * @since 1.0
          */
         set_allow_mouse_drag(allow_mouse_drag: boolean): void;
 
         /**
          * Sets whether `self` will respond to scroll wheel events.
          * @param allow_scroll_wheel whether `self` will respond to scroll wheel events
+         * @since 1.4
          */
         set_allow_scroll_wheel(allow_scroll_wheel: boolean): void;
 
         /**
          * Sets animation duration used by {@link Carousel.scroll_to}.
          * @param duration animation duration, in milliseconds
+         * @since 1.0
          */
         set_animation_duration(duration: number): void;
 
@@ -2231,6 +2316,7 @@ export namespace Handy {
          * This can be used to temporarily disable a {@link Carousel} to only allow
          * swiping in a certain state.
          * @param interactive whether `self` can be swiped
+         * @since 1.0
          */
         set_interactive(interactive: boolean): void;
 
@@ -2238,12 +2324,14 @@ export namespace Handy {
          * Sets duration of the animation used when adding or removing pages, in
          * milliseconds.
          * @param reveal_duration the new reveal duration value
+         * @since 1.0
          */
         set_reveal_duration(reveal_duration: number): void;
 
         /**
          * Sets spacing between pages in pixels.
          * @param spacing the new spacing value
+         * @since 1.0
          */
         set_spacing(spacing: number): void;
 
@@ -2259,12 +2347,14 @@ export namespace Handy {
         /**
          * Retrieves the orientation of the `orientable`.
          * @returns the orientation of the `orientable`.
+         * @since 2.16
          */
         get_orientation(): Gtk.Orientation;
 
         /**
          * Sets the orientation of the `orientable`.
          * @param orientation the orientable’s new orientation.
+         * @since 2.16
          */
         set_orientation(orientation: Gtk.Orientation): void;
 
@@ -2276,12 +2366,14 @@ export namespace Handy {
          * `duration` can be 0 if the child is switched without animation.
          * @param index the index of the child to switch to
          * @param duration animation duration, in milliseconds
+         * @since 1.0
          */
         emit_child_switched(index: number, duration: bigint | number): void;
 
         /**
          * Gets the progress `self` will snap back to after the gesture is canceled.
          * @returns the cancel progress, unitless
+         * @since 1.0
          */
         get_cancel_progress(): number;
 
@@ -2290,12 +2382,14 @@ export namespace Handy {
          * 
          * This corresponds to how many pixels 1 unit represents.
          * @returns the swipe distance in pixels
+         * @since 1.0
          */
         get_distance(): number;
 
         /**
          * Gets the current progress of `self`.
          * @returns the current progress, unitless
+         * @since 1.0
          */
         get_progress(): number;
 
@@ -2305,6 +2399,7 @@ export namespace Handy {
          * Each snap point represents a progress value that is considered acceptable to
          * end the swipe on.
          * @returns the snap points
+         * @since 1.0
          */
         get_snap_points(): number[];
 
@@ -2323,12 +2418,14 @@ export namespace Handy {
          * `self`, allowing swipes from anywhere.
          * @param navigation_direction the direction of the swipe
          * @param is_drag whether the swipe is caused by a dragging gesture
+         * @since 1.0
          */
         get_swipe_area(navigation_direction: NavigationDirection, is_drag: boolean): Gdk.Rectangle;
 
         /**
          * Gets the {@link SwipeTracker} used by this swipeable widget.
          * @returns the swipe tracker
+         * @since 1.0
          */
         get_swipe_tracker(): SwipeTracker;
 
@@ -2338,11 +2435,13 @@ export namespace Handy {
          * See `Handy.Swipeable::child-switched`.
          * @param index the index of the child to switch to
          * @param duration animation duration, in milliseconds
+         * @since 1.0
          */
         switch_child(index: number, duration: bigint | number): void;
 
         /**
          * Gets the progress `self` will snap back to after the gesture is canceled.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_cancel_progress(): number;
@@ -2351,12 +2450,14 @@ export namespace Handy {
          * Gets the swipe distance of `self`.
          * 
          * This corresponds to how many pixels 1 unit represents.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_distance(): number;
 
         /**
          * Gets the current progress of `self`.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_progress(): number;
@@ -2366,6 +2467,7 @@ export namespace Handy {
          * 
          * Each snap point represents a progress value that is considered acceptable to
          * end the swipe on.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_snap_points(): number[];
@@ -2385,12 +2487,14 @@ export namespace Handy {
          * `self`, allowing swipes from anywhere.
          * @param navigation_direction the direction of the swipe
          * @param is_drag whether the swipe is caused by a dragging gesture
+         * @since 1.0
          * @virtual
          */
         vfunc_get_swipe_area(navigation_direction: NavigationDirection, is_drag: boolean): Gdk.Rectangle;
 
         /**
          * Gets the {@link SwipeTracker} used by this swipeable widget.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_swipe_tracker(): SwipeTracker;
@@ -2401,6 +2505,7 @@ export namespace Handy {
          * See `Handy.Swipeable::child-switched`.
          * @param index the index of the child to switch to
          * @param duration animation duration, in milliseconds
+         * @since 1.0
          * @virtual
          */
         vfunc_switch_child(index: number, duration: number): void;
@@ -2538,12 +2643,14 @@ export namespace Handy {
         /**
          * Get the {@link Carousel} the indicator uses.
          * @returns the {@link Carousel}
+         * @since 1.0
          */
         get_carousel(): Carousel | null;
 
         /**
          * Sets the {@link Carousel} to use.
          * @param carousel a carousel
+         * @since 1.0
          */
         set_carousel(carousel: Carousel | null): void;
 
@@ -2559,12 +2666,14 @@ export namespace Handy {
         /**
          * Retrieves the orientation of the `orientable`.
          * @returns the orientation of the `orientable`.
+         * @since 2.16
          */
         get_orientation(): Gtk.Orientation;
 
         /**
          * Sets the orientation of the `orientable`.
          * @param orientation the orientable’s new orientation.
+         * @since 2.16
          */
         set_orientation(orientation: Gtk.Orientation): void;
     }
@@ -2682,12 +2791,14 @@ export namespace Handy {
         /**
          * Gets the displayed carousel.
          * @returns the displayed carousel
+         * @since 1.0
          */
         get_carousel(): Carousel | null;
 
         /**
          * Sets the {@link Carousel} to use.
          * @param carousel a carousel
+         * @since 1.0
          */
         set_carousel(carousel: Carousel | null): void;
 
@@ -2703,12 +2814,14 @@ export namespace Handy {
         /**
          * Retrieves the orientation of the `orientable`.
          * @returns the orientation of the `orientable`.
+         * @since 2.16
          */
         get_orientation(): Gtk.Orientation;
 
         /**
          * Sets the orientation of the `orientable`.
          * @param orientation the orientable’s new orientation.
+         * @since 2.16
          */
         set_orientation(orientation: Gtk.Orientation): void;
     }
@@ -2895,24 +3008,28 @@ export namespace Handy {
         /**
          * Gets the maximum size allocated to the children.
          * @returns the maximum size to allocate to the children
+         * @since 1.0
          */
         get_maximum_size(): number;
 
         /**
          * Gets the size above which the children are clamped.
          * @returns the size above which the children are clamped
+         * @since 1.0
          */
         get_tightening_threshold(): number;
 
         /**
          * Sets the maximum size allocated to the children.
          * @param maximum_size the maximum size
+         * @since 1.0
          */
         set_maximum_size(maximum_size: number): void;
 
         /**
          * Sets the size above which the children are clamped.
          * @param tightening_threshold the tightening threshold
+         * @since 1.0
          */
         set_tightening_threshold(tightening_threshold: number): void;
 
@@ -2928,12 +3045,14 @@ export namespace Handy {
         /**
          * Retrieves the orientation of the `orientable`.
          * @returns the orientation of the `orientable`.
+         * @since 2.16
          */
         get_orientation(): Gtk.Orientation;
 
         /**
          * Sets the orientation of the `orientable`.
          * @param orientation the orientable’s new orientation.
+         * @since 2.16
          */
         set_orientation(orientation: Gtk.Orientation): void;
     }
@@ -3120,6 +3239,7 @@ export namespace Handy {
          * @param model the {@link Gio.ListModel} to be bound to `self`
          * @param create_list_widget_func a function that creates   widgets for items to display in the list, or `NULL` in case you also passed   `NULL` as `model`
          * @param create_current_widget_func a function that creates   widgets for items to display as the selected item, or `NULL` in case you   also passed `NULL` as `model`
+         * @since 1.0
          */
         bind_model(model: Gio.ListModel | null, create_list_widget_func: Gtk.ListBoxCreateWidgetFunc | null, create_current_widget_func: Gtk.ListBoxCreateWidgetFunc | null): void;
 
@@ -3136,24 +3256,28 @@ export namespace Handy {
          * to represent items of the model with names.
          * @param model the {@link Gio.ListModel} to be bound to `self`
          * @param get_name_func a function that creates names for items, or   `NULL` in case you also passed `NULL` as `model`
+         * @since 1.0
          */
         bind_name_model(model: Gio.ListModel | null, get_name_func: ComboRowGetNameFunc | null): void;
 
         /**
          * Gets the model bound to `self`.
          * @returns the {@link Gio.ListModel} bound to `self`
+         * @since 1.0
          */
         get_model(): Gio.ListModel | null;
 
         /**
          * Gets the index of the selected item in its {@link Gio.ListModel}.
          * @returns the index of the selected item, or -1 if no item is selected
+         * @since 1.0
          */
         get_selected_index(): number;
 
         /**
          * Gets whether the current value of `self` should be displayed as its subtitle.
          * @returns whether the current value of `self` should be displayed as its   subtitle
+         * @since 1.0
          */
         get_use_subtitle(): boolean;
 
@@ -3174,6 +3298,7 @@ export namespace Handy {
          * See {@link enum_value_row_name}.
          * @param enum_type the enumeration {@link GLib.Type} to be bound to `self`
          * @param get_name_func a function that creates names for items, or   `NULL` in case you also passed `NULL` as `model`
+         * @since 1.0
          */
         set_for_enum(enum_type: GObject.GType, get_name_func: ComboRowGetEnumValueNameFunc | null): void;
 
@@ -3182,12 +3307,14 @@ export namespace Handy {
          * 
          * See {@link ComboRow.use_subtitle}.
          * @param get_name_func a function that creates names for items, or   `NULL` in case you also passed `NULL` as `model`
+         * @since 1.0
          */
         set_get_name_func(get_name_func: ComboRowGetNameFunc | null): void;
 
         /**
          * Sets the index of the selected item in its {@link Gio.ListModel}.
          * @param selected_index the index of the selected item
+         * @since 1.0
          */
         set_selected_index(selected_index: number): void;
 
@@ -3196,6 +3323,7 @@ export namespace Handy {
          * 
          * If `TRUE`, you should not access {@link ActionRow.subtitle}.
          * @param use_subtitle `TRUE` to set the current value as the subtitle
+         * @since 1.0
          */
         set_use_subtitle(use_subtitle: boolean): void;
 
@@ -3545,18 +3673,21 @@ export namespace Handy {
          * If there's no child to navigate to, `NULL` will be returned instead.
          * @param direction the direction
          * @returns the previous or next child
+         * @since 1.0
          */
         get_adjacent_child(direction: NavigationDirection): Gtk.Widget | null;
 
         /**
          * Gets whether swipe gestures for navigating backward are enabled.
          * @returns Whether swipe gestures are enabled.
+         * @since 1.0
          */
         get_can_swipe_back(): boolean;
 
         /**
          * Gets whether swipe gestures for navigating forward enabled.
          * @returns Whether swipe gestures are enabled.
+         * @since 1.0
          */
         get_can_swipe_forward(): boolean;
 
@@ -3566,6 +3697,7 @@ export namespace Handy {
          * Returns `NULL` if there is no child with this name.
          * @param name the name of the child to find
          * @returns the requested child of `self`
+         * @since 1.0
          */
         get_child_by_name(name: string): Gtk.Widget | null;
 
@@ -3573,42 +3705,49 @@ export namespace Handy {
          * Gets whether `self` is homogeneous for the given orientation.
          * @param orientation the orientation
          * @returns whether `self` is homogeneous for the given orientation
+         * @since 1.0
          */
         get_homogeneous(orientation: Gtk.Orientation): boolean;
 
         /**
          * Gets whether `self` will interpolate its size when changing the visible child.
          * @returns whether child sizes are interpolated
+         * @since 1.0
          */
         get_interpolate_size(): boolean;
 
         /**
          * Gets the mode transition animation duration for `self`.
          * @returns the mode transition duration, in milliseconds.
+         * @since 1.0
          */
         get_transition_duration(): number;
 
         /**
          * Gets whether a transition is currently running for `self`.
          * @returns whether a transition is currently running
+         * @since 1.0
          */
         get_transition_running(): boolean;
 
         /**
          * Gets the type of animation used for transitions between children.
          * @returns the current transition type of `self`
+         * @since 1.0
          */
         get_transition_type(): DeckTransitionType;
 
         /**
          * Gets the visible child widget.
          * @returns the visible child widget
+         * @since 1.0
          */
         get_visible_child(): Gtk.Widget;
 
         /**
          * Gets the name of the currently visible child widget.
          * @returns the name of the visible child
+         * @since 1.0
          */
         get_visible_child_name(): string;
 
@@ -3618,6 +3757,7 @@ export namespace Handy {
          * If `sibling` is `NULL`, inserts `child` at the first position.
          * @param child the widget to insert
          * @param sibling the sibling after which to insert `child`
+         * @since 1.2
          */
         insert_child_after(child: Gtk.Widget, sibling: Gtk.Widget | null): void;
 
@@ -3627,12 +3767,14 @@ export namespace Handy {
          * The switch is similar to performing a swipe gesture to go in `direction`.
          * @param direction the direction
          * @returns whether the visible child was changed
+         * @since 1.0
          */
         navigate(direction: NavigationDirection): boolean;
 
         /**
          * Inserts `child` at the first position in `self`.
          * @param child the widget to prepend
+         * @since 1.2
          */
         prepend(child: Gtk.Widget): void;
 
@@ -3642,18 +3784,21 @@ export namespace Handy {
          * If `sibling` is `NULL`, move `child` to the first position.
          * @param child the widget to move, must be a child of `self`
          * @param sibling the sibling to move `child` after
+         * @since 1.2
          */
         reorder_child_after(child: Gtk.Widget, sibling: Gtk.Widget | null): void;
 
         /**
          * Sets whether swipe gestures for navigating backward are enabled.
          * @param can_swipe_back the new value
+         * @since 1.0
          */
         set_can_swipe_back(can_swipe_back: boolean): void;
 
         /**
          * Sets whether swipe gestures for navigating forward are enabled.
          * @param can_swipe_forward the new value
+         * @since 1.0
          */
         set_can_swipe_forward(can_swipe_forward: boolean): void;
 
@@ -3664,6 +3809,7 @@ export namespace Handy {
          * opposite orientation.
          * @param orientation the orientation
          * @param homogeneous `TRUE` to make `self` homogeneous
+         * @since 1.0
          */
         set_homogeneous(orientation: Gtk.Orientation, homogeneous: boolean): void;
 
@@ -3674,12 +3820,14 @@ export namespace Handy {
          * take after changing the visible child, according to the set transition
          * duration.
          * @param interpolate_size the new value
+         * @since 1.0
          */
         set_interpolate_size(interpolate_size: boolean): void;
 
         /**
          * Sets the mode transition animation duration for `self`.
          * @param duration the new duration, in milliseconds
+         * @since 1.0
          */
         set_transition_duration(duration: number): void;
 
@@ -3690,12 +3838,14 @@ export namespace Handy {
          * possible to change the animation based on the child that is about to become
          * current.
          * @param transition the new transition type
+         * @since 1.0
          */
         set_transition_type(transition: DeckTransitionType): void;
 
         /**
          * Sets the currently visible widget.
          * @param visible_child the new child
+         * @since 1.0
          */
         set_visible_child(visible_child: Gtk.Widget): void;
 
@@ -3704,6 +3854,7 @@ export namespace Handy {
          * 
          * See {@link Deck.set_visible_child} for more details.
          * @param name the name of a child
+         * @since 1.0
          */
         set_visible_child_name(name: string): void;
 
@@ -3719,12 +3870,14 @@ export namespace Handy {
         /**
          * Retrieves the orientation of the `orientable`.
          * @returns the orientation of the `orientable`.
+         * @since 2.16
          */
         get_orientation(): Gtk.Orientation;
 
         /**
          * Sets the orientation of the `orientable`.
          * @param orientation the orientable’s new orientation.
+         * @since 2.16
          */
         set_orientation(orientation: Gtk.Orientation): void;
 
@@ -3736,12 +3889,14 @@ export namespace Handy {
          * `duration` can be 0 if the child is switched without animation.
          * @param index the index of the child to switch to
          * @param duration animation duration, in milliseconds
+         * @since 1.0
          */
         emit_child_switched(index: number, duration: bigint | number): void;
 
         /**
          * Gets the progress `self` will snap back to after the gesture is canceled.
          * @returns the cancel progress, unitless
+         * @since 1.0
          */
         get_cancel_progress(): number;
 
@@ -3750,12 +3905,14 @@ export namespace Handy {
          * 
          * This corresponds to how many pixels 1 unit represents.
          * @returns the swipe distance in pixels
+         * @since 1.0
          */
         get_distance(): number;
 
         /**
          * Gets the current progress of `self`.
          * @returns the current progress, unitless
+         * @since 1.0
          */
         get_progress(): number;
 
@@ -3765,6 +3922,7 @@ export namespace Handy {
          * Each snap point represents a progress value that is considered acceptable to
          * end the swipe on.
          * @returns the snap points
+         * @since 1.0
          */
         get_snap_points(): number[];
 
@@ -3783,12 +3941,14 @@ export namespace Handy {
          * `self`, allowing swipes from anywhere.
          * @param navigation_direction the direction of the swipe
          * @param is_drag whether the swipe is caused by a dragging gesture
+         * @since 1.0
          */
         get_swipe_area(navigation_direction: NavigationDirection, is_drag: boolean): Gdk.Rectangle;
 
         /**
          * Gets the {@link SwipeTracker} used by this swipeable widget.
          * @returns the swipe tracker
+         * @since 1.0
          */
         get_swipe_tracker(): SwipeTracker;
 
@@ -3798,11 +3958,13 @@ export namespace Handy {
          * See `Handy.Swipeable::child-switched`.
          * @param index the index of the child to switch to
          * @param duration animation duration, in milliseconds
+         * @since 1.0
          */
         switch_child(index: number, duration: bigint | number): void;
 
         /**
          * Gets the progress `self` will snap back to after the gesture is canceled.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_cancel_progress(): number;
@@ -3811,12 +3973,14 @@ export namespace Handy {
          * Gets the swipe distance of `self`.
          * 
          * This corresponds to how many pixels 1 unit represents.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_distance(): number;
 
         /**
          * Gets the current progress of `self`.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_progress(): number;
@@ -3826,6 +3990,7 @@ export namespace Handy {
          * 
          * Each snap point represents a progress value that is considered acceptable to
          * end the swipe on.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_snap_points(): number[];
@@ -3845,12 +4010,14 @@ export namespace Handy {
          * `self`, allowing swipes from anywhere.
          * @param navigation_direction the direction of the swipe
          * @param is_drag whether the swipe is caused by a dragging gesture
+         * @since 1.0
          * @virtual
          */
         vfunc_get_swipe_area(navigation_direction: NavigationDirection, is_drag: boolean): Gdk.Rectangle;
 
         /**
          * Gets the {@link SwipeTracker} used by this swipeable widget.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_swipe_tracker(): SwipeTracker;
@@ -3861,6 +4028,7 @@ export namespace Handy {
          * See `Handy.Swipeable::child-switched`.
          * @param index the index of the child to switch to
          * @param duration animation duration, in milliseconds
+         * @since 1.0
          * @virtual
          */
         vfunc_switch_child(index: number, duration: number): void;
@@ -3937,18 +4105,21 @@ export namespace Handy {
         /**
          * Gets the name of `self`.
          * @returns the name of `self`
+         * @since 1.0
          */
         get_name(): string;
 
         /**
          * Gets the nick of `self`.
          * @returns the nick of `self`
+         * @since 1.0
          */
         get_nick(): string;
 
         /**
          * Gets the value of `self`.
          * @returns the value of `self`
+         * @since 1.0
          */
         get_value(): number;
     }
@@ -4172,18 +4343,21 @@ export namespace Handy {
         /**
          * Adds an action widget to `self`.
          * @param widget the action widget
+         * @since 1.0
          */
         add_action(widget: Gtk.Widget): void;
 
         /**
          * Adds a prefix widget to `self`.
          * @param widget the prefix widget
+         * @since 1.0
          */
         add_prefix(widget: Gtk.Widget): void;
 
         /**
          * Gets whether the expansion of `self` is enabled.
          * @returns whether the expansion of `self` is enabled
+         * @since 1.0
          */
         get_enable_expansion(): boolean;
 
@@ -4192,18 +4366,21 @@ export namespace Handy {
         /**
          * Gets the icon name for `self`.
          * @returns the icon name for `self`
+         * @since 1.0
          */
         get_icon_name(): string;
 
         /**
          * Gets whether the switch enabling the expansion of `self` is visible.
          * @returns whether the switch enabling the expansion of `self` is visible
+         * @since 1.0
          */
         get_show_enable_switch(): boolean;
 
         /**
          * Gets the subtitle for `self`.
          * @returns the subtitle for `self`
+         * @since 1.0
          */
         get_subtitle(): string | null;
 
@@ -4211,12 +4388,14 @@ export namespace Handy {
          * Gets whether an embedded underline in the title or subtitle labels indicates
          * a mnemonic.
          * @returns whether an embedded underlines indicates a mnemonic
+         * @since 1.0
          */
         get_use_underline(): boolean;
 
         /**
          * Sets whether the expansion of `self` is enabled.
          * @param enable_expansion `TRUE` to enable the expansion
+         * @since 1.0
          */
         set_enable_expansion(enable_expansion: boolean): void;
 
@@ -4228,18 +4407,21 @@ export namespace Handy {
         /**
          * Sets the icon name for `self`.
          * @param icon_name the icon name
+         * @since 1.0
          */
         set_icon_name(icon_name: string): void;
 
         /**
          * Sets whether the switch enabling the expansion of `self` is visible.
          * @param show_enable_switch `TRUE` to show the switch enabling the expansion
+         * @since 1.0
          */
         set_show_enable_switch(show_enable_switch: boolean): void;
 
         /**
          * Sets the subtitle for `self`.
          * @param subtitle the subtitle
+         * @since 1.0
          */
         set_subtitle(subtitle: string | null): void;
 
@@ -4247,6 +4429,7 @@ export namespace Handy {
          * Sets whether an embedded underline in the title or subtitle labels indicates
          * a mnemonic.
          * @param use_underline `TRUE` if underlines in the text indicate mnemonics
+         * @since 1.0
          */
         set_use_underline(use_underline: boolean): void;
 
@@ -4694,90 +4877,105 @@ export namespace Handy {
         /**
          * Gets the content widget for `self`
          * @returns the content widget for `self`
+         * @since 1.2
          */
         get_content(): Gtk.Widget | null;
 
         /**
          * Gets the flap widget for `self`
          * @returns the flap widget for `self`
+         * @since 1.2
          */
         get_flap(): Gtk.Widget | null;
 
         /**
          * Gets the flap position for `self`.
          * @returns the flap position for `self`
+         * @since 1.2
          */
         get_flap_position(): Gtk.PackType;
 
         /**
          * Gets the amount of time that fold transitions will take.
          * @returns the fold transition duration, in milliseconds
+         * @since 1.2
          */
         get_fold_duration(): number;
 
         /**
          * Gets the current fold policy of `self`.
          * @returns the current fold policy of `self`
+         * @since 1.2
          */
         get_fold_policy(): FlapFoldPolicy;
 
         /**
          * Gets whether `self` is currently folded.
          * @returns `TRUE` if `self` is currently folded
+         * @since 1.2
          */
         get_folded(): boolean;
 
         /**
          * Gets whether `self` is locked.
          * @returns whether `self` is locked
+         * @since 1.2
          */
         get_locked(): boolean;
 
         /**
          * Gets whether the `self` is modal.
          * @returns whether `self` is modal
+         * @since 1.2
          */
         get_modal(): boolean;
 
         /**
          * Gets the amount of time that reveal transitions will take.
          * @returns the reveal transition duration, in milliseconds
+         * @since 1.2
          */
         get_reveal_duration(): number;
 
         /**
          * Gets whether the flap widget is revealed for `self`.
          * @returns whether flap widget is revealed
+         * @since 1.2
          */
         get_reveal_flap(): boolean;
 
         /**
          * Gets the current reveal transition progress for `self`.
          * @returns the current reveal progress for `self`
+         * @since 1.2
          */
         get_reveal_progress(): number;
 
         /**
          * Gets the separator widget for `self`.
          * @returns the separator widget for `self`
+         * @since 1.2
          */
         get_separator(): Gtk.Widget | null;
 
         /**
          * Gets whether `self` can be closed with a swipe gesture.
          * @returns `TRUE` if `self` can be closed with a swipe gesture
+         * @since 1.2
          */
         get_swipe_to_close(): boolean;
 
         /**
          * Gets whether `self` can be opened with a swipe gesture.
          * @returns `TRUE` if `self` can be opened with a swipe gesture
+         * @since 1.2
          */
         get_swipe_to_open(): boolean;
 
         /**
          * Gets the type of animation used for reveal and fold transitions in `self`.
          * @returns the current transition type of `self`
+         * @since 1.2
          */
         get_transition_type(): FlapTransitionType;
 
@@ -4786,30 +4984,35 @@ export namespace Handy {
          * 
          * It is always displayed when unfolded, and partially visible when folded.
          * @param content the content widget
+         * @since 1.2
          */
         set_content(content: Gtk.Widget | null): void;
 
         /**
          * Sets the flap widget for `self`.
          * @param flap the flap widget
+         * @since 1.2
          */
         set_flap(flap: Gtk.Widget | null): void;
 
         /**
          * Sets the flap position for `self`.
          * @param position the new value
+         * @since 1.2
          */
         set_flap_position(position: Gtk.PackType): void;
 
         /**
          * Sets the duration that fold transitions will take.
          * @param duration the new duration, in milliseconds
+         * @since 1.2
          */
         set_fold_duration(duration: number): void;
 
         /**
          * Sets the current fold policy for `self`.
          * @param policy a fold policy
+         * @since 1.2
          */
         set_fold_policy(policy: FlapFoldPolicy): void;
 
@@ -4820,6 +5023,7 @@ export namespace Handy {
          * and unfolding it when the flap is not revealed opens it. If `TRUE`,
          * {@link Flap.reveal_flap} value never changes on its own.
          * @param locked the new value
+         * @since 1.2
          */
         set_locked(locked: boolean): void;
 
@@ -4830,24 +5034,28 @@ export namespace Handy {
          * pressing the <kbd>Esc</kbd> key, will close the flap. If `FALSE`, clicks are
          * passed through to the content widget.
          * @param modal whether `self` can be closed with a click
+         * @since 1.2
          */
         set_modal(modal: boolean): void;
 
         /**
          * Sets the duration that reveal transitions in `self` will take.
          * @param duration the new duration, in milliseconds
+         * @since 1.2
          */
         set_reveal_duration(duration: number): void;
 
         /**
          * Sets whether the flap widget is revealed for `self`.
          * @param reveal_flap `TRUE` to reveal the flap widget, `FALSE` otherwise
+         * @since 1.2
          */
         set_reveal_flap(reveal_flap: boolean): void;
 
         /**
          * Sets the separator widget for `self`.
          * @param separator the separator widget
+         * @since 1.2
          */
         set_separator(separator: Gtk.Widget | null): void;
 
@@ -4856,6 +5064,7 @@ export namespace Handy {
          * 
          * The area that can be swiped depends on the {@link Flap.transition_type} value.
          * @param swipe_to_close whether `self` can be closed with a swipe gesture
+         * @since 1.2
          */
         set_swipe_to_close(swipe_to_close: boolean): void;
 
@@ -4865,12 +5074,14 @@ export namespace Handy {
          * The area that can be swiped depends on the {@link Flap.transition_type}
          * value.
          * @param swipe_to_open whether `self` can be opened with a swipe gesture
+         * @since 1.2
          */
         set_swipe_to_open(swipe_to_open: boolean): void;
 
         /**
          * Sets the type of animation used for reveal and fold transitions in `self`.
          * @param transition_type the new transition type
+         * @since 1.2
          */
         set_transition_type(transition_type: FlapTransitionType): void;
 
@@ -4886,12 +5097,14 @@ export namespace Handy {
         /**
          * Retrieves the orientation of the `orientable`.
          * @returns the orientation of the `orientable`.
+         * @since 2.16
          */
         get_orientation(): Gtk.Orientation;
 
         /**
          * Sets the orientation of the `orientable`.
          * @param orientation the orientable’s new orientation.
+         * @since 2.16
          */
         set_orientation(orientation: Gtk.Orientation): void;
 
@@ -4903,12 +5116,14 @@ export namespace Handy {
          * `duration` can be 0 if the child is switched without animation.
          * @param index the index of the child to switch to
          * @param duration animation duration, in milliseconds
+         * @since 1.0
          */
         emit_child_switched(index: number, duration: bigint | number): void;
 
         /**
          * Gets the progress `self` will snap back to after the gesture is canceled.
          * @returns the cancel progress, unitless
+         * @since 1.0
          */
         get_cancel_progress(): number;
 
@@ -4917,12 +5132,14 @@ export namespace Handy {
          * 
          * This corresponds to how many pixels 1 unit represents.
          * @returns the swipe distance in pixels
+         * @since 1.0
          */
         get_distance(): number;
 
         /**
          * Gets the current progress of `self`.
          * @returns the current progress, unitless
+         * @since 1.0
          */
         get_progress(): number;
 
@@ -4932,6 +5149,7 @@ export namespace Handy {
          * Each snap point represents a progress value that is considered acceptable to
          * end the swipe on.
          * @returns the snap points
+         * @since 1.0
          */
         get_snap_points(): number[];
 
@@ -4950,12 +5168,14 @@ export namespace Handy {
          * `self`, allowing swipes from anywhere.
          * @param navigation_direction the direction of the swipe
          * @param is_drag whether the swipe is caused by a dragging gesture
+         * @since 1.0
          */
         get_swipe_area(navigation_direction: NavigationDirection, is_drag: boolean): Gdk.Rectangle;
 
         /**
          * Gets the {@link SwipeTracker} used by this swipeable widget.
          * @returns the swipe tracker
+         * @since 1.0
          */
         get_swipe_tracker(): SwipeTracker;
 
@@ -4965,11 +5185,13 @@ export namespace Handy {
          * See `Handy.Swipeable::child-switched`.
          * @param index the index of the child to switch to
          * @param duration animation duration, in milliseconds
+         * @since 1.0
          */
         switch_child(index: number, duration: bigint | number): void;
 
         /**
          * Gets the progress `self` will snap back to after the gesture is canceled.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_cancel_progress(): number;
@@ -4978,12 +5200,14 @@ export namespace Handy {
          * Gets the swipe distance of `self`.
          * 
          * This corresponds to how many pixels 1 unit represents.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_distance(): number;
 
         /**
          * Gets the current progress of `self`.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_progress(): number;
@@ -4993,6 +5217,7 @@ export namespace Handy {
          * 
          * Each snap point represents a progress value that is considered acceptable to
          * end the swipe on.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_snap_points(): number[];
@@ -5012,12 +5237,14 @@ export namespace Handy {
          * `self`, allowing swipes from anywhere.
          * @param navigation_direction the direction of the swipe
          * @param is_drag whether the swipe is caused by a dragging gesture
+         * @since 1.0
          * @virtual
          */
         vfunc_get_swipe_area(navigation_direction: NavigationDirection, is_drag: boolean): Gdk.Rectangle;
 
         /**
          * Gets the {@link SwipeTracker} used by this swipeable widget.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_swipe_tracker(): SwipeTracker;
@@ -5028,6 +5255,7 @@ export namespace Handy {
          * See `Handy.Swipeable::child-switched`.
          * @param index the index of the child to switch to
          * @param duration animation duration, in milliseconds
+         * @since 1.0
          * @virtual
          */
         vfunc_switch_child(index: number, duration: number): void;
@@ -5418,18 +5646,21 @@ export namespace Handy {
         /**
          * Gets the policy `self` follows to horizontally align its center widget.
          * @returns the centering policy
+         * @since 1.0
          */
         get_centering_policy(): CenteringPolicy;
 
         /**
          * Retrieves the custom title widget of the header.
          * @returns the custom title widget of the header
+         * @since 1.0
          */
         get_custom_title(): Gtk.Widget | null;
 
         /**
          * Gets the decoration layout.
          * @returns the decoration layout
+         * @since 1.0
          */
         get_decoration_layout(): string;
 
@@ -5437,60 +5668,70 @@ export namespace Handy {
          * Gets whether space is reserved for a subtitle, regardless if one is currently
          * set or not.
          * @returns `TRUE` if the header bar reserves space for a subtitle
+         * @since 1.0
          */
         get_has_subtitle(): boolean;
 
         /**
          * Gets whether `self` should interpolate its size on visible child change.
          * @returns whether `self` interpolates its size on visible child change
+         * @since 1.0
          */
         get_interpolate_size(): boolean;
 
         /**
          * Gets whether this header bar shows the standard window decorations.
          * @returns whether decorations are shown
+         * @since 1.0
          */
         get_show_close_button(): boolean;
 
         /**
          * Gets the subtitle of the header.
          * @returns the subtitle of the header
+         * @since 1.0
          */
         get_subtitle(): string | null;
 
         /**
          * Retrieves the title of the header.
          * @returns the title of the header.
+         * @since 1.0
          */
         get_title(): string | null;
 
         /**
          * Gets the amount of time that transitions between pages will take.
          * @returns the transition duration, in milliseconds
+         * @since 1.0
          */
         get_transition_duration(): number;
 
         /**
          * Gets whether the `self` is currently in a transition from one page to another.
          * @returns whether the transition is currently running
+         * @since 1.0
          */
         get_transition_running(): boolean;
 
         /**
          * Adds `child` to `self`, packed with reference to the end of the `self`.
          * @param child the widget to be added to `self`
+         * @since 1.0
          */
         pack_end(child: Gtk.Widget): void;
 
         /**
          * Adds `child` to `self`, packed with reference to the start of the `self`.
          * @param child the widget to be added to `self`
+         * @since 1.0
          */
         pack_start(child: Gtk.Widget): void;
 
         /**
          * Sets the policy `self` must follow to horizontally align its center widget.
          * @param centering_policy the centering policy
+         * @since 1.0
          */
         set_centering_policy(centering_policy: CenteringPolicy): void;
 
@@ -5505,30 +5746,35 @@ export namespace Handy {
          * You should set the custom title to `NULL`, for the header title label to be
          * visible again.
          * @param title_widget a custom widget to use for a title
+         * @since 1.0
          */
         set_custom_title(title_widget: Gtk.Widget | null): void;
 
         /**
          * Sets the decoration layout for this header bar.
          * @param layout a decoration layout
+         * @since 1.0
          */
         set_decoration_layout(layout: string | null): void;
 
         /**
          * Sets whether space is reserved for a subtitle, even if none is currently set.
          * @param setting `TRUE` to reserve space for a subtitle
+         * @since 1.0
          */
         set_has_subtitle(setting: boolean): void;
 
         /**
          * Sets whether `self` should interpolate its size on visible child change.
          * @param interpolate_size `TRUE` to interpolate the size
+         * @since 1.0
          */
         set_interpolate_size(interpolate_size: boolean): void;
 
         /**
          * Sets whether this header bar shows the standard window decorations.
          * @param setting `TRUE` to show standard window decorations
+         * @since 1.0
          */
         set_show_close_button(setting: boolean): void;
 
@@ -5542,6 +5788,7 @@ export namespace Handy {
          * if none is currently set. If this is not desired, set the
          * {@link HeaderBar.has_subtitle} property to `FALSE`.
          * @param subtitle a subtitle
+         * @since 1.0
          */
         set_subtitle(subtitle: string | null): void;
 
@@ -5551,12 +5798,14 @@ export namespace Handy {
          * The title should help a user identify the current view. A good title should
          * not include the application name.
          * @param title a title
+         * @since 1.0
          */
         set_title(title: string | null): void;
 
         /**
          * Sets the duration that transitions between pages will take.
          * @param duration the new duration, in milliseconds
+         * @since 1.0
          */
         set_transition_duration(duration: number): void;
     }
@@ -5681,6 +5930,7 @@ export namespace Handy {
          * When the widget is destroyed or no longer referenced elsewhere, it will be
          * removed from the header group.
          * @param header_bar the header bar to add
+         * @since 1.0
          */
         add_gtk_header_bar(header_bar: Gtk.HeaderBar): void;
 
@@ -5690,6 +5940,7 @@ export namespace Handy {
          * When the widget is destroyed or no longer referenced elsewhere, it will be
          * removed from the header group.
          * @param header_bar the header bar to add
+         * @since 1.0
          */
         add_header_bar(header_bar: HeaderBar): void;
 
@@ -5699,12 +5950,14 @@ export namespace Handy {
          * When the nested group is no longer referenced elsewhere, it will be removed
          * from the header group.
          * @param header_group the header group to add
+         * @since 1.0
          */
         add_header_group(header_group: HeaderGroup): void;
 
         /**
          * Returns the list of children associated with `self`.
          * @returns the list of   children
+         * @since 1.0
          */
         get_children(): HeaderGroupChild[];
 
@@ -5712,30 +5965,35 @@ export namespace Handy {
          * Gets whether the elements of the group should all receive the full
          * decoration.
          * @returns whether the elements of the group should all receive the full   decoration
+         * @since 1.0
          */
         get_decorate_all(): boolean;
 
         /**
          * Removes `child` from `self`.
          * @param child the header group child to remove
+         * @since 1.0
          */
         remove_child(child: HeaderGroupChild): void;
 
         /**
          * Removes `header_bar` from `self`.
          * @param header_bar the header bar to remove
+         * @since 1.0
          */
         remove_gtk_header_bar(header_bar: Gtk.HeaderBar): void;
 
         /**
          * Removes `header_bar` from `self`.
          * @param header_bar the header bar to remove
+         * @since 1.0
          */
         remove_header_bar(header_bar: HeaderBar): void;
 
         /**
          * Removes a nested {@link Handy.HeaderGroup} from `self`.
          * @param header_group the header group to remove
+         * @since 1.0
          */
         remove_header_group(header_group: HeaderGroup): void;
 
@@ -5743,6 +6001,7 @@ export namespace Handy {
          * Sets whether the elements of the group should all receive the full
          * decoration.
          * @param decorate_all whether the elements of the group should all receive the full   decoration
+         * @since 1.0
          */
         set_decorate_all(decorate_all: boolean): void;
 
@@ -5752,6 +6011,7 @@ export namespace Handy {
          * @param builder a {@link Gtk.Builder}
          * @param child child to add
          * @param type kind of child or `null`
+         * @since 2.12
          */
         add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
@@ -5763,6 +6023,7 @@ export namespace Handy {
          * @param builder {@link Gtk.Builder} used to construct this object
          * @param name name of child to construct
          * @returns the constructed child
+         * @since 2.12
          */
         construct_child<T = GObject.Object>(builder: Gtk.Builder, name: string): T;
 
@@ -5773,6 +6034,7 @@ export namespace Handy {
          * @param child child object or `null` for non-child tags
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
+         * @since 2.12
          */
         custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
@@ -5783,6 +6045,7 @@ export namespace Handy {
          * @param child child object or `null` for non-child tags
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
+         * @since 2.12
          */
         custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
@@ -5792,6 +6055,7 @@ export namespace Handy {
          * @param child child object or `null` for non-child tags
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
+         * @since 2.12
          */
         custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
@@ -5800,6 +6064,7 @@ export namespace Handy {
          * @param builder a {@link Gtk.Builder}
          * @param childname name of child
          * @returns the internal child of the buildable object
+         * @since 2.12
          */
         get_internal_child<T = GObject.Object>(builder: Gtk.Builder, childname: string): T;
 
@@ -5810,6 +6075,7 @@ export namespace Handy {
          * [GtkBuilder UI definition][BUILDER-UI]
          * used to construct the `buildable`.
          * @returns the name set with `gtk_buildable_set_name()`
+         * @since 2.12
          */
         get_name(): string;
 
@@ -5820,6 +6086,7 @@ export namespace Handy {
          * `gtk_builder_add_from_file()` or `gtk_builder_add_from_string()`
          * is called on a builder.
          * @param builder a {@link Gtk.Builder}
+         * @since 2.12
          */
         parser_finished(builder: Gtk.Builder): void;
 
@@ -5828,12 +6095,14 @@ export namespace Handy {
          * @param builder a {@link Gtk.Builder}
          * @param name name of property
          * @param value value of property
+         * @since 2.12
          */
         set_buildable_property(builder: Gtk.Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
          * @param name name to set
+         * @since 2.12
          */
         set_name(name: string): void;
 
@@ -5843,6 +6112,7 @@ export namespace Handy {
          * @param builder a {@link Gtk.Builder}
          * @param child child to add
          * @param type kind of child or `null`
+         * @since 2.12
          * @virtual
          */
         vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
@@ -5854,6 +6124,7 @@ export namespace Handy {
          * specified in the UI definition.
          * @param builder {@link Gtk.Builder} used to construct this object
          * @param name name of child to construct
+         * @since 2.12
          * @virtual
          */
         vfunc_construct_child<T = GObject.Object>(builder: Gtk.Builder, name: string): T;
@@ -5865,6 +6136,7 @@ export namespace Handy {
          * @param child child object or `null` for non-child tags
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
+         * @since 2.12
          * @virtual
          */
         vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
@@ -5876,6 +6148,7 @@ export namespace Handy {
          * @param child child object or `null` for non-child tags
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
+         * @since 2.12
          * @virtual
          */
         vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
@@ -5885,6 +6158,7 @@ export namespace Handy {
          * @param builder a {@link Gtk.Builder} used to construct this object
          * @param child child object or `null` for non-child tags
          * @param tagname name of tag
+         * @since 2.12
          * @virtual
          */
         vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
@@ -5893,6 +6167,7 @@ export namespace Handy {
          * Get the internal child called `childname` of the `buildable` object.
          * @param builder a {@link Gtk.Builder}
          * @param childname name of child
+         * @since 2.12
          * @virtual
          */
         vfunc_get_internal_child<T = GObject.Object>(builder: Gtk.Builder, childname: string): T;
@@ -5903,6 +6178,7 @@ export namespace Handy {
          * {@link Gtk.Builder} sets the name based on the
          * [GtkBuilder UI definition][BUILDER-UI]
          * used to construct the `buildable`.
+         * @since 2.12
          * @virtual
          */
         vfunc_get_name(): string;
@@ -5914,6 +6190,7 @@ export namespace Handy {
          * `gtk_builder_add_from_file()` or `gtk_builder_add_from_string()`
          * is called on a builder.
          * @param builder a {@link Gtk.Builder}
+         * @since 2.12
          * @virtual
          */
         vfunc_parser_finished(builder: Gtk.Builder): void;
@@ -5923,6 +6200,7 @@ export namespace Handy {
          * @param builder a {@link Gtk.Builder}
          * @param name name of property
          * @param value value of property
+         * @since 2.12
          * @virtual
          */
         vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: unknown): void;
@@ -5930,6 +6208,7 @@ export namespace Handy {
         /**
          * Sets the name of the `buildable` object.
          * @param name name to set
+         * @since 2.12
          * @virtual
          */
         vfunc_set_name(name: string): void;
@@ -5983,6 +6262,7 @@ export namespace Handy {
         /**
          * Gets the child type.
          * @returns the child type
+         * @since 1.0
          */
         get_child_type(): HeaderGroupChildType;
 
@@ -5991,6 +6271,7 @@ export namespace Handy {
          * 
          * Use {@link HeaderGroupChild.get_child_type} to check the child type.
          * @returns the child header bar
+         * @since 1.0
          */
         get_gtk_header_bar(): Gtk.HeaderBar;
 
@@ -5999,6 +6280,7 @@ export namespace Handy {
          * 
          * Use {@link HeaderGroupChild.get_child_type} to check the child type.
          * @returns the child headerbar
+         * @since 1.0
          */
         get_header_bar(): HeaderBar;
 
@@ -6007,6 +6289,7 @@ export namespace Handy {
          * 
          * Use {@link HeaderGroupChild.get_child_type} to check the child type.
          * @returns the child header bar
+         * @since 1.0
          */
         get_header_group(): HeaderGroup;
     }
@@ -6242,84 +6525,98 @@ export namespace Handy {
         /**
          * Returns the amount of space between the columns of `self`.
          * @returns the column spacing of `self`
+         * @since 1.0
          */
         get_column_spacing(): number;
 
         /**
          * Gets the widget for the lower right corner (or left, in RTL locales).
          * @returns the end action widget
+         * @since 1.0
          */
         get_end_action(): Gtk.Widget | null;
 
         /**
          * Gets the connected entry.
          * @returns the entry set
+         * @since 1.0
          */
         get_entry(): Gtk.Entry;
 
         /**
          * Gets whether standard letters are displayed below the digits on the buttons.
          * @returns whether the letters below the digits should be visible
+         * @since 1.0
          */
         get_letters_visible(): boolean;
 
         /**
          * Returns the amount of space between the rows of `self`.
          * @returns the row spacing of `self`
+         * @since 1.0
          */
         get_row_spacing(): number;
 
         /**
          * Gets the widget for the lower left corner (or right, in RTL locales).
          * @returns the start action widget
+         * @since 1.0
          */
         get_start_action(): Gtk.Widget | null;
 
         /**
          * Gets whether symbols are displayed.
          * @returns whether symboles are visible
+         * @since 1.0
          */
         get_symbols_visible(): boolean;
 
         /**
          * Sets the amount of space between columns of `self`.
          * @param spacing the amount of space to insert between columns
+         * @since 1.0
          */
         set_column_spacing(spacing: number): void;
 
         /**
          * Sets the widget for the lower right corner (or left, in RTL locales).
          * @param end_action the end action widget
+         * @since 1.0
          */
         set_end_action(end_action: Gtk.Widget | null): void;
 
         /**
          * Binds `entry` to `self`.
          * @param entry an entry
+         * @since 1.0
          */
         set_entry(entry: Gtk.Entry | null): void;
 
         /**
          * Sets whether standard letters are displayed below the digits on the buttons.
          * @param letters_visible whether the letters below the digits should be visible
+         * @since 1.0
          */
         set_letters_visible(letters_visible: boolean): void;
 
         /**
          * Sets the amount of space between rows of `self`.
          * @param spacing the amount of space to insert between rows
+         * @since 1.0
          */
         set_row_spacing(spacing: number): void;
 
         /**
          * Sets the widget for the lower left corner (or right, in RTL locales).
          * @param start_action the start action widget
+         * @since 1.0
          */
         set_start_action(start_action: Gtk.Widget | null): void;
 
         /**
          * Sets whether standard letters are displayed below the digits on the buttons.
          * @param symbols_visible whether the hash, plus, and asterisk symbols should be visible
+         * @since 1.0
          */
         set_symbols_visible(symbols_visible: boolean): void;
     }
@@ -6738,18 +7035,21 @@ export namespace Handy {
          * If there's no child to navigate to, `NULL` will be returned instead.
          * @param direction the direction
          * @returns the previous or next child
+         * @since 1.0
          */
         get_adjacent_child(direction: NavigationDirection): Gtk.Widget | null;
 
         /**
          * Gets whether swipe gestures switch to the previous navigatable child.
          * @returns `TRUE` if back swipe is enabled
+         * @since 1.0
          */
         get_can_swipe_back(): boolean;
 
         /**
          * Gets whether swipe gestures switch to the next navigatable child.
          * @returns `TRUE` if forward swipe is enabled
+         * @since 1.0
          */
         get_can_swipe_forward(): boolean;
 
@@ -6759,24 +7059,28 @@ export namespace Handy {
          * Returns `NULL` if there is no child with this name.
          * @param name the name of the child to find
          * @returns the requested child of `self`
+         * @since 1.0
          */
         get_child_by_name(name: string): Gtk.Widget | null;
 
         /**
          * Gets the amount of time that transitions between children will take.
          * @returns the child transition duration, in milliseconds
+         * @since 1.0
          */
         get_child_transition_duration(): number;
 
         /**
          * Returns whether `self` is currently in a transition from one page to another.
          * @returns whether a transition is currently running
+         * @since 1.0
          */
         get_child_transition_running(): boolean;
 
         /**
          * Gets whether `self` is folded.
          * @returns whether `self` is folded
+         * @since 1.0
          */
         get_folded(): boolean;
 
@@ -6785,18 +7089,21 @@ export namespace Handy {
          * @param folded the fold
          * @param orientation the orientation
          * @returns whether `self` is homogeneous for the given fold and orientation
+         * @since 1.0
          */
         get_homogeneous(folded: boolean, orientation: Gtk.Orientation): boolean;
 
         /**
          * Gets whether to interpolate between the sizes of children on page switches.
          * @returns `TRUE` if child sizes are interpolated
+         * @since 1.0
          */
         get_interpolate_size(): boolean;
 
         /**
          * Gets the amount of time that transitions between modes in `self` will take.
          * @returns the mode transition duration, in milliseconds
+         * @since 1.0
          */
         get_mode_transition_duration(): number;
 
@@ -6804,18 +7111,21 @@ export namespace Handy {
          * Gets the animation type that will be used for transitions between modes and
          * children.
          * @returns the current transition type of `self`
+         * @since 1.0
          */
         get_transition_type(): LeafletTransitionType;
 
         /**
          * Gets the visible child widget.
          * @returns the visible child widget
+         * @since 1.0
          */
         get_visible_child(): Gtk.Widget;
 
         /**
          * Gets the name of the currently visible child widget.
          * @returns the name of the visible child
+         * @since 1.0
          */
         get_visible_child_name(): string;
 
@@ -6825,6 +7135,7 @@ export namespace Handy {
          * If `sibling` is `NULL`, inserts `child` at the first position.
          * @param child the widget to insert
          * @param sibling the sibling after which to insert `child`
+         * @since 1.2
          */
         insert_child_after(child: Gtk.Widget, sibling: Gtk.Widget | null): void;
 
@@ -6834,12 +7145,14 @@ export namespace Handy {
          * The switch is similar to performing a swipe gesture to go in `direction`.
          * @param direction the direction
          * @returns whether the visible child was changed
+         * @since 1.0
          */
         navigate(direction: NavigationDirection): boolean;
 
         /**
          * Inserts `child` at the first position in `self`.
          * @param child the widget to prepend
+         * @since 1.2
          */
         prepend(child: Gtk.Widget): void;
 
@@ -6849,24 +7162,28 @@ export namespace Handy {
          * If `sibling` is `NULL`, move `child` to the first position.
          * @param child the widget to move, must be a child of `self`
          * @param sibling the sibling to move `child` after
+         * @since 1.2
          */
         reorder_child_after(child: Gtk.Widget, sibling: Gtk.Widget | null): void;
 
         /**
          * Sets whether swipe gestures switch to the previous navigatable child.
          * @param can_swipe_back the new value
+         * @since 1.0
          */
         set_can_swipe_back(can_swipe_back: boolean): void;
 
         /**
          * Sets whether swipe gestures switch to the next navigatable child.
          * @param can_swipe_forward the new value
+         * @since 1.0
          */
         set_can_swipe_forward(can_swipe_forward: boolean): void;
 
         /**
          * Sets the duration that transitions between children in `self` will take.
          * @param duration the new duration, in milliseconds
+         * @since 1.0
          */
         set_child_transition_duration(duration: number): void;
 
@@ -6880,6 +7197,7 @@ export namespace Handy {
          * @param folded the fold
          * @param orientation the orientation
          * @param homogeneous `TRUE` to make `self` homogeneous
+         * @since 1.0
          */
         set_homogeneous(folded: boolean, orientation: Gtk.Orientation, homogeneous: boolean): void;
 
@@ -6890,12 +7208,14 @@ export namespace Handy {
          * will interpolate its size between the current one and the one it'll take
          * after changing the visible child, according to the set transition duration.
          * @param interpolate_size the new value
+         * @since 1.0
          */
         set_interpolate_size(interpolate_size: boolean): void;
 
         /**
          * Sets the duration that transitions between modes in `self` will take.
          * @param duration the new duration, in milliseconds
+         * @since 1.0
          */
         set_mode_transition_duration(duration: number): void;
 
@@ -6907,12 +7227,14 @@ export namespace Handy {
          * possible to change the animation based on the mode or child that is about to
          * become current.
          * @param transition the new transition type
+         * @since 1.0
          */
         set_transition_type(transition: LeafletTransitionType): void;
 
         /**
          * Sets the currently visible widget when the leaflet is folded.
          * @param visible_child the new child
+         * @since 1.0
          */
         set_visible_child(visible_child: Gtk.Widget): void;
 
@@ -6921,6 +7243,7 @@ export namespace Handy {
          * 
          * See {@link Leaflet.set_visible_child} for more details.
          * @param name the name of a child
+         * @since 1.0
          */
         set_visible_child_name(name: string): void;
 
@@ -6936,12 +7259,14 @@ export namespace Handy {
         /**
          * Retrieves the orientation of the `orientable`.
          * @returns the orientation of the `orientable`.
+         * @since 2.16
          */
         get_orientation(): Gtk.Orientation;
 
         /**
          * Sets the orientation of the `orientable`.
          * @param orientation the orientable’s new orientation.
+         * @since 2.16
          */
         set_orientation(orientation: Gtk.Orientation): void;
 
@@ -6953,12 +7278,14 @@ export namespace Handy {
          * `duration` can be 0 if the child is switched without animation.
          * @param index the index of the child to switch to
          * @param duration animation duration, in milliseconds
+         * @since 1.0
          */
         emit_child_switched(index: number, duration: bigint | number): void;
 
         /**
          * Gets the progress `self` will snap back to after the gesture is canceled.
          * @returns the cancel progress, unitless
+         * @since 1.0
          */
         get_cancel_progress(): number;
 
@@ -6967,12 +7294,14 @@ export namespace Handy {
          * 
          * This corresponds to how many pixels 1 unit represents.
          * @returns the swipe distance in pixels
+         * @since 1.0
          */
         get_distance(): number;
 
         /**
          * Gets the current progress of `self`.
          * @returns the current progress, unitless
+         * @since 1.0
          */
         get_progress(): number;
 
@@ -6982,6 +7311,7 @@ export namespace Handy {
          * Each snap point represents a progress value that is considered acceptable to
          * end the swipe on.
          * @returns the snap points
+         * @since 1.0
          */
         get_snap_points(): number[];
 
@@ -7000,12 +7330,14 @@ export namespace Handy {
          * `self`, allowing swipes from anywhere.
          * @param navigation_direction the direction of the swipe
          * @param is_drag whether the swipe is caused by a dragging gesture
+         * @since 1.0
          */
         get_swipe_area(navigation_direction: NavigationDirection, is_drag: boolean): Gdk.Rectangle;
 
         /**
          * Gets the {@link SwipeTracker} used by this swipeable widget.
          * @returns the swipe tracker
+         * @since 1.0
          */
         get_swipe_tracker(): SwipeTracker;
 
@@ -7015,11 +7347,13 @@ export namespace Handy {
          * See `Handy.Swipeable::child-switched`.
          * @param index the index of the child to switch to
          * @param duration animation duration, in milliseconds
+         * @since 1.0
          */
         switch_child(index: number, duration: bigint | number): void;
 
         /**
          * Gets the progress `self` will snap back to after the gesture is canceled.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_cancel_progress(): number;
@@ -7028,12 +7362,14 @@ export namespace Handy {
          * Gets the swipe distance of `self`.
          * 
          * This corresponds to how many pixels 1 unit represents.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_distance(): number;
 
         /**
          * Gets the current progress of `self`.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_progress(): number;
@@ -7043,6 +7379,7 @@ export namespace Handy {
          * 
          * Each snap point represents a progress value that is considered acceptable to
          * end the swipe on.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_snap_points(): number[];
@@ -7062,12 +7399,14 @@ export namespace Handy {
          * `self`, allowing swipes from anywhere.
          * @param navigation_direction the direction of the swipe
          * @param is_drag whether the swipe is caused by a dragging gesture
+         * @since 1.0
          * @virtual
          */
         vfunc_get_swipe_area(navigation_direction: NavigationDirection, is_drag: boolean): Gdk.Rectangle;
 
         /**
          * Gets the {@link SwipeTracker} used by this swipeable widget.
+         * @since 1.0
          * @virtual
          */
         vfunc_get_swipe_tracker(): SwipeTracker;
@@ -7078,6 +7417,7 @@ export namespace Handy {
          * See `Handy.Swipeable::child-switched`.
          * @param index the index of the child to switch to
          * @param duration animation duration, in milliseconds
+         * @since 1.0
          * @virtual
          */
         vfunc_switch_child(index: number, duration: number): void;
@@ -7243,36 +7583,42 @@ export namespace Handy {
         // Methods
         /**
          * @returns the description of `self`
+         * @since 1.0
          */
         get_description(): string;
 
         /**
          * Gets the title of `self`.
          * @returns the title of `self`
+         * @since 1.0
          */
         get_title(): string;
 
         /**
          * Gets whether `self` uses markup for the title and description.
          * @returns whether `self` uses markup for its labels
+         * @since 1.4
          */
         get_use_markup(): boolean;
 
         /**
          * Sets the description for `self`.
          * @param description the description
+         * @since 1.0
          */
         set_description(description: string): void;
 
         /**
          * Sets the title for `self`.
          * @param title the title
+         * @since 1.0
          */
         set_title(title: string): void;
 
         /**
          * Sets whether `self` uses markup for the title and description.
          * @param use_markup whether to use markup
+         * @since 1.4
          */
         set_use_markup(use_markup: boolean): void;
     }
@@ -7405,24 +7751,28 @@ export namespace Handy {
         /**
          * Gets the icon name for `self`.
          * @returns the icon name for `self`
+         * @since 1.0
          */
         get_icon_name(): string | null;
 
         /**
          * Gets the title of `self`.
          * @returns the title of the `self`
+         * @since 1.0
          */
         get_title(): string | null;
 
         /**
          * Sets the icon name for `self`.
          * @param icon_name the icon name
+         * @since 1.0
          */
         set_icon_name(icon_name: string | null): void;
 
         /**
          * Sets the title of `self`.
          * @param title the title of the page
+         * @since 1.0
          */
         set_title(title: string | null): void;
     }
@@ -7562,24 +7912,28 @@ export namespace Handy {
         /**
          * Gets the title of the preference represented by `self`.
          * @returns the title of the preference represented   by `self`
+         * @since 1.0
          */
         get_title(): string | null;
 
         /**
          * Gets whether an embedded underline in the title indicates a mnemonic.
          * @returns whether an embedded underline in the title indicates a mnemonic
+         * @since 1.0
          */
         get_use_underline(): boolean;
 
         /**
          * Sets the title of the preference represented by `self`.
          * @param title the title
+         * @since 1.0
          */
         set_title(title: string | null): void;
 
         /**
          * Sets whether an embedded underline in the title indicates a mnemonic.
          * @param use_underline `TRUE` if underlines in the text indicate mnemonics
+         * @since 1.0
          */
         set_use_underline(use_underline: boolean): void;
 
@@ -7610,6 +7964,7 @@ export namespace Handy {
          * 
          * See `gtk_actionable_set_action_name()` for more information.
          * @returns the action name, or `null` if none is set
+         * @since 3.4
          */
         get_action_name(): string | null;
 
@@ -7618,6 +7973,7 @@ export namespace Handy {
          * 
          * See `gtk_actionable_set_action_target_value()` for more information.
          * @returns the current target value
+         * @since 3.4
          */
         get_action_target_value(): GLib.Variant;
 
@@ -7634,6 +7990,7 @@ export namespace Handy {
          * respectively.  This is the same form used for actions in the {@link Gio.Menu}
          * associated with the window.
          * @param action_name an action name, or `null`
+         * @since 3.4
          */
         set_action_name(action_name: string | null): void;
 
@@ -7658,6 +8015,7 @@ export namespace Handy {
          * be rendered as active (and the other buttons, with different targets,
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
+         * @since 3.4
          */
         set_action_target_value(target_value: GLib.Variant | null): void;
 
@@ -7674,6 +8032,7 @@ export namespace Handy {
          * `action` is the action name and `target` is the string to use
          * as the target.)
          * @param detailed_action_name the detailed action name
+         * @since 3.4
          */
         set_detailed_action_name(detailed_action_name: string): void;
 
@@ -7681,6 +8040,7 @@ export namespace Handy {
          * Gets the action name for `actionable`.
          * 
          * See `gtk_actionable_set_action_name()` for more information.
+         * @since 3.4
          * @virtual
          */
         vfunc_get_action_name(): string | null;
@@ -7689,6 +8049,7 @@ export namespace Handy {
          * Gets the current target value of `actionable`.
          * 
          * See `gtk_actionable_set_action_target_value()` for more information.
+         * @since 3.4
          * @virtual
          */
         vfunc_get_action_target_value(): GLib.Variant;
@@ -7706,6 +8067,7 @@ export namespace Handy {
          * respectively.  This is the same form used for actions in the {@link Gio.Menu}
          * associated with the window.
          * @param action_name an action name, or `null`
+         * @since 3.4
          * @virtual
          */
         vfunc_set_action_name(action_name: string | null): void;
@@ -7731,6 +8093,7 @@ export namespace Handy {
          * be rendered as active (and the other buttons, with different targets,
          * rendered inactive).
          * @param target_value a {@link GLib.Variant} to set as the target value, or `null`
+         * @since 3.4
          * @virtual
          */
         vfunc_set_action_target_value(target_value: GLib.Variant | null): void;
@@ -7929,6 +8292,7 @@ export namespace Handy {
          * Closes the current subpage.
          * 
          * If there is no presented subpage, this does nothing.
+         * @since 1.0
          */
         close_subpage(): void;
 
@@ -7936,12 +8300,14 @@ export namespace Handy {
          * Gets whether swipe gestures allow switching from a subpage to the
          * preferences.
          * @returns `TRUE` if back swipe is enabled
+         * @since 1.0
          */
         get_can_swipe_back(): boolean;
 
         /**
          * Gets whether search is enabled for `self`.
          * @returns whether search is enabled for `self`
+         * @since 1.0
          */
         get_search_enabled(): boolean;
 
@@ -7951,6 +8317,7 @@ export namespace Handy {
          * The transition can be cancelled by the user, in which case visible child will
          * change back to the previously visible child.
          * @param subpage the subpage
+         * @since 1.0
          */
         present_subpage(subpage: Gtk.Widget): void;
 
@@ -7958,12 +8325,14 @@ export namespace Handy {
          * Sets whether swipe gestures allow switching from a subpage to the
          * preferences.
          * @param can_swipe_back the new value
+         * @since 1.0
          */
         set_can_swipe_back(can_swipe_back: boolean): void;
 
         /**
          * Sets whether search is enabled for `self`.
          * @param search_enabled `TRUE` to enable search, `FALSE` to disable it
+         * @since 1.0
          */
         set_search_enabled(search_enabled: boolean): void;
     }
@@ -8127,18 +8496,21 @@ export namespace Handy {
          * The entry should be a descendant of the search bar. This is only required if
          * the entry isn’t the direct child of the search bar (as in our main example).
          * @param entry an entry
+         * @since 1.0
          */
         connect_entry(entry: Gtk.Entry): void;
 
         /**
          * Gets whether the search mode is on.
          * @returns whether search mode is toggled on
+         * @since 1.0
          */
         get_search_mode(): boolean;
 
         /**
          * Gets whether the close button is shown.
          * @returns whether the close button is shown
+         * @since 1.0
          */
         get_show_close_button(): boolean;
 
@@ -8184,12 +8556,14 @@ export namespace Handy {
          * ```
          * @param event a {@link Gdk.Event} containing key press events
          * @returns `GDK_EVENT_STOP` if the key press event resulted in text being   entered in the search entry (and revealing the search bar if necessary),   `GDK_EVENT_PROPAGATE` otherwise.
+         * @since 1.0
          */
         handle_event(event: Gdk.Event): boolean;
 
         /**
          * Switches the search mode on or off.
          * @param search_mode the new state of the search mode
+         * @since 1.0
          */
         set_search_mode(search_mode: boolean): void;
 
@@ -8200,6 +8574,7 @@ export namespace Handy {
          * close button in their search bar, as it duplicates the role of the toggle
          * button.
          * @param visible whether the close button will be shown or not
+         * @since 1.0
          */
         set_show_close_button(visible: boolean): void;
     }
@@ -8480,54 +8855,63 @@ export namespace Handy {
          * See {@link Squeezer.set_child_enabled}.
          * @param child a child of `self`
          * @returns whether `child` is enabled
+         * @since 1.0
          */
         get_child_enabled(child: Gtk.Widget): boolean;
 
         /**
          * Gets whether `self` is homogeneous.
          * @returns whether `self` is homogeneous
+         * @since 1.0
          */
         get_homogeneous(): boolean;
 
         /**
          * Gets whether `self` should interpolate its size on visible child change.
          * @returns whether `self` interpolates its size on visible child change
+         * @since 1.0
          */
         get_interpolate_size(): boolean;
 
         /**
          * Gets the amount of time that transitions between children will take.
          * @returns the transition duration, in milliseconds
+         * @since 1.0
          */
         get_transition_duration(): number;
 
         /**
          * Gets whether a transition is currently running for `self`.
          * @returns whether a transition is currently running
+         * @since 1.0
          */
         get_transition_running(): boolean;
 
         /**
          * Gets the animation type that will be used for transitions between children.
          * @returns the current transition type of `self`
+         * @since 1.0
          */
         get_transition_type(): SqueezerTransitionType;
 
         /**
          * Gets the currently visible child of `self`.
          * @returns the visible child
+         * @since 1.0
          */
         get_visible_child(): Gtk.Widget | null;
 
         /**
          * Gets the horizontal alignment.
          * @returns the xalign property
+         * @since 1.0
          */
         get_xalign(): number;
 
         /**
          * Gets the vertical alignment.
          * @returns the yalign property
+         * @since 1.0
          */
         get_yalign(): number;
 
@@ -8542,42 +8926,49 @@ export namespace Handy {
          * window width, or any other constraint you find suitable.
          * @param child a child of `self`
          * @param enabled whether to enable the child
+         * @since 1.0
          */
         set_child_enabled(child: Gtk.Widget, enabled: boolean): void;
 
         /**
          * Sets whether all children have the same size for the opposite orientation.
          * @param homogeneous `TRUE` to make `self` homogeneous
+         * @since 1.0
          */
         set_homogeneous(homogeneous: boolean): void;
 
         /**
          * Sets whether `self` should interpolate its size on visible child change.
          * @param interpolate_size `TRUE` to interpolate the size
+         * @since 1.0
          */
         set_interpolate_size(interpolate_size: boolean): void;
 
         /**
          * Sets the duration that transitions between children in `self` will take.
          * @param duration the new duration, in milliseconds
+         * @since 1.0
          */
         set_transition_duration(duration: number): void;
 
         /**
          * Sets the animation type that will be used for transitions between children.
          * @param transition the new transition type
+         * @since 1.0
          */
         set_transition_type(transition: SqueezerTransitionType): void;
 
         /**
          * Sets the horizontal alignment.
          * @param xalign the new xalign value, between 0 and 1
+         * @since 1.0
          */
         set_xalign(xalign: number): void;
 
         /**
          * Sets the vertical alignment.
          * @param yalign the new yalign value, between 0 and 1
+         * @since 1.0
          */
         set_yalign(yalign: number): void;
 
@@ -8593,12 +8984,14 @@ export namespace Handy {
         /**
          * Retrieves the orientation of the `orientable`.
          * @returns the orientation of the `orientable`.
+         * @since 2.16
          */
         get_orientation(): Gtk.Orientation;
 
         /**
          * Sets the orientation of the `orientable`.
          * @param orientation the orientable’s new orientation.
+         * @since 2.16
          */
         set_orientation(orientation: Gtk.Orientation): void;
     }
@@ -8742,36 +9135,42 @@ export namespace Handy {
         /**
          * Gets the description for `self`.
          * @returns the description for `self`
+         * @since 1.2
          */
         get_description(): string | null;
 
         /**
          * Gets the icon name for `self`.
          * @returns the icon name for `self`
+         * @since 1.2
          */
         get_icon_name(): string | null;
 
         /**
          * Gets the title for `self`.
          * @returns the title for `self`
+         * @since 1.2
          */
         get_title(): string | null;
 
         /**
          * Sets the description for `self`.
          * @param description the description
+         * @since 1.2
          */
         set_description(description: string | null): void;
 
         /**
          * Sets the icon name for `self`.
          * @param icon_name the icon name
+         * @since 1.2
          */
         set_icon_name(icon_name: string | null): void;
 
         /**
          * Sets the title for `self`.
          * @param title the title
+         * @since 1.2
          */
         set_title(title: string | null): void;
     }
@@ -9004,6 +9403,7 @@ export namespace Handy {
          * that display has an override.
          * 
          * See {@link StyleManager.get_for_display}.
+         * @since 1.6
          */
         static get_default(): StyleManager;
 
@@ -9015,6 +9415,7 @@ export namespace Handy {
          * 
          * Most applications should use {@link StyleManager.get_default} instead.
          * @param display a display
+         * @since 1.6
          */
         static get_for_display(display: Gdk.Display): StyleManager;
 
@@ -9022,12 +9423,14 @@ export namespace Handy {
         /**
          * Gets the requested application color scheme.
          * @returns the color scheme
+         * @since 1.6
          */
         get_color_scheme(): ColorScheme;
 
         /**
          * Gets whether the application is using dark appearance.
          * @returns whether the application is using dark appearance
+         * @since 1.6
          */
         get_dark(): boolean;
 
@@ -9037,18 +9440,21 @@ export namespace Handy {
          * The display will be `NULL` for the style manager returned by
          * {@link StyleManager.get_default}.
          * @returns (nullable): the display
+         * @since 1.6
          */
         get_display(): Gdk.Display;
 
         /**
          * Gets whether the application is using high contrast appearance.
          * @returns whether the application is using high contrast appearance
+         * @since 1.6
          */
         get_high_contrast(): boolean;
 
         /**
          * Gets whether the system supports color schemes.
          * @returns whether the system supports color schemes
+         * @since 1.6
          */
         get_system_supports_color_schemes(): boolean;
 
@@ -9060,6 +9466,7 @@ export namespace Handy {
          * {@link StyleManager.dark} property can be used to query the current
          * effective appearance.
          * @param color_scheme the color scheme
+         * @since 1.6
          */
         set_color_scheme(color_scheme: ColorScheme): void;
     }
@@ -9145,18 +9552,24 @@ export namespace Handy {
          * When the widget is destroyed or no longer referenced elsewhere, it will be
          * removed from the swipe group.
          * @param swipeable the {@link Swipeable} to add
+         * @since 1.0
+         * @deprecated since 1.4
          */
         add_swipeable(swipeable: Swipeable): void;
 
         /**
          * Gets the list of swipeables associated with `self`.
          * @returns a list of swipeables
+         * @since 1.0
+         * @deprecated since 1.4
          */
         get_swipeables(): Swipeable[];
 
         /**
          * Removes a widget from a {@link SwipeGroup}.
          * @param swipeable the {@link Swipeable} to remove
+         * @since 1.0
+         * @deprecated since 1.4
          */
         remove_swipeable(swipeable: Swipeable): void;
 
@@ -9166,6 +9579,7 @@ export namespace Handy {
          * @param builder a {@link Gtk.Builder}
          * @param child child to add
          * @param type kind of child or `null`
+         * @since 2.12
          */
         add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
 
@@ -9177,6 +9591,7 @@ export namespace Handy {
          * @param builder {@link Gtk.Builder} used to construct this object
          * @param name name of child to construct
          * @returns the constructed child
+         * @since 2.12
          */
         construct_child<T = GObject.Object>(builder: Gtk.Builder, name: string): T;
 
@@ -9187,6 +9602,7 @@ export namespace Handy {
          * @param child child object or `null` for non-child tags
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
+         * @since 2.12
          */
         custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
@@ -9197,6 +9613,7 @@ export namespace Handy {
          * @param child child object or `null` for non-child tags
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
+         * @since 2.12
          */
         custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
 
@@ -9206,6 +9623,7 @@ export namespace Handy {
          * @param child child object or `null` for non-child tags
          * @param tagname name of tag
          * @returns `true` if a object has a custom implementation, `false`          if it doesn't.
+         * @since 2.12
          */
         custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, null];
 
@@ -9214,6 +9632,7 @@ export namespace Handy {
          * @param builder a {@link Gtk.Builder}
          * @param childname name of child
          * @returns the internal child of the buildable object
+         * @since 2.12
          */
         get_internal_child<T = GObject.Object>(builder: Gtk.Builder, childname: string): T;
 
@@ -9224,6 +9643,7 @@ export namespace Handy {
          * [GtkBuilder UI definition][BUILDER-UI]
          * used to construct the `buildable`.
          * @returns the name set with `gtk_buildable_set_name()`
+         * @since 2.12
          */
         get_name(): string;
 
@@ -9234,6 +9654,7 @@ export namespace Handy {
          * `gtk_builder_add_from_file()` or `gtk_builder_add_from_string()`
          * is called on a builder.
          * @param builder a {@link Gtk.Builder}
+         * @since 2.12
          */
         parser_finished(builder: Gtk.Builder): void;
 
@@ -9242,12 +9663,14 @@ export namespace Handy {
          * @param builder a {@link Gtk.Builder}
          * @param name name of property
          * @param value value of property
+         * @since 2.12
          */
         set_buildable_property(builder: Gtk.Builder, name: string, value: GObject.Value | any): void;
 
         /**
          * Sets the name of the `buildable` object.
          * @param name name to set
+         * @since 2.12
          */
         set_name(name: string): void;
 
@@ -9257,6 +9680,7 @@ export namespace Handy {
          * @param builder a {@link Gtk.Builder}
          * @param child child to add
          * @param type kind of child or `null`
+         * @since 2.12
          * @virtual
          */
         vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type: string | null): void;
@@ -9268,6 +9692,7 @@ export namespace Handy {
          * specified in the UI definition.
          * @param builder {@link Gtk.Builder} used to construct this object
          * @param name name of child to construct
+         * @since 2.12
          * @virtual
          */
         vfunc_construct_child<T = GObject.Object>(builder: Gtk.Builder, name: string): T;
@@ -9279,6 +9704,7 @@ export namespace Handy {
          * @param child child object or `null` for non-child tags
          * @param tagname the name of the tag
          * @param data user data created in custom_tag_start
+         * @since 2.12
          * @virtual
          */
         vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
@@ -9290,6 +9716,7 @@ export namespace Handy {
          * @param child child object or `null` for non-child tags
          * @param tagname name of tag
          * @param data user data that will be passed in to parser functions
+         * @since 2.12
          * @virtual
          */
         vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data: null): void;
@@ -9299,6 +9726,7 @@ export namespace Handy {
          * @param builder a {@link Gtk.Builder} used to construct this object
          * @param child child object or `null` for non-child tags
          * @param tagname name of tag
+         * @since 2.12
          * @virtual
          */
         vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [boolean, GLib.MarkupParser, never];
@@ -9307,6 +9735,7 @@ export namespace Handy {
          * Get the internal child called `childname` of the `buildable` object.
          * @param builder a {@link Gtk.Builder}
          * @param childname name of child
+         * @since 2.12
          * @virtual
          */
         vfunc_get_internal_child<T = GObject.Object>(builder: Gtk.Builder, childname: string): T;
@@ -9317,6 +9746,7 @@ export namespace Handy {
          * {@link Gtk.Builder} sets the name based on the
          * [GtkBuilder UI definition][BUILDER-UI]
          * used to construct the `buildable`.
+         * @since 2.12
          * @virtual
          */
         vfunc_get_name(): string;
@@ -9328,6 +9758,7 @@ export namespace Handy {
          * `gtk_builder_add_from_file()` or `gtk_builder_add_from_string()`
          * is called on a builder.
          * @param builder a {@link Gtk.Builder}
+         * @since 2.12
          * @virtual
          */
         vfunc_parser_finished(builder: Gtk.Builder): void;
@@ -9337,6 +9768,7 @@ export namespace Handy {
          * @param builder a {@link Gtk.Builder}
          * @param name name of property
          * @param value value of property
+         * @since 2.12
          * @virtual
          */
         vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: unknown): void;
@@ -9344,6 +9776,7 @@ export namespace Handy {
         /**
          * Sets the name of the `buildable` object.
          * @param name name to set
+         * @since 2.12
          * @virtual
          */
         vfunc_set_name(name: string): void;
@@ -9522,30 +9955,35 @@ export namespace Handy {
          * If the value is `FALSE`, each swipe can only move to the adjacent snap
          * points.
          * @returns whether long swipes are allowed
+         * @since 1.2
          */
         get_allow_long_swipes(): boolean;
 
         /**
          * Get whether `self` can be dragged with mouse pointer.
          * @returns `TRUE` is mouse dragging is allowed
+         * @since 1.0
          */
         get_allow_mouse_drag(): boolean;
 
         /**
          * Get whether `self` is enabled.
          * @returns `TRUE` if `self` is enabled
+         * @since 1.0
          */
         get_enabled(): boolean;
 
         /**
          * Get whether `self` is reversing the swipe direction.
          * @returns `TRUE` is the direction is reversed
+         * @since 1.0
          */
         get_reversed(): boolean;
 
         /**
          * Get `self`'s swipeable widget.
          * @returns the swipeable widget
+         * @since 1.0
          */
         get_swipeable(): Swipeable;
 
@@ -9555,6 +9993,7 @@ export namespace Handy {
          * If the value is `FALSE`, each swipe can only move to the adjacent snap
          * points.
          * @param allow_long_swipes whether to allow long swipes
+         * @since 1.2
          */
         set_allow_long_swipes(allow_long_swipes: boolean): void;
 
@@ -9563,12 +10002,14 @@ export namespace Handy {
          * 
          * This should usually be `FALSE`.
          * @param allow_mouse_drag whether to allow mouse dragging
+         * @since 1.0
          */
         set_allow_mouse_drag(allow_mouse_drag: boolean): void;
 
         /**
          * Set whether `self` is enabled.
          * @param enabled whether to enable to swipe tracker
+         * @since 1.0
          */
         set_enabled(enabled: boolean): void;
 
@@ -9577,6 +10018,7 @@ export namespace Handy {
          * 
          * If `self` is horizontal, can be used for supporting RTL text direction.
          * @param reversed whether to reverse the swipe direction
+         * @since 1.0
          */
         set_reversed(reversed: boolean): void;
 
@@ -9586,6 +10028,7 @@ export namespace Handy {
          * This can be used to adjust the current position if snap points move during
          * the gesture.
          * @param delta the position delta
+         * @since 1.0
          */
         shift_position(delta: number): void;
 
@@ -9601,12 +10044,14 @@ export namespace Handy {
         /**
          * Retrieves the orientation of the `orientable`.
          * @returns the orientation of the `orientable`.
+         * @since 2.16
          */
         get_orientation(): Gtk.Orientation;
 
         /**
          * Sets the orientation of the `orientable`.
          * @param orientation the orientable’s new orientation.
+         * @since 2.16
          */
         set_orientation(orientation: Gtk.Orientation): void;
     }
@@ -9910,54 +10355,63 @@ export namespace Handy {
         /**
          * Gets whether the tabs automatically hide.
          * @returns whether the tabs automatically hide
+         * @since 1.2
          */
         get_autohide(): boolean;
 
         /**
          * Gets the widget shown after the tabs.
          * @returns the widget shown after the tabs
+         * @since 1.2
          */
         get_end_action_widget(): Gtk.Widget | null;
 
         /**
          * Gets whether tabs should expand.
          * @returns whether tabs should expand
+         * @since 1.2
          */
         get_expand_tabs(): boolean;
 
         /**
          * Gets extra drag destination targets.
          * @returns extra drag targets
+         * @since 1.2
          */
         get_extra_drag_dest_targets(): Gtk.TargetList | null;
 
         /**
          * Gets whether tabs use inverted layout.
          * @returns whether tabs use inverted layout
+         * @since 1.2
          */
         get_inverted(): boolean;
 
         /**
          * Gets whether `self` is overflowing.
          * @returns whether `self` is overflowing
+         * @since 1.2
          */
         get_is_overflowing(): boolean;
 
         /**
          * Gets the widget shown before the tabs.
          * @returns the widget shown before the tabs
+         * @since 1.2
          */
         get_start_action_widget(): Gtk.Widget | null;
 
         /**
          * Gets the value of the {@link TabBar.tabs_revealed} property.
          * @returns whether the tabs are current revealed
+         * @since 1.2
          */
         get_tabs_revealed(): boolean;
 
         /**
          * Gets the {@link TabView} `self` controls.
          * @returns the {@link TabView} `self` controls
+         * @since 1.2
          */
         get_view(): TabView | null;
 
@@ -9972,12 +10426,14 @@ export namespace Handy {
          * 
          * See {@link TabBar.tabs_revealed}.
          * @param autohide whether the tabs automatically hide
+         * @since 1.2
          */
         set_autohide(autohide: boolean): void;
 
         /**
          * Sets the widget to show after the tabs.
          * @param widget the widget to show after the tabs
+         * @since 1.2
          */
         set_end_action_widget(widget: Gtk.Widget | null): void;
 
@@ -9990,6 +10446,7 @@ export namespace Handy {
          * 
          * Expand is enabled by default.
          * @param expand_tabs whether to expand tabs
+         * @since 1.2
          */
         set_expand_tabs(expand_tabs: boolean): void;
 
@@ -10005,6 +10462,7 @@ export namespace Handy {
          * After content is dropped, the `Handy.TabBar::extra-drag-data-received`
          * signal can be used to retrieve and process the drag data.
          * @param extra_drag_dest_targets extra drag targets
+         * @since 1.2
          */
         set_extra_drag_dest_targets(extra_drag_dest_targets: Gtk.TargetList | null): void;
 
@@ -10014,18 +10472,21 @@ export namespace Handy {
          * If `inverted` is `TRUE`, non-pinned tabs will have the close button at the
          * beginning and the indicator at the end rather than the opposite.
          * @param inverted whether tabs use inverted layout
+         * @since 1.2
          */
         set_inverted(inverted: boolean): void;
 
         /**
          * Sets the widget to show before the tabs.
          * @param widget the widget to show before the tabs
+         * @since 1.2
          */
         set_start_action_widget(widget: Gtk.Widget | null): void;
 
         /**
          * Sets the {@link TabView} `self` controls.
          * @param view a tab view
+         * @since 1.2
          */
         set_view(view: TabView | null): void;
     }
@@ -10275,108 +10736,126 @@ export namespace Handy {
         /**
          * Gets the child of `self`.
          * @returns the child of `self`
+         * @since 1.2
          */
         get_child(): Gtk.Widget;
 
         /**
          * Gets the icon of `self`.
          * @returns the icon of `self`
+         * @since 1.2
          */
         get_icon(): Gio.Icon | null;
 
         /**
          * Gets whether the indicator of `self` is activatable.
          * @returns whether the indicator is activatable
+         * @since 1.2
          */
         get_indicator_activatable(): boolean;
 
         /**
          * Gets the indicator icon of `self`.
          * @returns the indicator icon of `self`
+         * @since 1.2
          */
         get_indicator_icon(): Gio.Icon | null;
 
         /**
          * Gets whether `self` is loading.
          * @returns whether `self` is loading
+         * @since 1.2
          */
         get_loading(): boolean;
 
         /**
          * Gets whether `self` needs attention.
          * @returns whether `self` needs attention
+         * @since 1.2
          */
         get_needs_attention(): boolean;
 
         /**
          * Gets the parent page of `self`.
          * @returns the parent page of `self`
+         * @since 1.2
          */
         get_parent(): TabPage | null;
 
         /**
          * Gets whether `self` is pinned.
          * @returns whether `self` is pinned
+         * @since 1.2
          */
         get_pinned(): boolean;
 
         /**
          * Gets whether `self` is selected.
          * @returns whether `self` is selected
+         * @since 1.2
          */
         get_selected(): boolean;
 
         /**
          * Gets the title of `self`.
          * @returns the title of `self`
+         * @since 1.2
          */
         get_title(): string | null;
 
         /**
          * Gets the tooltip of `self`.
          * @returns the tooltip of `self`
+         * @since 1.2
          */
         get_tooltip(): string | null;
 
         /**
          * Sets the icon of `self`.
          * @param icon the icon of `self`
+         * @since 1.2
          */
         set_icon(icon: Gio.Icon | null): void;
 
         /**
          * Sets whether the indicator of `self` is activatable.
          * @param activatable whether the indicator is activatable
+         * @since 1.2
          */
         set_indicator_activatable(activatable: boolean): void;
 
         /**
          * Sets the indicator icon of `self`.
          * @param indicator_icon the indicator icon of `self`
+         * @since 1.2
          */
         set_indicator_icon(indicator_icon: Gio.Icon | null): void;
 
         /**
          * Sets whether `self` is loading.
          * @param loading whether `self` is loading
+         * @since 1.2
          */
         set_loading(loading: boolean): void;
 
         /**
          * Sets whether `self` needs attention.
          * @param needs_attention whether `self` needs attention
+         * @since 1.2
          */
         set_needs_attention(needs_attention: boolean): void;
 
         /**
          * Sets the title of `self`.
          * @param title the title of `self`
+         * @since 1.2
          */
         set_title(title: string | null): void;
 
         /**
          * Sets the tooltip of `self`.
          * @param tooltip the tooltip of `self`
+         * @since 1.2
          */
         set_tooltip(tooltip: string | null): void;
     }
@@ -10824,6 +11303,7 @@ export namespace Handy {
          * @param child a widget to add
          * @param parent a parent page for `child`
          * @returns the page object representing `child`
+         * @since 1.2
          */
         add_page(child: Gtk.Widget, parent: TabPage | null): TabPage;
 
@@ -10831,6 +11311,7 @@ export namespace Handy {
          * Inserts `child` as the last non-pinned page.
          * @param child a widget to add
          * @returns the page object representing `child`
+         * @since 1.2
          */
         append(child: Gtk.Widget): TabPage;
 
@@ -10838,12 +11319,14 @@ export namespace Handy {
          * Inserts `child` as the last pinned page.
          * @param child a widget to add
          * @returns the page object representing `child`
+         * @since 1.2
          */
         append_pinned(child: Gtk.Widget): TabPage;
 
         /**
          * Requests to close all pages other than `page`.
          * @param page a page of `self`
+         * @since 1.2
          */
         close_other_pages(page: TabPage): void;
 
@@ -10871,6 +11354,7 @@ export namespace Handy {
          * (possibly indirect) of the parent. If both the previous page and the parent
          * are pinned, the parent will be selected instead.
          * @param page a page of `self`
+         * @since 1.2
          */
         close_page(page: TabPage): void;
 
@@ -10885,24 +11369,28 @@ export namespace Handy {
          * `Handy.TabView::close-page` is used.
          * @param page a page of `self`
          * @param confirm whether to confirm or deny closing `page`
+         * @since 1.2
          */
         close_page_finish(page: TabPage, confirm: boolean): void;
 
         /**
          * Requests to close all pages after `page`.
          * @param page a page of `self`
+         * @since 1.2
          */
         close_pages_after(page: TabPage): void;
 
         /**
          * Requests to close all pages before `page`.
          * @param page a page of `self`
+         * @since 1.2
          */
         close_pages_before(page: TabPage): void;
 
         /**
          * Gets default icon of `self`.
          * @returns the default icon of `self`
+         * @since 1.2
          */
         get_default_icon(): Gio.Icon;
 
@@ -10911,18 +11399,21 @@ export namespace Handy {
          * 
          * Gets the value of {@link TabView.is_transferring_page} property.
          * @returns whether a page is being transferred
+         * @since 1.2
          */
         get_is_transferring_page(): boolean;
 
         /**
          * Gets the tab context menu model for `self`.
          * @returns the tab context menu model for `self`
+         * @since 1.2
          */
         get_menu_model(): Gio.MenuModel | null;
 
         /**
          * Gets the number of pages in `self`.
          * @returns the number of pages in `self`
+         * @since 1.2
          */
         get_n_pages(): number;
 
@@ -10931,6 +11422,7 @@ export namespace Handy {
          * 
          * See {@link TabView.set_page_pinned}.
          * @returns the number of pinned pages in `self`
+         * @since 1.2
          */
         get_n_pinned_pages(): number;
 
@@ -10938,6 +11430,7 @@ export namespace Handy {
          * Gets the {@link TabPage} representing the child at `position`.
          * @param position the index of the page in `self`, starting from 0
          * @returns the page object at `position`
+         * @since 1.2
          */
         get_nth_page(position: number): TabPage;
 
@@ -10945,6 +11438,7 @@ export namespace Handy {
          * Gets the {@link TabPage} object representing `child`.
          * @param child a child in `self`
          * @returns the {@link TabPage} representing `child`
+         * @since 1.2
          */
         get_page(child: Gtk.Widget): TabPage;
 
@@ -10952,6 +11446,7 @@ export namespace Handy {
          * Finds the position of `page` in `self`, starting from 0.
          * @param page a page of `self`
          * @returns the position of `page` in `self`
+         * @since 1.2
          */
         get_page_position(page: TabPage): number;
 
@@ -10960,18 +11455,21 @@ export namespace Handy {
          * 
          * This model can be used to keep an up to date view of the pages.
          * @returns the model containing pages of `self`
+         * @since 1.2
          */
         get_pages(): Gio.ListModel;
 
         /**
          * Gets the currently selected page in `self`.
          * @returns the selected page in `self`
+         * @since 1.2
          */
         get_selected_page(): TabPage | null;
 
         /**
          * Gets the shortcut widget for `self`.
          * @returns the shortcut widget for `self`
+         * @since 1.2
          */
         get_shortcut_widget(): Gtk.Widget | null;
 
@@ -10983,6 +11481,7 @@ export namespace Handy {
          * @param child a widget to add
          * @param position the position to add `child` at, starting from 0
          * @returns the page object representing `child`
+         * @since 1.2
          */
         insert(child: Gtk.Widget, position: number): TabPage;
 
@@ -10994,6 +11493,7 @@ export namespace Handy {
          * @param child a widget to add
          * @param position the position to add `child` at, starting from 0
          * @returns the page object representing `child`
+         * @since 1.2
          */
         insert_pinned(child: Gtk.Widget, position: number): TabPage;
 
@@ -11001,6 +11501,7 @@ export namespace Handy {
          * Inserts `child` as the first non-pinned page.
          * @param child a widget to add
          * @returns the page object representing `child`
+         * @since 1.2
          */
         prepend(child: Gtk.Widget): TabPage;
 
@@ -11008,6 +11509,7 @@ export namespace Handy {
          * Inserts `child` as the first pinned page.
          * @param child a widget to add
          * @returns the page object representing `child`
+         * @since 1.2
          */
         prepend_pinned(child: Gtk.Widget): TabPage;
 
@@ -11015,6 +11517,7 @@ export namespace Handy {
          * Reorders `page` to before its previous page if possible.
          * @param page a page of `self`
          * @returns whether `page` was moved
+         * @since 1.2
          */
         reorder_backward(page: TabPage): boolean;
 
@@ -11022,6 +11525,7 @@ export namespace Handy {
          * Reorders `page` to the first possible position.
          * @param page a page of `self`
          * @returns whether `page` was moved
+         * @since 1.2
          */
         reorder_first(page: TabPage): boolean;
 
@@ -11029,6 +11533,7 @@ export namespace Handy {
          * Reorders `page` to after its next page if possible.
          * @param page a page of `self`
          * @returns whether `page` was moved
+         * @since 1.2
          */
         reorder_forward(page: TabPage): boolean;
 
@@ -11036,6 +11541,7 @@ export namespace Handy {
          * Reorders `page` to the last possible position.
          * @param page a page of `self`
          * @returns whether `page` was moved
+         * @since 1.2
          */
         reorder_last(page: TabPage): boolean;
 
@@ -11047,6 +11553,7 @@ export namespace Handy {
          * @param page a page of `self`
          * @param position the position to insert the page at, starting at 0
          * @returns whether `page` was moved
+         * @since 1.2
          */
         reorder_page(page: TabPage, position: number): boolean;
 
@@ -11055,6 +11562,7 @@ export namespace Handy {
          * 
          * If the last page was already selected, this function does nothing.
          * @returns whether the selected page was changed
+         * @since 1.2
          */
         select_next_page(): boolean;
 
@@ -11063,6 +11571,7 @@ export namespace Handy {
          * 
          * If the first page was already selected, this function does nothing.
          * @returns whether the selected page was changed
+         * @since 1.2
          */
         select_previous_page(): boolean;
 
@@ -11078,6 +11587,7 @@ export namespace Handy {
          * 
          * By default, `hdy-tab-icon-missing-symbolic` icon is used.
          * @param default_icon the default icon
+         * @since 1.2
          */
         set_default_icon(default_icon: Gio.Icon): void;
 
@@ -11088,6 +11598,7 @@ export namespace Handy {
          * provided menu model. Use `Handy.TabView::setup-menu` signal to set up the
          * menu actions for the particular tab.
          * @param menu_model a menu model
+         * @since 1.2
          */
         set_menu_model(menu_model: Gio.MenuModel | null): void;
 
@@ -11117,18 +11628,21 @@ export namespace Handy {
          * for how to override that behavior.
          * @param page a page of `self`
          * @param pinned whether `page` should be pinned
+         * @since 1.2
          */
         set_page_pinned(page: TabPage, pinned: boolean): void;
 
         /**
          * Sets the currently selected page in `self`.
          * @param selected_page a page in `self`
+         * @since 1.2
          */
         set_selected_page(selected_page: TabPage): void;
 
         /**
          * Sets the shortcut widget for `self`.
          * @param widget a shortcut widget
+         * @since 1.2
          */
         set_shortcut_widget(widget: Gtk.Widget | null): void;
 
@@ -11142,6 +11656,7 @@ export namespace Handy {
          * @param page a page of `self`
          * @param other_view the tab view to transfer the page to
          * @param position the position to insert the page at, starting at 0
+         * @since 1.2
          */
         transfer_page(page: TabPage, other_view: TabView, position: number): void;
     }
@@ -11278,12 +11793,16 @@ export namespace Handy {
         /**
          * Returns whether whether `self` is in selection mode.
          * @returns `TRUE` if the title bar is in selection mode
+         * @since 1.0
+         * @deprecated since 1.4
          */
         get_selection_mode(): boolean;
 
         /**
          * Sets whether `self` is in selection mode.
          * @param selection_mode `TRUE` to enable the selection mode
+         * @since 1.0
+         * @deprecated since 1.4
          */
         set_selection_mode(selection_mode: boolean): void;
     }
@@ -11353,24 +11872,28 @@ export namespace Handy {
         /**
          * Copy data from the contained {@link GObject.Value} into `dest`.
          * @param dest value with correct type to copy into
+         * @since 1.0
          */
         copy_value(dest: GObject.Value | any): void;
 
         /**
          * Gets a copy of the contained string if the value is of type `G_TYPE_STRING`.
          * @returns a copy of the contained string
+         * @since 1.0
          */
         dup_string(): string;
 
         /**
          * Returns the contained string if the value is of type `G_TYPE_STRING`.
          * @returns the contained string
+         * @since 1.0
          */
         get_string(): string;
 
         /**
          * Return the contained value.
          * @returns the contained {@link GObject.Value}
+         * @since 1.0
          */
         get_value(): unknown;
     }
@@ -11539,36 +12062,42 @@ export namespace Handy {
         /**
          * Get the ellipsizing position of the narrow mode label.
          * @returns a {@link Pango.EllipsizeMode}
+         * @since 1.0
          */
         get_narrow_ellipsize(): Pango.EllipsizeMode;
 
         /**
          * Gets the policy of `self`.
          * @returns the policy of `self`
+         * @since 1.0
          */
         get_policy(): ViewSwitcherPolicy;
 
         /**
          * Gets the stack controlled by `self`.
          * @returns the stack
+         * @since 1.0
          */
         get_stack(): Gtk.Stack | null;
 
         /**
          * Sets the mode used to ellipsize the text in narrow mode.
          * @param mode a {@link Pango.EllipsizeMode}
+         * @since 1.0
          */
         set_narrow_ellipsize(mode: Pango.EllipsizeMode): void;
 
         /**
          * Sets the policy of `self`.
          * @param policy the new policy
+         * @since 1.0
          */
         set_policy(policy: ViewSwitcherPolicy): void;
 
         /**
          * Sets the {@link Gtk.Stack} to control.
          * @param stack a stack
+         * @since 1.0
          */
         set_stack(stack: Gtk.Stack | null): void;
     }
@@ -11746,36 +12275,42 @@ export namespace Handy {
         /**
          * Gets the policy of `self`.
          * @returns the policy of `self`
+         * @since 1.0
          */
         get_policy(): ViewSwitcherPolicy;
 
         /**
          * Gets whether `self` should be revealed or hidden.
          * @returns whether `self` is revealed
+         * @since 1.0
          */
         get_reveal(): boolean;
 
         /**
          * Get the {@link Gtk.Stack} being controlled by the {@link ViewSwitcher}.
          * @returns the stack
+         * @since 1.0
          */
         get_stack(): Gtk.Stack | null;
 
         /**
          * Sets the policy of `self`.
          * @param policy the new policy
+         * @since 1.0
          */
         set_policy(policy: ViewSwitcherPolicy): void;
 
         /**
          * Sets whether `self` should be revealed or not.
          * @param reveal `TRUE` to reveal `self`
+         * @since 1.0
          */
         set_reveal(reveal: boolean): void;
 
         /**
          * Sets the {@link Gtk.Stack} to control.
          * @param stack a stack
+         * @since 1.0
          */
         set_stack(stack: Gtk.Stack | null): void;
     }
@@ -12022,66 +12557,77 @@ export namespace Handy {
         /**
          * Gets the policy of `self`.
          * @returns the policy of `self`
+         * @since 1.0
          */
         get_policy(): ViewSwitcherPolicy;
 
         /**
          * Gets the stack controlled by `self`.
          * @returns the stack
+         * @since 1.0
          */
         get_stack(): Gtk.Stack | null;
 
         /**
          * Gets the subtitle of `self`.
          * @returns the subtitle of `self`
+         * @since 1.0
          */
         get_subtitle(): string | null;
 
         /**
          * Gets the title of `self`.
          * @returns the title of `self`
+         * @since 1.0
          */
         get_title(): string | null;
 
         /**
          * Gets whether the title of `self` is currently visible.
          * @returns whether the title of `self` is currently visible
+         * @since 1.0
          */
         get_title_visible(): boolean;
 
         /**
          * Gets whether `self`'s view switcher is enabled.
          * @returns whether the view switcher is enabled
+         * @since 1.0
          */
         get_view_switcher_enabled(): boolean;
 
         /**
          * Sets the policy of `self`.
          * @param policy the new policy
+         * @since 1.0
          */
         set_policy(policy: ViewSwitcherPolicy): void;
 
         /**
          * Sets the {@link Gtk.Stack} to control.
          * @param stack a stack
+         * @since 1.0
          */
         set_stack(stack: Gtk.Stack | null): void;
 
         /**
          * Sets the subtitle of `self`.
          * @param subtitle a subtitle
+         * @since 1.0
          */
         set_subtitle(subtitle: string | null): void;
 
         /**
          * Sets the title of `self`.
          * @param title a title
+         * @since 1.0
          */
         set_title(title: string | null): void;
 
         /**
          * Sets whether `self`'s view switcher is enabled.
          * @param enabled `TRUE` to enable the view switcher, `FALSE` to disable it
+         * @since 1.0
          */
         set_view_switcher_enabled(enabled: boolean): void;
     }
@@ -12569,6 +13115,7 @@ export namespace Handy {
             // Virtual methods
             /**
              * Gets the progress `self` will snap back to after the gesture is canceled.
+             * @since 1.0
              * @virtual
              */
             vfunc_get_cancel_progress(): number;
@@ -12577,12 +13124,14 @@ export namespace Handy {
              * Gets the swipe distance of `self`.
              * 
              * This corresponds to how many pixels 1 unit represents.
+             * @since 1.0
              * @virtual
              */
             vfunc_get_distance(): number;
 
             /**
              * Gets the current progress of `self`.
+             * @since 1.0
              * @virtual
              */
             vfunc_get_progress(): number;
@@ -12592,6 +13141,7 @@ export namespace Handy {
              * 
              * Each snap point represents a progress value that is considered acceptable to
              * end the swipe on.
+             * @since 1.0
              * @virtual
              */
             vfunc_get_snap_points(): number[];
@@ -12611,12 +13161,14 @@ export namespace Handy {
              * `self`, allowing swipes from anywhere.
              * @param navigation_direction the direction of the swipe
              * @param is_drag whether the swipe is caused by a dragging gesture
+             * @since 1.0
              * @virtual
              */
             vfunc_get_swipe_area(navigation_direction: NavigationDirection, is_drag: boolean): Gdk.Rectangle;
 
             /**
              * Gets the {@link SwipeTracker} used by this swipeable widget.
+             * @since 1.0
              * @virtual
              */
             vfunc_get_swipe_tracker(): SwipeTracker;
@@ -12627,6 +13179,7 @@ export namespace Handy {
              * See `Handy.Swipeable::child-switched`.
              * @param index the index of the child to switch to
              * @param duration animation duration, in milliseconds
+             * @since 1.0
              * @virtual
              */
             vfunc_switch_child(index: number, duration: number): void;
@@ -12662,12 +13215,14 @@ export namespace Handy {
          * `duration` can be 0 if the child is switched without animation.
          * @param index the index of the child to switch to
          * @param duration animation duration, in milliseconds
+         * @since 1.0
          */
         emit_child_switched(index: number, duration: bigint | number): void;
 
         /**
          * Gets the progress `self` will snap back to after the gesture is canceled.
          * @returns the cancel progress, unitless
+         * @since 1.0
          */
         get_cancel_progress(): number;
 
@@ -12676,12 +13231,14 @@ export namespace Handy {
          * 
          * This corresponds to how many pixels 1 unit represents.
          * @returns the swipe distance in pixels
+         * @since 1.0
          */
         get_distance(): number;
 
         /**
          * Gets the current progress of `self`.
          * @returns the current progress, unitless
+         * @since 1.0
          */
         get_progress(): number;
 
@@ -12691,6 +13248,7 @@ export namespace Handy {
          * Each snap point represents a progress value that is considered acceptable to
          * end the swipe on.
          * @returns the snap points
+         * @since 1.0
          */
         get_snap_points(): number[];
 
@@ -12709,12 +13267,14 @@ export namespace Handy {
          * `self`, allowing swipes from anywhere.
          * @param navigation_direction the direction of the swipe
          * @param is_drag whether the swipe is caused by a dragging gesture
+         * @since 1.0
          */
         get_swipe_area(navigation_direction: NavigationDirection, is_drag: boolean): Gdk.Rectangle;
 
         /**
          * Gets the {@link SwipeTracker} used by this swipeable widget.
          * @returns the swipe tracker
+         * @since 1.0
          */
         get_swipe_tracker(): SwipeTracker;
 
@@ -12724,6 +13284,7 @@ export namespace Handy {
          * See `Handy.Swipeable::child-switched`.
          * @param index the index of the child to switch to
          * @param duration animation duration, in milliseconds
+         * @since 1.0
          */
         switch_child(index: number, duration: bigint | number): void;
     }

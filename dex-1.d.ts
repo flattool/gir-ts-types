@@ -625,6 +625,7 @@ export namespace Dex {
          * the future is discarded. This happens when no more futures are awaiting
          * the completion of this future.
          * @param cancel_on_discard if the operation should cancel when the future is discarded
+         * @since 0.4
          */
         set_cancel_on_discard(cancel_on_discard: boolean): void;
     }
@@ -734,6 +735,7 @@ export namespace Dex {
          * pointer indicating the function `res` was created by).
          * @param source_tag an application-defined tag
          * @returns `TRUE` if `res` has the indicated `source_tag`, `FALSE` if   not.
+         * @since 2.34
          */
         is_tagged(source_tag: null): boolean;
 
@@ -749,6 +751,7 @@ export namespace Dex {
          * set by virtual methods should also be extracted by virtual methods,
          * to enable subclasses to chain up correctly.
          * @returns `TRUE` if `error` is has been filled in with an error from   `res`, `FALSE` if not.
+         * @since 2.34
          */
         legacy_propagate_error(): boolean;
 
@@ -768,6 +771,7 @@ export namespace Dex {
          * Checks if `res` has the given `source_tag` (generally a function
          * pointer indicating the function `res` was created by).
          * @param source_tag an application-defined tag
+         * @since 2.34
          * @virtual
          */
         vfunc_is_tagged(source_tag: null): boolean;
@@ -1200,6 +1204,7 @@ export namespace Dex {
          * 
          * The resolved value must be of type `DEX_TYPE_FD` or `error` is set.
          * @returns a valid file descriptor or -1. you may get -1 without   error being set if there was no rejected future.
+         * @since 0.10
          */
         await_fd(): number;
 
@@ -1275,12 +1280,14 @@ export namespace Dex {
         /**
          * Awaits on `future` and returns the `G_TYPE_VARIANT` based result.
          * @returns the variant result, or `null` and `error` is set.
+         * @since 0.4
          */
         await_variant(): GLib.Variant;
 
         /**
          * Disowns a future, allowing it to run to completion even though there may
          * be no observer interested in the futures completion or rejection.
+         * @since 0.4
          */
         disown(): void;
 
@@ -1531,6 +1538,7 @@ export namespace Dex {
         /**
          * @param boxed_type a {@link GObject.GType} of `G_TYPE_BOXED`
          * @param instance the boxed value to store
+         * @since 0.10
          */
         resolve_boxed(boxed_type: GObject.GType, instance: null): void;
 
@@ -1606,6 +1614,7 @@ export namespace Dex {
         /**
          * If `variant` is floating, its reference is consumed.
          * @param variant a {@link GLib.Variant}
+         * @since 0.8
          */
         resolve_variant(variant: GLib.Variant | null): void;
     }
@@ -1884,6 +1893,7 @@ export namespace Dex {
         // Methods
         /**
          * Get the signal number that the future represents.
+         * @since 1.0
          */
         get_signum(): number;
     }

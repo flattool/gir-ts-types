@@ -2630,6 +2630,7 @@ export namespace GstAudio {
          * recovered from the error, but lost all contents of its ring buffer).
          * This function is typically called by derived classes, and is useful
          * for the custom slave method.
+         * @since 1.6
          */
         report_device_failure(): void;
 
@@ -2649,6 +2650,7 @@ export namespace GstAudio {
          * behave as if the GST_AUDIO_BASE_SINK_SLAVE_NONE
          * method were used.
          * @param callback a {@link GstAudio.AudioBaseSinkCustomSlavingCallback}
+         * @since 1.6
          */
         set_custom_slaving_callback(callback: AudioBaseSinkCustomSlavingCallback): void;
 
@@ -3614,6 +3616,7 @@ export namespace GstAudio {
          * invalidated by a call to this function.
          * @param buf decoded data
          * @returns a {@link Gst.FlowReturn} that should be escalated to caller (of caller)
+         * @since 1.16
          */
         finish_subframe(buf: Gst.Buffer | null): Gst.FlowReturn;
 
@@ -3718,6 +3721,7 @@ export namespace GstAudio {
          * @param caps initial caps
          * @param filter filter caps
          * @returns a {@link Gst.Caps} owned by caller
+         * @since 1.6
          */
         proxy_getcaps(caps: Gst.Caps | null, filter: Gst.Caps | null): Gst.Caps;
 
@@ -3727,6 +3731,7 @@ export namespace GstAudio {
          * `gst_audio_decoder_negotiate()`. Setting to `null` the allocation
          * query will use the caps from the pad.
          * @param allocation_caps a {@link Gst.Caps} or `null`
+         * @since 1.10
          */
         set_allocation_caps(allocation_caps: Gst.Caps | null): void;
 
@@ -3793,6 +3798,7 @@ export namespace GstAudio {
          * caps features.
          * @param caps (fixed) {@link Gst.Caps}
          * @returns `true` on success.
+         * @since 1.16
          */
         set_output_caps(caps: Gst.Caps): boolean;
 
@@ -3834,6 +3840,7 @@ export namespace GstAudio {
          * handler with `GST_PAD_SET_ACCEPT_INTERSECT` and
          * `GST_PAD_SET_ACCEPT_TEMPLATE`
          * @param use if the default pad accept-caps query handling should be used
+         * @since 1.6
          */
         set_use_default_pad_acceptcaps(use: boolean): void;
     }
@@ -4337,6 +4344,7 @@ export namespace GstAudio {
          * `gst_audio_encoder_negotiate()`. Setting to `null` the allocation
          * query will use the caps from the pad.
          * @param allocation_caps a {@link Gst.Caps} or `null`
+         * @since 1.10
          */
         set_allocation_caps(allocation_caps: Gst.Caps | null): void;
 
@@ -4489,6 +4497,7 @@ export namespace GstAudio {
         /**
          * Check if one can add new presets, change existing ones and remove presets.
          * @returns `true` if presets are editable or `false` if they are static
+         * @since 1.6
          */
         is_editable(): boolean;
 
@@ -5022,6 +5031,7 @@ export namespace GstAudio {
          * 
          * MT safe.
          * @returns Current segment base number of the ringbuffer.
+         * @since 1.26
          */
         get_segbase(): number;
 
@@ -5030,6 +5040,7 @@ export namespace GstAudio {
          * 
          * MT safe.
          * @returns Current segment number of the ringbuffer.
+         * @since 1.26
          */
         get_segdone(): number;
 
@@ -5121,6 +5132,7 @@ export namespace GstAudio {
          * 
          * MT safe.
          * @param cb the callback to set
+         * @since 1.12
          */
         set_callback(cb: AudioRingBufferCallback | null): void;
 
@@ -5135,6 +5147,7 @@ export namespace GstAudio {
          * Mark the ringbuffer as errored after it has started.
          * 
          * MT safe.
+         * @since 1.24
          */
         set_errored(): void;
 
@@ -5164,6 +5177,7 @@ export namespace GstAudio {
          * 
          * MT safe.
          * @param segdone the segment number to set
+         * @since 1.26
          */
         set_segdone(segdone: bigint | number): void;
 
@@ -5611,6 +5625,7 @@ export namespace GstAudio {
          * @param info the audio properties of the buffer
          * @param gstbuffer the {@link Gst.Buffer} to be mapped
          * @param flags the access mode for the memory
+         * @since 1.16
          */
         static map(info: AudioInfo, gstbuffer: Gst.Buffer, flags: Gst.MapFlags): [boolean, AudioBuffer];
 
@@ -5643,6 +5658,7 @@ export namespace GstAudio {
          * @param bpf size of one audio frame in bytes. This is the size of one sample * number of channels.
          * @param trim the number of samples to remove from the beginning of the buffer
          * @param samples the final number of samples that should exist in this buffer or -1 to use all the remaining samples if you are only removing samples from the beginning.
+         * @since 1.16
          */
         static truncate(buffer: Gst.Buffer, bpf: number, trim: bigint | number, samples: bigint | number): Gst.Buffer;
 
@@ -5650,6 +5666,7 @@ export namespace GstAudio {
         /**
          * Unmaps an audio buffer that was previously mapped with
          * `gst_audio_buffer_map()`.
+         * @since 1.16
          */
         unmap(): void;
     }
@@ -5800,6 +5817,7 @@ export namespace GstAudio {
          * @param flags extra {@link GstAudio.AudioConverterFlags}
          * @param _in input data
          * @returns `true` is the conversion could be performed.
+         * @since 1.14
          */
         convert(flags: AudioConverterFlags, _in: Uint8Array | string): [boolean, Uint8Array];
 
@@ -5841,6 +5859,7 @@ export namespace GstAudio {
          * Returns whether the audio converter will operate in passthrough mode.
          * The return value would be typically input to `gst_base_transform_set_passthrough()`
          * @returns `true` when no conversion will actually occur.
+         * @since 1.16
          */
         is_passthrough(): boolean;
 
@@ -5880,6 +5899,7 @@ export namespace GstAudio {
          * Returns whether the audio converter can perform the conversion in-place.
          * The return value would be typically input to `gst_base_transform_set_in_place()`
          * @returns `true` when the conversion can be done in place.
+         * @since 1.12
          */
         supports_inplace(): boolean;
 
@@ -6002,6 +6022,7 @@ export namespace GstAudio {
         /**
          * Fill `length` bytes in `dest` with silence samples for `info`.
          * @param dest a destination   to fill
+         * @since 1.20
          */
         fill_silence(dest: Uint8Array | string): void;
     }
@@ -6086,6 +6107,7 @@ export namespace GstAudio {
          * Compares two {@link GstAudio.AudioInfo} and returns whether they are equal or not
          * @param other a {@link GstAudio.AudioInfo}
          * @returns `true` if `info` and `other` are equal, else `false`.
+         * @since 1.2
          */
         is_equal(other: AudioInfo): boolean;
 
@@ -6124,6 +6146,7 @@ export namespace GstAudio {
         // Static methods
         /**
          * Return the {@link Gst.MetaInfo} associated with {@link GstAudio.AudioLevelMeta}.
+         * @since 1.20
          */
         static get_info(): Gst.MetaInfo;
     }
@@ -6372,30 +6395,35 @@ export namespace GstAudio {
         /**
          * Copy a GstAudioStreamAlign structure.
          * @returns a new {@link GstAudio.AudioStreamAlign}. free with gst_audio_stream_align_free.
+         * @since 1.14
          */
         copy(): AudioStreamAlign;
 
         /**
          * Free a GstAudioStreamAlign structure previously allocated with `gst_audio_stream_align_new()`
          * or `gst_audio_stream_align_copy()`.
+         * @since 1.14
          */
         free(): void;
 
         /**
          * Gets the currently configured alignment threshold.
          * @returns The currently configured alignment threshold
+         * @since 1.14
          */
         get_alignment_threshold(): Gst.ClockTime;
 
         /**
          * Gets the currently configured discont wait.
          * @returns The currently configured discont wait
+         * @since 1.14
          */
         get_discont_wait(): Gst.ClockTime;
 
         /**
          * Gets the currently configured sample rate.
          * @returns The currently configured sample rate
+         * @since 1.14
          */
         get_rate(): number;
 
@@ -6403,6 +6431,7 @@ export namespace GstAudio {
          * Returns the number of samples that were processed since the last
          * discontinuity was detected.
          * @returns The number of samples processed since the last discontinuity.
+         * @since 1.14
          */
         get_samples_since_discont(): number;
 
@@ -6410,11 +6439,13 @@ export namespace GstAudio {
          * Timestamp that was passed when a discontinuity was detected, i.e. the first
          * timestamp after the discontinuity.
          * @returns The last timestamp at when a discontinuity was detected
+         * @since 1.14
          */
         get_timestamp_at_discont(): Gst.ClockTime;
 
         /**
          * Marks the next buffer as discontinuous and resets timestamp tracking.
+         * @since 1.14
          */
         mark_discont(): void;
 
@@ -6439,18 +6470,21 @@ export namespace GstAudio {
          * @param timestamp a {@link Gst.ClockTime} of the start of the data
          * @param n_samples number of samples to process
          * @returns `true` if a discontinuity was detected, `false` otherwise.
+         * @since 1.14
          */
         process(discont: boolean, timestamp: Gst.ClockTime, n_samples: number): [boolean, Gst.ClockTime, Gst.ClockTime, number];
 
         /**
          * Sets `alignment_treshold` as new alignment threshold for the following processing.
          * @param alignment_threshold a new alignment threshold
+         * @since 1.14
          */
         set_alignment_threshold(alignment_threshold: Gst.ClockTime): void;
 
         /**
          * Sets `alignment_treshold` as new discont wait for the following processing.
          * @param discont_wait a new discont wait
+         * @since 1.14
          */
         set_discont_wait(discont_wait: Gst.ClockTime): void;
 
@@ -6458,6 +6492,7 @@ export namespace GstAudio {
          * Sets `rate` as new sample rate for the following processing. If the sample
          * rate differs this implicitly marks the next data as discontinuous.
          * @param rate a new sample rate
+         * @since 1.14
          */
         set_rate(rate: number): void;
     }
@@ -6556,11 +6591,13 @@ export namespace GstAudio {
         /**
          * Parse `caps` and update `info`.
          * @param caps a {@link Gst.Caps}
+         * @since 1.24
          */
         static from_caps(caps: Gst.Caps): [boolean, DsdInfo];
 
         /**
          * Initialize `info` with default values.
+         * @since 1.24
          */
         static init(): DsdInfo;
 
@@ -6568,12 +6605,14 @@ export namespace GstAudio {
         /**
          * Copy a GstDsdInfo structure.
          * @returns a new {@link GstAudio.DsdInfo}. free with gst_dsd_info_free.
+         * @since 1.24
          */
         copy(): DsdInfo;
 
         /**
          * Free a GstDsdInfo structure previously allocated with `gst_dsd_info_new()`
          * or `gst_dsd_info_copy()`.
+         * @since 1.24
          */
         free(): void;
 
@@ -6581,6 +6620,7 @@ export namespace GstAudio {
          * Compares two {@link GstAudio.DsdInfo} and returns whether they are equal or not
          * @param other a {@link GstAudio.DsdInfo}
          * @returns `true` if `info` and `other` are equal, else `false`.
+         * @since 1.24
          */
         is_equal(other: DsdInfo): boolean;
 
@@ -6592,12 +6632,14 @@ export namespace GstAudio {
          * @param rate the DSD rate
          * @param channels the number of channels
          * @param positions the channel positions
+         * @since 1.24
          */
         set_format(format: DsdFormat, rate: number, channels: number, positions: AudioChannelPosition[] | null): void;
 
         /**
          * Convert the values of `info` into a {@link Gst.Caps}.
          * @returns the new {@link Gst.Caps} containing the          info of `info`.
+         * @since 1.24
          */
         to_caps(): Gst.Caps;
     }

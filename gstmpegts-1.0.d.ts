@@ -2689,6 +2689,7 @@ export namespace GstMpegts {
          * @param tag descriptor tag
          * @param tag_extension descriptor tag extension
          * @param data descriptor data (after tag and length field)
+         * @since 1.20
          */
         static from_custom_with_extension(tag: number, tag_extension: number, data: Uint8Array | string): Descriptor;
 
@@ -2728,16 +2729,19 @@ export namespace GstMpegts {
         /**
          * Create a new {@link GstMpegts.Descriptor} based on the information in `jpegxs`
          * @param jpegxs A {@link GstMpegts.JpegXsDescriptor}
+         * @since 1.26
          */
         static from_jpeg_xs(jpegxs: JpegXsDescriptor): Descriptor;
 
         /**
          * @param metadata_descriptor 
+         * @since 1.26
          */
         static from_metadata(metadata_descriptor: MetadataDescriptor): Descriptor;
 
         /**
          * @param metadata_pointer_descriptor a {@link GstMpegts.MetadataPointerDescriptor}
+         * @since 1.26
          */
         static from_metadata_pointer(metadata_pointer_descriptor: MetadataPointerDescriptor): Descriptor;
 
@@ -2750,11 +2754,13 @@ export namespace GstMpegts {
 
         /**
          * @param source 
+         * @since 1.20
          */
         static parse_audio_preselection_dump(source: AudioPreselectionDescriptor): void;
 
         /**
          * @param source 
+         * @since 1.20
          */
         static parse_audio_preselection_free(source: AudioPreselectionDescriptor): void;
 
@@ -2762,6 +2768,7 @@ export namespace GstMpegts {
         /**
          * Copy the given descriptor.
          * @returns A copy of `desc`.
+         * @since 1.26
          */
         copy(): Descriptor;
 
@@ -2773,6 +2780,7 @@ export namespace GstMpegts {
         /**
          * Parses out a list of audio preselection from the `descriptor`.
          * @returns `true` if the parsing happened correctly, else `false`.
+         * @since 1.20
          */
         parse_audio_preselection_list(): [boolean, AudioPreselectionDescriptor[]];
 
@@ -2981,6 +2989,7 @@ export namespace GstMpegts {
         /**
          * Parses the JPEG-XS descriptor information from `descriptor`:
          * @returns TRUE if the information could be parsed, else FALSE.
+         * @since 1.26
          */
         parse_jpeg_xs(): [boolean, JpegXsDescriptor];
 
@@ -2997,6 +3006,7 @@ export namespace GstMpegts {
          * metadata_application_format is provided in Table 2-82. metadata_format is
          * provided in Table 2-85.
          * @returns `true` if the parsing worked correctly, else `false`.
+         * @since 1.24
          */
         parse_metadata(): [boolean, MetadataDescriptor];
 
@@ -3008,12 +3018,14 @@ export namespace GstMpegts {
          * @param metadata_buffer_size 
          * @param metadata_output_leak_rate 
          * @returns `true` if parsing succeeded, else `false`.
+         * @since 1.24
          */
         parse_metadata_std(metadata_input_leak_rate: number, metadata_buffer_size: number, metadata_output_leak_rate: number): boolean;
 
         /**
          * Extracts the Registration information from `descriptor`.
          * @returns `true` if parsing succeeded, else `false`.
+         * @since 1.20
          */
         parse_registration(): [boolean, number, Uint8Array | null];
 
@@ -3505,6 +3517,7 @@ export namespace GstMpegts {
         // Static methods
         /**
          * Gets the global {@link Gst.MetaInfo} describing the {@link GstMpegts.PESMetadataMeta} meta.
+         * @since 1.24
          */
         static get_info(): Gst.MetaInfo;
     }
@@ -4009,6 +4022,7 @@ export namespace GstMpegts {
         /**
          * Returns the {@link GstMpegts.AtscRRT} contained in the `section`.
          * @returns The {@link GstMpegts.AtscRRT} contained in the section, or `null` if an error happened.
+         * @since 1.18
          */
         get_atsc_rrt(): AtscRRT;
 
@@ -4089,6 +4103,7 @@ export namespace GstMpegts {
         /**
          * Returns the {@link GstMpegts.SIT} contained in the `section`.
          * @returns The {@link GstMpegts.SIT} contained in the section, or `null` if an error happened.
+         * @since 1.20
          */
         get_sit(): SIT | null;
 

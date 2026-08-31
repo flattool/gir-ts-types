@@ -336,6 +336,7 @@ export namespace GstTranscoder {
         // Static methods
         /**
          * @param msg A {@link Gst.Message}
+         * @since 1.20
          */
         static is_transcoder_message(msg: Gst.Message): boolean;
 
@@ -371,6 +372,7 @@ export namespace GstTranscoder {
          * consume the messages, the bus will accumulate these internally and eventually
          * fill memory. To avoid that, the bus has to be set "flushing".
          * @returns The transcoder message bus instance
+         * @since 1.20
          */
         get_message_bus(): Gst.Bus;
 
@@ -397,6 +399,7 @@ export namespace GstTranscoder {
          * same way.
          * @param context A {@link GLib.MainContext} on which the main-loop will process                       transcoder bus messages on. Can be NULL (thread-default                       context will be used then).
          * @returns The {@link GstTranscoder.TranscoderSignalAdapter} to connect signal handlers to.
+         * @since 1.20
          */
         get_signal_adapter(context: GLib.MainContext | null): TranscoderSignalAdapter | null;
 
@@ -410,6 +413,7 @@ export namespace GstTranscoder {
          * Gets the {@link GstTranscoder.TranscoderSignalAdapter} attached to `self` to emit signals from
          * its thread of emission.
          * @returns The {@link GstTranscoder.TranscoderSignalAdapter} to connect signal handlers to.
+         * @since 1.20
          */
         get_sync_signal_adapter(): TranscoderSignalAdapter;
 
@@ -538,6 +542,7 @@ export namespace GstTranscoder {
         // Methods
         /**
          * @returns The {@link GstTranscoder.Transcoder} `self` is tracking
+         * @since 1.20
          */
         get_transcoder(): Transcoder | null;
     }

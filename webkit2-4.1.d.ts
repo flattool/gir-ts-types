@@ -1482,6 +1482,7 @@ export namespace WebKit2 {
         // Static methods
         /**
          * Gets the quark for the domain of Web Extension Match Pattern errors.
+         * @since 2.48
          */
         static quark(): GLib.Quark;
     }
@@ -2244,6 +2245,7 @@ export namespace WebKit2 {
          * Authenticate the {@link WebKit2.AuthenticationRequest} using the {@link WebKit2.Credential}
          * supplied. To continue without credentials, pass `null` as `credential`.
          * @param credential A {@link WebKit2.Credential}, or `null`
+         * @since 2.2
          */
         authenticate(credential: Credential | null): void;
 
@@ -2257,6 +2259,7 @@ export namespace WebKit2 {
          * disabled in {@link WebKit2.WebsiteDataManager}, unless credentials saving has been
          * explicitly enabled with `webkit_authentication_request_set_can_save_credentials()`.
          * @returns `true` if WebKit can store credentials or `false` otherwise.
+         * @since 2.2
          */
         can_save_credentials(): boolean;
 
@@ -2265,24 +2268,28 @@ export namespace WebKit2 {
          * 
          * This will also cancel the page loading and result in a
          * {@link WebKit2.WebView.SignalSignatures.load_failed | WebKit2.WebView::load-failed} signal with a {@link WebKit2.NetworkError} of type {@link WebKit2.NetworkError.CANCELLED} being emitted.
+         * @since 2.2
          */
         cancel(): void;
 
         /**
          * Get the {@link Gio.TlsPasswordFlags} of the {@link WebKit2.AuthenticationScheme.CLIENT_CERTIFICATE_PIN_REQUESTED} authentication challenge.
          * @returns a {@link Gio.TlsPasswordFlags}
+         * @since 2.34
          */
         get_certificate_pin_flags(): Gio.TlsPasswordFlags;
 
         /**
          * Get the host that this authentication challenge is applicable to.
          * @returns The host of `request`.
+         * @since 2.2
          */
         get_host(): string;
 
         /**
          * Get the port that this authentication challenge is applicable to.
          * @returns The port of `request`.
+         * @since 2.2
          */
         get_port(): number;
 
@@ -2293,24 +2300,28 @@ export namespace WebKit2 {
          * stored from a previous session. The client can use this directly for
          * authentication or construct their own {@link WebKit2.Credential}.
          * @returns A {@link WebKit2.Credential} encapsulating credential details or `null` if there is no stored credential.
+         * @since 2.2
          */
         get_proposed_credential(): Credential;
 
         /**
          * Get the realm that this authentication challenge is applicable to.
          * @returns The realm of `request`.
+         * @since 2.2
          */
         get_realm(): string;
 
         /**
          * Get the authentication scheme of the authentication challenge.
          * @returns The {@link WebKit2.AuthenticationScheme} of `request`.
+         * @since 2.2
          */
         get_scheme(): AuthenticationScheme;
 
         /**
          * Get the {@link WebKit2.SecurityOrigin} that this authentication challenge is applicable to.
          * @returns a newly created {@link WebKit2.SecurityOrigin}.
+         * @since 2.30
          */
         get_security_origin(): SecurityOrigin;
 
@@ -2319,12 +2330,14 @@ export namespace WebKit2 {
          * 
          * Determine whether the authentication challenge is associated with a proxy server rather than an "origin" server.
          * @returns `true` if authentication is for a proxy or `false` otherwise.
+         * @since 2.2
          */
         is_for_proxy(): boolean;
 
         /**
          * Determine whether this this is a first attempt or a retry for this authentication challenge.
          * @returns `true` if authentication attempt is a retry or `false` otherwise.
+         * @since 2.2
          */
         is_retry(): boolean;
 
@@ -2340,6 +2353,7 @@ export namespace WebKit2 {
          * Note that storing of credentials will not be allowed on ephemeral
          * sessions in any case.
          * @param enabled value to set
+         * @since 2.30
          */
         set_can_save_credentials(enabled: boolean): void;
 
@@ -2353,6 +2367,7 @@ export namespace WebKit2 {
          * credentials.)
          * Passing a `null` `credential` will clear the proposed credential.
          * @param credential a {@link WebKit2.Credential}, or `null`
+         * @since 2.30
          */
         set_proposed_credential(credential: Credential): void;
     }
@@ -2474,12 +2489,14 @@ export namespace WebKit2 {
          * 
          * Get the {@link WebKit2.AutomationSession} previously set with `webkit_automation_session_set_application_info()`.
          * @returns the {@link WebKit2.AutomationSession} of `session`, or `null` if no one has been set.
+         * @since 2.18
          */
         get_application_info(): ApplicationInfo;
 
         /**
          * Get the unique identifier of a {@link WebKit2.AutomationSession}
          * @returns the unique identifier of `session`
+         * @since 2.18
          */
         get_id(): string;
 
@@ -2493,6 +2510,7 @@ export namespace WebKit2 {
          * after the automation session has been fully created, so this must be called in the callback of
          * {@link WebKit2.WebContext.SignalSignatures.automation_started | WebKit2.WebContext::automation-started} signal.
          * @param info a {@link WebKit2.ApplicationInfo}
+         * @since 2.18
          */
         set_application_info(info: ApplicationInfo): void;
     }
@@ -2857,6 +2875,7 @@ export namespace WebKit2 {
          * it has before the request started.
          * The signal {@link WebKit2.ColorChooserRequest.SignalSignatures.finished | WebKit2.ColorChooserRequest::finished}
          * is emitted to notify that the request has finished.
+         * @since 2.8
          */
         cancel(): void;
 
@@ -2868,22 +2887,26 @@ export namespace WebKit2 {
          * {@link WebKit2.ColorChooserRequest.rgba}.
          * The signal {@link WebKit2.ColorChooserRequest.SignalSignatures.finished | WebKit2.ColorChooserRequest::finished}
          * is emitted to notify that the request has finished.
+         * @since 2.8
          */
         finish(): void;
 
         /**
          * Gets the bounding box of the color input element.
+         * @since 2.8
          */
         get_element_rectangle(): Gdk.Rectangle;
 
         /**
          * Gets the current {@link Gdk.RGBA} color of `request`
+         * @since 2.8
          */
         get_rgba(): Gdk.RGBA;
 
         /**
          * Sets the current {@link Gdk.RGBA} color of `request`
          * @param rgba a pointer {@link Gdk.RGBA}
+         * @since 2.8
          */
         set_rgba(rgba: Gdk.RGBA): void;
     }
@@ -2978,6 +3001,7 @@ export namespace WebKit2 {
          * </para></listitem>
          * </itemizedlist>
          * @returns the menu event or `null`.
+         * @since 2.40
          */
         get_event(): Gdk.Event;
 
@@ -3006,6 +3030,7 @@ export namespace WebKit2 {
          * This function only returns valid coordinates when called for a {@link WebKit2.ContextMenu}
          * passed to {@link WebKit2.WebView.SignalSignatures.context_menu | WebKit2.WebView::context-menu} signal.
          * @returns `true` if valid position coordinates are available, `false` otherwise
+         * @since 2.52
          */
         get_position(): [boolean, number, number];
 
@@ -3015,6 +3040,7 @@ export namespace WebKit2 {
          * This function can be used from the UI Process to get user data previously set
          * from the Web Process with `webkit_context_menu_set_user_data()`.
          * @returns the user data of `menu`, or `null` if `menu` doesn't have user data
+         * @since 2.8
          */
         get_user_data(): GLib.Variant;
 
@@ -3073,6 +3099,7 @@ export namespace WebKit2 {
          * that can be retrieved from the UI Process using `webkit_context_menu_get_user_data()`.
          * If the `user_data` {@link GLib.Variant} is floating, it is consumed.
          * @param user_data a {@link GLib.Variant}
+         * @since 2.8
          */
         set_user_data(user_data: GLib.Variant): void;
     }
@@ -3142,18 +3169,21 @@ export namespace WebKit2 {
         /**
          * Gets the action associated to `item` as a {@link Gtk.Action}.
          * @returns the {@link Gtk.Action} associated to the {@link WebKit2.ContextMenuItem},    or `null` if `item` is a separator.
+         * @deprecated since 2.18: Use `webkit_context_menu_item_get_gaction()` instead.
          */
         get_action(): Gtk.Action;
 
         /**
          * Gets the action associated to `item` as a {@link Gio.Action}.
          * @returns the {@link Gio.Action} associated to the {@link WebKit2.ContextMenuItem},    or `null` if `item` is a separator.
+         * @since 2.18
          */
         get_gaction(): Gio.Action;
 
         /**
          * Gets the target {@link GLib.Variant} associated with `item`.
          * @returns the target {@link GLib.Variant} of the {@link WebKit2.ContextMenuItem},    or `null` if `item` was not created with `webkit_context_menu_item_new_from_gaction()`    or if no target was specified.
+         * @since 2.52
          */
         get_gaction_target(): GLib.Variant | null;
 
@@ -3177,6 +3207,7 @@ export namespace WebKit2 {
         /**
          * Gets the title of `item`.
          * @returns the title of `item`, or `null` if `item` is a separator.
+         * @since 2.52
          */
         get_title(): string;
 
@@ -3260,6 +3291,7 @@ export namespace WebKit2 {
          * `webkit_cookie_manager_add_cookie_finish()` to get the result of the operation.
          * @param cookie the {@link Soup.Cookie} to be added
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.20
          */
         add_cookie(cookie: Soup.Cookie, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
@@ -3271,6 +3303,7 @@ export namespace WebKit2 {
          * @param cookie the {@link Soup.Cookie} to be added
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.20
          */
         add_cookie(cookie: Soup.Cookie, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -3282,6 +3315,7 @@ export namespace WebKit2 {
          * @param cookie the {@link Soup.Cookie} to be added
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.20
          */
         add_cookie(cookie: Soup.Cookie, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
@@ -3289,11 +3323,13 @@ export namespace WebKit2 {
          * Finish an asynchronous operation started with `webkit_cookie_manager_add_cookie()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns `true` if the cookie was added or `false` in case of error.
+         * @since 2.20
          */
         add_cookie_finish(result: Gio.AsyncResult): boolean;
 
         /**
          * Delete all cookies of `cookie_manager`.
+         * @deprecated since 2.16: Use `webkit_website_data_manager_clear()` instead.
          */
         delete_all_cookies(): void;
 
@@ -3304,6 +3340,7 @@ export namespace WebKit2 {
          * `webkit_cookie_manager_delete_cookie_finish()` to get the result of the operation.
          * @param cookie the {@link Soup.Cookie} to be deleted
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.20
          */
         delete_cookie(cookie: Soup.Cookie, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
@@ -3315,6 +3352,7 @@ export namespace WebKit2 {
          * @param cookie the {@link Soup.Cookie} to be deleted
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.20
          */
         delete_cookie(cookie: Soup.Cookie, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -3326,6 +3364,7 @@ export namespace WebKit2 {
          * @param cookie the {@link Soup.Cookie} to be deleted
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.20
          */
         delete_cookie(cookie: Soup.Cookie, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
@@ -3333,12 +3372,14 @@ export namespace WebKit2 {
          * Finish an asynchronous operation started with `webkit_cookie_manager_delete_cookie()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns `true` if the cookie was deleted or `false` in case of error.
+         * @since 2.20
          */
         delete_cookie_finish(result: Gio.AsyncResult): boolean;
 
         /**
          * Remove all cookies of `cookie_manager` for the given `domain`.
          * @param domain a domain name
+         * @deprecated since 2.16: Use `webkit_website_data_manager_remove()` instead.
          */
         delete_cookies_for_domain(domain: string): void;
 
@@ -3396,6 +3437,7 @@ export namespace WebKit2 {
          * When the operation is finished, `callback` will be called. You can then call
          * `webkit_cookie_manager_get_all_cookies_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.42
          */
         get_all_cookies(cancellable: Gio.Cancellable | null): globalThis.Promise<Soup.Cookie[]>;
 
@@ -3406,6 +3448,7 @@ export namespace WebKit2 {
          * `webkit_cookie_manager_get_all_cookies_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback (closure user_data): a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.42
          */
         get_all_cookies(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -3416,6 +3459,7 @@ export namespace WebKit2 {
          * `webkit_cookie_manager_get_all_cookies_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback (closure user_data): a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.42
          */
         get_all_cookies(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Soup.Cookie[]> | void;
 
@@ -3426,6 +3470,7 @@ export namespace WebKit2 {
          * with `g_list_free_full()` and `soup_cookie_free()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns A {@link GLib.List} of {@link Soup.Cookie} instances.
+         * @since 2.42
          */
         get_all_cookies_finish(result: Gio.AsyncResult): Soup.Cookie[];
 
@@ -3439,6 +3484,7 @@ export namespace WebKit2 {
          * `webkit_cookie_manager_get_cookies_finish()` to get the result of the operation.
          * @param uri the URI associated to the cookies to be retrieved
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.20
          */
         get_cookies(uri: string, cancellable: Gio.Cancellable | null): globalThis.Promise<Soup.Cookie[]>;
 
@@ -3453,6 +3499,7 @@ export namespace WebKit2 {
          * @param uri the URI associated to the cookies to be retrieved
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.20
          */
         get_cookies(uri: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -3467,6 +3514,7 @@ export namespace WebKit2 {
          * @param uri the URI associated to the cookies to be retrieved
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.20
          */
         get_cookies(uri: string, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Soup.Cookie[]> | void;
 
@@ -3477,6 +3525,7 @@ export namespace WebKit2 {
          * with `g_list_free_full()` and `soup_cookie_free()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns A {@link GLib.List} of {@link Soup.Cookie} instances.
+         * @since 2.20
          */
         get_cookies_finish(result: Gio.AsyncResult): Soup.Cookie[];
 
@@ -3486,6 +3535,7 @@ export namespace WebKit2 {
          * When the operation is finished, `callback` will be called. You can then call
          * `webkit_cookie_manager_get_domains_with_cookies_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @deprecated since 2.16: Use `webkit_website_data_manager_fetch()` instead.
          */
         get_domains_with_cookies(cancellable: Gio.Cancellable | null): globalThis.Promise<string[]>;
 
@@ -3496,6 +3546,7 @@ export namespace WebKit2 {
          * `webkit_cookie_manager_get_domains_with_cookies_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @deprecated since 2.16: Use `webkit_website_data_manager_fetch()` instead.
          */
         get_domains_with_cookies(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -3506,6 +3557,7 @@ export namespace WebKit2 {
          * `webkit_cookie_manager_get_domains_with_cookies_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @deprecated since 2.16: Use `webkit_website_data_manager_fetch()` instead.
          */
         get_domains_with_cookies(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<string[]> | void;
 
@@ -3516,6 +3568,7 @@ export namespace WebKit2 {
          * be released with `g_strfreev()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns A `null` terminated array of domain names    or `null` in case of error.
+         * @deprecated since 2.16: Use `webkit_website_data_manager_fetch_finish()` instead.
          */
         get_domains_with_cookies_finish(result: Gio.AsyncResult): string[];
 
@@ -3526,6 +3579,7 @@ export namespace WebKit2 {
          * `webkit_cookie_manager_replace_cookies_finish()` to get the result of the operation.
          * @param cookies a {@link GLib.List} of {@link Soup.Cookie} to be added
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.42
          */
         replace_cookies(cookies: Soup.Cookie[], cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
@@ -3537,6 +3591,7 @@ export namespace WebKit2 {
          * @param cookies a {@link GLib.List} of {@link Soup.Cookie} to be added
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback (closure user_data): a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.42
          */
         replace_cookies(cookies: Soup.Cookie[], cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -3548,6 +3603,7 @@ export namespace WebKit2 {
          * @param cookies a {@link GLib.List} of {@link Soup.Cookie} to be added
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback (closure user_data): a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.42
          */
         replace_cookies(cookies: Soup.Cookie[], cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
@@ -3555,6 +3611,7 @@ export namespace WebKit2 {
          * Finish an asynchronous operation started with `webkit_cookie_manager_replace_cookies()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns `true` if the cookies were added or `false` in case of error.
+         * @since 2.42
          */
         replace_cookies_finish(result: Gio.AsyncResult): boolean;
 
@@ -3856,6 +3913,7 @@ export namespace WebKit2 {
          * which determines whether the download will overwrite an existing file on
          * disk, or if it will fail if the destination already exists.
          * @returns the current value of the {@link WebKit2.Download.allow_overwrite} property
+         * @since 2.6
          */
         get_allow_overwrite(): boolean;
 
@@ -3926,6 +3984,7 @@ export namespace WebKit2 {
          * the download may overwrite an existing file on disk, or if it will fail if
          * the destination already exists.
          * @param allowed the new value for the {@link WebKit2.Download.allow_overwrite} property
+         * @since 2.6
          */
         set_allow_overwrite(allowed: boolean): void;
 
@@ -4038,36 +4097,42 @@ export namespace WebKit2 {
          * typing attributes are considered active only when they are
          * present throughout the selection.
          * @returns a bitmask of {@link WebKit2.EditorTypingAttributes} flags
+         * @since 2.10
          */
         get_typing_attributes(): number;
 
         /**
          * Gets whether a copy command can be issued.
          * @returns `true` if copy is currently available
+         * @since 2.20
          */
         is_copy_available(): boolean;
 
         /**
          * Gets whether a cut command can be issued.
          * @returns `true` if cut is currently available
+         * @since 2.20
          */
         is_cut_available(): boolean;
 
         /**
          * Gets whether a paste command can be issued.
          * @returns `true` if paste is currently available
+         * @since 2.20
          */
         is_paste_available(): boolean;
 
         /**
          * Gets whether a redo command can be issued.
          * @returns `true` if redo is currently available
+         * @since 2.20
          */
         is_redo_available(): boolean;
 
         /**
          * Gets whether an undo command can be issued.
          * @returns `true` if undo is currently available
+         * @since 2.20
          */
         is_undo_available(): boolean;
     }
@@ -4718,6 +4783,7 @@ export namespace WebKit2 {
          * contains multiple text input elements with the same name, so this
          * function does not reliably return all text fields.
          * @returns a {@link GLib.HashTable} with the form    text fields, or `null` if the form doesn't contain text fields.
+         * @deprecated since 2.20.: Use `webkit_form_submission_request_list_text_fields()` instead.
          */
         get_text_fields(): never | null;
 
@@ -4731,6 +4797,7 @@ export namespace WebKit2 {
          * If this function returns `false`, then both `field_names` and
          * `field_values` will be empty.
          * @returns `true` if the form contains text fields, or `false` otherwise
+         * @since 2.20
          */
         list_text_fields(): [boolean, string[] | null, string[] | null];
 
@@ -4843,18 +4910,21 @@ export namespace WebKit2 {
         /**
          * Notify `manager` that determining the position failed.
          * @param error_message the error message
+         * @since 2.26
          */
         failed(error_message: string): void;
 
         /**
          * Get whether high accuracy is enabled.
          * @returns Whether the setting is enabled.
+         * @since 2.26
          */
         get_enable_high_accuracy(): boolean;
 
         /**
          * Notify `manager` that position has been updated to `position`.
          * @param position a {@link WebKit2.GeolocationPosition}
+         * @since 2.26
          */
         update_position(position: GeolocationPosition): void;
     }
@@ -5158,6 +5228,7 @@ export namespace WebKit2 {
          * Gets whether {@link WebKit2.HitTestResultContext.SELECTION} flag is present in
          * {@link WebKit2.HitTestResult.context}.
          * @returns `true` if there's a selected element at the coordinates of the `hit_test_result`,    or `false` otherwise
+         * @since 2.8
          */
         context_is_selection(): boolean;
 
@@ -5352,6 +5423,7 @@ export namespace WebKit2 {
          * If `true` is returned, then no further processing should be
          * done for the key event.
          * @param key_event the key event to filter
+         * @since 2.28
          * @virtual
          */
         vfunc_filter_key_event(key_event: Gdk.EventKey): boolean;
@@ -5361,6 +5433,7 @@ export namespace WebKit2 {
          * 
          * Get the current pre-edit string for the `context`, and a list of WebKitInputMethodUnderline to apply to the string.
          * The string will be displayed inserted at `cursor_offset`.
+         * @since 2.28
          * @virtual
          */
         vfunc_get_preedit(): [string, InputMethodUnderline[] | null, number];
@@ -5371,18 +5444,21 @@ export namespace WebKit2 {
          * @param y the y coordinate of cursor location
          * @param width the width of cursor area
          * @param height the height of cursor area
+         * @since 2.28
          * @virtual
          */
         vfunc_notify_cursor_area(x: number, y: number, width: number, height: number): void;
 
         /**
          * Notify `context` that input associated has gained focus.
+         * @since 2.28
          * @virtual
          */
         vfunc_notify_focus_in(): void;
 
         /**
          * Notify `context` that input associated has lost focus.
+         * @since 2.28
          * @virtual
          */
         vfunc_notify_focus_out(): void;
@@ -5395,6 +5471,7 @@ export namespace WebKit2 {
          * @param length the length of `text`, or -1 if `text` is nul-terminated
          * @param cursor_index the byte index of the insertion cursor within `text`.
          * @param selection_index the byte index of the selection cursor within `text`.
+         * @since 2.28
          * @virtual
          */
         vfunc_notify_surrounding(text: string, length: number, cursor_index: number, selection_index: number): void;
@@ -5418,6 +5495,7 @@ export namespace WebKit2 {
          * Reset the `context`.
          * 
          * This will typically cause the input to clear the preedit state.
+         * @since 2.28
          * @virtual
          */
         vfunc_reset(): void;
@@ -5425,6 +5503,7 @@ export namespace WebKit2 {
         /**
          * Set whether `context` should enable preedit to display feedback.
          * @param enabled whether to enable preedit
+         * @since 2.28
          * @virtual
          */
         vfunc_set_enable_preedit(enabled: boolean): void;
@@ -5437,18 +5516,21 @@ export namespace WebKit2 {
          * done for the key event.
          * @param key_event the key event to filter
          * @returns `true` if the key event was handled, or `false` otherwise
+         * @since 2.28
          */
         filter_key_event(key_event: Gdk.EventKey): boolean;
 
         /**
          * Get the value of the {@link WebKit2.InputMethodContext.input_hints} property.
          * @returns the {@link WebKit2.InputHints} of the input associated with `context`
+         * @since 2.28
          */
         get_input_hints(): InputHints;
 
         /**
          * Get the value of the {@link WebKit2.InputMethodContext.input_purpose} property.
          * @returns the {@link WebKit2.InputPurpose} of the input associated with `context`
+         * @since 2.28
          */
         get_input_purpose(): InputPurpose;
 
@@ -5457,6 +5539,7 @@ export namespace WebKit2 {
          * 
          * Get the current pre-edit string for the `context`, and a list of WebKitInputMethodUnderline to apply to the string.
          * The string will be displayed inserted at `cursor_offset`.
+         * @since 2.28
          */
         get_preedit(): [string, InputMethodUnderline[] | null, number];
 
@@ -5466,16 +5549,19 @@ export namespace WebKit2 {
          * @param y the y coordinate of cursor location
          * @param width the width of cursor area
          * @param height the height of cursor area
+         * @since 2.28
          */
         notify_cursor_area(x: number, y: number, width: number, height: number): void;
 
         /**
          * Notify `context` that input associated has gained focus.
+         * @since 2.28
          */
         notify_focus_in(): void;
 
         /**
          * Notify `context` that input associated has lost focus.
+         * @since 2.28
          */
         notify_focus_out(): void;
 
@@ -5487,6 +5573,7 @@ export namespace WebKit2 {
          * @param length the length of `text`, or -1 if `text` is nul-terminated
          * @param cursor_index the byte index of the insertion cursor within `text`.
          * @param selection_index the byte index of the selection cursor within `text`.
+         * @since 2.28
          */
         notify_surrounding(text: string, length: number, cursor_index: number, selection_index: number): void;
 
@@ -5494,24 +5581,28 @@ export namespace WebKit2 {
          * Reset the `context`.
          * 
          * This will typically cause the input to clear the preedit state.
+         * @since 2.28
          */
         reset(): void;
 
         /**
          * Set whether `context` should enable preedit to display feedback.
          * @param enabled whether to enable preedit
+         * @since 2.28
          */
         set_enable_preedit(enabled: boolean): void;
 
         /**
          * Set the value of the {@link WebKit2.InputMethodContext.input_hints} property.
          * @param hints a {@link WebKit2.InputHints}
+         * @since 2.28
          */
         set_input_hints(hints: InputHints): void;
 
         /**
          * Set the value of the {@link WebKit2.InputMethodContext.input_purpose} property.
          * @param purpose a {@link WebKit2.InputPurpose}
+         * @since 2.28
          */
         set_input_purpose(purpose: InputPurpose): void;
     }
@@ -5568,6 +5659,8 @@ export namespace WebKit2 {
         /**
          * This function returns an empty string.
          * @returns an empty string
+         * @since 2.10
+         * @deprecated since 2.40
          */
         get_description(): string;
 
@@ -5840,36 +5933,42 @@ export namespace WebKit2 {
         /**
          * Gets the value of the {@link WebKit2.NavigationPolicyDecision.frame_name} property.
          * @returns The name of the new frame this navigation action targets or `null`
+         * @deprecated since 2.40: Use `webkit_navigation_policy_decision_get_navigation_action()` instead.
          */
         get_frame_name(): string;
 
         /**
          * Gets the value of the {@link WebKit2.NavigationPolicyDecision.modifiers} property.
          * @returns The modifiers active if this decision was triggered by a mouse event
+         * @deprecated since 2.6: Use `webkit_navigation_policy_decision_get_navigation_action()` instead.
          */
         get_modifiers(): number;
 
         /**
          * Gets the value of the {@link WebKit2.NavigationPolicyDecision.mouse_button} property.
          * @returns The mouse button used if this decision was triggered by a mouse event or 0 otherwise
+         * @deprecated since 2.6: Use `webkit_navigation_policy_decision_get_navigation_action()` instead.
          */
         get_mouse_button(): number;
 
         /**
          * Gets the value of the {@link WebKit2.NavigationPolicyDecision.navigation_action} property.
          * @returns The {@link WebKit2.NavigationAction} triggering this policy decision.
+         * @since 2.6
          */
         get_navigation_action(): NavigationAction;
 
         /**
          * Gets the value of the {@link WebKit2.NavigationPolicyDecision.navigation_type} property.
          * @returns The type of navigation triggering this policy decision.
+         * @deprecated since 2.6: Use `webkit_navigation_policy_decision_get_navigation_action()` instead.
          */
         get_navigation_type(): NavigationType;
 
         /**
          * Gets the value of the {@link WebKit2.NavigationPolicyDecision.request} property.
          * @returns The URI request that is associated with this navigation
+         * @deprecated since 2.6: Use `webkit_navigation_policy_decision_get_navigation_action()` instead.
          */
         get_request(): URIRequest;
     }
@@ -5984,35 +6083,41 @@ export namespace WebKit2 {
          * 
          * This will emit the
          * {@link WebKit2.Notification.SignalSignatures.clicked | WebKit2.Notification::clicked} signal.
+         * @since 2.12
          */
         clicked(): void;
 
         /**
          * Closes the notification.
+         * @since 2.8
          */
         close(): void;
 
         /**
          * Obtains the body for the notification.
          * @returns the body for the notification
+         * @since 2.8
          */
         get_body(): string;
 
         /**
          * Obtains the unique id for the notification.
          * @returns the unique id for the notification
+         * @since 2.8
          */
         get_id(): number;
 
         /**
          * Obtains the tag identifier for the notification.
          * @returns the tag for the notification
+         * @since 2.16
          */
         get_tag(): string | null;
 
         /**
          * Obtains the title for the notification.
          * @returns the title for the notification
+         * @since 2.8
          */
         get_title(): string;
     }
@@ -6158,6 +6263,7 @@ export namespace WebKit2 {
          * `webkit_option_menu_close()` after activating an item, calling this function again will have no
          * effect.
          * @param index the index of the item
+         * @since 2.18
          */
         activate_item(index: number): void;
 
@@ -6169,6 +6275,7 @@ export namespace WebKit2 {
          * menu has been closed. If the menu is closed and neither `webkit_option_menu_select_item()`
          * nor `webkit_option_menu_activate_item()` have been called, the element value remains
          * unchanged.
+         * @since 2.18
          */
         close(): void;
 
@@ -6177,6 +6284,7 @@ export namespace WebKit2 {
          * If `menu` was not triggered by a user interaction, like a mouse click,
          * `null` is returned.
          * @returns the menu event or `null`.
+         * @since 2.40
          */
         get_event(): Gdk.Event;
 
@@ -6184,12 +6292,14 @@ export namespace WebKit2 {
          * Returns the {@link WebKit2.OptionMenuItem} at `index` in `menu`.
          * @param index the index of the item
          * @returns a {@link WebKit2.OptionMenuItem} of `menu`.
+         * @since 2.18
          */
         get_item(index: number): OptionMenuItem;
 
         /**
          * Gets the length of the `menu`.
          * @returns the number of {@link WebKit2.OptionMenuItem}<!-- -->s in `menu`
+         * @since 2.18
          */
         get_n_items(): number;
 
@@ -6201,6 +6311,7 @@ export namespace WebKit2 {
          * explicitly activate the item with `webkit_option_menu_select_item()` or close the menu with
          * `webkit_option_menu_close()` in which case the currently selected item will be activated.
          * @param index the index of the item
+         * @since 2.18
          */
         select_item(index: number): void;
     }
@@ -6260,6 +6371,7 @@ export namespace WebKit2 {
         /**
          * Obtain the plugin description.
          * @returns description, as a string.
+         * @deprecated since 2.32
          */
         get_description(): string | null;
 
@@ -6269,18 +6381,21 @@ export namespace WebKit2 {
          * Get information about MIME types handled by the plugin,
          * as a list of {@link WebKit2.MimeInfo}.
          * @returns a {@link GLib.List} of {@link WebKit2.MimeInfo}.
+         * @deprecated since 2.32
          */
         get_mime_info_list(): MimeInfo[];
 
         /**
          * Obtain the plugin name.
          * @returns name, as a string.
+         * @deprecated since 2.32
          */
         get_name(): string | null;
 
         /**
          * Obtain the absolute path where the plugin is installed.
          * @returns path, as a string.
+         * @deprecated since 2.32
          */
         get_path(): string | null;
     }
@@ -6442,6 +6557,7 @@ export namespace WebKit2 {
          * be accepted under the priviso no movies are allowed to autoplay. The
          * autoplay policy in this case would be set in the `policies`.
          * @param policies a {@link WebKit2.WebsitePolicies}
+         * @since 2.30
          */
         use_with_policies(policies: WebsitePolicies): void;
     }
@@ -6572,6 +6688,8 @@ export namespace WebKit2 {
          * Return the value of {@link WebKit2.PrintCustomWidget.title} property for the given
          * `print_custom_widget` object.
          * @returns Title of the `print_custom_widget`.
+         * @since 2.16
+         * @deprecated since 2.40
          */
         get_title(): string;
 
@@ -6584,6 +6702,8 @@ export namespace WebKit2 {
          * callbacks, but it will be `null` if called after the
          * {@link WebKit2.PrintCustomWidget.SignalSignatures.apply | WebKit2.PrintCustomWidget::apply} signal is emitted.
          * @returns a {@link Gtk.Widget}.
+         * @since 2.16
+         * @deprecated since 2.40
          */
         get_widget(): Gtk.Widget;
     }
@@ -6883,6 +7003,7 @@ export namespace WebKit2 {
         /**
          * Gets whether the request is the main frame main resource
          * @returns `true` if the request is the main frame main resouce or `false` otherwise
+         * @since 2.40
          */
         is_main_frame_main_resource(): boolean;
 
@@ -6892,6 +7013,7 @@ export namespace WebKit2 {
          * Gets whether the MIME type of the response can be displayed in the {@link WebKit2.WebView}
          * that triggered this policy decision request. See also `webkit_web_view_can_show_mime_type()`.
          * @returns `true` if the MIME type of the response is supported or `false` otherwise
+         * @since 2.4
          */
         is_mime_type_supported(): boolean;
     }
@@ -8549,6 +8671,7 @@ export namespace WebKit2 {
          * in points to font size values in pixels when setting the font size properties
          * of {@link WebKit2.Settings}.
          * @param points the font size in points to convert to pixels
+         * @since 2.20
          */
         static font_size_to_pixels(points: number): number;
 
@@ -8559,6 +8682,7 @@ export namespace WebKit2 {
          * in pixels to font size values in points when getting the font size properties
          * of {@link WebKit2.Settings}.
          * @param pixels the font size in pixels to convert to points
+         * @since 2.20
          */
         static font_size_to_points(pixels: number): number;
 
@@ -8572,6 +8696,7 @@ export namespace WebKit2 {
          * Note that most applications should use
          * {@link Settings.get_development_features} and
          * {@link Settings.get_experimental_features} instead.
+         * @since 2.42
          */
         static get_all_features(): FeatureList;
 
@@ -8583,6 +8708,7 @@ export namespace WebKit2 {
          * web and WebKit developers might find useful, but in general should
          * *not* be exposed to end users; see {@link FeatureStatus} for
          * more details.
+         * @since 2.42
          */
         static get_development_features(): FeatureList;
 
@@ -8593,6 +8719,7 @@ export namespace WebKit2 {
          * {@link Settings.get_all_features}, and includes those which
          * certain applications may want to expose to end users; see
          * {@link FeatureStatus} for more details.
+         * @since 2.42
          */
         static get_experimental_features(): FeatureList;
 
@@ -8609,12 +8736,14 @@ export namespace WebKit2 {
          * @param key_file a {@link GLib.KeyFile}
          * @param group_name Name of the group to read from `key_file`
          * @returns `true` if the settings were correctly applied or `false` on error.
+         * @since 2.46
          */
         apply_from_key_file(key_file: GLib.KeyFile, group_name: string): boolean;
 
         /**
          * Get the {@link WebKit2.Settings.allow_file_access_from_file_urls} property.
          * @returns `true` If file access from file URLs is allowed or `false` otherwise.
+         * @since 2.10
          */
         get_allow_file_access_from_file_urls(): boolean;
 
@@ -8627,12 +8756,14 @@ export namespace WebKit2 {
         /**
          * Get the {@link WebKit2.Settings.allow_top_navigation_to_data_urls} property.
          * @returns `true` If navigation to data URLs from the top frame is allowed or `false`\ otherwise.
+         * @since 2.28
          */
         get_allow_top_navigation_to_data_urls(): boolean;
 
         /**
          * Get the {@link WebKit2.Settings.allow_universal_access_from_file_urls} property.
          * @returns `true` If universal access from file URLs is allowed or `false` otherwise.
+         * @since 2.14
          */
         get_allow_universal_access_from_file_urls(): boolean;
 
@@ -8675,6 +8806,7 @@ export namespace WebKit2 {
         /**
          * Get the {@link WebKit2.Settings.disable_web_security} property.
          * @returns `true` If web security support is disabled or `false` otherwise.
+         * @since 2.40
          */
         get_disable_web_security(): boolean;
 
@@ -8687,18 +8819,22 @@ export namespace WebKit2 {
         /**
          * Get the {@link WebKit2.Settings.enable_2d_canvas_acceleration} property.
          * @returns `true` if 2D canvas acceleration is enabled or `false` otherwise.
+         * @since 2.46
          */
         get_enable_2d_canvas_acceleration(): boolean;
 
         /**
          * Get the {@link WebKit2.Settings.enable_accelerated_2d_canvas} property.
          * @returns `true` if accelerated 2D canvas is enabled or `false` otherwise.
+         * @since 2.2
+         * @deprecated since 2.32.
          */
         get_enable_accelerated_2d_canvas(): boolean;
 
         /**
          * Get the {@link WebKit2.Settings.enable_back_forward_navigation_gestures} property.
          * @returns `true` if horizontal swipe gesture will trigger back-forward navigaiton or `false` otherwise.
+         * @since 2.24
          */
         get_enable_back_forward_navigation_gestures(): boolean;
 
@@ -8717,18 +8853,21 @@ export namespace WebKit2 {
         /**
          * Get the {@link WebKit2.Settings.enable_dns_prefetching} property.
          * @returns `true` If DNS prefetching is enabled or `false` otherwise.
+         * @deprecated since 2.48.
          */
         get_enable_dns_prefetching(): boolean;
 
         /**
          * Get the {@link WebKit2.Settings.enable_encrypted_media} property.
          * @returns `true` if EncryptedMedia support is enabled or `false` otherwise.
+         * @since 2.20
          */
         get_enable_encrypted_media(): boolean;
 
         /**
          * Frame flattening is no longer supported. This function returns `false`.
          * @returns `false`
+         * @deprecated since 2.38
          */
         get_enable_frame_flattening(): boolean;
 
@@ -8753,12 +8892,14 @@ export namespace WebKit2 {
         /**
          * Get the {@link WebKit2.Settings.enable_hyperlink_auditing} property.
          * @returns `true` If hyper link auditing is enabled or `false` otherwise.
+         * @deprecated since 2.50.
          */
         get_enable_hyperlink_auditing(): boolean;
 
         /**
          * Get the {@link WebKit2.Settings.enable_java} property.
          * @returns `false` always.
+         * @deprecated since 2.38.: This function always returns `false`.
          */
         get_enable_java(): boolean;
 
@@ -8771,42 +8912,49 @@ export namespace WebKit2 {
         /**
          * Get the {@link WebKit2.Settings.enable_javascript_markup} property.
          * @returns `true` if JavaScript markup is enabled or `false` otherwise.
+         * @since 2.24
          */
         get_enable_javascript_markup(): boolean;
 
         /**
          * Get the {@link WebKit2.Settings.enable_media} property.
          * @returns `true` if media support is enabled or `false` otherwise.
+         * @since 2.26
          */
         get_enable_media(): boolean;
 
         /**
          * Get the {@link WebKit2.Settings.enable_media_capabilities} property.
          * @returns `true` if MediaCapabilities support is enabled or `false` otherwise.
+         * @since 2.22
          */
         get_enable_media_capabilities(): boolean;
 
         /**
          * Get the {@link WebKit2.Settings.enable_media_stream} property.
          * @returns `true` If mediastream support is enabled or `false` otherwise.
+         * @since 2.4
          */
         get_enable_media_stream(): boolean;
 
         /**
          * Get the {@link WebKit2.Settings.enable_mediasource} property.
          * @returns `true` If MediaSource support is enabled or `false` otherwise.
+         * @since 2.4
          */
         get_enable_mediasource(): boolean;
 
         /**
          * Get the {@link WebKit2.Settings.enable_mock_capture_devices} property.
          * @returns `true` If mock capture devices is enabled or `false` otherwise.
+         * @since 2.24
          */
         get_enable_mock_capture_devices(): boolean;
 
         /**
          * Get the {@link WebKit2.Settings.enable_offline_web_application_cache} property.
          * @returns `false`.
+         * @deprecated since 2.44
          */
         get_enable_offline_web_application_cache(): boolean;
 
@@ -8819,12 +8967,14 @@ export namespace WebKit2 {
         /**
          * Get the {@link WebKit2.Settings.enable_plugins} property.
          * @returns `true` If plugins are enabled or `false` otherwise.
+         * @deprecated since 2.32
          */
         get_enable_plugins(): boolean;
 
         /**
          * Get the {@link WebKit2.Settings.enable_private_browsing} property.
          * @returns `true` If private browsing is enabled or `false` otherwise.
+         * @deprecated since 2.16.: Use {@link WebKit2.WebView.is_ephemeral} or {@link WebKit2.WebContext.is_ephemeral} instead.
          */
         get_enable_private_browsing(): boolean;
 
@@ -8849,6 +8999,7 @@ export namespace WebKit2 {
         /**
          * Get the {@link WebKit2.Settings.enable_spatial_navigation} property.
          * @returns `true` If HTML5 spatial navigation support is enabled or `false` otherwise.
+         * @since 2.2
          */
         get_enable_spatial_navigation(): boolean;
 
@@ -8873,18 +9024,21 @@ export namespace WebKit2 {
         /**
          * Get the {@link Settings.enable_webrtc} property.
          * @returns `true` If WebRTC support is enabled or `false` otherwise.
+         * @since 2.38
          */
         get_enable_webrtc(): boolean;
 
         /**
          * Get the {@link WebKit2.Settings.enable_write_console_messages_to_stdout} property.
          * @returns `true` if writing console messages to stdout is enabled or `false` otherwise.
+         * @since 2.2
          */
         get_enable_write_console_messages_to_stdout(): boolean;
 
         /**
          * The XSS auditor has been removed. This function returns `false`.
          * @returns `false`
+         * @deprecated since 2.38.: This function does nothing.
          */
         get_enable_xss_auditor(): boolean;
 
@@ -8898,12 +9052,14 @@ export namespace WebKit2 {
          * Gets whether a feature is enabled.
          * @param feature the feature to toggle.
          * @returns Whether the feature is enabled.
+         * @since 2.42
          */
         get_feature_enabled(feature: Feature): boolean;
 
         /**
          * Get the {@link WebKit2.Settings.hardware_acceleration_policy} property.
          * @returns a {@link WebKit2.HardwareAccelerationPolicy}
+         * @since 2.16
          */
         get_hardware_acceleration_policy(): HardwareAccelerationPolicy;
 
@@ -8922,6 +9078,7 @@ export namespace WebKit2 {
         /**
          * Setting no longer supported. This function returns `false`.
          * @returns `false`
+         * @deprecated since 2.42
          */
         get_load_icons_ignoring_image_load_setting(): boolean;
 
@@ -8934,6 +9091,7 @@ export namespace WebKit2 {
         /**
          * Gets the {@link WebKit2.Settings.media_content_types_requiring_hardware_support} property.
          * @returns Media content types requiring hardware support, or `null`.
+         * @since 2.30
          */
         get_media_content_types_requiring_hardware_support(): string;
 
@@ -8994,6 +9152,7 @@ export namespace WebKit2 {
         /**
          * Get the {@link Settings.webrtc_udp_ports_range} property.
          * @returns The WebRTC UDP ports range, or `null` if un-set.
+         * @since 2.48
          */
         get_webrtc_udp_ports_range(): string;
 
@@ -9006,6 +9165,7 @@ export namespace WebKit2 {
         /**
          * Set the {@link WebKit2.Settings.allow_file_access_from_file_urls} property.
          * @param allowed Value to be set
+         * @since 2.10
          */
         set_allow_file_access_from_file_urls(allowed: boolean): void;
 
@@ -9018,12 +9178,14 @@ export namespace WebKit2 {
         /**
          * Set the {@link WebKit2.Settings.allow_top_navigation_to_data_urls} property.
          * @param allowed Value to be set
+         * @since 2.28
          */
         set_allow_top_navigation_to_data_urls(allowed: boolean): void;
 
         /**
          * Set the {@link WebKit2.Settings.allow_universal_access_from_file_urls} property.
          * @param allowed Value to be set
+         * @since 2.14
          */
         set_allow_universal_access_from_file_urls(allowed: boolean): void;
 
@@ -9066,6 +9228,7 @@ export namespace WebKit2 {
         /**
          * Set the {@link WebKit2.Settings.disable_web_security} property.
          * @param disabled Value to be set
+         * @since 2.40
          */
         set_disable_web_security(disabled: boolean): void;
 
@@ -9078,18 +9241,22 @@ export namespace WebKit2 {
         /**
          * Set the {@link WebKit2.Settings.enable_2d_canvas_acceleration} property.
          * @param enabled Value to be set
+         * @since 2.46
          */
         set_enable_2d_canvas_acceleration(enabled: boolean): void;
 
         /**
          * Set the {@link WebKit2.Settings.enable_accelerated_2d_canvas} property.
          * @param enabled Value to be set
+         * @since 2.2
+         * @deprecated since 2.32.
          */
         set_enable_accelerated_2d_canvas(enabled: boolean): void;
 
         /**
          * Set the {@link WebKit2.Settings.enable_back_forward_navigation_gestures} property.
          * @param enabled value to be set
+         * @since 2.24
          */
         set_enable_back_forward_navigation_gestures(enabled: boolean): void;
 
@@ -9108,18 +9275,21 @@ export namespace WebKit2 {
         /**
          * Set the {@link WebKit2.Settings.enable_dns_prefetching} property.
          * @param enabled Value to be set
+         * @deprecated since 2.48.
          */
         set_enable_dns_prefetching(enabled: boolean): void;
 
         /**
          * Set the {@link WebKit2.Settings.enable_encrypted_media} property.
          * @param enabled Value to be set
+         * @since 2.20
          */
         set_enable_encrypted_media(enabled: boolean): void;
 
         /**
          * Frame flattening is no longer supported. This function does nothing.
          * @param enabled Value to be set
+         * @deprecated since 2.38
          */
         set_enable_frame_flattening(enabled: boolean): void;
 
@@ -9144,6 +9314,7 @@ export namespace WebKit2 {
         /**
          * Set the {@link WebKit2.Settings.enable_hyperlink_auditing} property.
          * @param enabled Value to be set
+         * @deprecated since 2.50.
          */
         set_enable_hyperlink_auditing(enabled: boolean): void;
 
@@ -9152,6 +9323,7 @@ export namespace WebKit2 {
          * 
          * Deprecated function that does nothing.
          * @param enabled Value to be set
+         * @deprecated since 2.38.: This function does nothing.
          */
         set_enable_java(enabled: boolean): void;
 
@@ -9164,42 +9336,49 @@ export namespace WebKit2 {
         /**
          * Set the {@link WebKit2.Settings.enable_javascript_markup} property.
          * @param enabled Value to be set
+         * @since 2.24
          */
         set_enable_javascript_markup(enabled: boolean): void;
 
         /**
          * Set the {@link WebKit2.Settings.enable_media} property.
          * @param enabled Value to be set
+         * @since 2.26
          */
         set_enable_media(enabled: boolean): void;
 
         /**
          * Set the {@link WebKit2.Settings.enable_media_capabilities} property.
          * @param enabled Value to be set
+         * @since 2.22
          */
         set_enable_media_capabilities(enabled: boolean): void;
 
         /**
          * Set the {@link WebKit2.Settings.enable_media_stream} property.
          * @param enabled Value to be set
+         * @since 2.4
          */
         set_enable_media_stream(enabled: boolean): void;
 
         /**
          * Set the {@link WebKit2.Settings.enable_mediasource} property.
          * @param enabled Value to be set
+         * @since 2.4
          */
         set_enable_mediasource(enabled: boolean): void;
 
         /**
          * Set the {@link WebKit2.Settings.enable_mock_capture_devices} property.
          * @param enabled Value to be set
+         * @since 2.4
          */
         set_enable_mock_capture_devices(enabled: boolean): void;
 
         /**
          * Setting no longer supported. This function does nothing.
          * @param enabled Value to be set
+         * @deprecated since 2.44
          */
         set_enable_offline_web_application_cache(enabled: boolean): void;
 
@@ -9212,12 +9391,14 @@ export namespace WebKit2 {
         /**
          * Set the {@link WebKit2.Settings.enable_plugins} property.
          * @param enabled Value to be set
+         * @deprecated since 2.32
          */
         set_enable_plugins(enabled: boolean): void;
 
         /**
          * Set the {@link WebKit2.Settings.enable_private_browsing} property.
          * @param enabled Value to be set
+         * @deprecated since 2.16.: Use {@link WebKit2.WebView.is_ephemeral} or {@link WebKit2.WebContext.is_ephemeral} instead.
          */
         set_enable_private_browsing(enabled: boolean): void;
 
@@ -9242,6 +9423,7 @@ export namespace WebKit2 {
         /**
          * Set the {@link WebKit2.Settings.enable_spatial_navigation} property.
          * @param enabled Value to be set
+         * @since 2.2
          */
         set_enable_spatial_navigation(enabled: boolean): void;
 
@@ -9268,18 +9450,21 @@ export namespace WebKit2 {
          * 
          * Setting this property to `true` implies the media-stream web-setting will also be enabled.
          * @param enabled Value to be set
+         * @since 2.38
          */
         set_enable_webrtc(enabled: boolean): void;
 
         /**
          * Set the {@link WebKit2.Settings.enable_write_console_messages_to_stdout} property.
          * @param enabled Value to be set
+         * @since 2.2
          */
         set_enable_write_console_messages_to_stdout(enabled: boolean): void;
 
         /**
          * The XSS auditor has been removed. This function does nothing.
          * @param enabled Value to be set
+         * @deprecated since 2.38.: This function does nothing.
          */
         set_enable_xss_auditor(enabled: boolean): void;
 
@@ -9298,12 +9483,14 @@ export namespace WebKit2 {
          * `webkit_feature_get_default_value` as the `enabled` parameter.
          * @param feature the feature to toggle.
          * @param enabled whether the feature will be enabled.
+         * @since 2.42
          */
         set_feature_enabled(feature: Feature, enabled: boolean): void;
 
         /**
          * Set the {@link WebKit2.Settings.hardware_acceleration_policy} property.
          * @param policy a {@link WebKit2.HardwareAccelerationPolicy}
+         * @since 2.16
          */
         set_hardware_acceleration_policy(policy: HardwareAccelerationPolicy): void;
 
@@ -9322,6 +9509,7 @@ export namespace WebKit2 {
         /**
          * Setting no longer supported. This function does nothing.
          * @param enabled Value to be set
+         * @deprecated since 2.42
          */
         set_load_icons_ignoring_image_load_setting(enabled: boolean): void;
 
@@ -9336,6 +9524,7 @@ export namespace WebKit2 {
         /**
          * Set the {@link WebKit2.Settings.media_content_types_requiring_hardware_support} property.
          * @param content_types list of media content types requiring hardware support split by semicolons (:) or `null` to use the default value.
+         * @since 2.30
          */
         set_media_content_types_requiring_hardware_support(content_types: string | null): void;
 
@@ -9407,6 +9596,7 @@ export namespace WebKit2 {
         /**
          * Set the {@link Settings.webrtc_udp_ports_range} property.
          * @param udp_port_range Value to be set
+         * @since 2.48
          */
         set_webrtc_udp_ports_range(udp_port_range: string): void;
 
@@ -9488,6 +9678,7 @@ export namespace WebKit2 {
         /**
          * Get the HTTP method of the {@link WebKit2.URIRequest}.
          * @returns the HTTP method of the {@link WebKit2.URIRequest} or `null` if `request` is not    an HTTP request.
+         * @since 2.12
          */
         get_http_method(): string;
 
@@ -9660,6 +9851,7 @@ export namespace WebKit2 {
         /**
          * Get the HTTP headers of a {@link WebKit2.URIResponse} as a {@link Soup.MessageHeaders}.
          * @returns a {@link Soup.MessageHeaders} with the HTTP headers of `response`    or `null` if `response` is not an HTTP response.
+         * @since 2.6
          */
         get_http_headers(): Soup.MessageHeaders;
 
@@ -9761,30 +9953,35 @@ export namespace WebKit2 {
         /**
          * Finish a {@link WebKit2.URISchemeRequest} with a {@link GLib.Error}.
          * @param error a {@link GLib.Error} that will be passed to the {@link WebKit2.WebView}
+         * @since 2.2
          */
         finish_error(error: GLib.Error): void;
 
         /**
          * Finish a {@link WebKit2.URISchemeRequest} by returning a {@link WebKit2.URISchemeResponse}
          * @param response a {@link WebKit2.URISchemeResponse}
+         * @since 2.36
          */
         finish_with_response(response: URISchemeResponse): void;
 
         /**
          * Get the request body.
          * @returns (nullable): the body of the `request`.
+         * @since 2.40
          */
         get_http_body(): Gio.InputStream;
 
         /**
          * Get the {@link Soup.MessageHeaders} of the request.
          * @returns the {@link Soup.MessageHeaders} of the `request`.
+         * @since 2.36
          */
         get_http_headers(): Soup.MessageHeaders;
 
         /**
          * Get the HTTP method of the `request`.
          * @returns the HTTP method of the `request`
+         * @since 2.36
          */
         get_http_method(): string;
 
@@ -9904,6 +10101,7 @@ export namespace WebKit2 {
         /**
          * Sets the content type for the `response`
          * @param content_type the content type of the stream
+         * @since 2.36
          */
         set_content_type(content_type: string): void;
 
@@ -9913,6 +10111,7 @@ export namespace WebKit2 {
          * `headers` need to be of the type {@link Soup.MessageHeadersType.RESPONSE}.
          * Any existing headers will be overwritten.
          * @param headers the HTTP headers to be set
+         * @since 2.36
          */
         set_http_headers(headers: Soup.MessageHeaders): void;
 
@@ -9922,6 +10121,7 @@ export namespace WebKit2 {
          * If `status_code` is a known value and `reason_phrase` is `null`, the `reason_phrase` will be set automatically.
          * @param status_code the HTTP status code to be returned
          * @param reason_phrase a reason phrase
+         * @since 2.36
          */
         set_status(status_code: number, reason_phrase: string | null): void;
     }
@@ -10007,6 +10207,7 @@ export namespace WebKit2 {
          * `webkit_user_content_filter_store_fetch_identifiers_finish()` to obtain the list of
          * filter identifiers.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.24
          */
         fetch_identifiers(cancellable: Gio.Cancellable | null): globalThis.Promise<string[]>;
 
@@ -10018,6 +10219,7 @@ export namespace WebKit2 {
          * filter identifiers.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the removal is completed
+         * @since 2.24
          */
         fetch_identifiers(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -10029,6 +10231,7 @@ export namespace WebKit2 {
          * filter identifiers.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the removal is completed
+         * @since 2.24
          */
         fetch_identifiers(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<string[]> | void;
 
@@ -10039,12 +10242,14 @@ export namespace WebKit2 {
          * started with `webkit_user_content_filter_store_fetch_identifiers()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns a `null`-terminated list of filter identifiers.
+         * @since 2.24
          */
         fetch_identifiers_finish(result: Gio.AsyncResult): string[];
 
         /**
          * Gets the storage path for user content filters.
          * @returns path, as a string.
+         * @since 2.24
          */
         get_path(): string;
 
@@ -10058,6 +10263,7 @@ export namespace WebKit2 {
          * `webkit_user_content_filter_store_load_finish()` to obtain the resulting filter.
          * @param identifier a filter identifier
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.24
          */
         load(identifier: string, cancellable: Gio.Cancellable | null): globalThis.Promise<UserContentFilter>;
 
@@ -10072,6 +10278,7 @@ export namespace WebKit2 {
          * @param identifier a filter identifier
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the load is completed
+         * @since 2.24
          */
         load(identifier: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -10086,6 +10293,7 @@ export namespace WebKit2 {
          * @param identifier a filter identifier
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the load is completed
+         * @since 2.24
          */
         load(identifier: string, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<UserContentFilter> | void;
 
@@ -10094,6 +10302,7 @@ export namespace WebKit2 {
          * `webkit_user_content_filter_store_load()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link WebKit2.UserContentFilter}, or `null` if the load failed
+         * @since 2.24
          */
         load_finish(result: Gio.AsyncResult): UserContentFilter;
 
@@ -10105,6 +10314,7 @@ export namespace WebKit2 {
          * successful.
          * @param identifier a filter identifier
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.24
          */
         remove(identifier: string, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
@@ -10117,6 +10327,7 @@ export namespace WebKit2 {
          * @param identifier a filter identifier
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the removal is completed
+         * @since 2.24
          */
         remove(identifier: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -10129,6 +10340,7 @@ export namespace WebKit2 {
          * @param identifier a filter identifier
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the removal is completed
+         * @since 2.24
          */
         remove(identifier: string, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
@@ -10137,6 +10349,7 @@ export namespace WebKit2 {
          * `webkit_user_content_filter_store_remove()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns whether the removal was successful
+         * @since 2.24
          */
         remove_finish(result: Gio.AsyncResult): boolean;
 
@@ -10156,6 +10369,7 @@ export namespace WebKit2 {
          * @param identifier a string used to identify the saved filter
          * @param source {@link GLib.Bytes} containing the rule set in JSON format
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.24
          */
         save(identifier: string, source: GLib.Bytes | Uint8Array, cancellable: Gio.Cancellable | null): globalThis.Promise<UserContentFilter>;
 
@@ -10176,6 +10390,7 @@ export namespace WebKit2 {
          * @param source {@link GLib.Bytes} containing the rule set in JSON format
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when saving is completed
+         * @since 2.24
          */
         save(identifier: string, source: GLib.Bytes | Uint8Array, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -10196,6 +10411,7 @@ export namespace WebKit2 {
          * @param source {@link GLib.Bytes} containing the rule set in JSON format
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when saving is completed
+         * @since 2.24
          */
         save(identifier: string, source: GLib.Bytes | Uint8Array, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<UserContentFilter> | void;
 
@@ -10204,6 +10420,7 @@ export namespace WebKit2 {
          * `webkit_user_content_filter_store_save()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link WebKit2.UserContentFilter}, or `null` if saving failed
+         * @since 2.24
          */
         save_finish(result: Gio.AsyncResult): UserContentFilter;
 
@@ -10219,6 +10436,7 @@ export namespace WebKit2 {
          * @param identifier a string used to identify the saved filter
          * @param file a {@link Gio.File} containing the rule set in JSON format
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.24
          */
         save_from_file(identifier: string, file: Gio.File, cancellable: Gio.Cancellable | null): globalThis.Promise<UserContentFilter>;
 
@@ -10235,6 +10453,7 @@ export namespace WebKit2 {
          * @param file a {@link Gio.File} containing the rule set in JSON format
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when saving is completed
+         * @since 2.24
          */
         save_from_file(identifier: string, file: Gio.File, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -10251,6 +10470,7 @@ export namespace WebKit2 {
          * @param file a {@link Gio.File} containing the rule set in JSON format
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when saving is completed
+         * @since 2.24
          */
         save_from_file(identifier: string, file: Gio.File, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<UserContentFilter> | void;
 
@@ -10259,6 +10479,7 @@ export namespace WebKit2 {
          * `webkit_user_content_filter_store_save_from_file()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link WebKit2.UserContentFilter}, or `null` if saving failed.
+         * @since 2.24
          */
         save_from_file_finish(result: Gio.AsyncResult): UserContentFilter;
     }
@@ -10363,6 +10584,7 @@ export namespace WebKit2 {
          * 
          * Filters need to be saved and loaded from {@link WebKit2.UserContentFilterStore}.
          * @param filter A {@link WebKit2.UserContentFilter}
+         * @since 2.24
          */
         add_filter(filter: UserContentFilter): void;
 
@@ -10372,6 +10594,7 @@ export namespace WebKit2 {
          * The same {@link WebKit2.UserScript} can be reused with multiple
          * {@link WebKit2.UserContentManager} instances.
          * @param script A {@link WebKit2.UserScript}
+         * @since 2.6
          */
         add_script(script: UserScript): void;
 
@@ -10381,6 +10604,7 @@ export namespace WebKit2 {
          * The same {@link WebKit2.UserStyleSheet} can be reused with multiple
          * {@link WebKit2.UserContentManager} instances.
          * @param stylesheet A {@link WebKit2.UserStyleSheet}
+         * @since 2.6
          */
         add_style_sheet(stylesheet: UserStyleSheet): void;
 
@@ -10408,6 +10632,7 @@ export namespace WebKit2 {
          * name has been already registered before.
          * @param name Name of the script message channel
          * @returns `true` if message handler was registered successfully, or `false` otherwise.
+         * @since 2.8
          */
         register_script_message_handler(name: string): boolean;
 
@@ -10422,6 +10647,7 @@ export namespace WebKit2 {
          * @param name Name of the script message channel
          * @param world_name the name of a `WebKitScriptWorld`
          * @returns `true` if message handler was registered successfully, or `false` otherwise.
+         * @since 2.22
          */
         register_script_message_handler_in_world(name: string, world_name: string): boolean;
 
@@ -10444,11 +10670,13 @@ export namespace WebKit2 {
          * @param name Name of the script message channel
          * @param world_name the name of a `WebKitScriptWorld`
          * @returns `true` if message handler was registered successfully, or `false` otherwise.
+         * @since 2.40
          */
         register_script_message_handler_with_reply(name: string, world_name: string | null): boolean;
 
         /**
          * Removes all content filters from the given {@link WebKit2.UserContentManager}.
+         * @since 2.24
          */
         remove_all_filters(): void;
 
@@ -10456,11 +10684,13 @@ export namespace WebKit2 {
          * Removes all user scripts from the given {@link WebKit2.UserContentManager}
          * 
          * See also `webkit_user_content_manager_remove_script()`.
+         * @since 2.6
          */
         remove_all_scripts(): void;
 
         /**
          * Removes all user style sheets from the given {@link WebKit2.UserContentManager}.
+         * @since 2.6
          */
         remove_all_style_sheets(): void;
 
@@ -10479,6 +10709,7 @@ export namespace WebKit2 {
          * identifier of a {@link WebKit2.UserContentFilter} as returned by
          * `webkit_user_content_filter_get_identifier()`.
          * @param filter_id Filter identifier
+         * @since 2.26
          */
         remove_filter_by_id(filter_id: string): void;
 
@@ -10487,6 +10718,7 @@ export namespace WebKit2 {
          * 
          * See also `webkit_user_content_manager_remove_all_scripts()`.
          * @param script A {@link WebKit2.UserScript}
+         * @since 2.32
          */
         remove_script(script: UserScript): void;
 
@@ -10495,6 +10727,7 @@ export namespace WebKit2 {
          * 
          * See also `webkit_user_content_manager_remove_all_style_sheets()`.
          * @param stylesheet A {@link WebKit2.UserStyleSheet}
+         * @since 2.32
          */
         remove_style_sheet(stylesheet: UserStyleSheet): void;
 
@@ -10508,6 +10741,7 @@ export namespace WebKit2 {
          * 
          * See also `webkit_user_content_manager_register_script_message_handler()`.
          * @param name Name of the script message channel
+         * @since 2.8
          */
         unregister_script_message_handler(name: string): void;
 
@@ -10522,6 +10756,7 @@ export namespace WebKit2 {
          * See also `webkit_user_content_manager_register_script_message_handler_in_world()`.
          * @param name Name of the script message channel
          * @param world_name the name of a `WebKitScriptWorld`
+         * @since 2.22
          */
         unregister_script_message_handler_in_world(name: string, world_name: string): void;
     }
@@ -10741,18 +10976,21 @@ export namespace WebKit2 {
         /**
          * Get the `message` list of file descritpor.
          * @returns the message list of file descriptors
+         * @since 2.28
          */
         get_fd_list(): Gio.UnixFDList | null;
 
         /**
          * Get the `message` name.
          * @returns the message name
+         * @since 2.28
          */
         get_name(): string;
 
         /**
          * Get the `message` parameters.
          * @returns the message parameters
+         * @since 2.28
          */
         get_parameters(): GLib.Variant | null;
 
@@ -10763,6 +11001,7 @@ export namespace WebKit2 {
          * You can only send a reply to a {@link WebKit2.UserMessage} that has been
          * received.
          * @param reply a {@link WebKit2.UserMessage} to send as reply
+         * @since 2.28
          */
         send_reply(reply: UserMessage): void;
     }
@@ -11091,6 +11330,7 @@ export namespace WebKit2 {
          * See also `webkit_web_context_set_sandbox_enabled()`
          * @param path an absolute path to mount in the sandbox
          * @param read_only if `true` the path will be read-only
+         * @since 2.26
          */
         add_path_to_sandbox(path: string, read_only: boolean): void;
 
@@ -11101,6 +11341,7 @@ export namespace WebKit2 {
          * expectation matches `g_uri_get_host()`.
          * @param certificate a {@link Gio.TlsCertificate}
          * @param host the host for which a certificate is to be allowed
+         * @since 2.6
          */
         allow_tls_certificate_for_host(certificate: Gio.TlsCertificate, host: string): void;
 
@@ -11165,6 +11406,7 @@ export namespace WebKit2 {
         /**
          * Get the {@link WebKit2.GeolocationManager} of `context`.
          * @returns the {@link WebKit2.GeolocationManager} of `context`.
+         * @since 2.26
          */
         get_geolocation_manager(): GeolocationManager;
 
@@ -11174,6 +11416,7 @@ export namespace WebKit2 {
          * When the operation is finished, `callback` will be called. You can then call
          * `webkit_web_context_get_plugins_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @deprecated since 2.32
          */
         get_plugins(cancellable: Gio.Cancellable | null): globalThis.Promise<Plugin[]>;
 
@@ -11184,6 +11427,7 @@ export namespace WebKit2 {
          * `webkit_web_context_get_plugins_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @deprecated since 2.32
          */
         get_plugins(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -11194,6 +11438,7 @@ export namespace WebKit2 {
          * `webkit_web_context_get_plugins_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @deprecated since 2.32
          */
         get_plugins(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<Plugin[]> | void;
 
@@ -11201,6 +11446,7 @@ export namespace WebKit2 {
          * Finish an asynchronous operation started with webkit_web_context_get_plugins.
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link GLib.List} of {@link WebKit2.Plugin}. You must free the {@link GLib.List} with    `g_list_free()` and unref the {@link WebKit2.Plugin}<!-- -->s with `g_object_unref()` when you're done with them.
+         * @deprecated since 2.32
          */
         get_plugins_finish(result: Gio.AsyncResult): Plugin[];
 
@@ -11210,12 +11456,15 @@ export namespace WebKit2 {
          * For more information about why this function is deprecated,
          * see `webkit_web_context_set_process_model()`.
          * @returns {@link WebKit2.ProcessModel.MULTIPLE_SECONDARY_PROCESSES}
+         * @since 2.4
+         * @deprecated since 2.40
          */
         get_process_model(): ProcessModel;
 
         /**
          * Get whether sandboxing is currently enabled.
          * @returns `true` if sandboxing is enabled, or `false` otherwise.
+         * @since 2.26
          */
         get_sandbox_enabled(): boolean;
 
@@ -11245,18 +11494,22 @@ export namespace WebKit2 {
 
         /**
          * Get the {@link WebKit2.WebContext.time_zone_override} property.
+         * @since 2.38
          */
         get_time_zone_override(): string;
 
         /**
          * Get the TLS errors policy of `context`.
          * @returns a {@link WebKit2.TLSErrorsPolicy}
+         * @deprecated since 2.32.: Use `webkit_website_data_manager_get_tls_errors_policy()` instead.
          */
         get_tls_errors_policy(): TLSErrorsPolicy;
 
         /**
          * Get the {@link WebKit2.WebContext.use_system_appearance_for_scrollbars} property.
          * @returns `true` if scrollbars are rendering using the system appearance, or `false` otherwise
+         * @since 2.30
+         * @deprecated since 2.46
          */
         get_use_system_appearance_for_scrollbars(): boolean;
 
@@ -11265,12 +11518,15 @@ export namespace WebKit2 {
          * 
          * This function is now deprecated and always returns 0 (no limit). See also `webkit_web_context_set_web_process_count_limit()`.
          * @returns the maximum limit of web processes, or 0 if there isn't a limit.
+         * @since 2.10
+         * @deprecated since 2.26
          */
         get_web_process_count_limit(): number;
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager} of `context`.
          * @returns a {@link WebKit2.WebsiteDataManager}
+         * @since 2.10
          */
         get_website_data_manager(): WebsiteDataManager;
 
@@ -11293,6 +11549,7 @@ export namespace WebKit2 {
          * permissions.
          * @param allowed_origins a {@link GLib.List} of security origins
          * @param disallowed_origins a {@link GLib.List} of security origins
+         * @since 2.16
          */
         initialize_notification_permissions(allowed_origins: SecurityOrigin[], disallowed_origins: SecurityOrigin[]): void;
 
@@ -11301,12 +11558,14 @@ export namespace WebKit2 {
          * 
          * See also `webkit_web_context_set_automation_allowed()`.
          * @returns `true` if automation is allowed or `false` otherwise.
+         * @since 2.18
          */
         is_automation_allowed(): boolean;
 
         /**
          * Get whether a {@link WebKit2.WebContext} is ephemeral.
          * @returns `true` if `context` is ephemeral or `false` otherwise.
+         * @since 2.16
          */
         is_ephemeral(): boolean;
 
@@ -11367,12 +11626,14 @@ export namespace WebKit2 {
          * 
          * If `message` is floating, it's consumed.
          * @param message a {@link WebKit2.UserMessage}
+         * @since 2.28
          */
         send_message_to_all_extensions(message: UserMessage): void;
 
         /**
          * Set an additional directory where WebKit will look for plugins.
          * @param directory the directory to add
+         * @deprecated since 2.32
          */
         set_additional_plugins_directory(directory: string): void;
 
@@ -11388,6 +11649,7 @@ export namespace WebKit2 {
          * Note that only one {@link WebKit2.WebContext} can have automation enabled, so this will do nothing
          * if there's another {@link WebKit2.WebContext} with automation already enabled.
          * @param allowed value to set
+         * @since 2.18
          */
         set_automation_allowed(allowed: boolean): void;
 
@@ -11426,6 +11688,7 @@ export namespace WebKit2 {
          * but it doesn't change the value returned by `webkit_website_data_manager_get_disk_cache_directory()`
          * since the {@link WebKit2.WebsiteDataManager} is immutable.
          * @param directory the directory to set
+         * @deprecated since 2.10.: Use `webkit_web_context_new_with_website_data_manager()` instead.
          */
         set_disk_cache_directory(directory: string): void;
 
@@ -11456,6 +11719,8 @@ export namespace WebKit2 {
          * a valid {@link WebKit2.NetworkProxySettings}; otherwise, `proxy_settings` must be `null`.
          * @param proxy_mode a {@link WebKit2.NetworkProxyMode}
          * @param proxy_settings a {@link WebKit2.NetworkProxySettings}, or `null`
+         * @since 2.16
+         * @deprecated since 2.32.: Use `webkit_website_data_manager_set_network_proxy_settings()` instead.
          */
         set_network_proxy_settings(proxy_mode: NetworkProxyMode, proxy_settings: NetworkProxySettings | null): void;
 
@@ -11480,6 +11745,8 @@ export namespace WebKit2 {
          * {@link WebKit2.ProcessModel.MULTIPLE_SECONDARY_PROCESSES}, so this function
          * does nothing.
          * @param process_model a {@link WebKit2.ProcessModel}
+         * @since 2.4
+         * @deprecated since 2.40
          */
         set_process_model(process_model: ProcessModel): void;
 
@@ -11492,6 +11759,7 @@ export namespace WebKit2 {
          * 
          * This is only implemented on Linux and is a no-op otherwise.
          * @param enabled if `true` enable sandboxing
+         * @since 2.26
          */
         set_sandbox_enabled(enabled: boolean): void;
 
@@ -11520,6 +11788,7 @@ export namespace WebKit2 {
         /**
          * Set the TLS errors policy of `context` as `policy`.
          * @param policy a {@link WebKit2.TLSErrorsPolicy}
+         * @deprecated since 2.32.: Use `webkit_website_data_manager_set_tls_errors_policy()` instead.
          */
         set_tls_errors_policy(policy: TLSErrorsPolicy): void;
 
@@ -11528,6 +11797,8 @@ export namespace WebKit2 {
          * 
          * This is now deprecated and when WebKit is built with Skia this method does nothing.
          * @param enabled value to set
+         * @since 2.30
+         * @deprecated since 2.46
          */
         set_use_system_appearance_for_scrollbars(enabled: boolean): void;
 
@@ -11552,6 +11823,7 @@ export namespace WebKit2 {
          * {@link WebKit2.WebContext.SignalSignatures.initialize_web_extensions | WebKit2.WebContext::initialize-web-extensions} to call this method
          * before anything is loaded.
          * @param user_data a {@link GLib.Variant}
+         * @since 2.4
          */
         set_web_extensions_initialization_user_data(user_data: GLib.Variant): void;
 
@@ -11563,6 +11835,8 @@ export namespace WebKit2 {
          * 
          * This function is now deprecated and does nothing for security reasons.
          * @param limit the maximum number of web processes
+         * @since 2.10
+         * @deprecated since 2.26
          */
         set_web_process_count_limit(limit: number): void;
     }
@@ -11792,6 +12066,7 @@ export namespace WebKit2 {
          * Whether the `inspector` can be attached to the same window that contains
          * the inspected view.
          * @returns `true` if there is enough room for the inspector view inside the     window that contains the inspected view, or `false` otherwise.
+         * @since 2.8
          */
         get_can_attach(): boolean;
 
@@ -13491,6 +13766,7 @@ export namespace WebKit2 {
          * @param world_name the name of a `WebKitScriptWorld` or `null` to use the default
          * @param source_uri the source URI
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.40
          */
         call_async_javascript_function(body: string, length: bigint | number, _arguments: GLib.Variant | null, world_name: string | null, source_uri: string | null, cancellable: Gio.Cancellable | null): globalThis.Promise<JavaScriptCore.Value>;
 
@@ -13560,6 +13836,7 @@ export namespace WebKit2 {
          * @param source_uri the source URI
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
+         * @since 2.40
          */
         call_async_javascript_function(body: string, length: bigint | number, _arguments: GLib.Variant | null, world_name: string | null, source_uri: string | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -13629,6 +13906,7 @@ export namespace WebKit2 {
          * @param source_uri the source URI
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
+         * @since 2.40
          */
         call_async_javascript_function(body: string, length: bigint | number, _arguments: GLib.Variant | null, world_name: string | null, source_uri: string | null, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<JavaScriptCore.Value> | void;
 
@@ -13636,6 +13914,7 @@ export namespace WebKit2 {
          * Finish an asynchronous operation started with `webkit_web_view_call_async_javascript_function()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link JavaScriptCore.Value} with the return value of the async function    or `null` in case of error
+         * @since 2.40
          */
         call_async_javascript_function_finish(result: Gio.AsyncResult): JavaScriptCore.Value;
 
@@ -13764,6 +14043,7 @@ export namespace WebKit2 {
          * @param world_name the name of a `WebKitScriptWorld` or `null` to use the default
          * @param source_uri the source URI
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.40
          */
         evaluate_javascript(script: string, length: bigint | number, world_name: string | null, source_uri: string | null, cancellable: Gio.Cancellable | null): globalThis.Promise<JavaScriptCore.Value>;
 
@@ -13828,6 +14108,7 @@ export namespace WebKit2 {
          * @param source_uri the source URI
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
+         * @since 2.40
          */
         evaluate_javascript(script: string, length: bigint | number, world_name: string | null, source_uri: string | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -13892,6 +14173,7 @@ export namespace WebKit2 {
          * @param source_uri the source URI
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
+         * @since 2.40
          */
         evaluate_javascript(script: string, length: bigint | number, world_name: string | null, source_uri: string | null, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<JavaScriptCore.Value> | void;
 
@@ -13899,6 +14181,7 @@ export namespace WebKit2 {
          * Finish an asynchronous operation started with `webkit_web_view_evaluate_javascript()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link JavaScriptCore.Value} with the result of the last executed statement in script    or `null` in case of error
+         * @since 2.40
          */
         evaluate_javascript_finish(result: Gio.AsyncResult): JavaScriptCore.Value;
 
@@ -13919,12 +14202,14 @@ export namespace WebKit2 {
          * it's possible to execute the command.
          * @param command the command to execute
          * @param argument the command argument
+         * @since 2.10
          */
         execute_editing_command_with_argument(command: string, argument: string): void;
 
         /**
          * Get the presentation type of {@link WebKit2.WebView} when created for automation.
          * @returns a {@link WebKit2.AutomationBrowsingContextPresentation}.
+         * @since 2.28
          */
         get_automation_presentation_type(): AutomationBrowsingContextPresentation;
 
@@ -13942,12 +14227,14 @@ export namespace WebKit2 {
          * Gets the color that is used to draw the `web_view` background before
          * the actual contents are rendered.
          * For more information see also `webkit_web_view_set_background_color()`
+         * @since 2.8
          */
         get_background_color(): Gdk.RGBA;
 
         /**
          * Get the camera capture state of a {@link WebKit2.WebView}.
          * @returns The {@link WebKit2.MediaCaptureState} of the camera device. If {@link WebKit2.Settings.enable_mediastream} is `false`, this method will return {@link WebKit2.MediaCaptureState.NONE}.
+         * @since 2.34
          */
         get_camera_capture_state(): MediaCaptureState;
 
@@ -13966,18 +14253,21 @@ export namespace WebKit2 {
         /**
          * Gets the configured default Content-Security-Policy.
          * @returns The default policy or `null`
+         * @since 2.38
          */
         get_default_content_security_policy(): string | null;
 
         /**
          * Get the display capture state of a {@link WebKit2.WebView}.
          * @returns The {@link WebKit2.MediaCaptureState} of the display device. If {@link WebKit2.Settings.enable_mediastream} is `false`, this method will return {@link WebKit2.MediaCaptureState.NONE}.
+         * @since 2.34
          */
         get_display_capture_state(): MediaCaptureState;
 
         /**
          * Gets the web editor state of `web_view`.
          * @returns the {@link WebKit2.EditorState} of the view
+         * @since 2.10
          */
         get_editor_state(): EditorState;
 
@@ -14014,6 +14304,7 @@ export namespace WebKit2 {
          * 
          * Get the {@link WebKit2.InputMethodContext} currently in use by `web_view`, or `null` if no input method is being used.
          * @returns a {@link WebKit2.InputMethodContext}, or `null`
+         * @since 2.28
          */
         get_input_method_context(): InputMethodContext | null;
 
@@ -14026,12 +14317,14 @@ export namespace WebKit2 {
         /**
          * Gets the mute state of `web_view`.
          * @returns `true` if `web_view` audio is muted or `false` is audio is not muted.
+         * @since 2.30
          */
         get_is_muted(): boolean;
 
         /**
          * Get whether the current web process of a {@link WebKit2.WebView} is responsive.
          * @returns `true` if the web process attached to `web_view` is responsive, or `false` otherwise.
+         * @since 2.34
          */
         get_is_web_process_responsive(): boolean;
 
@@ -14044,6 +14337,7 @@ export namespace WebKit2 {
         /**
          * Get the microphone capture state of a {@link WebKit2.WebView}.
          * @returns The {@link WebKit2.MediaCaptureState} of the microphone device. If {@link WebKit2.Settings.enable_mediastream} is `false`, this method will return {@link WebKit2.MediaCaptureState.NONE}.
+         * @since 2.34
          */
         get_microphone_capture_state(): MediaCaptureState;
 
@@ -14057,6 +14351,7 @@ export namespace WebKit2 {
         /**
          * Gets the current session state of `web_view`
          * @returns a {@link WebKit2.WebViewSessionState}
+         * @since 2.12
          */
         get_session_state(): WebViewSessionState;
 
@@ -14142,6 +14437,7 @@ export namespace WebKit2 {
          * If the `web_view` doesn't have a theme color it will fill the `rgba`
          * with transparent black content.
          * @returns Whether the currently loaded page defines a theme color.
+         * @since 2.50
          */
         get_theme_color(): [boolean, Gdk.RGBA];
 
@@ -14235,12 +14531,14 @@ export namespace WebKit2 {
         /**
          * Gets the user content manager associated to `web_view`.
          * @returns the {@link WebKit2.UserContentManager} associated with the view
+         * @since 2.6
          */
         get_user_content_manager(): UserContentManager;
 
         /**
          * Get the view's {@link WebKit2.WebExtensionMode}.
          * @returns the {@link WebKit2.WebExtensionMode}
+         * @since 2.38
          */
         get_web_extension_mode(): WebExtensionMode;
 
@@ -14251,6 +14549,7 @@ export namespace WebKit2 {
          * the returned {@link WebKit2.WebsiteDataManager} will be the same as the {@link WebKit2.WebsiteDataManager}
          * of `web_view`'s {@link WebKit2.WebContext}.
          * @returns a {@link WebKit2.WebsiteDataManager}
+         * @since 2.16
          */
         get_website_data_manager(): WebsiteDataManager;
 
@@ -14263,6 +14562,7 @@ export namespace WebKit2 {
          * 
          * See also `webkit_policy_decision_use_with_policies()`.
          * @returns the default {@link WebKit2.WebsitePolicies}     associated with the view.
+         * @since 2.30
          */
         get_website_policies(): WebsitePolicies;
 
@@ -14316,6 +14616,7 @@ export namespace WebKit2 {
          * CONTENTEDITABLE attribute has been set on the element or one of its parent
          * elements. By default a {@link WebKit2.WebView} is not editable.
          * @returns `true` if the user is allowed to edit the HTML document, or `false` otherwise.
+         * @since 2.8
          */
         is_editable(): boolean;
 
@@ -14328,6 +14629,7 @@ export namespace WebKit2 {
          * 
          * Note that if WebXR is disabled, or if it is enabled but the `web_view` is not in
          * immersive mode, this API does nothing. See also `webkit_web_view_is_immersive_mode_enabled()`.
+         * @since 2.52
          */
         leave_immersive_mode(): void;
 
@@ -14355,6 +14657,7 @@ export namespace WebKit2 {
          * @param mime_type the MIME type of `bytes`, or `null`
          * @param encoding the character encoding of `bytes`, or `null`
          * @param base_uri the base URI for relative locations or `null`
+         * @since 2.6
          */
         load_bytes(bytes: GLib.Bytes | Uint8Array, mime_type: string | null, encoding: string | null, base_uri: string | null): void;
 
@@ -14417,6 +14720,7 @@ export namespace WebKit2 {
         /**
          * Restore the `web_view` session state from `state`
          * @param state a {@link WebKit2.WebViewSessionState}
+         * @since 2.12
          */
         restore_session_state(state: WebViewSessionState): void;
 
@@ -14480,6 +14784,8 @@ export namespace WebKit2 {
          * @param world_name the name of a `WebKitScriptWorld`, if no name (i.e. `null`) is provided, the default world is used. Any value that is not `null` is a distinct world.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
+         * @since 2.38
+         * @deprecated since 2.40: Use `webkit_web_view_call_async_javascript_function()` instead.
          */
         run_async_javascript_function_in_world(body: string, _arguments: GLib.Variant, world_name: string | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -14492,6 +14798,7 @@ export namespace WebKit2 {
          * `webkit_web_view_run_javascript_finish()` to get the result of the operation.
          * @param script the script to run
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @deprecated since 2.40: Use `webkit_web_view_evaluate_javascript()` instead.
          */
         run_javascript(script: string, cancellable: Gio.Cancellable | null): globalThis.Promise<JavascriptResult>;
 
@@ -14505,6 +14812,7 @@ export namespace WebKit2 {
          * @param script the script to run
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
+         * @deprecated since 2.40: Use `webkit_web_view_evaluate_javascript()` instead.
          */
         run_javascript(script: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -14518,6 +14826,7 @@ export namespace WebKit2 {
          * @param script the script to run
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
+         * @deprecated since 2.40: Use `webkit_web_view_evaluate_javascript()` instead.
          */
         run_javascript(script: string, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<JavascriptResult> | void;
 
@@ -14570,6 +14879,7 @@ export namespace WebKit2 {
          * ```
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link WebKit2.JavascriptResult} with the result of the last executed statement in `script`    or `null` in case of error
+         * @deprecated since 2.40: Use `webkit_web_view_evaluate_javascript_finish()` instead.
          */
         run_javascript_finish(result: Gio.AsyncResult): JavascriptResult;
 
@@ -14584,6 +14894,7 @@ export namespace WebKit2 {
          * of the operation.
          * @param resource the location of the resource to load
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @deprecated since 2.40: Use `webkit_web_view_evaluate_javascript()` instead.
          */
         run_javascript_from_gresource(resource: string, cancellable: Gio.Cancellable | null): globalThis.Promise<JavascriptResult>;
 
@@ -14599,6 +14910,7 @@ export namespace WebKit2 {
          * @param resource the location of the resource to load
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
+         * @deprecated since 2.40: Use `webkit_web_view_evaluate_javascript()` instead.
          */
         run_javascript_from_gresource(resource: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -14614,6 +14926,7 @@ export namespace WebKit2 {
          * @param resource the location of the resource to load
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
+         * @deprecated since 2.40: Use `webkit_web_view_evaluate_javascript()` instead.
          */
         run_javascript_from_gresource(resource: string, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<JavascriptResult> | void;
 
@@ -14623,6 +14936,7 @@ export namespace WebKit2 {
          * Check `webkit_web_view_run_javascript_finish()` for a usage example.
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link WebKit2.JavascriptResult} with the result of the last executed statement in `script`    or `null` in case of error
+         * @deprecated since 2.40: Use `webkit_web_view_evaluate_javascript_finish()` instead.
          */
         run_javascript_from_gresource_finish(result: Gio.AsyncResult): JavascriptResult;
 
@@ -14637,6 +14951,8 @@ export namespace WebKit2 {
          * @param script the script to run
          * @param world_name the name of a `WebKitScriptWorld`
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.22
+         * @deprecated since 2.40: Use `webkit_web_view_evaluate_javascript()` instead.
          */
         run_javascript_in_world(script: string, world_name: string, cancellable: Gio.Cancellable | null): globalThis.Promise<JavascriptResult>;
 
@@ -14652,6 +14968,8 @@ export namespace WebKit2 {
          * @param world_name the name of a `WebKitScriptWorld`
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
+         * @since 2.22
+         * @deprecated since 2.40: Use `webkit_web_view_evaluate_javascript()` instead.
          */
         run_javascript_in_world(script: string, world_name: string, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -14667,6 +14985,8 @@ export namespace WebKit2 {
          * @param world_name the name of a `WebKitScriptWorld`
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the script finished
+         * @since 2.22
+         * @deprecated since 2.40: Use `webkit_web_view_evaluate_javascript()` instead.
          */
         run_javascript_in_world(script: string, world_name: string, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<JavascriptResult> | void;
 
@@ -14674,6 +14994,8 @@ export namespace WebKit2 {
          * Finish an asynchronous operation started with `webkit_web_view_run_javascript_in_world()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link WebKit2.JavascriptResult} with the result of the last executed statement in `script`    or `null` in case of error
+         * @since 2.22
+         * @deprecated since 2.40: Use `webkit_web_view_call_async_javascript_function_finish()` instead.
          */
         run_javascript_in_world_finish(result: Gio.AsyncResult): JavascriptResult;
 
@@ -14797,6 +15119,7 @@ export namespace WebKit2 {
          * `webkit_web_view_send_message_to_page_finish()` to get the message reply.
          * @param message a {@link WebKit2.UserMessage}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.28
          */
         send_message_to_page(message: UserMessage, cancellable: Gio.Cancellable | null): globalThis.Promise<UserMessage>;
 
@@ -14810,6 +15133,7 @@ export namespace WebKit2 {
          * @param message a {@link WebKit2.UserMessage}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback (nullable): A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`
+         * @since 2.28
          */
         send_message_to_page(message: UserMessage, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -14823,6 +15147,7 @@ export namespace WebKit2 {
          * @param message a {@link WebKit2.UserMessage}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback (nullable): A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`
+         * @since 2.28
          */
         send_message_to_page(message: UserMessage, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<UserMessage> | void;
 
@@ -14830,6 +15155,7 @@ export namespace WebKit2 {
          * Finish an asynchronous operation started with `webkit_web_view_send_message_to_page()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link WebKit2.UserMessage} with the reply or `null` in case of error.
+         * @since 2.28
          */
         send_message_to_page_finish(result: Gio.AsyncResult): UserMessage;
 
@@ -14862,6 +15188,7 @@ export namespace WebKit2 {
          * }
          * ```
          * @param rgba a {@link Gdk.RGBA}
+         * @since 2.8
          */
         set_background_color(rgba: Gdk.RGBA): void;
 
@@ -14872,6 +15199,7 @@ export namespace WebKit2 {
          * state of the device has been set to {@link WebKit2.MediaCaptureState.NONE} it cannot be changed
          * anymore. The page can however request capture again using the mediaDevices API.
          * @param state a {@link WebKit2.MediaCaptureState}
+         * @since 2.34
          */
         set_camera_capture_state(state: MediaCaptureState): void;
 
@@ -14893,6 +15221,7 @@ export namespace WebKit2 {
          * If this function is called multiple times, only the allowlist set by
          * the most recent call will be effective.
          * @param allowlist an allowlist of URI patterns, or `null`
+         * @since 2.34
          */
         set_cors_allowlist(allowlist: string[] | null): void;
 
@@ -14914,6 +15243,7 @@ export namespace WebKit2 {
          * state of the device has been set to {@link WebKit2.MediaCaptureState.NONE} it cannot be changed
          * anymore. The page can however request capture again using the mediaDevices API.
          * @param state a {@link WebKit2.MediaCaptureState}
+         * @since 2.34
          */
         set_display_capture_state(state: MediaCaptureState): void;
 
@@ -14929,6 +15259,7 @@ export namespace WebKit2 {
          * document are editable. This function provides a way to make the contents
          * of a {@link WebKit2.WebView} editable without altering the document or DOM structure.
          * @param editable a `gboolean` indicating the editable state
+         * @since 2.8
          */
         set_editable(editable: boolean): void;
 
@@ -14938,12 +15269,14 @@ export namespace WebKit2 {
          * Set the {@link WebKit2.InputMethodContext} to be used by `web_view`, or `null` to not use any input method.
          * Note that the same {@link WebKit2.InputMethodContext} can't be set on more than one {@link WebKit2.WebView} at the same time.
          * @param context the {@link WebKit2.InputMethodContext} to set, or `null`
+         * @since 2.28
          */
         set_input_method_context(context: InputMethodContext | null): void;
 
         /**
          * Sets the mute state of `web_view`.
          * @param muted mute flag
+         * @since 2.30
          */
         set_is_muted(muted: boolean): void;
 
@@ -14954,6 +15287,7 @@ export namespace WebKit2 {
          * state of the device has been set to {@link WebKit2.MediaCaptureState.NONE} it cannot be changed
          * anymore. The page can however request capture again using the mediaDevices API.
          * @param state a {@link WebKit2.MediaCaptureState}
+         * @since 2.34
          */
         set_microphone_capture_state(state: MediaCaptureState): void;
 
@@ -14994,6 +15328,7 @@ export namespace WebKit2 {
          * When the web process gets terminated
          * using this method, the {@link WebKit2.WebView.SignalSignatures.web_process_terminated | WebKit2.WebView::web-process-terminated} signal is emitted with
          * {@link WebKit2.WebProcessTerminationReason.TERMINATED_BY_API} as the reason for termination.
+         * @since 2.34
          */
         terminate_web_process(): void;
 
@@ -15004,6 +15339,7 @@ export namespace WebKit2 {
          * to ask the user for confirmation to close the page. If there isn't an
          * onbeforeunload event handler or the user confirms to close the page,
          * the {@link WebKit2.WebView.SignalSignatures.close | WebKit2.WebView::close} signal is emitted, otherwise nothing happens.
+         * @since 2.12
          */
         try_close(): void;
     }
@@ -15148,12 +15484,14 @@ export namespace WebKit2 {
         /**
          * Get the current domain being browsed.
          * @returns the current domain name
+         * @since 2.30
          */
         get_current_domain(): string;
 
         /**
          * Get the domain requesting permission to access its cookies while browsing the current domain.
          * @returns the requesting domain name
+         * @since 2.30
          */
         get_requesting_domain(): string;
 
@@ -15560,6 +15898,7 @@ export namespace WebKit2 {
          * to remove the custom settings and disable the periodic check, this function must be called
          * passing `null` as the value of `settings`.
          * @param settings a WebKitMemoryPressureSettings.
+         * @since 2.34
          */
         static set_memory_pressure_settings(settings: MemoryPressureSettings): void;
 
@@ -15578,6 +15917,7 @@ export namespace WebKit2 {
          * @param types {@link WebKit2.WebsiteDataTypes}
          * @param timespan a {@link GLib.TimeSpan}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.16
          */
         clear(types: WebsiteDataTypes, timespan: GLib.TimeSpan, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
@@ -15596,6 +15936,7 @@ export namespace WebKit2 {
          * @param timespan a {@link GLib.TimeSpan}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.16
          */
         clear(types: WebsiteDataTypes, timespan: GLib.TimeSpan, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -15614,6 +15955,7 @@ export namespace WebKit2 {
          * @param timespan a {@link GLib.TimeSpan}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.16
          */
         clear(types: WebsiteDataTypes, timespan: GLib.TimeSpan, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
@@ -15621,6 +15963,7 @@ export namespace WebKit2 {
          * Finish an asynchronous operation started with `webkit_website_data_manager_clear()`
          * @param result a {@link Gio.AsyncResult}
          * @returns `true` if website data was successfully cleared, or `false` otherwise.
+         * @since 2.16
          */
         clear_finish(result: Gio.AsyncResult): boolean;
 
@@ -15631,6 +15974,7 @@ export namespace WebKit2 {
          * `webkit_website_data_manager_fetch_finish()` to get the result of the operation.
          * @param types {@link WebKit2.WebsiteDataTypes}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.16
          */
         fetch(types: WebsiteDataTypes, cancellable: Gio.Cancellable | null): globalThis.Promise<WebsiteData[]>;
 
@@ -15642,6 +15986,7 @@ export namespace WebKit2 {
          * @param types {@link WebKit2.WebsiteDataTypes}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.16
          */
         fetch(types: WebsiteDataTypes, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -15653,6 +15998,7 @@ export namespace WebKit2 {
          * @param types {@link WebKit2.WebsiteDataTypes}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.16
          */
         fetch(types: WebsiteDataTypes, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<WebsiteData[]> | void;
 
@@ -15660,60 +16006,75 @@ export namespace WebKit2 {
          * Finish an asynchronous operation started with `webkit_website_data_manager_fetch()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link GLib.List} of {@link WebKit2.WebsiteData}. You must free the {@link GLib.List} with    `g_list_free()` and unref the {@link WebKit2.WebsiteData}<!-- -->s with `webkit_website_data_unref()` when you're done with them.
+         * @since 2.16
          */
         fetch_finish(result: Gio.AsyncResult): WebsiteData[];
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.base_cache_directory} property.
          * @returns the base directory for caches, or `null` if    {@link WebKit2.WebsiteDataManager.base_cache_directory} was not provided or `manager` is ephemeral.
+         * @since 2.10
          */
         get_base_cache_directory(): string | null;
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.base_data_directory} property.
          * @returns the base directory for website data, or `null` if    {@link WebKit2.WebsiteDataManager.base_data_directory} was not provided or `manager` is ephemeral.
+         * @since 2.10
          */
         get_base_data_directory(): string | null;
 
         /**
          * Get the {@link WebKit2.CookieManager} of `manager`.
          * @returns a {@link WebKit2.CookieManager}
+         * @since 2.16
          */
         get_cookie_manager(): CookieManager;
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.disk_cache_directory} property.
          * @returns the directory where HTTP disk cache is stored or `null` if `manager` is ephemeral.
+         * @since 2.10
+         * @deprecated since 2.40: , use `webkit_website_data_manager_get_base_cache_directory()` instead.
          */
         get_disk_cache_directory(): string | null;
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.dom_cache_directory} property.
          * @returns the directory where DOM cache is stored or `null` if `manager` is ephemeral.
+         * @since 2.30
+         * @deprecated since 2.40: , use `webkit_website_data_manager_get_base_cache_directory()` instead.
          */
         get_dom_cache_directory(): string | null;
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.hsts_cache_directory} property.
          * @returns the directory where the HSTS cache is stored or `null` if `manager` is ephemeral.
+         * @since 2.26
+         * @deprecated since 2.40: , use `webkit_website_data_manager_get_base_cache_directory()` instead.
          */
         get_hsts_cache_directory(): string | null;
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.indexeddb_directory} property.
          * @returns the directory where IndexedDB databases are stored or `null` if `manager` is ephemeral.
+         * @since 2.10
+         * @deprecated since 2.40: , use `webkit_website_data_manager_get_base_data_directory()` instead.
          */
         get_indexeddb_directory(): string | null;
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.itp_directory} property.
          * @returns the directory where Intelligent Tracking Prevention data is stored or `null` if `manager` is ephemeral.
+         * @since 2.30
+         * @deprecated since 2.40: , use `webkit_website_data_manager_get_base_data_directory()` instead.
          */
         get_itp_directory(): string | null;
 
         /**
          * Get whether Intelligent Tracking Prevention (ITP) is enabled or not.
          * @returns `true` if ITP is enabled, or `false` otherwise.
+         * @since 2.30
          */
         get_itp_enabled(): boolean;
 
@@ -15726,6 +16087,7 @@ export namespace WebKit2 {
          * When the operation is finished, `callback` will be called. You can then call
          * `webkit_website_data_manager_get_itp_summary_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.30
          */
         get_itp_summary(cancellable: Gio.Cancellable | null): globalThis.Promise<ITPThirdParty[]>;
 
@@ -15739,6 +16101,7 @@ export namespace WebKit2 {
          * `webkit_website_data_manager_get_itp_summary_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.30
          */
         get_itp_summary(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -15752,6 +16115,7 @@ export namespace WebKit2 {
          * `webkit_website_data_manager_get_itp_summary_finish()` to get the result of the operation.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.30
          */
         get_itp_summary(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<ITPThirdParty[]> | void;
 
@@ -15759,18 +16123,23 @@ export namespace WebKit2 {
          * Finish an asynchronous operation started with `webkit_website_data_manager_get_itp_summary()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link GLib.List} of {@link WebKit2.ITPThirdParty}.    You must free the {@link GLib.List} with `g_list_free()` and unref the {@link WebKit2.ITPThirdParty}<!-- -->s with    `webkit_itp_third_party_unref()` when you're done with them.
+         * @since 2.30
          */
         get_itp_summary_finish(result: Gio.AsyncResult): ITPThirdParty[];
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.local_storage_directory} property.
          * @returns the directory where local storage data is stored or `null` if `manager` is ephemeral.
+         * @since 2.10
+         * @deprecated since 2.40: , use `webkit_website_data_manager_get_base_data_directory()` instead.
          */
         get_local_storage_directory(): string | null;
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.offline_application_cache_directory} property.
          * @returns the directory where offline web application cache is stored or `null` if `manager` is ephemeral.
+         * @since 2.10
+         * @deprecated since 2.40: , use `webkit_website_data_manager_get_base_cache_directory()` instead.
          */
         get_offline_application_cache_directory(): string | null;
 
@@ -15779,24 +16148,30 @@ export namespace WebKit2 {
          * 
          * See also `webkit_website_data_manager_set_persistent_credential_storage_enabled()`.
          * @returns `true` if persistent credential storage is enabled, or `false` otherwise.
+         * @since 2.30
          */
         get_persistent_credential_storage_enabled(): boolean;
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.service_worker_registrations_directory} property.
          * @returns the directory where service worker registrations are stored or `null` if `manager` is ephemeral.
+         * @since 2.30
+         * @deprecated since 2.40: , use `webkit_website_data_manager_get_base_data_directory()` instead.
          */
         get_service_worker_registrations_directory(): string | null;
 
         /**
          * Get the TLS errors policy of `manager`.
          * @returns a {@link WebKit2.TLSErrorsPolicy}
+         * @since 2.32
          */
         get_tls_errors_policy(): TLSErrorsPolicy;
 
         /**
          * Get the {@link WebKit2.WebsiteDataManager.websql_directory} property.
          * @returns the directory where WebSQL databases are stored or `null` if `manager` is ephemeral.
+         * @since 2.10
+         * @deprecated since 2.24.: WebSQL is no longer supported. Use IndexedDB instead.
          */
         get_websql_directory(): string | null;
 
@@ -15811,6 +16186,7 @@ export namespace WebKit2 {
          * @param types {@link WebKit2.WebsiteDataTypes}
          * @param website_data a {@link GLib.List} of {@link WebKit2.WebsiteData}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
+         * @since 2.16
          */
         remove(types: WebsiteDataTypes, website_data: WebsiteData[], cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
@@ -15826,6 +16202,7 @@ export namespace WebKit2 {
          * @param website_data a {@link GLib.List} of {@link WebKit2.WebsiteData}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.16
          */
         remove(types: WebsiteDataTypes, website_data: WebsiteData[], cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
@@ -15841,6 +16218,7 @@ export namespace WebKit2 {
          * @param website_data a {@link GLib.List} of {@link WebKit2.WebsiteData}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
+         * @since 2.16
          */
         remove(types: WebsiteDataTypes, website_data: WebsiteData[], cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
@@ -15848,6 +16226,7 @@ export namespace WebKit2 {
          * Finish an asynchronous operation started with `webkit_website_data_manager_remove()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns `true` if website data resources were successfully removed, or `false` otherwise.
+         * @since 2.16
          */
         remove_finish(result: Gio.AsyncResult): boolean;
 
@@ -15859,6 +16238,7 @@ export namespace WebKit2 {
          * Note that while ITP is enabled the accept policy {@link WebKit2.CookieAcceptPolicy.NO_THIRD_PARTY} is ignored and
          * {@link WebKit2.CookieAcceptPolicy.ALWAYS} is used instead. See also `webkit_cookie_manager_set_accept_policy()`.
          * @param enabled value to set
+         * @since 2.30
          */
         set_itp_enabled(enabled: boolean): void;
 
@@ -15874,6 +16254,7 @@ export namespace WebKit2 {
          * a valid {@link WebKit2.NetworkProxySettings}; otherwise, `proxy_settings` must be `null`.
          * @param proxy_mode a {@link WebKit2.NetworkProxyMode}
          * @param proxy_settings a {@link WebKit2.NetworkProxySettings}, or `null`
+         * @since 2.32
          */
         set_network_proxy_settings(proxy_mode: NetworkProxyMode, proxy_settings: NetworkProxySettings | null): void;
 
@@ -15884,12 +16265,14 @@ export namespace WebKit2 {
          * non-ephemeral sessions, the network process will try to read and write HTTP authentiacation
          * credentials from persistent storage.
          * @param enabled value to set
+         * @since 2.30
          */
         set_persistent_credential_storage_enabled(enabled: boolean): void;
 
         /**
          * Set the TLS errors policy of `manager` as `policy`.
          * @param policy a {@link WebKit2.TLSErrorsPolicy}
+         * @since 2.32
          */
         set_tls_errors_policy(policy: TLSErrorsPolicy): void;
     }
@@ -15960,6 +16343,7 @@ export namespace WebKit2 {
         /**
          * Get the {@link WebKit2.WebsitePolicies.autoplay} property.
          * @returns {@link WebKit2.AutoplayPolicy}
+         * @since 2.30
          */
         get_autoplay_policy(): AutoplayPolicy;
     }
@@ -16284,6 +16668,7 @@ export namespace WebKit2 {
          * `webkit_xr_permission_request_set_granted_optional_features()`
          * before allowing the request with `webkit_permission_request_allow()`.
          * @returns a {@link WebKit2.XRSessionFeatures} flag combination
+         * @since 2.52
          */
         get_consent_optional_features(): XRSessionFeatures;
 
@@ -16293,6 +16678,7 @@ export namespace WebKit2 {
          * These features are automatically granted if the request is allowed with
          * `webkit_permission_request_allow()`.
          * @returns a {@link WebKit2.XRSessionFeatures} flag combination
+         * @since 2.52
          */
         get_consent_required_features(): XRSessionFeatures;
 
@@ -16301,6 +16687,7 @@ export namespace WebKit2 {
          * are either granted by default or have been explicitly granted by
          * the user.
          * @returns a {@link WebKit2.XRSessionFeatures} flag combination
+         * @since 2.52
          */
         get_granted_features(): XRSessionFeatures;
 
@@ -16309,6 +16696,7 @@ export namespace WebKit2 {
          * 
          * This includes both already granted features and those requiring consent.
          * @returns a {@link WebKit2.XRSessionFeatures} flag combination
+         * @since 2.52
          */
         get_optional_features_requested(): XRSessionFeatures;
 
@@ -16317,18 +16705,21 @@ export namespace WebKit2 {
          * 
          * This includes both already granted features and those requiring consent.
          * @returns a {@link WebKit2.XRSessionFeatures} flag combination
+         * @since 2.52
          */
         get_required_features_requested(): XRSessionFeatures;
 
         /**
          * Gets the security origin that initiated the permission request.
          * @returns the {@link WebKit2.SecurityOrigin} that initiated the request
+         * @since 2.52
          */
         get_security_origin(): SecurityOrigin;
 
         /**
          * Gets the session mode for which permission is being requested.
          * @returns a {@link WebKit2.XRSessionMode}
+         * @since 2.52
          */
         get_session_mode(): XRSessionMode;
 
@@ -16340,6 +16731,7 @@ export namespace WebKit2 {
          * `webkit_permission_request_allow()`. If the request is denied, no features are
          * granted, regardless of what is set here.
          * @param granted granted features
+         * @since 2.52
          */
         set_granted_optional_features(granted: XRSessionFeatures): void;
 
@@ -16386,11 +16778,13 @@ export namespace WebKit2 {
          * If `webkit_application_info_set_name()` hasn't been
          * called with a valid name, this returns `g_get_prgname()`.
          * @returns the application name
+         * @since 2.18
          */
         get_name(): string;
 
         /**
          * Get the application version previously set with `webkit_application_info_set_version()`.
+         * @since 2.18
          */
         get_version(): [number, number, number];
 
@@ -16400,6 +16794,7 @@ export namespace WebKit2 {
          * This
          * function is MT-safe and may be called from any thread.
          * @returns The passed in {@link WebKit2.ApplicationInfo}
+         * @since 2.18
          */
         ref(): ApplicationInfo;
 
@@ -16409,6 +16804,7 @@ export namespace WebKit2 {
          * If not provided, or `null` is passed,
          * `g_get_prgname()` will be used.
          * @param name the application name
+         * @since 2.18
          */
         set_name(name: string): void;
 
@@ -16422,6 +16818,7 @@ export namespace WebKit2 {
          * @param major the major version number
          * @param minor the minor version number
          * @param micro the micro version number
+         * @since 2.18
          */
         set_version(major: bigint | number, minor: bigint | number, micro: bigint | number): void;
 
@@ -16432,6 +16829,7 @@ export namespace WebKit2 {
          * reference count drops to 0, all memory allocated by the {@link WebKit2.ApplicationInfo} is
          * released. This function is MT-safe and may be called from any
          * thread.
+         * @since 2.18
          */
         unref(): void;
     }
@@ -16575,41 +16973,48 @@ export namespace WebKit2 {
         /**
          * Make a copy of the {@link WebKit2.Credential}.
          * @returns A copy of passed in {@link WebKit2.Credential}
+         * @since 2.2
          */
         copy(): Credential;
 
         /**
          * Free the {@link WebKit2.Credential}.
+         * @since 2.2
          */
         free(): void;
 
         /**
          * Get the certificate currently held by this {@link WebKit2.Credential}.
          * @returns a {@link Gio.TlsCertificate}, or `null`
+         * @since 2.34
          */
         get_certificate(): Gio.TlsCertificate;
 
         /**
          * Get the password currently held by this {@link WebKit2.Credential}.
          * @returns The password stored in the {@link WebKit2.Credential}.
+         * @since 2.2
          */
         get_password(): string;
 
         /**
          * Get the persistence mode currently held by this {@link WebKit2.Credential}.
          * @returns The {@link WebKit2.CredentialPersistence} stored in the {@link WebKit2.Credential}.
+         * @since 2.2
          */
         get_persistence(): CredentialPersistence;
 
         /**
          * Get the username currently held by this {@link WebKit2.Credential}.
          * @returns The username stored in the {@link WebKit2.Credential}.
+         * @since 2.2
          */
         get_username(): string;
 
         /**
          * Determine whether this credential has a password stored.
          * @returns `true` if the credential has a password or `false` otherwise.
+         * @since 2.2
          */
         has_password(): boolean;
     }
@@ -16714,6 +17119,7 @@ export namespace WebKit2 {
          * Applications which include user interface to toggle features may want
          * to use the category to group related features together.
          * @returns Feature category.
+         * @since 2.42
          */
         get_category(): string;
 
@@ -16725,6 +17131,7 @@ export namespace WebKit2 {
          * whether a feature is actually enabled must be checked with
          * {@link Settings.get_feature_enabled}.
          * @returns Whether the feature is enabled by default.
+         * @since 2.42
          */
         get_default_value(): boolean;
 
@@ -16740,12 +17147,14 @@ export namespace WebKit2 {
          * Note that some *features may not* have a detailed description, and `NULL`
          * is returned in this case.
          * @returns Feature description.
+         * @since 2.42
          */
         get_details(): string | null;
 
         /**
          * Gets a string that uniquely identifies the `feature`.
          * @returns The identifier string for the feature.
+         * @since 2.42
          */
         get_identifier(): string;
 
@@ -16758,12 +17167,14 @@ export namespace WebKit2 {
          * Note that some *features may not* have a short name, and `NULL`
          * is returned in this case.
          * @returns Short feature name.
+         * @since 2.42
          */
         get_name(): string | null;
 
         /**
          * Gets the status of the feature.
          * @returns Feature status.
+         * @since 2.42
          */
         get_status(): FeatureStatus;
 
@@ -16772,6 +17183,7 @@ export namespace WebKit2 {
          * 
          * This function is MT-safe and may be called from any thread.
          * @returns The same `feature` with an additional reference.
+         * @since 2.42
          */
         ref(): Feature;
 
@@ -16781,6 +17193,7 @@ export namespace WebKit2 {
          * If the reference was the last, the resources associated to the
          * `feature` are freed. This function is MT-safe and may be called from
          * any thread.
+         * @since 2.42
          */
         unref(): void;
     }
@@ -16815,6 +17228,7 @@ export namespace WebKit2 {
          * Gets a feature given its index.
          * @param index index of the feature
          * @returns The feature at `index`.
+         * @since 2.42
          */
         get(index: bigint | number): Feature;
 
@@ -16829,6 +17243,7 @@ export namespace WebKit2 {
          * 
          * This function is MT-safe and may be called from any thread.
          * @returns The same `feature_list` with an additional reference.
+         * @since 2.42
          */
         ref(): FeatureList;
 
@@ -16838,6 +17253,7 @@ export namespace WebKit2 {
          * If the reference was the last, the resources associated to the
          * `feature_list` are freed. This function is MT-safe and may be called
          * from any thread.
+         * @since 2.42
          */
         unref(): void;
     }
@@ -16928,23 +17344,27 @@ export namespace WebKit2 {
         /**
          * Make a copy of the {@link WebKit2.GeolocationPosition}.
          * @returns a copy of `position`
+         * @since 2.26
          */
         copy(): GeolocationPosition;
 
         /**
          * Free the {@link WebKit2.GeolocationPosition}
+         * @since 2.26
          */
         free(): void;
 
         /**
          * Set the `position` altitude.
          * @param altitude altitude in meters
+         * @since 2.26
          */
         set_altitude(altitude: number): void;
 
         /**
          * Set the accuracy of `position` altitude.
          * @param altitude_accuracy accuracy of position altitude in meters
+         * @since 2.26
          */
         set_altitude_accuracy(altitude_accuracy: number): void;
 
@@ -16954,12 +17374,14 @@ export namespace WebKit2 {
          * Set the `position` heading, as a positive angle between the direction of movement and the North
          * direction, in clockwise direction.
          * @param heading heading in degrees
+         * @since 2.26
          */
         set_heading(heading: number): void;
 
         /**
          * Set the `position` speed.
          * @param speed speed in meters per second
+         * @since 2.26
          */
         set_speed(speed: number): void;
 
@@ -16968,6 +17390,7 @@ export namespace WebKit2 {
          * 
          * By default it's the time when the `position` was created.
          * @param timestamp timestamp in seconds since the epoch, or 0 to use current time
+         * @since 2.26
          */
         set_timestamp(timestamp: bigint | number): void;
     }
@@ -16998,6 +17421,7 @@ export namespace WebKit2 {
         /**
          * Get the domain name of `itp_first_party`.
          * @returns the domain name
+         * @since 2.30
          */
         get_domain(): string;
 
@@ -17007,6 +17431,7 @@ export namespace WebKit2 {
          * Each `WebKitITPFirstParty` is created by `webkit_itp_third_party_get_first_parties()` and
          * therefore corresponds to exactly one {@link WebKit2.ITPThirdParty}.
          * @returns the last update time as a {@link GLib.DateTime}
+         * @since 2.30
          */
         get_last_update_time(): GLib.DateTime;
 
@@ -17016,6 +17441,7 @@ export namespace WebKit2 {
          * Each `WebKitITPFirstParty` is created by `webkit_itp_third_party_get_first_parties()` and
          * therefore corresponds to exactly one {@link WebKit2.ITPThirdParty}.
          * @returns `true` if website data access has been granted, or `false` otherwise
+         * @since 2.30
          */
         get_website_data_access_allowed(): boolean;
 
@@ -17024,6 +17450,7 @@ export namespace WebKit2 {
          * 
          * This function is MT-safe and may be called from any thread.
          * @returns The passed {@link WebKit2.ITPFirstParty}
+         * @since 2.30
          */
         ref(): ITPFirstParty;
 
@@ -17033,6 +17460,7 @@ export namespace WebKit2 {
          * If the reference count drops to 0, all memory allocated by
          * {@link WebKit2.ITPFirstParty} is released. This function is MT-safe and may be
          * called from any thread.
+         * @since 2.30
          */
         unref(): void;
     }
@@ -17050,12 +17478,14 @@ export namespace WebKit2 {
         /**
          * Get the domain name of `itp_third_party`.
          * @returns the domain name
+         * @since 2.30
          */
         get_domain(): string;
 
         /**
          * Get the list of {@link WebKit2.ITPFirstParty} under which `itp_third_party` has been seen.
          * @returns a {@link GLib.List} of {@link WebKit2.ITPFirstParty}
+         * @since 2.30
          */
         get_first_parties(): ITPFirstParty[];
 
@@ -17064,6 +17494,7 @@ export namespace WebKit2 {
          * 
          * This function is MT-safe and may be called from any thread.
          * @returns The passed {@link WebKit2.ITPThirdParty}
+         * @since 2.30
          */
         ref(): ITPThirdParty;
 
@@ -17073,6 +17504,7 @@ export namespace WebKit2 {
          * If the reference count drops to 0, all memory allocated by
          * {@link WebKit2.ITPThirdParty} is released. This function is MT-safe and may be
          * called from any thread.
+         * @since 2.30
          */
         unref(): void;
     }
@@ -17108,11 +17540,13 @@ export namespace WebKit2 {
         /**
          * Make a copy of the {@link WebKit2.InputMethodUnderline}.
          * @returns A copy of passed in {@link WebKit2.InputMethodUnderline}
+         * @since 2.28
          */
         copy(): InputMethodUnderline;
 
         /**
          * Free the {@link WebKit2.InputMethodUnderline}.
+         * @since 2.28
          */
         free(): void;
 
@@ -17122,6 +17556,7 @@ export namespace WebKit2 {
          * If `rgba` is `null` the foreground text color will be used
          * for the underline too.
          * @param rgba a {@link Gdk.RGBA} or `null`
+         * @since 2.28
          */
         set_color(rgba: Gdk.RGBA | null): void;
     }
@@ -17151,6 +17586,7 @@ export namespace WebKit2 {
         /**
          * Get the {@link JavaScriptCore.Value} of `js_result`.
          * @returns the {@link JavaScriptCore.Value} of the {@link WebKit2.JavascriptResult}
+         * @since 2.22
          */
         get_js_value(): JavaScriptCore.Value;
 
@@ -17223,41 +17659,48 @@ export namespace WebKit2 {
         /**
          * Make a copy of `settings`.
          * @returns A copy of of the passed {@link WebKit2.MemoryPressureSettings}.
+         * @since 2.34
          */
         copy(): MemoryPressureSettings;
 
         /**
          * Free the {@link WebKit2.MemoryPressureSettings}.
+         * @since 2.34
          */
         free(): void;
 
         /**
          * Gets the conservative memory usage threshold.
          * @returns value in the `(0, 1)` range.
+         * @since 2.34
          */
         get_conservative_threshold(): number;
 
         /**
          * Gets the kill memory usage threshold.
          * @returns positive value, can be zero.
+         * @since 2.34
          */
         get_kill_threshold(): number;
 
         /**
          * Gets the memory usage limit.
          * @returns current value, in megabytes.
+         * @since 2.34
          */
         get_memory_limit(): number;
 
         /**
          * Gets the interval at which memory usage is checked.
          * @returns current interval value, in seconds.
+         * @since 2.34
          */
         get_poll_interval(): number;
 
         /**
          * Gets the strict memory usage threshold.
          * @returns value in the `(0, 1)` range.
+         * @since 2.34
          */
         get_strict_threshold(): number;
 
@@ -17271,6 +17714,7 @@ export namespace WebKit2 {
          * The threshold must be bigger than 0 and smaller than 1, and it must be smaller
          * than the strict threshold defined in `settings`. The default value is 0.33.
          * @param value fraction of the memory limit where the conservative policy starts working.
+         * @since 2.34
          */
         set_conservative_threshold(value: number): void;
 
@@ -17282,6 +17726,7 @@ export namespace WebKit2 {
          * is never killed. If the threshold is not 0, then it must be bigger than the strict threshold
          * defined in `settings`. The threshold can also have values bigger than 1. The default value is 0.
          * @param value fraction of the memory limit where the process will be killed because   of excessive memory usage.
+         * @since 2.34
          */
         set_kill_threshold(value: number): void;
 
@@ -17290,6 +17735,7 @@ export namespace WebKit2 {
          * 
          * The default value is the system's RAM size with a maximum of 3GB.
          * @param memory_limit amount of memory (in MB) that the process is allowed to use.
+         * @since 2.34
          */
         set_memory_limit(memory_limit: number): void;
 
@@ -17298,6 +17744,7 @@ export namespace WebKit2 {
          * 
          * The poll interval value must be bigger than 0. The default value is 30 seconds.
          * @param value period (in seconds) between memory usage measurements.
+         * @since 2.34
          */
         set_poll_interval(value: number): void;
 
@@ -17312,6 +17759,7 @@ export namespace WebKit2 {
          * than the conservative threshold defined in `settings`, and smaller than the kill
          * threshold if the latter is not 0. The default value is 0.5.
          * @param value fraction of the memory limit where the strict policy starts working.
+         * @since 2.34
          */
         set_strict_threshold(value: number): void;
     }
@@ -17328,18 +17776,21 @@ export namespace WebKit2 {
         /**
          * Gets the description of the MIME type.
          * @returns description, as a string.
+         * @deprecated since 2.32
          */
         get_description(): string | null;
 
         /**
          * Get the list of file extensions associated to the MIME type.
          * @returns a     `null`-terminated array of strings
+         * @deprecated since 2.32
          */
         get_extensions(): string[];
 
         /**
          * Gets the MIME type.
          * @returns MIME type, as a string.
+         * @deprecated since 2.32
          */
         get_mime_type(): string;
 
@@ -17348,6 +17799,7 @@ export namespace WebKit2 {
          * 
          * This function is MT-safe and may be called from any thread.
          * @returns The passed in {@link WebKit2.MimeInfo}
+         * @deprecated since 2.32
          */
         ref(): MimeInfo;
 
@@ -17357,6 +17809,7 @@ export namespace WebKit2 {
          * If the reference count drops to 0, all memory allocated by the {@link WebKit2.MimeInfo} is
          * released. This function is MT-safe and may be called from any
          * thread.
+         * @deprecated since 2.32
          */
         unref(): void;
     }
@@ -17373,11 +17826,13 @@ export namespace WebKit2 {
         /**
          * Make a copy of `navigation`.
          * @returns A copy of passed in {@link WebKit2.NavigationAction}
+         * @since 2.6
          */
         copy(): NavigationAction;
 
         /**
          * Free the {@link WebKit2.NavigationAction}
+         * @since 2.6
          */
         free(): void;
 
@@ -17386,6 +17841,7 @@ export namespace WebKit2 {
          * link with a target attribute equal to "_blank", this will return the value of that attribute.
          * In all other cases this function will return `null`.
          * @returns The name of the new frame this navigation action targets or `null`
+         * @since 2.40
          */
         get_frame_name(): string | null;
 
@@ -17395,6 +17851,7 @@ export namespace WebKit2 {
          * Return a bitmask of {@link Gdk.ModifierType} values describing the modifier keys that were in effect
          * when the navigation was requested
          * @returns the modifier keys
+         * @since 2.6
          */
         get_modifiers(): number;
 
@@ -17404,12 +17861,14 @@ export namespace WebKit2 {
          * Return the number of the mouse button that triggered the navigation, or 0 if
          * the navigation was not started by a mouse event.
          * @returns the mouse button number or 0
+         * @since 2.6
          */
         get_mouse_button(): number;
 
         /**
          * Return the type of action that triggered the navigation.
          * @returns a {@link WebKit2.NavigationType}
+         * @since 2.6
          */
         get_navigation_type(): NavigationType;
 
@@ -17422,18 +17881,21 @@ export namespace WebKit2 {
          * not. To modify requests before they are sent over the network the
          * `WebKitPage::send-request` signal can be used instead.
          * @returns a {@link WebKit2.URIRequest}
+         * @since 2.6
          */
         get_request(): URIRequest;
 
         /**
          * Returns whether the `navigation` was redirected.
          * @returns `true` if the original navigation was redirected, `false` otherwise.
+         * @since 2.20
          */
         is_redirect(): boolean;
 
         /**
          * Return whether the navigation was triggered by a user gesture like a mouse click.
          * @returns whether navigation action is a user gesture
+         * @since 2.6
          */
         is_user_gesture(): boolean;
     }
@@ -17478,17 +17940,20 @@ export namespace WebKit2 {
          * all three of the socks5, socks4a, and socks4 proxy types.
          * @param scheme the URI scheme to add a proxy for
          * @param proxy_uri the proxy URI to use for `uri_scheme`
+         * @since 2.16
          */
         add_proxy_for_scheme(scheme: string, proxy_uri: string): void;
 
         /**
          * Make a copy of the {@link WebKit2.NetworkProxySettings}.
          * @returns A copy of passed in {@link WebKit2.NetworkProxySettings}
+         * @since 2.16
          */
         copy(): NetworkProxySettings;
 
         /**
          * Free the {@link WebKit2.NetworkProxySettings}.
+         * @since 2.16
          */
         free(): void;
     }
@@ -17542,47 +18007,55 @@ export namespace WebKit2 {
         /**
          * Make a copy of the {@link WebKit2.OptionMenuItem}.
          * @returns A copy of passed in {@link WebKit2.OptionMenuItem}
+         * @since 2.18
          */
         copy(): OptionMenuItem;
 
         /**
          * Free the {@link WebKit2.OptionMenuItem}.
+         * @since 2.18
          */
         free(): void;
 
         /**
          * Get the label of a {@link WebKit2.OptionMenuItem}.
          * @returns The label of `item`.
+         * @since 2.18
          */
         get_label(): string;
 
         /**
          * Get the tooltip of a {@link WebKit2.OptionMenuItem}.
          * @returns The tooltip of `item`, or `null`.
+         * @since 2.18
          */
         get_tooltip(): string;
 
         /**
          * Whether a {@link WebKit2.OptionMenuItem} is enabled.
          * @returns `true` if the `item` is enabled or `false` otherwise.
+         * @since 2.18
          */
         is_enabled(): boolean;
 
         /**
          * Whether a {@link WebKit2.OptionMenuItem} is a group child.
          * @returns `true` if the `item` is a group child or `false` otherwise.
+         * @since 2.18
          */
         is_group_child(): boolean;
 
         /**
          * Whether a {@link WebKit2.OptionMenuItem} is a group label.
          * @returns `true` if the `item` is a group label or `false` otherwise.
+         * @since 2.18
          */
         is_group_label(): boolean;
 
         /**
          * Whether a {@link WebKit2.OptionMenuItem} is the currently selected one.
          * @returns `true` if the `item` is selected or `false` otherwise.
+         * @since 2.18
          */
         is_selected(): boolean;
     }
@@ -17622,18 +18095,21 @@ export namespace WebKit2 {
          * Notify the web-engine of the selected permission state for the given query. This function should
          * only be called as a response to the `WebKit2.WebView::query-permission-state` signal.
          * @param state a {@link WebKit2.PermissionState}
+         * @since 2.40
          */
         finish(state: PermissionState): void;
 
         /**
          * Get the permission name for which access is being queried.
          * @returns the permission name for `query`
+         * @since 2.40
          */
         get_name(): string;
 
         /**
          * Get the permission origin for which access is being queried.
          * @returns A {@link WebKit2.SecurityOrigin} representing the origin from which the `query` was emitted.
+         * @since 2.40
          */
         get_security_origin(): SecurityOrigin;
 
@@ -17642,6 +18118,7 @@ export namespace WebKit2 {
          * 
          * This function is MT-safe and may be called from any thread.
          * @returns The passed {@link WebKit2.PermissionStateQuery}
+         * @since 2.40
          */
         ref(): PermissionStateQuery;
 
@@ -17650,6 +18127,7 @@ export namespace WebKit2 {
          * 
          * If the reference count drops to 0, all memory allocated by {@link WebKit2.PermissionStateQuery} is
          * released. This function is MT-safe and may be called from any thread.
+         * @since 2.40
          */
         unref(): void;
     }
@@ -17748,6 +18226,7 @@ export namespace WebKit2 {
          * was called in {@link WebKit2.WebView.SignalSignatures.script_dialog | WebKit2.WebView::script-dialog} callback), this function needs to be called to notify
          * that we are done with the script dialog. The dialog will be closed on destruction if this function
          * hasn't been called before.
+         * @since 2.24
          */
         close(): void;
 
@@ -17804,6 +18283,7 @@ export namespace WebKit2 {
          * This
          * function is MT-safe and may be called from any thread.
          * @returns The passed in {@link WebKit2.ScriptDialog}
+         * @since 2.24
          */
         ref(): ScriptDialog;
 
@@ -17814,6 +18294,7 @@ export namespace WebKit2 {
          * reference count drops to 0, all memory allocated by the `WebKitScriptdialog` is
          * released. This function is MT-safe and may be called from any
          * thread.
+         * @since 2.24
          */
         unref(): void;
     }
@@ -17833,12 +18314,14 @@ export namespace WebKit2 {
         /**
          * Atomically increments the reference count of `script_message_reply` by one.
          * @returns the `script_message_reply` passed in.
+         * @since 2.40
          */
         ref(): ScriptMessageReply;
 
         /**
          * Reply to a script message with an error message.
          * @param error_message An error message to return as specified by the user's script message
+         * @since 2.40
          */
         return_error_message(error_message: string): void;
 
@@ -17847,6 +18330,7 @@ export namespace WebKit2 {
          * 
          * This function can be called twice for passing the reply value in.
          * @param reply_value Reply value of the provided script message
+         * @since 2.40
          */
         return_value(reply_value: JavaScriptCore.Value): void;
 
@@ -17856,6 +18340,7 @@ export namespace WebKit2 {
          * If the reference count drops to 0, all the memory allocated by the
          * {@link WebKit2.ScriptMessageReply} is released. This function is MT-safe and may
          * be called from any thread.
+         * @since 2.40
          */
         unref(): void;
     }
@@ -17905,6 +18390,7 @@ export namespace WebKit2 {
          * It is reasonable for this to be `null`
          * if its protocol does not require a host component.
          * @returns The host of the {@link WebKit2.SecurityOrigin}
+         * @since 2.16
          */
         get_host(): string | null;
 
@@ -17917,12 +18403,14 @@ export namespace WebKit2 {
          * http://example.com:80, and this function will return 0 for a
          * {@link WebKit2.SecurityOrigin} constructed from either URI.
          * @returns The port of the {@link WebKit2.SecurityOrigin}.
+         * @since 2.16
          */
         get_port(): number;
 
         /**
          * Gets the protocol of `origin`.
          * @returns The protocol of the {@link WebKit2.SecurityOrigin}
+         * @since 2.16
          */
         get_protocol(): string | null;
 
@@ -17933,6 +18421,8 @@ export namespace WebKit2 {
          * wrapper around a <protocol, host, port> triplet, and no longer
          * represents an origin as defined by web standards that may be opaque.
          * @returns `false`
+         * @since 2.16
+         * @deprecated since 2.32
          */
         is_opaque(): boolean;
 
@@ -17941,6 +18431,7 @@ export namespace WebKit2 {
          * 
          * This function is MT-safe and may be called from any thread.
          * @returns The passed {@link WebKit2.SecurityOrigin}
+         * @since 2.16
          */
         ref(): SecurityOrigin;
 
@@ -17951,6 +18442,7 @@ export namespace WebKit2 {
          * is a valid URI with only protocol, host, and port components, or
          * `null`.
          * @returns a URI representing `origin`.
+         * @since 2.16
          */
         to_string(): string | null;
 
@@ -17960,6 +18452,7 @@ export namespace WebKit2 {
          * If the reference count drops to 0, all memory allocated by
          * {@link WebKit2.SecurityOrigin} is released. This function is MT-safe and may be
          * called from any thread.
+         * @since 2.16
          */
         unref(): void;
     }
@@ -18045,6 +18538,7 @@ export namespace WebKit2 {
          * Obtain the identifier previously used to save the `user_content_filter` in the
          * {@link WebKit2.UserContentFilterStore}.
          * @returns the identifier for the filter
+         * @since 2.24
          */
         get_identifier(): string;
 
@@ -18053,6 +18547,7 @@ export namespace WebKit2 {
          * 
          * This function is MT-safe and may be called from any thread.
          * @returns the `user_content_filter` passed in.
+         * @since 2.24
          */
         ref(): UserContentFilter;
 
@@ -18062,6 +18557,7 @@ export namespace WebKit2 {
          * If the reference count drops to 0, all the memory allocated by the
          * {@link WebKit2.UserContentFilter} is released. This function is MT-safe and may
          * be called from any thread.
+         * @since 2.24
          */
         unref(): void;
     }
@@ -18140,6 +18636,7 @@ export namespace WebKit2 {
          * 
          * This function is MT-safe and may be called from any thread.
          * @returns The passed {@link WebKit2.UserScript}
+         * @since 2.6
          */
         ref(): UserScript;
 
@@ -18149,6 +18646,7 @@ export namespace WebKit2 {
          * If the reference count drops to 0, all memory allocated by
          * {@link WebKit2.UserScript} is released. This function is MT-safe and may be called
          * from any thread.
+         * @since 2.6
          */
         unref(): void;
     }
@@ -18175,6 +18673,7 @@ export namespace WebKit2 {
          * 
          * This function is MT-safe and may be called from any thread.
          * @returns The passed {@link WebKit2.UserStyleSheet}
+         * @since 2.6
          */
         ref(): UserStyleSheet;
 
@@ -18184,6 +18683,7 @@ export namespace WebKit2 {
          * If the reference count drops to 0, all memory allocated by
          * {@link WebKit2.UserStyleSheet} is released. This function is MT-safe and may be
          * called from any thread.
+         * @since 2.6
          */
         unref(): void;
     }
@@ -18274,12 +18774,14 @@ export namespace WebKit2 {
          * This
          * function is MT-safe and may be called from any thread.
          * @returns The passed in {@link WebKit2.WebViewSessionState}
+         * @since 2.12
          */
         ref(): WebViewSessionState;
 
         /**
          * Serializes a {@link WebKit2.WebViewSessionState}.
          * @returns a {@link GLib.Bytes} containing the `state` serialized.
+         * @since 2.12
          */
         serialize(): GLib.Bytes;
 
@@ -18289,6 +18791,7 @@ export namespace WebKit2 {
          * If the
          * reference count drops to 0, all memory allocated by the {@link WebKit2.WebViewSessionState} is
          * released. This function is MT-safe and may be called from any thread.
+         * @since 2.12
          */
         unref(): void;
     }
@@ -18324,6 +18827,7 @@ export namespace WebKit2 {
          * a domain or host name. All local documents are grouped in the same {@link WebKit2.WebsiteData} using
          * the name "Local files".
          * @returns the website name of `website_data`.
+         * @since 2.16
          */
         get_name(): string;
 
@@ -18334,6 +18838,7 @@ export namespace WebKit2 {
          * so for all other types 0 will be returned.
          * @param types a bitmask  of {@link WebKit2.WebsiteDataTypes}
          * @returns the size of `website_data` for the given `types`.
+         * @since 2.16
          */
         get_size(types: WebsiteDataTypes): number;
 
@@ -18343,6 +18848,7 @@ export namespace WebKit2 {
          * These are the
          * types actually present, not the types queried with `webkit_website_data_manager_fetch()`.
          * @returns a bitmask of {@link WebKit2.WebsiteDataTypes} in `website_data`
+         * @since 2.16
          */
         get_types(): WebsiteDataTypes;
 
@@ -18351,6 +18857,7 @@ export namespace WebKit2 {
          * 
          * This function is MT-safe and may be called from any thread.
          * @returns The passed {@link WebKit2.WebsiteData}
+         * @since 2.16
          */
         ref(): WebsiteData;
 
@@ -18360,6 +18867,7 @@ export namespace WebKit2 {
          * If the reference count drops to 0, all memory allocated by
          * {@link WebKit2.WebsiteData} is released. This function is MT-safe and may be
          * called from any thread.
+         * @since 2.16
          */
         unref(): void;
     }

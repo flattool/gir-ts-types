@@ -300,23 +300,27 @@ export namespace GstVa {
         /**
          * Allocate a new VASurfaceID backed {@link Gst.Memory}.
          * @param allocator a {@link Gst.Allocator}
+         * @since 1.22
          */
         static alloc(allocator: Gst.Allocator): Gst.Memory;
 
         /**
          * Removes all the memories in `allocator`'s pool.
          * @param allocator a {@link Gst.Allocator}
+         * @since 1.22
          */
         static flush(allocator: Gst.Allocator): void;
 
         /**
          * Gets current internal configuration of `allocator`.
          * @param allocator a {@link Gst.Allocator}
+         * @since 1.22
          */
         static get_format(allocator: Gst.Allocator): [boolean, GstVideo.VideoInfo | null, number, boolean];
 
         /**
          * @param allocator a {@link Gst.Allocator}
+         * @since 1.22
          */
         static peek_display(allocator: Gst.Allocator): VaDisplay;
 
@@ -325,6 +329,7 @@ export namespace GstVa {
          * memories. It doesn't allocate new VASurfacesID.
          * @param allocator a {@link Gst.Allocator}
          * @param buffer an empty {@link Gst.Buffer}
+         * @since 1.22
          */
         static prepare_buffer(allocator: Gst.Allocator, buffer: Gst.Buffer): boolean;
 
@@ -340,6 +345,7 @@ export namespace GstVa {
          * @param info a {@link GstVideo.VideoInfo}
          * @param usage_hint VA usage hint
          * @param feat_use_derived a {@link GstVa.VaFeature}
+         * @since 1.22
          */
         static set_format(allocator: Gst.Allocator, info: GstVideo.VideoInfo, usage_hint: number, feat_use_derived: VaFeature): [boolean, GstVideo.VideoInfo];
 
@@ -347,6 +353,7 @@ export namespace GstVa {
          * Populates an empty `buffer` with a VASuface backed {@link Gst.Memory}.
          * @param allocator a {@link Gst.Allocator}
          * @param buffer a {@link Gst.Buffer}
+         * @since 1.22
          */
         static setup_buffer(allocator: Gst.Allocator, buffer: Gst.Buffer): boolean;
     }
@@ -442,18 +449,21 @@ export namespace GstVa {
          * @param major major version to check
          * @param minor minor version to check
          * @returns whether driver version is equal or greater than `major`.`minor`
+         * @since 1.24
          */
         check_version(major: number, minor: number): boolean;
 
         /**
          * Get the the {@link GstVa.VaImplementation} type of `self`.
          * @returns {@link GstVa.VaImplementation}.
+         * @since 1.20
          */
         get_implementation(): VaImplementation;
 
         /**
          * Get the VA display handle of the `self`.
          * @returns the VA display handle.
+         * @since 1.20
          */
         get_va_dpy(): null;
 
@@ -467,6 +477,7 @@ export namespace GstVa {
          * NOTE: this function is supposed to be private, only used by
          * GstVaDisplay descendants.
          * @returns `true` if the VA driver can be initialized; `false`     otherwise
+         * @since 1.20
          */
         initialize(): boolean;
     }
@@ -641,12 +652,14 @@ export namespace GstVa {
         /**
          * Removes all the memories in `allocator`'s pool.
          * @param allocator a {@link Gst.Allocator}
+         * @since 1.22
          */
         static flush(allocator: Gst.Allocator): void;
 
         /**
          * Gets current internal configuration of `allocator`.
          * @param allocator a {@link Gst.Allocator}
+         * @since 1.22
          */
         static get_format(allocator: Gst.Allocator): [boolean, GstVideo.VideoInfoDmaDrm | null, number];
 
@@ -655,6 +668,7 @@ export namespace GstVa {
          * memories. It doesn't allocate new VASurfacesID.
          * @param allocator a {@link Gst.Allocator}
          * @param buffer an empty {@link Gst.Buffer}
+         * @since 1.22
          */
         static prepare_buffer(allocator: Gst.Allocator, buffer: Gst.Buffer): boolean;
 
@@ -668,6 +682,7 @@ export namespace GstVa {
          * `allocator`, the rest of `info` parameters are updated internally.
          * @param allocator a {@link Gst.Allocator}
          * @param usage_hint VA usage hint
+         * @since 1.22
          */
         static set_format(allocator: Gst.Allocator, usage_hint: number): [boolean, GstVideo.VideoInfoDmaDrm];
 
@@ -676,6 +691,7 @@ export namespace GstVa {
          * later it populates the `buffer` with those DMABufs.
          * @param allocator a {@link Gst.Allocator}
          * @param buffer an empty {@link Gst.Buffer}
+         * @since 1.22
          */
         static setup_buffer(allocator: Gst.Allocator, buffer: Gst.Buffer): boolean;
     }
@@ -735,6 +751,7 @@ export namespace GstVa {
         /**
          * Helper function to retrieve the VA surface size provided by `pool`.
          * @param pool a {@link Gst.BufferPool}
+         * @since 1.24
          */
         static get_buffer_size(pool: Gst.BufferPool): [boolean, number];
 
@@ -742,6 +759,7 @@ export namespace GstVa {
          * Retuns: `true` if `pool` always add {@link GstVideo.VideoMeta} to its
          *     buffers. Otherwise, `false`.
          * @param pool the {@link Gst.BufferPool}
+         * @since 1.22
          */
         static requires_video_meta(pool: Gst.BufferPool): boolean;
     }

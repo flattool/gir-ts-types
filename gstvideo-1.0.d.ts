@@ -5117,6 +5117,7 @@ export namespace GstVideo {
          * Subclasses can add their own operation to perform using the returned
          * {@link Gst.TaskPool} during {@link GstVideo.VideoAggregatorClass.SignalSignatures.aggregate_frames | GstVideo.VideoAggregatorClass::aggregate_frames}().
          * @returns the {@link Gst.TaskPool} that can be used by subclasses     for performing concurrent operations
+         * @since 1.20
          */
         get_execution_task_pool(): Gst.TaskPool;
     }
@@ -5322,6 +5323,7 @@ export namespace GstVideo {
          * If overriden, `prepare_frame_start` must also be overriden.
          * @param videoaggregator the parent {@link GstVideo.VideoAggregator}
          * @param prepared_frame the {@link GstVideo.VideoFrame} to prepare into
+         * @since 1.20
          * @virtual
          */
         vfunc_prepare_frame_finish(videoaggregator: VideoAggregator, prepared_frame: VideoFrame): void;
@@ -5333,6 +5335,7 @@ export namespace GstVideo {
          * @param videoaggregator the parent {@link GstVideo.VideoAggregator}
          * @param buffer the input {@link Gst.Buffer} to prepare
          * @param prepared_frame the {@link GstVideo.VideoFrame} to prepare into
+         * @since 1.20
          * @virtual
          */
         vfunc_prepare_frame_start(videoaggregator: VideoAggregator, buffer: Gst.Buffer, prepared_frame: VideoFrame): void;
@@ -5858,6 +5861,7 @@ export namespace GstVideo {
         /**
          * @param timestamp Timestamp of the missing data
          * @param duration Duration of the missing data
+         * @since 1.20
          * @virtual
          */
         vfunc_handle_missing_data(timestamp: Gst.ClockTime, duration: Gst.ClockTime): boolean;
@@ -6024,6 +6028,7 @@ export namespace GstVideo {
          * @param frame a {@link GstVideo.VideoCodecFrame}
          * @param params a {@link Gst.BufferPoolAcquireParams}
          * @returns {@link Gst.FlowReturn.OK} if an output buffer could be allocated
+         * @since 1.12
          */
         allocate_output_frame_with_params(frame: VideoCodecFrame, params: Gst.BufferPoolAcquireParams): Gst.FlowReturn;
 
@@ -6042,6 +6047,7 @@ export namespace GstVideo {
          * is finished or dropped by the subclass.
          * @param frame the {@link GstVideo.VideoCodecFrame}
          * @returns a {@link Gst.FlowReturn}, usually GST_FLOW_OK.
+         * @since 1.20
          */
         drop_subframe(frame: VideoCodecFrame): Gst.FlowReturn;
 
@@ -6066,6 +6072,7 @@ export namespace GstVideo {
          * should be called instead.
          * @param frame the {@link GstVideo.VideoCodecFrame}
          * @returns a {@link Gst.FlowReturn}, usually GST_FLOW_OK.
+         * @since 1.20
          */
         finish_subframe(frame: VideoCodecFrame): Gst.FlowReturn;
 
@@ -6105,6 +6112,7 @@ export namespace GstVideo {
          * the decoder baseclass in the `frame`.
          * @param frame the {@link GstVideo.VideoCodecFrame} to update
          * @returns the current subframe index received in subframe mode, 1 otherwise.
+         * @since 1.20
          */
         get_input_subframe_index(frame: VideoCodecFrame): number;
 
@@ -6132,6 +6140,7 @@ export namespace GstVideo {
         /**
          * Queries decoder required format handling.
          * @returns `true` if required format handling is enabled.
+         * @since 1.4
          */
         get_needs_format(): boolean;
 
@@ -6139,6 +6148,7 @@ export namespace GstVideo {
          * Queries if the decoder requires a sync point before it starts outputting
          * data in the beginning.
          * @returns `true` if a sync point is required in the beginning.
+         * @since 1.20
          */
         get_needs_sync_point(): boolean;
 
@@ -6165,6 +6175,7 @@ export namespace GstVideo {
          * Returns the number of bytes previously added to the current frame
          * by calling `gst_video_decoder_add_to_frame()`.
          * @returns The number of bytes pending for the current frame
+         * @since 1.4
          */
         get_pending_frame_size(): number;
 
@@ -6173,11 +6184,13 @@ export namespace GstVideo {
          * the decoder baseclass.
          * @param frame the {@link GstVideo.VideoCodecFrame} to update
          * @returns the current subframe processed received in subframe mode.
+         * @since 1.20
          */
         get_processed_subframe_index(frame: VideoCodecFrame): number;
 
         /**
          * @returns The current QoS proportion.
+         * @since 1.0.3
          */
         get_qos_proportion(): number;
 
@@ -6186,6 +6199,7 @@ export namespace GstVideo {
          * base class. If FALSE, each input buffer will be considered as a full
          * frame.
          * @returns TRUE if input data is considered as sub frames.
+         * @since 1.20
          */
         get_subframe_mode(): boolean;
 
@@ -6203,6 +6217,7 @@ export namespace GstVideo {
          * must be called in the subclass `handle_frame` callback.
          * @param frame the {@link GstVideo.VideoCodecFrame} to update
          * @returns a {@link Gst.FlowReturn}, usually GST_FLOW_OK.
+         * @since 1.20
          */
         have_last_subframe(frame: VideoCodecFrame): Gst.FlowReturn;
 
@@ -6235,6 +6250,7 @@ export namespace GstVideo {
          * @param caps initial caps
          * @param filter filter caps
          * @returns a {@link Gst.Caps} owned by caller
+         * @since 1.6
          */
         proxy_getcaps(caps: Gst.Caps | null, filter: Gst.Caps | null): Gst.Caps;
 
@@ -6243,6 +6259,7 @@ export namespace GstVideo {
          * without any processing other than removing it from list of pending frames,
          * after which it is considered finished and released.
          * @param frame the {@link GstVideo.VideoCodecFrame} to release
+         * @since 1.2.2
          */
         release_frame(frame: VideoCodecFrame): void;
 
@@ -6272,6 +6289,7 @@ export namespace GstVideo {
          *     before calling `gst_video_decoder_finish_frame()`.
          * @param frame a {@link GstVideo.VideoCodecFrame}
          * @param flags {@link GstVideo.VideoDecoderRequestSyncPointFlags}
+         * @since 1.20
          */
         request_sync_point(frame: VideoCodecFrame, flags: VideoDecoderRequestSyncPointFlags): void;
 
@@ -6290,6 +6308,7 @@ export namespace GstVideo {
          * @param height The height in pixels
          * @param reference An optional reference {@link GstVideo.VideoCodecState}
          * @returns the newly configured output state.
+         * @since 1.16.
          */
         set_interlaced_output_state(fmt: VideoFormat, interlace_mode: VideoInterlaceMode, width: number, height: number, reference: VideoCodecState | null): VideoCodecState | null;
 
@@ -6322,6 +6341,7 @@ export namespace GstVideo {
          * is then expected being able to do so either by default
          * or based on the input data.
          * @param enabled new state
+         * @since 1.4
          */
         set_needs_format(enabled: boolean): void;
 
@@ -6334,6 +6354,7 @@ export namespace GstVideo {
          * If the first frame is not a sync point, the base class will request a sync
          * point via the force-key-unit event.
          * @param enabled new state
+         * @since 1.20
          */
         set_needs_sync_point(enabled: boolean): void;
 
@@ -6384,6 +6405,7 @@ export namespace GstVideo {
          * frame has been signaled using either method.
          * This method must be called during the decoder subclass `set_format` call.
          * @param subframe_mode whether the input data should be considered as subframes.
+         * @since 1.20
          */
         set_subframe_mode(subframe_mode: boolean): void;
 
@@ -6395,6 +6417,7 @@ export namespace GstVideo {
          * handler with `GST_PAD_SET_ACCEPT_INTERSECT` and
          * `GST_PAD_SET_ACCEPT_TEMPLATE`
          * @param use if the default pad accept-caps query handling should be used
+         * @since 1.6
          */
         set_use_default_pad_acceptcaps(use: boolean): void;
     }
@@ -6747,6 +6770,7 @@ export namespace GstVideo {
          * from `frame` as pending, to be pushed out alongside the next frame
          * submitted via `gst_video_encoder_finish_frame()`.
          * @param frame a {@link GstVideo.VideoCodecFrame}
+         * @since 1.26
          */
         drop_frame(frame: VideoCodecFrame): void;
 
@@ -6781,6 +6805,7 @@ export namespace GstVideo {
          * will be pushed downstream.
          * @param frame a {@link GstVideo.VideoCodecFrame} being encoded
          * @returns a {@link Gst.FlowReturn} resulting from pushing the buffer downstream.
+         * @since 1.18
          */
         finish_subframe(frame: VideoCodecFrame): Gst.FlowReturn;
 
@@ -6821,6 +6846,7 @@ export namespace GstVideo {
          * {@link GstVideo.VideoEncoder.qos} is disabled this function returns #G_MAXINT64.
          * @param frame a {@link GstVideo.VideoCodecFrame}
          * @returns max decoding time.
+         * @since 1.14
          */
         get_max_encode_time(frame: VideoCodecFrame): Gst.ClockTimeDiff;
 
@@ -6828,6 +6854,7 @@ export namespace GstVideo {
          * Returns the minimum force-keyunit interval, see `gst_video_encoder_set_min_force_key_unit_interval()`
          * for more details.
          * @returns the minimum force-keyunit interval
+         * @since 1.18
          */
         get_min_force_key_unit_interval(): Gst.ClockTime;
 
@@ -6847,6 +6874,7 @@ export namespace GstVideo {
          * Checks if `encoder` is currently configured to handle Quality-of-Service
          * events from downstream.
          * @returns `true` if the encoder is configured to perform Quality-of-Service.
+         * @since 1.14
          */
         is_qos_enabled(): boolean;
 
@@ -6888,6 +6916,7 @@ export namespace GstVideo {
          * to the frame, but does not post a QoS message or do any additional
          * processing. Events from `frame` are moved to the pending events list.
          * @param frame a {@link GstVideo.VideoCodecFrame}
+         * @since 1.26
          */
         release_frame(frame: VideoCodecFrame): void;
 
@@ -6911,6 +6940,7 @@ export namespace GstVideo {
          * events. Setting this to 0 will allow to handle every event, setting this to
          * `GST_CLOCK_TIME_NONE` causes force-keyunit events to be ignored.
          * @param interval minimum interval
+         * @since 1.18
          */
         set_min_force_key_unit_interval(interval: Gst.ClockTime): void;
 
@@ -6920,6 +6950,7 @@ export namespace GstVideo {
          * For streams with reordered frames this can be used to ensure that there
          * is enough time to accommodate first DTS, which may be less than first PTS
          * @param min_pts minimal PTS that will be passed to handle_frame
+         * @since 1.6
          */
         set_min_pts(min_pts: Gst.ClockTime): void;
 
@@ -6951,6 +6982,7 @@ export namespace GstVideo {
         /**
          * Configures `encoder` to handle Quality-of-Service events from downstream.
          * @param enabled the new qos value.
+         * @since 1.14
          */
         set_qos_enabled(enabled: boolean): void;
 
@@ -6985,6 +7017,7 @@ export namespace GstVideo {
         /**
          * Check if one can add new presets, change existing ones and remove presets.
          * @returns `true` if presets are editable or `false` if they are static
+         * @since 1.6
          */
         is_editable(): boolean;
 
@@ -7323,6 +7356,7 @@ export namespace GstVideo {
          * @param src the {@link GstVideo.VideoRectangle} describing the source area
          * @param dst the {@link GstVideo.VideoRectangle} describing the destination area
          * @param scaling a `gboolean` indicating if scaling should be applied or not
+         * @deprecated since 1.20: Use `gst_video_center_rect()` instead.
          */
         static center_rect(src: VideoRectangle, dst: VideoRectangle, scaling: boolean): VideoRectangle;
 
@@ -7331,6 +7365,7 @@ export namespace GstVideo {
          * Notifies the subclass of changed {@link GstVideo.VideoInfo}.
          * @param caps A {@link Gst.Caps}.
          * @param info A {@link GstVideo.VideoInfo} corresponding to `caps`.
+         * @since 1.20
          * @virtual
          */
         vfunc_set_info(caps: Gst.Caps, info: VideoInfo): boolean;
@@ -7456,6 +7491,7 @@ export namespace GstVideo {
          * Apply a transformation using the given 4x4 transformation matrix.
          * Performs the multiplication, meta->matrix X matrix.
          * @param matrix a 4x4 transformation matrix to be applied
+         * @since 1.8
          */
         apply_matrix(matrix: number[]): void;
     }
@@ -7674,6 +7710,9 @@ export namespace GstVideo {
         static $gtype: GObject.GType<VideoCodecAlphaMeta>;
 
         // Static methods
+        /**
+         * @since 1.20
+         */
         static get_info(): Gst.MetaInfo;
     }
 
@@ -7826,6 +7865,7 @@ export namespace GstVideo {
          * Compare the 2 colorimetry sets for equality
          * @param other another {@link GstVideo.VideoColorimetry}
          * @returns `true` if `cinfo` and `other` are equal.
+         * @since 1.6
          */
         is_equal(other: VideoColorimetry): boolean;
 
@@ -7835,6 +7875,7 @@ export namespace GstVideo {
          * @param other another {@link GstVideo.VideoColorimetry}
          * @param other_bitdepth bitdepth of a format associated with `other`
          * @returns `true` if `cinfo` and `other` are equivalent.
+         * @since 1.22
          */
         is_equivalent(bitdepth: number, other: VideoColorimetry, other_bitdepth: number): boolean;
 
@@ -7879,6 +7920,7 @@ export namespace GstVideo {
          * Parse `caps` and update `linfo`
          * @param caps a {@link Gst.Caps}
          * @returns `true` if `linfo` was successfully set to `caps`
+         * @since 1.18
          */
         add_to_caps(caps: Gst.Caps): boolean;
 
@@ -7886,6 +7928,7 @@ export namespace GstVideo {
          * Parse `caps` and update `linfo`
          * @param caps a {@link Gst.Caps}
          * @returns if `caps` has {@link GstVideo.VideoContentLightLevel} and could be parsed
+         * @since 1.18
          */
         from_caps(caps: Gst.Caps): boolean;
 
@@ -7894,11 +7937,13 @@ export namespace GstVideo {
          * with the parsed values.
          * @param level a content-light-level string from caps
          * @returns `true` if `linfo` points to valid {@link GstVideo.VideoContentLightLevel}.
+         * @since 1.18
          */
         from_string(level: string): boolean;
 
         /**
          * Initialize `linfo`
+         * @since 1.18
          */
         init(): void;
 
@@ -7906,12 +7951,14 @@ export namespace GstVideo {
          * Checks equality between `linfo` and `other`.
          * @param other a {@link GstVideo.VideoContentLightLevel}
          * @returns `true` if `linfo` and `other` are equal.
+         * @since 1.20
          */
         is_equal(other: VideoContentLightLevel): boolean;
 
         /**
          * Convert `linfo` to its string representation.
          * @returns a string representation of `linfo`.
+         * @since 1.18
          */
         to_string(): string;
     }
@@ -7932,17 +7979,20 @@ export namespace GstVideo {
          * `gst_video_converter_frame_finish()`.
          * @param src a {@link GstVideo.VideoFrame}
          * @param dest a {@link GstVideo.VideoFrame}
+         * @since 1.6
          */
         frame(src: VideoFrame, dest: VideoFrame): void;
 
         /**
          * Wait for a previous async conversion performed using
          * `gst_video_converter_frame()` to complete.
+         * @since 1.20
          */
         frame_finish(): void;
 
         /**
          * Free `convert`
+         * @since 1.6
          */
         free(): void;
 
@@ -7955,12 +8005,14 @@ export namespace GstVideo {
         /**
          * Retrieve the input format of `convert`.
          * @returns a {@link GstVideo.VideoInfo}
+         * @since 1.22
          */
         get_in_info(): VideoInfo;
 
         /**
          * Retrieve the output format of `convert`.
          * @returns a {@link GstVideo.VideoInfo}
+         * @since 1.22
          */
         get_out_info(): VideoInfo;
 
@@ -7975,6 +8027,7 @@ export namespace GstVideo {
          * option and values.
          * @param config a {@link Gst.Structure}
          * @returns `true` when `config` could be set.
+         * @since 1.6
          */
         set_config(config: Gst.Structure): boolean;
     }
@@ -8122,6 +8175,7 @@ export namespace GstVideo {
          * for the format `info`. A value of -1 in `components` indicates that no more
          * components are packed in the plane.
          * @param plane a plane number
+         * @since 1.18
          */
         component(plane: number): number;
 
@@ -8131,6 +8185,7 @@ export namespace GstVideo {
          * @param plane a plane number
          * @param stride The fist plane stride
          * @returns The extrapolated stride for `plane`
+         * @since 1.22
          */
         extrapolate_stride(plane: number, stride: number): number;
     }
@@ -8380,6 +8435,7 @@ export namespace GstVideo {
          * ones used to hold a single field, not the full frame.
          * @param align alignment parameters
          * @returns `false` if alignment could not be applied, e.g. because the   size of a frame can't be represented as a 32 bit integer
+         * @since 1.18
          */
         align_full(align: VideoAlignment): [boolean, number];
 
@@ -8398,12 +8454,14 @@ export namespace GstVideo {
         /**
          * Copy a GstVideoInfo structure.
          * @returns a new {@link GstVideo.VideoInfo}. free with gst_video_info_free.
+         * @since 1.6
          */
         copy(): VideoInfo;
 
         /**
          * Free a GstVideoInfo structure previously allocated with `gst_video_info_new()`
          * or `gst_video_info_copy()`.
+         * @since 1.6
          */
         free(): void;
 
@@ -8435,6 +8493,7 @@ export namespace GstVideo {
          * @param width a width
          * @param height a height
          * @returns `false` if the returned video info is invalid, e.g. because the   size of a frame can't be represented as a 32 bit integer.
+         * @since 1.16
          */
         set_interlaced_format(format: VideoFormat, mode: VideoInterlaceMode, width: number, height: number): boolean;
 
@@ -8479,6 +8538,7 @@ export namespace GstVideo {
          * a dma drm caps. The `gst_video_is_dma_drm_caps()` can be used to verify
          * it before calling this function.
          * @param caps a {@link Gst.Caps}
+         * @since 1.24
          */
         static from_caps(caps: Gst.Caps): [boolean, VideoInfoDmaDrm];
 
@@ -8487,11 +8547,13 @@ export namespace GstVideo {
          * valid
          * @param info a {@link GstVideo.VideoInfo}
          * @param modifier the associated modifier value.
+         * @since 1.24
          */
         static from_video_info(info: VideoInfo, modifier: bigint | number): [boolean, VideoInfoDmaDrm];
 
         /**
          * Initialize `drm_info` with default values.
+         * @since 1.24
          */
         static init(): VideoInfoDmaDrm;
 
@@ -8499,6 +8561,7 @@ export namespace GstVideo {
         /**
          * Free a {@link GstVideo.VideoInfoDmaDrm} structure previously allocated with
          * `gst_video_info_dma_drm_new()`
+         * @since 1.24
          */
         free(): void;
 
@@ -8508,6 +8571,7 @@ export namespace GstVideo {
          * and contains a new drm-format field. The value of drm-format field is
          * composed of a drm fourcc and a modifier, such as NV12:0x0100000000000002.
          * @returns a new {@link Gst.Caps} containing the info in `drm_info`.
+         * @since 1.24
          */
         to_caps(): Gst.Caps | null;
 
@@ -8518,6 +8582,7 @@ export namespace GstVideo {
          * sets `info`'s video format into the default value according to `drm_info`'s
          * drm_fourcc field.
          * @returns `true` if `info` is converted correctly.
+         * @since 1.24
          */
         to_video_info(): [boolean, VideoInfo];
     }
@@ -8554,6 +8619,7 @@ export namespace GstVideo {
         /**
          * Extract {@link GstVideo.VideoMasteringDisplayInfo} from `mastering`
          * @param mastering a {@link Gst.Structure} representing {@link GstVideo.VideoMasteringDisplayInfo}
+         * @since 1.18
          */
         static from_string(mastering: string): [boolean, VideoMasteringDisplayInfo];
 
@@ -8562,6 +8628,7 @@ export namespace GstVideo {
          * Set string representation of `minfo` to `caps`
          * @param caps a {@link Gst.Caps}
          * @returns `true` if `minfo` was successfully set to `caps`
+         * @since 1.18
          */
         add_to_caps(caps: Gst.Caps): boolean;
 
@@ -8569,11 +8636,13 @@ export namespace GstVideo {
          * Parse `caps` and update `minfo`
          * @param caps a {@link Gst.Caps}
          * @returns `true` if `caps` has {@link GstVideo.VideoMasteringDisplayInfo} and could be parsed
+         * @since 1.18
          */
         from_caps(caps: Gst.Caps): boolean;
 
         /**
          * Initialize `minfo`
+         * @since 1.18
          */
         init(): void;
 
@@ -8581,12 +8650,14 @@ export namespace GstVideo {
          * Checks equality between `minfo` and `other`.
          * @param other a {@link GstVideo.VideoMasteringDisplayInfo}
          * @returns `true` if `minfo` and `other` are equal.
+         * @since 1.18
          */
         is_equal(other: VideoMasteringDisplayInfo): boolean;
 
         /**
          * Convert `minfo` to its string representation
          * @returns a string representation of `minfo`
+         * @since 1.18
          */
         to_string(): string;
     }
@@ -8674,6 +8745,7 @@ export namespace GstVideo {
          * It is not valid to call this function with a meta associated to a
          * TILED video format.
          * @returns `true` if `meta`'s alignment is valid and `plane_height` has been updated, `false` otherwise
+         * @since 1.18
          */
         get_plane_height(): [boolean, number[]];
 
@@ -8681,6 +8753,7 @@ export namespace GstVideo {
          * Compute the size, in bytes, of each video plane described in `meta` including
          * any padding and alignment constraint defined in `meta`->alignment.
          * @returns `true` if `meta`'s alignment is valid and `plane_size` has been updated, `false` otherwise
+         * @since 1.18
          */
         get_plane_size(): [boolean, number[]];
 
@@ -8700,6 +8773,7 @@ export namespace GstVideo {
          * defined in `meta` and will fail to update if they are not.
          * @param alignment a {@link GstVideo.VideoAlignment}
          * @returns `true` if `alignment`'s meta has been updated, `false` if not
+         * @since 1.18
          */
         set_alignment(alignment: VideoAlignment): boolean;
 
@@ -9058,6 +9132,7 @@ export namespace GstVideo {
          * Multiple parameters can be defined for the same meta so different encoders
          * can be supported by cross platform applications).
          * @param s a {@link Gst.Structure}
+         * @since 1.14
          */
         add_param(s: Gst.Structure): void;
 
@@ -9066,6 +9141,7 @@ export namespace GstVideo {
          * or `null` if there is none.
          * @param name a name.
          * @returns a {@link Gst.Structure}
+         * @since 1.14
          */
         get_param(name: string): Gst.Structure | null;
     }
@@ -9113,6 +9189,7 @@ export namespace GstVideo {
         // Methods
         /**
          * Clear a previously initialized {@link GstVideo.VideoResampler} `resampler`.
+         * @since 1.6
          */
         clear(): void;
 
@@ -9146,6 +9223,9 @@ export namespace GstVideo {
         size: number;
 
         // Static methods
+        /**
+         * @since 1.22
+         */
         static get_info(): Gst.MetaInfo;
     }
 
@@ -9322,6 +9402,7 @@ export namespace GstVideo {
          * Adds or subtracts `frames` amount of frames to `tc`. tc needs to
          * contain valid data, as verified by `gst_video_time_code_is_valid()`.
          * @param frames How many frames to add or subtract
+         * @since 1.10
          */
         add_frames(frames: bigint | number): void;
 
@@ -9335,12 +9416,14 @@ export namespace GstVideo {
          * because this time we can have an exact minute.
          * @param tc_inter The {@link GstVideo.VideoTimeCodeInterval} to add to `tc`. The interval must contain valid values, except that for drop-frame timecode, it may also contain timecodes which would normally be dropped. These are then corrected to the next reasonable timecode.
          * @returns A new {@link GstVideo.VideoTimeCode} with `tc_inter` added or `null`   if the interval can't be added.
+         * @since 1.12
          */
         add_interval(tc_inter: VideoTimeCodeInterval): VideoTimeCode | null;
 
         /**
          * Initializes `tc` with empty/zero/NULL values and frees any memory
          * it might currently use.
+         * @since 1.10
          */
         clear(): void;
 
@@ -9350,26 +9433,31 @@ export namespace GstVideo {
          * `tc1` and `tc2` was at the same time. Both time codes must be valid.
          * @param tc2 another valid {@link GstVideo.VideoTimeCode}
          * @returns 1 if `tc1` is after `tc2`, -1 if `tc1` is before `tc2`, 0 otherwise.
+         * @since 1.10
          */
         compare(tc2: VideoTimeCode): number;
 
         /**
          * @returns a new {@link GstVideo.VideoTimeCode} with the same values as `tc`.
+         * @since 1.10
          */
         copy(): VideoTimeCode;
 
         /**
          * @returns how many frames have passed since the daily jam of `tc`.
+         * @since 1.10
          */
         frames_since_daily_jam(): number;
 
         /**
          * Frees `tc`.
+         * @since 1.10
          */
         free(): void;
 
         /**
          * Adds one frame to `tc`.
+         * @since 1.10
          */
         increment_frame(): void;
 
@@ -9389,6 +9477,7 @@ export namespace GstVideo {
          * @param seconds the seconds field of {@link GstVideo.VideoTimeCode}
          * @param frames the frames field of {@link GstVideo.VideoTimeCode}
          * @param field_count Interlaced video field count
+         * @since 1.10
          */
         init(fps_n: number, fps_d: number, latest_daily_jam: GLib.DateTime | null, flags: VideoTimeCodeFlags, hours: number, minutes: number, seconds: number, frames: number, field_count: number): void;
 
@@ -9403,6 +9492,7 @@ export namespace GstVideo {
          * @param dt {@link GLib.DateTime} to convert
          * @param flags {@link GstVideo.VideoTimeCodeFlags}
          * @param field_count Interlaced video field count
+         * @since 1.12
          */
         init_from_date_time(fps_n: number, fps_d: number, dt: GLib.DateTime, flags: VideoTimeCodeFlags, field_count: number): void;
 
@@ -9415,27 +9505,32 @@ export namespace GstVideo {
          * @param flags {@link GstVideo.VideoTimeCodeFlags}
          * @param field_count Interlaced video field count
          * @returns `true` if `tc` could be correctly initialized to a valid timecode
+         * @since 1.16
          */
         init_from_date_time_full(fps_n: number, fps_d: number, dt: GLib.DateTime, flags: VideoTimeCodeFlags, field_count: number): boolean;
 
         /**
          * @returns whether `tc` is a valid timecode (supported frame rate, hours/minutes/seconds/frames not overflowing)
+         * @since 1.10
          */
         is_valid(): boolean;
 
         /**
          * @returns how many nsec have passed since the daily jam of `tc`.
+         * @since 1.10
          */
         nsec_since_daily_jam(): number;
 
         /**
          * The `tc`.config->latest_daily_jam is required to be non-NULL.
          * @returns the {@link GLib.DateTime} representation of `tc` or `null` if `tc`   has no daily jam.
+         * @since 1.10
          */
         to_date_time(): GLib.DateTime | null;
 
         /**
          * @returns the SMPTE ST 2059-1:2015 string representation of `tc`. That will take the form hh:mm:ss:ff. The last separator (between seconds and frames) may vary: ';' for drop-frame, non-interlaced content and for drop-frame interlaced field 2 ',' for drop-frame interlaced field 1 ':' for non-drop-frame, non-interlaced content and for non-drop-frame interlaced field 2 '.' for non-drop-frame interlaced field 1
+         * @since 1.10
          */
         to_string(): string;
     }
@@ -9495,16 +9590,19 @@ export namespace GstVideo {
         // Methods
         /**
          * Initializes `tc` with empty/zero/NULL values.
+         * @since 1.12
          */
         clear(): void;
 
         /**
          * @returns a new {@link GstVideo.VideoTimeCodeInterval} with the same values as `tc`.
+         * @since 1.12
          */
         copy(): VideoTimeCodeInterval;
 
         /**
          * Frees `tc`.
+         * @since 1.12
          */
         free(): void;
 
@@ -9514,6 +9612,7 @@ export namespace GstVideo {
          * @param minutes the minutes field of {@link GstVideo.VideoTimeCodeInterval}
          * @param seconds the seconds field of {@link GstVideo.VideoTimeCodeInterval}
          * @param frames the frames field of {@link GstVideo.VideoTimeCodeInterval}
+         * @since 1.12
          */
         init(hours: number, minutes: number, seconds: number, frames: number): void;
     }
@@ -9563,6 +9662,7 @@ export namespace GstVideo {
          * @param SDID_block_number The Secondary Data Identifier (if type 2) or the Data                     Block Number (if type 1)
          * @param data The user data content of the Ancillary packet.    Does not contain the ADF, DID, SDID nor CS.
          * @returns `true` if enough space was left in the current line, `false`          otherwise.
+         * @since 1.16
          */
         add_ancillary(composite: boolean, DID: number, SDID_block_number: number, data: Uint8Array | string): boolean;
 
@@ -9570,6 +9670,7 @@ export namespace GstVideo {
 
         /**
          * Frees the `encoder`.
+         * @since 1.16
          */
         free(): void;
 
@@ -9599,6 +9700,7 @@ export namespace GstVideo {
          * Provide a new line of data to the `parser`. Call `gst_video_vbi_parser_get_ancillary()`
          * to get the Ancillary data that might be present on that line.
          * @param data The line of data to parse
+         * @since 1.16
          */
         add_line(data: Uint8Array | string): void;
 
@@ -9606,12 +9708,14 @@ export namespace GstVideo {
 
         /**
          * Frees the `parser`.
+         * @since 1.16
          */
         free(): void;
 
         /**
          * Parse the line provided previously by `gst_video_vbi_parser_add_line()`.
          * @returns {@link GstVideo.VideoVBIParserResult.OK} if ancillary data was found and `anc` was filled. {@link GstVideo.VideoVBIParserResult.DONE} if there wasn't any data.
+         * @since 1.16
          */
         get_ancillary(): [VideoVBIParserResult, VideoAncillary];
     }
@@ -9757,6 +9861,7 @@ export namespace GstVideo {
             /**
              * sending a navigation event.
              * @param structure 
+             * @deprecated since 1.22: Use {@link GstVideo.NavigationInterface}.send_event_simple() instead.
              * @virtual
              */
             vfunc_send_event(structure: Gst.Structure): void;
@@ -9764,6 +9869,7 @@ export namespace GstVideo {
             /**
              * Sends an event to the navigation interface.
              * @param event The event to send
+             * @since 1.22
              * @virtual
              */
             vfunc_send_event_simple(event: Gst.Event): void;
@@ -10095,6 +10201,7 @@ export namespace GstVideo {
         /**
          * Sends an event to the navigation interface.
          * @param event The event to send
+         * @since 1.22
          */
         send_event_simple(event: Gst.Event): void;
 
@@ -10125,6 +10232,7 @@ export namespace GstVideo {
          * @param y The y coordinate of the mouse event.
          * @param delta_x The delta_x coordinate of the mouse event.
          * @param delta_y The delta_y coordinate of the mouse event.
+         * @since 1.18
          */
         send_mouse_scroll_event(x: number, y: number, delta_x: number, delta_y: number): void;
     }

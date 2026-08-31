@@ -2535,12 +2535,14 @@ export namespace Atspi {
          * to the user, but to be an id which is stable over application development.
          * Typically, this is the gtkbuilder id.
          * @returns a character string representing the accessible id of the {@link Atspi.Accessible} object or NULL on exception.
+         * @since 2.34
          */
         get_accessible_id(): string;
 
         /**
          * Gets the {@link Atspi.Action} interface for an {@link Atspi.Accessible}.
          * @returns a pointer to an {@link Atspi.Action} interface          instance, or NULL if `obj` does not implement {@link Atspi.Action}.
+         * @deprecated since 2.10: Use atspi_accessible_get_action_iface instead.
          */
         get_action(): Action;
 
@@ -2598,6 +2600,7 @@ export namespace Atspi {
         /**
          * Gets the {@link Atspi.Collection} interface for an {@link Atspi.Accessible}.
          * @returns a pointer to an {@link Atspi.Collection} interface          instance, or NULL if `obj` does not implement {@link Atspi.Collection}.
+         * @deprecated since 2.10: Use atspi_accessible_get_collection_iface instead.
          */
         get_collection(): Collection;
 
@@ -2610,6 +2613,7 @@ export namespace Atspi {
         /**
          * Gets the {@link Atspi.Component} interface for an {@link Atspi.Accessible}.
          * @returns a pointer to an {@link Atspi.Component} interface          instance, or NULL if `obj` does not implement {@link Atspi.Component}.
+         * @deprecated since 2.10: Use atspi_accessible_get_component_iface instead.
          */
         get_component(): Component;
 
@@ -2628,6 +2632,7 @@ export namespace Atspi {
         /**
          * Gets the {@link Atspi.Document} interface for an {@link Atspi.Accessible}.
          * @returns a pointer to an {@link Atspi.Document} interface          instance, or NULL if `obj` does not implement {@link Atspi.Document}.
+         * @deprecated since 2.10: Use atspi_accessible_get_document_iface instead.
          */
         get_document(): Document;
 
@@ -2640,6 +2645,7 @@ export namespace Atspi {
         /**
          * Gets the {@link Atspi.EditableText} interface for an {@link Atspi.Accessible}.
          * @returns a pointer to an {@link Atspi.EditableText} interface          instance, or NULL if `obj` does not implement {@link Atspi.EditableText}.
+         * @deprecated since 2.10: Use atspi_accessible_get_editable_text_iface instead.
          */
         get_editable_text(): EditableText;
 
@@ -2654,6 +2660,7 @@ export namespace Atspi {
          * present, it provides information that a screen reader can relay to the user
          * to explain how to interact with the object.
          * @returns a character string representing the help text for the {@link Atspi.Accessible} object or NULL on exception.
+         * @since 2.52
          */
         get_help_text(): string;
 
@@ -2666,6 +2673,7 @@ export namespace Atspi {
         /**
          * Gets the {@link Atspi.Hypertext} interface for an {@link Atspi.Accessible}.
          * @returns a pointer to an {@link Atspi.Hypertext} interface          instance, or NULL if `obj` does not implement {@link Atspi.Hypertext}.
+         * @deprecated since 2.10: Use atspi_accessible_get_hypertext_iface instead.
          */
         get_hypertext(): Hypertext;
 
@@ -2685,6 +2693,7 @@ export namespace Atspi {
         /**
          * Gets the {@link Atspi.Image} interface for an {@link Atspi.Accessible}.
          * @returns a pointer to an {@link Atspi.Image} interface instance, or          NULL if `obj` does not implement {@link Atspi.Image}.
+         * @deprecated since 2.10: Use atspi_accessible_get_image_iface instead.
          */
         get_image(): Image;
 
@@ -2763,6 +2772,7 @@ export namespace Atspi {
         /**
          * Gets the {@link Atspi.Selection} interface for an {@link Atspi.Accessible}.
          * @returns a pointer to an {@link Atspi.Selection} interface          instance, or NULL if `obj` does not implement {@link Atspi.Selection}.
+         * @deprecated since 2.10: Use atspi_accessible_get_selection_iface instead.
          */
         get_selection(): Selection;
 
@@ -2787,6 +2797,7 @@ export namespace Atspi {
         /**
          * Gets the {@link Atspi.Table} interface for an {@link Atspi.Accessible}.
          * @returns a pointer to an {@link Atspi.Table} interface instance, or          NULL if `obj` does not implement {@link Atspi.Table}.
+         * @deprecated since 2.10: Use atspi_accessible_get_table_iface instead.
          */
         get_table(): Table;
 
@@ -2811,6 +2822,7 @@ export namespace Atspi {
         /**
          * Gets the {@link Atspi.Table} interface for an {@link Atspi.Accessible}.
          * @returns a pointer to an {@link Atspi.Text} interface instance, or          NULL if `obj` does not implement {@link Atspi.Text}.
+         * @deprecated since 2.10: Use atspi_accessible_get_text_iface instead.
          */
         get_text(): Text;
 
@@ -2843,6 +2855,7 @@ export namespace Atspi {
         /**
          * Gets the {@link Atspi.Table} interface for an {@link Atspi.Accessible}.
          * @returns a pointer to an {@link Atspi.Value} interface instance, or          NULL if `obj` does not implement {@link Atspi.Value}.
+         * @deprecated since 2.10: Use atspi_accessible_get_value_iface instead.
          */
         get_value(): Value;
 
@@ -2973,6 +2986,7 @@ export namespace Atspi {
          *      object implementing {@link Atspi.Action}.
          * @param i an integer indicating which action to query.
          * @returns a UTF-8 string describing the '`i`-th' invocable action.
+         * @deprecated since 2.10: Use atspi_action_get_action_description instead.
          */
         get_action_description(i: number): string;
 
@@ -3022,6 +3036,7 @@ export namespace Atspi {
          *      object implementing {@link Atspi.Action}.
          * @param i an integer indicating which action to query.
          * @returns the non-localized name of the action, as a UTF-8 string.
+         * @deprecated since 2.10: Use atspi_action_get_action_name instead.
          */
         get_action_name(i: number): string;
 
@@ -3201,6 +3216,7 @@ export namespace Atspi {
          * Gets the value of a single attribute, if specified for the document as a whole.
          * @param attribute a string indicating the name of a specific attribute.
          * @returns a string corresponding to the value of the specified attribute, or an empty string if the attribute is unspecified for the object.
+         * @deprecated since 2.10: Use atspi_document_get_document_attribute_value instead.
          */
         get_document_attribute_value(attribute: string): string;
 
@@ -3208,6 +3224,7 @@ export namespace Atspi {
          * Gets all constant attributes for the document as a whole. For attributes
          * that change within the document content, see `atspi_text_get_attribute_run` instead.
          * @returns a {@link GLib.HashTable}          containing the constant attributes of the document, as name-value pairs.
+         * @deprecated since 2.10: Use atspi_document_get_document_attributes instead.
          */
         get_document_attributes(): { [key: string]: string };
 
@@ -3233,6 +3250,7 @@ export namespace Atspi {
         /**
          * Returns an array of AtspiTextSelections within this document.
          * @returns a GArray of AtspiTextSelection structures representing the selection.
+         * @since 2.52
          */
         get_text_selections(): TextSelection[];
 
@@ -3244,6 +3262,7 @@ export namespace Atspi {
          * FALSE will be returned.
          * @param selections a GArray of AtspiTextSelections              to be selected.
          * @returns TRUE if the selection was made successfully; FALSE otherwise.
+         * @since 2.52
          */
         set_text_selections(selections: TextSelection[]): boolean;
 
@@ -3743,6 +3762,7 @@ export namespace Atspi {
          * @param offset The character offset at which to query the attribute.
          * @param attribute_name The attribute to query.
          * @returns the value of a given attribute at the given offset, or `null` if not present.
+         * @deprecated since 2.10: Use atspi_text_get_text_attribute_value instead.
          */
         get_text_attribute_value(offset: number, attribute_name: string): string | null;
 
@@ -3752,6 +3772,7 @@ export namespace Atspi {
          * where possible.
          * @param offset a `gint` indicating the offset from which the attribute        search is based.
          * @returns a {@link GLib.HashTable} describing the attributes at the given character offset.
+         * @deprecated since 2.10: Use atspi_text_get_text_attributes instead.
          */
         get_text_attributes(offset: number): [{ [key: string]: string }, number, number];
 
@@ -3870,6 +3891,7 @@ export namespace Atspi {
          * @param offset position
          * @param granularity An {@link Atspi.TextGranularity}
          * @returns a newly allocated string containing the text at the `offset` bounded   by the specified `granularity`. Use `g_free()` to free the returned string.   Returns `null` if the offset is invalid or no implementation is available.
+         * @since 2.9.90
          */
         get_string_at_offset(offset: number, granularity: TextGranularity): TextRange;
 
@@ -3888,6 +3910,7 @@ export namespace Atspi {
          * @param offset a `gint` indicating the offset from which the delimiter        search is based.
          * @param type an {@link Atspi.TextBoundaryType} indicating whether the desired       text string is a word, sentence, line, or attribute run.
          * @returns an {@link Atspi.TextRange} containing a UTF-8 string representing the          delimited text, whose delimiting boundaries bracket the          current offset, or an empty string if no such text exists.
+         * @deprecated since 2.10: Use atspi_text_get_string_at_offset.
          */
         get_text_at_offset(offset: number, type: TextBoundaryType): TextRange;
 
@@ -4128,6 +4151,7 @@ export namespace Atspi {
          * @param x a `gint` indicating the x coordinate of the mouse event, relative to     `obj`..
          * @param y a `gint` indicating the y coordinate of the mouse event, relative to     `obj`..
          * @param name a string indicating which mouse event to be synthesized        (e.g. "b1p", "b1c", "b2r", "rel", "abs").
+         * @since 2.52
          * @virtual
          */
         vfunc_generate_mouse_event(obj: Accessible, x: number, y: number, name: string): void;
@@ -4138,6 +4162,7 @@ export namespace Atspi {
          * locking modifier such as num lock via atspi_device_get_locked_modifiers,
          * rather than to add key grabs.
          * @param keysym the XKB keysym to map.
+         * @since 2.55
          * @virtual
          */
         vfunc_get_keysym_modifier(keysym: number): number;
@@ -4177,6 +4202,7 @@ export namespace Atspi {
          * that is not currently being used. If no unused modifier can be found,
          * then it will use the first modifier by default.
          * @param keysym the XKB keysym to map.
+         * @since 2.55
          * @virtual
          */
         vfunc_map_keysym_modifier(keysym: number): number;
@@ -4211,6 +4237,7 @@ export namespace Atspi {
         /**
          * Removes a mapped modifier from the given keysym.
          * @param keysym the XKB keysym to unmap.
+         * @since 2.55
          * @virtual
          */
         vfunc_unmap_keysym_modifier(keysym: number): void;
@@ -4250,11 +4277,13 @@ export namespace Atspi {
          * @param x a `gint` indicating the x coordinate of the mouse event, relative to     `obj`..
          * @param y a `gint` indicating the y coordinate of the mouse event, relative to     `obj`..
          * @param name a string indicating which mouse event to be synthesized        (e.g. "b1p", "b1c", "b2r", "rel", "abs").
+         * @since 2.52
          */
         generate_mouse_event(obj: Accessible, x: number, y: number, name: string): void;
 
         /**
          * Returns the application ID of the device.
+         * @since 2.55
          */
         get_app_id(): string;
 
@@ -4270,6 +4299,7 @@ export namespace Atspi {
          * rather than to add key grabs.
          * @param keysym the XKB keysym to map.
          * @returns the modifier that is mapped to this keysym.
+         * @since 2.55
          */
         get_keysym_modifier(keysym: number): number;
 
@@ -4309,6 +4339,7 @@ export namespace Atspi {
          * then it will use the first modifier by default.
          * @param keysym the XKB keysym to map.
          * @returns the modifier that is now mapped to this keysym. This return value can be passed to atspi_device_add_key_grab.
+         * @since 2.55
          */
         map_keysym_modifier(keysym: number): number;
 
@@ -4344,6 +4375,7 @@ export namespace Atspi {
         /**
          * Sets the application ID of the device.
          * @param app_id the application ID.
+         * @since 2.55
          */
         set_app_id(app_id: string): void;
 
@@ -4355,6 +4387,7 @@ export namespace Atspi {
         /**
          * Removes a mapped modifier from the given keysym.
          * @param keysym the XKB keysym to unmap.
+         * @since 2.55
          */
         unmap_keysym_modifier(keysym: number): void;
 
@@ -5572,6 +5605,7 @@ export namespace Atspi {
          *      object implementing {@link Atspi.Action}.
          * @param i an integer indicating which action to query.
          * @returns a UTF-8 string describing the '`i`-th' invocable action.
+         * @deprecated since 2.10: Use atspi_action_get_action_description instead.
          */
         get_action_description(i: number): string;
 
@@ -5621,6 +5655,7 @@ export namespace Atspi {
          *      object implementing {@link Atspi.Action}.
          * @param i an integer indicating which action to query.
          * @returns the non-localized name of the action, as a UTF-8 string.
+         * @deprecated since 2.10: Use atspi_action_get_action_name instead.
          */
         get_action_name(i: number): string;
     }
@@ -5877,6 +5912,7 @@ export namespace Atspi {
          * Gets the value of a single attribute, if specified for the document as a whole.
          * @param attribute a string indicating the name of a specific attribute.
          * @returns a string corresponding to the value of the specified attribute, or an empty string if the attribute is unspecified for the object.
+         * @deprecated since 2.10: Use atspi_document_get_document_attribute_value instead.
          */
         get_document_attribute_value(attribute: string): string;
 
@@ -5884,6 +5920,7 @@ export namespace Atspi {
          * Gets all constant attributes for the document as a whole. For attributes
          * that change within the document content, see `atspi_text_get_attribute_run` instead.
          * @returns a {@link GLib.HashTable}          containing the constant attributes of the document, as name-value pairs.
+         * @deprecated since 2.10: Use atspi_document_get_document_attributes instead.
          */
         get_document_attributes(): { [key: string]: string };
 
@@ -5909,6 +5946,7 @@ export namespace Atspi {
         /**
          * Returns an array of AtspiTextSelections within this document.
          * @returns a GArray of AtspiTextSelection structures representing the selection.
+         * @since 2.52
          */
         get_text_selections(): TextSelection[];
 
@@ -5920,6 +5958,7 @@ export namespace Atspi {
          * FALSE will be returned.
          * @param selections a GArray of AtspiTextSelections              to be selected.
          * @returns TRUE if the selection was made successfully; FALSE otherwise.
+         * @since 2.52
          */
         set_text_selections(selections: TextSelection[]): boolean;
     }
@@ -6621,6 +6660,7 @@ export namespace Atspi {
          * @param offset The character offset at which to query the attribute.
          * @param attribute_name The attribute to query.
          * @returns the value of a given attribute at the given offset, or `null` if not present.
+         * @deprecated since 2.10: Use atspi_text_get_text_attribute_value instead.
          */
         get_text_attribute_value(offset: number, attribute_name: string): string | null;
 
@@ -6630,6 +6670,7 @@ export namespace Atspi {
          * where possible.
          * @param offset a `gint` indicating the offset from which the attribute        search is based.
          * @returns a {@link GLib.HashTable} describing the attributes at the given character offset.
+         * @deprecated since 2.10: Use atspi_text_get_text_attributes instead.
          */
         get_text_attributes(offset: number): [{ [key: string]: string }, number, number];
 
@@ -6755,6 +6796,7 @@ export namespace Atspi {
          * @param offset position
          * @param granularity An {@link Atspi.TextGranularity}
          * @returns a newly allocated string containing the text at the `offset` bounded   by the specified `granularity`. Use `g_free()` to free the returned string.   Returns `null` if the offset is invalid or no implementation is available.
+         * @since 2.9.90
          */
         get_string_at_offset(offset: number, granularity: TextGranularity): TextRange;
 
@@ -6783,6 +6825,7 @@ export namespace Atspi {
          * @param offset a `gint` indicating the offset from which the delimiter        search is based.
          * @param type an {@link Atspi.TextBoundaryType} indicating whether the desired       text string is a word, sentence, line, or attribute run.
          * @returns an {@link Atspi.TextRange} containing a UTF-8 string representing the          delimited text, whose delimiting boundaries bracket the          current offset, or an empty string if no such text exists.
+         * @deprecated since 2.10: Use atspi_text_get_string_at_offset.
          */
         get_text_at_offset(offset: number, type: TextBoundaryType): TextRange;
 
@@ -6897,6 +6940,7 @@ export namespace Atspi {
          * Gets the human readable text alternative associated with the value.
          * `text` is a newly created string, that must be freed by the
          * caller. Can be NULL if no descriptor is available.
+         * @since 2.46
          */
         get_text(): string;
 
