@@ -64,39 +64,39 @@ export namespace Adw {
         /**
          * Use a blue color (`#3584e4`). This is the default value.
          */
-        BLUE,
+        BLUE = 0,
         /**
          * Use a teal color (`#2190a4`).
          */
-        TEAL,
+        TEAL = 1,
         /**
          * Use a green color (`#3a944a`).
          */
-        GREEN,
+        GREEN = 2,
         /**
          * Use a yellow color (`#c88800`).
          */
-        YELLOW,
+        YELLOW = 3,
         /**
          * Use a orange color (`#ed5b00`).
          */
-        ORANGE,
+        ORANGE = 4,
         /**
          * Use a red color (`#e62d42`).
          */
-        RED,
+        RED = 5,
         /**
          * Use a pink color (`#d56199`).
          */
-        PINK,
+        PINK = 6,
         /**
          * Use a purple color (`#9141ac`).
          */
-        PURPLE,
+        PURPLE = 7,
         /**
          * Use a slate color (`#6f8396`).
          */
-        SLATE,
+        SLATE = 8,
     }
 
 
@@ -119,19 +119,19 @@ export namespace Adw {
         /**
          * The animation hasn't started yet.
          */
-        IDLE,
+        IDLE = 0,
         /**
          * The animation has been paused.
          */
-        PAUSED,
+        PAUSED = 1,
         /**
          * The animation is currently playing.
          */
-        PLAYING,
+        PLAYING = 2,
         /**
          * The animation has finished.
          */
-        FINISHED,
+        FINISHED = 3,
     }
 
 
@@ -155,11 +155,11 @@ export namespace Adw {
         /**
          * The default button style.
          */
-        DEFAULT,
+        DEFAULT = 0,
         /**
          * A button in the suggested action style.
          */
-        SUGGESTED,
+        SUGGESTED = 1,
     }
 
 
@@ -184,22 +184,22 @@ export namespace Adw {
          * true if the width is greater than or
          *   equal to the condition value
          */
-        MIN_WIDTH,
+        MIN_WIDTH = 0,
         /**
          * true if the width is less than or
          *   equal to the condition value
          */
-        MAX_WIDTH,
+        MAX_WIDTH = 1,
         /**
          * true if the height is greater than or
          *   equal to the condition value
          */
-        MIN_HEIGHT,
+        MIN_HEIGHT = 2,
         /**
          * true if the height is less than or
          *   equal to the condition value
          */
-        MAX_HEIGHT,
+        MAX_HEIGHT = 3,
     }
 
 
@@ -224,12 +224,12 @@ export namespace Adw {
          * true if the aspect ratio is
          *   greater than or equal to the condition value
          */
-        MIN_ASPECT_RATIO,
+        MIN_ASPECT_RATIO = 0,
         /**
          * true if the aspect ratio is
          *   less than or equal to the condition value
          */
-        MAX_ASPECT_RATIO,
+        MAX_ASPECT_RATIO = 1,
     }
 
 
@@ -248,11 +248,11 @@ export namespace Adw {
         /**
          * Keep the title centered when possible
          */
-        LOOSE,
+        LOOSE = 0,
         /**
          * Keep the title centered at all cost
          */
-        STRICT,
+        STRICT = 1,
     }
 
 
@@ -273,25 +273,25 @@ export namespace Adw {
          *   {@link Adw.StyleManager} returned by {@link StyleManager.get_default}, it's
          *   equivalent to `ADW_COLOR_SCHEME_PREFER_LIGHT`.
          */
-        DEFAULT,
+        DEFAULT = 0,
         /**
          * Always use light appearance.
          */
-        FORCE_LIGHT,
+        FORCE_LIGHT = 1,
         /**
          * Use light appearance unless the system
          *   prefers dark colors.
          */
-        PREFER_LIGHT,
+        PREFER_LIGHT = 2,
         /**
          * Use dark appearance unless the system prefers
          *   prefers light colors.
          */
-        PREFER_DARK,
+        PREFER_DARK = 3,
         /**
          * Always use dark appearance.
          */
-        FORCE_DARK,
+        FORCE_DARK = 4,
     }
 
 
@@ -316,15 +316,15 @@ export namespace Adw {
          * Switch between `ADW_DIALOG_FLOATING` and
          *   `ADW_DIALOG_BOTTOM_SHEET` depending on available size.
          */
-        AUTO,
+        AUTO = 0,
         /**
          * Present dialog as a centered floating window.
          */
-        FLOATING,
+        FLOATING = 1,
         /**
          * Present dialog as a bottom sheet.
          */
-        BOTTOM_SHEET,
+        BOTTOM_SHEET = 2,
     }
 
 
@@ -346,167 +346,171 @@ export namespace Adw {
         /**
          * Linear tweening.
          */
-        LINEAR,
+        LINEAR = 0,
         /**
          * Quadratic tweening.
          */
-        EASE_IN_QUAD,
+        EASE_IN_QUAD = 1,
         /**
          * Quadratic tweening, inverse of `ADW_EASE_IN_QUAD`.
          */
-        EASE_OUT_QUAD,
+        EASE_OUT_QUAD = 2,
         /**
          * Quadratic tweening, combining `ADW_EASE_IN_QUAD` and
          *   `ADW_EASE_OUT_QUAD`.
          */
-        EASE_IN_OUT_QUAD,
+        EASE_IN_OUT_QUAD = 3,
         /**
          * Cubic tweening.
          */
-        EASE_IN_CUBIC,
+        EASE_IN_CUBIC = 4,
         /**
          * Cubic tweening, inverse of `ADW_EASE_IN_CUBIC`.
          */
-        EASE_OUT_CUBIC,
+        EASE_OUT_CUBIC = 5,
         /**
          * Cubic tweening, combining `ADW_EASE_IN_CUBIC` and
          *   `ADW_EASE_OUT_CUBIC`.
          */
-        EASE_IN_OUT_CUBIC,
+        EASE_IN_OUT_CUBIC = 6,
         /**
          * Quartic tweening.
          */
-        EASE_IN_QUART,
+        EASE_IN_QUART = 7,
         /**
          * Quartic tweening, inverse of `ADW_EASE_IN_QUART`.
          */
-        EASE_OUT_QUART,
+        EASE_OUT_QUART = 8,
         /**
          * Quartic tweening, combining `ADW_EASE_IN_QUART` and
          *   `ADW_EASE_OUT_QUART`.
          */
-        EASE_IN_OUT_QUART,
+        EASE_IN_OUT_QUART = 9,
         /**
          * Quintic tweening.
          */
-        EASE_IN_QUINT,
+        EASE_IN_QUINT = 10,
         /**
          * Quintic tweening, inverse of `ADW_EASE_IN_QUINT`.
          */
-        EASE_OUT_QUINT,
+        EASE_OUT_QUINT = 11,
         /**
          * Quintic tweening, combining `ADW_EASE_IN_QUINT` and
          *   `ADW_EASE_OUT_QUINT`.
          */
-        EASE_IN_OUT_QUINT,
+        EASE_IN_OUT_QUINT = 12,
         /**
          * Sine wave tweening.
          */
-        EASE_IN_SINE,
+        EASE_IN_SINE = 13,
         /**
          * Sine wave tweening, inverse of `ADW_EASE_IN_SINE`.
          */
-        EASE_OUT_SINE,
+        EASE_OUT_SINE = 14,
         /**
          * Sine wave tweening, combining `ADW_EASE_IN_SINE` and
          *   `ADW_EASE_OUT_SINE`.
          */
-        EASE_IN_OUT_SINE,
+        EASE_IN_OUT_SINE = 15,
         /**
          * Exponential tweening.
          */
-        EASE_IN_EXPO,
+        EASE_IN_EXPO = 16,
         /**
          * Exponential tweening, inverse of `ADW_EASE_IN_EXPO`.
          */
-        EASE_OUT_EXPO,
+        EASE_OUT_EXPO = 17,
         /**
          * Exponential tweening, combining `ADW_EASE_IN_EXPO` and
          *   `ADW_EASE_OUT_EXPO`.
          */
-        EASE_IN_OUT_EXPO,
+        EASE_IN_OUT_EXPO = 18,
         /**
          * Circular tweening.
          */
-        EASE_IN_CIRC,
+        EASE_IN_CIRC = 19,
         /**
          * Circular tweening, inverse of `ADW_EASE_IN_CIRC`.
          */
-        EASE_OUT_CIRC,
+        EASE_OUT_CIRC = 20,
         /**
          * Circular tweening, combining `ADW_EASE_IN_CIRC` and
          *   `ADW_EASE_OUT_CIRC`.
          */
-        EASE_IN_OUT_CIRC,
+        EASE_IN_OUT_CIRC = 21,
         /**
          * Elastic tweening, with offshoot on start.
          */
-        EASE_IN_ELASTIC,
+        EASE_IN_ELASTIC = 22,
         /**
          * Elastic tweening, with offshoot on end, inverse of
          *   `ADW_EASE_IN_ELASTIC`.
          */
-        EASE_OUT_ELASTIC,
+        EASE_OUT_ELASTIC = 23,
         /**
          * Elastic tweening, with offshoot on both ends,
          *   combining `ADW_EASE_IN_ELASTIC` and `ADW_EASE_OUT_ELASTIC`.
          */
-        EASE_IN_OUT_ELASTIC,
+        EASE_IN_OUT_ELASTIC = 24,
         /**
          * Overshooting cubic tweening, with backtracking on start.
          */
-        EASE_IN_BACK,
+        EASE_IN_BACK = 25,
         /**
          * Overshooting cubic tweening, with backtracking on end,
          *   inverse of `ADW_EASE_IN_BACK`.
          */
-        EASE_OUT_BACK,
+        EASE_OUT_BACK = 26,
         /**
          * Overshooting cubic tweening, with backtracking on both
          *   ends, combining `ADW_EASE_IN_BACK` and `ADW_EASE_OUT_BACK`.
          */
-        EASE_IN_OUT_BACK,
+        EASE_IN_OUT_BACK = 27,
         /**
          * Exponentially decaying parabolic (bounce) tweening,
          *   on start.
          */
-        EASE_IN_BOUNCE,
+        EASE_IN_BOUNCE = 28,
         /**
          * Exponentially decaying parabolic (bounce) tweening,
          *   with bounce on end, inverse of `ADW_EASE_IN_BOUNCE`.
          */
-        EASE_OUT_BOUNCE,
+        EASE_OUT_BOUNCE = 29,
         /**
          * Exponentially decaying parabolic (bounce) tweening,
          *   with bounce on both ends, combining `ADW_EASE_IN_BOUNCE` and
          *   `ADW_EASE_OUT_BOUNCE`.
          */
-        EASE_IN_OUT_BOUNCE,
+        EASE_IN_OUT_BOUNCE = 30,
         /**
          * Cubic bezier tweening, with control points in (0.25, 0.1) and (0.25, 1.0).
          * 
          * Increases in velocity towards the middle of the animation, slowing back down
          * at the end.
+         * @since 1.7
          */
-        EASE,
+        EASE = 31,
         /**
          * Cubic bezier tweening, with control points in (0.42, 0.0) and (1.0, 1.0).
          * 
          * Starts off slowly, with the speed of the animation increasing until complete.
+         * @since 1.7
          */
-        EASE_IN,
+        EASE_IN = 32,
         /**
          * Cubic bezier tweening, with control points in (0.0, 0.0) and (0.58, 1.0).
          * 
          * Starts quickly, slowing down the animation until complete.
+         * @since 1.7
          */
-        EASE_OUT,
+        EASE_OUT = 33,
         /**
          * Cubic bezier tweening, with control points in (0.42, 0.0) and (0.58, 1.0).
          * 
          * Starts off slowly, speeds up in the middle, and then slows down again.
+         * @since 1.7
          */
-        EASE_IN_OUT,
+        EASE_IN_OUT = 34,
     }
 
 
@@ -527,16 +531,16 @@ export namespace Adw {
          * Disable folding, the flap cannot reach narrow
          *   sizes.
          */
-        NEVER,
+        NEVER = 0,
         /**
          * Keep the flap always folded.
          */
-        ALWAYS,
+        ALWAYS = 1,
         /**
          * Fold and unfold the flap based on available
          *   space.
          */
-        AUTO,
+        AUTO = 2,
     }
 
 
@@ -561,18 +565,18 @@ export namespace Adw {
          * The flap slides over the content, which is
          *   dimmed. When folded, only the flap can be swiped.
          */
-        OVER,
+        OVER = 0,
         /**
          * The content slides over the flap. Only the
          *   content can be swiped.
          */
-        UNDER,
+        UNDER = 1,
         /**
          * The flap slides offscreen when hidden,
          *   neither the flap nor content overlap each other. Both widgets can be
          *   swiped.
          */
-        SLIDE,
+        SLIDE = 2,
     }
 
 
@@ -592,11 +596,11 @@ export namespace Adw {
         /**
          * Folding is based on the minimum size
          */
-        MINIMUM,
+        MINIMUM = 0,
         /**
          * Folding is based on the natural size
          */
-        NATURAL,
+        NATURAL = 1,
     }
 
 
@@ -621,15 +625,15 @@ export namespace Adw {
         /**
          * Toggles only display labels.
          */
-        LABELS,
+        LABELS = 0,
         /**
          * Toggles only display icons.
          */
-        ICONS,
+        ICONS = 1,
         /**
          * Toggles display both icons and labels.
          */
-        BOTH,
+        BOTH = 2,
     }
 
 
@@ -651,19 +655,19 @@ export namespace Adw {
         /**
          * Don't justify children within a line.
          */
-        NONE,
+        NONE = 0,
         /**
          * Stretch each child within the line, keeping consistent
          *     spacing, so that the line fills the entire length.
          */
-        FILL,
+        FILL = 1,
         /**
          * Increase spacing between children, moving the children
          *     so that the first and last child are aligned with the beginning and end
          *     of the line. If the line only contains a single widget, it will be
          *     stretched regardless.
          */
-        SPREAD,
+        SPREAD = 2,
     }
 
 
@@ -685,15 +689,15 @@ export namespace Adw {
         /**
          * Cover the old page or uncover the new page, sliding from or towards the end according to orientation, text direction and children order
          */
-        OVER,
+        OVER = 0,
         /**
          * Uncover the new page or cover the old page, sliding from or towards the start according to orientation, text direction and children order
          */
-        UNDER,
+        UNDER = 1,
         /**
          * Slide from left, right, up or down according to the orientation, text direction and the children order
          */
-        SLIDE,
+        SLIDE = 2,
     }
 
 
@@ -721,15 +725,15 @@ export namespace Adw {
         /**
          * pixels
          */
-        PX,
+        PX = 0,
         /**
          * points, changes with text scale factor
          */
-        PT,
+        PT = 1,
         /**
          * scale independent pixels, changes with text scale factor
          */
-        SP,
+        SP = 2,
     }
 
 
@@ -748,11 +752,11 @@ export namespace Adw {
         /**
          * Corresponds to start or top, depending on orientation and text direction
          */
-        BACK,
+        BACK = 0,
         /**
          * Corresponds to end or bottom, depending on orientation and text direction
          */
-        FORWARD,
+        FORWARD = 1,
     }
 
 
@@ -776,12 +780,12 @@ export namespace Adw {
          * Pack children from left to right for LTR languages,
          *     or top to bottom vertically.
          */
-        START_TO_END,
+        START_TO_END = 0,
         /**
          * Pack children from right to left for LTR languages,
          *     or bottom to top vertically.
          */
-        END_TO_START,
+        END_TO_START = 1,
     }
 
 
@@ -803,18 +807,18 @@ export namespace Adw {
         /**
          * the default appearance.
          */
-        DEFAULT,
+        DEFAULT = 0,
         /**
          * used to denote important responses such as the
          *     affirmative action.
          */
-        SUGGESTED,
+        SUGGESTED = 1,
         /**
          * used to draw attention to the potentially damaging
          *     consequences of using the response. This appearance acts as a warning to
          *     the user.
          */
-        DESTRUCTIVE,
+        DESTRUCTIVE = 2,
     }
 
 
@@ -834,11 +838,11 @@ export namespace Adw {
         /**
          * No transition
          */
-        NONE,
+        NONE = 0,
         /**
          * A cross-fade
          */
-        CROSSFADE,
+        CROSSFADE = 1,
     }
 
 
@@ -858,12 +862,12 @@ export namespace Adw {
          * the toast will be queued if another toast is
          *   already displayed.
          */
-        NORMAL,
+        NORMAL = 0,
         /**
          * the toast will be displayed immediately, pushing
          *   the previous toast into the queue instead.
          */
-        HIGH,
+        HIGH = 1,
     }
 
 
@@ -922,15 +926,15 @@ export namespace Adw {
         /**
          * No background, shadow only for scrolled content
          */
-        FLAT,
+        FLAT = 0,
         /**
          * Opaque background with a persistent shadow
          */
-        RAISED,
+        RAISED = 1,
         /**
          * Opaque background with a persistent border
          */
-        RAISED_BORDER,
+        RAISED_BORDER = 2,
     }
 
 
@@ -949,11 +953,11 @@ export namespace Adw {
         /**
          * Force the narrow mode
          */
-        NARROW,
+        NARROW = 0,
         /**
          * Force the wide mode
          */
-        WIDE,
+        WIDE = 1,
     }
 
 
@@ -976,12 +980,12 @@ export namespace Adw {
          * Fit as many children into each line as possible, shrinking
          *     them down to their minimum size before wrapping to the next line.
          */
-        MINIMUM,
+        MINIMUM = 0,
         /**
          * Wrap to the next line as soon as the previous line cannot
          *     fit any more children without shrinking them past their natural size.
          */
-        NATURAL,
+        NATURAL = 1,
     }
 
 
@@ -989,27 +993,32 @@ export namespace Adw {
      * Indicates an {@link Animation} with an infinite duration.
      * 
      * This value is mostly used internally.
+     * @default 4294967295
      */
     const DURATION_INFINITE: number;
 
     /**
      * Adwaita major version component (e.g. 1 if the version is 1.2.3).
+     * @default 1
      */
     const MAJOR_VERSION: number;
 
     /**
      * Adwaita micro version component (e.g. 3 if the version is 1.2.3).
+     * @default 12
      */
     const MICRO_VERSION: number;
 
     /**
      * Adwaita minor version component (e.g. 2 if the version is 1.2.3).
+     * @default 7
      */
     const MINOR_VERSION: number;
 
     /**
      * Adwaita version, encoded as a string, useful for printing and
      * concatenation.
+     * @default 1.7.12
      */
     const VERSION_S: string;
 
@@ -1245,64 +1254,64 @@ export namespace Adw {
         /**
          * No shortcuts
          */
-        NONE,
+        NONE = 0,
         /**
          * <kbd>Ctrl</kbd>+<kbd>Tab</kbd> - switch to the next page
          */
-        CONTROL_TAB,
+        CONTROL_TAB = 1,
         /**
          * <kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>Tab</kbd> - switch to the previous
          *   page
          */
-        CONTROL_SHIFT_TAB,
+        CONTROL_SHIFT_TAB = 2,
         /**
          * <kbd>Ctrl</kbd>+<kbd>Page Up</kbd> - switch to the previous page
          */
-        CONTROL_PAGE_UP,
+        CONTROL_PAGE_UP = 4,
         /**
          * <kbd>Ctrl</kbd>+<kbd>Page Down</kbd> - switch to the next page
          */
-        CONTROL_PAGE_DOWN,
+        CONTROL_PAGE_DOWN = 8,
         /**
          * <kbd>Ctrl</kbd>+<kbd>Home</kbd> - switch to the first page
          */
-        CONTROL_HOME,
+        CONTROL_HOME = 16,
         /**
          * <kbd>Ctrl</kbd>+<kbd>End</kbd> - switch to the last page
          */
-        CONTROL_END,
+        CONTROL_END = 32,
         /**
          * <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Page Up</kbd> - move the selected
          *   page backward
          */
-        CONTROL_SHIFT_PAGE_UP,
+        CONTROL_SHIFT_PAGE_UP = 64,
         /**
          * <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Page Down</kbd> - move the selected
          *   page forward
          */
-        CONTROL_SHIFT_PAGE_DOWN,
+        CONTROL_SHIFT_PAGE_DOWN = 128,
         /**
          * <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Home</kbd> - move the selected page
          *   at the start
          */
-        CONTROL_SHIFT_HOME,
+        CONTROL_SHIFT_HOME = 256,
         /**
          * <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>End</kbd> - move the current page at
          *   the end
          */
-        CONTROL_SHIFT_END,
+        CONTROL_SHIFT_END = 512,
         /**
          * <kbd>Alt</kbd>+<kbd>1</kbd>⋯<kbd>9</kbd> - switch to pages 1-9
          */
-        ALT_DIGITS,
+        ALT_DIGITS = 1024,
         /**
          * <kbd>Alt</kbd>+<kbd>0</kbd> - switch to page 10
          */
-        ALT_ZERO,
+        ALT_ZERO = 2048,
         /**
          * All of the shortcuts
          */
-        ALL_SHORTCUTS,
+        ALL_SHORTCUTS = 4095,
     }
 
 
@@ -1318,7 +1327,7 @@ export namespace Adw {
              * @since 1.5
              * @run-last
              */
-            "activate-link": (arg0: string) => boolean | void;
+            "activate-link": (uri: string) => boolean | void;
             "notify::application-icon": (pspec: GObject.ParamSpec) => void;
             "notify::application-name": (pspec: GObject.ParamSpec) => void;
             "notify::artists": (pspec: GObject.ParamSpec) => void;
@@ -2780,7 +2789,7 @@ export namespace Adw {
              * @deprecated since 1.6: Use {@link AboutDialog}.
              * @run-last
              */
-            "activate-link": (arg0: string) => boolean | void;
+            "activate-link": (uri: string) => boolean | void;
             "notify::application-icon": (pspec: GObject.ParamSpec) => void;
             "notify::application-name": (pspec: GObject.ParamSpec) => void;
             "notify::artists": (pspec: GObject.ParamSpec) => void;
@@ -4700,7 +4709,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            response: (arg0: string) => void;
+            response: (response: string) => void;
             "notify::body": (pspec: GObject.ParamSpec) => void;
             "notify::body-use-markup": (pspec: GObject.ParamSpec) => void;
             "notify::close-response": (pspec: GObject.ParamSpec) => void;
@@ -4768,7 +4777,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::body": (arg0: string) => void;
+            "response::body": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -4783,7 +4792,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::body-use-markup": (arg0: string) => void;
+            "response::body-use-markup": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -4798,7 +4807,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::close-response": (arg0: string) => void;
+            "response::close-response": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -4813,7 +4822,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::default-response": (arg0: string) => void;
+            "response::default-response": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -4828,7 +4837,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::extra-child": (arg0: string) => void;
+            "response::extra-child": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -4843,7 +4852,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::heading": (arg0: string) => void;
+            "response::heading": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -4858,7 +4867,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::heading-use-markup": (arg0: string) => void;
+            "response::heading-use-markup": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -4873,7 +4882,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::prefer-wide-layout": (arg0: string) => void;
+            "response::prefer-wide-layout": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -4888,7 +4897,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::can-close": (arg0: string) => void;
+            "response::can-close": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -4903,7 +4912,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::child": (arg0: string) => void;
+            "response::child": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -4918,7 +4927,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::content-height": (arg0: string) => void;
+            "response::content-height": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -4933,7 +4942,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::content-width": (arg0: string) => void;
+            "response::content-width": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -4948,7 +4957,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::current-breakpoint": (arg0: string) => void;
+            "response::current-breakpoint": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -4963,7 +4972,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::default-widget": (arg0: string) => void;
+            "response::default-widget": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -4978,7 +4987,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::focus-widget": (arg0: string) => void;
+            "response::focus-widget": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -4993,7 +5002,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::follows-content-size": (arg0: string) => void;
+            "response::follows-content-size": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5008,7 +5017,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::presentation-mode": (arg0: string) => void;
+            "response::presentation-mode": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5023,7 +5032,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::title": (arg0: string) => void;
+            "response::title": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5038,7 +5047,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::can-focus": (arg0: string) => void;
+            "response::can-focus": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5053,7 +5062,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::can-target": (arg0: string) => void;
+            "response::can-target": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5068,7 +5077,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::css-classes": (arg0: string) => void;
+            "response::css-classes": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5083,7 +5092,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::css-name": (arg0: string) => void;
+            "response::css-name": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5098,7 +5107,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::cursor": (arg0: string) => void;
+            "response::cursor": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5113,7 +5122,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::focus-on-click": (arg0: string) => void;
+            "response::focus-on-click": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5128,7 +5137,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::focusable": (arg0: string) => void;
+            "response::focusable": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5143,7 +5152,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::halign": (arg0: string) => void;
+            "response::halign": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5158,7 +5167,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::has-default": (arg0: string) => void;
+            "response::has-default": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5173,7 +5182,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::has-focus": (arg0: string) => void;
+            "response::has-focus": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5188,7 +5197,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::has-tooltip": (arg0: string) => void;
+            "response::has-tooltip": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5203,7 +5212,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::height-request": (arg0: string) => void;
+            "response::height-request": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5218,7 +5227,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::hexpand": (arg0: string) => void;
+            "response::hexpand": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5233,7 +5242,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::hexpand-set": (arg0: string) => void;
+            "response::hexpand-set": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5248,7 +5257,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::layout-manager": (arg0: string) => void;
+            "response::layout-manager": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5263,7 +5272,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::limit-events": (arg0: string) => void;
+            "response::limit-events": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5278,7 +5287,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::margin-bottom": (arg0: string) => void;
+            "response::margin-bottom": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5293,7 +5302,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::margin-end": (arg0: string) => void;
+            "response::margin-end": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5308,7 +5317,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::margin-start": (arg0: string) => void;
+            "response::margin-start": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5323,7 +5332,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::margin-top": (arg0: string) => void;
+            "response::margin-top": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5338,7 +5347,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::name": (arg0: string) => void;
+            "response::name": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5353,7 +5362,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::opacity": (arg0: string) => void;
+            "response::opacity": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5368,7 +5377,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::overflow": (arg0: string) => void;
+            "response::overflow": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5383,7 +5392,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::parent": (arg0: string) => void;
+            "response::parent": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5398,7 +5407,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::receives-default": (arg0: string) => void;
+            "response::receives-default": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5413,7 +5422,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::root": (arg0: string) => void;
+            "response::root": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5428,7 +5437,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::scale-factor": (arg0: string) => void;
+            "response::scale-factor": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5443,7 +5452,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::sensitive": (arg0: string) => void;
+            "response::sensitive": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5458,7 +5467,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::tooltip-markup": (arg0: string) => void;
+            "response::tooltip-markup": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5473,7 +5482,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::tooltip-text": (arg0: string) => void;
+            "response::tooltip-text": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5488,7 +5497,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::valign": (arg0: string) => void;
+            "response::valign": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5503,7 +5512,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::vexpand": (arg0: string) => void;
+            "response::vexpand": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5518,7 +5527,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::vexpand-set": (arg0: string) => void;
+            "response::vexpand-set": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5533,7 +5542,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::visible": (arg0: string) => void;
+            "response::visible": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -5548,8 +5557,8 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::width-request": (arg0: string) => void;
-            [key: `response::${string}`]: (arg0: string) => void;
+            "response::width-request": (response: string) => void;
+            [key: `response::${string}`]: (response: string) => void;
         }
 
         // Constructor properties interface
@@ -12301,7 +12310,7 @@ export namespace Adw {
              * @signal
              * @run-last
              */
-            "page-changed": (arg0: number) => void;
+            "page-changed": (index: number) => void;
             "notify::allow-long-swipes": (pspec: GObject.ParamSpec) => void;
             "notify::allow-mouse-drag": (pspec: GObject.ParamSpec) => void;
             "notify::allow-scroll-wheel": (pspec: GObject.ParamSpec) => void;
@@ -23464,7 +23473,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            response: (arg0: string) => void;
+            response: (response: string) => void;
             "notify::body": (pspec: GObject.ParamSpec) => void;
             "notify::body-use-markup": (pspec: GObject.ParamSpec) => void;
             "notify::close-response": (pspec: GObject.ParamSpec) => void;
@@ -23547,7 +23556,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::body": (arg0: string) => void;
+            "response::body": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23563,7 +23572,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::body-use-markup": (arg0: string) => void;
+            "response::body-use-markup": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23579,7 +23588,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::close-response": (arg0: string) => void;
+            "response::close-response": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23595,7 +23604,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::default-response": (arg0: string) => void;
+            "response::default-response": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23611,7 +23620,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::extra-child": (arg0: string) => void;
+            "response::extra-child": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23627,7 +23636,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::heading": (arg0: string) => void;
+            "response::heading": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23643,7 +23652,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::heading-use-markup": (arg0: string) => void;
+            "response::heading-use-markup": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23659,7 +23668,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::application": (arg0: string) => void;
+            "response::application": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23675,7 +23684,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::child": (arg0: string) => void;
+            "response::child": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23691,7 +23700,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::decorated": (arg0: string) => void;
+            "response::decorated": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23707,7 +23716,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::default-height": (arg0: string) => void;
+            "response::default-height": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23723,7 +23732,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::default-widget": (arg0: string) => void;
+            "response::default-widget": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23739,7 +23748,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::default-width": (arg0: string) => void;
+            "response::default-width": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23755,7 +23764,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::deletable": (arg0: string) => void;
+            "response::deletable": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23771,7 +23780,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::destroy-with-parent": (arg0: string) => void;
+            "response::destroy-with-parent": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23787,7 +23796,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::display": (arg0: string) => void;
+            "response::display": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23803,7 +23812,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::focus-visible": (arg0: string) => void;
+            "response::focus-visible": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23819,7 +23828,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::focus-widget": (arg0: string) => void;
+            "response::focus-widget": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23835,7 +23844,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::fullscreened": (arg0: string) => void;
+            "response::fullscreened": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23851,7 +23860,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::handle-menubar-accel": (arg0: string) => void;
+            "response::handle-menubar-accel": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23867,7 +23876,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::hide-on-close": (arg0: string) => void;
+            "response::hide-on-close": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23883,7 +23892,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::icon-name": (arg0: string) => void;
+            "response::icon-name": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23899,7 +23908,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::is-active": (arg0: string) => void;
+            "response::is-active": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23915,7 +23924,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::maximized": (arg0: string) => void;
+            "response::maximized": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23931,7 +23940,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::mnemonics-visible": (arg0: string) => void;
+            "response::mnemonics-visible": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23947,7 +23956,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::modal": (arg0: string) => void;
+            "response::modal": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23963,7 +23972,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::resizable": (arg0: string) => void;
+            "response::resizable": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23979,7 +23988,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::startup-id": (arg0: string) => void;
+            "response::startup-id": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -23995,7 +24004,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::suspended": (arg0: string) => void;
+            "response::suspended": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24011,7 +24020,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::title": (arg0: string) => void;
+            "response::title": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24027,7 +24036,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::titlebar": (arg0: string) => void;
+            "response::titlebar": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24043,7 +24052,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::transient-for": (arg0: string) => void;
+            "response::transient-for": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24059,7 +24068,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::can-focus": (arg0: string) => void;
+            "response::can-focus": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24075,7 +24084,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::can-target": (arg0: string) => void;
+            "response::can-target": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24091,7 +24100,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::css-classes": (arg0: string) => void;
+            "response::css-classes": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24107,7 +24116,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::css-name": (arg0: string) => void;
+            "response::css-name": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24123,7 +24132,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::cursor": (arg0: string) => void;
+            "response::cursor": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24139,7 +24148,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::focus-on-click": (arg0: string) => void;
+            "response::focus-on-click": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24155,7 +24164,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::focusable": (arg0: string) => void;
+            "response::focusable": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24171,7 +24180,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::halign": (arg0: string) => void;
+            "response::halign": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24187,7 +24196,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::has-default": (arg0: string) => void;
+            "response::has-default": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24203,7 +24212,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::has-focus": (arg0: string) => void;
+            "response::has-focus": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24219,7 +24228,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::has-tooltip": (arg0: string) => void;
+            "response::has-tooltip": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24235,7 +24244,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::height-request": (arg0: string) => void;
+            "response::height-request": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24251,7 +24260,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::hexpand": (arg0: string) => void;
+            "response::hexpand": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24267,7 +24276,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::hexpand-set": (arg0: string) => void;
+            "response::hexpand-set": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24283,7 +24292,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::layout-manager": (arg0: string) => void;
+            "response::layout-manager": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24299,7 +24308,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::limit-events": (arg0: string) => void;
+            "response::limit-events": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24315,7 +24324,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::margin-bottom": (arg0: string) => void;
+            "response::margin-bottom": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24331,7 +24340,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::margin-end": (arg0: string) => void;
+            "response::margin-end": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24347,7 +24356,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::margin-start": (arg0: string) => void;
+            "response::margin-start": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24363,7 +24372,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::margin-top": (arg0: string) => void;
+            "response::margin-top": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24379,7 +24388,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::name": (arg0: string) => void;
+            "response::name": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24395,7 +24404,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::opacity": (arg0: string) => void;
+            "response::opacity": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24411,7 +24420,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::overflow": (arg0: string) => void;
+            "response::overflow": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24427,7 +24436,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::parent": (arg0: string) => void;
+            "response::parent": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24443,7 +24452,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::receives-default": (arg0: string) => void;
+            "response::receives-default": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24459,7 +24468,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::root": (arg0: string) => void;
+            "response::root": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24475,7 +24484,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::scale-factor": (arg0: string) => void;
+            "response::scale-factor": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24491,7 +24500,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::sensitive": (arg0: string) => void;
+            "response::sensitive": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24507,7 +24516,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::tooltip-markup": (arg0: string) => void;
+            "response::tooltip-markup": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24523,7 +24532,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::tooltip-text": (arg0: string) => void;
+            "response::tooltip-text": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24539,7 +24548,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::valign": (arg0: string) => void;
+            "response::valign": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24555,7 +24564,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::vexpand": (arg0: string) => void;
+            "response::vexpand": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24571,7 +24580,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::vexpand-set": (arg0: string) => void;
+            "response::vexpand-set": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24587,7 +24596,7 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::visible": (arg0: string) => void;
+            "response::visible": (response: string) => void;
             /**
              * This signal is emitted when the dialog is closed.
              * 
@@ -24603,8 +24612,8 @@ export namespace Adw {
              * @detailed
              * @run-last
              */
-            "response::width-request": (arg0: string) => void;
-            [key: `response::${string}`]: (arg0: string) => void;
+            "response::width-request": (response: string) => void;
+            [key: `response::${string}`]: (response: string) => void;
         }
 
         // Constructor properties interface
@@ -27603,7 +27612,7 @@ export namespace Adw {
              * @since 1.4
              * @run-last
              */
-            popped: (arg0: NavigationPage) => void;
+            popped: (page: NavigationPage) => void;
             /**
              * Emitted after a page has been pushed to the navigation stack.
              * 
@@ -32780,7 +32789,7 @@ export namespace Adw {
              * @since 1.4
              * @run-last
              */
-            input: (arg0: number) => number;
+            input: (new_value: number) => number;
             /**
              * Emitted to tweak the formatting of the value for display.
              * 
@@ -37947,7 +37956,7 @@ export namespace Adw {
              * @signal
              * @run-first
              */
-            "end-swipe": (arg0: number, arg1: number) => void;
+            "end-swipe": (velocity: number, to: number) => void;
             /**
              * This signal is emitted when a possible swipe is detected.
              * 
@@ -37956,13 +37965,13 @@ export namespace Adw {
              * @signal
              * @run-first
              */
-            prepare: (arg0: NavigationDirection) => void;
+            prepare: (direction: NavigationDirection) => void;
             /**
              * This signal is emitted every time the progress value changes.
              * @signal
              * @run-first
              */
-            "update-swipe": (arg0: number) => void;
+            "update-swipe": (progress: number) => void;
             "notify::allow-long-swipes": (pspec: GObject.ParamSpec) => void;
             "notify::allow-mouse-drag": (pspec: GObject.ParamSpec) => void;
             "notify::allow-window-handle": (pspec: GObject.ParamSpec) => void;
@@ -38480,7 +38489,7 @@ export namespace Adw {
              * @signal
              * @run-last
              */
-            "extra-drag-drop": (arg0: TabPage, arg1: unknown) => boolean | void;
+            "extra-drag-drop": (page: TabPage, value: unknown) => boolean | void;
             /**
              * This signal is emitted when the dropped content is preloaded.
              * 
@@ -38495,7 +38504,7 @@ export namespace Adw {
              * @since 1.3
              * @run-last
              */
-            "extra-drag-value": (arg0: TabPage, arg1: unknown) => Gdk.DragAction;
+            "extra-drag-value": (page: TabPage, value: unknown) => Gdk.DragAction;
             "notify::autohide": (pspec: GObject.ParamSpec) => void;
             "notify::end-action-widget": (pspec: GObject.ParamSpec) => void;
             "notify::expand-tabs": (pspec: GObject.ParamSpec) => void;
@@ -39937,7 +39946,7 @@ export namespace Adw {
              * @since 1.3
              * @run-last
              */
-            "extra-drag-drop": (arg0: TabPage, arg1: unknown) => boolean | void;
+            "extra-drag-drop": (page: TabPage, value: unknown) => boolean | void;
             /**
              * This signal is emitted when the dropped content is preloaded.
              * 
@@ -39952,7 +39961,7 @@ export namespace Adw {
              * @since 1.3
              * @run-last
              */
-            "extra-drag-value": (arg0: TabPage, arg1: unknown) => Gdk.DragAction;
+            "extra-drag-value": (page: TabPage, value: unknown) => Gdk.DragAction;
             "notify::child": (pspec: GObject.ParamSpec) => void;
             "notify::enable-new-tab": (pspec: GObject.ParamSpec) => void;
             "notify::enable-search": (pspec: GObject.ParamSpec) => void;
@@ -41836,7 +41845,7 @@ export namespace Adw {
              * @signal
              * @run-last
              */
-            "close-page": (arg0: TabPage) => boolean | void;
+            "close-page": (page: TabPage) => boolean | void;
             /**
              * Emitted when a tab should be transferred into a new window.
              * 
@@ -41856,7 +41865,7 @@ export namespace Adw {
              * @signal
              * @run-last
              */
-            "indicator-activated": (arg0: TabPage) => void;
+            "indicator-activated": (page: TabPage) => void;
             /**
              * Emitted when a page has been created or transferred to `self`.
              * 
@@ -41865,7 +41874,7 @@ export namespace Adw {
              * @signal
              * @run-last
              */
-            "page-attached": (arg0: TabPage, arg1: number) => void;
+            "page-attached": (page: TabPage, position: number) => void;
             /**
              * Emitted when a page has been removed or transferred to another view.
              * 
@@ -41879,13 +41888,13 @@ export namespace Adw {
              * @signal
              * @run-last
              */
-            "page-detached": (arg0: TabPage, arg1: number) => void;
+            "page-detached": (page: TabPage, position: number) => void;
             /**
              * Emitted after `page` has been reordered to `position`.
              * @signal
              * @run-last
              */
-            "page-reordered": (arg0: TabPage, arg1: number) => void;
+            "page-reordered": (page: TabPage, position: number) => void;
             /**
              * Emitted when a context menu is opened or closed for `page`.
              * 
@@ -41896,7 +41905,7 @@ export namespace Adw {
              * @signal
              * @run-last
              */
-            "setup-menu": (arg0: TabPage | null) => void;
+            "setup-menu": (page: TabPage | null) => void;
             "notify::default-icon": (pspec: GObject.ParamSpec) => void;
             "notify::is-transferring-page": (pspec: GObject.ParamSpec) => void;
             "notify::menu-model": (pspec: GObject.ParamSpec) => void;

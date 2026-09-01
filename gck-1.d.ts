@@ -42,11 +42,11 @@ export namespace Gck {
         /**
          * no special flags
          */
-        NONE,
+        NONE = 0,
         /**
          * use non-pageable memory for the values of the attributes
          */
-        SECURE_MEMORY,
+        SECURE_MEMORY = 1,
     }
 
 
@@ -70,7 +70,7 @@ export namespace Gck {
          * a result code that signifies there was a problem
          *                            loading a PKCS#11 module, usually a shared library
          */
-        PROBLEM,
+        PROBLEM = -951891199,
     }
 
 
@@ -89,64 +89,72 @@ export namespace Gck {
         /**
          * invalid URI scheme
          */
-        BAD_SCHEME,
+        BAD_SCHEME = 1,
         /**
          * bad URI encoding
          */
-        BAD_ENCODING,
+        BAD_ENCODING = 2,
         /**
          * bad URI syntax
          */
-        BAD_SYNTAX,
+        BAD_SYNTAX = 3,
         /**
          * bad URI version component
          */
-        BAD_VERSION,
+        BAD_VERSION = 4,
         /**
          * piece of the URI was not found
          */
-        NOT_FOUND,
+        NOT_FOUND = 5,
     }
 
 
     /**
      * Used as a terminator at the end of variable argument lists.
+     * @default -1
      */
     const INVALID: number;
 
     /**
      * The major version number of the Gck library.
+     * @default 1
      */
     const MAJOR_VERSION: number;
 
     /**
      * The micro version number of the Gck library.
+     * @default 0
      */
     const MICRO_VERSION: number;
 
     /**
      * The minor version number of the Gck library.
+     * @default 0
      */
     const MINOR_VERSION: number;
 
     /**
      * The URI will match specific version of modules. To be used as a GckUriFlags argument.
+     * @default 24
      */
     const URI_FOR_MODULE_WITH_VERSION: number;
 
     /**
      * The URI will match objects on a specific token. To be used as a GckUriFlags argument.
+     * @default 6
      */
     const URI_FOR_OBJECT_ON_TOKEN: number;
 
     /**
      * The token inserted into a device with a specific module.
+     * @default 8
      */
     const URI_FOR_OBJECT_ON_TOKEN_AND_MODULE: number;
 
     /**
      * Custom PKCS#11 errors that originate from the gck library, are
      * based at this error code.
+     * @default 1195592448
      */
     const VENDOR_CODE: number;
 
@@ -194,6 +202,7 @@ export namespace Gck {
      * @param uri The URI that the enumerator will match
      * @param session_options Options from GckSessionOptions
      * @returns A new {@link Gck.Enumerator}, or `null` if an error occurs.
+     * @throws GLib.Error
      */
     function modules_enumerate_uri(modules: Module[], uri: string, session_options: SessionOptions): Enumerator;
 
@@ -209,6 +218,7 @@ export namespace Gck {
      * Load and initialize all the registered modules.
      * @param cancellable optional cancellation object
      * @returns A newly allocated list of {@link Gck.Module} objects, which should be released with `gck_list_unref_free()`.
+     * @throws GLib.Error
      */
     function modules_initialize_registered(cancellable: Gio.Cancellable | null): Module[];
 
@@ -235,6 +245,7 @@ export namespace Gck {
      * PKCS#11 modules.
      * @param result the asynchronous result
      * @returns a list of newly initialized {@link Gck.Module} objects
+     * @throws GLib.Error
      */
     function modules_initialize_registered_finish(result: Gio.AsyncResult): Module[];
 
@@ -247,6 +258,7 @@ export namespace Gck {
      * @param uri The URI the objects must match
      * @param session_options Options from GckSessionOptions
      * @returns A new {@link Gck.Object} which should be released with `g_object_unref()`, or `null` if no matching object was found.
+     * @throws GLib.Error
      */
     function modules_object_for_uri(modules: Module[], uri: string, session_options: SessionOptions): Object | null;
 
@@ -259,6 +271,7 @@ export namespace Gck {
      * @param uri The URI the objects must match
      * @param session_options Options from GckSessionOptions
      * @returns A list of {@link Gck.Object} which should be released with `gck_list_unref_free()`, or `null` if no matching object was found.
+     * @throws GLib.Error
      */
     function modules_objects_for_uri(modules: Module[], uri: string, session_options: SessionOptions): Object[];
 
@@ -267,6 +280,7 @@ export namespace Gck {
      * @param modules The modules
      * @param uri The URI that the token must match
      * @returns A newly allocated {@link Gck.Slot} or `null` if no such token was found.
+     * @throws GLib.Error
      */
     function modules_token_for_uri(modules: Module[], uri: string): Slot;
 
@@ -275,6 +289,7 @@ export namespace Gck {
      * @param modules The modules
      * @param uri The URI that the token must match
      * @returns A list of newly allocated {@link Gck.Slot} objects. Use `gck_list_unref_free()` to release the list once you're done with it.
+     * @throws GLib.Error
      */
     function modules_tokens_for_uri(modules: Module[], uri: string): Slot[];
 
@@ -320,6 +335,7 @@ export namespace Gck {
      * @param string the URI to parse.
      * @param flags the context in which the URI will be used.
      * @returns a newly allocated {@link Gck.UriData}; which should be          freed with `gck_uri_data_free()`
+     * @throws GLib.Error
      */
     function uri_parse(string: string, flags: UriFlags): UriData;
 
@@ -359,19 +375,19 @@ export namespace Gck {
         /**
          * Open session as read only
          */
-        READ_ONLY,
+        READ_ONLY = 0,
         /**
          * Open sessions as read/write
          */
-        READ_WRITE,
+        READ_WRITE = 2,
         /**
          * Login as user on new sessions
          */
-        LOGIN_USER,
+        LOGIN_USER = 4,
         /**
          * Authenticate as necessary
          */
-        AUTHENTICATE,
+        AUTHENTICATE = 8,
     }
 
 
@@ -391,23 +407,23 @@ export namespace Gck {
         /**
          * the URI will be used to match objects.
          */
-        FOR_OBJECT,
+        FOR_OBJECT = 2,
         /**
          * the URI will be used to match tokens.
          */
-        FOR_TOKEN,
+        FOR_TOKEN = 4,
         /**
          * the URI will be used to match modules.
          */
-        FOR_MODULE,
+        FOR_MODULE = 8,
         /**
          * the URI has specific version numbers for module and/or token
          */
-        WITH_VERSION,
+        WITH_VERSION = 16,
         /**
          * parse all recognized components of the URI.
          */
-        FOR_ANY,
+        FOR_ANY = 65535,
     }
 
 
@@ -508,6 +524,7 @@ export namespace Gck {
          * whether a failure occurred or not.
          * @param cancellable A {@link Gio.Cancellable} or `null`
          * @returns The next object, which must be released using g_object_unref, or `null`.
+         * @throws GLib.Error
          */
         next(cancellable: Gio.Cancellable | null): Object | null;
 
@@ -550,6 +567,7 @@ export namespace Gck {
          * whether a failure occurred or not.
          * @param result The result passed to the callback
          * @returns The list of objects, which should be freed with `gck_list_unref_free()`
+         * @throws GLib.Error
          */
         next_finish(result: Gio.AsyncResult): Object[];
 
@@ -563,6 +581,7 @@ export namespace Gck {
          * @param max_objects The maximum amount of objects to enumerate
          * @param cancellable A {@link Gio.Cancellable} or `null`
          * @returns A list of objects, which should be freed using `gck_list_unref_free()`.
+         * @throws GLib.Error
          */
         next_n(max_objects: number, cancellable: Gio.Cancellable | null): Object[];
 
@@ -602,14 +621,14 @@ export namespace Gck {
              * @deprecated Since 3.4
              * @run-last
              */
-            "authenticate-object": (arg0: Object, arg1: string, arg2: null) => boolean | void;
+            "authenticate-object": (object: Object, label: string, password: null) => boolean | void;
             /**
              * Use `gck_session_set_interaction()` instead of connecting to this signal.
              * @signal
              * @deprecated Since 3.4
              * @run-last
              */
-            "authenticate-slot": (arg0: Slot, arg1: string, arg2: null) => boolean | void;
+            "authenticate-slot": (slot: Slot, string: string, password: null) => boolean | void;
             "notify::functions": (pspec: GObject.ParamSpec) => void;
             "notify::path": (pspec: GObject.ParamSpec) => void;
         }
@@ -859,6 +878,7 @@ export namespace Gck {
          * @param attr_types the types of attributes to update
          * @param cancellable optional cancellation object
          * @returns the attributes retrieved or `null` on failure
+         * @throws GLib.Error
          */
         cache_lookup(attr_types: (bigint | number)[], cancellable: Gio.Cancellable | null): Attributes;
 
@@ -917,6 +937,7 @@ export namespace Gck {
          * from the object if necessary.
          * @param result the asynchrounous result passed to the callback
          * @returns the attributes retrieved or `null` on failure
+         * @throws GLib.Error
          */
         cache_lookup_finish(result: Gio.AsyncResult): Attributes;
 
@@ -925,6 +946,7 @@ export namespace Gck {
          * This call may block for an indefinite period.
          * @param cancellable Optional cancellable object, or `null` to ignore.
          * @returns Whether the call was successful or not.
+         * @throws GLib.Error
          */
         destroy(cancellable: Gio.Cancellable | null): boolean;
 
@@ -956,6 +978,7 @@ export namespace Gck {
          * `gck_object_destroy_async()`.
          * @param result The result of the destory operation passed to the callback.
          * @returns Whether the object was destroyed successfully or not.
+         * @throws GLib.Error
          */
         destroy_finish(result: Gio.AsyncResult): boolean;
 
@@ -1013,6 +1036,7 @@ export namespace Gck {
          * @param attr_type The attribute to get data for.
          * @param cancellable A {@link Gio.Cancellable} or `null`
          * @returns the resulting PKCS#11          attribute data, or `null` if an error occurred
+         * @throws GLib.Error
          */
         get_data(attr_type: bigint | number, cancellable: Gio.Cancellable | null): Uint8Array;
 
@@ -1060,6 +1084,7 @@ export namespace Gck {
          * not included in the returned length.
          * @param result The result passed to the callback.
          * @returns The PKCS#11 attribute data          or `null` if an error occurred.
+         * @throws GLib.Error
          */
         get_data_finish(result: Gio.AsyncResult): Uint8Array;
 
@@ -1070,6 +1095,7 @@ export namespace Gck {
          * No extra references are added to the returned attributes pointer.
          * @param result The result passed to the callback.
          * @returns The filled in attributes structure if successful or `null` if not successful.
+         * @throws GLib.Error
          */
         get_finish(result: Gio.AsyncResult): Attributes;
 
@@ -1082,6 +1108,7 @@ export namespace Gck {
          * @param attr_types the types of the attributes to get
          * @param cancellable optional cancellation object, or `null`
          * @returns a pointer to the filled in attributes if successful,          or `null` if not
+         * @throws GLib.Error
          */
         get_full(attr_types: (bigint | number)[], cancellable: Gio.Cancellable | null): Attributes;
 
@@ -1116,6 +1143,7 @@ export namespace Gck {
          * @param attr_type The template attribute type.
          * @param cancellable Optional cancellation object, or `null`.
          * @returns the resulting PKCS#11 attribute template, or `null`          if an error occurred
+         * @throws GLib.Error
          */
         get_template(attr_type: bigint | number, cancellable: Gio.Cancellable | null): Attributes;
 
@@ -1156,6 +1184,7 @@ export namespace Gck {
          * an object.
          * @param result The result passed to the callback.
          * @returns the resulting PKCS#11 attribute template, or `null`          if an error occurred
+         * @throws GLib.Error
          */
         get_template_finish(result: Gio.AsyncResult): Attributes;
 
@@ -1175,6 +1204,7 @@ export namespace Gck {
          * @param attrs The attributes to set on the object.
          * @param cancellable Optional cancellable object, or `null` to ignore.
          * @returns Whether the call was successful or not.
+         * @throws GLib.Error
          */
         set(attrs: Attributes, cancellable: Gio.Cancellable | null): boolean;
 
@@ -1221,6 +1251,7 @@ export namespace Gck {
          * begun with `gck_object_set_async()`.
          * @param result The result of the destory operation passed to the callback.
          * @returns Whether the attributes were successfully set on the object or not.
+         * @throws GLib.Error
          */
         set_finish(result: Gio.AsyncResult): boolean;
 
@@ -1235,6 +1266,7 @@ export namespace Gck {
          * @param attrs The attribute template.
          * @param cancellable Optional cancellation object, or `null`.
          * @returns `true` if the operation succeeded.
+         * @throws GLib.Error
          */
         set_template(attr_type: bigint | number, attrs: Attributes, cancellable: Gio.Cancellable | null): boolean;
 
@@ -1284,6 +1316,7 @@ export namespace Gck {
          * an object.
          * @param result The result passed to the callback.
          * @returns `true` if the operation succeeded.
+         * @throws GLib.Error
          */
         set_template_finish(result: Gio.AsyncResult): boolean;
     }
@@ -1401,7 +1434,7 @@ export namespace Gck {
              * @signal
              * @run-last
              */
-            "discard-handle": (arg0: number) => boolean | void;
+            "discard-handle": (handle: number) => boolean | void;
             "notify::app-data": (pspec: GObject.ParamSpec) => void;
             "notify::handle": (pspec: GObject.ParamSpec) => void;
             "notify::interaction": (pspec: GObject.ParamSpec) => void;
@@ -1569,6 +1602,7 @@ export namespace Gck {
          * @param attrs The attributes to create the object with.
          * @param cancellable Optional cancellation object, or `null`.
          * @returns the newly created object or `null` if an error occurred
+         * @throws GLib.Error
          */
         create_object(attrs: Attributes, cancellable: Gio.Cancellable | null): Object;
 
@@ -1608,6 +1642,7 @@ export namespace Gck {
          * Get the result of creating a new PKCS#11 object.
          * @param result The result passed to the callback.
          * @returns the newly created object or `null` if an error occurred
+         * @throws GLib.Error
          */
         create_object_finish(result: Gio.AsyncResult): Object;
 
@@ -1619,6 +1654,7 @@ export namespace Gck {
          * @param input data to decrypt
          * @param cancellable Optional cancellation object, or `null`
          * @returns the data that was decrypted,          or `null` if an error occured
+         * @throws GLib.Error
          */
         decrypt(key: Object, mech_type: bigint | number, input: Uint8Array | string, cancellable: Gio.Cancellable | null): Uint8Array;
 
@@ -1658,6 +1694,7 @@ export namespace Gck {
          * Get the result of an decryption operation.
          * @param result The result object passed to the callback.
          * @returns the data that was decrypted,          or `null` if an error occurred
+         * @throws GLib.Error
          */
         decrypt_finish(result: Gio.AsyncResult): Uint8Array;
 
@@ -1669,6 +1706,7 @@ export namespace Gck {
          * @param input data to decrypt
          * @param cancellable A GCancellable which can be used to cancel the operation.
          * @returns the data that was decrypted,          or `null` if an error occured
+         * @throws GLib.Error
          */
         decrypt_full(key: Object, mechanism: Mechanism, input: Uint8Array | string, cancellable: Gio.Cancellable | null): Uint8Array;
 
@@ -1682,6 +1720,7 @@ export namespace Gck {
          * @param attrs Additional attributes for the derived key.
          * @param cancellable Optional cancellation object, or `null`.
          * @returns the new derived key or `null` if the operation          failed
+         * @throws GLib.Error
          */
         derive_key(base: Object, mech_type: bigint | number, attrs: Attributes, cancellable: Gio.Cancellable | null): Object;
 
@@ -1727,6 +1766,7 @@ export namespace Gck {
          * Get the result of a derive key operation.
          * @param result The async result passed to the callback.
          * @returns the new derived key or `null` if the operation          failed
+         * @throws GLib.Error
          */
         derive_key_finish(result: Gio.AsyncResult): Object;
 
@@ -1740,6 +1780,7 @@ export namespace Gck {
          * @param attrs Additional attributes for the derived key.
          * @param cancellable Optional cancellation object, or `null`.
          * @returns the new derived key or `null` if the operation          failed
+         * @throws GLib.Error
          */
         derive_key_full(base: Object, mechanism: Mechanism, attrs: Attributes, cancellable: Gio.Cancellable | null): Object;
 
@@ -1751,6 +1792,7 @@ export namespace Gck {
          * @param input the data to encrypt
          * @param cancellable Optional cancellation object, or `null`
          * @returns the data that was encrypted,          or `null` if an error occured.
+         * @throws GLib.Error
          */
         encrypt(key: Object, mech_type: bigint | number, input: Uint8Array | string, cancellable: Gio.Cancellable | null): Uint8Array;
 
@@ -1790,6 +1832,7 @@ export namespace Gck {
          * Get the result of an encryption operation.
          * @param result The result object passed to the callback.
          * @returns the data that was encrypted,          or `null` if an error occurred.
+         * @throws GLib.Error
          */
         encrypt_finish(result: Gio.AsyncResult): Uint8Array;
 
@@ -1801,6 +1844,7 @@ export namespace Gck {
          * @param input the data to encrypt
          * @param cancellable A GCancellable which can be used to cancel the operation.
          * @returns the data that was encrypted,          or `null` if an error occured
+         * @throws GLib.Error
          */
         encrypt_full(key: Object, mechanism: Mechanism, input: Uint8Array | string, cancellable: Gio.Cancellable | null): Uint8Array;
 
@@ -1823,6 +1867,7 @@ export namespace Gck {
          * @param match the attributes to match against objects
          * @param cancellable optional cancellation object or `null`
          * @returns a list of          the matching objects, which may be empty
+         * @throws GLib.Error
          */
         find_handles(match: Attributes, cancellable: Gio.Cancellable | null): number[] | null;
 
@@ -1862,6 +1907,7 @@ export namespace Gck {
          * Get the result of a find handles operation.
          * @param result the asynchronous result
          * @returns an array of          handles that matched, which may be empty, or `null` on failure
+         * @throws GLib.Error
          */
         find_handles_finish(result: Gio.AsyncResult): number[] | null;
 
@@ -1873,6 +1919,7 @@ export namespace Gck {
          * @param match the attributes to match
          * @param cancellable Optional cancellation object or `null`.
          * @returns a list of the matching          objects, which may be empty
+         * @throws GLib.Error
          */
         find_objects(match: Attributes, cancellable: Gio.Cancellable | null): Object[];
 
@@ -1912,6 +1959,7 @@ export namespace Gck {
          * Get the result of a find operation.
          * @param result The attributes to match.
          * @returns a list of the matching          objects, which may be empty
+         * @throws GLib.Error
          */
         find_objects_finish(result: Gio.AsyncResult): Object[];
 
@@ -1926,6 +1974,7 @@ export namespace Gck {
          * @param private_attrs Additional attributes for the generated private key.
          * @param cancellable Optional cancellation object, or `null`.
          * @returns `true` if the operation succeeded.
+         * @throws GLib.Error
          */
         generate_key_pair(mech_type: bigint | number, public_attrs: Attributes, private_attrs: Attributes, cancellable: Gio.Cancellable | null): [boolean, Object | null, Object | null];
 
@@ -1974,6 +2023,7 @@ export namespace Gck {
          * Get the result of a generate key pair operation.
          * @param result The async result passed to the callback.
          * @returns `true` if the operation succeeded.
+         * @throws GLib.Error
          */
         generate_key_pair_finish(result: Gio.AsyncResult): [boolean, Object | null, Object | null];
 
@@ -1988,6 +2038,7 @@ export namespace Gck {
          * @param private_attrs Additional attributes for the generated private key.
          * @param cancellable Optional cancellation object, or `null`.
          * @returns `true` if the operation succeeded.
+         * @throws GLib.Error
          */
         generate_key_pair_full(mechanism: Mechanism, public_attrs: Attributes, private_attrs: Attributes, cancellable: Gio.Cancellable | null): [boolean, Object | null, Object | null];
 
@@ -2043,6 +2094,7 @@ export namespace Gck {
          * @param pin the user's PIN, or `null` for       protected authentication path
          * @param cancellable Optional cancellation object, or `null`.
          * @returns Whether successful or not.
+         * @throws GLib.Error
          */
         init_pin(pin: Uint8Array | string | null, cancellable: Gio.Cancellable | null): boolean;
 
@@ -2085,6 +2137,7 @@ export namespace Gck {
          * Get the result of initializing a user's PIN.
          * @param result The result passed to the callback.
          * @returns Whether the operation was successful or not.
+         * @throws GLib.Error
          */
         init_pin_finish(result: Gio.AsyncResult): boolean;
 
@@ -2095,6 +2148,7 @@ export namespace Gck {
          * @param pin the user's PIN, or `null` for       protected authentication path
          * @param cancellable Optional cancellation object, or `null`.
          * @returns Whether successful or not.
+         * @throws GLib.Error
          */
         login(user_type: bigint | number, pin: Uint8Array | string | null, cancellable: Gio.Cancellable | null): boolean;
 
@@ -2131,6 +2185,7 @@ export namespace Gck {
          * Get the result of a login operation.
          * @param result The result passed to the callback.
          * @returns Whether the operation was successful or not.
+         * @throws GLib.Error
          */
         login_finish(result: Gio.AsyncResult): boolean;
 
@@ -2141,6 +2196,7 @@ export namespace Gck {
          * @param interaction interaction to request PIN when necessary
          * @param cancellable optional cancellation object, or `null`
          * @returns Whether successful or not.
+         * @throws GLib.Error
          */
         login_interactive(user_type: bigint | number, interaction: Gio.TlsInteraction | null, cancellable: Gio.Cancellable | null): boolean;
 
@@ -2177,6 +2233,7 @@ export namespace Gck {
          * Get the result of a login operation.
          * @param result the result passed to the callback
          * @returns Whether the operation was successful or not.
+         * @throws GLib.Error
          */
         login_interactive_finish(result: Gio.AsyncResult): boolean;
 
@@ -2184,6 +2241,7 @@ export namespace Gck {
          * Log out of the session. This call may block for an indefinite period.
          * @param cancellable Optional cancellation object, or `null`.
          * @returns Whether the logout was successful or not.
+         * @throws GLib.Error
          */
         logout(cancellable: Gio.Cancellable | null): boolean;
 
@@ -2214,6 +2272,7 @@ export namespace Gck {
          * Get the result of logging out of a session.
          * @param result The result passed to the callback.
          * @returns Whether the logout was successful or not.
+         * @throws GLib.Error
          */
         logout_finish(result: Gio.AsyncResult): boolean;
 
@@ -2232,6 +2291,7 @@ export namespace Gck {
          * @param new_pin the user's new PIN, or `null`           for protected authentication path
          * @param cancellable Optional cancellation object, or `null`.
          * @returns Whether successful or not.
+         * @throws GLib.Error
          */
         set_pin(old_pin: Uint8Array | string | null, new_pin: Uint8Array | string | null, cancellable: Gio.Cancellable | null): boolean;
 
@@ -2274,6 +2334,7 @@ export namespace Gck {
          * Get the result of changing a user's PIN.
          * @param result The result passed to the callback.
          * @returns Whether the operation was successful or not.
+         * @throws GLib.Error
          */
         set_pin_finish(result: Gio.AsyncResult): boolean;
 
@@ -2285,6 +2346,7 @@ export namespace Gck {
          * @param input data to sign
          * @param cancellable Optional cancellation object, or `null`
          * @returns the data that was signed,          or `null` if an error occured
+         * @throws GLib.Error
          */
         sign(key: Object, mech_type: bigint | number, input: Uint8Array | string, cancellable: Gio.Cancellable | null): Uint8Array;
 
@@ -2324,6 +2386,7 @@ export namespace Gck {
          * Get the result of an signing operation.
          * @param result The result object passed to the callback.
          * @returns the data that was signed,          or `null` if an error occurred
+         * @throws GLib.Error
          */
         sign_finish(result: Gio.AsyncResult): Uint8Array;
 
@@ -2336,6 +2399,7 @@ export namespace Gck {
          * @param n_result location to store the length of the result data
          * @param cancellable A GCancellable which can be used to cancel the operation.
          * @returns The data that was signed, or `null` if an error occured.
+         * @throws GLib.Error
          */
         sign_full(key: Object, mechanism: Mechanism, input: Uint8Array | string, n_result: bigint | number, cancellable: Gio.Cancellable | null): number;
 
@@ -2350,6 +2414,7 @@ export namespace Gck {
          * @param attrs Additional attributes for the unwrapped key.
          * @param cancellable Optional cancellation object, or `null`.
          * @returns the new unwrapped key or `null` if the          operation failed
+         * @throws GLib.Error
          */
         unwrap_key(wrapper: Object, mech_type: bigint | number, input: Uint8Array | string, attrs: Attributes, cancellable: Gio.Cancellable | null): Object;
 
@@ -2398,6 +2463,7 @@ export namespace Gck {
          * Get the result of a unwrap key operation.
          * @param result The async result passed to the callback.
          * @returns the new unwrapped key or `null` if the operation          failed.
+         * @throws GLib.Error
          */
         unwrap_key_finish(result: Gio.AsyncResult): Object;
 
@@ -2412,6 +2478,7 @@ export namespace Gck {
          * @param attrs Additional attributes for the unwrapped key.
          * @param cancellable Optional cancellation object, or `null`.
          * @returns the new unwrapped key or `null` if the operation          failed
+         * @throws GLib.Error
          */
         unwrap_key_full(wrapper: Object, mechanism: Mechanism, input: Uint8Array | string, attrs: Attributes, cancellable: Gio.Cancellable | null): Object;
 
@@ -2424,6 +2491,7 @@ export namespace Gck {
          * @param signature the signature
          * @param cancellable Optional cancellation object, or `null`
          * @returns `true` if the data verified correctly, otherwise a failure or error occurred.
+         * @throws GLib.Error
          */
         verify(key: Object, mech_type: bigint | number, input: Uint8Array | string, signature: Uint8Array | string, cancellable: Gio.Cancellable | null): boolean;
 
@@ -2466,6 +2534,7 @@ export namespace Gck {
          * Get the result of an verify operation.
          * @param result The result object passed to the callback.
          * @returns `true` if the data verified correctly, otherwise a failure or error occurred.
+         * @throws GLib.Error
          */
         verify_finish(result: Gio.AsyncResult): boolean;
 
@@ -2478,6 +2547,7 @@ export namespace Gck {
          * @param signature the signature
          * @param cancellable A GCancellable which can be used to cancel the operation.
          * @returns `true` if the data verified correctly, otherwise a failure or error occurred.
+         * @throws GLib.Error
          */
         verify_full(key: Object, mechanism: Mechanism, input: Uint8Array | string, signature: Uint8Array | string, cancellable: Gio.Cancellable | null): boolean;
 
@@ -2489,6 +2559,7 @@ export namespace Gck {
          * @param wrapped The key to wrap.
          * @param cancellable A {@link Gio.Cancellable} or `null`
          * @returns the wrapped data or `null`          if the operation failed
+         * @throws GLib.Error
          */
         wrap_key(wrapper: Object, mech_type: bigint | number, wrapped: Object, cancellable: Gio.Cancellable | null): Uint8Array;
 
@@ -2528,6 +2599,7 @@ export namespace Gck {
          * Get the result of a wrap key operation.
          * @param result The async result passed to the callback.
          * @returns the wrapped data or `null`          if the operation failed
+         * @throws GLib.Error
          */
         wrap_key_finish(result: Gio.AsyncResult): Uint8Array;
 
@@ -2539,6 +2611,7 @@ export namespace Gck {
          * @param wrapped The key to wrap.
          * @param cancellable Optional cancellation object, or `null`.
          * @returns the wrapped data or `null`          if the operation failed
+         * @throws GLib.Error
          */
         wrap_key_full(wrapper: Object, mechanism: Mechanism, wrapped: Object, cancellable: Gio.Cancellable | null): Uint8Array;
 
@@ -2679,6 +2752,7 @@ export namespace Gck {
          * @param res a {@link Gio.AsyncResult}.
          * @returns `true` if successful. If an error has occurred, this function will return `false` and set `error` appropriately if present.
          * @since 2.22
+         * @throws GLib.Error
          */
         init_finish(res: Gio.AsyncResult): boolean;
 
@@ -2688,6 +2762,7 @@ export namespace Gck {
          * @param res the {@link Gio.AsyncResult} from the callback
          * @returns a newly created {@link GObject.Object},      or `null` on error. Free with `g_object_unref()`.
          * @since 2.22
+         * @throws GLib.Error
          */
         new_finish(res: Gio.AsyncResult): Session;
 
@@ -2787,6 +2862,7 @@ export namespace Gck {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          * @since 2.22
+         * @throws GLib.Error
          */
         init(cancellable: Gio.Cancellable | null): boolean;
 
@@ -3000,6 +3076,7 @@ export namespace Gck {
          * @param options The {@link Gck.SessionOptions} to open a session with.
          * @param cancellable An optional cancellation object, or `null`.
          * @returns a new session or `null` if an error occurs
+         * @throws GLib.Error
          */
         open_session(options: SessionOptions, cancellable: Gio.Cancellable | null): Session;
 
@@ -3040,6 +3117,7 @@ export namespace Gck {
          * then this may be a recycled session with the same flags.
          * @param result The result passed to the callback.
          * @returns the new session or `null` if an error occurs
+         * @throws GLib.Error
          */
         open_session_finish(result: Gio.AsyncResult): Session;
     }
@@ -4132,6 +4210,7 @@ export namespace Gck {
          * @param attr_types the types of attributes to update
          * @param cancellable optional cancellation object
          * @returns whether the cache update was successful
+         * @throws GLib.Error
          */
         update(attr_types: (bigint | number)[], cancellable: Gio.Cancellable | null): boolean;
 
@@ -4172,6 +4251,7 @@ export namespace Gck {
          * attributes.
          * @param result the asynchronous result passed to the callback
          * @returns whether the cache update was successful
+         * @throws GLib.Error
          */
         update_finish(result: Gio.AsyncResult): boolean;
     }

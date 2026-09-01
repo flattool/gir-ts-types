@@ -25,7 +25,7 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum GLDeviceList {
-        GL_DEVICE_LIST_ALL,
+        GL_DEVICE_LIST_ALL = 1,
     }
 
 
@@ -33,10 +33,10 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum address_mode {
-        WRAP,
-        CLAMP,
-        MIRROR,
-        BORDER,
+        WRAP = 0,
+        CLAMP = 1,
+        MIRROR = 2,
+        BORDER = 3,
     }
 
 
@@ -44,8 +44,8 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum array_format {
-        INT8,
-        INT16,
+        INT8 = 1,
+        INT16 = 2,
     }
 
 
@@ -53,14 +53,14 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum device_attribute {
-        TEXTURE_ALIGNMENT,
-        UNIFIED_ADDRESSING,
-        COMPUTE_CAPABILITY_MAJOR,
-        COMPUTE_CAPABILITY_MINOR,
-        VIRTUAL_MEMORY_MANAGEMENT_SUPPORTED,
-        HANDLE_TYPE_POSIX_FILE_DESCRIPTOR_SUPPORTED,
-        HANDLE_TYPE_WIN32_HANDLE_SUPPORTED,
-        HANDLE_TYPE_WIN32_KMT_HANDLE_SUPPORTED,
+        TEXTURE_ALIGNMENT = 14,
+        UNIFIED_ADDRESSING = 41,
+        COMPUTE_CAPABILITY_MAJOR = 75,
+        COMPUTE_CAPABILITY_MINOR = 76,
+        VIRTUAL_MEMORY_MANAGEMENT_SUPPORTED = 102,
+        HANDLE_TYPE_POSIX_FILE_DESCRIPTOR_SUPPORTED = 103,
+        HANDLE_TYPE_WIN32_HANDLE_SUPPORTED = 104,
+        HANDLE_TYPE_WIN32_KMT_HANDLE_SUPPORTED = 105,
     }
 
 
@@ -68,10 +68,10 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum event_flags {
-        DEFAULT,
-        BLOCKING_SYNC,
-        DISABLE_TIMING,
-        INTERPROCESS,
+        DEFAULT = 0,
+        BLOCKING_SYNC = 1,
+        DISABLE_TIMING = 2,
+        INTERPROCESS = 4,
     }
 
 
@@ -79,8 +79,8 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum filter_mode {
-        POINT,
-        LINEAR,
+        POINT = 0,
+        LINEAR = 1,
     }
 
 
@@ -88,9 +88,9 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum graphicsMapResourceFlags {
-        NONE,
-        READ_ONLY,
-        WRITE_DISCARD,
+        NONE = 0,
+        READ_ONLY = 1,
+        WRITE_DISCARD = 2,
     }
 
 
@@ -98,11 +98,11 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum graphicsRegisterFlags {
-        NONE,
-        READ_ONLY,
-        WRITE_DISCARD,
-        SURFACE_LOAD_STORE,
-        TEXTURE_GATHER,
+        NONE = 0,
+        READ_ONLY = 1,
+        WRITE_DISCARD = 2,
+        SURFACE_LOAD_STORE = 4,
+        TEXTURE_GATHER = 8,
     }
 
 
@@ -110,7 +110,7 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum ipcMem_flags {
-        IPC_MEM_LAZY_ENABLE_PEER_ACCESS,
+        IPC_MEM_LAZY_ENABLE_PEER_ACCESS = 1,
     }
 
 
@@ -118,10 +118,10 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum memAccess_flags {
-        NONE,
-        READ,
-        READWRITE,
-        MAX,
+        NONE = 0,
+        READ = 1,
+        READWRITE = 3,
+        MAX = 2147483647,
     }
 
 
@@ -129,8 +129,8 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum memAllocationGranularity_flags {
-        MINIMUM,
-        RECOMMENDED,
+        MINIMUM = 0,
+        RECOMMENDED = 1,
     }
 
 
@@ -138,11 +138,11 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum memAllocationHandleType {
-        NONE,
-        POSIX_FILE_DESCRIPTOR,
-        WIN32,
-        WIN32_KMT,
-        MAX,
+        NONE = 0,
+        POSIX_FILE_DESCRIPTOR = 1,
+        WIN32 = 2,
+        WIN32_KMT = 4,
+        MAX = 2147483647,
     }
 
 
@@ -150,9 +150,9 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum memAllocationType {
-        INVALID,
-        PINNED,
-        MAX,
+        INVALID = 0,
+        PINNED = 1,
+        MAX = 2147483647,
     }
 
 
@@ -160,9 +160,9 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum memLocationType {
-        INVALID,
-        DEVICE,
-        MAX,
+        INVALID = 0,
+        DEVICE = 1,
+        MAX = 2147483647,
     }
 
 
@@ -170,10 +170,10 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum memorytype {
-        HOST,
-        DEVICE,
-        ARRAY,
-        UNIFIED,
+        HOST = 1,
+        DEVICE = 2,
+        ARRAY = 3,
+        UNIFIED = 4,
     }
 
 
@@ -181,7 +181,7 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum resourceViewFormat {
-        RES_VIEW_FORMAT_NONE,
+        RES_VIEW_FORMAT_NONE = 0,
     }
 
 
@@ -189,10 +189,10 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum resourcetype {
-        ARRAY,
-        MIPMAPPED_ARRAY,
-        LINEAR,
-        PITCH2D,
+        ARRAY = 0,
+        MIPMAPPED_ARRAY = 1,
+        LINEAR = 2,
+        PITCH2D = 3,
     }
 
 
@@ -200,10 +200,10 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum result {
-        SUCCESS,
-        ERROR_NO_DEVICE,
-        ERROR_ALREADY_MAPPED,
-        ERROR_NOT_SUPPORTED,
+        SUCCESS = 0,
+        ERROR_NO_DEVICE = 100,
+        ERROR_ALREADY_MAPPED = 208,
+        ERROR_NOT_SUPPORTED = 801,
     }
 
 
@@ -211,15 +211,24 @@ export namespace CudaGst {
      * @gir-type Enum
      */
     enum stream_flags {
-        DEFAULT,
-        NON_BLOCKING,
+        DEFAULT = 0,
+        NON_BLOCKING = 1,
     }
 
 
+    /**
+     * @default 64
+     */
     const IPC_HANDLE_SIZE: number;
 
+    /**
+     * @default 1
+     */
     const TRSF_READ_AS_INTEGER: number;
 
+    /**
+     * @default 10000
+     */
     const VERSION: number;
 
     /**

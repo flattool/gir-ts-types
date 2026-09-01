@@ -35,19 +35,19 @@ export namespace Nice {
         /**
          * UDP transport
          */
-        UDP,
+        UDP = 0,
         /**
          * TCP Active transport
          */
-        TCP_ACTIVE,
+        TCP_ACTIVE = 1,
         /**
          * TCP Passive transport
          */
-        TCP_PASSIVE,
+        TCP_PASSIVE = 2,
         /**
          * TCP Simultaneous-Open transport
          */
-        TCP_SO,
+        TCP_SO = 3,
     }
 
 
@@ -59,19 +59,19 @@ export namespace Nice {
         /**
          * A host candidate
          */
-        HOST,
+        HOST = 0,
         /**
          * A server reflexive candidate (or a NAT-assisted candidate)
          */
-        SERVER_REFLEXIVE,
+        SERVER_REFLEXIVE = 1,
         /**
          * A peer reflexive candidate
          */
-        PEER_REFLEXIVE,
+        PEER_REFLEXIVE = 2,
         /**
          * A relay candidate
          */
-        RELAYED,
+        RELAYED = 3,
     }
 
 
@@ -98,36 +98,36 @@ export namespace Nice {
          * Use compatibility with the RFC5245 ICE-UDP specs
          * and RFC6544 ICE-TCP specs
          */
-        RFC5245,
+        RFC5245 = 0,
         /**
          * Use compatibility for ICE Draft 19 specs
          */
-        DRAFT19,
+        DRAFT19 = 0,
         /**
          * Use compatibility for Google Talk specs
          */
-        GOOGLE,
+        GOOGLE = 1,
         /**
          * Use compatibility for MSN Messenger specs
          */
-        MSN,
+        MSN = 2,
         /**
          * Use compatibility with Windows Live Messenger
          * 2009
          */
-        WLM2009,
+        WLM2009 = 3,
         /**
          * Use compatibility with Microsoft Office Communicator 2007
          */
-        OC2007,
+        OC2007 = 4,
         /**
          * Use compatibility with Microsoft Office Communicator 2007 R2
          */
-        OC2007R2,
+        OC2007R2 = 5,
         /**
          * Dummy last compatibility mode
          */
-        LAST,
+        LAST = 5,
     }
 
 
@@ -140,33 +140,33 @@ export namespace Nice {
         /**
          * No activity scheduled
          */
-        DISCONNECTED,
+        DISCONNECTED = 0,
         /**
          * Gathering local candidates
          */
-        GATHERING,
+        GATHERING = 1,
         /**
          * Establishing connectivity
          */
-        CONNECTING,
+        CONNECTING = 2,
         /**
          * At least one working candidate pair
          */
-        CONNECTED,
+        CONNECTED = 3,
         /**
          * ICE concluded, candidate pair selection
          * is now final
          */
-        READY,
+        READY = 4,
         /**
          * Connectivity checks have been completed,
          * but connectivity was not established
          */
-        FAILED,
+        FAILED = 5,
         /**
          * Dummy state
          */
-        LAST,
+        LAST = 6,
     }
 
 
@@ -185,11 +185,11 @@ export namespace Nice {
         /**
          * RTP Component type
          */
-        RTP,
+        RTP = 1,
         /**
          * RTCP Component type
          */
-        RTCP,
+        RTCP = 2,
     }
 
 
@@ -208,11 +208,11 @@ export namespace Nice {
         /**
          * Regular nomination mode
          */
-        REGULAR,
+        REGULAR = 0,
         /**
          * Aggressive nomination mode
          */
-        AGGRESSIVE,
+        AGGRESSIVE = 1,
     }
 
 
@@ -227,19 +227,19 @@ export namespace Nice {
         /**
          * Do not use a proxy
          */
-        NONE,
+        NONE = 0,
         /**
          * Use a SOCKS5 proxy
          */
-        SOCKS5,
+        SOCKS5 = 1,
         /**
          * Use an HTTP proxy
          */
-        HTTP,
+        HTTP = 2,
         /**
          * Dummy last proxy type
          */
-        LAST,
+        LAST = 2,
     }
 
 
@@ -252,15 +252,15 @@ export namespace Nice {
         /**
          * Disable debug messages
          */
-        NONE,
+        NONE = 0,
         /**
          * Enable basic debug messages
          */
-        NORMAL,
+        NORMAL = 1,
         /**
          * Enable verbose debug messages
          */
-        VERBOSE,
+        VERBOSE = 2,
     }
 
 
@@ -275,15 +275,15 @@ export namespace Nice {
         /**
          * Shut down the local reader only
          */
-        RD,
+        RD = 0,
         /**
          * Shut down the local writer only
          */
-        WR,
+        WR = 1,
         /**
          * Shut down both reading and writing
          */
-        RDWR,
+        RDWR = 2,
     }
 
 
@@ -299,54 +299,54 @@ export namespace Nice {
          * The socket's initial state. The socket isn't connected and is
          * listening for an incoming connection
          */
-        LISTEN,
+        LISTEN = 0,
         /**
          * The socket has sent a connection request (SYN) packet and is
          * waiting for an answer
          */
-        SYN_SENT,
+        SYN_SENT = 1,
         /**
          * The socket has received a connection request (SYN) packet.
          */
-        SYN_RECEIVED,
+        SYN_RECEIVED = 2,
         /**
          * The socket is connected
          */
-        ESTABLISHED,
+        ESTABLISHED = 3,
         /**
          * The socket has been closed
          */
-        CLOSED,
+        CLOSED = 4,
         /**
          * The socket has been closed locally but not remotely
          * (Since: 0.1.8)
          */
-        FIN_WAIT_1,
+        FIN_WAIT_1 = 5,
         /**
          * The socket has been closed locally but not remotely
          * (Since: 0.1.8)
          */
-        FIN_WAIT_2,
+        FIN_WAIT_2 = 6,
         /**
          * The socket has been closed locally and remotely
          * (Since: 0.1.8)
          */
-        CLOSING,
+        CLOSING = 7,
         /**
          * The socket has been closed locally and remotely
          * (Since: 0.1.8)
          */
-        TIME_WAIT,
+        TIME_WAIT = 8,
         /**
          * The socket has been closed remotely but not locally
          * (Since: 0.1.8)
          */
-        CLOSE_WAIT,
+        CLOSE_WAIT = 9,
         /**
          * The socket has been closed locally and remotely
          * (Since: 0.1.8)
          */
-        LAST_ACK,
+        LAST_ACK = 10,
     }
 
 
@@ -361,16 +361,16 @@ export namespace Nice {
         /**
          * The write operation was successful
          */
-        SUCCESS,
+        SUCCESS = 0,
         /**
          * The socket type requires that message be sent atomically
          * and the size of the message to be sent made this impossible.
          */
-        TOO_LARGE,
+        TOO_LARGE = 1,
         /**
          * There was an error sending the message
          */
-        FAIL,
+        FAIL = 2,
     }
 
 
@@ -382,15 +382,15 @@ export namespace Nice {
         /**
          * A TURN relay using UDP
          */
-        UDP,
+        UDP = 0,
         /**
          * A TURN relay using TCP
          */
-        TCP,
+        TCP = 1,
         /**
          * A TURN relay using TLS over TCP
          */
-        TLS,
+        TLS = 2,
     }
 
 
@@ -398,11 +398,13 @@ export namespace Nice {
      * Was a limit on the number of remote candidates one can set, but is
      * no longer used by libnice itself.
      * @deprecated since 0.1.20: Replace with dynamic value based on the {@link Nice.Agent.SignalSignatures.max_connectivity_checks | Nice.Agent::max-connectivity-checks} property
+     * @default 25
      */
     const AGENT_MAX_REMOTE_CANDIDATES: number;
 
     /**
      * The maximum size a candidate foundation can have.
+     * @default 33
      */
     const CANDIDATE_MAX_FOUNDATION: number;
 
@@ -412,11 +414,13 @@ export namespace Nice {
      * fit on 9 bits, to ensure candidate priority uniqueness. See also
      * `NICE_CANDIDATE_MAX_TURN_SERVERS`. We choose 6 bits for the number of
      * local addresses, and 3 bits for the number of turn servers.
+     * @default 64
      */
     const CANDIDATE_MAX_LOCAL_ADDRESSES: number;
 
     /**
      * The maximum number of turns servers.
+     * @default 8
      */
     const CANDIDATE_MAX_TURN_SERVERS: number;
 
@@ -524,42 +528,42 @@ export namespace Nice {
         /**
          * No enabled options (Since: 0.1.19)
          */
-        NONE,
+        NONE = 0,
         /**
          * Enables regular nomination, default
          *  is aggrssive mode (see {@link Nice.NominationMode}).
          */
-        REGULAR_NOMINATION,
+        REGULAR_NOMINATION = 1,
         /**
          * Enables reliable mode, possibly using PseudoTCP, *  see `nice_agent_new_reliable()`.
          */
-        RELIABLE,
+        RELIABLE = 2,
         /**
          * Enable lite mode
          */
-        LITE_MODE,
+        LITE_MODE = 4,
         /**
          * Enable ICE trickle mode
          */
-        ICE_TRICKLE,
+        ICE_TRICKLE = 8,
         /**
          * Enable renomination triggered by NOMINATION STUN attribute
          * proposed here: https://tools.ietf.org/html/draft-thatcher-ice-renomination-00
          */
-        SUPPORT_RENOMINATION,
+        SUPPORT_RENOMINATION = 16,
         /**
          * Enable RFC 7675 consent freshness support. (Since: 0.1.19)
          */
-        CONSENT_FRESHNESS,
+        CONSENT_FRESHNESS = 32,
         /**
          * Use bytestream mode for reliable TCP connections. (Since: 0.1.20)
          */
-        BYTESTREAM_TCP,
+        BYTESTREAM_TCP = 64,
         /**
          * When removing TURN port allocations on TURN server,
          * don't do retransmissions and don't wait for a response. (Since: 0.1.23)
          */
-        CLOSE_FORCED,
+        CLOSE_FORCED = 128,
     }
 
 
@@ -572,7 +576,7 @@ export namespace Nice {
              * @signal
              * @run-last
              */
-            "candidate-gathering-done": (arg0: number) => void;
+            "candidate-gathering-done": (stream_id: number) => void;
             /**
              * This signal is fired whenever a component’s state changes. There are many
              * valid state transitions.
@@ -581,14 +585,14 @@ export namespace Nice {
              * @signal
              * @run-last
              */
-            "component-state-changed": (arg0: number, arg1: number, arg2: number) => void;
+            "component-state-changed": (stream_id: number, component_id: number, state: number) => void;
             /**
              * This signal is fired when we received our first binding request from
              * the peer.
              * @signal
              * @run-last
              */
-            "initial-binding-request-received": (arg0: number) => void;
+            "initial-binding-request-received": (stream_id: number) => void;
             /**
              * This signal is fired when the agent discovers a new local candidate.
              * When this signal is emitted, a matching {@link Nice.Agent.SignalSignatures.new_candidate_full | Nice.Agent::new-candidate-full} is
@@ -600,7 +604,7 @@ export namespace Nice {
              * @deprecated since 0.1.8: Use {@link Nice.Agent.SignalSignatures.new_candidate_full | Nice.Agent::new-candidate-full}
              * @run-last
              */
-            "new-candidate": (arg0: number, arg1: number, arg2: string) => void;
+            "new-candidate": (stream_id: number, component_id: number, foundation: string) => void;
             /**
              * This signal is fired when the agent discovers a new local candidate.
              * When this signal is emitted, a matching {@link Nice.Agent.SignalSignatures.new_candidate | Nice.Agent::new-candidate} is
@@ -612,7 +616,7 @@ export namespace Nice {
              * @since 0.1.8
              * @run-last
              */
-            "new-candidate-full": (arg0: Candidate) => void;
+            "new-candidate-full": (candidate: Candidate) => void;
             /**
              * This signal is fired when the agent discovers a new remote
              * candidate.  This can happen with peer reflexive candidates.  When
@@ -625,7 +629,7 @@ export namespace Nice {
              * @deprecated since 0.1.8: Use {@link Nice.Agent.SignalSignatures.new_remote_candidate_full | Nice.Agent::new-remote-candidate-full}
              * @run-last
              */
-            "new-remote-candidate": (arg0: number, arg1: number, arg2: string) => void;
+            "new-remote-candidate": (stream_id: number, component_id: number, foundation: string) => void;
             /**
              * This signal is fired when the agent discovers a new remote candidate.
              * This can happen with peer reflexive candidates.
@@ -637,7 +641,7 @@ export namespace Nice {
              * @since 0.1.8
              * @run-last
              */
-            "new-remote-candidate-full": (arg0: Candidate) => void;
+            "new-remote-candidate-full": (candidate: Candidate) => void;
             /**
              * This signal is fired once a candidate pair is selected for data
              * transfer for a stream's component This is emitted along with
@@ -649,7 +653,7 @@ export namespace Nice {
              * @deprecated since 0.1.8: Use {@link Nice.Agent.SignalSignatures.new_selected_pair_full | Nice.Agent::new-selected-pair-full}
              * @run-last
              */
-            "new-selected-pair": (arg0: number, arg1: number, arg2: string, arg3: string) => void;
+            "new-selected-pair": (stream_id: number, component_id: number, lfoundation: string, rfoundation: string) => void;
             /**
              * This signal is fired once a candidate pair is selected for data
              * transfer for a stream's component. This is emitted along with
@@ -660,7 +664,7 @@ export namespace Nice {
              * @since 0.1.8
              * @run-last
              */
-            "new-selected-pair-full": (arg0: number, arg1: number, arg2: Candidate, arg3: Candidate) => void;
+            "new-selected-pair-full": (stream_id: number, component_id: number, lcandidate: Candidate, rcandidate: Candidate) => void;
             /**
              * This signal is fired on {@link Nice.Agent} when the underlying transport becomes writable.
              * This signal is only emitted when the `nice_agent_send()` function returns less
@@ -673,7 +677,7 @@ export namespace Nice {
              * @since 0.0.11
              * @run-last
              */
-            "reliable-transport-writable": (arg0: number, arg1: number) => void;
+            "reliable-transport-writable": (stream_id: number, component_id: number) => void;
             /**
              * This signal is fired whenever one or more streams are removed from the
              * `agent`.
@@ -681,7 +685,7 @@ export namespace Nice {
              * @since 0.1.5
              * @run-last
              */
-            "streams-removed": (arg0: number[]) => void;
+            "streams-removed": (stream_ids: number[]) => void;
             "notify::bytestream-tcp": (pspec: GObject.ParamSpec) => void;
             "notify::close-forced": (pspec: GObject.ParamSpec) => void;
             "notify::compatibility": (pspec: GObject.ParamSpec) => void;
@@ -1857,6 +1861,7 @@ export namespace Nice {
          * @param cancellable a {@link Gio.Cancellable} to allow the operation to be cancelled from another thread, or `null`
          * @returns the number of bytes written to `buf` on success (guaranteed to be greater than 0 unless `buf_len` is 0), 0 if in reliable mode and the remote peer closed the stream, or -1 on error
          * @since 0.1.5
+         * @throws GLib.Error
          */
         recv(stream_id: number, component_id: number, cancellable: Gio.Cancellable | null): [number, Uint8Array];
 
@@ -1899,6 +1904,7 @@ export namespace Nice {
          * @param cancellable a {@link Gio.Cancellable} to allow the operation to be cancelled from another thread, or `null`
          * @returns the number of valid messages written to `messages` on success (guaranteed to be greater than 0 unless `n_messages` is 0), 0 if the remote peer closed the stream, or -1 on error
          * @since 0.1.5
+         * @throws GLib.Error
          */
         recv_messages(stream_id: number, component_id: number, cancellable: Gio.Cancellable | null): [number, InputMessage[]];
 
@@ -1933,6 +1939,7 @@ export namespace Nice {
          * @param cancellable a {@link Gio.Cancellable} to allow the operation to be cancelled from another thread, or `null`
          * @returns the number of valid messages written to `messages` on success (guaranteed to be greater than 0 unless `n_messages` is 0), 0 if in reliable mode and the remote peer closed the stream, or -1 on error
          * @since 0.1.5
+         * @throws GLib.Error
          */
         recv_messages_nonblocking(stream_id: number, component_id: number, cancellable: Gio.Cancellable | null): [number, InputMessage[]];
 
@@ -1943,6 +1950,7 @@ export namespace Nice {
          * @param cancellable a {@link Gio.Cancellable} to allow the operation to be cancelled from another thread, or `null`
          * @returns the number of bytes received into `buf` on success (guaranteed to be greater than 0 unless `buf_len` is 0), 0 if in reliable mode and the remote peer closed the stream, or -1 on error
          * @since 0.1.5
+         * @throws GLib.Error
          */
         recv_nonblocking(stream_id: number, component_id: number, cancellable: Gio.Cancellable | null): [number, Uint8Array];
 
@@ -2051,6 +2059,7 @@ export namespace Nice {
          * @param cancellable a {@link Gio.Cancellable} to cancel the operation from another thread, or `null`
          * @returns the number of messages sent (may be zero), or -1 on error
          * @since 0.1.5
+         * @throws GLib.Error
          */
         send_messages_nonblocking(stream_id: number, component_id: number, messages: OutputMessage[], cancellable: Gio.Cancellable | null): number;
 

@@ -48,9 +48,9 @@ export namespace GdkX11 {
      * @gir-type Enum
      */
     enum X11DeviceType {
-        LOGICAL,
-        PHYSICAL,
-        FLOATING,
+        LOGICAL = 0,
+        PHYSICAL = 1,
+        FLOATING = 2,
     }
 
 
@@ -358,7 +358,7 @@ export namespace GdkX11 {
              * @signal
              * @run-last
              */
-            xevent: (arg0: null) => boolean | void;
+            xevent: (xevent: null) => boolean | void;
             "notify::composited": (pspec: GObject.ParamSpec) => void;
             "notify::dmabuf-formats": (pspec: GObject.ParamSpec) => void;
             "notify::input-shapes": (pspec: GObject.ParamSpec) => void;

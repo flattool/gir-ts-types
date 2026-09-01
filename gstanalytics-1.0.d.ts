@@ -33,12 +33,14 @@ export namespace GstAnalytics {
      * Passes to functions asking for a relation span when the span is
      * infinite.
      * @since 1.24
+     * @default -1
      */
     const INF_RELATION_SPAN: number;
 
     /**
      * A wildcard matching any type of analysis
      * @since 1.24
+     * @default 0
      */
     const MTD_TYPE_ANY: number;
 
@@ -124,24 +126,24 @@ export namespace GstAnalytics {
         /**
          * No relation
          */
-        NONE,
+        NONE = 0,
         /**
          * First analysis-meta is part of second analysis-meta
          */
-        IS_PART_OF,
+        IS_PART_OF = 2,
         /**
          * First analysis-meta contain second analysis-meta.
          */
-        CONTAIN,
-        RELATE_TO,
+        CONTAIN = 4,
+        RELATE_TO = 8,
         /**
          * reserved
          */
-        LAST,
+        LAST = 16,
         /**
          * Only use for criteria.
          */
-        ANY,
+        ANY = 2147483647,
     }
 
 

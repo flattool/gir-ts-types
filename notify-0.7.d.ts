@@ -44,28 +44,31 @@ export namespace Notify {
         /**
          * Notification not closed.
          */
-        UNSET,
+        UNSET = -1,
         /**
          * Timeout has expired.
          */
-        EXPIRED,
+        EXPIRED = 1,
         /**
          * It has been dismissed by the user.
          */
-        DISMISSED,
+        DISMISSED = 2,
         /**
          * It has been closed by a call to
          *   {@link NotifyNotification.close}.
          */
-        API_REQUEST,
+        API_REQUEST = 3,
         /**
          * Closed by undefined/reserved reasons.
+         * @since 0.8.8
          */
-        UNDEFINED,
+        UNDEFINED = 4,
         /**
          * Closed by undefined/reserved reasons.
+         * @since 0.8.0
+         * @deprecated since 0.8.8: Use {@link Notify.ClosedReason.UNDEFINED}.
          */
-        UNDEFIEND,
+        UNDEFIEND = 4,
     }
 
 
@@ -84,20 +87,21 @@ export namespace Notify {
         /**
          * Low urgency. Used for unimportant notifications.
          */
-        LOW,
+        LOW = 0,
         /**
          * Normal urgency. Used for most standard notifications.
          */
-        NORMAL,
+        NORMAL = 1,
         /**
          * Critical urgency. Used for very important notifications.
          */
-        CRITICAL,
+        CRITICAL = 2,
     }
 
 
     /**
      * The default expiration time on a notification.
+     * @default -1
      */
     const EXPIRES_DEFAULT: number;
 
@@ -105,6 +109,7 @@ export namespace Notify {
      * The notification never expires.
      * 
      * It stays open until closed by the calling API or the user.
+     * @default 0
      */
     const EXPIRES_NEVER: number;
 
@@ -118,6 +123,7 @@ export namespace Notify {
      * 
      * Hint {@link GLib.VariantType}: {@link GLib.VARIANT_TYPE_BOOLEAN} (`b`).
      * @since 0.8.8
+     * @default action-icons
      */
     const NOTIFICATION_HINT_ACTION_ICONS: string;
 
@@ -126,6 +132,7 @@ export namespace Notify {
      * 
      * Hint {@link GLib.VariantType}: {@link GLib.VARIANT_TYPE_STRING} (`s`).
      * @since 0.8.8
+     * @default category
      */
     const NOTIFICATION_HINT_CATEGORY: string;
 
@@ -138,6 +145,7 @@ export namespace Notify {
      * 
      * Hint {@link GLib.VariantType}: {@link GLib.VARIANT_TYPE_STRING} (`s`).
      * @since 0.8.8
+     * @default desktop-entry
      */
     const NOTIFICATION_HINT_DESKTOP_ENTRY: string;
 
@@ -150,6 +158,7 @@ export namespace Notify {
      * 
      * {@link GLib.VariantType}: `(iiibiiay)`
      * @since 0.8.8
+     * @default image-data
      */
     const NOTIFICATION_HINT_IMAGE_DATA: string;
 
@@ -162,6 +171,7 @@ export namespace Notify {
      * 
      * {@link GLib.VariantType}: `(iiibiiay)`
      * @since 0.8.8
+     * @default image_data
      */
     const NOTIFICATION_HINT_IMAGE_DATA_LEGACY: string;
 
@@ -172,6 +182,7 @@ export namespace Notify {
      * 
      * Hint {@link GLib.VariantType}: {@link GLib.VARIANT_TYPE_STRING} (`s`).
      * @since 0.8.8
+     * @default image-path
      */
     const NOTIFICATION_HINT_IMAGE_PATH: string;
 
@@ -182,6 +193,7 @@ export namespace Notify {
      * 
      * Hint {@link GLib.VariantType}: {@link GLib.VARIANT_TYPE_STRING} (`s`).
      * @since 0.8.8
+     * @default image_path
      */
     const NOTIFICATION_HINT_IMAGE_PATH_LEGACY: string;
 
@@ -195,6 +207,7 @@ export namespace Notify {
      * 
      * Hint {@link GLib.VariantType}: {@link GLib.VARIANT_TYPE_BOOLEAN} (`b`).
      * @since 0.8.8
+     * @default resident
      */
     const NOTIFICATION_HINT_RESIDENT: string;
 
@@ -203,6 +216,7 @@ export namespace Notify {
      * 
      * Hint {@link GLib.VariantType}: {@link GLib.VARIANT_TYPE_STRING} (`s`).
      * @since 0.8.8
+     * @default sound-file
      */
     const NOTIFICATION_HINT_SOUND_FILE: string;
 
@@ -213,6 +227,7 @@ export namespace Notify {
      * 
      * Hint {@link GLib.VariantType}: {@link GLib.VARIANT_TYPE_STRING} (`s`).
      * @since 0.8.8
+     * @default sound-name
      */
     const NOTIFICATION_HINT_SOUND_NAME: string;
 
@@ -222,6 +237,7 @@ export namespace Notify {
      * 
      * Hint {@link GLib.VariantType}: {@link GLib.VARIANT_TYPE_BOOLEAN} (`b`).
      * @since 0.8.8
+     * @default suppress-sound
      */
     const NOTIFICATION_HINT_SUPPRESS_SOUND: string;
 
@@ -233,6 +249,7 @@ export namespace Notify {
      * 
      * Hint {@link GLib.VariantType}: {@link GLib.VARIANT_TYPE_BOOLEAN} (`b`).
      * @since 0.8.8
+     * @default transient
      */
     const NOTIFICATION_HINT_TRANSIENT: string;
 
@@ -241,6 +258,7 @@ export namespace Notify {
      * 
      * Hint {@link GLib.VariantType}: {@link GLib.VARIANT_TYPE_BYTE} (`y`).
      * @since 0.8.8
+     * @default urgency
      */
     const NOTIFICATION_HINT_URGENCY: string;
 
@@ -250,6 +268,7 @@ export namespace Notify {
      * 
      * Hint {@link GLib.VariantType}: {@link GLib.VARIANT_TYPE_INT32} (`i`).
      * @since 0.8.8
+     * @default x
      */
     const NOTIFICATION_HINT_X: string;
 
@@ -259,21 +278,25 @@ export namespace Notify {
      * 
      * Hint {@link GLib.VariantType}: {@link GLib.VARIANT_TYPE_INT32} (`i`).
      * @since 0.8.8
+     * @default y
      */
     const NOTIFICATION_HINT_Y: string;
 
     /**
      * Notify major version component (e.g. 1 if the version is 1.2.3).
+     * @default 0
      */
     const VERSION_MAJOR: number;
 
     /**
      * Notify micro version component (e.g. 3 if the version is 1.2.3).
+     * @default 8
      */
     const VERSION_MICRO: number;
 
     /**
      * Notify minor version component (e.g. 2 if the version is 1.2.3).
+     * @default 8
      */
     const VERSION_MINOR: number;
 
@@ -556,6 +579,7 @@ export namespace Notify {
         /**
          * Synchronously tells the notification server to hide the notification on the screen.
          * @returns `true` on success, or `false` on error with `error` filled in
+         * @throws GLib.Error
          */
         close(): boolean;
 
@@ -723,6 +747,7 @@ export namespace Notify {
         /**
          * Tells the notification server to display the notification on the screen.
          * @returns `true` if successful. On error, this will return `false` and set   `error`.
+         * @throws GLib.Error
          */
         show(): boolean;
 

@@ -45,7 +45,7 @@ export namespace GstVulkan {
      * @since 1.18
      */
     enum VulkanBarrierFlags {
-        NONE,
+        NONE = 0,
     }
 
 
@@ -64,10 +64,10 @@ export namespace GstVulkan {
         /**
          * no barrier type
          */
-        NONE,
-        TYPE_MEMORY,
-        TYPE_BUFFER,
-        TYPE_IMAGE,
+        NONE = 0,
+        TYPE_MEMORY = 1,
+        TYPE_BUFFER = 2,
+        TYPE_IMAGE = 3,
     }
 
 
@@ -119,31 +119,31 @@ export namespace GstVulkan {
         /**
          * [0, 2^n - 1] -> [0.0, 1.0]
          */
-        UNORM,
+        UNORM = 1,
         /**
          * [-2^(n-1), 2^(n-1) - 1] -> [-1.0, 1.0]
          */
-        SNORM,
+        SNORM = 2,
         /**
          * [0, 2^n - 1] -> [0.0, float(2^n - 1)]
          */
-        USCALED,
+        USCALED = 3,
         /**
          * [-2^(n-1), 2^(n-1) - 1] -> [float(-2^(n-1)), float(2^(n-1) - 1)]
          */
-        SSCALED,
+        SSCALED = 4,
         /**
          * [0, 2^n - 1] -> [0, 2^n - 1]
          */
-        UINT,
+        UINT = 5,
         /**
          * [-2^(n-1), 2^(n-1) - 1] -> [-2^(n-1), 2^(n-1) - 1]
          */
-        SINT,
+        SINT = 6,
         /**
          * `GST_VULKAN_FORMAT_SCALING_UNORM` but the first three components are gamma corrected for the sRGB colour space.
          */
-        SRGB,
+        SRGB = 7,
     }
 
 
@@ -162,43 +162,46 @@ export namespace GstVulkan {
         /**
          * descripter set layout
          */
-        DESCRIPTOR_SET_LAYOUT,
+        DESCRIPTOR_SET_LAYOUT = 1,
         /**
          * pipeline layout
          */
-        PIPELINE_LAYOUT,
+        PIPELINE_LAYOUT = 2,
         /**
          * pipeline
          */
-        PIPELINE,
+        PIPELINE = 3,
         /**
          * render pass
          */
-        RENDER_PASS,
+        RENDER_PASS = 4,
         /**
          * sampler
          */
-        SAMPLER,
+        SAMPLER = 5,
         /**
          * framebuffer
          */
-        FRAMEBUFFER,
+        FRAMEBUFFER = 6,
         /**
          * shader
          */
-        SHADER,
+        SHADER = 7,
         /**
          * video session
+         * @since 1.24
          */
-        VIDEO_SESSION,
+        VIDEO_SESSION = 8,
         /**
          * video session parameters
+         * @since 1.24
          */
-        VIDEO_SESSION_PARAMETERS,
+        VIDEO_SESSION_PARAMETERS = 9,
         /**
          * sampler with YCBCR conversion
+         * @since 1.24
          */
-        SAMPLER_YCBCR_CONVERSION,
+        SAMPLER_YCBCR_CONVERSION = 10,
     }
 
 
@@ -218,15 +221,15 @@ export namespace GstVulkan {
         /**
          * decode operation
          */
-        DECODE,
+        DECODE = 0,
         /**
          * encode operation
          */
-        ENCODE,
+        ENCODE = 1,
         /**
          * unknown
          */
-        UNKNOWN,
+        UNKNOWN = 2,
     }
 
 
@@ -265,56 +268,67 @@ export namespace GstVulkan {
 
     /**
      * @since 1.18
+     * @default memory:VulkanBuffer
      */
     const CAPS_FEATURE_MEMORY_VULKAN_BUFFER: string;
 
     /**
      * @since 1.18
+     * @default memory:VulkanImage
      */
     const CAPS_FEATURE_MEMORY_VULKAN_IMAGE: string;
 
     /**
      * @since 1.18
+     * @default VulkanBuffer
      */
     const VULKAN_BUFFER_MEMORY_ALLOCATOR_NAME: string;
 
     /**
      * @since 1.18
+     * @default gst.vulkan.device
      */
     const VULKAN_DEVICE_CONTEXT_TYPE_STR: string;
 
     /**
      * @since 1.18
+     * @default gst.vulkan.display
      */
     const VULKAN_DISPLAY_CONTEXT_TYPE_STR: string;
 
     /**
      * @since 1.18
+     * @default VulkanImage
      */
     const VULKAN_IMAGE_MEMORY_ALLOCATOR_NAME: string;
 
     /**
      * @since 1.18
+     * @default gst.vulkan.instance
      */
     const VULKAN_INSTANCE_CONTEXT_TYPE_STR: string;
 
     /**
      * @since 1.18
+     * @default 4
      */
     const VULKAN_MAX_COMPONENTS: number;
 
     /**
      * @since 1.18
+     * @default Vulkan
      */
     const VULKAN_MEMORY_ALLOCATOR_NAME: string;
 
     /**
      * @since 1.18
+     * @default gst.vulkan.queue
      */
     const VULKAN_QUEUE_CONTEXT_TYPE_STR: string;
 
     /**
      * @since 1.18
+     * @default { RGBA, BGRA, RGB, BGR }
      */
     const VULKAN_SWAPPER_VIDEO_FORMATS: string;
 
@@ -448,6 +462,7 @@ export namespace GstVulkan {
      * @param size length of `code`.  Must be a multiple of 4
      * @returns a {@link GstVulkan.VulkanHandle} for `image` matching the                           original layout and format of `image` or `null`
      * @since 1.18
+     * @throws GLib.Error
      */
     function vulkan_create_shader(device: VulkanDevice, code: string, size: bigint | number): VulkanHandle;
 
@@ -753,32 +768,32 @@ export namespace GstVulkan {
         /**
          * no display
          */
-        NONE,
+        NONE = 0,
         /**
          * XCB display
          */
-        XCB,
+        XCB = 1,
         /**
          * wayland display
          */
-        WAYLAND,
+        WAYLAND = 2,
         /**
          * cocoa display for macOS
          */
-        COCOA,
+        COCOA = 4,
         /**
          * ios display
          */
-        IOS,
+        IOS = 8,
         /**
          * win32 display
          */
-        WIN32,
-        ANDROID,
+        WIN32 = 16,
+        ANDROID = 32,
         /**
          * any display type
          */
-        ANY,
+        ANY = 4294967295,
     }
 
 
@@ -797,23 +812,23 @@ export namespace GstVulkan {
         /**
          * is a YUV format
          */
-        YUV,
+        YUV = 1,
         /**
          * is a RGB format
          */
-        RGB,
+        RGB = 2,
         /**
          * has an alpha channel
          */
-        ALPHA,
+        ALPHA = 4,
         /**
          * data is stored in little-endiate byte order
          */
-        LE,
+        LE = 8,
         /**
          * data is stored complex and cannot be read/write only using the information in the {@link GstVulkan.VulkanFormatInfo}
          */
-        COMPLEX,
+        COMPLEX = 16,
     }
 
 
@@ -985,6 +1000,7 @@ export namespace GstVulkan {
         /**
          * @returns a new or recycled primary {@link GstVulkan.VulkanCommandBuffer}
          * @since 1.18
+         * @throws GLib.Error
          */
         create(): VulkanCommandBuffer;
 
@@ -1097,6 +1113,7 @@ export namespace GstVulkan {
          * Decodes `pic`.
          * @param pic a {@link GstVulkan.VulkanDecoderPicture}
          * @returns whether `pic` was decoded correctly. It might fill `error`.
+         * @throws GLib.Error
          */
         decode(pic: VulkanDecoderPicture): boolean;
 
@@ -1104,6 +1121,7 @@ export namespace GstVulkan {
          * Initializes the decoder at driver level and set its DPB slots to the inactive
          * state.
          * @returns whether flush was successful
+         * @throws GLib.Error
          */
         flush(): boolean;
 
@@ -1139,6 +1157,7 @@ export namespace GstVulkan {
          * `error` is filled.
          * @param profile a {@link GstVulkan.VulkanVideoProfile}
          * @returns whether the video decoder has started correctly.
+         * @throws GLib.Error
          */
         start(profile: VulkanVideoProfile): boolean;
 
@@ -1153,6 +1172,7 @@ export namespace GstVulkan {
          * Update the internal codec parameters for the current video session.
          * @param params a GstVulkanDecoderParameters union
          * @returns whether the `params` were updated internally. It might fill `error`.
+         * @throws GLib.Error
          */
         update_video_session_parameters(params: VulkanDecoderParameters): boolean;
 
@@ -1162,6 +1182,7 @@ export namespace GstVulkan {
          * @param xloc x location of downsampled chroma component samples relative to the luma     samples.
          * @param yloc y location of downsampled chroma component samples relative to the luma     samples.
          * @returns whether the sampler was updated.
+         * @throws GLib.Error
          */
         update_ycbcr_sampler(range: Vulkan.SamplerYcbcrRange, xloc: Vulkan.ChromaLocation, yloc: Vulkan.ChromaLocation): boolean;
 
@@ -1228,6 +1249,7 @@ export namespace GstVulkan {
         /**
          * @returns a new {@link GstVulkan.VulkanDescriptorSet}
          * @since 1.18
+         * @throws GLib.Error
          */
         acquire(): VulkanDescriptorSet;
 
@@ -1294,6 +1316,7 @@ export namespace GstVulkan {
          * @param layouts list of {@link GstVulkan.VulkanHandle} containing                                     descriptor set layouts
          * @returns a new {@link GstVulkan.VulkanDescriptorSet}
          * @since 1.18
+         * @throws GLib.Error
          */
         create(layouts: VulkanHandle[]): VulkanDescriptorSet;
 
@@ -1408,6 +1431,7 @@ export namespace GstVulkan {
         /**
          * @returns a new {@link GstVulkan.VulkanFence} or `null`
          * @since 1.18
+         * @throws GLib.Error
          */
         create_fence(): VulkanFence | null;
 
@@ -1485,6 +1509,7 @@ export namespace GstVulkan {
          * Attempts to create the internal {@link Vulkan.Device} object.
          * @returns whether a vulkan device could be created
          * @since 1.18
+         * @throws GLib.Error
          */
         open(): boolean;
 
@@ -1756,6 +1781,7 @@ export namespace GstVulkan {
          * `gst_vulkan_full_screen_quad_submit()` instead.
          * @returns whether the draw was successful
          * @since 1.18
+         * @throws GLib.Error
          */
         draw(): boolean;
 
@@ -1780,6 +1806,7 @@ export namespace GstVulkan {
          * @param fence 
          * @returns whether `cmd` could be filled with the necessary commands
          * @since 1.18
+         * @throws GLib.Error
          */
         fill_command_buffer(cmd: VulkanCommandBuffer, fence: VulkanFence): boolean;
 
@@ -1789,6 +1816,7 @@ export namespace GstVulkan {
          * @param fence a {@link GstVulkan.VulkanFence} that will be signalled after submission
          * @returns whether the necessary information could be generated for drawing a frame.
          * @since 1.18
+         * @throws GLib.Error
          */
         prepare_draw(fence: VulkanFence): boolean;
 
@@ -1820,6 +1848,7 @@ export namespace GstVulkan {
          * @param n_indices number of indices in `indices`
          * @returns whether the index data could be set
          * @since 1.18
+         * @throws GLib.Error
          */
         set_index_buffer(indices: Gst.Memory, n_indices: bigint | number): boolean;
 
@@ -1835,6 +1864,7 @@ export namespace GstVulkan {
          * @param buffer the input {@link Gst.Buffer} to set
          * @returns whether the input buffer could be changed
          * @since 1.18
+         * @throws GLib.Error
          */
         set_input_buffer(buffer: Gst.Buffer): boolean;
 
@@ -1842,6 +1872,7 @@ export namespace GstVulkan {
          * @param buffer the output {@link Gst.Buffer} to set
          * @returns whether the input buffer could be changed
          * @since 1.18
+         * @throws GLib.Error
          */
         set_output_buffer(buffer: Gst.Buffer): boolean;
 
@@ -1857,6 +1888,7 @@ export namespace GstVulkan {
          * @param uniforms the uniform data to set. Must be a {@link GstVulkan.VulkanBufferMemory}
          * @returns whether the shaders could be set
          * @since 1.18
+         * @throws GLib.Error
          */
         set_uniform_buffer(uniforms: Gst.Memory): boolean;
 
@@ -1864,6 +1896,7 @@ export namespace GstVulkan {
          * @param vertices the vertex data. Must be a {@link GstVulkan.VulkanBufferMemory}
          * @returns whether the index data could be set
          * @since 1.18
+         * @throws GLib.Error
          */
         set_vertex_buffer(vertices: Gst.Memory): boolean;
 
@@ -1872,6 +1905,7 @@ export namespace GstVulkan {
          * @param fence a {@link GstVulkan.VulkanFence} to signal on completion
          * @returns whether `cmd` could be submitted to the queue
          * @since 1.18
+         * @throws GLib.Error
          */
         submit(cmd: VulkanCommandBuffer, fence: VulkanFence): boolean;
     }
@@ -1957,8 +1991,14 @@ export namespace GstVulkan {
         vfunc_release(handle: null): void;
 
         // Methods
+        /**
+         * @throws GLib.Error
+         */
         acquire(): null;
 
+        /**
+         * @throws GLib.Error
+         */
         alloc(): null;
 
         /**
@@ -2226,6 +2266,7 @@ export namespace GstVulkan {
         /**
          * @returns a new {@link GstVulkan.VulkanDevice}
          * @since 1.18
+         * @throws GLib.Error
          */
         create_device(): VulkanDevice;
 
@@ -2264,6 +2305,7 @@ export namespace GstVulkan {
          * is open.
          * @returns whether the instance information could be retrieved
          * @since 1.18
+         * @throws GLib.Error
          */
         fill_info(): boolean;
 
@@ -2325,6 +2367,7 @@ export namespace GstVulkan {
         /**
          * @returns whether the instance could be created
          * @since 1.18
+         * @throws GLib.Error
          */
         open(): boolean;
     }
@@ -2481,6 +2524,7 @@ export namespace GstVulkan {
          * and finally call `gst_vulkan_operation_end()`. `gst_vulkan_operation_reset()` is
          * called internally if something failed.
          * @returns whether the operation started. It might fill `error`.
+         * @throws GLib.Error
          */
         begin(): boolean;
 
@@ -2504,6 +2548,7 @@ export namespace GstVulkan {
          * @param pnext the structure pointer to use as pNext
          * @returns whether the query pool was enabled. It might populate `error` in case    of error.
          * @since 1.24
+         * @throws GLib.Error
          */
         enable_query(query_type: number, n_queries: number, pnext: null): boolean;
 
@@ -2517,6 +2562,7 @@ export namespace GstVulkan {
          * You have called `gst_vulkan_operation_begin()` before.
          * `gst_vulkan_operation_reset()` is called internally if something fails
          * @returns whether the operation failed. It might fill `error`.
+         * @throws GLib.Error
          */
         end(): boolean;
 
@@ -2534,6 +2580,7 @@ export namespace GstVulkan {
          * 
          * Don't free `data`.
          * @returns whether a status was fetched. If not, it might populate `error`
+         * @throws GLib.Error
          */
         get_query(): [boolean, null];
 
@@ -2782,6 +2829,7 @@ export namespace GstVulkan {
         /**
          * @returns a new {@link GstVulkan.VulkanCommandPool} or `null`
          * @since 1.18
+         * @throws GLib.Error
          */
         create_command_pool(): VulkanCommandPool;
 
@@ -2907,9 +2955,13 @@ export namespace GstVulkan {
         // Methods
         /**
          * @param available_queue 
+         * @throws GLib.Error
          */
         choose_queue(available_queue: VulkanQueue): boolean;
 
+        /**
+         * @throws GLib.Error
+         */
         get_supported_caps(): Gst.Caps;
 
         /**
@@ -2919,11 +2971,13 @@ export namespace GstVulkan {
 
         /**
          * @param buffer 
+         * @throws GLib.Error
          */
         render_buffer(buffer: Gst.Buffer): boolean;
 
         /**
          * @param caps 
+         * @throws GLib.Error
          */
         set_caps(caps: Gst.Caps): boolean;
     }
@@ -3156,19 +3210,19 @@ export namespace GstVulkan {
              * @since 1.18
              * @run-last
              */
-            "key-event": (arg0: string, arg1: string) => void;
+            "key-event": (id: string, key: string) => void;
             /**
              * Will be emitted when a mouse event is received by the {@link GstVulkan.VulkanWindow}.
              * @signal
              * @since 1.18
              * @run-last
              */
-            "mouse-event": (arg0: string, arg1: number, arg2: number, arg3: number) => void;
+            "mouse-event": (id: string, button: number, x: number, y: number) => void;
             /**
              * @signal
              * @run-last
              */
-            resize: (arg0: number, arg1: number) => void;
+            resize: (object: number, p0: number) => void;
             "notify::display": (pspec: GObject.ParamSpec) => void;
             "notify::name": (pspec: GObject.ParamSpec) => void;
             "notify::parent": (pspec: GObject.ParamSpec) => void;
@@ -3314,6 +3368,7 @@ export namespace GstVulkan {
         /**
          * @returns whether `window` could be successfully opened
          * @since 1.18
+         * @throws GLib.Error
          */
         open(): boolean;
 

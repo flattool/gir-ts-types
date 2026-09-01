@@ -46,15 +46,15 @@ export namespace GstApp {
         /**
          * Not Leaky
          */
-        NONE,
+        NONE = 0,
         /**
          * Leaky on upstream (new buffers)
          */
-        UPSTREAM,
+        UPSTREAM = 1,
         /**
          * Leaky on downstream (old buffers)
          */
-        DOWNSTREAM,
+        DOWNSTREAM = 2,
     }
 
 
@@ -74,17 +74,17 @@ export namespace GstApp {
          * No seeking is supported in the stream, such as a
          * live stream.
          */
-        STREAM,
+        STREAM = 0,
         /**
          * The stream is seekable but seeking might not
          * be very fast, such as data from a webserver.
          */
-        SEEKABLE,
+        SEEKABLE = 1,
         /**
          * The stream is seekable and seeking is fast,
          * such as in a local file.
          */
-        RANDOM_ACCESS,
+        RANDOM_ACCESS = 2,
     }
 
 
@@ -162,7 +162,7 @@ export namespace GstApp {
              * @since 1.24
              * @run-last
              */
-            "propose-allocation": (arg0: Gst.Query) => boolean | void;
+            "propose-allocation": (query: Gst.Query) => boolean | void;
             /**
              * Get the last preroll sample in `appsink`. This was the sample that caused the
              * appsink to preroll in the PAUSED state.
@@ -235,7 +235,7 @@ export namespace GstApp {
              * @action
              * @run-last
              */
-            "try-pull-object": (arg0: number) => Gst.MiniObject | null;
+            "try-pull-object": (timeout: number) => Gst.MiniObject | null;
             /**
              * Get the last preroll sample in `appsink`. This was the sample that caused the
              * appsink to preroll in the PAUSED state.
@@ -261,7 +261,7 @@ export namespace GstApp {
              * @action
              * @run-last
              */
-            "try-pull-preroll": (arg0: number) => Gst.Sample | null;
+            "try-pull-preroll": (timeout: number) => Gst.Sample | null;
             /**
              * This function blocks until a sample or EOS becomes available or the appsink
              * element is set to the READY/NULL state or the timeout expires.
@@ -283,7 +283,7 @@ export namespace GstApp {
              * @action
              * @run-last
              */
-            "try-pull-sample": (arg0: number) => Gst.Sample | null;
+            "try-pull-sample": (timeout: number) => Gst.Sample | null;
             "notify::buffer-list": (pspec: GObject.ParamSpec) => void;
             "notify::caps": (pspec: GObject.ParamSpec) => void;
             "notify::drop": (pspec: GObject.ParamSpec) => void;
@@ -851,6 +851,7 @@ export namespace GstApp {
          * Tries to set the URI of the given handler.
          * @param uri URI to set
          * @returns `true` if the URI was set successfully, else `false`.
+         * @throws GLib.Error
          */
         set_uri(uri: string): boolean;
 
@@ -927,7 +928,7 @@ export namespace GstApp {
              * @signal
              * @run-last
              */
-            "need-data": (arg0: number) => void;
+            "need-data": (length: number) => void;
             /**
              * Adds a buffer to the queue of buffers that the appsrc element will
              * push to its source pad.
@@ -942,7 +943,7 @@ export namespace GstApp {
              * @action
              * @run-last
              */
-            "push-buffer": (arg0: Gst.Buffer) => Gst.FlowReturn;
+            "push-buffer": (buffer: Gst.Buffer) => Gst.FlowReturn;
             /**
              * Adds a buffer list to the queue of buffers and buffer lists that the
              * appsrc element will push to its source pad.
@@ -958,7 +959,7 @@ export namespace GstApp {
              * @action
              * @run-last
              */
-            "push-buffer-list": (arg0: Gst.BufferList) => Gst.FlowReturn;
+            "push-buffer-list": (buffer_list: Gst.BufferList) => Gst.FlowReturn;
             /**
              * Extract a buffer from the provided sample and adds the extracted buffer
              * to the queue of buffers that the appsrc element will
@@ -978,7 +979,7 @@ export namespace GstApp {
              * @action
              * @run-last
              */
-            "push-sample": (arg0: Gst.Sample) => Gst.FlowReturn;
+            "push-sample": (sample: Gst.Sample) => Gst.FlowReturn;
             /**
              * Seek to the given offset. The next push-buffer should produce buffers from
              * the new `offset`.
@@ -986,7 +987,7 @@ export namespace GstApp {
              * @signal
              * @run-last
              */
-            "seek-data": (arg0: number) => boolean | void;
+            "seek-data": (offset: number) => boolean | void;
             "notify::block": (pspec: GObject.ParamSpec) => void;
             "notify::caps": (pspec: GObject.ParamSpec) => void;
             "notify::current-level-buffers": (pspec: GObject.ParamSpec) => void;
@@ -1765,6 +1766,7 @@ export namespace GstApp {
          * Tries to set the URI of the given handler.
          * @param uri URI to set
          * @returns `true` if the URI was set successfully, else `false`.
+         * @throws GLib.Error
          */
         set_uri(uri: string): boolean;
 
