@@ -42,7 +42,7 @@ export namespace Tracker {
         /**
          * No flags.
          */
-        NONE,
+        NONE = 0,
     }
 
 
@@ -61,15 +61,15 @@ export namespace Tracker {
         /**
          * An element was created.
          */
-        CREATE,
+        CREATE = 0,
         /**
          * An element was deleted.
          */
-        DELETE,
+        DELETE = 1,
         /**
          * An element was updated.
          */
-        UPDATE,
+        UPDATE = 2,
     }
 
 
@@ -89,22 +89,22 @@ export namespace Tracker {
          * Turtle format
          *   ([http://www.w3.org/ns/formats/Turtle](http://www.w3.org/ns/formats/Turtle))
          */
-        TURTLE,
+        TURTLE = 0,
         /**
          * Trig format
          *   ([http://www.w3.org/ns/formats/Trig](http://www.w3.org/ns/formats/Trig))
          */
-        TRIG,
+        TRIG = 1,
         /**
          * JSON-LD format
          *   ([http://www.w3.org/ns/formats/JSON-LD](http://www.w3.org/ns/formats/JSON-LD)).
          *   This value was added in version 3.5.
          */
-        JSON_LD,
+        JSON_LD = 2,
         /**
          * The total number of RDF formats
          */
-        LAST,
+        LAST = 3,
     }
 
 
@@ -123,7 +123,7 @@ export namespace Tracker {
         /**
          * No flags.
          */
-        NONE,
+        NONE = 0,
     }
 
 
@@ -243,35 +243,35 @@ export namespace Tracker {
         /**
          * Unbound value type
          */
-        UNBOUND,
+        UNBOUND = 0,
         /**
          * Uri value type, rdfs:Resource
          */
-        URI,
+        URI = 1,
         /**
          * String value type, xsd:string or rdf:langString
          */
-        STRING,
+        STRING = 2,
         /**
          * Integer value type, xsd:integer
          */
-        INTEGER,
+        INTEGER = 3,
         /**
          * Double value type, xsd:double
          */
-        DOUBLE,
+        DOUBLE = 4,
         /**
          * Datetime value type, xsd:dateTime
          */
-        DATETIME,
+        DATETIME = 5,
         /**
          * Blank node value type
          */
-        BLANK_NODE,
+        BLANK_NODE = 6,
         /**
          * Boolean value type, xsd:boolean
          */
-        BOOLEAN,
+        BOOLEAN = 7,
     }
 
 
@@ -279,6 +279,7 @@ export namespace Tracker {
      * The major version of the Tracker library.
      * 
      * Like `tracker_major_version`, but intended to be used at application compile time.
+     * @default 3
      */
     const MAJOR_VERSION: number;
 
@@ -286,6 +287,7 @@ export namespace Tracker {
      * The micro version of the Tracker library.
      * 
      * Like `tracker_micro_version`, but intended to be used at application compile time.
+     * @default 1
      */
     const MICRO_VERSION: number;
 
@@ -293,76 +295,91 @@ export namespace Tracker {
      * The minor version of the Tracker library.
      * 
      * Like `tracker_minor_version`, but intended to be used at application compile time.
+     * @default 10
      */
     const MINOR_VERSION: number;
 
     /**
      * The Prefix of the DC (Dublin Core) namespace
+     * @default http://purl.org/dc/elements/1.1/
      */
     const PREFIX_DC: string;
 
     /**
      * The Prefix of the MFO namespace
+     * @default http://tracker.api.gnome.org/ontology/v3/mfo#
      */
     const PREFIX_MFO: string;
 
     /**
      * The Prefix of the NAO namespace
+     * @default http://tracker.api.gnome.org/ontology/v3/nao#
      */
     const PREFIX_NAO: string;
 
     /**
      * The Prefix of the NCO namespace
+     * @default http://tracker.api.gnome.org/ontology/v3/nco#
      */
     const PREFIX_NCO: string;
 
     /**
      * The Prefix of the NFO namespace
+     * @default http://tracker.api.gnome.org/ontology/v3/nfo#
      */
     const PREFIX_NFO: string;
 
     /**
      * The Prefix of the NIE namespace
+     * @default http://tracker.api.gnome.org/ontology/v3/nie#
      */
     const PREFIX_NIE: string;
 
     /**
      * The Prefix of the RDF namespace
+     * @default http://tracker.api.gnome.org/ontology/v3/nmm#
      */
     const PREFIX_NMM: string;
 
     /**
      * The Prefix of the NRL namespace
+     * @default http://tracker.api.gnome.org/ontology/v3/nrl#
      */
     const PREFIX_NRL: string;
 
     /**
      * The Prefix of the Osinfo namespace
+     * @default http://tracker.api.gnome.org/ontology/v3/osinfo#
      */
     const PREFIX_OSINFO: string;
 
     /**
      * The Prefix of the RDF namespace
+     * @default http://www.w3.org/1999/02/22-rdf-syntax-ns#
      */
     const PREFIX_RDF: string;
 
     /**
      * The Prefix of the RDFS namespace
+     * @default http://www.w3.org/2000/01/rdf-schema#
      */
     const PREFIX_RDFS: string;
 
     /**
      * The Prefix of the SLO namespace
+     * @default http://tracker.api.gnome.org/ontology/v3/slo#
      */
     const PREFIX_SLO: string;
 
     /**
      * The Prefix of the Tracker namespace
+     * @default http://tracker.api.gnome.org/ontology/v3/tracker#
      */
     const PREFIX_TRACKER: string;
 
     /**
      * The Prefix of the XSD namespace
+     * @default http://www.w3.org/2001/XMLSchema#
      */
     const PREFIX_XSD: string;
 
@@ -437,32 +454,32 @@ export namespace Tracker {
         /**
          * No flags.
          */
-        NONE,
+        NONE = 0,
         /**
          * Connection is readonly.
          */
-        READONLY,
+        READONLY = 1,
         /**
          * Word stemming is applied to FTS search terms.
          */
-        FTS_ENABLE_STEMMER,
+        FTS_ENABLE_STEMMER = 2,
         /**
          * Unaccenting is applied to FTS search terms.
          */
-        FTS_ENABLE_UNACCENT,
+        FTS_ENABLE_UNACCENT = 4,
         /**
          * FTS Search terms are filtered through a stop word list. This flag is deprecated since Tracker 3.6, and will do nothing.
          */
-        FTS_ENABLE_STOP_WORDS,
+        FTS_ENABLE_STOP_WORDS = 8,
         /**
          * Ignore numbers in FTS search terms.
          */
-        FTS_IGNORE_NUMBERS,
+        FTS_IGNORE_NUMBERS = 16,
         /**
          * Treat blank nodes as specified in
          *   SPARQL 1.1 syntax. Namely, they cannot be used as URIs. This flag is available since Tracker 3.3.
          */
-        ANONYMOUS_BNODES,
+        ANONYMOUS_BNODES = 32,
     }
 
 
@@ -614,6 +631,7 @@ export namespace Tracker {
          * @param cancellable Optional {@link Gio.Cancellable}
          * @returns `true` of there were no errors, `false` otherwise
          * @since 3.1
+         * @throws GLib.Error
          */
         execute(cancellable: Gio.Cancellable | null): boolean;
 
@@ -648,6 +666,7 @@ export namespace Tracker {
          * @param res A {@link Gio.AsyncResult} with the result of the operation
          * @returns `true` of there were no errors, `false` otherwise
          * @since 3.1
+         * @throws GLib.Error
          */
         execute_finish(res: Gio.AsyncResult): boolean;
 
@@ -892,7 +911,7 @@ export namespace Tracker {
             /**
              * @signal
              */
-            "block-call": (arg0: string) => boolean | void;
+            "block-call": (object: string) => boolean | void;
             "notify::dbus-connection": (pspec: GObject.ParamSpec) => void;
             "notify::object-path": (pspec: GObject.ParamSpec) => void;
             "notify::allowed-graphs": (pspec: GObject.ParamSpec) => void;
@@ -1055,6 +1074,7 @@ export namespace Tracker {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          * @since 2.22
+         * @throws GLib.Error
          */
         init(cancellable: Gio.Cancellable | null): boolean;
 
@@ -1117,7 +1137,7 @@ export namespace Tracker {
              * handlers connected is `false`.
              * @signal
              */
-            "block-remote-address": (arg0: Gio.SocketAddress) => boolean | void;
+            "block-remote-address": (address: Gio.SocketAddress) => boolean | void;
             "notify::http-certificate": (pspec: GObject.ParamSpec) => void;
             "notify::http-port": (pspec: GObject.ParamSpec) => void;
             "notify::allowed-graphs": (pspec: GObject.ParamSpec) => void;
@@ -1279,6 +1299,7 @@ export namespace Tracker {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          * @since 2.22
+         * @throws GLib.Error
          */
         init(cancellable: Gio.Cancellable | null): boolean;
 
@@ -1463,7 +1484,7 @@ export namespace Tracker {
              * Notifies of changes in the Tracker database.
              * @signal
              */
-            events: (arg0: string, arg1: string, arg2: NotifierEvent[]) => void;
+            events: (service: string, graph: string, events: NotifierEvent[]) => void;
             "notify::connection": (pspec: GObject.ParamSpec) => void;
         }
 
@@ -2283,6 +2304,7 @@ export namespace Tracker {
          * Finishes the operation started with {@link SparqlConnection.close_async}.
          * @param res A {@link Gio.AsyncResult} with the result of the operation
          * @returns `false` if some error occurred, `true` otherwise
+         * @throws GLib.Error
          */
         close_finish(res: Gio.AsyncResult): boolean;
 
@@ -2378,6 +2400,7 @@ export namespace Tracker {
          * @param result A {@link Gio.AsyncResult} with the result of the operation
          * @returns `true` if all data was inserted successfully.
          * @since 3.4
+         * @throws GLib.Error
          */
         deserialize_finish(result: Gio.AsyncResult): boolean;
 
@@ -2399,6 +2422,7 @@ export namespace Tracker {
          * @param cancellable Optional {@link Gio.Cancellable}
          * @returns A prepared statement
          * @since 3.3
+         * @throws GLib.Error
          */
         load_statement_from_gresource(resource_path: string, cancellable: Gio.Cancellable | null): SparqlStatement;
 
@@ -2450,6 +2474,7 @@ export namespace Tracker {
          * @param sparql String containing the SPARQL query
          * @param cancellable Optional {@link Gio.Cancellable}
          * @returns a {@link SparqlCursor} with the results.
+         * @throws GLib.Error
          */
         query(sparql: string, cancellable: Gio.Cancellable | null): SparqlCursor;
 
@@ -2501,6 +2526,7 @@ export namespace Tracker {
          * Finishes the operation started with {@link SparqlConnection.query_async}.
          * @param res A {@link Gio.AsyncResult} with the result of the operation
          * @returns a {@link SparqlCursor} with the results.
+         * @throws GLib.Error
          */
         query_finish(res: Gio.AsyncResult): SparqlCursor;
 
@@ -2513,6 +2539,7 @@ export namespace Tracker {
          * @param sparql The SPARQL query
          * @param cancellable Optional {@link Gio.Cancellable}
          * @returns A prepared statement
+         * @throws GLib.Error
          */
         query_statement(sparql: string, cancellable: Gio.Cancellable | null): SparqlStatement;
 
@@ -2580,6 +2607,7 @@ export namespace Tracker {
          * @param result A {@link Gio.AsyncResult} with the result of the operation
          * @returns A {@link Gio.InputStream} to read RDF content.
          * @since 3.3
+         * @throws GLib.Error
          */
         serialize_finish(result: Gio.AsyncResult): Gio.InputStream;
 
@@ -2603,6 +2631,7 @@ export namespace Tracker {
          * but its use is not recommended.
          * @param sparql String containing the SPARQL update query
          * @param cancellable Optional {@link Gio.Cancellable}
+         * @throws GLib.Error
          */
         update(sparql: string, cancellable: Gio.Cancellable | null): void;
 
@@ -2663,6 +2692,7 @@ export namespace Tracker {
          * Finishes the operation started with {@link SparqlConnection.update_array_async}.
          * @param res A {@link Gio.AsyncResult} with the result of the operation
          * @returns `TRUE` if there were no errors.
+         * @throws GLib.Error
          */
         update_array_finish(res: Gio.AsyncResult): boolean;
 
@@ -2746,6 +2776,7 @@ export namespace Tracker {
          * @param cancellable Optional {@link Gio.Cancellable}
          * @returns a {@link GLib.Variant} with the generated URNs.
          * @deprecated since 3.5: This function makes the expectation that blank nodes have a durable name that persist. The SPARQL and RDF specs define a much more reduced scope for blank node labels. This function advises a behavior that goes against that reduced scope, and will directly make the returned values meaningless if the #TRACKER_SPARQL_CONNECTION_FLAGS_ANONYMOUS_BNODES flag is defined in the connection. Users that want names generated for them, should look for other methods (e.g. IRIs containing UUIDv4 strings).
+         * @throws GLib.Error
          */
         update_blank(sparql: string, cancellable: Gio.Cancellable | null): GLib.Variant;
 
@@ -2793,12 +2824,14 @@ export namespace Tracker {
          * @param res A {@link Gio.AsyncResult} with the result of the operation
          * @returns a {@link GLib.Variant} with the generated URNs.
          * @deprecated since 3.5: See {@link SparqlConnection.update_blank}.
+         * @throws GLib.Error
          */
         update_blank_finish(res: Gio.AsyncResult): GLib.Variant;
 
         /**
          * Finishes the operation started with {@link SparqlConnection.update_async}.
          * @param res A {@link Gio.AsyncResult} with the result of the operation
+         * @throws GLib.Error
          */
         update_finish(res: Gio.AsyncResult): void;
 
@@ -2817,6 +2850,7 @@ export namespace Tracker {
          * @param cancellable Optional {@link Gio.Cancellable}
          * @returns `TRUE` if there were no errors.
          * @since 3.1
+         * @throws GLib.Error
          */
         update_resource(graph: string | null, resource: Resource, cancellable: Gio.Cancellable | null): boolean;
 
@@ -2866,6 +2900,7 @@ export namespace Tracker {
          * @param res A {@link Gio.AsyncResult} with the result of the operation
          * @returns `TRUE` if there were no errors.
          * @since 3.1
+         * @throws GLib.Error
          */
         update_resource_finish(res: Gio.AsyncResult): boolean;
 
@@ -2878,6 +2913,7 @@ export namespace Tracker {
          * @param cancellable Optional {@link Gio.Cancellable}
          * @returns A prepared statement
          * @since 3.5
+         * @throws GLib.Error
          */
         update_statement(sparql: string, cancellable: Gio.Cancellable | null): SparqlStatement;
     }
@@ -3108,6 +3144,7 @@ export namespace Tracker {
          * see {@link SparqlCursor.next_async} for an asynchronous variant.
          * @param cancellable Optional {@link Gio.Cancellable}
          * @returns `false` if there are no more results or if an error is found, otherwise `true`.
+         * @throws GLib.Error
          */
         next(cancellable: Gio.Cancellable | null): boolean;
 
@@ -3160,6 +3197,7 @@ export namespace Tracker {
          * {@link SparqlCursor.next_async}.
          * @param res a {@link Gio.AsyncResult} with the result of the operation
          * @returns `false` if there are no more results or if an error is found, otherwise `true`.
+         * @throws GLib.Error
          */
         next_finish(res: Gio.AsyncResult): boolean;
 
@@ -3331,6 +3369,7 @@ export namespace Tracker {
          * SPARQL query.
          * @param cancellable Optional {@link Gio.Cancellable}
          * @returns A {@link Tracker.SparqlCursor} with the query results.
+         * @throws GLib.Error
          */
         execute(cancellable: Gio.Cancellable | null): SparqlCursor;
 
@@ -3392,6 +3431,7 @@ export namespace Tracker {
          * {@link SparqlStatement.execute_async}.
          * @param res a {@link Gio.AsyncResult} with the result of the operation
          * @returns A {@link Tracker.SparqlCursor} with the query results.
+         * @throws GLib.Error
          */
         execute_finish(res: Gio.AsyncResult): SparqlCursor;
 
@@ -3478,6 +3518,7 @@ export namespace Tracker {
          * @param result a {@link Gio.AsyncResult} with the result of the operation
          * @returns a {@link Gio.InputStream} to read RDF content.
          * @since 3.3
+         * @throws GLib.Error
          */
         serialize_finish(result: Gio.AsyncResult): Gio.InputStream;
 
@@ -3493,6 +3534,7 @@ export namespace Tracker {
          * @param cancellable Optional {@link Gio.Cancellable}
          * @returns `true` if the update finished with no errors, `false` otherwise
          * @since 3.5
+         * @throws GLib.Error
          */
         update(cancellable: Gio.Cancellable | null): boolean;
 
@@ -3546,6 +3588,7 @@ export namespace Tracker {
          * @param result a {@link Gio.AsyncResult} with the result of the operation
          * @returns `true` if the update finished with no errors, `false` otherwise
          * @since 3.5
+         * @throws GLib.Error
          */
         update_finish(result: Gio.AsyncResult): boolean;
     }

@@ -61,11 +61,11 @@ export namespace GcrUi {
         /**
          * only objects in the top collection, no child objects
          */
-        LIST,
+        LIST = 0,
         /**
          * show objects in the collection, and child objects in a tree form
          */
-        TREE,
+        TREE = 1,
     }
 
 
@@ -1974,13 +1974,13 @@ export namespace GcrUi {
              * @signal
              * @run-last
              */
-            imported: (arg0: GObject.Object, arg1: GLib.Error) => void;
+            imported: (importer: GObject.Object, error: GLib.Error) => void;
             /**
              * Signal emitted when an import begins.
              * @signal
              * @run-last
              */
-            importing: (arg0: GObject.Object) => void;
+            importing: (importer: GObject.Object) => void;
             "notify::always-show-image": (pspec: GObject.ParamSpec) => void;
             "notify::image": (pspec: GObject.ParamSpec) => void;
             "notify::image-position": (pspec: GObject.ParamSpec) => void;
@@ -3431,6 +3431,7 @@ export namespace GcrUi {
          * an error occurs. Check the `error` argument to tell the difference.
          * @param cancellable optional cancellation object
          * @returns the reply from the prompt
+         * @throws GLib.Error
          */
         confirm(cancellable: Gio.Cancellable | null): Gcr.PromptReply;
 
@@ -3474,6 +3475,7 @@ export namespace GcrUi {
          * an error occurs. Check the `error` argument to tell the difference.
          * @param result asynchronous result passed to callback
          * @returns the reply from the prompt
+         * @throws GLib.Error
          */
         confirm_finish(result: Gio.AsyncResult): Gcr.PromptReply;
 
@@ -3491,6 +3493,7 @@ export namespace GcrUi {
          * an error occurs. Check the `error` argument to tell the difference.
          * @param cancellable optional cancellation object
          * @returns the reply from the prompt
+         * @throws GLib.Error
          */
         confirm_run(cancellable: Gio.Cancellable | null): Gcr.PromptReply;
 
@@ -3617,6 +3620,7 @@ export namespace GcrUi {
          * `error` argument to tell the difference.
          * @param cancellable optional cancellation object
          * @returns the password owned by the prompt, or `null`
+         * @throws GLib.Error
          */
         password(cancellable: Gio.Cancellable | null): string;
 
@@ -3660,6 +3664,7 @@ export namespace GcrUi {
          * `error` argument to tell the difference.
          * @param result asynchronous result passed to callback
          * @returns the password owned by the prompt, or `null`
+         * @throws GLib.Error
          */
         password_finish(result: Gio.AsyncResult): string;
 
@@ -3679,6 +3684,7 @@ export namespace GcrUi {
          * `error` argument to tell the difference.
          * @param cancellable optional cancellation object
          * @returns the password owned by the prompt, or `null`
+         * @throws GLib.Error
          */
         password_run(cancellable: Gio.Cancellable | null): string;
 
@@ -4386,7 +4392,7 @@ export namespace GcrUi {
              * @signal
              * @run-last
              */
-            added: (arg0: Renderer, arg1: Gcr.Parsed) => void;
+            added: (renderer: Renderer, parsed: Gcr.Parsed) => void;
             "notify::display-name": (pspec: GObject.ParamSpec) => void;
             "notify::parser": (pspec: GObject.ParamSpec) => void;
             "notify::baseline-position": (pspec: GObject.ParamSpec) => void;

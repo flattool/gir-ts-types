@@ -31,6 +31,7 @@ export namespace GioUnix {
      * Extension point for default handler to URI association. See
      * [Extending GIO](overview.html#extending-gio).
      * @deprecated since 2.28: The {@link GioUnix.DesktopAppInfoLookup} interface is deprecated and    unused by GIO.
+     * @default gio-desktop-app-info-lookup
      */
     const DESKTOP_APP_INFO_LOOKUP_EXTENSION_POINT_NAME: string;
 
@@ -743,6 +744,7 @@ export namespace GioUnix {
          * @param user_setup a {@link GLib.SpawnChildSetupFunc},   used once  for each process.
          * @param pid_callback Callback for child processes
          * @returns `TRUE` on successful launch, `FALSE` otherwise.
+         * @throws GLib.Error
          */
         launch_uris_as_manager(uris: string[], launch_context: Gio.AppLaunchContext | null, spawn_flags: GLib.SpawnFlags, user_setup: GLib.SpawnChildSetupFunc | null, pid_callback: DesktopAppLaunchCallback | null): boolean;
 
@@ -763,6 +765,7 @@ export namespace GioUnix {
          * @param stderr_fd file descriptor to use for child’s stderr, or `-1`
          * @returns `TRUE` on successful launch, `FALSE` otherwise.
          * @since 2.58
+         * @throws GLib.Error
          */
         launch_uris_as_manager_with_fds(uris: string[], launch_context: Gio.AppLaunchContext | null, spawn_flags: GLib.SpawnFlags, user_setup: GLib.SpawnChildSetupFunc | null, pid_callback: DesktopAppLaunchCallback | null, stdin_fd: number, stdout_fd: number, stderr_fd: number): boolean;
 
@@ -783,6 +786,7 @@ export namespace GioUnix {
          * application is capable of opening files with the given content type.
          * @param content_type a string.
          * @returns `TRUE` on success, `FALSE` on error.
+         * @throws GLib.Error
          */
         add_supports_type(content_type: string): boolean;
 
@@ -927,6 +931,7 @@ export namespace GioUnix {
          * @param files a list of {@link Gio.File} objects
          * @param context the launch context
          * @returns `TRUE` on successful launch, `FALSE` otherwise.
+         * @throws GLib.Error
          */
         launch(files: Gio.File[] | null, context: Gio.AppLaunchContext | null): boolean;
 
@@ -946,6 +951,7 @@ export namespace GioUnix {
          * @param uris a list of URIs to launch.
          * @param context the launch context
          * @returns `TRUE` on successful launch, `FALSE` otherwise.
+         * @throws GLib.Error
          */
         launch_uris(uris: string[] | null, context: Gio.AppLaunchContext | null): boolean;
 
@@ -998,6 +1004,7 @@ export namespace GioUnix {
          * @param result the async result
          * @returns `TRUE` on successful launch, `FALSE` otherwise.
          * @since 2.60
+         * @throws GLib.Error
          */
         launch_uris_finish(result: Gio.AsyncResult): boolean;
 
@@ -1005,6 +1012,7 @@ export namespace GioUnix {
          * Removes a supported type from an application, if possible.
          * @param content_type a string.
          * @returns `TRUE` on success, `FALSE` on error.
+         * @throws GLib.Error
          */
         remove_supports_type(content_type: string): boolean;
 
@@ -1012,6 +1020,7 @@ export namespace GioUnix {
          * Sets the application as the default handler for the given file extension.
          * @param extension a string containing the file extension (without   the dot).
          * @returns `TRUE` on success, `FALSE` on error.
+         * @throws GLib.Error
          */
         set_as_default_for_extension(extension: string): boolean;
 
@@ -1019,6 +1028,7 @@ export namespace GioUnix {
          * Sets the application as the default handler for a given type.
          * @param content_type the content type.
          * @returns `TRUE` on success, `FALSE` on error.
+         * @throws GLib.Error
          */
         set_as_default_for_type(content_type: string): boolean;
 
@@ -1029,6 +1039,7 @@ export namespace GioUnix {
          * application for that content type.
          * @param content_type the content type.
          * @returns `TRUE` on success, `FALSE` on error.
+         * @throws GLib.Error
          */
         set_as_last_used_for_type(content_type: string): boolean;
 
@@ -1389,6 +1400,7 @@ export namespace GioUnix {
          * @param fd a valid open file descriptor
          * @returns `true` in case of success, else `false` (and `error` is set)
          * @since 2.22
+         * @throws GLib.Error
          */
         append_fd(fd: number): boolean;
 
@@ -1599,6 +1611,7 @@ export namespace GioUnix {
          * `g_pollable_input_stream_can_poll()` returns `false` for `stream`.
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns the number of bytes read, or -1 on error (including   {@link Gio.IOErrorEnum.WOULD_BLOCK}).
+         * @throws GLib.Error
          */
         read_nonblocking(cancellable: Gio.Cancellable | null): [number, Uint8Array];
 
@@ -1952,6 +1965,7 @@ export namespace GioUnix {
          * @param buffer a buffer to write     data from
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns the number of bytes written, or -1 on error (including   {@link Gio.IOErrorEnum.WOULD_BLOCK}).
+         * @throws GLib.Error
          */
         write_nonblocking(buffer: Uint8Array | string, cancellable: Gio.Cancellable | null): number;
 
@@ -1979,6 +1993,7 @@ export namespace GioUnix {
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns %`G_POLLABLE_RETURN_OK` on success, {@link Gio.PollableReturn.WOULD_BLOCK} if the stream is not currently writable (and `error` is *not* set), or {@link Gio.PollableReturn.FAILED} if there was an error in which case `error` will be set.
          * @since 2.60
+         * @throws GLib.Error
          */
         writev_nonblocking(vectors: Gio.OutputVector[], cancellable: Gio.Cancellable | null): [Gio.PollableReturn, number];
 

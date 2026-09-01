@@ -51,6 +51,7 @@ export namespace PangoFc {
      * fontconfig that have that.
      * @since 1.34
      * @deprecated since 1.56: Use FC_FONT_FEATURES
+     * @default fontfeatures
      */
     const FONT_FEATURES: string;
 
@@ -66,6 +67,7 @@ export namespace PangoFc {
      * This is equivalent to FC_FONT_VARIATIONS in versions of
      * fontconfig that have that.
      * @deprecated since 1.56: Use FC_FONT_VARIATIONS
+     * @default fontvariations
      */
     const FONT_VARIATIONS: string;
 
@@ -80,6 +82,7 @@ export namespace PangoFc {
      * rules to choose different fonts for horizontal and vertical
      * writing directions.
      * @since 1.20
+     * @default pangogravity
      */
     const GRAVITY: string;
 
@@ -96,6 +99,7 @@ export namespace PangoFc {
      * fontconfig that have that.
      * @since 1.24
      * @deprecated since 1.56: Use FC_PRGNAME
+     * @default prgname
      */
     const PRGNAME: string;
 
@@ -109,6 +113,7 @@ export namespace PangoFc {
      * pango versions (or only pango-using applications, or only
      * non-pango-using applications).
      * @since 1.20
+     * @default pangoversion
      */
     const VERSION: string;
 

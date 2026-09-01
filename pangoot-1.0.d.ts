@@ -50,11 +50,11 @@ export namespace PangoOT {
         /**
          * The GSUB table.
          */
-        GSUB,
+        GSUB = 0,
         /**
          * The GPOS table.
          */
-        GPOS,
+        GPOS = 1,
     }
 
 
@@ -62,6 +62,7 @@ export namespace PangoOT {
      * This is used as the property bit in `pango_ot_ruleset_add_feature()` when a
      * feature should be applied to all glyphs.
      * @since 1.16
+     * @default 65535
      */
     const ALL_GLYPHS: number;
 
@@ -76,6 +77,7 @@ export namespace PangoOT {
      * `pango_ot_info_find_feature()` without having to worry about falling back to
      * default language system explicitly.
      * @since 1.16
+     * @default 65535
      */
     const DEFAULT_LANGUAGE: number;
 
@@ -85,6 +87,7 @@ export namespace PangoOT {
      * if the feature is not found, and `pango_ot_ruleset_add_feature()` function
      * automatically skips this value, so no special handling is required by the user.
      * @since 1.18
+     * @default 65535
      */
     const NO_FEATURE: number;
 
@@ -96,6 +99,7 @@ export namespace PangoOT {
      * taking a script index essentially return if the input script index is
      * this value, so no special handling is required by the user.
      * @since 1.18
+     * @default 65535
      */
     const NO_SCRIPT: number;
 
