@@ -54,10 +54,10 @@ export namespace Gee {
      * @gir-type Enum
      */
     enum ConcurrentSetRangeType {
-        HEAD,
-        TAIL,
-        BOUNDED,
-        EMPTY,
+        HEAD = 0,
+        TAIL = 1,
+        BOUNDED = 2,
+        EMPTY = 3,
     }
 
 
@@ -72,12 +72,12 @@ export namespace Gee {
      * @gir-type Enum
      */
     enum HazardPointerPolicy {
-        DEFAULT,
-        THREAD_EXIT,
-        TRY_FREE,
-        FREE,
-        TRY_RELEASE,
-        RELEASE,
+        DEFAULT = 0,
+        THREAD_EXIT = 1,
+        TRY_FREE = 2,
+        FREE = 3,
+        TRY_RELEASE = 4,
+        RELEASE = 5,
     }
 
 
@@ -92,8 +92,8 @@ export namespace Gee {
      * @gir-type Enum
      */
     enum HazardPointerReleasePolicy {
-        HELPER_THREAD,
-        MAIN_LOOP,
+        HELPER_THREAD = 0,
+        MAIN_LOOP = 1,
     }
 
 
@@ -108,10 +108,10 @@ export namespace Gee {
      * @gir-type Enum
      */
     enum TraversableStream {
-        YIELD,
-        CONTINUE,
-        END,
-        WAIT,
+        YIELD = 0,
+        CONTINUE = 1,
+        END = 2,
+        WAIT = 3,
     }
 
 
@@ -154,6 +154,7 @@ export namespace Gee {
      * @param g_type 
      * @param g_dup_func 
      * @param task 
+     * @throws GLib.Error
      */
     function task(g_type: GObject.GType, g_dup_func: GObject.BoxedCopyFunc, task: Task): Future;
 
@@ -169,6 +170,7 @@ export namespace Gee {
 
     /**
      * @param _res_ 
+     * @throws GLib.Error
      */
     function async_task_finish(_res_: Gio.AsyncResult): void;
 
@@ -9292,10 +9294,14 @@ export namespace Gee {
         get exception(): GLib.Error | null;
 
         // Methods
+        /**
+         * @throws GLib.Error
+         */
         wait(): null;
 
         /**
          * @param end_time 
+         * @throws GLib.Error
          */
         wait_until(end_time: bigint | number): [boolean, null];
 
@@ -9313,6 +9319,7 @@ export namespace Gee {
 
         /**
          * @param _res_ 
+         * @throws GLib.Error
          */
         wait_finish(_res_: Gio.AsyncResult): null;
 

@@ -34,52 +34,55 @@ export namespace Xmlb {
         /**
          * Unknown opcode
          */
-        UNKNOWN,
+        UNKNOWN = 0,
         /**
          * A literal integer value
          */
-        INTEGER,
+        INTEGER = 1,
         /**
          * A literal text value
          */
-        TEXT,
+        TEXT = 2,
         /**
          * An operator
          */
-        FUNCTION,
-        BOUND_UNSET,
+        FUNCTION = 5,
+        BOUND_UNSET = 8,
         /**
          * A bound integer value
          */
-        BOUND_INTEGER,
+        BOUND_INTEGER = 9,
         /**
          * A bound text value
          */
-        BOUND_TEXT,
+        BOUND_TEXT = 10,
         /**
          * An indexed text value
          */
-        INDEXED_TEXT,
-        BOOLEAN,
+        INDEXED_TEXT = 3,
+        BOOLEAN = 17,
         /**
          * An bound indexed text value
          */
-        BOUND_INDEXED_TEXT,
+        BOUND_INDEXED_TEXT = 11,
     }
 
 
     /**
      * The compile-time major version
+     * @default 0
      */
     const MAJOR_VERSION: number;
 
     /**
      * The compile-time micro version
+     * @default 29
      */
     const MICRO_VERSION: number;
 
     /**
      * The compile-time minor version
+     * @default 3
      */
     const MINOR_VERSION: number;
 
@@ -178,31 +181,31 @@ export namespace Xmlb {
         /**
          * No extra flags to use
          */
-        NONE,
+        NONE = 0,
         /**
          * Only load native languages
          */
-        NATIVE_LANGS,
+        NATIVE_LANGS = 2,
         /**
          * Ignore invalid files without an error
          */
-        IGNORE_INVALID,
+        IGNORE_INVALID = 4,
         /**
          * Only store a single language
          */
-        SINGLE_LANG,
+        SINGLE_LANG = 8,
         /**
          * Watch the XMLB file for changes
          */
-        WATCH_BLOB,
+        WATCH_BLOB = 16,
         /**
          * Ignore the cache GUID value
          */
-        IGNORE_GUID,
+        IGNORE_GUID = 32,
         /**
          * Require at most one root node
          */
-        SINGLE_ROOT,
+        SINGLE_ROOT = 64,
     }
 
 
@@ -214,32 +217,32 @@ export namespace Xmlb {
         /**
          * No extra flags to use
          */
-        NONE,
+        NONE = 0,
         /**
          * Do not include this node in the silo
          */
-        IGNORE,
+        IGNORE = 1,
         /**
          * Assume the node CDATA is already valid
          */
-        LITERAL_TEXT,
+        LITERAL_TEXT = 2,
         /**
          * If the node has leading text
          */
-        HAS_TEXT,
+        HAS_TEXT = 4,
         /**
          * If the node has trailing text
          */
-        HAS_TAIL,
+        HAS_TAIL = 8,
         /**
          * Tokenize and fold text to ASCII (Since: 0.3.1)
          */
-        TOKENIZE_TEXT,
+        TOKENIZE_TEXT = 16,
         /**
          * Strip leading and trailing spaces from text (Since:
          * 0.3.4)
          */
-        STRIP_TEXT,
+        STRIP_TEXT = 32,
     }
 
 
@@ -251,21 +254,21 @@ export namespace Xmlb {
         /**
          * No extra flags to use
          */
-        NONE,
+        NONE = 0,
         /**
          * Do not attempt to repair XML whitespace
          */
-        LITERAL_TEXT,
+        LITERAL_TEXT = 1,
         /**
          * Watch the source file for changes
          */
-        WATCH_FILE,
+        WATCH_FILE = 2,
         /**
          * Watch the directory containing the source file for
          * changes (for example, if watching all the sources in a directory — this allows the file monitors
          * to be shared)
          */
-        WATCH_DIRECTORY,
+        WATCH_DIRECTORY = 4,
     }
 
 
@@ -277,23 +280,23 @@ export namespace Xmlb {
         /**
          * No debug flags to use
          */
-        NONE,
+        NONE = 0,
         /**
          * Show the stack addition and removal
          */
-        SHOW_STACK,
+        SHOW_STACK = 1,
         /**
          * Show the XPath predicate parsing
          */
-        SHOW_PARSING,
+        SHOW_PARSING = 2,
         /**
          * Show the optimizer operation
          */
-        SHOW_OPTIMIZER,
+        SHOW_OPTIMIZER = 4,
         /**
          * Show the query slow paths
          */
-        SHOW_SLOW_PATH,
+        SHOW_SLOW_PATH = 8,
     }
 
 
@@ -305,11 +308,11 @@ export namespace Xmlb {
         /**
          * No flags set
          */
-        NONE,
+        NONE = 0,
         /**
          * Run an optimization pass on the predicate
          */
-        OPTIMIZE,
+        OPTIMIZE = 1,
     }
 
 
@@ -321,32 +324,32 @@ export namespace Xmlb {
         /**
          * No extra flags to use
          */
-        NONE,
+        NONE = 0,
         /**
          * Add an XML header to the data
          */
-        ADD_HEADER,
+        ADD_HEADER = 1,
         /**
          * Split up children with a newline
          */
-        FORMAT_MULTILINE,
+        FORMAT_MULTILINE = 2,
         /**
          * Indent the XML by child depth
          */
-        FORMAT_INDENT,
+        FORMAT_INDENT = 4,
         /**
          * Include the siblings when converting
          */
-        INCLUDE_SIBLINGS,
+        INCLUDE_SIBLINGS = 8,
         /**
          * Only export the children of the node
          */
-        ONLY_CHILDREN,
+        ONLY_CHILDREN = 16,
         /**
          * If node has no children, collapse open and close
          * tags
          */
-        COLLAPSE_EMPTY,
+        COLLAPSE_EMPTY = 32,
     }
 
 
@@ -362,28 +365,28 @@ export namespace Xmlb {
      * @gir-type Flags
      */
     enum OpcodeFlags {
-        UNKNOWN,
+        UNKNOWN = 0,
         /**
          * Integer value set
          */
-        INTEGER,
+        INTEGER = 1,
         /**
          * Text value set
          */
-        TEXT,
+        TEXT = 2,
         /**
          * An operator
          */
-        FUNCTION,
+        FUNCTION = 4,
         /**
          * A bound value, assigned later
          */
-        BOUND,
-        BOOLEAN,
+        BOUND = 8,
+        BOOLEAN = 16,
         /**
          * Tokenized text
          */
-        TOKENIZED,
+        TOKENIZED = 32,
     }
 
 
@@ -395,23 +398,23 @@ export namespace Xmlb {
         /**
          * No extra flags to use
          */
-        NONE,
+        NONE = 0,
         /**
          * Optimize the query when possible
          */
-        OPTIMIZE,
+        OPTIMIZE = 1,
         /**
          * Use the indexed parameters
          */
-        USE_INDEXES,
+        USE_INDEXES = 2,
         /**
          * Reverse the results order
          */
-        REVERSE,
+        REVERSE = 4,
         /**
          * Always cache the {@link Xmlb.Node} objects
          */
-        FORCE_NODE_CACHE,
+        FORCE_NODE_CACHE = 8,
     }
 
 
@@ -423,15 +426,15 @@ export namespace Xmlb {
         /**
          * No extra flags to use
          */
-        NONE,
+        NONE = 0,
         /**
          * No not check header signature
          */
-        NO_MAGIC,
+        NO_MAGIC = 1,
         /**
          * Watch the XMLB file for changes
          */
-        WATCH_BLOB,
+        WATCH_BLOB = 2,
     }
 
 
@@ -443,23 +446,23 @@ export namespace Xmlb {
         /**
          * No extra flags to use
          */
-        NONE,
+        NONE = 0,
         /**
          * Output profiling as debug
          */
-        DEBUG,
+        DEBUG = 1,
         /**
          * Save profiling in an appended string
          */
-        APPEND,
+        APPEND = 2,
         /**
          * Save XPATH queries
          */
-        XPATH,
+        XPATH = 4,
         /**
          * Output the machine optimizer as debug
          */
-        OPTIMIZER,
+        OPTIMIZER = 8,
     }
 
 
@@ -537,6 +540,7 @@ export namespace Xmlb {
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a {@link Xmlb.Silo}, or `null` for error
          * @since 0.1.0
+         * @throws GLib.Error
          */
         compile(flags: BuilderCompileFlags, cancellable: Gio.Cancellable | null): Silo;
 
@@ -553,6 +557,7 @@ export namespace Xmlb {
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a {@link Xmlb.Silo}, or `null` for error
          * @since 0.1.0
+         * @throws GLib.Error
          */
         ensure(file: Gio.File, flags: BuilderCompileFlags, cancellable: Gio.Cancellable | null): Silo;
 
@@ -729,6 +734,7 @@ export namespace Xmlb {
          * @param flags some {@link Xmlb.NodeExportFlags}, e.g. #XB_NODE_EXPORT_FLAG_NONE
          * @returns XML data, or `null` for an error
          * @since 0.1.5
+         * @throws GLib.Error
          */
         ["export"](flags: NodeExportFlags): string;
 
@@ -983,6 +989,7 @@ export namespace Xmlb {
          * @param flags some {@link Xmlb.BuilderSourceFlags}, e.g. {@link Xmlb.BuilderSourceFlags.LITERAL_TEXT}
          * @returns `true` for success
          * @since 0.1.2
+         * @throws GLib.Error
          */
         load_bytes(bytes: GLib.Bytes | Uint8Array, flags: BuilderSourceFlags): boolean;
 
@@ -993,6 +1000,7 @@ export namespace Xmlb {
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns `true` for success
          * @since 0.1.1
+         * @throws GLib.Error
          */
         load_file(file: Gio.File, flags: BuilderSourceFlags, cancellable: Gio.Cancellable | null): boolean;
 
@@ -1002,6 +1010,7 @@ export namespace Xmlb {
          * @param flags some {@link Xmlb.BuilderSourceFlags}, e.g. {@link Xmlb.BuilderSourceFlags.LITERAL_TEXT}
          * @returns `true` for success
          * @since 0.1.1
+         * @throws GLib.Error
          */
         load_xml(xml: string, flags: BuilderSourceFlags): boolean;
 
@@ -1073,6 +1082,7 @@ export namespace Xmlb {
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns a {@link GLib.Bytes}
          * @since 0.1.7
+         * @throws GLib.Error
          */
         get_bytes(cancellable: Gio.Cancellable | null): GLib.Bytes;
 
@@ -1209,6 +1219,7 @@ export namespace Xmlb {
          * @param text_len length of `text`, or -1 if `text` is `NUL` terminated
          * @returns opcodes, or `null` on error
          * @since 0.1.1
+         * @throws GLib.Error
          */
         parse(text: string, text_len: bigint | number): Stack;
 
@@ -1221,6 +1232,7 @@ export namespace Xmlb {
          * @param flags {@link Xmlb.MachineParseFlags}, e.g. {@link Xmlb.MachineParseFlags.OPTIMIZE}
          * @returns opcodes, or `null` on error
          * @since 0.1.4
+         * @throws GLib.Error
          */
         parse_full(text: string, text_len: bigint | number, flags: MachineParseFlags): Stack;
 
@@ -1234,6 +1246,7 @@ export namespace Xmlb {
          * @returns a new {@link Xmlb.Opcode}, or `null`
          * @since 0.1.1
          * @deprecated since 0.3.0: Use `xb_machine_run_with_bindings()` instead.
+         * @throws GLib.Error
          */
         run(opcodes: Stack, exec_data: null): [boolean, boolean];
 
@@ -1248,6 +1261,7 @@ export namespace Xmlb {
          * @param exec_data per-run user data that is passed to all the {@link Xmlb.MachineMethodFunc} functions
          * @returns a new {@link Xmlb.Opcode}, or `null`
          * @since 0.3.0
+         * @throws GLib.Error
          */
         run_with_bindings(opcodes: Stack, bindings: ValueBindings | null, exec_data: null): [boolean, boolean];
 
@@ -1273,6 +1287,7 @@ export namespace Xmlb {
          * @param stack a {@link Xmlb.Stack}
          * @returns `true` if popping succeeded, `false` if the stack was empty already
          * @since 0.2.0
+         * @throws GLib.Error
          */
         stack_pop(stack: Stack): [boolean, Opcode | null];
 
@@ -1284,6 +1299,7 @@ export namespace Xmlb {
          * @param stack a {@link Xmlb.Stack}
          * @returns `true` if a new empty opcode was returned, or `false` if the stack has    reached its maximum size
          * @since 0.2.0
+         * @throws GLib.Error
          */
         stack_push(stack: Stack): [boolean, Opcode | null];
 
@@ -1295,6 +1311,7 @@ export namespace Xmlb {
          * @param val integer literal
          * @returns `true` on success, `false` otherwise
          * @since 0.2.0
+         * @throws GLib.Error
          */
         stack_push_integer(stack: Stack, val: number): boolean;
 
@@ -1306,6 +1323,7 @@ export namespace Xmlb {
          * @param str text literal
          * @returns `true` on success, `false` otherwise
          * @since 0.2.0
+         * @throws GLib.Error
          */
         stack_push_text(stack: Stack, str: string): boolean;
 
@@ -1317,6 +1335,7 @@ export namespace Xmlb {
          * @param str text literal
          * @returns `true` on success, `false` otherwise
          * @since 0.2.0
+         * @throws GLib.Error
          */
         stack_push_text_static(stack: Stack, str: string): boolean;
 
@@ -1328,6 +1347,7 @@ export namespace Xmlb {
          * @param str text literal
          * @returns `true` on success, `false` otherwise
          * @since 0.2.0
+         * @throws GLib.Error
          */
         stack_push_text_steal(stack: Stack, str: string): boolean;
     }
@@ -1380,6 +1400,7 @@ export namespace Xmlb {
          * @param flags some {@link Xmlb.NodeExportFlags}, e.g. #XB_NODE_EXPORT_FLAG_NONE
          * @returns XML data, or `null` for an error
          * @since 0.1.0
+         * @throws GLib.Error
          */
         ["export"](flags: NodeExportFlags): string;
 
@@ -1506,6 +1527,7 @@ export namespace Xmlb {
          * @param limit maximum number of results to return, or 0 for "all"
          * @returns results, or `null` if unfound
          * @since 0.1.0
+         * @throws GLib.Error
          */
         query(xpath: string, limit: number): Node[];
 
@@ -1520,6 +1542,7 @@ export namespace Xmlb {
          * @param name an attribute name, e.g. `type`
          * @returns a string, or `null` if unfound
          * @since 0.1.0
+         * @throws GLib.Error
          */
         query_attr(xpath: string, name: string): string;
 
@@ -1534,6 +1557,7 @@ export namespace Xmlb {
          * @param name an attribute name, e.g. `type`
          * @returns a `guint64`, or `G_MAXUINT64` if unfound
          * @since 0.1.0
+         * @throws GLib.Error
          */
         query_attr_as_uint(xpath: string, name: string): number;
 
@@ -1548,6 +1572,7 @@ export namespace Xmlb {
          * @param xpath An XPath, e.g. `/components/component[`type`=desktop]/id[abe.desktop]`
          * @returns a string, or `null` if unfound
          * @since 0.1.0
+         * @throws GLib.Error
          */
         query_export(xpath: string): string;
 
@@ -1558,6 +1583,7 @@ export namespace Xmlb {
          * @param xpath An XPath, e.g. `/components/component[`type`=desktop]/id[abe.desktop]`
          * @returns a {@link Xmlb.Node}, or `null` if unfound
          * @since 0.1.0
+         * @throws GLib.Error
          */
         query_first(xpath: string): Node;
 
@@ -1573,6 +1599,7 @@ export namespace Xmlb {
          * @param query an {@link Xmlb.Query}
          * @returns a {@link Xmlb.Node}, or `null` if unfound
          * @since 0.1.11
+         * @throws GLib.Error
          */
         query_first_full(query: Query): Node;
 
@@ -1587,6 +1614,7 @@ export namespace Xmlb {
          * @param context context including values bound to opcodes of type     {@link Xmlb.OpcodeKind.BOUND_INTEGER} or {@link Xmlb.OpcodeKind.BOUND_TEXT}, or `null` if     the query doesn’t need any context
          * @returns a {@link Xmlb.Node}, or `null` if unfound
          * @since 0.3.0
+         * @throws GLib.Error
          */
         query_first_with_context(query: Query, context: QueryContext | null): Node;
 
@@ -1601,6 +1629,7 @@ export namespace Xmlb {
          * @param query an {@link Xmlb.Query}
          * @returns results, or `null` if unfound
          * @since 0.1.4
+         * @throws GLib.Error
          */
         query_full(query: Query): Node[];
 
@@ -1614,6 +1643,7 @@ export namespace Xmlb {
          * @param xpath An XPath, e.g. `/components/component[`type`=desktop]/id[abe.desktop]`
          * @returns a string, or `null` if unfound
          * @since 0.1.0
+         * @throws GLib.Error
          */
         query_text(xpath: string): string;
 
@@ -1627,6 +1657,7 @@ export namespace Xmlb {
          * @param xpath An XPath, e.g. `/components/component[`type`=desktop]/id[abe.desktop]`
          * @returns a `guint64`, or `G_MAXUINT64` if unfound
          * @since 0.1.0
+         * @throws GLib.Error
          */
         query_text_as_uint(xpath: string): number;
 
@@ -1642,6 +1673,7 @@ export namespace Xmlb {
          * @param context context including values bound to opcodes of type     {@link Xmlb.OpcodeKind.BOUND_INTEGER} or {@link Xmlb.OpcodeKind.BOUND_TEXT}, or `null` if     the query doesn’t need any context
          * @returns results, or `null` if unfound
          * @since 0.3.0
+         * @throws GLib.Error
          */
         query_with_context(query: Query, context: QueryContext | null): Node[];
 
@@ -1733,6 +1765,7 @@ export namespace Xmlb {
          * @returns `true` if the `idx` existed
          * @since 0.1.4
          * @deprecated since 0.3.0: Use {@link Xmlb.ValueBindings} and `xb_value_bindings_bind_str()`     instead. That keeps the value bindings separate from the {@link Xmlb.Query},     allowing queries to be re-used over time and between threads.
+         * @throws GLib.Error
          */
         bind_str(idx: number, str: string): boolean;
 
@@ -1743,6 +1776,7 @@ export namespace Xmlb {
          * @returns `true` if the `idx` existed
          * @since 0.1.4
          * @deprecated since 0.3.0: Use {@link Xmlb.ValueBindings} and `xb_value_bindings_bind_val()`     instead. That keeps the value bindings separate from the {@link Xmlb.Query},     allowing queries to be re-used over time and between threads.
+         * @throws GLib.Error
          */
         bind_val(idx: number, val: number): boolean;
 
@@ -1904,6 +1938,7 @@ export namespace Xmlb {
          * @param flags some {@link Xmlb.NodeExportFlags}, e.g. #XB_NODE_EXPORT_FLAG_NONE
          * @returns XML data, or `null` for an error
          * @since 0.1.0
+         * @throws GLib.Error
          */
         ["export"](flags: NodeExportFlags): string;
 
@@ -1914,6 +1949,7 @@ export namespace Xmlb {
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns `true` on success
          * @since 0.1.2
+         * @throws GLib.Error
          */
         export_file(file: Gio.File, flags: NodeExportFlags, cancellable: Gio.Cancellable | null): boolean;
 
@@ -1982,6 +2018,7 @@ export namespace Xmlb {
          * @param flags {@link Xmlb.SiloLoadFlags}, e.g. {@link Xmlb.SiloLoadFlags.NONE}
          * @returns `true` for success, otherwise `error` is set.
          * @since 0.1.0
+         * @throws GLib.Error
          */
         load_from_bytes(blob: GLib.Bytes | Uint8Array, flags: SiloLoadFlags): boolean;
 
@@ -1992,6 +2029,7 @@ export namespace Xmlb {
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns `true` for success, otherwise `error` is set.
          * @since 0.1.0
+         * @throws GLib.Error
          */
         load_from_file(file: Gio.File, flags: SiloLoadFlags, cancellable: Gio.Cancellable | null): boolean;
 
@@ -2020,6 +2058,7 @@ export namespace Xmlb {
          * @param xpath an XPath query string
          * @returns an {@link Xmlb.Query} representing `xpath`
          * @since 0.3.27
+         * @throws GLib.Error
          */
         lookup_query_full(xpath: string): Query;
 
@@ -2034,6 +2073,7 @@ export namespace Xmlb {
          * @param limit maximum number of results to return, or 0 for "all"
          * @returns results, or `null` if unfound
          * @since 0.1.0
+         * @throws GLib.Error
          */
         query(xpath: string, limit: number): Node[];
 
@@ -2043,6 +2083,7 @@ export namespace Xmlb {
          * @param attr Attribute name, e.g. `type`, or NULL
          * @returns `true` for success
          * @since 0.1.4
+         * @throws GLib.Error
          */
         query_build_index(xpath: string, attr: string | null): boolean;
 
@@ -2056,6 +2097,7 @@ export namespace Xmlb {
          * @param xpath An XPath, e.g. `/components/component[`type`=desktop]/id[abe.desktop]`
          * @returns a {@link Xmlb.Node}, or `null` if unfound
          * @since 0.1.0
+         * @throws GLib.Error
          */
         query_first(xpath: string): Node;
 
@@ -2069,6 +2111,7 @@ export namespace Xmlb {
          * @param query an {@link Xmlb.Query}
          * @returns a {@link Xmlb.Node}, or `null` if unfound
          * @since 0.1.13
+         * @throws GLib.Error
          */
         query_first_full(query: Query): Node;
 
@@ -2083,6 +2126,7 @@ export namespace Xmlb {
          * @param context context including values bound to opcodes of type     {@link Xmlb.OpcodeKind.BOUND_INTEGER} or {@link Xmlb.OpcodeKind.BOUND_TEXT}, or `null` if     the query doesn’t need any context
          * @returns a {@link Xmlb.Node}, or `null` if unfound
          * @since 0.3.0
+         * @throws GLib.Error
          */
         query_first_with_context(query: Query, context: QueryContext | null): Node;
 
@@ -2096,6 +2140,7 @@ export namespace Xmlb {
          * @param query an {@link Xmlb.Query}
          * @returns results, or `null` if unfound
          * @since 0.1.13
+         * @throws GLib.Error
          */
         query_full(query: Query): Node[];
 
@@ -2110,6 +2155,7 @@ export namespace Xmlb {
          * @param context context including values bound to opcodes of type     {@link Xmlb.OpcodeKind.BOUND_INTEGER} or {@link Xmlb.OpcodeKind.BOUND_TEXT}, or `null` if     the query doesn’t need any context
          * @returns results, or `null` if unfound
          * @since 0.3.0
+         * @throws GLib.Error
          */
         query_with_context(query: Query, context: QueryContext | null): Node[];
 
@@ -2119,6 +2165,7 @@ export namespace Xmlb {
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns `true` for success, otherwise `error` is set.
          * @since 0.1.0
+         * @throws GLib.Error
          */
         save_to_file(file: Gio.File, cancellable: Gio.Cancellable | null): boolean;
 
@@ -2144,6 +2191,7 @@ export namespace Xmlb {
          * really useful for debugging {@link Xmlb.Silo} itself.
          * @returns A string, or `null` for an error
          * @since 0.1.0
+         * @throws GLib.Error
          */
         to_string(): string;
 
@@ -2158,6 +2206,7 @@ export namespace Xmlb {
          * @param cancellable a {@link Gio.Cancellable}, or `null`
          * @returns `true` for success, otherwise `error` is set.
          * @since 0.1.0
+         * @throws GLib.Error
          */
         watch_file(file: Gio.File, cancellable: Gio.Cancellable | null): boolean;
     }
@@ -2511,6 +2560,7 @@ export namespace Xmlb {
          * Pops an opcode off the stack.
          * @returns `true` if popping succeeded, `false` if the stack was empty already
          * @since 0.2.0
+         * @throws GLib.Error
          */
         pop(): [boolean, Opcode | null];
 
@@ -2521,6 +2571,7 @@ export namespace Xmlb {
          * pushed opcode is not zero-initialised.
          * @returns `true` if a new empty opcode was returned, or `false` if the stack has    reached its maximum size
          * @since 0.2.0
+         * @throws GLib.Error
          */
         push(): [boolean, Opcode | null];
 

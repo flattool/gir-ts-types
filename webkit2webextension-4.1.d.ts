@@ -66,23 +66,23 @@ export namespace WebKit2WebExtension {
         /**
          * Information message.
          */
-        INFO,
+        INFO = 0,
         /**
          * Log message.
          */
-        LOG,
+        LOG = 1,
         /**
          * Warning message.
          */
-        WARNING,
+        WARNING = 2,
         /**
          * Error message.
          */
-        ERROR,
+        ERROR = 3,
         /**
          * Debug message.
          */
-        DEBUG,
+        DEBUG = 4,
     }
 
 
@@ -102,23 +102,23 @@ export namespace WebKit2WebExtension {
         /**
          * Message produced by JavaScript.
          */
-        JAVASCRIPT,
+        JAVASCRIPT = 0,
         /**
          * Network messages.
          */
-        NETWORK,
+        NETWORK = 1,
         /**
          * Messages produced by console API.
          */
-        CONSOLE_API,
+        CONSOLE_API = 2,
         /**
          * Security messages.
          */
-        SECURITY,
+        SECURITY = 3,
         /**
          * Other messages.
          */
-        OTHER,
+        OTHER = 4,
     }
 
 
@@ -131,191 +131,191 @@ export namespace WebKit2WebExtension {
         /**
          * No action, used by separator menu items.
          */
-        NO_ACTION,
+        NO_ACTION = 0,
         /**
          * Open current link.
          */
-        OPEN_LINK,
+        OPEN_LINK = 1,
         /**
          * Open current link in a new window.
          */
-        OPEN_LINK_IN_NEW_WINDOW,
+        OPEN_LINK_IN_NEW_WINDOW = 2,
         /**
          * Download link destination.
          */
-        DOWNLOAD_LINK_TO_DISK,
+        DOWNLOAD_LINK_TO_DISK = 3,
         /**
          * Copy link location to the clipboard.
          */
-        COPY_LINK_TO_CLIPBOARD,
+        COPY_LINK_TO_CLIPBOARD = 4,
         /**
          * Open current image in a new window.
          */
-        OPEN_IMAGE_IN_NEW_WINDOW,
+        OPEN_IMAGE_IN_NEW_WINDOW = 5,
         /**
          * Download current image.
          */
-        DOWNLOAD_IMAGE_TO_DISK,
+        DOWNLOAD_IMAGE_TO_DISK = 6,
         /**
          * Copy current image to the clipboard.
          */
-        COPY_IMAGE_TO_CLIPBOARD,
+        COPY_IMAGE_TO_CLIPBOARD = 7,
         /**
          * Copy current image location to the clipboard.
          */
-        COPY_IMAGE_URL_TO_CLIPBOARD,
+        COPY_IMAGE_URL_TO_CLIPBOARD = 8,
         /**
          * Open current frame in a new window.
          */
-        OPEN_FRAME_IN_NEW_WINDOW,
+        OPEN_FRAME_IN_NEW_WINDOW = 9,
         /**
          * Load the previous history item.
          */
-        GO_BACK,
+        GO_BACK = 10,
         /**
          * Load the next history item.
          */
-        GO_FORWARD,
+        GO_FORWARD = 11,
         /**
          * Stop any ongoing loading operation.
          */
-        STOP,
+        STOP = 12,
         /**
          * Reload the contents of current view.
          */
-        RELOAD,
+        RELOAD = 13,
         /**
          * Copy current selection the clipboard.
          */
-        COPY,
+        COPY = 14,
         /**
          * Cut current selection to the clipboard.
          */
-        CUT,
+        CUT = 15,
         /**
          * Paste clipboard contents.
          */
-        PASTE,
+        PASTE = 16,
         /**
          * Delete current selection.
          */
-        DELETE,
+        DELETE = 17,
         /**
          * Select all text.
          */
-        SELECT_ALL,
+        SELECT_ALL = 18,
         /**
          * Input methods menu.
          */
-        INPUT_METHODS,
+        INPUT_METHODS = 19,
         /**
          * Unicode menu.
          */
-        UNICODE,
+        UNICODE = 20,
         /**
          * A proposed replacement for a misspelled word.
          */
-        SPELLING_GUESS,
+        SPELLING_GUESS = 21,
         /**
          * An indicator that spellchecking found no proposed replacements.
          */
-        NO_GUESSES_FOUND,
+        NO_GUESSES_FOUND = 22,
         /**
          * Causes the spellchecker to ignore the word for this session.
          */
-        IGNORE_SPELLING,
+        IGNORE_SPELLING = 23,
         /**
          * Causes the spellchecker to add the word to the dictionary.
          */
-        LEARN_SPELLING,
+        LEARN_SPELLING = 24,
         /**
          * Ignore grammar.
          */
-        IGNORE_GRAMMAR,
+        IGNORE_GRAMMAR = 25,
         /**
          * Font options menu.
          */
-        FONT_MENU,
+        FONT_MENU = 26,
         /**
          * Bold.
          */
-        BOLD,
+        BOLD = 27,
         /**
          * Italic.
          */
-        ITALIC,
+        ITALIC = 28,
         /**
          * Underline.
          */
-        UNDERLINE,
+        UNDERLINE = 29,
         /**
          * Outline.
          */
-        OUTLINE,
+        OUTLINE = 30,
         /**
          * Open current element in the inspector.
          */
-        INSPECT_ELEMENT,
+        INSPECT_ELEMENT = 31,
         /**
          * Open current video element in a new window.
          */
-        OPEN_VIDEO_IN_NEW_WINDOW,
+        OPEN_VIDEO_IN_NEW_WINDOW = 32,
         /**
          * Open current audio element in a new window.
          */
-        OPEN_AUDIO_IN_NEW_WINDOW,
+        OPEN_AUDIO_IN_NEW_WINDOW = 33,
         /**
          * Copy video link location in to the clipboard.
          */
-        COPY_VIDEO_LINK_TO_CLIPBOARD,
+        COPY_VIDEO_LINK_TO_CLIPBOARD = 34,
         /**
          * Copy audio link location in to the clipboard.
          */
-        COPY_AUDIO_LINK_TO_CLIPBOARD,
+        COPY_AUDIO_LINK_TO_CLIPBOARD = 35,
         /**
          * Enable or disable media controls.
          */
-        TOGGLE_MEDIA_CONTROLS,
+        TOGGLE_MEDIA_CONTROLS = 36,
         /**
          * Enable or disable media loop.
          */
-        TOGGLE_MEDIA_LOOP,
+        TOGGLE_MEDIA_LOOP = 37,
         /**
          * Show current video element in fullscreen mode.
          */
-        ENTER_VIDEO_FULLSCREEN,
+        ENTER_VIDEO_FULLSCREEN = 38,
         /**
          * Play current media element.
          */
-        MEDIA_PLAY,
+        MEDIA_PLAY = 39,
         /**
          * Pause current media element.
          */
-        MEDIA_PAUSE,
+        MEDIA_PAUSE = 40,
         /**
          * Mute current media element.
          */
-        MEDIA_MUTE,
+        MEDIA_MUTE = 41,
         /**
          * Download video to disk. Since 2.2
          */
-        DOWNLOAD_VIDEO_TO_DISK,
+        DOWNLOAD_VIDEO_TO_DISK = 42,
         /**
          * Download audio to disk. Since 2.2
          */
-        DOWNLOAD_AUDIO_TO_DISK,
+        DOWNLOAD_AUDIO_TO_DISK = 43,
         /**
          * Insert an emoji. Since 2.26
          */
-        INSERT_EMOJI,
+        INSERT_EMOJI = 44,
         /**
          * Paste clipboard contents as plain text. Since 2.30
          */
-        PASTE_AS_PLAIN_TEXT,
+        PASTE_AS_PLAIN_TEXT = 45,
         /**
          * Custom action defined by applications.
          */
-        CUSTOM,
+        CUSTOM = 10000,
     }
 
 
@@ -338,12 +338,12 @@ export namespace WebKit2WebExtension {
          * indicates the form's
          * DOM submit event is about to be emitted.
          */
-        SEND_DOM_EVENT,
+        SEND_DOM_EVENT = 0,
         /**
          * indicates the form is about
          * to be submitted.
          */
-        COMPLETE,
+        COMPLETE = 1,
     }
 
 
@@ -356,262 +356,313 @@ export namespace WebKit2WebExtension {
         /**
          * The message was not handled by the receiver.
          */
-        USER_MESSAGE_UNHANDLED_MESSAGE,
+        USER_MESSAGE_UNHANDLED_MESSAGE = 0,
     }
 
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 2
      */
     const DOM_CSS_RULE_CHARSET_RULE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 5
      */
     const DOM_CSS_RULE_FONT_FACE_RULE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 3
      */
     const DOM_CSS_RULE_IMPORT_RULE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 4
      */
     const DOM_CSS_RULE_MEDIA_RULE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 6
      */
     const DOM_CSS_RULE_PAGE_RULE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 1
      */
     const DOM_CSS_RULE_STYLE_RULE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 0
      */
     const DOM_CSS_RULE_UNKNOWN_RULE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 3
      */
     const DOM_CSS_VALUE_CSS_CUSTOM: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 0
      */
     const DOM_CSS_VALUE_CSS_INHERIT: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 1
      */
     const DOM_CSS_VALUE_CSS_PRIMITIVE_VALUE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 2
      */
     const DOM_CSS_VALUE_CSS_VALUE_LIST: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 1
      */
     const DOM_ELEMENT_ALLOW_KEYBOARD_INPUT: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 2
      */
     const DOM_EVENT_AT_TARGET: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 8192
      */
     const DOM_EVENT_BLUR: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 3
      */
     const DOM_EVENT_BUBBLING_PHASE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 1
      */
     const DOM_EVENT_CAPTURING_PHASE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 32768
      */
     const DOM_EVENT_CHANGE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 64
      */
     const DOM_EVENT_CLICK: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 128
      */
     const DOM_EVENT_DBLCLICK: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 2048
      */
     const DOM_EVENT_DRAGDROP: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 4096
      */
     const DOM_EVENT_FOCUS: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 256
      */
     const DOM_EVENT_KEYDOWN: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 1024
      */
     const DOM_EVENT_KEYPRESS: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 512
      */
     const DOM_EVENT_KEYUP: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 1
      */
     const DOM_EVENT_MOUSEDOWN: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 32
      */
     const DOM_EVENT_MOUSEDRAG: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 16
      */
     const DOM_EVENT_MOUSEMOVE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 8
      */
     const DOM_EVENT_MOUSEOUT: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 4
      */
     const DOM_EVENT_MOUSEOVER: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 2
      */
     const DOM_EVENT_MOUSEUP: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 0
      */
     const DOM_EVENT_NONE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 16384
      */
     const DOM_EVENT_SELECT: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 1
      */
     const DOM_KEYBOARD_EVENT_KEY_LOCATION_LEFT: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 3
      */
     const DOM_KEYBOARD_EVENT_KEY_LOCATION_NUMPAD: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 2
      */
     const DOM_KEYBOARD_EVENT_KEY_LOCATION_RIGHT: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 0
      */
     const DOM_KEYBOARD_EVENT_KEY_LOCATION_STANDARD: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 2
      */
     const DOM_NODE_ATTRIBUTE_NODE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 4
      */
     const DOM_NODE_CDATA_SECTION_NODE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 8
      */
     const DOM_NODE_COMMENT_NODE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 11
      */
     const DOM_NODE_DOCUMENT_FRAGMENT_NODE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 9
      */
     const DOM_NODE_DOCUMENT_NODE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 16
      */
     const DOM_NODE_DOCUMENT_POSITION_CONTAINED_BY: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 8
      */
     const DOM_NODE_DOCUMENT_POSITION_CONTAINS: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 1
      */
     const DOM_NODE_DOCUMENT_POSITION_DISCONNECTED: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 4
      */
     const DOM_NODE_DOCUMENT_POSITION_FOLLOWING: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 32
      */
     const DOM_NODE_DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 2
      */
     const DOM_NODE_DOCUMENT_POSITION_PRECEDING: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 10
      */
     const DOM_NODE_DOCUMENT_TYPE_NODE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 1
      */
     const DOM_NODE_ELEMENT_NODE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 6
      */
     const DOM_NODE_ENTITY_NODE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 5
      */
     const DOM_NODE_ENTITY_REFERENCE_NODE: number;
 
@@ -620,6 +671,7 @@ export namespace WebKit2WebExtension {
      * implementation to accept the given {@link WebKit2WebExtension.DOMNode}
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 1
      */
     const DOM_NODE_FILTER_ACCEPT: number;
 
@@ -629,6 +681,7 @@ export namespace WebKit2WebExtension {
      * be rejected too.
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 2
      */
     const DOM_NODE_FILTER_REJECT: number;
 
@@ -636,6 +689,7 @@ export namespace WebKit2WebExtension {
      * Show all nodes.
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 4294967295
      */
     const DOM_NODE_FILTER_SHOW_ALL: number;
 
@@ -643,6 +697,7 @@ export namespace WebKit2WebExtension {
      * Show {@link WebKit2WebExtension.DOMAttr} nodes.
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 2
      */
     const DOM_NODE_FILTER_SHOW_ATTRIBUTE: number;
 
@@ -650,6 +705,7 @@ export namespace WebKit2WebExtension {
      * Show `WebKitDOMCDataSection` nodes.
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 8
      */
     const DOM_NODE_FILTER_SHOW_CDATA_SECTION: number;
 
@@ -657,6 +713,7 @@ export namespace WebKit2WebExtension {
      * Show {@link WebKit2WebExtension.DOMComment} nodes.
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 128
      */
     const DOM_NODE_FILTER_SHOW_COMMENT: number;
 
@@ -664,6 +721,7 @@ export namespace WebKit2WebExtension {
      * Show {@link WebKit2WebExtension.DOMDocument} nodes.
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 256
      */
     const DOM_NODE_FILTER_SHOW_DOCUMENT: number;
 
@@ -671,6 +729,7 @@ export namespace WebKit2WebExtension {
      * Show {@link WebKit2WebExtension.DOMDocumentFragment} nodes.
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 1024
      */
     const DOM_NODE_FILTER_SHOW_DOCUMENT_FRAGMENT: number;
 
@@ -678,6 +737,7 @@ export namespace WebKit2WebExtension {
      * Show {@link WebKit2WebExtension.DOMDocumentType} nodes.
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 512
      */
     const DOM_NODE_FILTER_SHOW_DOCUMENT_TYPE: number;
 
@@ -685,6 +745,7 @@ export namespace WebKit2WebExtension {
      * Show {@link WebKit2WebExtension.DOMElement} nodes.
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 1
      */
     const DOM_NODE_FILTER_SHOW_ELEMENT: number;
 
@@ -692,6 +753,7 @@ export namespace WebKit2WebExtension {
      * Show `WebKitDOMEntity` nodes.
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 32
      */
     const DOM_NODE_FILTER_SHOW_ENTITY: number;
 
@@ -699,6 +761,7 @@ export namespace WebKit2WebExtension {
      * Show {@link WebKit2WebExtension.DOMEntityReference} nodes.
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 16
      */
     const DOM_NODE_FILTER_SHOW_ENTITY_REFERENCE: number;
 
@@ -706,6 +769,7 @@ export namespace WebKit2WebExtension {
      * Show `WebKitDOMNotation` nodes.
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 2048
      */
     const DOM_NODE_FILTER_SHOW_NOTATION: number;
 
@@ -713,6 +777,7 @@ export namespace WebKit2WebExtension {
      * Show {@link WebKit2WebExtension.DOMProcessingInstruction} nodes.
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 64
      */
     const DOM_NODE_FILTER_SHOW_PROCESSING_INSTRUCTION: number;
 
@@ -720,6 +785,7 @@ export namespace WebKit2WebExtension {
      * Show {@link WebKit2WebExtension.DOMText} nodes.
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 4
      */
     const DOM_NODE_FILTER_SHOW_TEXT: number;
 
@@ -729,106 +795,127 @@ export namespace WebKit2WebExtension {
      * not be skipped.
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 3
      */
     const DOM_NODE_FILTER_SKIP: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 7
      */
     const DOM_NODE_PROCESSING_INSTRUCTION_NODE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 3
      */
     const DOM_NODE_TEXT_NODE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 2
      */
     const DOM_RANGE_END_TO_END: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 3
      */
     const DOM_RANGE_END_TO_START: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 1
      */
     const DOM_RANGE_NODE_AFTER: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 0
      */
     const DOM_RANGE_NODE_BEFORE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 2
      */
     const DOM_RANGE_NODE_BEFORE_AND_AFTER: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 3
      */
     const DOM_RANGE_NODE_INSIDE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 1
      */
     const DOM_RANGE_START_TO_END: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 0
      */
     const DOM_RANGE_START_TO_START: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 0
      */
     const DOM_XPATH_RESULT_ANY_TYPE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 8
      */
     const DOM_XPATH_RESULT_ANY_UNORDERED_NODE_TYPE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 3
      */
     const DOM_XPATH_RESULT_BOOLEAN_TYPE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 9
      */
     const DOM_XPATH_RESULT_FIRST_ORDERED_NODE_TYPE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 1
      */
     const DOM_XPATH_RESULT_NUMBER_TYPE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 5
      */
     const DOM_XPATH_RESULT_ORDERED_NODE_ITERATOR_TYPE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 7
      */
     const DOM_XPATH_RESULT_ORDERED_NODE_SNAPSHOT_TYPE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 2
      */
     const DOM_XPATH_RESULT_STRING_TYPE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 4
      */
     const DOM_XPATH_RESULT_UNORDERED_NODE_ITERATOR_TYPE: number;
 
     /**
      * @deprecated since 2.22: Use JavaScriptCore API instead
+     * @default 6
      */
     const DOM_XPATH_RESULT_UNORDERED_NODE_SNAPSHOT_TYPE: number;
 
@@ -854,31 +941,31 @@ export namespace WebKit2WebExtension {
         /**
          * anywhere in the document.
          */
-        DOCUMENT,
+        DOCUMENT = 2,
         /**
          * a hyperlink element.
          */
-        LINK,
+        LINK = 4,
         /**
          * an image element.
          */
-        IMAGE,
+        IMAGE = 8,
         /**
          * a video or audio element.
          */
-        MEDIA,
+        MEDIA = 16,
         /**
          * an editable element
          */
-        EDITABLE,
+        EDITABLE = 32,
         /**
          * a scrollbar element.
          */
-        SCROLLBAR,
+        SCROLLBAR = 64,
         /**
          * a selected element. Since 2.8
          */
-        SELECTION,
+        SELECTION = 128,
     }
 
 
@@ -1371,6 +1458,7 @@ export namespace WebKit2WebExtension {
         /**
          * @param value A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_value(value: string): void;
 
@@ -1389,6 +1477,7 @@ export namespace WebKit2WebExtension {
          * @param event A {@link WebKit2WebExtension.DOMEvent}
          * @returns a `gboolean`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         dispatch_event(event: DOMEvent): boolean;
 
@@ -1703,6 +1792,7 @@ export namespace WebKit2WebExtension {
         /**
          * @param value A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_css_text(value: string): void;
     }
@@ -1910,12 +2000,14 @@ export namespace WebKit2WebExtension {
          * @param propertyName A `gchar`
          * @returns A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         remove_property(propertyName: string): string;
 
         /**
          * @param value A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_css_text(value: string): void;
 
@@ -1924,6 +2016,7 @@ export namespace WebKit2WebExtension {
          * @param value A `gchar`
          * @param priority A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_property(propertyName: string, value: string, priority: string): void;
 
@@ -2027,12 +2120,14 @@ export namespace WebKit2WebExtension {
          * @param index A `gulong`
          * @returns A `glong`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         add_rule(selector: string, style: string, index: bigint | number): number;
 
         /**
          * @param index A `gulong`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         delete_rule(index: bigint | number): void;
 
@@ -2059,12 +2154,14 @@ export namespace WebKit2WebExtension {
          * @param index A `gulong`
          * @returns A `gulong`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         insert_rule(rule: string, index: bigint | number): number;
 
         /**
          * @param index A `gulong`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         remove_rule(index: bigint | number): void;
     }
@@ -2155,6 +2252,7 @@ export namespace WebKit2WebExtension {
         /**
          * @param value A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_css_text(value: string): void;
     }
@@ -2235,6 +2333,7 @@ export namespace WebKit2WebExtension {
         /**
          * @param data A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         append_data(data: string): void;
 
@@ -2242,6 +2341,7 @@ export namespace WebKit2WebExtension {
          * @param offset A `gulong`
          * @param length A `gulong`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         delete_data(offset: bigint | number, length: bigint | number): void;
 
@@ -2267,6 +2367,7 @@ export namespace WebKit2WebExtension {
          * @param offset A `gulong`
          * @param data A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         insert_data(offset: bigint | number, data: string): void;
 
@@ -2275,12 +2376,14 @@ export namespace WebKit2WebExtension {
          * @param length A `gulong`
          * @param data A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         replace_data(offset: bigint | number, length: bigint | number, data: string): void;
 
         /**
          * @param value A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_data(value: string): void;
 
@@ -2289,6 +2392,7 @@ export namespace WebKit2WebExtension {
          * @param length A `gulong`
          * @returns A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         substring_data(offset: bigint | number, length: bigint | number): string;
 
@@ -2307,6 +2411,7 @@ export namespace WebKit2WebExtension {
          * @param event A {@link WebKit2WebExtension.DOMEvent}
          * @returns a `gboolean`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         dispatch_event(event: DOMEvent): boolean;
 
@@ -2708,6 +2813,7 @@ export namespace WebKit2WebExtension {
          * @param media A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMCSSStyleSheet}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         create_css_style_sheet(title: string, media: string): DOMCSSStyleSheet;
 
@@ -2717,6 +2823,7 @@ export namespace WebKit2WebExtension {
          * @param doctype A {@link WebKit2WebExtension.DOMDocumentType}
          * @returns A {@link WebKit2WebExtension.DOMDocument}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         create_document(namespaceURI: string | null, qualifiedName: string, doctype: DOMDocumentType | null): DOMDocument;
 
@@ -2726,6 +2833,7 @@ export namespace WebKit2WebExtension {
          * @param systemId A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMDocumentType}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         create_document_type(qualifiedName: string, publicId: string, systemId: string): DOMDocumentType;
 
@@ -2959,12 +3067,14 @@ export namespace WebKit2WebExtension {
         /**
          * @since 2.16
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         collapse_to_end(): void;
 
         /**
          * @since 2.16
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         collapse_to_start(): void;
 
@@ -2994,6 +3104,7 @@ export namespace WebKit2WebExtension {
          * @param offset A `gulong`
          * @since 2.16
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         extend(node: DOMNode, offset: bigint | number): void;
 
@@ -3065,6 +3176,7 @@ export namespace WebKit2WebExtension {
          * @returns A {@link WebKit2WebExtension.DOMRange}
          * @since 2.16
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         get_range_at(index: bigint | number): DOMRange;
 
@@ -3218,6 +3330,7 @@ export namespace WebKit2WebExtension {
          * @param newToken A `gchar`
          * @since 2.16
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         replace(token: string, newToken: string): void;
 
@@ -3234,6 +3347,7 @@ export namespace WebKit2WebExtension {
          * @returns A `gboolean`
          * @since 2.16
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         toggle(token: string, force: boolean): boolean;
     }
@@ -3984,6 +4098,7 @@ export namespace WebKit2WebExtension {
          * @param event A {@link WebKit2WebExtension.DOMEvent}
          * @returns a `gboolean`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         dispatch_event(event: DOMEvent): boolean;
 
@@ -4605,6 +4720,7 @@ export namespace WebKit2WebExtension {
          * @param source A {@link WebKit2WebExtension.DOMNode}
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         adopt_node(source: DOMNode): DOMNode;
 
@@ -4621,6 +4737,7 @@ export namespace WebKit2WebExtension {
          * @param name A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMAttr}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         create_attribute(name: string): DOMAttr;
 
@@ -4629,6 +4746,7 @@ export namespace WebKit2WebExtension {
          * @param qualifiedName A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMAttr}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         create_attribute_ns(namespaceURI: string | null, qualifiedName: string): DOMAttr;
 
@@ -4636,6 +4754,7 @@ export namespace WebKit2WebExtension {
          * @param data A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMCDATASection}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         create_cdata_section(data: string): DOMCDATASection;
 
@@ -4662,6 +4781,7 @@ export namespace WebKit2WebExtension {
          * @param tagName A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMElement}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         create_element(tagName: string): DOMElement;
 
@@ -4670,6 +4790,7 @@ export namespace WebKit2WebExtension {
          * @param qualifiedName A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMElement}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         create_element_ns(namespaceURI: string | null, qualifiedName: string): DOMElement;
 
@@ -4678,6 +4799,7 @@ export namespace WebKit2WebExtension {
          * @param name A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMEntityReference}
          * @deprecated since 2.12
+         * @throws GLib.Error
          */
         create_entity_reference(name: string | null): DOMEntityReference;
 
@@ -4685,6 +4807,7 @@ export namespace WebKit2WebExtension {
          * @param eventType A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMEvent}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         create_event(eventType: string): DOMEvent;
 
@@ -4693,6 +4816,7 @@ export namespace WebKit2WebExtension {
          * @param resolver A {@link WebKit2WebExtension.DOMXPathNSResolver}
          * @returns A {@link WebKit2WebExtension.DOMXPathExpression}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         create_expression(expression: string, resolver: DOMXPathNSResolver): DOMXPathExpression;
 
@@ -4703,6 +4827,7 @@ export namespace WebKit2WebExtension {
          * @param expandEntityReferences A `gboolean`
          * @returns A {@link WebKit2WebExtension.DOMNodeIterator}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         create_node_iterator(root: DOMNode, whatToShow: bigint | number, filter: DOMNodeFilter | null, expandEntityReferences: boolean): DOMNodeIterator;
 
@@ -4718,6 +4843,7 @@ export namespace WebKit2WebExtension {
          * @param data A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMProcessingInstruction}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         create_processing_instruction(target: string, data: string): DOMProcessingInstruction;
 
@@ -4741,6 +4867,7 @@ export namespace WebKit2WebExtension {
          * @param expandEntityReferences A `gboolean`
          * @returns A {@link WebKit2WebExtension.DOMTreeWalker}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         create_tree_walker(root: DOMNode, whatToShow: bigint | number, filter: DOMNodeFilter | null, expandEntityReferences: boolean): DOMTreeWalker;
 
@@ -4760,6 +4887,7 @@ export namespace WebKit2WebExtension {
          * @param inResult A {@link WebKit2WebExtension.DOMXPathResult}
          * @returns A {@link WebKit2WebExtension.DOMXPathResult}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         evaluate(expression: string, contextNode: DOMNode, resolver: DOMXPathNSResolver | null, type: number, inResult: DOMXPathResult | null): DOMXPathResult;
 
@@ -4845,6 +4973,7 @@ export namespace WebKit2WebExtension {
         /**
          * @returns A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         get_cookie(): string;
 
@@ -5194,6 +5323,7 @@ export namespace WebKit2WebExtension {
          * @param deep A `gboolean`
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         import_node(importedNode: DOMNode, deep: boolean): DOMNode;
 
@@ -5236,6 +5366,7 @@ export namespace WebKit2WebExtension {
          * @param selectors A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMElement}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         query_selector(selectors: string): DOMElement;
 
@@ -5243,12 +5374,14 @@ export namespace WebKit2WebExtension {
          * @param selectors A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMNodeList}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         query_selector_all(selectors: string): DOMNodeList;
 
         /**
          * @param value A {@link WebKit2WebExtension.DOMHTMLElement}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_body(value: DOMHTMLElement): void;
 
@@ -5261,6 +5394,7 @@ export namespace WebKit2WebExtension {
         /**
          * @param value A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_cookie(value: string): void;
 
@@ -5300,12 +5434,14 @@ export namespace WebKit2WebExtension {
         /**
          * @param value A `gboolean`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_xml_standalone(value: boolean): void;
 
         /**
          * @param value A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_xml_version(value: string): void;
 
@@ -5336,6 +5472,7 @@ export namespace WebKit2WebExtension {
          * @param event A {@link WebKit2WebExtension.DOMEvent}
          * @returns a `gboolean`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         dispatch_event(event: DOMEvent): boolean;
 
@@ -5524,6 +5661,7 @@ export namespace WebKit2WebExtension {
          * @returns A {@link WebKit2WebExtension.DOMElement}
          * @since 2.16
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         query_selector(selectors: string): DOMElement;
 
@@ -5532,6 +5670,7 @@ export namespace WebKit2WebExtension {
          * @returns A {@link WebKit2WebExtension.DOMNodeList}
          * @since 2.16
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         query_selector_all(selectors: string): DOMNodeList;
 
@@ -5550,6 +5689,7 @@ export namespace WebKit2WebExtension {
          * @param event A {@link WebKit2WebExtension.DOMEvent}
          * @returns a `gboolean`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         dispatch_event(event: DOMEvent): boolean;
 
@@ -5760,6 +5900,7 @@ export namespace WebKit2WebExtension {
          * @param event A {@link WebKit2WebExtension.DOMEvent}
          * @returns a `gboolean`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         dispatch_event(event: DOMEvent): boolean;
 
@@ -6254,6 +6395,7 @@ export namespace WebKit2WebExtension {
          * @returns A {@link WebKit2WebExtension.DOMElement}
          * @since 2.16
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         closest(selectors: string): DOMElement;
 
@@ -6613,6 +6755,7 @@ export namespace WebKit2WebExtension {
          * @returns A {@link WebKit2WebExtension.DOMElement}
          * @since 2.16
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         insert_adjacent_element(where: string, element: DOMElement): DOMElement;
 
@@ -6621,6 +6764,7 @@ export namespace WebKit2WebExtension {
          * @param html A `gchar`
          * @since 2.16
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         insert_adjacent_html(where: string, html: string): void;
 
@@ -6629,6 +6773,7 @@ export namespace WebKit2WebExtension {
          * @param text A `gchar`
          * @since 2.16
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         insert_adjacent_text(where: string, text: string): void;
 
@@ -6637,6 +6782,7 @@ export namespace WebKit2WebExtension {
          * @returns A `gboolean`
          * @since 2.16
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         matches(selectors: string): boolean;
 
@@ -6644,6 +6790,7 @@ export namespace WebKit2WebExtension {
          * @param selectors A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMElement}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         query_selector(selectors: string): DOMElement;
 
@@ -6651,12 +6798,14 @@ export namespace WebKit2WebExtension {
          * @param selectors A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMNodeList}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         query_selector_all(selectors: string): DOMNodeList;
 
         /**
          * @since 2.16
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         remove(): void;
 
@@ -6670,6 +6819,7 @@ export namespace WebKit2WebExtension {
          * @param oldAttr A {@link WebKit2WebExtension.DOMAttr}
          * @returns A {@link WebKit2WebExtension.DOMAttr}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         remove_attribute_node(oldAttr: DOMAttr): DOMAttr;
 
@@ -6714,6 +6864,7 @@ export namespace WebKit2WebExtension {
          * @param name A `gchar`
          * @param value A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_attribute(name: string, value: string): void;
 
@@ -6721,6 +6872,7 @@ export namespace WebKit2WebExtension {
          * @param newAttr A {@link WebKit2WebExtension.DOMAttr}
          * @returns A {@link WebKit2WebExtension.DOMAttr}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_attribute_node(newAttr: DOMAttr): DOMAttr;
 
@@ -6728,6 +6880,7 @@ export namespace WebKit2WebExtension {
          * @param newAttr A {@link WebKit2WebExtension.DOMAttr}
          * @returns A {@link WebKit2WebExtension.DOMAttr}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_attribute_node_ns(newAttr: DOMAttr): DOMAttr;
 
@@ -6736,6 +6889,7 @@ export namespace WebKit2WebExtension {
          * @param qualifiedName A `gchar`
          * @param value A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_attribute_ns(namespaceURI: string | null, qualifiedName: string, value: string): void;
 
@@ -6755,6 +6909,7 @@ export namespace WebKit2WebExtension {
          * @param value A `gchar`
          * @since 2.8
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_inner_html(value: string): void;
 
@@ -6762,6 +6917,7 @@ export namespace WebKit2WebExtension {
          * @param value A `gchar`
          * @since 2.8
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_outer_html(value: string): void;
 
@@ -6782,6 +6938,7 @@ export namespace WebKit2WebExtension {
          * @returns A `gboolean`
          * @since 2.16
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         webkit_matches_selector(selectors: string): boolean;
 
@@ -6806,6 +6963,7 @@ export namespace WebKit2WebExtension {
          * @param event A {@link WebKit2WebExtension.DOMEvent}
          * @returns a `gboolean`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         dispatch_event(event: DOMEvent): boolean;
 
@@ -6917,6 +7075,7 @@ export namespace WebKit2WebExtension {
          * @param event A {@link WebKit2WebExtension.DOMEvent}
          * @returns a `gboolean`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         dispatch_event(event: DOMEvent): boolean;
 
@@ -10504,6 +10663,7 @@ export namespace WebKit2WebExtension {
         /**
          * @param value A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_content_editable(value: string): void;
 
@@ -10530,12 +10690,14 @@ export namespace WebKit2WebExtension {
         /**
          * @param contents a `gchar` with contents to set
          * @deprecated since 2.8: Use `webkit_dom_element_set_inner_html()` instead.
+         * @throws GLib.Error
          */
         set_inner_html(contents: string): void;
 
         /**
          * @param value A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_inner_text(value: string): void;
 
@@ -10548,12 +10710,14 @@ export namespace WebKit2WebExtension {
         /**
          * @param contents a `gchar` with contents to set
          * @deprecated since 2.8: Use `webkit_dom_element_set_outer_html()` instead.
+         * @throws GLib.Error
          */
         set_outer_html(contents: string): void;
 
         /**
          * @param value A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_outer_text(value: string): void;
 
@@ -13711,6 +13875,7 @@ export namespace WebKit2WebExtension {
         /**
          * @param value A `glong`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_max_length(value: bigint | number): void;
 
@@ -13735,6 +13900,7 @@ export namespace WebKit2WebExtension {
         /**
          * @param value A `gulong`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_size(value: bigint | number): void;
 
@@ -17275,6 +17441,7 @@ export namespace WebKit2WebExtension {
          * @param element A {@link WebKit2WebExtension.DOMHTMLElement}
          * @param before A {@link WebKit2WebExtension.DOMHTMLElement}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         add(element: DOMHTMLElement, before: DOMHTMLElement): void;
 
@@ -17391,6 +17558,7 @@ export namespace WebKit2WebExtension {
         /**
          * @param value A `gulong`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_length(value: bigint | number): void;
 
@@ -18583,6 +18751,7 @@ export namespace WebKit2WebExtension {
         /**
          * @param index A `glong`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         delete_row(index: bigint | number): void;
 
@@ -18678,6 +18847,7 @@ export namespace WebKit2WebExtension {
          * @param index A `glong`
          * @returns A {@link WebKit2WebExtension.DOMHTMLElement}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         insert_row(index: bigint | number): DOMHTMLElement;
 
@@ -18702,6 +18872,7 @@ export namespace WebKit2WebExtension {
         /**
          * @param value A {@link WebKit2WebExtension.DOMHTMLTableCaptionElement}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_caption(value: DOMHTMLTableCaptionElement): void;
 
@@ -18732,12 +18903,14 @@ export namespace WebKit2WebExtension {
         /**
          * @param value A {@link WebKit2WebExtension.DOMHTMLTableSectionElement}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_t_foot(value: DOMHTMLTableSectionElement): void;
 
         /**
          * @param value A {@link WebKit2WebExtension.DOMHTMLTableSectionElement}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_t_head(value: DOMHTMLTableSectionElement): void;
 
@@ -18930,6 +19103,7 @@ export namespace WebKit2WebExtension {
         /**
          * @param index A `glong`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         delete_cell(index: bigint | number): void;
 
@@ -18985,6 +19159,7 @@ export namespace WebKit2WebExtension {
          * @param index A `glong`
          * @returns A {@link WebKit2WebExtension.DOMHTMLElement}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         insert_cell(index: bigint | number): DOMHTMLElement;
 
@@ -19162,6 +19337,7 @@ export namespace WebKit2WebExtension {
         /**
          * @param index A `glong`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         delete_row(index: bigint | number): void;
 
@@ -19199,6 +19375,7 @@ export namespace WebKit2WebExtension {
          * @param index A `glong`
          * @returns A {@link WebKit2WebExtension.DOMHTMLElement}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         insert_row(index: bigint | number): DOMHTMLElement;
 
@@ -20182,12 +20359,14 @@ export namespace WebKit2WebExtension {
         /**
          * @param newMedium A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         append_medium(newMedium: string): void;
 
         /**
          * @param oldMedium A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         delete_medium(oldMedium: string): void;
 
@@ -20213,6 +20392,7 @@ export namespace WebKit2WebExtension {
         /**
          * @param value A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_media_text(value: string): void;
     }
@@ -20699,6 +20879,7 @@ export namespace WebKit2WebExtension {
          * @param name A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         remove_named_item(name: string): DOMNode;
 
@@ -20707,6 +20888,7 @@ export namespace WebKit2WebExtension {
          * @param localName A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         remove_named_item_ns(namespaceURI: string, localName: string): DOMNode;
 
@@ -20714,6 +20896,7 @@ export namespace WebKit2WebExtension {
          * @param node A {@link WebKit2WebExtension.DOMNode}
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_named_item(node: DOMNode): DOMNode;
 
@@ -20721,6 +20904,7 @@ export namespace WebKit2WebExtension {
          * @param node A {@link WebKit2WebExtension.DOMNode}
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_named_item_ns(node: DOMNode): DOMNode;
     }
@@ -20948,6 +21132,7 @@ export namespace WebKit2WebExtension {
          * @param newChild A {@link WebKit2WebExtension.DOMNode}
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         append_child(newChild: DOMNode): DOMNode;
 
@@ -20955,6 +21140,7 @@ export namespace WebKit2WebExtension {
          * @param deep A `gboolean`
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.14: Use `webkit_dom_node_clone_node_with_error()` instead.
+         * @throws GLib.Error
          */
         clone_node(deep: boolean): DOMNode;
 
@@ -20963,6 +21149,7 @@ export namespace WebKit2WebExtension {
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @since 2.14
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         clone_node_with_error(deep: boolean): DOMNode;
 
@@ -21087,6 +21274,7 @@ export namespace WebKit2WebExtension {
          * @param refChild A {@link WebKit2WebExtension.DOMNode}
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         insert_before(newChild: DOMNode, refChild: DOMNode | null): DOMNode;
 
@@ -21142,6 +21330,7 @@ export namespace WebKit2WebExtension {
          * @param oldChild A {@link WebKit2WebExtension.DOMNode}
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         remove_child(oldChild: DOMNode): DOMNode;
 
@@ -21150,24 +21339,28 @@ export namespace WebKit2WebExtension {
          * @param oldChild A {@link WebKit2WebExtension.DOMNode}
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         replace_child(newChild: DOMNode, oldChild: DOMNode): DOMNode;
 
         /**
          * @param value A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_node_value(value: string): void;
 
         /**
          * @param value A `gchar`
          * @deprecated since 2.14
+         * @throws GLib.Error
          */
         set_prefix(value: string): void;
 
         /**
          * @param value A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_text_content(value: string): void;
 
@@ -21186,6 +21379,7 @@ export namespace WebKit2WebExtension {
          * @param event A {@link WebKit2WebExtension.DOMEvent}
          * @returns a `gboolean`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         dispatch_event(event: DOMEvent): boolean;
 
@@ -21374,12 +21568,14 @@ export namespace WebKit2WebExtension {
         /**
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         next_node(): DOMNode;
 
         /**
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         previous_node(): DOMNode;
     }
@@ -21773,18 +21969,21 @@ export namespace WebKit2WebExtension {
         /**
          * @returns A {@link WebKit2WebExtension.DOMDocumentFragment}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         clone_contents(): DOMDocumentFragment;
 
         /**
          * @returns A {@link WebKit2WebExtension.DOMRange}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         clone_range(): DOMRange;
 
         /**
          * @param toStart A `gboolean`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         collapse(toStart: boolean): void;
 
@@ -21793,6 +21992,7 @@ export namespace WebKit2WebExtension {
          * @param sourceRange A {@link WebKit2WebExtension.DOMRange}
          * @returns A `gshort`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         compare_boundary_points(how: number, sourceRange: DOMRange): number;
 
@@ -21800,6 +22000,7 @@ export namespace WebKit2WebExtension {
          * @param refNode A {@link WebKit2WebExtension.DOMNode}
          * @returns A `gshort`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         compare_node(refNode: DOMNode): number;
 
@@ -21808,6 +22009,7 @@ export namespace WebKit2WebExtension {
          * @param offset A `glong`
          * @returns A `gshort`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         compare_point(refNode: DOMNode, offset: bigint | number): number;
 
@@ -21815,16 +22017,19 @@ export namespace WebKit2WebExtension {
          * @param html A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMDocumentFragment}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         create_contextual_fragment(html: string): DOMDocumentFragment;
 
         /**
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         delete_contents(): void;
 
         /**
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         detach(): void;
 
@@ -21832,48 +22037,56 @@ export namespace WebKit2WebExtension {
          * @param unit A `gchar`
          * @since 2.16
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         expand(unit: string): void;
 
         /**
          * @returns A {@link WebKit2WebExtension.DOMDocumentFragment}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         extract_contents(): DOMDocumentFragment;
 
         /**
          * @returns A `gboolean`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         get_collapsed(): boolean;
 
         /**
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         get_common_ancestor_container(): DOMNode;
 
         /**
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         get_end_container(): DOMNode;
 
         /**
          * @returns A `glong`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         get_end_offset(): number;
 
         /**
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         get_start_container(): DOMNode;
 
         /**
          * @returns A `glong`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         get_start_offset(): number;
 
@@ -21886,6 +22099,7 @@ export namespace WebKit2WebExtension {
         /**
          * @param newNode A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         insert_node(newNode: DOMNode): void;
 
@@ -21893,6 +22107,7 @@ export namespace WebKit2WebExtension {
          * @param refNode A {@link WebKit2WebExtension.DOMNode}
          * @returns A `gboolean`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         intersects_node(refNode: DOMNode): boolean;
 
@@ -21901,18 +22116,21 @@ export namespace WebKit2WebExtension {
          * @param offset A `glong`
          * @returns A `gboolean`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         is_point_in_range(refNode: DOMNode, offset: bigint | number): boolean;
 
         /**
          * @param refNode A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         select_node(refNode: DOMNode): void;
 
         /**
          * @param refNode A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         select_node_contents(refNode: DOMNode): void;
 
@@ -21920,18 +22138,21 @@ export namespace WebKit2WebExtension {
          * @param refNode A {@link WebKit2WebExtension.DOMNode}
          * @param offset A `glong`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_end(refNode: DOMNode, offset: bigint | number): void;
 
         /**
          * @param refNode A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_end_after(refNode: DOMNode): void;
 
         /**
          * @param refNode A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_end_before(refNode: DOMNode): void;
 
@@ -21939,30 +22160,35 @@ export namespace WebKit2WebExtension {
          * @param refNode A {@link WebKit2WebExtension.DOMNode}
          * @param offset A `glong`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_start(refNode: DOMNode, offset: bigint | number): void;
 
         /**
          * @param refNode A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_start_after(refNode: DOMNode): void;
 
         /**
          * @param refNode A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_start_before(refNode: DOMNode): void;
 
         /**
          * @param newParent A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         surround_contents(newParent: DOMNode): void;
 
         /**
          * @returns A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         to_string(): string;
     }
@@ -22279,6 +22505,7 @@ export namespace WebKit2WebExtension {
          * @param content A `gchar`
          * @returns A {@link WebKit2WebExtension.DOMText}
          * @deprecated since 2.14
+         * @throws GLib.Error
          */
         replace_whole_text(content: string): DOMText;
 
@@ -22286,6 +22513,7 @@ export namespace WebKit2WebExtension {
          * @param offset A `gulong`
          * @returns A {@link WebKit2WebExtension.DOMText}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         split_text(offset: bigint | number): DOMText;
 
@@ -22490,6 +22718,7 @@ export namespace WebKit2WebExtension {
         /**
          * @param value A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         set_current_node(value: DOMNode): void;
     }
@@ -22927,6 +23156,7 @@ export namespace WebKit2WebExtension {
          * @param inResult A {@link WebKit2WebExtension.DOMXPathResult}
          * @returns A {@link WebKit2WebExtension.DOMXPathResult}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         evaluate(contextNode: DOMNode, type: number, inResult: DOMXPathResult): DOMXPathResult;
     }
@@ -23082,6 +23312,7 @@ export namespace WebKit2WebExtension {
         /**
          * @returns A `gboolean`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         get_boolean_value(): boolean;
 
@@ -23094,6 +23325,7 @@ export namespace WebKit2WebExtension {
         /**
          * @returns A `gdouble`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         get_number_value(): number;
 
@@ -23106,24 +23338,28 @@ export namespace WebKit2WebExtension {
         /**
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         get_single_node_value(): DOMNode;
 
         /**
          * @returns A `gulong`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         get_snapshot_length(): number;
 
         /**
          * @returns A `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         get_string_value(): string;
 
         /**
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         iterate_next(): DOMNode;
 
@@ -23131,6 +23367,7 @@ export namespace WebKit2WebExtension {
          * @param index A `gulong`
          * @returns A {@link WebKit2WebExtension.DOMNode}
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         snapshot_item(index: bigint | number): DOMNode;
     }
@@ -23509,7 +23746,7 @@ export namespace WebKit2WebExtension {
              * @since 2.2
              * @run-last
              */
-            "window-object-cleared": (arg0: WebPage, arg1: Frame) => void;
+            "window-object-cleared": (page: WebPage, frame: Frame) => void;
         }
 
         // Constructor properties interface
@@ -24067,7 +24304,7 @@ export namespace WebKit2WebExtension {
              * @signal
              * @run-last
              */
-            "page-created": (arg0: WebPage) => void;
+            "page-created": (web_page: WebPage) => void;
             /**
              * This signal is emitted when a {@link WebKit2WebExtension.UserMessage} is received from the
              * `WebKitWebContext` corresponding to `extension`. Messages sent by `WebKitWebContext`
@@ -24077,7 +24314,7 @@ export namespace WebKit2WebExtension {
              * @since 2.28
              * @run-last
              */
-            "user-message-received": (arg0: UserMessage) => void;
+            "user-message-received": (message: UserMessage) => void;
         }
 
         // Constructor properties interface
@@ -24239,6 +24476,7 @@ export namespace WebKit2WebExtension {
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link WebKit2WebExtension.UserMessage} with the reply or `null` in case of error.
          * @since 2.28
+         * @throws GLib.Error
          */
         send_message_to_context_finish(result: Gio.AsyncResult): UserMessage;
     }
@@ -24261,7 +24499,7 @@ export namespace WebKit2WebExtension {
              * @since 2.40
              * @run-last
              */
-            "form-controls-associated": (arg0: Frame, arg1: JavaScriptCore.Value[]) => void;
+            "form-controls-associated": (frame: Frame, elements: JavaScriptCore.Value[]) => void;
             /**
              * This signal is emitted when the DOM submit event is about to be fired for `form`.
              * JavaScript code may rely on the submit event to detect that the user has clicked
@@ -24279,7 +24517,7 @@ export namespace WebKit2WebExtension {
              * @since 2.40
              * @run-last
              */
-            "will-send-submit-event": (arg0: JavaScriptCore.Value, arg1: Frame, arg2: Frame) => void;
+            "will-send-submit-event": (form: JavaScriptCore.Value, source_frame: Frame, target_frame: Frame) => void;
             /**
              * This signal is emitted when `form` will imminently be submitted. It can no longer
              * be cancelled. This event always occurs immediately before a form is submitted to
@@ -24290,7 +24528,7 @@ export namespace WebKit2WebExtension {
              * @since 2.40
              * @run-last
              */
-            "will-submit-form": (arg0: JavaScriptCore.Value, arg1: Frame, arg2: Frame) => void;
+            "will-submit-form": (form: JavaScriptCore.Value, source_frame: Frame, target_frame: Frame) => void;
         }
 
         // Constructor properties interface
@@ -24454,7 +24692,7 @@ export namespace WebKit2WebExtension {
              * @since 2.12
              * @run-last
              */
-            "console-message-sent": (arg0: ConsoleMessage) => void;
+            "console-message-sent": (console_message: ConsoleMessage) => void;
             /**
              * Emitted before a context menu is displayed in the UI Process to
              * give the application a chance to customize the proposed menu,
@@ -24468,7 +24706,7 @@ export namespace WebKit2WebExtension {
              * @since 2.8
              * @run-last
              */
-            "context-menu": (arg0: ContextMenu, arg1: WebHitTestResult) => boolean | void;
+            "context-menu": (context_menu: ContextMenu, hit_test_result: WebHitTestResult) => boolean | void;
             /**
              * This signal is emitted when the DOM document of a {@link WebKit2WebExtension.WebPage} has been
              * loaded.
@@ -24493,7 +24731,7 @@ export namespace WebKit2WebExtension {
              * @deprecated since 2.26: , use {@link WebKit2WebExtension.WebPage.SignalSignatures.form_controls_associated_for_frame | WebKit2WebExtension.WebPage::form-controls-associated-for-frame} instead.
              * @run-last
              */
-            "form-controls-associated": (arg0: DOMElement[]) => void;
+            "form-controls-associated": (elements: DOMElement[]) => void;
             /**
              * Emitted after form elements (or form associated elements) are associated to a particular web
              * page. This is useful to implement form auto filling for web pages where form fields are added
@@ -24509,7 +24747,7 @@ export namespace WebKit2WebExtension {
              * @deprecated since 2.40: Use {@link WebKit2WebExtension.WebFormManager.SignalSignatures.form_controls_associated | WebKit2WebExtension.WebFormManager::form-controls-associated} instead.
              * @run-last
              */
-            "form-controls-associated-for-frame": (arg0: DOMElement[], arg1: Frame) => void;
+            "form-controls-associated-for-frame": (elements: DOMElement[], frame: Frame) => void;
             /**
              * This signal is emitted when `request` is about to be sent to
              * the server. This signal can be used to modify the {@link WebKit2WebExtension.URIRequest}
@@ -24528,7 +24766,7 @@ export namespace WebKit2WebExtension {
              * @signal
              * @run-last
              */
-            "send-request": (arg0: URIRequest, arg1: URIResponse) => boolean | void;
+            "send-request": (request: URIRequest, redirected_response: URIResponse) => boolean | void;
             /**
              * This signal is emitted when a {@link WebKit2WebExtension.UserMessage} is received from the
              * `WebKitWebView` corresponding to `web_page`. You can reply to the message
@@ -24542,7 +24780,7 @@ export namespace WebKit2WebExtension {
              * @since 2.28
              * @run-last
              */
-            "user-message-received": (arg0: UserMessage) => boolean | void;
+            "user-message-received": (message: UserMessage) => boolean | void;
             /**
              * This signal is emitted to indicate various points during form
              * submission. `step` indicates the current stage of form submission.
@@ -24576,7 +24814,7 @@ export namespace WebKit2WebExtension {
              * @deprecated since 2.40: Use {@link WebKit2WebExtension.WebFormManager.SignalSignatures.will_send_submit_event | WebKit2WebExtension.WebFormManager::will-send-submit-event} and {@link WebKit2WebExtension.WebFormManager.SignalSignatures.will_submit_form | WebKit2WebExtension.WebFormManager::will-submit-form} instead.
              * @run-last
              */
-            "will-submit-form": (arg0: DOMElement, arg1: FormSubmissionStep, arg2: Frame, arg3: Frame, arg4: string[], arg5: string[]) => void;
+            "will-submit-form": (form: DOMElement, step: FormSubmissionStep, source_frame: Frame, target_frame: Frame, text_field_names: string[], text_field_values: string[]) => void;
             "notify::uri": (pspec: GObject.ParamSpec) => void;
         }
 
@@ -24717,6 +24955,7 @@ export namespace WebKit2WebExtension {
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link WebKit2WebExtension.UserMessage} with the reply or `null` in case of error.
          * @since 2.28
+         * @throws GLib.Error
          */
         send_message_to_view_finish(result: Gio.AsyncResult): UserMessage;
     }
@@ -25518,6 +25757,7 @@ export namespace WebKit2WebExtension {
          * @param event A {@link WebKit2WebExtension.DOMEvent}
          * @returns a `gboolean`
          * @deprecated since 2.22: Use JavaScriptCore API instead
+         * @throws GLib.Error
          */
         dispatch_event(event: DOMEvent): boolean;
 
