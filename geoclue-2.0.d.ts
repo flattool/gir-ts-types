@@ -38,12 +38,12 @@ export namespace Geoclue {
      * @gir-type Enum
      */
     enum AccuracyLevel {
-        NONE,
-        COUNTRY,
-        CITY,
-        NEIGHBORHOOD,
-        STREET,
-        EXACT,
+        NONE = 0,
+        COUNTRY = 1,
+        CITY = 4,
+        NEIGHBORHOOD = 5,
+        STREET = 6,
+        EXACT = 8,
     }
 
 
@@ -103,8 +103,8 @@ export namespace Geoclue {
      * @gir-type Flags
      */
     enum ClientProxyCreateFlags {
-        NONE,
-        AUTO_DELETE,
+        NONE = 0,
+        AUTO_DELETE = 1,
     }
 
 
@@ -439,6 +439,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_client_call_start()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_client_call_start()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_start_finish(res: Gio.AsyncResult): boolean;
 
@@ -448,6 +449,7 @@ export namespace Geoclue {
          * See `gclue_client_call_start()` for the asynchronous version of this method.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_start_sync(cancellable: Gio.Cancellable | null): boolean;
 
@@ -487,6 +489,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_client_call_stop()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_client_call_stop()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_stop_finish(res: Gio.AsyncResult): boolean;
 
@@ -496,6 +499,7 @@ export namespace Geoclue {
          * See `gclue_client_call_stop()` for the asynchronous version of this method.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_stop_sync(cancellable: Gio.Cancellable | null): boolean;
 
@@ -681,6 +685,7 @@ export namespace Geoclue {
          * @param res a {@link Gio.AsyncResult}.
          * @returns `true` if successful. If an error has occurred, this function will return `false` and set `error` appropriately if present.
          * @since 2.22
+         * @throws GLib.Error
          */
         init_finish(res: Gio.AsyncResult): boolean;
 
@@ -690,6 +695,7 @@ export namespace Geoclue {
          * @param res the {@link Gio.AsyncResult} from the callback
          * @returns a newly created {@link GObject.Object},      or `null` on error. Free with `g_object_unref()`.
          * @since 2.22
+         * @throws GLib.Error
          */
         new_finish(res: Gio.AsyncResult): ClientProxy;
 
@@ -854,6 +860,7 @@ export namespace Geoclue {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          * @since 2.22
+         * @throws GLib.Error
          */
         init(cancellable: Gio.Cancellable | null): boolean;
 
@@ -1092,6 +1099,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_client_call_start()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_client_call_start()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_start_finish(res: Gio.AsyncResult): boolean;
 
@@ -1101,6 +1109,7 @@ export namespace Geoclue {
          * See `gclue_client_call_start()` for the asynchronous version of this method.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_start_sync(cancellable: Gio.Cancellable | null): boolean;
 
@@ -1140,6 +1149,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_client_call_stop()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_client_call_stop()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_stop_finish(res: Gio.AsyncResult): boolean;
 
@@ -1149,6 +1159,7 @@ export namespace Geoclue {
          * See `gclue_client_call_stop()` for the asynchronous version of this method.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_stop_sync(cancellable: Gio.Cancellable | null): boolean;
 
@@ -1609,6 +1620,7 @@ export namespace Geoclue {
          * @param res a {@link Gio.AsyncResult}.
          * @returns `true` if successful. If an error has occurred, this function will return `false` and set `error` appropriately if present.
          * @since 2.22
+         * @throws GLib.Error
          */
         init_finish(res: Gio.AsyncResult): boolean;
 
@@ -1618,6 +1630,7 @@ export namespace Geoclue {
          * @param res the {@link Gio.AsyncResult} from the callback
          * @returns a newly created {@link GObject.Object},      or `null` on error. Free with `g_object_unref()`.
          * @since 2.22
+         * @throws GLib.Error
          */
         new_finish(res: Gio.AsyncResult): LocationProxy;
 
@@ -1782,6 +1795,7 @@ export namespace Geoclue {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          * @since 2.22
+         * @throws GLib.Error
          */
         init(cancellable: Gio.Cancellable | null): boolean;
 
@@ -2234,6 +2248,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_manager_call_add_agent()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_manager_call_add_agent()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_add_agent_finish(res: Gio.AsyncResult): boolean;
 
@@ -2244,6 +2259,7 @@ export namespace Geoclue {
          * @param arg_id Argument to pass with the method invocation.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_add_agent_sync(arg_id: string, cancellable: Gio.Cancellable | null): boolean;
 
@@ -2283,6 +2299,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_manager_call_create_client()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_manager_call_create_client()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_create_client_finish(res: Gio.AsyncResult): [boolean, string];
 
@@ -2292,6 +2309,7 @@ export namespace Geoclue {
          * See `gclue_manager_call_create_client()` for the asynchronous version of this method.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_create_client_sync(cancellable: Gio.Cancellable | null): [boolean, string];
 
@@ -2334,6 +2352,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_manager_call_delete_client()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_manager_call_delete_client()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_delete_client_finish(res: Gio.AsyncResult): boolean;
 
@@ -2344,6 +2363,7 @@ export namespace Geoclue {
          * @param arg_client Argument to pass with the method invocation.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_delete_client_sync(arg_client: string, cancellable: Gio.Cancellable | null): boolean;
 
@@ -2383,6 +2403,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_manager_call_get_client()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_manager_call_get_client()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_get_client_finish(res: Gio.AsyncResult): [boolean, string];
 
@@ -2392,6 +2413,7 @@ export namespace Geoclue {
          * See `gclue_manager_call_get_client()` for the asynchronous version of this method.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_get_client_sync(cancellable: Gio.Cancellable | null): [boolean, string];
 
@@ -2596,6 +2618,7 @@ export namespace Geoclue {
          * @param res a {@link Gio.AsyncResult}.
          * @returns `true` if successful. If an error has occurred, this function will return `false` and set `error` appropriately if present.
          * @since 2.22
+         * @throws GLib.Error
          */
         init_finish(res: Gio.AsyncResult): boolean;
 
@@ -2605,6 +2628,7 @@ export namespace Geoclue {
          * @param res the {@link Gio.AsyncResult} from the callback
          * @returns a newly created {@link GObject.Object},      or `null` on error. Free with `g_object_unref()`.
          * @since 2.22
+         * @throws GLib.Error
          */
         new_finish(res: Gio.AsyncResult): ManagerProxy;
 
@@ -2769,6 +2793,7 @@ export namespace Geoclue {
          * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
          * @returns `true` if successful. If an error has occurred, this function will     return `false` and set `error` appropriately if present.
          * @since 2.22
+         * @throws GLib.Error
          */
         init(cancellable: Gio.Cancellable | null): boolean;
 
@@ -2946,6 +2971,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_manager_call_add_agent()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_manager_call_add_agent()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_add_agent_finish(res: Gio.AsyncResult): boolean;
 
@@ -2956,6 +2982,7 @@ export namespace Geoclue {
          * @param arg_id Argument to pass with the method invocation.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_add_agent_sync(arg_id: string, cancellable: Gio.Cancellable | null): boolean;
 
@@ -2995,6 +3022,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_manager_call_create_client()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_manager_call_create_client()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_create_client_finish(res: Gio.AsyncResult): [boolean, string];
 
@@ -3004,6 +3032,7 @@ export namespace Geoclue {
          * See `gclue_manager_call_create_client()` for the asynchronous version of this method.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_create_client_sync(cancellable: Gio.Cancellable | null): [boolean, string];
 
@@ -3046,6 +3075,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_manager_call_delete_client()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_manager_call_delete_client()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_delete_client_finish(res: Gio.AsyncResult): boolean;
 
@@ -3056,6 +3086,7 @@ export namespace Geoclue {
          * @param arg_client Argument to pass with the method invocation.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_delete_client_sync(arg_client: string, cancellable: Gio.Cancellable | null): boolean;
 
@@ -3095,6 +3126,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_manager_call_get_client()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_manager_call_get_client()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_get_client_finish(res: Gio.AsyncResult): [boolean, string];
 
@@ -3104,6 +3136,7 @@ export namespace Geoclue {
          * See `gclue_manager_call_get_client()` for the asynchronous version of this method.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_get_client_sync(cancellable: Gio.Cancellable | null): [boolean, string];
 
@@ -3581,6 +3614,7 @@ export namespace Geoclue {
          * @param res a {@link Gio.AsyncResult}.
          * @returns `true` if successful. If an error has occurred, this function will return `false` and set `error` appropriately if present.
          * @since 2.22
+         * @throws GLib.Error
          */
         init_finish(res: Gio.AsyncResult): boolean;
 
@@ -3590,6 +3624,7 @@ export namespace Geoclue {
          * @param res the {@link Gio.AsyncResult} from the callback
          * @returns a newly created {@link GObject.Object},      or `null` on error. Free with `g_object_unref()`.
          * @since 2.22
+         * @throws GLib.Error
          */
         new_finish(res: Gio.AsyncResult): Simple;
 
@@ -3951,6 +3986,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_client_call_start()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_client_call_start()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_start_finish(res: Gio.AsyncResult): boolean;
 
@@ -3960,6 +3996,7 @@ export namespace Geoclue {
          * See `gclue_client_call_start()` for the asynchronous version of this method.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_start_sync(cancellable: Gio.Cancellable | null): boolean;
 
@@ -3999,6 +4036,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_client_call_stop()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_client_call_stop()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_stop_finish(res: Gio.AsyncResult): boolean;
 
@@ -4008,6 +4046,7 @@ export namespace Geoclue {
          * See `gclue_client_call_stop()` for the asynchronous version of this method.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_stop_sync(cancellable: Gio.Cancellable | null): boolean;
 
@@ -4301,6 +4340,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_manager_call_add_agent()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_manager_call_add_agent()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_add_agent_finish(res: Gio.AsyncResult): boolean;
 
@@ -4311,6 +4351,7 @@ export namespace Geoclue {
          * @param arg_id Argument to pass with the method invocation.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_add_agent_sync(arg_id: string, cancellable: Gio.Cancellable | null): boolean;
 
@@ -4350,6 +4391,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_manager_call_create_client()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_manager_call_create_client()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_create_client_finish(res: Gio.AsyncResult): [boolean, string];
 
@@ -4359,6 +4401,7 @@ export namespace Geoclue {
          * See `gclue_manager_call_create_client()` for the asynchronous version of this method.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_create_client_sync(cancellable: Gio.Cancellable | null): [boolean, string];
 
@@ -4401,6 +4444,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_manager_call_delete_client()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_manager_call_delete_client()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_delete_client_finish(res: Gio.AsyncResult): boolean;
 
@@ -4411,6 +4455,7 @@ export namespace Geoclue {
          * @param arg_client Argument to pass with the method invocation.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_delete_client_sync(arg_client: string, cancellable: Gio.Cancellable | null): boolean;
 
@@ -4450,6 +4495,7 @@ export namespace Geoclue {
          * Finishes an operation started with `gclue_manager_call_get_client()`.
          * @param res The {@link Gio.AsyncResult} obtained from the {@link Gio.AsyncReadyCallback} passed to `gclue_manager_call_get_client()`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_get_client_finish(res: Gio.AsyncResult): [boolean, string];
 
@@ -4459,6 +4505,7 @@ export namespace Geoclue {
          * See `gclue_manager_call_get_client()` for the asynchronous version of this method.
          * @param cancellable A {@link Gio.Cancellable} or `null`.
          * @returns `true` if the call succeeded, `false` if `error` is set.
+         * @throws GLib.Error
          */
         call_get_client_sync(cancellable: Gio.Cancellable | null): [boolean, string];
 

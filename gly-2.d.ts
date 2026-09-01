@@ -80,95 +80,95 @@ export namespace Gly {
         /**
          * 8-bit RGRA premultiplied
          */
-        B8G8R8A8_PREMULTIPLIED,
+        B8G8R8A8_PREMULTIPLIED = 0,
         /**
          * 8-bit ARGB premultiplied
          */
-        A8R8G8B8_PREMULTIPLIED,
+        A8R8G8B8_PREMULTIPLIED = 1,
         /**
          * 8-bit RGBA premultiplied
          */
-        R8G8B8A8_PREMULTIPLIED,
+        R8G8B8A8_PREMULTIPLIED = 2,
         /**
          * 8-bit RGBA
          */
-        B8G8R8A8,
+        B8G8R8A8 = 3,
         /**
          * 8-bit AGBR
          */
-        A8R8G8B8,
+        A8R8G8B8 = 4,
         /**
          * 8-bit RGBA
          */
-        R8G8B8A8,
+        R8G8B8A8 = 5,
         /**
          * 8-bit ABGR
          */
-        A8B8G8R8,
+        A8B8G8R8 = 6,
         /**
          * 8-bit RGB
          */
-        R8G8B8,
+        R8G8B8 = 7,
         /**
          * 8-bit BGR
          */
-        B8G8R8,
+        B8G8R8 = 8,
         /**
          * 16-bit RGB
          */
-        R16G16B16,
+        R16G16B16 = 9,
         /**
          * 16-bit RGBA premultiplied
          */
-        R16G16B16A16_PREMULTIPLIED,
+        R16G16B16A16_PREMULTIPLIED = 10,
         /**
          * 16-bit RGBA
          */
-        R16G16B16A16,
+        R16G16B16A16 = 11,
         /**
          * 16-bit float RGB
          */
-        R16G16B16_FLOAT,
+        R16G16B16_FLOAT = 12,
         /**
          * 16-bit float RGBA
          */
-        R16G16B16A16_FLOAT,
+        R16G16B16A16_FLOAT = 13,
         /**
          * 32-bit float RGB
          */
-        R32G32B32_FLOAT,
+        R32G32B32_FLOAT = 14,
         /**
          * 32-bit float RGBA premultiplied
          */
-        R32G32B32A32_FLOAT_PREMULTIPLIED,
+        R32G32B32A32_FLOAT_PREMULTIPLIED = 15,
         /**
          * 16-bit float RGBA
          */
-        R32G32B32A32_FLOAT,
+        R32G32B32A32_FLOAT = 16,
         /**
          * 8-bit gray with alpha premultiplied
          */
-        G8A8_PREMULTIPLIED,
+        G8A8_PREMULTIPLIED = 17,
         /**
          * 8-bit gray with alpha
          */
-        G8A8,
+        G8A8 = 18,
         /**
          * 8-bit gray
          */
-        G8,
+        G8 = 19,
         /**
          * 16-bit gray with alpha premultiplied
          */
-        G16A16_PREMULTIPLIED,
+        G16A16_PREMULTIPLIED = 20,
         /**
          * 16-bit gray with alpha
          */
-        G16A16,
+        G16A16 = 21,
         /**
          * 16-bit gray
          */
-        G16,
+        G16 = 22,
     }
 
 
@@ -199,19 +199,19 @@ export namespace Gly {
          *  `flatpak-builder --run` (i.e. without installed Flatpak) and the app id
          *  ends with `Devel`, the sandbox is disabled.
          */
-        AUTO,
+        AUTO = 0,
         /**
          * bwrap
          */
-        BWRAP,
+        BWRAP = 1,
         /**
          * flatpak-spawn
          */
-        FLATPAK_SPAWN,
+        FLATPAK_SPAWN = 2,
         /**
          * Disable sandbox. Unsafe, only use for testing and development.
          */
-        NOT_SANDBOXED,
+        NOT_SANDBOXED = 3,
     }
 
 
@@ -261,95 +261,95 @@ export namespace Gly {
         /**
          * 8-bit BGRA premultiplied
          */
-        B8G8R8A8_PREMULTIPLIED,
+        B8G8R8A8_PREMULTIPLIED = 1,
         /**
          * 8-bit ARGB premultiplied
          */
-        A8R8G8B8_PREMULTIPLIED,
+        A8R8G8B8_PREMULTIPLIED = 2,
         /**
          * 8-bit RGBA premultiplied
          */
-        R8G8B8A8_PREMULTIPLIED,
+        R8G8B8A8_PREMULTIPLIED = 4,
         /**
          * 8-bit BGRA
          */
-        B8G8R8A8,
+        B8G8R8A8 = 8,
         /**
          * 8-bit ARGB
          */
-        A8R8G8B8,
+        A8R8G8B8 = 16,
         /**
          * 8-bit RGBA
          */
-        R8G8B8A8,
+        R8G8B8A8 = 32,
         /**
          * 8-bit ABGR
          */
-        A8B8G8R8,
+        A8B8G8R8 = 64,
         /**
          * 8-bit RGB
          */
-        R8G8B8,
+        R8G8B8 = 128,
         /**
          * 8-bit BGR
          */
-        B8G8R8,
+        B8G8R8 = 256,
         /**
          * 16-bit RGB
          */
-        R16G16B16,
+        R16G16B16 = 512,
         /**
          * 16-bit RGBA premultiplied
          */
-        R16G16B16A16_PREMULTIPLIED,
+        R16G16B16A16_PREMULTIPLIED = 1024,
         /**
          * 16-bit RGBA
          */
-        R16G16B16A16,
+        R16G16B16A16 = 2048,
         /**
          * 16-bit float RGB
          */
-        R16G16B16_FLOAT,
+        R16G16B16_FLOAT = 4096,
         /**
          * 16-bit float RGBA
          */
-        R16G16B16A16_FLOAT,
+        R16G16B16A16_FLOAT = 8192,
         /**
          * 32-bit float RGB
          */
-        R32G32B32_FLOAT,
+        R32G32B32_FLOAT = 16384,
         /**
          * 32-bit float RGBA premultiplied
          */
-        R32G32B32A32_FLOAT_PREMULTIPLIED,
+        R32G32B32A32_FLOAT_PREMULTIPLIED = 32768,
         /**
          * 16-bit float RGBA
          */
-        R32G32B32A32_FLOAT,
+        R32G32B32A32_FLOAT = 65536,
         /**
          * 8-bit gray with alpha premultiplied
          */
-        G8A8_PREMULTIPLIED,
+        G8A8_PREMULTIPLIED = 131072,
         /**
          * 8-bit gray with alpha
          */
-        G8A8,
+        G8A8 = 262144,
         /**
          * 8-bit gray
          */
-        G8,
+        G8 = 524288,
         /**
          * 16-bit gray with alpha premultiplied
          */
-        G16A16_PREMULTIPLIED,
+        G16A16_PREMULTIPLIED = 1048576,
         /**
          * 16-bit gray with alpha
          */
-        G16A16,
+        G16A16 = 2097152,
         /**
          * 16-bit gray
          */
-        G16,
+        G16 = 4194304,
     }
 
 
@@ -477,6 +477,7 @@ export namespace Gly {
          * @param texture Texture data
          * @returns a new {@link NewFrame}
          * @since 2.0
+         * @throws GLib.Error
          */
         add_frame(width: number, height: number, memory_format: MemoryFormat, texture: GLib.Bytes | Uint8Array): NewFrame;
 
@@ -488,6 +489,7 @@ export namespace Gly {
          * @param texture Texture data
          * @returns a new {@link NewFrame}
          * @since 2.0
+         * @throws GLib.Error
          */
         add_frame_with_stride(width: number, height: number, stride: number, memory_format: MemoryFormat, texture: GLib.Bytes | Uint8Array): NewFrame;
 
@@ -506,6 +508,7 @@ export namespace Gly {
         /**
          * @returns The encoded image.
          * @since 2.0
+         * @throws GLib.Error
          */
         create(): EncodedImage | null;
 
@@ -537,6 +540,7 @@ export namespace Gly {
          * @param result A {@link Gio.AsyncResult}
          * @returns Encoded image.
          * @since 2.0
+         * @throws GLib.Error
          */
         create_finish(result: Gio.AsyncResult): EncodedImage;
 
@@ -937,6 +941,7 @@ export namespace Gly {
          * @param frame_request 
          * @returns Loaded frame.
          * @since 2.0
+         * @throws GLib.Error
          */
         get_specific_frame(frame_request: FrameRequest): Frame;
 
@@ -971,6 +976,7 @@ export namespace Gly {
          * @param result a {@link Gio.AsyncResult}
          * @returns Loaded frame.
          * @since 2.0
+         * @throws GLib.Error
          */
         get_specific_frame_finish(result: Gio.AsyncResult): Frame;
 
@@ -1005,6 +1011,7 @@ export namespace Gly {
          * For animated images, this function will loop to the first frame, when the last frame is reached.
          * @returns a new {@link Frame} on success, or `NULL` with `error` filled in
          * @since 2.0
+         * @throws GLib.Error
          */
         next_frame(): Frame;
 
@@ -1036,6 +1043,7 @@ export namespace Gly {
          * @param result a {@link Gio.AsyncResult}
          * @returns Loaded frame.
          * @since 2.0
+         * @throws GLib.Error
          */
         next_frame_finish(result: Gio.AsyncResult): Frame;
     }
@@ -1217,6 +1225,7 @@ export namespace Gly {
          * Synchronously loads an image and returns an {@link Image} when successful.
          * @returns a new {@link Image} on success, or `NULL` with `error` filled in
          * @since 2.0
+         * @throws GLib.Error
          */
         load(): Image;
 
@@ -1248,6 +1257,7 @@ export namespace Gly {
          * @param result A {@link Gio.AsyncResult}
          * @returns Loaded image.
          * @since 2.0
+         * @throws GLib.Error
          */
         load_finish(result: Gio.AsyncResult): Image;
 

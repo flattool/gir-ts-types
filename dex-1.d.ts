@@ -38,9 +38,9 @@ export namespace Dex {
      * @gir-type Enum
      */
     enum BlockKind {
-        THEN,
-        CATCH,
-        FINALLY,
+        THEN = 1,
+        CATCH = 2,
+        FINALLY = 3,
     }
 
 
@@ -89,9 +89,9 @@ export namespace Dex {
      * @gir-type Enum
      */
     enum FutureStatus {
-        PENDING,
-        RESOLVED,
-        REJECTED,
+        PENDING = 0,
+        RESOLVED = 1,
+        REJECTED = 2,
     }
 
 
@@ -567,6 +567,7 @@ export namespace Dex {
      * @param future a {@link Dex.Future}
      * @returns `true` if `future` resolved, otherwise `false` and `error` is   set to the rejection.
      * @since 1.0
+     * @throws GLib.Error
      */
     function thread_wait_for(future: Future): boolean;
 
@@ -661,7 +662,7 @@ export namespace Dex {
         /**
          * No flags set.
          */
-        NONE,
+        NONE = 0,
         /**
          * Each method invocation is
          *   handled in a fiber dedicated to the invocation. This means that the method implementation can
@@ -669,7 +670,7 @@ export namespace Dex {
          *   This can not be used in combination with METHOD_INVOCATIONS_IN_THREAD and trying to do so leads
          *   to a runtime error.
          */
-        HANDLE_METHOD_INVOCATIONS_IN_FIBER,
+        HANDLE_METHOD_INVOCATIONS_IN_FIBER = 1,
     }
 
 
@@ -836,12 +837,24 @@ export namespace Dex {
 
         get_name(): string;
 
+        /**
+         * @throws GLib.Error
+         */
         propagate_boolean(): boolean;
 
+        /**
+         * @throws GLib.Error
+         */
         propagate_double(): number;
 
+        /**
+         * @throws GLib.Error
+         */
         propagate_int(): number;
 
+        /**
+         * @throws GLib.Error
+         */
         propagate_pointer(): null;
 
         /**
@@ -893,6 +906,7 @@ export namespace Dex {
          * to enable subclasses to chain up correctly.
          * @returns `TRUE` if `error` is has been filled in with an error from   `res`, `FALSE` if not.
          * @since 2.34
+         * @throws GLib.Error
          */
         legacy_propagate_error(): boolean;
 
@@ -1463,6 +1477,7 @@ export namespace Dex {
          * callback, undefined behavior may occur such as thread-local-storage
          * having changed.
          * @returns `true` if the future resolved, otherwise `false`   and `error` is set.
+         * @throws GLib.Error
          */
         ["await"](): boolean;
 
@@ -1471,12 +1486,14 @@ export namespace Dex {
          * 
          * If the result is not a `gboolean`, `error` is set.
          * @returns the `gboolean`, or `false` and `error` is set
+         * @throws GLib.Error
          */
         await_boolean(): boolean;
 
         /**
          * Awaits on `future` and returns the `G_TYPE_BOXED` based result.
          * @returns the boxed result, or `null` and `error` is set.
+         * @throws GLib.Error
          */
         await_boxed(): null;
 
@@ -1485,6 +1502,7 @@ export namespace Dex {
          * 
          * The resolved value must be of type `G_TYPE_DOUBLE` or `error` is set.
          * @returns an double, or 0 in case of failure and `error` is set.
+         * @throws GLib.Error
          */
         await_double(): number;
 
@@ -1493,6 +1511,7 @@ export namespace Dex {
          * 
          * If the result is not a `G_TYPE_ENUM`, `error` is set.
          * @returns the enum or 0 and `error` is set.
+         * @throws GLib.Error
          */
         await_enum(): number;
 
@@ -1502,6 +1521,7 @@ export namespace Dex {
          * The resolved value must be of type `DEX_TYPE_FD` or `error` is set.
          * @returns a valid file descriptor or -1. you may get -1 without   error being set if there was no rejected future.
          * @since 0.10
+         * @throws GLib.Error
          */
         await_fd(): number;
 
@@ -1510,6 +1530,7 @@ export namespace Dex {
          * 
          * If the result is not a `G_TYPE_FLAGS`, `error` is set.
          * @returns the flags or 0 and `error` is set.
+         * @throws GLib.Error
          */
         await_flags(): number;
 
@@ -1518,6 +1539,7 @@ export namespace Dex {
          * 
          * The resolved value must be of type `G_TYPE_FLOAT` or `error` is set.
          * @returns an float, or 0 in case of failure and `error` is set.
+         * @throws GLib.Error
          */
         await_float(): number;
 
@@ -1526,6 +1548,7 @@ export namespace Dex {
          * 
          * The resolved value must be of type `G_TYPE_INT` or `error` is set.
          * @returns an int, or 0 in case of failure and `error` is set.
+         * @throws GLib.Error
          */
         await_int(): number;
 
@@ -1534,12 +1557,14 @@ export namespace Dex {
          * 
          * The resolved value must be of type `G_TYPE_INT64` or `error` is set.
          * @returns an int64, or 0 in case of failure and `error` is set.
+         * @throws GLib.Error
          */
         await_int64(): number;
 
         /**
          * Awaits on `future` and returns the {@link GObject.Object}-based result.
          * @returns the object, or `null` and `error` is set.
+         * @throws GLib.Error
          */
         await_object<T = GObject.Object>(): T;
 
@@ -1548,6 +1573,7 @@ export namespace Dex {
          * {@link GObject.Value.get_pointer}, otherwise `error` is set if the future
          * rejected.
          * @returns a pointer or `null`
+         * @throws GLib.Error
          */
         await_pointer(): null;
 
@@ -1556,6 +1582,7 @@ export namespace Dex {
          * 
          * If the result is not a `G_TYPE_STRING`, `error` is set.
          * @returns the string  or `null` and `error` is set
+         * @throws GLib.Error
          */
         await_string(): string | null;
 
@@ -1564,6 +1591,7 @@ export namespace Dex {
          * 
          * The resolved value must be of type `G_TYPE_UINT` or `error` is set.
          * @returns an uint, or 0 in case of failure and `error` is set.
+         * @throws GLib.Error
          */
         await_uint(): number;
 
@@ -1572,6 +1600,7 @@ export namespace Dex {
          * 
          * The resolved value must be of type `G_TYPE_UINT64` or `error` is set.
          * @returns an uint64, or 0 in case of failure and `error` is set.
+         * @throws GLib.Error
          */
         await_uint64(): number;
 
@@ -1579,6 +1608,7 @@ export namespace Dex {
          * Awaits on `future` and returns the `G_TYPE_VARIANT` based result.
          * @returns the variant result, or `null` and `error` is set.
          * @since 0.4
+         * @throws GLib.Error
          */
         await_variant(): GLib.Variant;
 
@@ -1593,6 +1623,9 @@ export namespace Dex {
 
         get_status(): FutureStatus;
 
+        /**
+         * @throws GLib.Error
+         */
         get_value(): unknown;
 
         /**
@@ -1853,6 +1886,7 @@ export namespace Dex {
          * {@link Dex.FutureSet}.
          * @param position the {@link Dex.Future} position within the set
          * @returns a {@link GObject.Value} if successful; otherwise   `null` and `error` is set.
+         * @throws GLib.Error
          */
         get_value_at(position: number): unknown;
     }

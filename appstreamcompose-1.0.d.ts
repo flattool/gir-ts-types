@@ -103,19 +103,19 @@ export namespace AppStreamCompose {
         /**
          * Ignore icons of this size.
          */
-        IGNORED,
+        IGNORED = 0,
         /**
          * Create cache for the icon, and provide remote link as well.
          */
-        CACHED_REMOTE,
+        CACHED_REMOTE = 1,
         /**
          * Set if the icon should be stored in an icon tarball and be cached locally.
          */
-        CACHED_ONLY,
+        CACHED_ONLY = 2,
         /**
          * Set if this icon should be stored remotely and fetched on demand.
          */
-        REMOTE_ONLY,
+        REMOTE_ONLY = 3,
     }
 
 
@@ -160,39 +160,39 @@ export namespace AppStreamCompose {
         /**
          * Unknown image format.
          */
-        UNKNOWN,
+        UNKNOWN = 0,
         /**
          * PNG format
          */
-        PNG,
+        PNG = 1,
         /**
          * JPEG format
          */
-        JPEG,
+        JPEG = 2,
         /**
          * GIF format
          */
-        GIF,
+        GIF = 3,
         /**
          * SVG format
          */
-        SVG,
+        SVG = 4,
         /**
          * Compressed SVG format
          */
-        SVGZ,
+        SVGZ = 5,
         /**
          * WebP format
          */
-        WEBP,
+        WEBP = 6,
         /**
          * AVIF format
          */
-        AVIF,
+        AVIF = 7,
         /**
          * XPM format
          */
-        XPM,
+        XPM = 8,
     }
 
 
@@ -359,6 +359,7 @@ export namespace AppStreamCompose {
      * Optimizes a PNG graphic for size with optipng, if its binary
      * is available and this feature is enabled.
      * @param fname Filename of the PNG image to optimize.
+     * @throws GLib.Error
      */
     function optimize_png(fname: string): boolean;
 
@@ -394,20 +395,20 @@ export namespace AppStreamCompose {
      * @gir-type Flags
      */
     enum ComposeFlags {
-        NONE,
-        USE_THREADS,
-        ALLOW_NET,
-        VALIDATE,
-        STORE_SCREENSHOTS,
-        ALLOW_SCREENCASTS,
-        PROCESS_FONTS,
-        PROCESS_TRANSLATIONS,
-        IGNORE_ICONS,
-        PROCESS_UNPAIRED_DESKTOP,
-        PROPAGATE_CUSTOM,
-        PROPAGATE_ARTIFACTS,
-        NO_FINAL_CHECK,
-        NO_PARTIAL_URLS,
+        NONE = 0,
+        USE_THREADS = 1,
+        ALLOW_NET = 2,
+        VALIDATE = 4,
+        STORE_SCREENSHOTS = 8,
+        ALLOW_SCREENCASTS = 16,
+        PROCESS_FONTS = 32,
+        PROCESS_TRANSLATIONS = 64,
+        IGNORE_ICONS = 128,
+        PROCESS_UNPAIRED_DESKTOP = 256,
+        PROPAGATE_CUSTOM = 512,
+        PROPAGATE_ARTIFACTS = 1024,
+        NO_FINAL_CHECK = 2048,
+        NO_PARTIAL_URLS = 4096,
     }
 
 
@@ -426,19 +427,19 @@ export namespace AppStreamCompose {
         /**
          * No special flags set
          */
-        NONE,
+        NONE = 0,
         /**
          * Sharpen the resulting image
          */
-        SHARPEN,
+        SHARPEN = 1,
         /**
          * Allow loading of unsupported image types.
          */
-        ALLOW_UNSUPPORTED,
+        ALLOW_UNSUPPORTED = 2,
         /**
          * Always resize the source image to the perfect size
          */
-        ALWAYS_RESIZE,
+        ALWAYS_RESIZE = 4,
     }
 
 
@@ -457,23 +458,23 @@ export namespace AppStreamCompose {
         /**
          * No special flags set
          */
-        NONE,
+        NONE = 0,
         /**
          * Optimize generated PNG for size
          */
-        OPTIMIZE,
+        OPTIMIZE = 1,
         /**
          * Pad with alpha to 16:9 aspect
          */
-        PAD_16_9,
+        PAD_16_9 = 2,
         /**
          * Sharpen the image to clarify detail
          */
-        SHARPEN,
+        SHARPEN = 4,
         /**
          * Blur the image to clear detail
          */
-        BLUR,
+        BLUR = 8,
     }
 
 
@@ -534,12 +535,14 @@ export namespace AppStreamCompose {
         /**
          * Render an SVG graphic from the SVG data provided.
          * @param stream SVG data input stream.
+         * @throws GLib.Error
          */
         render_svg(stream: Gio.InputStream): boolean;
 
         /**
          * Save canvas to PNG file.
          * @param fname Filename to save to.
+         * @throws GLib.Error
          */
         save_png(fname: string): boolean;
     }
@@ -740,6 +743,7 @@ export namespace AppStreamCompose {
          * found components.
          * @param cancellable a {@link Gio.Cancellable}.
          * @returns The results, or `null` on error
+         * @throws GLib.Error
          */
         run(cancellable: Gio.Cancellable | null): Result[];
 
@@ -1066,6 +1070,7 @@ export namespace AppStreamCompose {
         /**
          * Loads the icon policy from a textual representation.
          * @param serialized_policy A policy string as returned by %asc_icon_policy_to_string
+         * @throws GLib.Error
          */
         from_string(serialized_policy: string): boolean;
 
@@ -1163,6 +1168,7 @@ export namespace AppStreamCompose {
          * @param src_size_min The smallest source size allowed, or 0 for none
          * @param flags a {@link AppStreamCompose.ImageLoadFlags}, e.g. {@link AppStreamCompose.ImageLoadFlags.NONE}
          * @returns `true` for success
+         * @throws GLib.Error
          */
         load_filename(filename: string, dest_size: number, src_size_min: number, flags: ImageLoadFlags): boolean;
 
@@ -1173,6 +1179,7 @@ export namespace AppStreamCompose {
          * @param height target height, or 0 for default
          * @param flags some {@link AppStreamCompose.ImageSaveFlags} values, e.g. {@link AppStreamCompose.ImageSaveFlags.PAD_16_9}
          * @returns `true` for success
+         * @throws GLib.Error
          */
         save_filename(filename: string, width: number, height: number, flags: ImageSaveFlags): boolean;
 
@@ -1270,6 +1277,7 @@ export namespace AppStreamCompose {
          * @param cpt The {@link AppStream.Component} to add.
          * @param bytes Source data used to generate the GCID hash, or `null` if nonexistent.
          * @returns `true` on success.
+         * @throws GLib.Error
          */
         add_component(cpt: AppStream.Component, bytes: GLib.Bytes | Uint8Array): boolean;
 
@@ -1278,6 +1286,7 @@ export namespace AppStreamCompose {
          * @param cpt The {@link AppStream.Component} to add.
          * @param data Source data used to generate the GCID hash, or `null` if nonexistent.
          * @returns `true` on success.
+         * @throws GLib.Error
          */
         add_component_with_string(cpt: AppStream.Component, data: string): boolean;
 
@@ -1593,12 +1602,14 @@ export namespace AppStreamCompose {
 
         /**
          * Open this unit, populating its content listing.
+         * @throws GLib.Error
          */
         open(): boolean;
 
         /**
          * Read the contents of the selected file into memory and return them.
          * @param filename The file to read data for.
+         * @throws GLib.Error
          */
         read_data(filename: string): GLib.Bytes;
 

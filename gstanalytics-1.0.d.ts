@@ -41,12 +41,12 @@ export namespace GstAnalytics {
          * Segmentation where the belonging of each
          * pixel to a class of objects is identified.
          */
-        SEMANTIC,
+        SEMANTIC = 0,
         /**
          * Segmentation where the belonging of each
          * pixel to instance of an object is identified.
          */
-        INSTANCE,
+        INSTANCE = 1,
     }
 
 
@@ -59,59 +59,59 @@ export namespace GstAnalytics {
         /**
          * signed 4 bit integer tensor data
          */
-        INT4,
+        INT4 = 0,
         /**
          * signed 8 bit integer tensor data
          */
-        INT8,
+        INT8 = 1,
         /**
          * signed 16 bit integer tensor data
          */
-        INT16,
+        INT16 = 2,
         /**
          * signed 32 bit integer tensor data
          */
-        INT32,
+        INT32 = 3,
         /**
          * signed 64 bit integer tensor data
          */
-        INT64,
+        INT64 = 4,
         /**
          * unsigned 4 bit integer tensor data
          */
-        UINT4,
+        UINT4 = 5,
         /**
          * unsigned 8 bit integer tensor data
          */
-        UINT8,
+        UINT8 = 6,
         /**
          * unsigned 16 bit integer tensor data
          */
-        UINT16,
+        UINT16 = 7,
         /**
          * unsigned 32 bit integer tensor data
          */
-        UINT32,
+        UINT32 = 8,
         /**
          * unsigned 64 bit integer tensor data
          */
-        UINT64,
+        UINT64 = 9,
         /**
          * 16 bit floating point tensor data
          */
-        FLOAT16,
+        FLOAT16 = 10,
         /**
          * 32 bit floating point tensor data
          */
-        FLOAT32,
+        FLOAT32 = 11,
         /**
          * 64 bit floating point tensor data
          */
-        FLOAT64,
+        FLOAT64 = 12,
         /**
          * "brain" 16 bit floating point tensor data
          */
-        BFLOAT16,
+        BFLOAT16 = 13,
     }
 
 
@@ -124,11 +124,11 @@ export namespace GstAnalytics {
         /**
          * elements along a row are consecutive in memory
          */
-        ROW_MAJOR,
+        ROW_MAJOR = 0,
         /**
          * elements along a column are consecutive in memory
          */
-        COL_MAJOR,
+        COL_MAJOR = 1,
     }
 
 
@@ -141,7 +141,7 @@ export namespace GstAnalytics {
         /**
          * indicate the tensor is stored in a dense format in memory
          */
-        TENSOR_LAYOUT_CONTIGUOUS,
+        TENSOR_LAYOUT_CONTIGUOUS = 0,
     }
 
 
@@ -149,12 +149,14 @@ export namespace GstAnalytics {
      * Passes to functions asking for a relation span when the span is
      * infinite.
      * @since 1.24
+     * @default -1
      */
     const INF_RELATION_SPAN: number;
 
     /**
      * A wildcard matching any type of analysis
      * @since 1.24
+     * @default 0
      */
     const MTD_TYPE_ANY: number;
 
@@ -264,28 +266,29 @@ export namespace GstAnalytics {
         /**
          * No relation
          */
-        NONE,
+        NONE = 0,
         /**
          * First analysis-meta is part of second analysis-meta
          */
-        IS_PART_OF,
+        IS_PART_OF = 2,
         /**
          * First analysis-meta contain second analysis-meta.
          */
-        CONTAIN,
+        CONTAIN = 4,
         /**
          * First analysis-meta relate to second analysis-meta.
          */
-        RELATE_TO,
+        RELATE_TO = 8,
         /**
          * Used to express relations between two groups where each group's components
          * correspond to the respective component in the other group.
+         * @since 1.26
          */
-        N_TO_N,
+        N_TO_N = 16,
         /**
          * Only use for criteria.
          */
-        ANY,
+        ANY = 2147483647,
     }
 
 
