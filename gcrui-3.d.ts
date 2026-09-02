@@ -108,7 +108,7 @@ export namespace GcrUi {
 
     namespace CertificateRenderer {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Renderer.SignalSignatures {
             "notify::attributes": (pspec: GObject.ParamSpec) => void;
             "notify::certificate": (pspec: GObject.ParamSpec) => void;
             "notify::label": (pspec: GObject.ParamSpec) => void;
@@ -665,7 +665,7 @@ export namespace GcrUi {
 
     namespace CollectionModel {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gtk.TreeModel.SignalSignatures, Gtk.TreeSortable.SignalSignatures {
             "notify::collection": (pspec: GObject.ParamSpec) => void;
             "notify::columns": (pspec: GObject.ParamSpec) => void;
         }
@@ -1404,7 +1404,7 @@ export namespace GcrUi {
 
     namespace ComboSelector {
         // Signal signatures
-        interface SignalSignatures extends Gtk.ComboBox.SignalSignatures {
+        interface SignalSignatures extends Gtk.ComboBox.SignalSignatures, Gtk.CellEditable.SignalSignatures {
             "notify::collection": (pspec: GObject.ParamSpec) => void;
             "notify::active": (pspec: GObject.ParamSpec) => void;
             "notify::active-id": (pspec: GObject.ParamSpec) => void;
@@ -1846,7 +1846,7 @@ export namespace GcrUi {
 
     namespace FailureRenderer {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Renderer.SignalSignatures {
             "notify::attributes": (pspec: GObject.ParamSpec) => void;
             "notify::label": (pspec: GObject.ParamSpec) => void;
         }
@@ -2471,7 +2471,7 @@ export namespace GcrUi {
 
     namespace KeyRenderer {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Renderer.SignalSignatures {
             "notify::object": (pspec: GObject.ParamSpec) => void;
             "notify::attributes": (pspec: GObject.ParamSpec) => void;
             "notify::label": (pspec: GObject.ParamSpec) => void;
@@ -3001,7 +3001,7 @@ export namespace GcrUi {
 
     namespace PromptDialog {
         // Signal signatures
-        interface SignalSignatures extends Gtk.Dialog.SignalSignatures {
+        interface SignalSignatures extends Gtk.Dialog.SignalSignatures, Gcr.Prompt.SignalSignatures {
             "notify::choice-visible": (pspec: GObject.ParamSpec) => void;
             "notify::confirm-visible": (pspec: GObject.ParamSpec) => void;
             "notify::password-visible": (pspec: GObject.ParamSpec) => void;
@@ -4801,6 +4801,16 @@ export namespace GcrUi {
     type ViewerWidgetClass = typeof ViewerWidget;
 
     namespace Renderer {
+        // Signal signatures
+        interface SignalSignatures {
+            /**
+             * A signal that is emitted by the renderer when it's data
+             * changed and should be rerendered.
+             * @signal
+             * @run-last
+             */
+            "data-changed": () => void;
+        }
         /**
          * Interface for implementing Renderer.
          * Contains only the virtual methods that need to be implemented.

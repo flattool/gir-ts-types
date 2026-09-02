@@ -168,7 +168,7 @@ export namespace PangoFT2 {
 
     namespace FontMap {
         // Signal signatures
-        interface SignalSignatures extends PangoFc.FontMap.SignalSignatures {
+        interface SignalSignatures extends PangoFc.FontMap.SignalSignatures, Gio.ListModel.SignalSignatures {
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
             "notify::n-items": (pspec: GObject.ParamSpec) => void;
         }
