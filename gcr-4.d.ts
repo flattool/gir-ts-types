@@ -1535,7 +1535,7 @@ export namespace Gcr {
 
     namespace CertificateExtensionAuthorityInfoAccess {
         // Signal signatures
-        interface SignalSignatures extends CertificateExtension.SignalSignatures {
+        interface SignalSignatures extends CertificateExtension.SignalSignatures, Gio.ListModel.SignalSignatures {
             "notify::n-items": (pspec: GObject.ParamSpec) => void;
             "notify::critical": (pspec: GObject.ParamSpec) => void;
             "notify::oid": (pspec: GObject.ParamSpec) => void;
@@ -1880,7 +1880,7 @@ export namespace Gcr {
 
     namespace CertificateExtensionCertificatePolicies {
         // Signal signatures
-        interface SignalSignatures extends CertificateExtension.SignalSignatures {
+        interface SignalSignatures extends CertificateExtension.SignalSignatures, Gio.ListModel.SignalSignatures {
             "notify::n-items": (pspec: GObject.ParamSpec) => void;
             "notify::critical": (pspec: GObject.ParamSpec) => void;
             "notify::oid": (pspec: GObject.ParamSpec) => void;
@@ -2070,7 +2070,7 @@ export namespace Gcr {
 
     namespace CertificateExtensionCrlDistributionPoints {
         // Signal signatures
-        interface SignalSignatures extends CertificateExtension.SignalSignatures {
+        interface SignalSignatures extends CertificateExtension.SignalSignatures, Gio.ListModel.SignalSignatures {
             "notify::n-items": (pspec: GObject.ParamSpec) => void;
             "notify::critical": (pspec: GObject.ParamSpec) => void;
             "notify::oid": (pspec: GObject.ParamSpec) => void;
@@ -2393,7 +2393,7 @@ export namespace Gcr {
 
     namespace CertificateExtensionList {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gio.ListModel.SignalSignatures {
             "notify::n-items": (pspec: GObject.ParamSpec) => void;
         }
 
@@ -2585,7 +2585,7 @@ export namespace Gcr {
 
     namespace CertificateExtensionSubjectAltName {
         // Signal signatures
-        interface SignalSignatures extends CertificateExtension.SignalSignatures {
+        interface SignalSignatures extends CertificateExtension.SignalSignatures, Gio.ListModel.SignalSignatures {
             "notify::critical": (pspec: GObject.ParamSpec) => void;
             "notify::oid": (pspec: GObject.ParamSpec) => void;
             "notify::value": (pspec: GObject.ParamSpec) => void;
@@ -2910,7 +2910,7 @@ export namespace Gcr {
 
     namespace CertificatePolicy {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {}
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gio.ListModel.SignalSignatures {}
 
         // Constructor properties interface
         interface ConstructorProps<A extends GObject.Object = GObject.Object> extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {}
@@ -3540,7 +3540,7 @@ export namespace Gcr {
 
     namespace GeneralNames {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {}
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gio.ListModel.SignalSignatures {}
 
         // Constructor properties interface
         interface ConstructorProps<A extends GObject.Object = GObject.Object> extends GObject.Object.ConstructorProps, Gio.ListModel.ConstructorProps {}
@@ -5040,7 +5040,7 @@ export namespace Gcr {
 
     namespace SystemPrompt {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Prompt.SignalSignatures {
             "notify::bus-name": (pspec: GObject.ParamSpec) => void;
             "notify::secret-exchange": (pspec: GObject.ParamSpec) => void;
             "notify::timeout-seconds": (pspec: GObject.ParamSpec) => void;
@@ -7348,6 +7348,19 @@ export namespace Gcr {
     };
 
     namespace Prompt {
+        // Signal signatures
+        interface SignalSignatures {
+            /**
+             * Action signal fired when the prompt is to be closed. After the default
+             * handler has run, the prompt is closed. The various prompting methods
+             * will return results as if the user dismissed the prompt.
+             * 
+             * You can use the {@link Prompt.close} method to emit this signal.
+             * @signal
+             * @run-first
+             */
+            "prompt-close": () => void;
+        }
         /**
          * Interface for implementing Prompt.
          * Contains only the virtual methods that need to be implemented.
