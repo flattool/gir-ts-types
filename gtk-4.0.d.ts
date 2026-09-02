@@ -9985,7 +9985,7 @@ export interface Builder {
 
     namespace AnyFilter {
         // Signal signatures
-        interface SignalSignatures extends MultiFilter.SignalSignatures {
+        interface SignalSignatures extends MultiFilter.SignalSignatures, Gio.ListModel.SignalSignatures {
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
             "notify::n-items": (pspec: GObject.ParamSpec) => void;
         }
@@ -12292,7 +12292,7 @@ export interface Builder {
 
     namespace Application {
         // Signal signatures
-        interface SignalSignatures extends Gio.Application.SignalSignatures {
+        interface SignalSignatures extends Gio.Application.SignalSignatures, Gio.ActionGroup.SignalSignatures {
             /**
              * Emitted when the session manager is about to end the session.
              * 
@@ -13339,7 +13339,7 @@ export interface Builder {
 
     namespace ApplicationWindow {
         // Signal signatures
-        interface SignalSignatures extends Window.SignalSignatures {
+        interface SignalSignatures extends Window.SignalSignatures, Gio.ActionGroup.SignalSignatures {
             "notify::show-menubar": (pspec: GObject.ParamSpec) => void;
             "notify::application": (pspec: GObject.ParamSpec) => void;
             "notify::child": (pspec: GObject.ParamSpec) => void;
@@ -15513,7 +15513,7 @@ export interface Builder {
 
     namespace BookmarkList {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gio.ListModel.SignalSignatures {
             "notify::attributes": (pspec: GObject.ParamSpec) => void;
             "notify::filename": (pspec: GObject.ParamSpec) => void;
             "notify::io-priority": (pspec: GObject.ParamSpec) => void;
@@ -26750,7 +26750,7 @@ export interface Builder {
 
     namespace ColorButton {
         // Signal signatures
-        interface SignalSignatures extends Widget.SignalSignatures {
+        interface SignalSignatures extends Widget.SignalSignatures, ColorChooser.SignalSignatures {
             /**
              * Emitted to when the color button is activated.
              * 
@@ -27435,7 +27435,7 @@ export interface Builder {
 
     namespace ColorChooserDialog {
         // Signal signatures
-        interface SignalSignatures extends Dialog.SignalSignatures {
+        interface SignalSignatures extends Dialog.SignalSignatures, ColorChooser.SignalSignatures {
             "notify::show-editor": (pspec: GObject.ParamSpec) => void;
             "notify::use-header-bar": (pspec: GObject.ParamSpec) => void;
             "notify::application": (pspec: GObject.ParamSpec) => void;
@@ -27735,7 +27735,7 @@ export interface Builder {
 
     namespace ColorChooserWidget {
         // Signal signatures
-        interface SignalSignatures extends Widget.SignalSignatures {
+        interface SignalSignatures extends Widget.SignalSignatures, ColorChooser.SignalSignatures {
             "notify::show-editor": (pspec: GObject.ParamSpec) => void;
             "notify::can-focus": (pspec: GObject.ParamSpec) => void;
             "notify::can-target": (pspec: GObject.ParamSpec) => void;
@@ -31041,7 +31041,7 @@ export interface Builder {
 
     namespace ComboBox {
         // Signal signatures
-        interface SignalSignatures extends Widget.SignalSignatures {
+        interface SignalSignatures extends Widget.SignalSignatures, CellEditable.SignalSignatures {
             /**
              * Emitted to when the combo box is activated.
              * 
@@ -32330,7 +32330,7 @@ export interface Builder {
 
     namespace ComboBoxText {
         // Signal signatures
-        interface SignalSignatures extends ComboBox.SignalSignatures {
+        interface SignalSignatures extends ComboBox.SignalSignatures, CellEditable.SignalSignatures {
             "notify::active": (pspec: GObject.ParamSpec) => void;
             "notify::active-id": (pspec: GObject.ParamSpec) => void;
             "notify::button-sensitivity": (pspec: GObject.ParamSpec) => void;
@@ -33908,7 +33908,7 @@ export interface Builder {
 
     namespace CssProvider {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, StyleProvider.SignalSignatures {
             /**
              * Signals that a parsing error occurred.
              * 
@@ -34757,7 +34757,7 @@ export interface Builder {
 
     namespace DirectoryList {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gio.ListModel.SignalSignatures {
             "notify::attributes": (pspec: GObject.ParamSpec) => void;
             "notify::error": (pspec: GObject.ParamSpec) => void;
             "notify::file": (pspec: GObject.ParamSpec) => void;
@@ -38048,7 +38048,7 @@ export interface Builder {
 
     namespace EditableLabel {
         // Signal signatures
-        interface SignalSignatures extends Widget.SignalSignatures {
+        interface SignalSignatures extends Widget.SignalSignatures, Editable.SignalSignatures {
             "notify::editing": (pspec: GObject.ParamSpec) => void;
             "notify::can-focus": (pspec: GObject.ParamSpec) => void;
             "notify::can-target": (pspec: GObject.ParamSpec) => void;
@@ -39205,7 +39205,7 @@ export interface Builder {
 
     namespace Entry {
         // Signal signatures
-        interface SignalSignatures extends Widget.SignalSignatures {
+        interface SignalSignatures extends Widget.SignalSignatures, CellEditable.SignalSignatures, Editable.SignalSignatures {
             /**
              * Emitted when the entry is activated.
              * 
@@ -43448,7 +43448,7 @@ export interface Builder {
 
     namespace EveryFilter {
         // Signal signatures
-        interface SignalSignatures extends MultiFilter.SignalSignatures {
+        interface SignalSignatures extends MultiFilter.SignalSignatures, Gio.ListModel.SignalSignatures {
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
             "notify::n-items": (pspec: GObject.ParamSpec) => void;
         }
@@ -48623,7 +48623,7 @@ export interface Builder {
 
     namespace FilterListModel {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gio.ListModel.SignalSignatures, SectionModel.SignalSignatures {
             "notify::filter": (pspec: GObject.ParamSpec) => void;
             "notify::incremental": (pspec: GObject.ParamSpec) => void;
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
@@ -49640,7 +49640,7 @@ export interface Builder {
 
     namespace FlattenListModel {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gio.ListModel.SignalSignatures, SectionModel.SignalSignatures {
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
             "notify::model": (pspec: GObject.ParamSpec) => void;
             "notify::n-items": (pspec: GObject.ParamSpec) => void;
@@ -51450,7 +51450,7 @@ export interface Builder {
 
     namespace FontButton {
         // Signal signatures
-        interface SignalSignatures extends Widget.SignalSignatures {
+        interface SignalSignatures extends Widget.SignalSignatures, FontChooser.SignalSignatures {
             /**
              * Emitted to when the font button is activated.
              * 
@@ -52409,7 +52409,7 @@ export interface Builder {
 
     namespace FontChooserDialog {
         // Signal signatures
-        interface SignalSignatures extends Dialog.SignalSignatures {
+        interface SignalSignatures extends Dialog.SignalSignatures, FontChooser.SignalSignatures {
             "notify::use-header-bar": (pspec: GObject.ParamSpec) => void;
             "notify::application": (pspec: GObject.ParamSpec) => void;
             "notify::child": (pspec: GObject.ParamSpec) => void;
@@ -52922,7 +52922,7 @@ export interface Builder {
 
     namespace FontChooserWidget {
         // Signal signatures
-        interface SignalSignatures extends Widget.SignalSignatures {
+        interface SignalSignatures extends Widget.SignalSignatures, FontChooser.SignalSignatures {
             "notify::tweak-action": (pspec: GObject.ParamSpec) => void;
             "notify::can-focus": (pspec: GObject.ParamSpec) => void;
             "notify::can-target": (pspec: GObject.ParamSpec) => void;
@@ -61550,7 +61550,7 @@ export interface Builder {
 
     namespace IconPaintable {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gdk.Paintable.SignalSignatures, SymbolicPaintable.SignalSignatures {
             "notify::file": (pspec: GObject.ParamSpec) => void;
             "notify::icon-name": (pspec: GObject.ParamSpec) => void;
             "notify::is-symbolic": (pspec: GObject.ParamSpec) => void;
@@ -73142,7 +73142,7 @@ export interface Builder {
 
     namespace ListStore {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {}
+        interface SignalSignatures extends GObject.Object.SignalSignatures, TreeModel.SignalSignatures, TreeSortable.SignalSignatures {}
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps, Buildable.ConstructorProps, TreeDragDest.ConstructorProps, TreeDragSource.ConstructorProps, TreeModel.ConstructorProps, TreeSortable.ConstructorProps {}
@@ -75374,7 +75374,7 @@ export interface Builder {
 
     namespace MapListModel {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gio.ListModel.SignalSignatures, SectionModel.SignalSignatures {
             "notify::has-map": (pspec: GObject.ParamSpec) => void;
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
             "notify::model": (pspec: GObject.ParamSpec) => void;
@@ -76158,7 +76158,7 @@ export interface Builder {
 
     namespace MediaFile {
         // Signal signatures
-        interface SignalSignatures extends MediaStream.SignalSignatures {
+        interface SignalSignatures extends MediaStream.SignalSignatures, Gdk.Paintable.SignalSignatures {
             "notify::file": (pspec: GObject.ParamSpec) => void;
             "notify::input-stream": (pspec: GObject.ParamSpec) => void;
             "notify::duration": (pspec: GObject.ParamSpec) => void;
@@ -76551,7 +76551,7 @@ export interface Builder {
 
     namespace MediaStream {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gdk.Paintable.SignalSignatures {
             "notify::duration": (pspec: GObject.ParamSpec) => void;
             "notify::ended": (pspec: GObject.ParamSpec) => void;
             "notify::error": (pspec: GObject.ParamSpec) => void;
@@ -78809,7 +78809,7 @@ export interface Builder {
 
     namespace MultiFilter {
         // Signal signatures
-        interface SignalSignatures extends Filter.SignalSignatures {
+        interface SignalSignatures extends Filter.SignalSignatures, Gio.ListModel.SignalSignatures {
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
             "notify::n-items": (pspec: GObject.ParamSpec) => void;
         }
@@ -79125,7 +79125,7 @@ export interface Builder {
 
     namespace MultiSelection {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gio.ListModel.SignalSignatures, SectionModel.SignalSignatures, SelectionModel.SignalSignatures {
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
             "notify::model": (pspec: GObject.ParamSpec) => void;
             "notify::n-items": (pspec: GObject.ParamSpec) => void;
@@ -79619,7 +79619,7 @@ export interface Builder {
 
     namespace MultiSorter {
         // Signal signatures
-        interface SignalSignatures extends Sorter.SignalSignatures {
+        interface SignalSignatures extends Sorter.SignalSignatures, Gio.ListModel.SignalSignatures {
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
             "notify::n-items": (pspec: GObject.ParamSpec) => void;
         }
@@ -80306,7 +80306,7 @@ export interface Builder {
 
     namespace NoSelection {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gio.ListModel.SignalSignatures, SectionModel.SignalSignatures, SelectionModel.SignalSignatures {
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
             "notify::model": (pspec: GObject.ParamSpec) => void;
             "notify::n-items": (pspec: GObject.ParamSpec) => void;
@@ -84512,7 +84512,7 @@ export interface Builder {
 
     namespace PasswordEntry {
         // Signal signatures
-        interface SignalSignatures extends Widget.SignalSignatures {
+        interface SignalSignatures extends Widget.SignalSignatures, Editable.SignalSignatures {
             /**
              * Emitted when the entry is activated.
              * 
@@ -88980,7 +88980,7 @@ export interface Builder {
 
     namespace PrintOperation {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, PrintOperationPreview.SignalSignatures {
             /**
              * Emitted after the user has finished changing print settings
              * in the dialog, before the actual rendering starts.
@@ -97318,7 +97318,7 @@ export interface Builder {
 
     namespace SearchEntry {
         // Signal signatures
-        interface SignalSignatures extends Widget.SignalSignatures {
+        interface SignalSignatures extends Widget.SignalSignatures, Editable.SignalSignatures {
             /**
              * Emitted when the entry is activated.
              * 
@@ -98521,7 +98521,7 @@ export interface Builder {
 
     namespace SelectionFilterModel {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gio.ListModel.SignalSignatures {
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
             "notify::model": (pspec: GObject.ParamSpec) => void;
             "notify::n-items": (pspec: GObject.ParamSpec) => void;
@@ -99202,7 +99202,7 @@ export interface Builder {
 
     namespace Settings {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, StyleProvider.SignalSignatures {
             "notify::gtk-alternative-button-order": (pspec: GObject.ParamSpec) => void;
             "notify::gtk-alternative-sort-arrows": (pspec: GObject.ParamSpec) => void;
             "notify::gtk-application-prefer-dark-theme": (pspec: GObject.ParamSpec) => void;
@@ -100782,7 +100782,7 @@ export interface Builder {
 
     namespace ShortcutController {
         // Signal signatures
-        interface SignalSignatures extends EventController.SignalSignatures {
+        interface SignalSignatures extends EventController.SignalSignatures, Gio.ListModel.SignalSignatures {
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
             "notify::mnemonic-modifiers": (pspec: GObject.ParamSpec) => void;
             "notify::model": (pspec: GObject.ParamSpec) => void;
@@ -103540,7 +103540,7 @@ export interface Builder {
 
     namespace SingleSelection {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gio.ListModel.SignalSignatures, SectionModel.SignalSignatures, SelectionModel.SignalSignatures {
             "notify::autoselect": (pspec: GObject.ParamSpec) => void;
             "notify::can-unselect": (pspec: GObject.ParamSpec) => void;
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
@@ -104460,7 +104460,7 @@ export interface Builder {
 
     namespace SliceListModel {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gio.ListModel.SignalSignatures, SectionModel.SignalSignatures {
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
             "notify::model": (pspec: GObject.ParamSpec) => void;
             "notify::n-items": (pspec: GObject.ParamSpec) => void;
@@ -105397,7 +105397,7 @@ export interface Builder {
 
     namespace SortListModel {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gio.ListModel.SignalSignatures, SectionModel.SignalSignatures {
             "notify::incremental": (pspec: GObject.ParamSpec) => void;
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
             "notify::model": (pspec: GObject.ParamSpec) => void;
@@ -105967,7 +105967,7 @@ export interface Builder {
 
     namespace SpinButton {
         // Signal signatures
-        interface SignalSignatures extends Widget.SignalSignatures {
+        interface SignalSignatures extends Widget.SignalSignatures, CellEditable.SignalSignatures, Editable.SignalSignatures {
             /**
              * Emitted when the spin button is activated.
              * 
@@ -110878,7 +110878,7 @@ export interface Builder {
 
     namespace StringList {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gio.ListModel.SignalSignatures {
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
             "notify::n-items": (pspec: GObject.ParamSpec) => void;
             "notify::strings": (pspec: GObject.ParamSpec) => void;
@@ -112496,7 +112496,7 @@ export interface Builder {
 
     namespace Text {
         // Signal signatures
-        interface SignalSignatures extends Widget.SignalSignatures {
+        interface SignalSignatures extends Widget.SignalSignatures, Editable.SignalSignatures {
             /**
              * Emitted when the user hits the <kbd>Enter</kbd> key.
              * 
@@ -121090,7 +121090,7 @@ export interface Builder {
 
     namespace TreeListModel {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gio.ListModel.SignalSignatures {
             "notify::autoexpand": (pspec: GObject.ParamSpec) => void;
             "notify::item-type": (pspec: GObject.ParamSpec) => void;
             "notify::model": (pspec: GObject.ParamSpec) => void;
@@ -121671,7 +121671,7 @@ export interface Builder {
 
     namespace TreeModelFilter {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, TreeModel.SignalSignatures {
             "notify::child-model": (pspec: GObject.ParamSpec) => void;
             "notify::virtual-root": (pspec: GObject.ParamSpec) => void;
         }
@@ -122569,7 +122569,7 @@ export interface Builder {
 
     namespace TreeModelSort {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, TreeModel.SignalSignatures, TreeSortable.SignalSignatures {
             "notify::model": (pspec: GObject.ParamSpec) => void;
         }
 
@@ -123782,7 +123782,7 @@ export interface Builder {
 
     namespace TreeStore {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {}
+        interface SignalSignatures extends GObject.Object.SignalSignatures, TreeModel.SignalSignatures, TreeSortable.SignalSignatures {}
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps, Buildable.ConstructorProps, TreeDragDest.ConstructorProps, TreeDragSource.ConstructorProps, TreeModel.ConstructorProps, TreeSortable.ConstructorProps {}
@@ -133408,7 +133408,7 @@ export interface Builder {
 
     namespace WidgetPaintable {
         // Signal signatures
-        interface SignalSignatures extends GObject.Object.SignalSignatures {
+        interface SignalSignatures extends GObject.Object.SignalSignatures, Gdk.Paintable.SignalSignatures {
             "notify::widget": (pspec: GObject.ParamSpec) => void;
         }
 
@@ -141415,6 +141415,42 @@ export interface Builder {
     };
 
     namespace CellEditable {
+        // Signal signatures
+        interface SignalSignatures {
+            /**
+             * This signal is a sign for the cell renderer to update its
+             * value from the `cell_editable`.
+             * 
+             * Implementations of {@link Gtk.CellEditable} are responsible for
+             * emitting this signal when they are done editing, e.g.
+             * {@link Gtk.Entry} emits this signal when the user presses Enter. Typical things to
+             * do in a handler for ::editing-done are to capture the edited value,
+             * disconnect the `cell_editable` from signals on the {@link Gtk.CellRenderer}, etc.
+             * 
+             * `gtk_cell_editable_editing_done()` is a convenience method
+             * for emitting `Gtk.CellEditable::editing-done`.
+             * @signal
+             * @run-last
+             */
+            "editing-done": () => void;
+            /**
+             * This signal is meant to indicate that the cell is finished
+             * editing, and the `cell_editable` widget is being removed and may
+             * subsequently be destroyed.
+             * 
+             * Implementations of {@link Gtk.CellEditable} are responsible for
+             * emitting this signal when they are done editing. It must
+             * be emitted after the `Gtk.CellEditable::editing-done` signal,
+             * to give the cell renderer a chance to update the cell's value
+             * before the widget is removed.
+             * 
+             * `gtk_cell_editable_remove_widget()` is a convenience method
+             * for emitting `Gtk.CellEditable::remove-widget`.
+             * @signal
+             * @run-last
+             */
+            "remove-widget": () => void;
+        }
         /**
          * Interface for implementing CellEditable.
          * Contains only the virtual methods that need to be implemented.
@@ -141862,6 +141898,20 @@ export interface Builder {
     };
 
     namespace ColorChooser {
+        // Signal signatures
+        interface SignalSignatures {
+            /**
+             * Emitted when a color is activated from the color chooser.
+             * 
+             * This usually happens when the user clicks a color swatch,
+             * or a color is selected and the user presses one of the keys
+             * Space, Shift+Space, Return or Enter.
+             * @signal
+             * @deprecated since 4.10: Use {@link Gtk.ColorDialog} and {@link Gtk.ColorDialogButton}   instead of widgets implementing {@link Gtk.ColorChooser}
+             * @run-first
+             */
+            "color-activated": (color: Gdk.RGBA) => void;
+        }
         /**
          * Interface for implementing ColorChooser.
          * Contains only the virtual methods that need to be implemented.
@@ -142070,6 +142120,47 @@ export interface Builder {
     };
 
     namespace Editable {
+        // Signal signatures
+        interface SignalSignatures {
+            /**
+             * Emitted at the end of a single user-visible operation on the
+             * contents.
+             * 
+             * E.g., a paste operation that replaces the contents of the
+             * selection will cause only one signal emission (even though it
+             * is implemented by first deleting the selection, then inserting
+             * the new content, and may cause multiple ::notify::text signals
+             * to be emitted).
+             * @signal
+             * @run-last
+             */
+            changed: () => void;
+            /**
+             * Emitted when text is deleted from the widget by the user.
+             * 
+             * The default handler for this signal will normally be responsible for
+             * deleting the text, so by connecting to this signal and then stopping
+             * the signal with `g_signal_stop_emission()`, it is possible to modify the
+             * range of deleted text, or prevent it from being deleted entirely.
+             * 
+             * The `start_pos` and `end_pos` parameters are interpreted as for
+             * {@link Gtk.Editable.delete_text}.
+             * @signal
+             * @run-last
+             */
+            "delete-text": (start_pos: number, end_pos: number) => void;
+            /**
+             * Emitted when text is inserted into the widget by the user.
+             * 
+             * The default handler for this signal will normally be responsible
+             * for inserting the text, so by connecting to this signal and then
+             * stopping the signal with `g_signal_stop_emission()`, it is possible
+             * to modify the inserted text, or prevent it from being inserted entirely.
+             * @signal
+             * @run-last
+             */
+            "insert-text": (text: string, length: number, position: number) => void;
+        }
         /**
          * Interface for implementing Editable.
          * Contains only the virtual methods that need to be implemented.
@@ -143199,6 +143290,20 @@ export interface Builder {
     };
 
     namespace FontChooser {
+        // Signal signatures
+        interface SignalSignatures {
+            /**
+             * Emitted when a font is activated.
+             * 
+             * This usually happens when the user double clicks an item,
+             * or an item is selected and the user presses one of the keys
+             * Space, Shift+Space, Return or Enter.
+             * @signal
+             * @deprecated since 4.10: Use {@link Gtk.FontDialog} and {@link Gtk.FontDialogButton} instead
+             * @run-first
+             */
+            "font-activated": (fontname: string) => void;
+        }
         /**
          * Interface for implementing FontChooser.
          * Contains only the virtual methods that need to be implemented.
@@ -143740,6 +143845,28 @@ export interface Builder {
     };
 
     namespace PrintOperationPreview {
+        // Signal signatures
+        interface SignalSignatures {
+            /**
+             * Emitted once for each page that gets rendered to the preview.
+             * 
+             * A handler for this signal should update the `context`
+             * according to `page_setup` and set up a suitable cairo
+             * context, using {@link Gtk.PrintContext.set_cairo_context}.
+             * @signal
+             * @run-last
+             */
+            "got-page-size": (context: PrintContext, page_setup: PageSetup) => void;
+            /**
+             * The ::ready signal gets emitted once per preview operation,
+             * before the first page is rendered.
+             * 
+             * A handler for this signal can be used for setup tasks.
+             * @signal
+             * @run-last
+             */
+            ready: (context: PrintContext) => void;
+        }
         /**
          * Interface for implementing PrintOperationPreview.
          * Contains only the virtual methods that need to be implemented.
@@ -144103,6 +144230,25 @@ export interface Builder {
     };
 
     namespace SectionModel {
+        // Signal signatures
+        interface SignalSignatures extends Gio.ListModel.SignalSignatures {
+            /**
+             * Emitted when the start-of-section state of some of the items in `model` changes.
+             * 
+             * Note that this signal does not specify the new section state of the
+             * items, they need to be queried manually. It is also not necessary for
+             * a model to change the section state of any of the items in the section
+             * model, though it would be rather useless to emit such a signal.
+             * 
+             * The `Gio.ListModel::items-changed` implies the effect of the
+             * `Gtk.SectionModel::sections-changed` signal for all the items
+             * it covers.
+             * @signal
+             * @since 4.12
+             * @run-last
+             */
+            "sections-changed": (position: number, n_items: number) => void;
+        }
         /**
          * Interface for implementing SectionModel.
          * Contains only the virtual methods that need to be implemented.
@@ -144194,6 +144340,20 @@ export interface Builder {
     };
 
     namespace SelectionModel {
+        // Signal signatures
+        interface SignalSignatures extends Gio.ListModel.SignalSignatures {
+            /**
+             * Emitted when the selection state of some of the items in `model` changes.
+             * 
+             * Note that this signal does not specify the new selection state of the
+             * items, they need to be queried manually. It is also not necessary for
+             * a model to change the selection state of any of the items in the selection
+             * model, though it would be rather useless to emit such a signal.
+             * @signal
+             * @run-last
+             */
+            "selection-changed": (position: number, n_items: number) => void;
+        }
         /**
          * Interface for implementing SelectionModel.
          * Contains only the virtual methods that need to be implemented.
@@ -144546,6 +144706,14 @@ export interface Builder {
     };
 
     namespace StyleProvider {
+        // Signal signatures
+        interface SignalSignatures {
+            /**
+             * @signal
+             * @run-last
+             */
+            "gtk-private-changed": () => void;
+        }
 
         // Constructor properties interface
         interface ConstructorProps extends GObject.Object.ConstructorProps {}
@@ -144575,6 +144743,8 @@ export interface Builder {
     };
 
     namespace SymbolicPaintable {
+        // Signal signatures
+        interface SignalSignatures extends Gdk.Paintable.SignalSignatures {}
         /**
          * Interface for implementing SymbolicPaintable.
          * Contains only the virtual methods that need to be implemented.
@@ -144826,6 +144996,57 @@ export interface Builder {
     };
 
     namespace TreeModel {
+        // Signal signatures
+        interface SignalSignatures {
+            /**
+             * This signal is emitted when a row in the model has changed.
+             * @signal
+             * @run-last
+             */
+            "row-changed": (path: TreePath, iter: TreeIter) => void;
+            /**
+             * This signal is emitted when a row has been deleted.
+             * 
+             * Note that no iterator is passed to the signal handler,
+             * since the row is already deleted.
+             * 
+             * This should be called by models after a row has been removed.
+             * The location pointed to by `path` should be the location that
+             * the row previously was at. It may not be a valid location anymore.
+             * @signal
+             * @run-first
+             */
+            "row-deleted": (path: TreePath) => void;
+            /**
+             * This signal is emitted when a row has gotten the first child
+             * row or lost its last child row.
+             * @signal
+             * @run-last
+             */
+            "row-has-child-toggled": (path: TreePath, iter: TreeIter) => void;
+            /**
+             * This signal is emitted when a new row has been inserted in
+             * the model.
+             * 
+             * Note that the row may still be empty at this point, since
+             * it is a common pattern to first insert an empty row, and
+             * then fill it with the desired values.
+             * @signal
+             * @run-first
+             */
+            "row-inserted": (path: TreePath, iter: TreeIter) => void;
+            /**
+             * This signal is emitted when the children of a node in the
+             * {@link Gtk.TreeModel} have been reordered.
+             * 
+             * Note that this signal is not emitted
+             * when rows are reordered by DND, since this is implemented
+             * by removing and then reinserting the row.
+             * @signal
+             * @run-first
+             */
+            "rows-reordered": (path: TreePath, iter: TreeIter, new_order: null) => void;
+        }
         /**
          * Interface for implementing TreeModel.
          * Contains only the virtual methods that need to be implemented.
@@ -145588,6 +145809,17 @@ export interface Builder {
     };
 
     namespace TreeSortable {
+        // Signal signatures
+        interface SignalSignatures extends TreeModel.SignalSignatures {
+            /**
+             * The ::sort-column-changed signal is emitted when the sort column
+             * or sort order of `sortable` is changed. The signal is emitted before
+             * the contents of `sortable` are resorted.
+             * @signal
+             * @run-last
+             */
+            "sort-column-changed": () => void;
+        }
         /**
          * Interface for implementing TreeSortable.
          * Contains only the virtual methods that need to be implemented.
