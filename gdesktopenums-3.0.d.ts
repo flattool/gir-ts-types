@@ -257,6 +257,7 @@ export namespace GDesktopEnums {
         DEFAULT = 0,
         FLAT = 1,
         ADAPTIVE = 2,
+        CUSTOM = 3,
     }
 
 

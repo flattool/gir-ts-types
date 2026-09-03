@@ -5541,7 +5541,7 @@ export interface Builder {
      * Like {@link get_binary_age}, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 2303
+     * @default 2304
      */
     const BINARY_AGE: number;
 
@@ -5626,7 +5626,7 @@ export interface Builder {
      * Like {@link get_micro_version}, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 3
+     * @default 4
      */
     const MICRO_VERSION: number;
 
@@ -104610,6 +104610,7 @@ export interface Builder {
         /**
          * Time in seconds that the focus is visible when using keyboard navigation. A zero value means "forever", and a negative
          * value means "toolkit default timeout".
+         * @since 4.24
          * @default -1
          */
         get gtk_keyboard_focus_visible_timeout(): number;
@@ -104618,6 +104619,7 @@ export interface Builder {
         /**
          * Time in seconds that the focus is visible when using keyboard navigation. A zero value means "forever", and a negative
          * value means "toolkit default timeout".
+         * @since 4.24
          * @default -1
          */
         get gtkKeyboardFocusVisibleTimeout(): number;
