@@ -1693,7 +1693,7 @@ export namespace WebKit {
      * Like `webkit_get_micro_version()`, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 91
+     * @default 92
      */
     const MICRO_VERSION: number;
 
@@ -13978,13 +13978,12 @@ export namespace WebKit {
          *     }
          * 
          *     if (jsc_value_is_number (value)) {
-         *         gint32        int_value = jsc_value_to_string (value);
+         *         gint32        int_value = jsc_value_to_int32 (value);
          *         JSCException *exception = jsc_context_get_exception (jsc_value_get_context (value));
          *         if (exception)
          *             g_warning ("Error running javascript: %s", jsc_exception_get_message (exception));
          *         else
          *             g_print ("Script result: %d\n", int_value);
-         *         g_free (str_value);
          *     } else {
          *         g_warning ("Error running javascript: unexpected return value");
          *     }
@@ -13999,7 +13998,7 @@ export namespace WebKit {
          *     g_variant_dict_insert (&dict, "count", "u", 42);
          *     GVariant *args = g_variant_dict_end (&dict);
          *     const gchar *body = "return new Promise((resolve) => { resolve(count); });";
-         *     webkit_web_view_call_async_javascript_function (web_view, body, -1, arguments, NULL, NULL, NULL, web_view_javascript_finished, NULL);
+         *     webkit_web_view_call_async_javascript_function (web_view, body, -1, args, NULL, NULL, NULL, web_view_javascript_finished, NULL);
          * }
          * ```
          * @param body the function body
@@ -14047,13 +14046,12 @@ export namespace WebKit {
          *     }
          * 
          *     if (jsc_value_is_number (value)) {
-         *         gint32        int_value = jsc_value_to_string (value);
+         *         gint32        int_value = jsc_value_to_int32 (value);
          *         JSCException *exception = jsc_context_get_exception (jsc_value_get_context (value));
          *         if (exception)
          *             g_warning ("Error running javascript: %s", jsc_exception_get_message (exception));
          *         else
          *             g_print ("Script result: %d\n", int_value);
-         *         g_free (str_value);
          *     } else {
          *         g_warning ("Error running javascript: unexpected return value");
          *     }
@@ -14068,7 +14066,7 @@ export namespace WebKit {
          *     g_variant_dict_insert (&dict, "count", "u", 42);
          *     GVariant *args = g_variant_dict_end (&dict);
          *     const gchar *body = "return new Promise((resolve) => { resolve(count); });";
-         *     webkit_web_view_call_async_javascript_function (web_view, body, -1, arguments, NULL, NULL, NULL, web_view_javascript_finished, NULL);
+         *     webkit_web_view_call_async_javascript_function (web_view, body, -1, args, NULL, NULL, NULL, web_view_javascript_finished, NULL);
          * }
          * ```
          * @param body the function body
@@ -14117,13 +14115,12 @@ export namespace WebKit {
          *     }
          * 
          *     if (jsc_value_is_number (value)) {
-         *         gint32        int_value = jsc_value_to_string (value);
+         *         gint32        int_value = jsc_value_to_int32 (value);
          *         JSCException *exception = jsc_context_get_exception (jsc_value_get_context (value));
          *         if (exception)
          *             g_warning ("Error running javascript: %s", jsc_exception_get_message (exception));
          *         else
          *             g_print ("Script result: %d\n", int_value);
-         *         g_free (str_value);
          *     } else {
          *         g_warning ("Error running javascript: unexpected return value");
          *     }
@@ -14138,7 +14135,7 @@ export namespace WebKit {
          *     g_variant_dict_insert (&dict, "count", "u", 42);
          *     GVariant *args = g_variant_dict_end (&dict);
          *     const gchar *body = "return new Promise((resolve) => { resolve(count); });";
-         *     webkit_web_view_call_async_javascript_function (web_view, body, -1, arguments, NULL, NULL, NULL, web_view_javascript_finished, NULL);
+         *     webkit_web_view_call_async_javascript_function (web_view, body, -1, args, NULL, NULL, NULL, web_view_javascript_finished, NULL);
          * }
          * ```
          * @param body the function body

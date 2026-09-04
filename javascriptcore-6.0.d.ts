@@ -177,7 +177,7 @@ export namespace JavaScriptCore {
      * Like `jsc_get_micro_version()`, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 91
+     * @default 92
      */
     const MICRO_VERSION: number;
 
