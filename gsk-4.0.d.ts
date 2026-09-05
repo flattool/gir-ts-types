@@ -4612,7 +4612,9 @@ export namespace Gsk {
          * control point.
          * 
          * The weight determines how strongly the curve is pulled towards the control point.
-         * A conic with weight 1 is identical to a quadratic Bézier curve with the same points.
+         * A conic with weight 1 is identical to a quadratic Bézier curve with the same points,
+         * a conic with weight 0 is identical to a straight line from the start point to
+         * the end point.
          * 
          * Conic curves can be used to draw ellipses and circles. They are also known as
          * rational quadratic Bézier curves.
@@ -4627,7 +4629,7 @@ export namespace Gsk {
          * @param y1 y coordinate of control point
          * @param x2 x coordinate of the end of the curve
          * @param y2 y coordinate of the end of the curve
-         * @param weight weight of the control point, must be greater than zero
+         * @param weight weight of the control point, must be non-negative
          * @since 4.14
          */
         conic_to(x1: number, y1: number, x2: number, y2: number, weight: number): void;
@@ -4767,7 +4769,7 @@ export namespace Gsk {
          * @param y1 y offset of control point
          * @param x2 x offset of the end of the curve
          * @param y2 y offset of the end of the curve
-         * @param weight weight of the curve, must be greater than zero
+         * @param weight weight of the curve, must be non-negative
          * @since 4.14
          */
         rel_conic_to(x1: number, y1: number, x2: number, y2: number, weight: number): void;
