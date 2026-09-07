@@ -8367,6 +8367,24 @@ export namespace Soup {
         vfunc_process_incoming_message(header: number, payload: GLib.Bytes): [GLib.Bytes | Uint8Array, number];
 
         /**
+         * Process a message after it's received, without producing more than
+         * `max_output_size` bytes of output.
+         * 
+         * This behaves like {@link WebsocketExtension.process_incoming_message},
+         * but extensions that expand their input (such as `permessage-deflate`)
+         * stop and return an error with {@link WebsocketError.CLOSE_TOO_BIG}
+         * instead of producing output larger than `max_output_size`. Extensions
+         * that don't implement this fall back to
+         * {@link WebsocketExtension.process_incoming_message}.
+         * @param header the message header
+         * @param payload the payload data
+         * @param max_output_size the maximum size in bytes of the processed payload
+         * @since 3.8
+         * @virtual
+         */
+        vfunc_process_incoming_message_with_limit(header: number, payload: GLib.Bytes, max_output_size: number): [GLib.Bytes | Uint8Array, number];
+
+        /**
          * Process a message before it's sent.
          * 
          * If the payload isn't changed the given `payload` is just returned, otherwise
@@ -8422,6 +8440,25 @@ export namespace Soup {
          * @throws GLib.Error
          */
         process_incoming_message(header: number, payload: GLib.Bytes | Uint8Array): [GLib.Bytes, number];
+
+        /**
+         * Process a message after it's received, without producing more than
+         * `max_output_size` bytes of output.
+         * 
+         * This behaves like {@link WebsocketExtension.process_incoming_message},
+         * but extensions that expand their input (such as `permessage-deflate`)
+         * stop and return an error with {@link WebsocketError.CLOSE_TOO_BIG}
+         * instead of producing output larger than `max_output_size`. Extensions
+         * that don't implement this fall back to
+         * {@link WebsocketExtension.process_incoming_message}.
+         * @param header the message header
+         * @param payload the payload data
+         * @param max_output_size the maximum size in bytes of the processed payload
+         * @returns the message payload data, or `null` in case of error
+         * @since 3.8
+         * @throws GLib.Error
+         */
+        process_incoming_message_with_limit(header: number, payload: GLib.Bytes | Uint8Array, max_output_size: bigint | number): [GLib.Bytes, number];
 
         /**
          * Process a message before it's sent.
