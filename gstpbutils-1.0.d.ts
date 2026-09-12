@@ -1203,15 +1203,12 @@ export namespace GstPbutils {
         // Signals
         /** @signal */
         connect<K extends keyof AudioVisualizer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioVisualizer.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AudioVisualizer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioVisualizer.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AudioVisualizer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioVisualizer.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AudioVisualizer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioVisualizer.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -1357,15 +1354,12 @@ export namespace GstPbutils {
         // Signals
         /** @signal */
         connect<K extends keyof Discoverer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Discoverer.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Discoverer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Discoverer.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Discoverer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Discoverer.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Discoverer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Discoverer.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -1470,15 +1464,12 @@ export namespace GstPbutils {
         // Signals
         /** @signal */
         connect<K extends keyof DiscovererAudioInfo.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DiscovererAudioInfo.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DiscovererAudioInfo.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DiscovererAudioInfo.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DiscovererAudioInfo.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DiscovererAudioInfo.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DiscovererAudioInfo.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DiscovererAudioInfo.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -1551,15 +1542,12 @@ export namespace GstPbutils {
         // Signals
         /** @signal */
         connect<K extends keyof DiscovererContainerInfo.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DiscovererContainerInfo.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DiscovererContainerInfo.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DiscovererContainerInfo.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DiscovererContainerInfo.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DiscovererContainerInfo.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DiscovererContainerInfo.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DiscovererContainerInfo.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -1607,15 +1595,12 @@ export namespace GstPbutils {
         // Signals
         /** @signal */
         connect<K extends keyof DiscovererInfo.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DiscovererInfo.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DiscovererInfo.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DiscovererInfo.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DiscovererInfo.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DiscovererInfo.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DiscovererInfo.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DiscovererInfo.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -1784,15 +1769,12 @@ export namespace GstPbutils {
         // Signals
         /** @signal */
         connect<K extends keyof DiscovererStreamInfo.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DiscovererStreamInfo.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DiscovererStreamInfo.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DiscovererStreamInfo.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DiscovererStreamInfo.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DiscovererStreamInfo.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DiscovererStreamInfo.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DiscovererStreamInfo.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -1885,15 +1867,12 @@ export namespace GstPbutils {
         // Signals
         /** @signal */
         connect<K extends keyof DiscovererSubtitleInfo.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DiscovererSubtitleInfo.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DiscovererSubtitleInfo.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DiscovererSubtitleInfo.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DiscovererSubtitleInfo.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DiscovererSubtitleInfo.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DiscovererSubtitleInfo.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DiscovererSubtitleInfo.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -1935,15 +1914,12 @@ export namespace GstPbutils {
         // Signals
         /** @signal */
         connect<K extends keyof DiscovererVideoInfo.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DiscovererVideoInfo.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DiscovererVideoInfo.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DiscovererVideoInfo.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DiscovererVideoInfo.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DiscovererVideoInfo.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DiscovererVideoInfo.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DiscovererVideoInfo.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -2040,15 +2016,12 @@ export namespace GstPbutils {
         // Signals
         /** @signal */
         connect<K extends keyof EncodingAudioProfile.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, EncodingAudioProfile.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof EncodingAudioProfile.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, EncodingAudioProfile.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof EncodingAudioProfile.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<EncodingAudioProfile.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof EncodingAudioProfile.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<EncodingAudioProfile.SignalSignatures[K]>): void;
     }
 
 
@@ -2089,15 +2062,12 @@ export namespace GstPbutils {
         // Signals
         /** @signal */
         connect<K extends keyof EncodingContainerProfile.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, EncodingContainerProfile.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof EncodingContainerProfile.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, EncodingContainerProfile.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof EncodingContainerProfile.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<EncodingContainerProfile.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof EncodingContainerProfile.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<EncodingContainerProfile.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -2201,15 +2171,12 @@ export namespace GstPbutils {
         // Signals
         /** @signal */
         connect<K extends keyof EncodingProfile.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, EncodingProfile.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof EncodingProfile.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, EncodingProfile.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof EncodingProfile.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<EncodingProfile.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof EncodingProfile.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<EncodingProfile.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -2485,15 +2452,12 @@ export namespace GstPbutils {
         // Signals
         /** @signal */
         connect<K extends keyof EncodingTarget.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, EncodingTarget.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof EncodingTarget.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, EncodingTarget.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof EncodingTarget.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<EncodingTarget.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof EncodingTarget.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<EncodingTarget.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -2612,15 +2576,12 @@ export namespace GstPbutils {
         // Signals
         /** @signal */
         connect<K extends keyof EncodingVideoProfile.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, EncodingVideoProfile.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof EncodingVideoProfile.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, EncodingVideoProfile.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof EncodingVideoProfile.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<EncodingVideoProfile.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof EncodingVideoProfile.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<EncodingVideoProfile.SignalSignatures[K]>): void;
 
         // Methods
         /**

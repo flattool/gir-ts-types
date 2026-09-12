@@ -206,15 +206,12 @@ export namespace GstGLEGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLDisplayEGL.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLDisplayEGL.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLDisplayEGL.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLDisplayEGL.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLDisplayEGL.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLDisplayEGL.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLDisplayEGL.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLDisplayEGL.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -312,15 +309,12 @@ export namespace GstGLEGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLDisplayEGLDevice.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLDisplayEGLDevice.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLDisplayEGLDevice.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLDisplayEGLDevice.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLDisplayEGLDevice.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLDisplayEGLDevice.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLDisplayEGLDevice.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLDisplayEGLDevice.SignalSignatures[K]>): void;
     }
 
 
@@ -359,15 +353,12 @@ export namespace GstGLEGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLMemoryEGLAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLMemoryEGLAllocator.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLMemoryEGLAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLMemoryEGLAllocator.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLMemoryEGLAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLMemoryEGLAllocator.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLMemoryEGLAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLMemoryEGLAllocator.SignalSignatures[K]>): void;
     }
 
 

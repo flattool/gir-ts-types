@@ -173,15 +173,12 @@ export namespace Geoclue {
         // Signals
         /** @signal */
         connect<K extends keyof ClientProxy.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ClientProxy.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ClientProxy.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ClientProxy.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ClientProxy.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ClientProxy.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ClientProxy.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ClientProxy.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -953,15 +950,12 @@ export namespace Geoclue {
         // Signals
         /** @signal */
         connect<K extends keyof ClientSkeleton.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ClientSkeleton.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ClientSkeleton.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ClientSkeleton.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ClientSkeleton.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ClientSkeleton.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ClientSkeleton.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ClientSkeleton.SignalSignatures[K]>): void;
 
         /**
          * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-GeoClue2-Client.Active">"Active"</link>.
@@ -1349,15 +1343,12 @@ export namespace Geoclue {
         // Signals
         /** @signal */
         connect<K extends keyof LocationProxy.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, LocationProxy.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof LocationProxy.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, LocationProxy.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof LocationProxy.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<LocationProxy.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof LocationProxy.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<LocationProxy.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -1890,15 +1881,12 @@ export namespace Geoclue {
         // Signals
         /** @signal */
         connect<K extends keyof LocationSkeleton.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, LocationSkeleton.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof LocationSkeleton.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, LocationSkeleton.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof LocationSkeleton.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<LocationSkeleton.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof LocationSkeleton.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<LocationSkeleton.SignalSignatures[K]>): void;
 
         /**
          * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-GeoClue2-Location.Accuracy">"Accuracy"</link>.
@@ -2114,15 +2102,12 @@ export namespace Geoclue {
         // Signals
         /** @signal */
         connect<K extends keyof ManagerProxy.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ManagerProxy.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ManagerProxy.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ManagerProxy.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ManagerProxy.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ManagerProxy.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ManagerProxy.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ManagerProxy.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -2882,15 +2867,12 @@ export namespace Geoclue {
         // Signals
         /** @signal */
         connect<K extends keyof ManagerSkeleton.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ManagerSkeleton.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ManagerSkeleton.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ManagerSkeleton.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ManagerSkeleton.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ManagerSkeleton.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ManagerSkeleton.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ManagerSkeleton.SignalSignatures[K]>): void;
 
         /**
          * Represents the D-Bus property <link linkend="gdbus-property-org-freedesktop-GeoClue2-Manager.AvailableAccuracyLevel">"AvailableAccuracyLevel"</link>.
@@ -3424,15 +3406,12 @@ export namespace Geoclue {
         // Signals
         /** @signal */
         connect<K extends keyof Simple.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Simple.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Simple.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Simple.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Simple.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Simple.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Simple.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Simple.SignalSignatures[K]>): void;
 
         // Static methods
         /**

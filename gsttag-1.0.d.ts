@@ -1065,15 +1065,12 @@ export namespace GstTag {
         // Signals
         /** @signal */
         connect<K extends keyof TagDemux.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TagDemux.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof TagDemux.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TagDemux.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof TagDemux.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TagDemux.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof TagDemux.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TagDemux.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -1166,15 +1163,12 @@ export namespace GstTag {
         // Signals
         /** @signal */
         connect<K extends keyof TagMux.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TagMux.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof TagMux.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TagMux.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof TagMux.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TagMux.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof TagMux.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TagMux.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**

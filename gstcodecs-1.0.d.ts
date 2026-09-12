@@ -479,15 +479,12 @@ export namespace GstCodecs {
         // Signals
         /** @signal */
         connect<K extends keyof AV1Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AV1Decoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AV1Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AV1Decoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AV1Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AV1Decoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AV1Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AV1Decoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -618,15 +615,12 @@ export namespace GstCodecs {
         // Signals
         /** @signal */
         connect<K extends keyof H264Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, H264Decoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof H264Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, H264Decoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof H264Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<H264Decoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof H264Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<H264Decoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -764,15 +758,12 @@ export namespace GstCodecs {
         // Signals
         /** @signal */
         connect<K extends keyof H265Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, H265Decoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof H265Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, H265Decoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof H265Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<H265Decoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof H265Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<H265Decoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -893,15 +884,12 @@ export namespace GstCodecs {
         // Signals
         /** @signal */
         connect<K extends keyof H266Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, H266Decoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof H266Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, H266Decoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof H266Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<H266Decoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof H266Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<H266Decoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -1005,15 +993,12 @@ export namespace GstCodecs {
         // Signals
         /** @signal */
         connect<K extends keyof Mpeg2Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Mpeg2Decoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Mpeg2Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Mpeg2Decoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Mpeg2Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Mpeg2Decoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Mpeg2Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Mpeg2Decoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -1131,15 +1116,12 @@ export namespace GstCodecs {
         // Signals
         /** @signal */
         connect<K extends keyof Vp8Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Vp8Decoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Vp8Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Vp8Decoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Vp8Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Vp8Decoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Vp8Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Vp8Decoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -1235,15 +1217,12 @@ export namespace GstCodecs {
         // Signals
         /** @signal */
         connect<K extends keyof Vp9Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Vp9Decoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Vp9Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Vp9Decoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Vp9Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Vp9Decoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Vp9Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Vp9Decoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
