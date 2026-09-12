@@ -937,15 +937,12 @@ export namespace GstWebRTC {
         // Signals
         /** @signal */
         connect<K extends keyof WebRTCDTLSTransport.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCDTLSTransport.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebRTCDTLSTransport.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCDTLSTransport.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebRTCDTLSTransport.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCDTLSTransport.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebRTCDTLSTransport.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCDTLSTransport.SignalSignatures[K]>): void;
     }
 
 
@@ -1157,15 +1154,12 @@ export namespace GstWebRTC {
         // Signals
         /** @signal */
         connect<K extends keyof WebRTCDataChannel.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCDataChannel.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebRTCDataChannel.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCDataChannel.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebRTCDataChannel.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCDataChannel.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebRTCDataChannel.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCDataChannel.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -1300,15 +1294,12 @@ export namespace GstWebRTC {
         // Signals
         /** @signal */
         connect<K extends keyof WebRTCICE.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCICE.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebRTCICE.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCICE.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebRTCICE.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCICE.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebRTCICE.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCICE.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -1680,15 +1671,12 @@ export namespace GstWebRTC {
         // Signals
         /** @signal */
         connect<K extends keyof WebRTCICEStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCICEStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebRTCICEStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCICEStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebRTCICEStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCICEStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebRTCICEStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCICEStream.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -1804,15 +1792,12 @@ export namespace GstWebRTC {
         // Signals
         /** @signal */
         connect<K extends keyof WebRTCICETransport.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCICETransport.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebRTCICETransport.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCICETransport.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebRTCICETransport.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCICETransport.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebRTCICETransport.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCICETransport.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -1906,15 +1891,12 @@ export namespace GstWebRTC {
         // Signals
         /** @signal */
         connect<K extends keyof WebRTCRTPReceiver.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCRTPReceiver.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebRTCRTPReceiver.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCRTPReceiver.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebRTCRTPReceiver.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCRTPReceiver.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebRTCRTPReceiver.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCRTPReceiver.SignalSignatures[K]>): void;
     }
 
 
@@ -1976,15 +1958,12 @@ export namespace GstWebRTC {
         // Signals
         /** @signal */
         connect<K extends keyof WebRTCRTPSender.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCRTPSender.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebRTCRTPSender.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCRTPSender.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebRTCRTPSender.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCRTPSender.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebRTCRTPSender.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCRTPSender.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -2134,15 +2113,12 @@ export namespace GstWebRTC {
         // Signals
         /** @signal */
         connect<K extends keyof WebRTCRTPTransceiver.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCRTPTransceiver.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebRTCRTPTransceiver.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCRTPTransceiver.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebRTCRTPTransceiver.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCRTPTransceiver.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebRTCRTPTransceiver.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCRTPTransceiver.SignalSignatures[K]>): void;
     }
 
 
@@ -2227,15 +2203,12 @@ export namespace GstWebRTC {
         // Signals
         /** @signal */
         connect<K extends keyof WebRTCSCTPTransport.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCSCTPTransport.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebRTCSCTPTransport.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebRTCSCTPTransport.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebRTCSCTPTransport.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCSCTPTransport.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebRTCSCTPTransport.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebRTCSCTPTransport.SignalSignatures[K]>): void;
     }
 
 

@@ -5174,15 +5174,12 @@ export namespace GstVideo {
         // Signals
         /** @signal */
         connect<K extends keyof ColorBalanceChannel.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ColorBalanceChannel.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ColorBalanceChannel.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ColorBalanceChannel.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ColorBalanceChannel.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ColorBalanceChannel.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ColorBalanceChannel.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ColorBalanceChannel.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -5273,15 +5270,12 @@ export namespace GstVideo {
         // Signals
         /** @signal */
         connect<K extends keyof VideoAggregator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoAggregator.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VideoAggregator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoAggregator.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VideoAggregator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoAggregator.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VideoAggregator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoAggregator.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -5395,15 +5389,12 @@ export namespace GstVideo {
         // Signals
         /** @signal */
         connect<K extends keyof VideoAggregatorConvertPad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoAggregatorConvertPad.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VideoAggregatorConvertPad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoAggregatorConvertPad.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VideoAggregatorConvertPad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoAggregatorConvertPad.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VideoAggregatorConvertPad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoAggregatorConvertPad.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -5505,15 +5496,12 @@ export namespace GstVideo {
         // Signals
         /** @signal */
         connect<K extends keyof VideoAggregatorPad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoAggregatorPad.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VideoAggregatorPad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoAggregatorPad.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VideoAggregatorPad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoAggregatorPad.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VideoAggregatorPad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoAggregatorPad.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -5660,15 +5648,12 @@ export namespace GstVideo {
         // Signals
         /** @signal */
         connect<K extends keyof VideoAggregatorParallelConvertPad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoAggregatorParallelConvertPad.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VideoAggregatorParallelConvertPad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoAggregatorParallelConvertPad.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VideoAggregatorParallelConvertPad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoAggregatorParallelConvertPad.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VideoAggregatorParallelConvertPad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoAggregatorParallelConvertPad.SignalSignatures[K]>): void;
     }
 
 
@@ -5711,15 +5696,12 @@ export namespace GstVideo {
         // Signals
         /** @signal */
         connect<K extends keyof VideoBufferPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoBufferPool.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VideoBufferPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoBufferPool.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VideoBufferPool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoBufferPool.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VideoBufferPool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoBufferPool.SignalSignatures[K]>): void;
     }
 
 
@@ -6005,15 +5987,12 @@ export namespace GstVideo {
         // Signals
         /** @signal */
         connect<K extends keyof VideoDecoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoDecoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VideoDecoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoDecoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VideoDecoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoDecoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VideoDecoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoDecoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -6682,15 +6661,12 @@ export namespace GstVideo {
         // Signals
         /** @signal */
         connect<K extends keyof VideoDmabufPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoDmabufPool.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VideoDmabufPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoDmabufPool.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VideoDmabufPool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoDmabufPool.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VideoDmabufPool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoDmabufPool.SignalSignatures[K]>): void;
     }
 
 
@@ -6817,15 +6793,12 @@ export namespace GstVideo {
         // Signals
         /** @signal */
         connect<K extends keyof VideoEncoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoEncoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VideoEncoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoEncoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VideoEncoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoEncoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VideoEncoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoEncoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -7464,15 +7437,12 @@ export namespace GstVideo {
         // Signals
         /** @signal */
         connect<K extends keyof VideoFilter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoFilter.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VideoFilter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoFilter.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VideoFilter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoFilter.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VideoFilter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoFilter.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -7520,15 +7490,12 @@ export namespace GstVideo {
         // Signals
         /** @signal */
         connect<K extends keyof VideoMultiviewFlagsSet.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoMultiviewFlagsSet.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VideoMultiviewFlagsSet.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoMultiviewFlagsSet.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VideoMultiviewFlagsSet.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoMultiviewFlagsSet.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VideoMultiviewFlagsSet.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoMultiviewFlagsSet.SignalSignatures[K]>): void;
     }
 
 
@@ -7612,15 +7579,12 @@ export namespace GstVideo {
         // Signals
         /** @signal */
         connect<K extends keyof VideoSink.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoSink.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VideoSink.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VideoSink.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VideoSink.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoSink.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VideoSink.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VideoSink.SignalSignatures[K]>): void;
 
         // Static methods
         /**

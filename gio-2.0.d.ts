@@ -7487,15 +7487,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof AppInfoMonitor.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AppInfoMonitor.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AppInfoMonitor.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AppInfoMonitor.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AppInfoMonitor.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AppInfoMonitor.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AppInfoMonitor.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AppInfoMonitor.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -7620,15 +7617,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof AppLaunchContext.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AppLaunchContext.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AppLaunchContext.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AppLaunchContext.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AppLaunchContext.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AppLaunchContext.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AppLaunchContext.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AppLaunchContext.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -8165,15 +8159,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof Application.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Application.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Application.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Application.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Application.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Application.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Application.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Application.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -9917,15 +9908,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof ApplicationCommandLine.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ApplicationCommandLine.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ApplicationCommandLine.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ApplicationCommandLine.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ApplicationCommandLine.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ApplicationCommandLine.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ApplicationCommandLine.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ApplicationCommandLine.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -10283,15 +10271,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof BufferedInputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, BufferedInputStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof BufferedInputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, BufferedInputStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof BufferedInputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<BufferedInputStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof BufferedInputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<BufferedInputStream.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -10693,15 +10678,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof BufferedOutputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, BufferedOutputStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof BufferedOutputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, BufferedOutputStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof BufferedOutputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<BufferedOutputStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof BufferedOutputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<BufferedOutputStream.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -10896,15 +10878,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof BytesIcon.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, BytesIcon.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof BytesIcon.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, BytesIcon.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof BytesIcon.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<BytesIcon.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof BytesIcon.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<BytesIcon.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -11165,15 +11144,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof Cancellable.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Cancellable.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Cancellable.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Cancellable.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Cancellable.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Cancellable.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Cancellable.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Cancellable.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -11515,15 +11491,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof CharsetConverter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, CharsetConverter.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof CharsetConverter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, CharsetConverter.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof CharsetConverter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<CharsetConverter.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof CharsetConverter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<CharsetConverter.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -11900,15 +11873,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof ConverterInputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ConverterInputStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ConverterInputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ConverterInputStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ConverterInputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ConverterInputStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ConverterInputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ConverterInputStream.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -12107,15 +12077,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof ConverterOutputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ConverterOutputStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ConverterOutputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ConverterOutputStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ConverterOutputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ConverterOutputStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ConverterOutputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ConverterOutputStream.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -12396,15 +12363,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof Credentials.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Credentials.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Credentials.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Credentials.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Credentials.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Credentials.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Credentials.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Credentials.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -12524,15 +12488,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DBusActionGroup.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusActionGroup.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DBusActionGroup.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusActionGroup.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DBusActionGroup.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusActionGroup.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DBusActionGroup.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusActionGroup.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -13231,15 +13192,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DBusAuthObserver.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusAuthObserver.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DBusAuthObserver.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusAuthObserver.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DBusAuthObserver.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusAuthObserver.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DBusAuthObserver.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusAuthObserver.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -13537,15 +13495,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DBusConnection.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusConnection.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DBusConnection.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusConnection.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DBusConnection.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusConnection.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DBusConnection.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusConnection.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -15259,15 +15214,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DBusInterfaceSkeleton.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusInterfaceSkeleton.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DBusInterfaceSkeleton.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusInterfaceSkeleton.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DBusInterfaceSkeleton.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusInterfaceSkeleton.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DBusInterfaceSkeleton.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusInterfaceSkeleton.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -15514,15 +15466,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DBusMenuModel.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusMenuModel.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DBusMenuModel.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusMenuModel.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DBusMenuModel.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusMenuModel.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DBusMenuModel.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusMenuModel.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -15596,15 +15545,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DBusMessage.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusMessage.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DBusMessage.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusMessage.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DBusMessage.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusMessage.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DBusMessage.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusMessage.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -16080,15 +16026,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DBusMethodInvocation.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusMethodInvocation.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DBusMethodInvocation.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusMethodInvocation.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DBusMethodInvocation.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusMethodInvocation.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DBusMethodInvocation.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusMethodInvocation.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -16588,15 +16531,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DBusObjectManagerClient.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusObjectManagerClient.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DBusObjectManagerClient.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusObjectManagerClient.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DBusObjectManagerClient.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusObjectManagerClient.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DBusObjectManagerClient.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusObjectManagerClient.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -17173,15 +17113,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DBusObjectManagerServer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusObjectManagerServer.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DBusObjectManagerServer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusObjectManagerServer.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DBusObjectManagerServer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusObjectManagerServer.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DBusObjectManagerServer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusObjectManagerServer.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -17417,15 +17354,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DBusObjectProxy.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusObjectProxy.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DBusObjectProxy.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusObjectProxy.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DBusObjectProxy.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusObjectProxy.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DBusObjectProxy.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusObjectProxy.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -17572,15 +17506,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DBusObjectSkeleton.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusObjectSkeleton.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DBusObjectSkeleton.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusObjectSkeleton.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DBusObjectSkeleton.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusObjectSkeleton.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DBusObjectSkeleton.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusObjectSkeleton.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -18172,15 +18103,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DBusProxy.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusProxy.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DBusProxy.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusProxy.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DBusProxy.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusProxy.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DBusProxy.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusProxy.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -19235,15 +19163,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DBusServer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusServer.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DBusServer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusServer.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DBusServer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusServer.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DBusServer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusServer.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -19464,15 +19389,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DataInputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DataInputStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DataInputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DataInputStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DataInputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DataInputStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DataInputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DataInputStream.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -20075,15 +19997,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DataOutputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DataOutputStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DataOutputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DataOutputStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DataOutputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DataOutputStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DataOutputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DataOutputStream.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -20472,15 +20391,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DebugControllerDBus.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DebugControllerDBus.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DebugControllerDBus.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DebugControllerDBus.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DebugControllerDBus.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DebugControllerDBus.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DebugControllerDBus.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DebugControllerDBus.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -20702,15 +20618,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof Emblem.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Emblem.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Emblem.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Emblem.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Emblem.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Emblem.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Emblem.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Emblem.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -20858,15 +20771,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof EmblemedIcon.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, EmblemedIcon.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof EmblemedIcon.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, EmblemedIcon.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof EmblemedIcon.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<EmblemedIcon.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof EmblemedIcon.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<EmblemedIcon.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -21089,15 +20999,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof FileEnumerator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileEnumerator.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FileEnumerator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileEnumerator.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FileEnumerator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileEnumerator.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FileEnumerator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileEnumerator.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -21702,15 +21609,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof FileIOStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileIOStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FileIOStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileIOStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FileIOStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileIOStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FileIOStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileIOStream.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -22001,15 +21905,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof FileIcon.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileIcon.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FileIcon.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileIcon.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FileIcon.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileIcon.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FileIcon.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileIcon.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -22241,15 +22142,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof FileInfo.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileInfo.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FileInfo.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileInfo.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FileInfo.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileInfo.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FileInfo.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileInfo.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -22931,15 +22829,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof FileInputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileInputStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FileInputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileInputStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FileInputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileInputStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FileInputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileInputStream.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -23267,15 +23162,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof FileMonitor.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileMonitor.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FileMonitor.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileMonitor.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FileMonitor.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileMonitor.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FileMonitor.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileMonitor.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -23373,15 +23265,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof FileOutputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileOutputStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FileOutputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileOutputStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FileOutputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileOutputStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FileOutputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileOutputStream.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -23657,15 +23546,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof FilenameCompleter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FilenameCompleter.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FilenameCompleter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FilenameCompleter.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FilenameCompleter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FilenameCompleter.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FilenameCompleter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FilenameCompleter.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -23775,15 +23661,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof FilterInputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FilterInputStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FilterInputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FilterInputStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FilterInputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FilterInputStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FilterInputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FilterInputStream.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -23877,15 +23760,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof FilterOutputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FilterOutputStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FilterOutputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FilterOutputStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FilterOutputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FilterOutputStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FilterOutputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FilterOutputStream.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -23945,15 +23825,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof IOModule.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, IOModule.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof IOModule.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, IOModule.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof IOModule.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<IOModule.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof IOModule.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<IOModule.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -24161,15 +24038,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof IOStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, IOStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof IOStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, IOStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof IOStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<IOStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof IOStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<IOStream.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -24450,15 +24324,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof IPTosMessage.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, IPTosMessage.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof IPTosMessage.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, IPTosMessage.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof IPTosMessage.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<IPTosMessage.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof IPTosMessage.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<IPTosMessage.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -24525,15 +24396,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof IPv6TclassMessage.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, IPv6TclassMessage.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof IPv6TclassMessage.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, IPv6TclassMessage.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof IPv6TclassMessage.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<IPv6TclassMessage.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof IPv6TclassMessage.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<IPv6TclassMessage.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -24867,15 +24735,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof InetAddress.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, InetAddress.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof InetAddress.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, InetAddress.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof InetAddress.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<InetAddress.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof InetAddress.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<InetAddress.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -25079,15 +24944,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof InetAddressMask.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, InetAddressMask.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof InetAddressMask.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, InetAddressMask.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof InetAddressMask.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<InetAddressMask.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof InetAddressMask.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<InetAddressMask.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -25325,15 +25187,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof InetSocketAddress.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, InetSocketAddress.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof InetSocketAddress.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, InetSocketAddress.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof InetSocketAddress.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<InetSocketAddress.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof InetSocketAddress.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<InetSocketAddress.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -25482,15 +25341,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof InputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, InputStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof InputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, InputStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof InputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<InputStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof InputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<InputStream.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -26355,15 +26211,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof ListStore.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ListStore.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ListStore.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ListStore.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ListStore.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ListStore.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ListStore.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ListStore.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -26652,15 +26505,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof MemoryInputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MemoryInputStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof MemoryInputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MemoryInputStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof MemoryInputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MemoryInputStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof MemoryInputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MemoryInputStream.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -27009,15 +26859,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof MemoryOutputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MemoryOutputStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof MemoryOutputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MemoryOutputStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof MemoryOutputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MemoryOutputStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof MemoryOutputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MemoryOutputStream.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -27437,15 +27284,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof Menu.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Menu.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Menu.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Menu.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Menu.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Menu.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Menu.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Menu.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -27654,15 +27498,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof MenuAttributeIter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MenuAttributeIter.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof MenuAttributeIter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MenuAttributeIter.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof MenuAttributeIter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MenuAttributeIter.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof MenuAttributeIter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MenuAttributeIter.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -27786,15 +27627,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof MenuItem.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MenuItem.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof MenuItem.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MenuItem.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof MenuItem.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MenuItem.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof MenuItem.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MenuItem.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -28011,15 +27849,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof MenuLinkIter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MenuLinkIter.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof MenuLinkIter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MenuLinkIter.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof MenuLinkIter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MenuLinkIter.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof MenuLinkIter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MenuLinkIter.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -28275,15 +28110,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof MenuModel.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MenuModel.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof MenuModel.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MenuModel.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof MenuModel.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MenuModel.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof MenuModel.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MenuModel.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -28730,15 +28562,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof MountOperation.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MountOperation.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof MountOperation.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MountOperation.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof MountOperation.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MountOperation.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof MountOperation.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MountOperation.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -28954,15 +28783,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof NativeSocketAddress.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, NativeSocketAddress.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof NativeSocketAddress.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, NativeSocketAddress.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof NativeSocketAddress.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<NativeSocketAddress.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof NativeSocketAddress.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<NativeSocketAddress.SignalSignatures[K]>): void;
 
         /**
          * Creates a {@link Gio.SocketAddressEnumerator} for `connectable`.
@@ -29063,15 +28889,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof NativeVolumeMonitor.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, NativeVolumeMonitor.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof NativeVolumeMonitor.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, NativeVolumeMonitor.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof NativeVolumeMonitor.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<NativeVolumeMonitor.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof NativeVolumeMonitor.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<NativeVolumeMonitor.SignalSignatures[K]>): void;
     }
 
 
@@ -29153,15 +28976,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof NetworkAddress.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, NetworkAddress.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof NetworkAddress.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, NetworkAddress.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof NetworkAddress.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<NetworkAddress.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof NetworkAddress.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<NetworkAddress.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -29381,15 +29201,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof NetworkService.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, NetworkService.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof NetworkService.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, NetworkService.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof NetworkService.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<NetworkService.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof NetworkService.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<NetworkService.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -29580,15 +29397,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof Notification.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Notification.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Notification.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Notification.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Notification.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Notification.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Notification.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Notification.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -29750,15 +29564,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof OutputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, OutputStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof OutputStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, OutputStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof OutputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<OutputStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof OutputStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<OutputStream.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -31034,15 +30845,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof Permission.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Permission.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Permission.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Permission.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Permission.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Permission.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Permission.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Permission.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -31538,15 +31346,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof PropertyAction.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, PropertyAction.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof PropertyAction.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, PropertyAction.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof PropertyAction.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<PropertyAction.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof PropertyAction.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<PropertyAction.SignalSignatures[K]>): void;
 
         /**
          * Activates the action.
@@ -31932,15 +31737,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof ProxyAddress.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ProxyAddress.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ProxyAddress.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ProxyAddress.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ProxyAddress.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ProxyAddress.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ProxyAddress.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ProxyAddress.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -32098,15 +31900,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof ProxyAddressEnumerator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ProxyAddressEnumerator.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ProxyAddressEnumerator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ProxyAddressEnumerator.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ProxyAddressEnumerator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ProxyAddressEnumerator.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ProxyAddressEnumerator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ProxyAddressEnumerator.SignalSignatures[K]>): void;
     }
 
 
@@ -32189,15 +31988,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof Resolver.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Resolver.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Resolver.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Resolver.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Resolver.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Resolver.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Resolver.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Resolver.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -33680,15 +33476,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof Settings.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Settings.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Settings.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Settings.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Settings.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Settings.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Settings.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Settings.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -34434,15 +34227,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof SettingsBackend.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SettingsBackend.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SettingsBackend.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SettingsBackend.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SettingsBackend.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SettingsBackend.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SettingsBackend.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SettingsBackend.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -34836,15 +34626,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof SimpleAction.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SimpleAction.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SimpleAction.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SimpleAction.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SimpleAction.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SimpleAction.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SimpleAction.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SimpleAction.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -35161,15 +34948,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof SimpleActionGroup.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SimpleActionGroup.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SimpleActionGroup.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SimpleActionGroup.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SimpleActionGroup.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SimpleActionGroup.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SimpleActionGroup.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SimpleActionGroup.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -36008,15 +35792,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof SimpleAsyncResult.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SimpleAsyncResult.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SimpleAsyncResult.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SimpleAsyncResult.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SimpleAsyncResult.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SimpleAsyncResult.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SimpleAsyncResult.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SimpleAsyncResult.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -36290,15 +36071,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof SimpleIOStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SimpleIOStream.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SimpleIOStream.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SimpleIOStream.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SimpleIOStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SimpleIOStream.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SimpleIOStream.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SimpleIOStream.SignalSignatures[K]>): void;
     }
 
 
@@ -36345,15 +36123,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof SimplePermission.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SimplePermission.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SimplePermission.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SimplePermission.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SimplePermission.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SimplePermission.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SimplePermission.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SimplePermission.SignalSignatures[K]>): void;
     }
 
 
@@ -36510,15 +36285,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof SimpleProxyResolver.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SimpleProxyResolver.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SimpleProxyResolver.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SimpleProxyResolver.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SimpleProxyResolver.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SimpleProxyResolver.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SimpleProxyResolver.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SimpleProxyResolver.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -36989,15 +36761,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof Socket.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Socket.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Socket.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Socket.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Socket.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Socket.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Socket.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Socket.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -38446,15 +38215,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof SocketAddress.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SocketAddress.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SocketAddress.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SocketAddress.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SocketAddress.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SocketAddress.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SocketAddress.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SocketAddress.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -38633,15 +38399,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof SocketAddressEnumerator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SocketAddressEnumerator.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SocketAddressEnumerator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SocketAddressEnumerator.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SocketAddressEnumerator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SocketAddressEnumerator.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SocketAddressEnumerator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SocketAddressEnumerator.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -39008,15 +38771,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof SocketClient.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SocketClient.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SocketClient.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SocketClient.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SocketClient.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SocketClient.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SocketClient.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SocketClient.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -39665,15 +39425,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof SocketConnection.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SocketConnection.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SocketConnection.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SocketConnection.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SocketConnection.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SocketConnection.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SocketConnection.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SocketConnection.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -39873,15 +39630,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof SocketControlMessage.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SocketControlMessage.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SocketControlMessage.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SocketControlMessage.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SocketControlMessage.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SocketControlMessage.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SocketControlMessage.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SocketControlMessage.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -40055,15 +39809,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof SocketListener.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SocketListener.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SocketListener.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SocketListener.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SocketListener.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SocketListener.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SocketListener.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SocketListener.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -40429,15 +40180,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof SocketService.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SocketService.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SocketService.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SocketService.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SocketService.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SocketService.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SocketService.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SocketService.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -40612,15 +40360,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof Subprocess.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Subprocess.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Subprocess.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Subprocess.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Subprocess.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Subprocess.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Subprocess.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Subprocess.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -41153,15 +40898,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof SubprocessLauncher.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SubprocessLauncher.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SubprocessLauncher.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SubprocessLauncher.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SubprocessLauncher.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SubprocessLauncher.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SubprocessLauncher.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SubprocessLauncher.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -42006,15 +41748,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof Task.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Task.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Task.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Task.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Task.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Task.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Task.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Task.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -42572,11 +42311,9 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect_after<K extends keyof TcpConnection.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TcpConnection.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof TcpConnection.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TcpConnection.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof TcpConnection.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TcpConnection.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -42669,11 +42406,9 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect_after<K extends keyof TcpWrapperConnection.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TcpWrapperConnection.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof TcpWrapperConnection.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TcpWrapperConnection.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof TcpWrapperConnection.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TcpWrapperConnection.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -42810,15 +42545,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof TestDBus.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TestDBus.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof TestDBus.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TestDBus.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof TestDBus.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TestDBus.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof TestDBus.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TestDBus.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -43001,15 +42733,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof ThemedIcon.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ThemedIcon.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ThemedIcon.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ThemedIcon.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ThemedIcon.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ThemedIcon.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ThemedIcon.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ThemedIcon.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -43153,15 +42882,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof ThreadedResolver.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ThreadedResolver.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ThreadedResolver.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ThreadedResolver.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ThreadedResolver.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ThreadedResolver.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ThreadedResolver.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ThreadedResolver.SignalSignatures[K]>): void;
     }
 
 
@@ -43251,15 +42977,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof ThreadedSocketService.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ThreadedSocketService.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ThreadedSocketService.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ThreadedSocketService.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ThreadedSocketService.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ThreadedSocketService.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ThreadedSocketService.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ThreadedSocketService.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -43680,15 +43403,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof TlsCertificate.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TlsCertificate.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof TlsCertificate.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TlsCertificate.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof TlsCertificate.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TlsCertificate.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof TlsCertificate.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TlsCertificate.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -44231,15 +43951,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof TlsConnection.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TlsConnection.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof TlsConnection.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TlsConnection.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof TlsConnection.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TlsConnection.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof TlsConnection.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TlsConnection.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -44716,15 +44433,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof TlsDatabase.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TlsDatabase.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof TlsDatabase.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TlsDatabase.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof TlsDatabase.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TlsDatabase.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof TlsDatabase.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TlsDatabase.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -45412,15 +45126,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof TlsInteraction.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TlsInteraction.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof TlsInteraction.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TlsInteraction.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof TlsInteraction.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TlsInteraction.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof TlsInteraction.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TlsInteraction.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -45875,15 +45586,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof TlsPassword.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TlsPassword.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof TlsPassword.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TlsPassword.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof TlsPassword.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TlsPassword.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof TlsPassword.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TlsPassword.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -46057,11 +45765,9 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect_after<K extends keyof UnixConnection.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UnixConnection.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof UnixConnection.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UnixConnection.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof UnixConnection.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UnixConnection.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -46319,15 +46025,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof UnixCredentialsMessage.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UnixCredentialsMessage.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof UnixCredentialsMessage.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UnixCredentialsMessage.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof UnixCredentialsMessage.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UnixCredentialsMessage.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof UnixCredentialsMessage.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UnixCredentialsMessage.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -46395,15 +46098,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof UnixFDList.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UnixFDList.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof UnixFDList.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UnixFDList.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof UnixFDList.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UnixFDList.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof UnixFDList.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UnixFDList.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -46665,15 +46365,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof UnixSocketAddress.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UnixSocketAddress.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof UnixSocketAddress.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UnixSocketAddress.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof UnixSocketAddress.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UnixSocketAddress.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof UnixSocketAddress.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UnixSocketAddress.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -46819,15 +46516,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof Vfs.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Vfs.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Vfs.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Vfs.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Vfs.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Vfs.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Vfs.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Vfs.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -47119,15 +46813,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof VolumeMonitor.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VolumeMonitor.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VolumeMonitor.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VolumeMonitor.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VolumeMonitor.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VolumeMonitor.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VolumeMonitor.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VolumeMonitor.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -47438,15 +47129,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof ZlibCompressor.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ZlibCompressor.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ZlibCompressor.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ZlibCompressor.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ZlibCompressor.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ZlibCompressor.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ZlibCompressor.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ZlibCompressor.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -47771,15 +47459,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof ZlibDecompressor.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ZlibDecompressor.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ZlibDecompressor.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ZlibDecompressor.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ZlibDecompressor.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ZlibDecompressor.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ZlibDecompressor.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ZlibDecompressor.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -65964,15 +65649,12 @@ export const _LocalFilePrototype: typeof File.prototype;
         // Signals
         /** @signal */
         connect<K extends keyof DBusExportedObject.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusExportedObject.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DBusExportedObject.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DBusExportedObject.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DBusExportedObject.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusExportedObject.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DBusExportedObject.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DBusExportedObject.SignalSignatures[K]>): void;
 
         // Static methods
         /**

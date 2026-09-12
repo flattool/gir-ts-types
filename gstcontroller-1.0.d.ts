@@ -194,15 +194,12 @@ export namespace GstController {
         // Signals
         /** @signal */
         connect<K extends keyof ARGBControlBinding.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ARGBControlBinding.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ARGBControlBinding.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ARGBControlBinding.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ARGBControlBinding.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ARGBControlBinding.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ARGBControlBinding.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ARGBControlBinding.SignalSignatures[K]>): void;
     }
 
 
@@ -270,15 +267,12 @@ export namespace GstController {
         // Signals
         /** @signal */
         connect<K extends keyof DirectControlBinding.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DirectControlBinding.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DirectControlBinding.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DirectControlBinding.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DirectControlBinding.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DirectControlBinding.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DirectControlBinding.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DirectControlBinding.SignalSignatures[K]>): void;
     }
 
 
@@ -336,15 +330,12 @@ export namespace GstController {
         // Signals
         /** @signal */
         connect<K extends keyof InterpolationControlSource.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, InterpolationControlSource.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof InterpolationControlSource.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, InterpolationControlSource.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof InterpolationControlSource.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<InterpolationControlSource.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof InterpolationControlSource.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<InterpolationControlSource.SignalSignatures[K]>): void;
     }
 
 
@@ -445,15 +436,12 @@ export namespace GstController {
         // Signals
         /** @signal */
         connect<K extends keyof LFOControlSource.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, LFOControlSource.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof LFOControlSource.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, LFOControlSource.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof LFOControlSource.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<LFOControlSource.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof LFOControlSource.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<LFOControlSource.SignalSignatures[K]>): void;
     }
 
 
@@ -495,15 +483,12 @@ export namespace GstController {
         // Signals
         /** @signal */
         connect<K extends keyof ProxyControlBinding.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ProxyControlBinding.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ProxyControlBinding.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ProxyControlBinding.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ProxyControlBinding.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ProxyControlBinding.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ProxyControlBinding.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ProxyControlBinding.SignalSignatures[K]>): void;
     }
 
 
@@ -573,15 +558,12 @@ export namespace GstController {
         // Signals
         /** @signal */
         connect<K extends keyof TimedValueControlSource.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TimedValueControlSource.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof TimedValueControlSource.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TimedValueControlSource.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof TimedValueControlSource.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TimedValueControlSource.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof TimedValueControlSource.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TimedValueControlSource.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -708,15 +690,12 @@ export namespace GstController {
         // Signals
         /** @signal */
         connect<K extends keyof TriggerControlSource.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TriggerControlSource.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof TriggerControlSource.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TriggerControlSource.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof TriggerControlSource.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TriggerControlSource.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof TriggerControlSource.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TriggerControlSource.SignalSignatures[K]>): void;
     }
 
 
