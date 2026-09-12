@@ -880,15 +880,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanBufferMemoryAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanBufferMemoryAllocator.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanBufferMemoryAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanBufferMemoryAllocator.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanBufferMemoryAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanBufferMemoryAllocator.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanBufferMemoryAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanBufferMemoryAllocator.SignalSignatures[K]>): void;
     }
 
 
@@ -938,15 +935,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanBufferPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanBufferPool.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanBufferPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanBufferPool.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanBufferPool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanBufferPool.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanBufferPool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanBufferPool.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -998,15 +992,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanCommandPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanCommandPool.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanCommandPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanCommandPool.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanCommandPool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanCommandPool.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanCommandPool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanCommandPool.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -1082,15 +1073,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanDescriptorCache.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanDescriptorCache.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanDescriptorCache.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanDescriptorCache.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanDescriptorCache.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanDescriptorCache.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanDescriptorCache.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanDescriptorCache.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -1148,15 +1136,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanDescriptorPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanDescriptorPool.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanDescriptorPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanDescriptorPool.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanDescriptorPool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanDescriptorPool.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanDescriptorPool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanDescriptorPool.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -1242,15 +1227,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanDevice.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanDevice.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanDevice.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanDevice.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanDevice.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanDevice.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanDevice.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanDevice.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -1417,15 +1399,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanDisplay.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanDisplay.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanDisplay.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanDisplay.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanDisplay.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanDisplay.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanDisplay.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanDisplay.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -1550,15 +1529,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanFenceCache.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanFenceCache.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanFenceCache.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanFenceCache.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanFenceCache.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanFenceCache.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanFenceCache.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanFenceCache.SignalSignatures[K]>): void;
     }
 
 
@@ -1608,15 +1584,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanFullScreenQuad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanFullScreenQuad.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanFullScreenQuad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanFullScreenQuad.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanFullScreenQuad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanFullScreenQuad.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanFullScreenQuad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanFullScreenQuad.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -1807,15 +1780,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanHandlePool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanHandlePool.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanHandlePool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanHandlePool.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanHandlePool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanHandlePool.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanHandlePool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanHandlePool.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -1907,15 +1877,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanImageBufferPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanImageBufferPool.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanImageBufferPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanImageBufferPool.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanImageBufferPool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanImageBufferPool.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanImageBufferPool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanImageBufferPool.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -1997,15 +1964,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanImageMemoryAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanImageMemoryAllocator.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanImageMemoryAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanImageMemoryAllocator.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanImageMemoryAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanImageMemoryAllocator.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanImageMemoryAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanImageMemoryAllocator.SignalSignatures[K]>): void;
     }
 
 
@@ -2093,15 +2057,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanInstance.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanInstance.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanInstance.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanInstance.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanInstance.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanInstance.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanInstance.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanInstance.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -2313,15 +2274,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanMemoryAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanMemoryAllocator.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanMemoryAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanMemoryAllocator.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanMemoryAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanMemoryAllocator.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanMemoryAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanMemoryAllocator.SignalSignatures[K]>): void;
     }
 
 
@@ -2381,15 +2339,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanOperation.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanOperation.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanOperation.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanOperation.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanOperation.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanOperation.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanOperation.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanOperation.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -2607,15 +2562,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanPhysicalDevice.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanPhysicalDevice.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanPhysicalDevice.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanPhysicalDevice.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanPhysicalDevice.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanPhysicalDevice.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanPhysicalDevice.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanPhysicalDevice.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -2717,15 +2669,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanQueue.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanQueue.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanQueue.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanQueue.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanQueue.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanQueue.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanQueue.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanQueue.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -2864,15 +2813,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanSwapper.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanSwapper.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanSwapper.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanSwapper.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanSwapper.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanSwapper.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanSwapper.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanSwapper.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -2942,15 +2888,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanTrashFenceList.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanTrashFenceList.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanTrashFenceList.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanTrashFenceList.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanTrashFenceList.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanTrashFenceList.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanTrashFenceList.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanTrashFenceList.SignalSignatures[K]>): void;
     }
 
 
@@ -2989,15 +2932,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanTrashList.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanTrashList.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanTrashList.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanTrashList.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanTrashList.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanTrashList.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanTrashList.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanTrashList.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -3101,15 +3041,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanVideoFilter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanVideoFilter.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanVideoFilter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanVideoFilter.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanVideoFilter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanVideoFilter.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanVideoFilter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanVideoFilter.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -3209,15 +3146,12 @@ export namespace GstVulkan {
         // Signals
         /** @signal */
         connect<K extends keyof VulkanWindow.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanWindow.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof VulkanWindow.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, VulkanWindow.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof VulkanWindow.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanWindow.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof VulkanWindow.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<VulkanWindow.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**

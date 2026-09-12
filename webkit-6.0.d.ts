@@ -2299,15 +2299,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof AuthenticationRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AuthenticationRequest.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AuthenticationRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AuthenticationRequest.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AuthenticationRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AuthenticationRequest.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AuthenticationRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AuthenticationRequest.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -2544,15 +2541,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof AutomationSession.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AutomationSession.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AutomationSession.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AutomationSession.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AutomationSession.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AutomationSession.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AutomationSession.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AutomationSession.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -2644,15 +2638,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof BackForwardList.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, BackForwardList.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof BackForwardList.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, BackForwardList.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof BackForwardList.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<BackForwardList.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof BackForwardList.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<BackForwardList.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -2749,15 +2740,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof BackForwardListItem.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, BackForwardListItem.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof BackForwardListItem.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, BackForwardListItem.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof BackForwardListItem.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<BackForwardListItem.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof BackForwardListItem.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<BackForwardListItem.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -2826,15 +2814,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof ClipboardPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ClipboardPermissionRequest.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ClipboardPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ClipboardPermissionRequest.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ClipboardPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ClipboardPermissionRequest.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ClipboardPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ClipboardPermissionRequest.SignalSignatures[K]>): void;
 
         /**
          * Allow the action which triggered this request.
@@ -2928,15 +2913,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof ColorChooserRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ColorChooserRequest.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ColorChooserRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ColorChooserRequest.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ColorChooserRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ColorChooserRequest.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ColorChooserRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ColorChooserRequest.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -3031,15 +3013,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof ContextMenu.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ContextMenu.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ContextMenu.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ContextMenu.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ContextMenu.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ContextMenu.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ContextMenu.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ContextMenu.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -3224,15 +3203,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof ContextMenuItem.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ContextMenuItem.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ContextMenuItem.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ContextMenuItem.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ContextMenuItem.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ContextMenuItem.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ContextMenuItem.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ContextMenuItem.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -3335,15 +3311,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof CookieManager.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, CookieManager.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof CookieManager.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, CookieManager.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof CookieManager.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<CookieManager.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof CookieManager.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<CookieManager.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -3698,15 +3671,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof DeviceInfoPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DeviceInfoPermissionRequest.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DeviceInfoPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DeviceInfoPermissionRequest.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DeviceInfoPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DeviceInfoPermissionRequest.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DeviceInfoPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DeviceInfoPermissionRequest.SignalSignatures[K]>): void;
 
         /**
          * Allow the action which triggered this request.
@@ -3890,15 +3860,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof Download.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Download.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Download.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Download.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Download.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Download.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Download.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Download.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -4083,15 +4050,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof EditorState.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, EditorState.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof EditorState.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, EditorState.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof EditorState.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<EditorState.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof EditorState.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<EditorState.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -4197,15 +4161,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof FaviconDatabase.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FaviconDatabase.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FaviconDatabase.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FaviconDatabase.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FaviconDatabase.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FaviconDatabase.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FaviconDatabase.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FaviconDatabase.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -4400,15 +4361,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof FileChooserRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileChooserRequest.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FileChooserRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileChooserRequest.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FileChooserRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileChooserRequest.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FileChooserRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileChooserRequest.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -4608,15 +4566,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof FindController.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FindController.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FindController.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FindController.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FindController.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FindController.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FindController.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FindController.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -4770,15 +4725,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof FormSubmissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FormSubmissionRequest.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FormSubmissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FormSubmissionRequest.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FormSubmissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FormSubmissionRequest.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FormSubmissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FormSubmissionRequest.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -4890,15 +4842,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof GeolocationManager.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GeolocationManager.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GeolocationManager.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GeolocationManager.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GeolocationManager.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GeolocationManager.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GeolocationManager.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GeolocationManager.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -4979,15 +4928,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof GeolocationPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GeolocationPermissionRequest.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GeolocationPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GeolocationPermissionRequest.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GeolocationPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GeolocationPermissionRequest.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GeolocationPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GeolocationPermissionRequest.SignalSignatures[K]>): void;
 
         /**
          * Allow the action which triggered this request.
@@ -5172,15 +5118,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof HitTestResult.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, HitTestResult.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof HitTestResult.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, HitTestResult.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof HitTestResult.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<HitTestResult.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof HitTestResult.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<HitTestResult.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -5387,15 +5330,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof InputMethodContext.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, InputMethodContext.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof InputMethodContext.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, InputMethodContext.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof InputMethodContext.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<InputMethodContext.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof InputMethodContext.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<InputMethodContext.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -5644,15 +5584,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof MediaKeySystemPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MediaKeySystemPermissionRequest.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof MediaKeySystemPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MediaKeySystemPermissionRequest.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof MediaKeySystemPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MediaKeySystemPermissionRequest.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof MediaKeySystemPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MediaKeySystemPermissionRequest.SignalSignatures[K]>): void;
 
         /**
          * Allow the action which triggered this request.
@@ -5734,15 +5671,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof NavigationPolicyDecision.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, NavigationPolicyDecision.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof NavigationPolicyDecision.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, NavigationPolicyDecision.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof NavigationPolicyDecision.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<NavigationPolicyDecision.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof NavigationPolicyDecision.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<NavigationPolicyDecision.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -5858,15 +5792,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof NetworkSession.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, NetworkSession.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof NetworkSession.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, NetworkSession.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof NetworkSession.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<NetworkSession.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof NetworkSession.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<NetworkSession.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -6155,15 +6086,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof Notification.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Notification.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Notification.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Notification.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Notification.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Notification.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Notification.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Notification.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -6251,15 +6179,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof NotificationPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, NotificationPermissionRequest.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof NotificationPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, NotificationPermissionRequest.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof NotificationPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<NotificationPermissionRequest.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof NotificationPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<NotificationPermissionRequest.SignalSignatures[K]>): void;
 
         /**
          * Allow the action which triggered this request.
@@ -6332,15 +6257,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof OptionMenu.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, OptionMenu.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof OptionMenu.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, OptionMenu.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof OptionMenu.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<OptionMenu.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof OptionMenu.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<OptionMenu.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -6445,15 +6367,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof PointerLockPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, PointerLockPermissionRequest.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof PointerLockPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, PointerLockPermissionRequest.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof PointerLockPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<PointerLockPermissionRequest.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof PointerLockPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<PointerLockPermissionRequest.SignalSignatures[K]>): void;
 
         /**
          * Allow the action which triggered this request.
@@ -6521,15 +6440,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof PolicyDecision.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, PolicyDecision.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof PolicyDecision.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, PolicyDecision.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof PolicyDecision.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<PolicyDecision.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof PolicyDecision.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<PolicyDecision.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -6669,15 +6585,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof PrintOperation.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, PrintOperation.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof PrintOperation.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, PrintOperation.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof PrintOperation.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<PrintOperation.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof PrintOperation.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<PrintOperation.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -6818,15 +6731,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof ResponsePolicyDecision.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ResponsePolicyDecision.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ResponsePolicyDecision.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ResponsePolicyDecision.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ResponsePolicyDecision.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ResponsePolicyDecision.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ResponsePolicyDecision.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ResponsePolicyDecision.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -6904,15 +6814,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof SecurityManager.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SecurityManager.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SecurityManager.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SecurityManager.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SecurityManager.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SecurityManager.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SecurityManager.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SecurityManager.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -8373,15 +8280,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof Settings.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Settings.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Settings.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Settings.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Settings.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Settings.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Settings.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Settings.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -9291,15 +9195,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof URIRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, URIRequest.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof URIRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, URIRequest.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof URIRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<URIRequest.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof URIRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<URIRequest.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -9462,15 +9363,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof URIResponse.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, URIResponse.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof URIResponse.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, URIResponse.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof URIResponse.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<URIResponse.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof URIResponse.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<URIResponse.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -9564,15 +9462,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof URISchemeRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, URISchemeRequest.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof URISchemeRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, URISchemeRequest.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof URISchemeRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<URISchemeRequest.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof URISchemeRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<URISchemeRequest.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -9720,15 +9615,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof URISchemeResponse.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, URISchemeResponse.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof URISchemeResponse.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, URISchemeResponse.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof URISchemeResponse.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<URISchemeResponse.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof URISchemeResponse.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<URISchemeResponse.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -9822,15 +9714,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof UserContentFilterStore.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UserContentFilterStore.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof UserContentFilterStore.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UserContentFilterStore.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof UserContentFilterStore.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UserContentFilterStore.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof UserContentFilterStore.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UserContentFilterStore.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -10202,15 +10091,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof UserContentManager.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UserContentManager.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof UserContentManager.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UserContentManager.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof UserContentManager.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UserContentManager.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof UserContentManager.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UserContentManager.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -10458,15 +10344,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof UserMediaPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UserMediaPermissionRequest.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof UserMediaPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UserMediaPermissionRequest.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof UserMediaPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UserMediaPermissionRequest.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof UserMediaPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UserMediaPermissionRequest.SignalSignatures[K]>): void;
 
         /**
          * Allow the action which triggered this request.
@@ -10577,15 +10460,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof UserMessage.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UserMessage.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof UserMessage.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UserMessage.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof UserMessage.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UserMessage.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof UserMessage.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UserMessage.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -10778,15 +10658,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof WebContext.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebContext.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebContext.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebContext.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebContext.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebContext.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebContext.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebContext.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -11456,15 +11333,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof WebExtension.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebExtension.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebExtension.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebExtension.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebExtension.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebExtension.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebExtension.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebExtension.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -11955,15 +11829,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof WebInspector.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebInspector.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebInspector.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebInspector.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebInspector.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebInspector.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebInspector.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebInspector.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -12135,15 +12006,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof WebResource.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebResource.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebResource.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebResource.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebResource.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebResource.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebResource.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebResource.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -13395,15 +13263,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof WebView.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebView.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebView.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebView.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebView.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebView.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebView.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebView.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -14990,15 +14855,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof WebViewBase.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebViewBase.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebViewBase.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebViewBase.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebViewBase.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebViewBase.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebViewBase.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebViewBase.SignalSignatures[K]>): void;
 
         /**
          * The accessible role of the given {@link Gtk.Accessible} implementation.
@@ -15378,15 +15240,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof WebsiteDataAccessPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebsiteDataAccessPermissionRequest.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebsiteDataAccessPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebsiteDataAccessPermissionRequest.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebsiteDataAccessPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebsiteDataAccessPermissionRequest.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebsiteDataAccessPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebsiteDataAccessPermissionRequest.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -15589,15 +15448,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof WebsiteDataManager.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebsiteDataManager.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebsiteDataManager.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebsiteDataManager.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebsiteDataManager.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebsiteDataManager.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebsiteDataManager.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebsiteDataManager.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -15907,15 +15763,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof WebsitePolicies.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebsitePolicies.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WebsitePolicies.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WebsitePolicies.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WebsitePolicies.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebsitePolicies.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WebsitePolicies.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WebsitePolicies.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -16126,15 +15979,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof WindowProperties.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WindowProperties.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof WindowProperties.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, WindowProperties.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof WindowProperties.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WindowProperties.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof WindowProperties.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<WindowProperties.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -16228,15 +16078,12 @@ export namespace WebKit {
         // Signals
         /** @signal */
         connect<K extends keyof XRPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, XRPermissionRequest.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof XRPermissionRequest.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, XRPermissionRequest.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof XRPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<XRPermissionRequest.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof XRPermissionRequest.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<XRPermissionRequest.SignalSignatures[K]>): void;
 
         // Methods
         /**

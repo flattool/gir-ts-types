@@ -97,15 +97,12 @@ export namespace GstDxva {
         // Signals
         /** @signal */
         connect<K extends keyof DxvaAV1Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DxvaAV1Decoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DxvaAV1Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DxvaAV1Decoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DxvaAV1Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DxvaAV1Decoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DxvaAV1Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DxvaAV1Decoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -228,15 +225,12 @@ export namespace GstDxva {
         // Signals
         /** @signal */
         connect<K extends keyof DxvaH264Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DxvaH264Decoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DxvaH264Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DxvaH264Decoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DxvaH264Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DxvaH264Decoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DxvaH264Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DxvaH264Decoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -351,15 +345,12 @@ export namespace GstDxva {
         // Signals
         /** @signal */
         connect<K extends keyof DxvaH265Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DxvaH265Decoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DxvaH265Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DxvaH265Decoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DxvaH265Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DxvaH265Decoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DxvaH265Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DxvaH265Decoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -467,15 +458,12 @@ export namespace GstDxva {
         // Signals
         /** @signal */
         connect<K extends keyof DxvaMpeg2Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DxvaMpeg2Decoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DxvaMpeg2Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DxvaMpeg2Decoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DxvaMpeg2Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DxvaMpeg2Decoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DxvaMpeg2Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DxvaMpeg2Decoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -593,15 +581,12 @@ export namespace GstDxva {
         // Signals
         /** @signal */
         connect<K extends keyof DxvaVp8Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DxvaVp8Decoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DxvaVp8Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DxvaVp8Decoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DxvaVp8Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DxvaVp8Decoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DxvaVp8Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DxvaVp8Decoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -709,15 +694,12 @@ export namespace GstDxva {
         // Signals
         /** @signal */
         connect<K extends keyof DxvaVp9Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DxvaVp9Decoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DxvaVp9Decoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DxvaVp9Decoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DxvaVp9Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DxvaVp9Decoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DxvaVp9Decoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DxvaVp9Decoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**

@@ -1691,15 +1691,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLBaseFilter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLBaseFilter.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLBaseFilter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLBaseFilter.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLBaseFilter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLBaseFilter.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLBaseFilter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLBaseFilter.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -1775,15 +1772,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLBaseMemoryAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLBaseMemoryAllocator.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLBaseMemoryAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLBaseMemoryAllocator.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLBaseMemoryAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLBaseMemoryAllocator.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLBaseMemoryAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLBaseMemoryAllocator.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -1860,15 +1854,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLBaseMixer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLBaseMixer.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLBaseMixer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLBaseMixer.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLBaseMixer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLBaseMixer.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLBaseMixer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLBaseMixer.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -1937,15 +1928,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLBaseMixerPad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLBaseMixerPad.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLBaseMixerPad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLBaseMixerPad.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLBaseMixerPad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLBaseMixerPad.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLBaseMixerPad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLBaseMixerPad.SignalSignatures[K]>): void;
     }
 
 
@@ -2017,15 +2005,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLBaseSrc.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLBaseSrc.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLBaseSrc.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLBaseSrc.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLBaseSrc.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLBaseSrc.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLBaseSrc.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLBaseSrc.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -2084,15 +2069,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLBufferAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLBufferAllocator.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLBufferAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLBufferAllocator.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLBufferAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLBufferAllocator.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLBufferAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLBufferAllocator.SignalSignatures[K]>): void;
     }
 
 
@@ -2148,15 +2130,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLBufferPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLBufferPool.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLBufferPool.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLBufferPool.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLBufferPool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLBufferPool.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLBufferPool.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLBufferPool.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -2216,15 +2195,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLColorConvert.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLColorConvert.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLColorConvert.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLColorConvert.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLColorConvert.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLColorConvert.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLColorConvert.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLColorConvert.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -2351,15 +2327,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLContext.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLContext.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLContext.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLContext.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLContext.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLContext.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLContext.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLContext.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -2867,15 +2840,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLDisplay.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLDisplay.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLDisplay.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLDisplay.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLDisplay.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLDisplay.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLDisplay.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLDisplay.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -3042,15 +3012,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLFilter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLFilter.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLFilter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLFilter.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLFilter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLFilter.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLFilter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLFilter.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -3194,15 +3161,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLFramebuffer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLFramebuffer.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLFramebuffer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLFramebuffer.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLFramebuffer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLFramebuffer.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLFramebuffer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLFramebuffer.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -3292,15 +3256,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLMemoryAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLMemoryAllocator.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLMemoryAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLMemoryAllocator.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLMemoryAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLMemoryAllocator.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLMemoryAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLMemoryAllocator.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -3346,15 +3307,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLMemoryPBOAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLMemoryPBOAllocator.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLMemoryPBOAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLMemoryPBOAllocator.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLMemoryPBOAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLMemoryPBOAllocator.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLMemoryPBOAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLMemoryPBOAllocator.SignalSignatures[K]>): void;
     }
 
 
@@ -3401,15 +3359,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLMixer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLMixer.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLMixer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLMixer.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLMixer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLMixer.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLMixer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLMixer.SignalSignatures[K]>): void;
 
         // Static methods
         static add_rgba_pad_templates(): void;
@@ -3499,15 +3454,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLMixerPad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLMixerPad.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLMixerPad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLMixerPad.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLMixerPad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLMixerPad.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLMixerPad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLMixerPad.SignalSignatures[K]>): void;
     }
 
 
@@ -3558,15 +3510,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLOverlayCompositor.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLOverlayCompositor.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLOverlayCompositor.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLOverlayCompositor.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLOverlayCompositor.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLOverlayCompositor.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLOverlayCompositor.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLOverlayCompositor.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -3621,15 +3570,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLRenderbufferAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLRenderbufferAllocator.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLRenderbufferAllocator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLRenderbufferAllocator.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLRenderbufferAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLRenderbufferAllocator.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLRenderbufferAllocator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLRenderbufferAllocator.SignalSignatures[K]>): void;
     }
 
 
@@ -3678,15 +3624,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLSLStage.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLSLStage.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLSLStage.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLSLStage.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLSLStage.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLSLStage.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLSLStage.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLSLStage.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -3782,15 +3725,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLShader.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLShader.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLShader.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLShader.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLShader.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLShader.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLShader.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLShader.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -4195,15 +4135,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLUpload.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLUpload.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLUpload.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLUpload.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLUpload.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLUpload.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLUpload.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLUpload.SignalSignatures[K]>): void;
 
         // Static methods
         static get_input_template_caps(): Gst.Caps;
@@ -4392,15 +4329,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLViewConvert.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLViewConvert.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLViewConvert.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLViewConvert.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLViewConvert.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLViewConvert.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLViewConvert.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLViewConvert.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -4541,15 +4475,12 @@ export namespace GstGL {
         // Signals
         /** @signal */
         connect<K extends keyof GLWindow.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLWindow.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof GLWindow.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GLWindow.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof GLWindow.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLWindow.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof GLWindow.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GLWindow.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**

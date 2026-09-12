@@ -2211,15 +2211,12 @@ export namespace GstAudio {
         // Signals
         /** @signal */
         connect<K extends keyof AudioAggregator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioAggregator.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AudioAggregator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioAggregator.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AudioAggregator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioAggregator.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AudioAggregator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioAggregator.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -2308,15 +2305,12 @@ export namespace GstAudio {
         // Signals
         /** @signal */
         connect<K extends keyof AudioAggregatorConvertPad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioAggregatorConvertPad.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AudioAggregatorConvertPad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioAggregatorConvertPad.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AudioAggregatorConvertPad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioAggregatorConvertPad.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AudioAggregatorConvertPad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioAggregatorConvertPad.SignalSignatures[K]>): void;
     }
 
 
@@ -2382,15 +2376,12 @@ export namespace GstAudio {
         // Signals
         /** @signal */
         connect<K extends keyof AudioAggregatorPad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioAggregatorPad.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AudioAggregatorPad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioAggregatorPad.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AudioAggregatorPad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioAggregatorPad.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AudioAggregatorPad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioAggregatorPad.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -2602,15 +2593,12 @@ export namespace GstAudio {
         // Signals
         /** @signal */
         connect<K extends keyof AudioBaseSink.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioBaseSink.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AudioBaseSink.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioBaseSink.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AudioBaseSink.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioBaseSink.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AudioBaseSink.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioBaseSink.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -2877,15 +2865,12 @@ export namespace GstAudio {
         // Signals
         /** @signal */
         connect<K extends keyof AudioBaseSrc.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioBaseSrc.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AudioBaseSrc.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioBaseSrc.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AudioBaseSrc.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioBaseSrc.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AudioBaseSrc.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioBaseSrc.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -3045,15 +3030,12 @@ export namespace GstAudio {
         // Signals
         /** @signal */
         connect<K extends keyof AudioCdSrc.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioCdSrc.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AudioCdSrc.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioCdSrc.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AudioCdSrc.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioCdSrc.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AudioCdSrc.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioCdSrc.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -3210,15 +3192,12 @@ export namespace GstAudio {
         // Signals
         /** @signal */
         connect<K extends keyof AudioClock.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioClock.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AudioClock.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioClock.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AudioClock.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioClock.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AudioClock.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioClock.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -3440,15 +3419,12 @@ export namespace GstAudio {
         // Signals
         /** @signal */
         connect<K extends keyof AudioDecoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioDecoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AudioDecoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioDecoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AudioDecoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioDecoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AudioDecoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioDecoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -4082,15 +4058,12 @@ export namespace GstAudio {
         // Signals
         /** @signal */
         connect<K extends keyof AudioEncoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioEncoder.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AudioEncoder.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioEncoder.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AudioEncoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioEncoder.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AudioEncoder.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioEncoder.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -4728,15 +4701,12 @@ export namespace GstAudio {
         // Signals
         /** @signal */
         connect<K extends keyof AudioFilter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioFilter.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AudioFilter.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioFilter.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AudioFilter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioFilter.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AudioFilter.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioFilter.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -4819,15 +4789,12 @@ export namespace GstAudio {
         // Signals
         /** @signal */
         connect<K extends keyof AudioRingBuffer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioRingBuffer.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AudioRingBuffer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioRingBuffer.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AudioRingBuffer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioRingBuffer.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AudioRingBuffer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioRingBuffer.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -5328,15 +5295,12 @@ export namespace GstAudio {
         // Signals
         /** @signal */
         connect<K extends keyof AudioSink.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioSink.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AudioSink.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioSink.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AudioSink.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioSink.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AudioSink.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioSink.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -5488,15 +5452,12 @@ export namespace GstAudio {
         // Signals
         /** @signal */
         connect<K extends keyof AudioSrc.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioSrc.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof AudioSrc.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, AudioSrc.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof AudioSrc.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioSrc.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof AudioSrc.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<AudioSrc.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
