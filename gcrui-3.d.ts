@@ -178,15 +178,12 @@ export namespace GcrUi {
         // Signals
         /** @signal */
         connect<K extends keyof CertificateRenderer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, CertificateRenderer.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof CertificateRenderer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, CertificateRenderer.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof CertificateRenderer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<CertificateRenderer.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof CertificateRenderer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<CertificateRenderer.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -624,15 +621,12 @@ export namespace GcrUi {
         // Signals
         /** @signal */
         connect<K extends keyof CertificateWidget.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, CertificateWidget.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof CertificateWidget.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, CertificateWidget.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof CertificateWidget.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<CertificateWidget.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof CertificateWidget.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<CertificateWidget.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -729,15 +723,12 @@ export namespace GcrUi {
         // Signals
         /** @signal */
         connect<K extends keyof CollectionModel.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, CollectionModel.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof CollectionModel.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, CollectionModel.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof CollectionModel.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<CollectionModel.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof CollectionModel.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<CollectionModel.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -1510,15 +1501,12 @@ export namespace GcrUi {
         // Signals
         /** @signal */
         connect<K extends keyof ComboSelector.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ComboSelector.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ComboSelector.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ComboSelector.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ComboSelector.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ComboSelector.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ComboSelector.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ComboSelector.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -1893,15 +1881,12 @@ export namespace GcrUi {
         // Signals
         /** @signal */
         connect<K extends keyof FailureRenderer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FailureRenderer.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FailureRenderer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FailureRenderer.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FailureRenderer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FailureRenderer.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FailureRenderer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FailureRenderer.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -2075,15 +2060,12 @@ export namespace GcrUi {
         // Signals
         /** @signal */
         connect<K extends keyof ImportButton.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ImportButton.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ImportButton.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ImportButton.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ImportButton.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ImportButton.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ImportButton.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ImportButton.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -2513,15 +2495,12 @@ export namespace GcrUi {
         // Signals
         /** @signal */
         connect<K extends keyof KeyRenderer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, KeyRenderer.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof KeyRenderer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, KeyRenderer.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof KeyRenderer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<KeyRenderer.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof KeyRenderer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<KeyRenderer.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -2688,15 +2667,12 @@ export namespace GcrUi {
         // Signals
         /** @signal */
         connect<K extends keyof KeyWidget.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, KeyWidget.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof KeyWidget.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, KeyWidget.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof KeyWidget.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<KeyWidget.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof KeyWidget.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<KeyWidget.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -2828,15 +2804,12 @@ export namespace GcrUi {
         // Signals
         /** @signal */
         connect<K extends keyof ListSelector.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ListSelector.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ListSelector.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ListSelector.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ListSelector.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ListSelector.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ListSelector.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ListSelector.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -3190,15 +3163,12 @@ export namespace GcrUi {
         // Signals
         /** @signal */
         connect<K extends keyof PromptDialog.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, PromptDialog.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof PromptDialog.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, PromptDialog.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof PromptDialog.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<PromptDialog.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof PromptDialog.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<PromptDialog.SignalSignatures[K]>): void;
 
         /**
          * The string handle of the caller's window.
@@ -3897,15 +3867,12 @@ export namespace GcrUi {
         // Signals
         /** @signal */
         connect<K extends keyof SecureEntryBuffer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SecureEntryBuffer.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SecureEntryBuffer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SecureEntryBuffer.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SecureEntryBuffer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SecureEntryBuffer.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SecureEntryBuffer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SecureEntryBuffer.SignalSignatures[K]>): void;
     }
 
 
@@ -4025,15 +3992,12 @@ export namespace GcrUi {
         // Signals
         /** @signal */
         connect<K extends keyof TreeSelector.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TreeSelector.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof TreeSelector.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, TreeSelector.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof TreeSelector.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TreeSelector.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof TreeSelector.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<TreeSelector.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -4298,15 +4262,12 @@ export namespace GcrUi {
         // Signals
         /** @signal */
         connect<K extends keyof UnlockOptionsWidget.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UnlockOptionsWidget.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof UnlockOptionsWidget.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, UnlockOptionsWidget.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof UnlockOptionsWidget.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UnlockOptionsWidget.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof UnlockOptionsWidget.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<UnlockOptionsWidget.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -4507,15 +4468,12 @@ export namespace GcrUi {
         // Signals
         /** @signal */
         connect<K extends keyof ViewerWidget.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ViewerWidget.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof ViewerWidget.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, ViewerWidget.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof ViewerWidget.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ViewerWidget.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof ViewerWidget.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ViewerWidget.SignalSignatures[K]>): void;
 
         // Methods
         /**

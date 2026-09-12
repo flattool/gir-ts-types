@@ -511,15 +511,12 @@ export namespace AppStreamCompose {
         // Signals
         /** @signal */
         connect<K extends keyof Canvas.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Canvas.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Canvas.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Canvas.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Canvas.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Canvas.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Canvas.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Canvas.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -581,15 +578,12 @@ export namespace AppStreamCompose {
         // Signals
         /** @signal */
         connect<K extends keyof Compose.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Compose.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Compose.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Compose.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Compose.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Compose.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Compose.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Compose.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -885,15 +879,12 @@ export namespace AppStreamCompose {
         // Signals
         /** @signal */
         connect<K extends keyof DirectoryUnit.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DirectoryUnit.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof DirectoryUnit.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, DirectoryUnit.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof DirectoryUnit.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DirectoryUnit.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof DirectoryUnit.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<DirectoryUnit.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -944,15 +935,12 @@ export namespace AppStreamCompose {
         // Signals
         /** @signal */
         connect<K extends keyof Hint.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Hint.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Hint.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Hint.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Hint.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Hint.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Hint.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Hint.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -1056,15 +1044,12 @@ export namespace AppStreamCompose {
         // Signals
         /** @signal */
         connect<K extends keyof IconPolicy.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, IconPolicy.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof IconPolicy.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, IconPolicy.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof IconPolicy.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<IconPolicy.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof IconPolicy.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<IconPolicy.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -1127,15 +1112,12 @@ export namespace AppStreamCompose {
         // Signals
         /** @signal */
         connect<K extends keyof Image.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Image.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Image.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Image.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Image.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Image.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Image.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Image.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -1261,15 +1243,12 @@ export namespace AppStreamCompose {
         // Signals
         /** @signal */
         connect<K extends keyof Result.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Result.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Result.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Result.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Result.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Result.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Result.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Result.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -1493,15 +1472,12 @@ export namespace AppStreamCompose {
         // Signals
         /** @signal */
         connect<K extends keyof Unit.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Unit.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Unit.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Unit.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Unit.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Unit.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Unit.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Unit.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**

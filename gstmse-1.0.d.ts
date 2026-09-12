@@ -355,15 +355,12 @@ export namespace GstMse {
         // Signals
         /** @signal */
         connect<K extends keyof MediaSource.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MediaSource.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof MediaSource.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MediaSource.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof MediaSource.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MediaSource.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof MediaSource.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MediaSource.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -689,15 +686,12 @@ export namespace GstMse {
         // Signals
         /** @signal */
         connect<K extends keyof MseSrc.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MseSrc.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof MseSrc.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MseSrc.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof MseSrc.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MseSrc.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof MseSrc.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MseSrc.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -857,15 +851,12 @@ export namespace GstMse {
         // Signals
         /** @signal */
         connect<K extends keyof MseSrcPad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MseSrcPad.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof MseSrcPad.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, MseSrcPad.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof MseSrcPad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MseSrcPad.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof MseSrcPad.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<MseSrcPad.SignalSignatures[K]>): void;
     }
 
 
@@ -1134,15 +1125,12 @@ export namespace GstMse {
         // Signals
         /** @signal */
         connect<K extends keyof SourceBuffer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SourceBuffer.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SourceBuffer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SourceBuffer.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SourceBuffer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SourceBuffer.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SourceBuffer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SourceBuffer.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -1381,15 +1369,12 @@ export namespace GstMse {
         // Signals
         /** @signal */
         connect<K extends keyof SourceBufferList.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SourceBufferList.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof SourceBufferList.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, SourceBufferList.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof SourceBufferList.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SourceBufferList.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof SourceBufferList.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<SourceBufferList.SignalSignatures[K]>): void;
 
         // Methods
         /**

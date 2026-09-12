@@ -3264,15 +3264,12 @@ export namespace Pango {
         // Signals
         /** @signal */
         connect<K extends keyof Context.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Context.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Context.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Context.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Context.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Context.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Context.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Context.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -3551,15 +3548,12 @@ export namespace Pango {
         // Signals
         /** @signal */
         connect<K extends keyof Coverage.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Coverage.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Coverage.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Coverage.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Coverage.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Coverage.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Coverage.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Coverage.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -3662,15 +3656,12 @@ export namespace Pango {
         // Signals
         /** @signal */
         connect<K extends keyof Font.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Font.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Font.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Font.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Font.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Font.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Font.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Font.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -3952,15 +3943,12 @@ export namespace Pango {
         // Signals
         /** @signal */
         connect<K extends keyof FontFace.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FontFace.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FontFace.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FontFace.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FontFace.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FontFace.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FontFace.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FontFace.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -4188,15 +4176,12 @@ export namespace Pango {
         // Signals
         /** @signal */
         connect<K extends keyof FontFamily.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FontFamily.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FontFamily.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FontFamily.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FontFamily.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FontFamily.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FontFamily.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FontFamily.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -4484,15 +4469,12 @@ export namespace Pango {
         // Signals
         /** @signal */
         connect<K extends keyof FontMap.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FontMap.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FontMap.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FontMap.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FontMap.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FontMap.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FontMap.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FontMap.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -4825,15 +4807,12 @@ export namespace Pango {
         // Signals
         /** @signal */
         connect<K extends keyof Fontset.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Fontset.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Fontset.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Fontset.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Fontset.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Fontset.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Fontset.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Fontset.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
@@ -4932,15 +4911,12 @@ export namespace Pango {
         // Signals
         /** @signal */
         connect<K extends keyof FontsetSimple.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FontsetSimple.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof FontsetSimple.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FontsetSimple.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof FontsetSimple.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FontsetSimple.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof FontsetSimple.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FontsetSimple.SignalSignatures[K]>): void;
 
         // Methods
         /**
@@ -5030,15 +5006,12 @@ export namespace Pango {
         // Signals
         /** @signal */
         connect<K extends keyof Layout.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Layout.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Layout.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Layout.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Layout.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Layout.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Layout.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Layout.SignalSignatures[K]>): void;
 
         // Static methods
         /**
@@ -5886,15 +5859,12 @@ export namespace Pango {
         // Signals
         /** @signal */
         connect<K extends keyof Renderer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Renderer.SignalSignatures[K]>): number;
-        connect(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
         connect_after<K extends keyof Renderer.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Renderer.SignalSignatures[K]>): number;
-        connect_after(signal: string, callback: (...args: any[]) => any): number;
 
         /** @signal */
-        emit<K extends keyof Renderer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Renderer.SignalSignatures[K]> extends [any, ...infer Q] ? Q : never): void;
-        emit(signal: string, ...args: any[]): void;
+        emit<K extends keyof Renderer.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Renderer.SignalSignatures[K]>): void;
 
         // Virtual methods
         /**
