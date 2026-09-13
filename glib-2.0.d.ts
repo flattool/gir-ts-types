@@ -4949,7 +4949,7 @@ export class VariantType<S extends string = any> {
      * Like `gtk_micro_version`, but from the headers used at
      * application compile time, rather than from the library
      * linked against at application run time.
-     * @default 4
+     * @default 0
      */
     const MICRO_VERSION: number;
 
@@ -4986,7 +4986,7 @@ export class VariantType<S extends string = any> {
      * Like `gtk_minor_version`, but from the headers used at
      * application compile time, rather than from the library
      * linked against at application run time.
-     * @default 89
+     * @default 90
      */
     const MINOR_VERSION: number;
 

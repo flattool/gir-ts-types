@@ -10022,7 +10022,7 @@ export namespace Gtk {
      * 
      * It is also possible to show a {@link Gtk.AboutDialog} like any other {@link Gtk.Dialog},
      * e.g. using `gtk_dialog_run()`. In this case, you might need to know that
-     * the “Close” button returns the #GTK_RESPONSE_CANCEL response id.
+     * the “Close” button returns the #GTK_RESPONSE_DELETE_EVENT response id.
      * @gir-type Class
      */
     class AboutDialog extends Dialog implements Atk.ImplementorIface, Buildable {
