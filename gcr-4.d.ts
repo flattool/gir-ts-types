@@ -299,7 +299,7 @@ export namespace Gcr {
 
     /**
      * The micro version number of the Gcr library.
-     * @default 0
+     * @default 1
      */
     const MICRO_VERSION: number;
 

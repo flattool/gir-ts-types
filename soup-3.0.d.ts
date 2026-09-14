@@ -1078,7 +1078,7 @@ export namespace Soup {
      * Like {@link get_micro_version}, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 2
+     * @default 3
      */
     const MICRO_VERSION: number;
 
@@ -4943,6 +4943,14 @@ export namespace Soup {
         get_compression_dictionary_hash(): GLib.Bytes | null;
 
         /**
+         * Gets the identifier of the shared dictionary previously set with
+         * {@link Message.set_compression_dictionary_id}.
+         * @returns the dictionary identifier, or `null`
+         * @since 3.8
+         */
+        get_compression_dictionary_id(): string | null;
+
+        /**
          * Returns the unique idenfier for the last connection used.
          * 
          * This may be 0 if it was a cached resource or it has not gotten
@@ -5139,14 +5147,35 @@ export namespace Soup {
          * `Soup.Message::request-compression-dictionary` signal is emitted so the
          * caller can supply the actual dictionary bytes.
          * 
+         * If the dictionary was registered with an identifier, set it with
+         * {@link Message.set_compression_dictionary_id} so that a `Dictionary-ID`
+         * header accompanies `Available-Dictionary`.
+         * 
          * The hash does not survive redirects: a dictionary is chosen for a specific
-         * request URL, so when `msg` is redirected the hash and the `Available-Dictionary`
-         * header are cleared. It is the caller's responsibility to select and set a new
-         * dictionary appropriate for the redirect target, if any.
+         * request URL, so when `msg` is redirected the hash, the id and both headers are
+         * cleared. It is the caller's responsibility to select and set a new dictionary
+         * appropriate for the redirect target, if any.
          * @param hash a {@link GLib.Bytes} containing the raw SHA-256 hash (32 bytes) of the   shared dictionary, or `null` to unset
          * @since 3.8
          */
         set_compression_dictionary_hash(hash: GLib.Bytes | Uint8Array | null): void;
+
+        /**
+         * Sets the identifier of the shared dictionary advertised for Compression
+         * Dictionary Transport (RFC 9842).
+         * 
+         * `id` is the value the server gave in the `id` parameter of the
+         * `Use-As-Dictionary` response header that registered the dictionary. It is
+         * sent as a `Dictionary-ID` header alongside `Available-Dictionary`, and only
+         * when a hash has been set with
+         * {@link Message.set_compression_dictionary_hash} and that header is sent, so
+         * it can never be emitted on its own.
+         * 
+         * Like the hash, the id does not survive redirects.
+         * @param id the dictionary identifier, or `null` to unset
+         * @since 3.8
+         */
+        set_compression_dictionary_id(id: string | null): void;
 
         /**
          * Sets `first_party` as the main document {@link GLib.Uri} for `msg`.
