@@ -1047,14 +1047,14 @@ export namespace Adw {
 
     /**
      * Adwaita minor version component (e.g. 2 if the version is 1.2.3).
-     * @default 10
+     * @default 11
      */
     const MINOR_VERSION: number;
 
     /**
      * Adwaita version, encoded as a string, useful for printing and
      * concatenation.
-     * @default 1.10.rc
+     * @default 1.11.alpha
      */
     const VERSION_S: string;
 
@@ -35882,6 +35882,10 @@ export namespace Adw {
 
         /**
          * A widget to be displayed after the sidebar items.
+         * 
+         * The suffix will be displayed immediately after the items. To display it at
+         * the bottom of the sidebar instead, set {@link Gtk.Widget.vexpand} to
+         * `TRUE` and {@link Gtk.Widget.valign} to {@link Gtk.Align.END}.
          * @since 1.10
          */
         get suffix(): Gtk.Widget | null;
@@ -36165,6 +36169,10 @@ export namespace Adw {
 
         /**
          * Sets the widget to be displayed after the sidebar items.
+         * 
+         * The suffix will be displayed immediately after the items. To display it at
+         * the bottom of the sidebar instead, set {@link Gtk.Widget.vexpand} to
+         * `TRUE` and {@link Gtk.Widget.valign} to {@link Gtk.Align.END}.
          * @param suffix the suffix widget
          * @since 1.10
          */
@@ -54784,6 +54792,10 @@ export namespace Adw {
         /**
          * A widget to be displayed after the sidebar items.
          * 
+         * The suffix will be displayed immediately after the items. To display it at
+         * the bottom of the sidebar instead, set {@link Gtk.Widget.vexpand} to
+         * `TRUE` and {@link Gtk.Widget.valign} to {@link Gtk.Align.END}.
+         * 
          * See {@link Sidebar.suffix}.
          * @since 1.10
          */
@@ -54931,6 +54943,10 @@ export namespace Adw {
 
         /**
          * Sets the widget to be displayed after the sidebar items.
+         * 
+         * The suffix will be displayed immediately after the items. To display it at
+         * the bottom of the sidebar instead, set {@link Gtk.Widget.vexpand} to
+         * `TRUE` and {@link Gtk.Widget.valign} to {@link Gtk.Align.END}.
          * 
          * See {@link Sidebar.set_suffix}.
          * @param suffix the suffix widget

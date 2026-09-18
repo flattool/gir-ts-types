@@ -201,7 +201,7 @@ export namespace WebKit2 {
 
     /**
      * Enum values used to denote the stock actions for
-     * {@link WebKit2.ContextMenuItem}<!-- -->s
+     * {@link WebKit2.ContextMenuItem} objects
      * @gir-type Enum
      */
     enum ContextMenuAction {
@@ -262,7 +262,7 @@ export namespace WebKit2 {
          */
         RELOAD = 13,
         /**
-         * Copy current selection the clipboard.
+         * Copy current selection to the clipboard.
          */
         COPY = 14,
         /**
@@ -342,11 +342,11 @@ export namespace WebKit2 {
          */
         OPEN_AUDIO_IN_NEW_WINDOW = 33,
         /**
-         * Copy video link location in to the clipboard.
+         * Copy video link location to the clipboard.
          */
         COPY_VIDEO_LINK_TO_CLIPBOARD = 34,
         /**
-         * Copy audio link location in to the clipboard.
+         * Copy audio link location to the clipboard.
          */
         COPY_AUDIO_LINK_TO_CLIPBOARD = 35,
         /**
@@ -552,7 +552,7 @@ export namespace WebKit2 {
     }
 
     /**
-     * Describes the status of a {@link WebKitFeature}.
+     * Describes the status of a {@link Feature}.
      * 
      * The status for a given feature can be obtained with
      * `webkit_feature_get_status`.
@@ -561,9 +561,9 @@ export namespace WebKit2 {
      */
     enum FeatureStatus {
         /**
-         * Feature that adjust behaviour for
+         * Feature that adjusts behavior for
          *   specific application needs. The feature is not part of a Web platform
-         *   feature, not a mature feature intended to be always on.
+         *   feature, nor a mature feature intended to be always on.
          */
         EMBEDDER = 0,
         /**
@@ -574,7 +574,7 @@ export namespace WebKit2 {
         UNSTABLE = 1,
         /**
          * Feature for debugging the WebKit engine.
-         *   The feature is not generally useful for user or web developers, and
+         *   The feature is not generally useful for users or web developers, and
          *   always disabled by default.
          */
         INTERNAL = 2,
@@ -624,7 +624,7 @@ export namespace WebKit2 {
      */
     enum HardwareAccelerationPolicy {
         /**
-         * Hardware acceleration is enabled/disabled as request by web contents. Deprecated 2.54.
+         * Hardware acceleration is enabled/disabled as requested by web contents. Deprecated 2.54.
          */
         ON_DEMAND = 0,
         /**
@@ -731,7 +731,7 @@ export namespace WebKit2 {
         static SCRIPT_FAILED: number;
 
         /**
-         * An unsupported parameter has been used to call and async function from API. Since 2.40
+         * An unsupported parameter has been used to call an async function from API. Since 2.40
          */
         static INVALID_PARAMETER: number;
 
@@ -1181,9 +1181,9 @@ export namespace WebKit2 {
          *   of this process model is that the rendering process for a web view
          *   can crash while the rest of the views keep working normally. This
          *   process model is indicated for applications which may use a number
-         *   of web views and the content of in each must not interfere with the
-         *   rest — for example a full-fledged web browser with support for
-         *   multiple tabs.
+         *   of web views and the content in each must not interfere with the
+         *   rest (for example, a full-fledged web browser with support for
+         *   multiple tabs).
          */
         MULTIPLE_SECONDARY_PROCESSES = 1,
     }
@@ -1356,7 +1356,7 @@ export namespace WebKit2 {
     }
 
     /**
-     * Specifies in which frames user style sheets are to be inserted in.
+     * Specifies in which frames user style sheets are to be inserted.
      * @gir-type Enum
      * @since 2.6
      */
@@ -1408,7 +1408,7 @@ export namespace WebKit2 {
     }
 
     /**
-     * Specifies at which place of documents an user script will be inserted.
+     * Specifies at which place of documents a user script will be inserted.
      * @gir-type Enum
      * @since 2.6
      */
@@ -1434,13 +1434,13 @@ export namespace WebKit2 {
     }
 
     /**
-     * Specifies how to treat an user style sheet.
+     * Specifies how to treat a user style sheet.
      * @gir-type Enum
      * @since 2.6
      */
     enum UserStyleLevel {
         /**
-         * The style sheet is an user style sheet,
+         * The style sheet is a user style sheet,
          *   its contents always override other style sheets. This is the default.
          */
         USER = 0,
@@ -1462,7 +1462,7 @@ export namespace WebKit2 {
 
         // Static fields
         /**
-         * An unknown error occured.
+         * An unknown error occurred.
          */
         static UNKNOWN: number;
 
@@ -1596,7 +1596,7 @@ export namespace WebKit2 {
      * the current cursor position. If there's a selection, the selected text
      * will be used as the link text, otherwise the URL itself will be used.
      * It receives the link URL as argument. This command should be executed
-     * with `webkit_web_view_execute_editing_command_with_argument()`
+     * with `webkit_web_view_execute_editing_command_with_argument()`.
      * @since 2.10
      * @default CreateLink
      */
@@ -1615,7 +1615,7 @@ export namespace WebKit2 {
 
     /**
      * The insert image command. Creates an image element that is inserted at
-     * the current cursor position. It receives an URI as argument,
+     * the current cursor position. It receives a URI as argument,
      * that is used as the image source. This command should be executed with
      * `webkit_web_view_execute_editing_command_with_argument()`.
      * @since 2.10
@@ -1687,7 +1687,7 @@ export namespace WebKit2 {
      * Like `webkit_get_micro_version()`, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 92
+     * @default 0
      */
     const MICRO_VERSION: number;
 
@@ -1695,7 +1695,7 @@ export namespace WebKit2 {
      * Like `webkit_get_minor_version()`, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 53
+     * @default 54
      */
     const MINOR_VERSION: number;
 
@@ -1917,7 +1917,7 @@ export namespace WebKit2 {
         CASE_INSENSITIVE = 1,
         /**
          * search text only at the
-         *   begining of the words.
+         *   beginning of the words.
          */
         AT_WORD_STARTS = 2,
         /**
@@ -2002,7 +2002,7 @@ export namespace WebKit2 {
          */
         SPELLCHECK = 1,
         /**
-         * Suggest to not autocapitlize
+         * Suggest to not autocapitalize
          */
         LOWERCASE = 2,
         /**
@@ -2349,7 +2349,7 @@ export namespace WebKit2 {
         is_for_proxy(): boolean;
 
         /**
-         * Determine whether this this is a first attempt or a retry for this authentication challenge.
+         * Determine whether this is a first attempt or a retry for this authentication challenge.
          * @returns `true` if authentication attempt is a retry or `false` otherwise.
          * @since 2.2
          */
@@ -2496,10 +2496,10 @@ export namespace WebKit2 {
 
         // Methods
         /**
-         * Get the the previously set {@link WebKit2.AutomationSession}.
+         * Get the previously set {@link WebKit2.ApplicationInfo}.
          * 
-         * Get the {@link WebKit2.AutomationSession} previously set with `webkit_automation_session_set_application_info()`.
-         * @returns the {@link WebKit2.AutomationSession} of `session`, or `null` if no one has been set.
+         * Get the {@link WebKit2.ApplicationInfo} previously set with `webkit_automation_session_set_application_info()`.
+         * @returns the {@link WebKit2.ApplicationInfo} of `session`, or `null` if no one has been set.
          * @since 2.18
          */
         get_application_info(): ApplicationInfo;
@@ -2534,7 +2534,7 @@ export namespace WebKit2 {
              * This signal is emitted when `back_forward_list` changes. This happens
              * when the current item is updated, a new item is added or one or more
              * items are removed. Note that both `item_added` and `items_removed` can
-             * `null` when only the current item is updated. Items are only removed
+             * be `null` when only the current item is updated. Items are only removed
              * when the list is cleared or the maximum items limit is reached.
              * @signal
              * @run-last
@@ -2559,7 +2559,7 @@ export namespace WebKit2 {
      * Methods `webkit_web_view_go_back()` and `webkit_web_view_go_forward()` move
      * the current item backward or forward by one. Method
      * `webkit_web_view_go_to_back_forward_list_item()` sets the current item to the
-     * specified item. All other methods returning {@link WebKit2.BackForwardListItem}<!-- -->s
+     * specified item. All other methods returning {@link WebKit2.BackForwardListItem} objects
      * do not change the value of the current item, they just return the requested
      * item or items.
      * @gir-type Class
@@ -2663,7 +2663,7 @@ export namespace WebKit2 {
      * One item of the {@link WebKit2.BackForwardList}.
      * 
      * A history item is part of the {@link WebKit2.BackForwardList} and consists
-     * out of a title and a URI.
+     * of a title and a URI.
      * @gir-type Class
      */
     class BackForwardListItem extends GObject.InitiallyUnowned {
@@ -2819,7 +2819,7 @@ export namespace WebKit2 {
      * Whenever the user interacts with an <input type='color' />
      * HTML element, WebKit will need to show a dialog to choose a color. For that
      * to happen in a general way, instead of just opening a {@link Gtk.ColorChooser}
-     * (which might be not desirable in some cases, which could prefer to use their
+     * (which might not be desirable for applications that prefer to use their
      * own color chooser dialog), WebKit will fire the
      * {@link WebKit2.WebView.SignalSignatures.run_color_chooser | WebKit2.WebView::run-color-chooser} signal with a {@link WebKit2.ColorChooserRequest}
      * object, which will allow the client application to specify the color to be
@@ -3243,7 +3243,7 @@ export namespace WebKit2 {
      * You can get it from a {@link WebKit2.WebsiteDataManager} with
      * `webkit_website_data_manager_get_cookie_manager()`, and use it to set where to
      * store cookies with `webkit_cookie_manager_set_persistent_storage()`,
-     * or to set the acceptance policy, with `webkit_cookie_manager_get_accept_policy()`.
+     * or to set the acceptance policy, with `webkit_cookie_manager_set_accept_policy()`.
      * @gir-type Class
      */
     class CookieManager extends GObject.Object {
@@ -3476,7 +3476,7 @@ export namespace WebKit2 {
          * 
          * When the operation is finished, `callback` will be called. You can then call
          * `webkit_cookie_manager_get_cookies_finish()` to get the result of the operation.
-         * @param uri the URI associated to the cookies to be retrieved
+         * @param uri the URI associated with the cookies to be retrieved
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @since 2.20
          */
@@ -3490,7 +3490,7 @@ export namespace WebKit2 {
          * 
          * When the operation is finished, `callback` will be called. You can then call
          * `webkit_cookie_manager_get_cookies_finish()` to get the result of the operation.
-         * @param uri the URI associated to the cookies to be retrieved
+         * @param uri the URI associated with the cookies to be retrieved
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          * @since 2.20
@@ -3505,7 +3505,7 @@ export namespace WebKit2 {
          * 
          * When the operation is finished, `callback` will be called. You can then call
          * `webkit_cookie_manager_get_cookies_finish()` to get the result of the operation.
-         * @param uri the URI associated to the cookies to be retrieved
+         * @param uri the URI associated with the cookies to be retrieved
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
          * @param callback a {@link Gio.AsyncReadyCallback} to call when the request is satisfied
          * @since 2.20
@@ -3634,8 +3634,8 @@ export namespace WebKit2 {
          * By default, `cookie_manager` doesn't store the cookies persistently, so you need to call this
          * method to keep cookies saved across sessions.
          * 
-         * This method should never be called on a {@link WebKit2.CookieManager} associated to an ephemeral {@link WebKit2.WebsiteDataManager}.
-         * @param filename the filename to read to/write from
+         * This method should never be called on a {@link WebKit2.CookieManager} associated with an ephemeral {@link WebKit2.WebsiteDataManager}.
+         * @param filename the filename to read from/write to
          * @param storage a {@link WebKit2.CookiePersistentStorage}
          */
         set_persistent_storage(filename: string, storage: CookiePersistentStorage): void;
@@ -3654,8 +3654,8 @@ export namespace WebKit2 {
      * A permission request for enumerating the user's media devices
      * 
      * WebKitDeviceInfoPermissionRequest represents a request for
-     * permission to whether WebKit should be allowed to access the user's
-     * devices information when requested through the MediaDevices.enumerateDevices
+     * permission to decide whether WebKit should be allowed to access the user's
+     * device information when requested through the MediaDevices.enumerateDevices
      * API.
      * 
      * When a WebKitDeviceInfoPermissionRequest is not handled by the user,
@@ -3830,7 +3830,7 @@ export namespace WebKit2 {
          * This value will range from 0.0 to 1.0. The value is an estimate
          * based on the total number of bytes expected to be received for
          * a download.
-         * If you need a more accurate progress information you can connect to
+         * If you need more accurate progress information you can connect to
          * {@link WebKit2.Download.SignalSignatures.received_data | WebKit2.Download::received-data} signal to track the progress.
          * @read-only
          * @default 1
@@ -3842,7 +3842,7 @@ export namespace WebKit2 {
          * This value will range from 0.0 to 1.0. The value is an estimate
          * based on the total number of bytes expected to be received for
          * a download.
-         * If you need a more accurate progress information you can connect to
+         * If you need more accurate progress information you can connect to
          * {@link WebKit2.Download.SignalSignatures.received_data | WebKit2.Download::received-data} signal to track the progress.
          * @read-only
          * @default 1
@@ -3928,10 +3928,9 @@ export namespace WebKit2 {
 
         /**
          * Gets the value of the {@link WebKit2.Download.estimated_progress} property.
-         * Gets the value of the {@link WebKit2.Download.estimated_progress} property.
          * You can monitor the estimated progress of the download operation by
          * connecting to the notify::estimated-progress signal of `download`.
-         * @returns an estimate of the of the percent complete for a download     as a range from 0.0 to 1.0.
+         * @returns an estimate of the percent complete for a download     as a range from 0.0 to 1.0.
          */
         get_estimated_progress(): number;
 
@@ -4005,7 +4004,7 @@ export namespace WebKit2 {
         // Signal signatures
         interface SignalSignatures extends GObject.Object.SignalSignatures {
             /**
-             * Emitted when the `WebKitEdtorState` is changed.
+             * Emitted when the {@link WebKit2.EditorState} is changed.
              * @signal
              * @since 2.44
              * @run-last
@@ -4149,12 +4148,12 @@ export namespace WebKit2 {
     /**
      * Provides access to the icons associated with web sites.
      * 
-     * WebKit will automatically look for available icons in <link>
+     * WebKit will automatically look for available icons in `<link>`
      * elements on opened pages as well as an existing favicon.ico and
      * load the images found into a memory cache if possible. That cache
      * is frozen to an on-disk database for persistence.
      * 
-     * If {@link WebKit2.Settings.enable_private_browsing} is `true`, new icons
+     * If {@link WebsiteDataManager.is_ephemeral} is `true`, new icons
      * won't be added to the on-disk database and no existing icons will
      * be deleted from it. Nevertheless, WebKit will still store them in
      * the in-memory cache during the current execution.
@@ -4197,8 +4196,9 @@ export namespace WebKit2 {
          * Asynchronously obtains a favicon image.
          * 
          * Asynchronously obtains an image of the favicon for the
-         * given page URI. It returns the cached icon if it's in the database
-         * asynchronously waiting for the icon to be read from the database.
+         * given page URI. If the icon is already in the memory cache, its image data
+         * is not read from the database again. The result is always delivered
+         * asynchronously.
          * 
          * This is an asynchronous method. When the operation is finished, callback will
          * be invoked. You can then call `webkit_favicon_database_get_favicon_finish()`
@@ -4212,8 +4212,9 @@ export namespace WebKit2 {
          * Asynchronously obtains a favicon image.
          * 
          * Asynchronously obtains an image of the favicon for the
-         * given page URI. It returns the cached icon if it's in the database
-         * asynchronously waiting for the icon to be read from the database.
+         * given page URI. If the icon is already in the memory cache, its image data
+         * is not read from the database again. The result is always delivered
+         * asynchronously.
          * 
          * This is an asynchronous method. When the operation is finished, callback will
          * be invoked. You can then call `webkit_favicon_database_get_favicon_finish()`
@@ -4228,8 +4229,9 @@ export namespace WebKit2 {
          * Asynchronously obtains a favicon image.
          * 
          * Asynchronously obtains an image of the favicon for the
-         * given page URI. It returns the cached icon if it's in the database
-         * asynchronously waiting for the icon to be read from the database.
+         * given page URI. If the icon is already in the memory cache, its image data
+         * is not read from the database again. The result is always delivered
+         * asynchronously.
          * 
          * This is an asynchronous method. When the operation is finished, callback will
          * be invoked. You can then call `webkit_favicon_database_get_favicon_finish()`
@@ -4285,8 +4287,8 @@ export namespace WebKit2 {
      * file type, WebKit will need to show a dialog to choose one or
      * more files to be uploaded to the server along with the rest of the
      * form data. For that to happen in a general way, instead of just
-     * opening a {@link Gtk.FileChooserDialog} (which might be not desirable in
-     * some cases, which could prefer to use their own file chooser
+     * opening a {@link Gtk.FileChooserDialog} (which might not be desirable for
+     * applications that prefer to use their own file chooser
      * dialog), WebKit will fire the {@link WebKit2.WebView.SignalSignatures.run_file_chooser | WebKit2.WebView::run-file-chooser}
      * signal with a {@link WebKit2.FileChooserRequest} object, which will allow
      * the client application to specify the files to be selected, to
@@ -4349,7 +4351,7 @@ export namespace WebKit2 {
 
         /**
          * A `null`-terminated array of strings containing the list of
-         * selected files associated to the current request. See
+         * selected files associated with the current request. See
          * `webkit_file_chooser_request_get_selected_files()` for more details.
          * @read-only
          */
@@ -4357,7 +4359,7 @@ export namespace WebKit2 {
 
         /**
          * A `null`-terminated array of strings containing the list of
-         * selected files associated to the current request. See
+         * selected files associated with the current request. See
          * `webkit_file_chooser_request_get_selected_files()` for more details.
          * @read-only
          */
@@ -4422,14 +4424,14 @@ export namespace WebKit2 {
          * 
          * See `webkit_file_chooser_request_get_mime_types()` if you are
          * interested in getting the list of accepted MIME types.
-         * @returns a {@link Gtk.FileFilter} if a list of accepted MIME types is defined or `null` otherwise. The returned object is owned by WebKit should not be modified or freed.
+         * @returns a {@link Gtk.FileFilter} if a list of accepted MIME types is defined or `null` otherwise. The returned object is owned by WebKit and should not be modified or freed.
          */
         get_mime_types_filter(): Gtk.FileFilter;
 
         /**
          * Whether the file chooser should allow selecting multiple files.
          * 
-         * Determine whether the file chooser associated to this
+         * Determine whether the file chooser associated with this
          * {@link WebKit2.FileChooserRequest} should allow selecting multiple files,
          * which depends on the HTML input element having a 'multiple'
          * attribute defined.
@@ -4438,12 +4440,12 @@ export namespace WebKit2 {
         get_select_multiple(): boolean;
 
         /**
-         * Get the list of selected files associated to the request.
+         * Get the list of selected files associated with the request.
          * 
-         * Get the list of selected files currently associated to the
+         * Get the list of selected files currently associated with the
          * request. Initially, the return value of this method contains any
          * files selected in previous file chooser requests for this HTML
-         * input element. Once webkit_file_chooser_request_select_files, the
+         * input element. Once `webkit_file_chooser_request_select_files()` has been called, the
          * value will reflect whatever files are given.
          * 
          * This function should normally be called only before presenting the
@@ -4514,14 +4516,14 @@ export namespace WebKit2 {
      * Controls text search in a {@link WebKit2.WebView}.
      * 
      * A {@link WebKit2.FindController} is used to search text in a {@link WebKit2.WebView}. You
-     * can get a {@link WebKit2.WebView}<!-- -->'s {@link WebKit2.FindController} with
+     * can get a {@link WebKit2.WebView}'s {@link WebKit2.FindController} with
      * `webkit_web_view_get_find_controller()`, and later use it to search
      * for text using `webkit_find_controller_search()`, or get the
      * number of matches using `webkit_find_controller_count_matches()`. The
      * operations are asynchronous and trigger signals when ready, such as
      * {@link WebKit2.FindController.SignalSignatures.found_text | WebKit2.FindController::found-text},
      * {@link WebKit2.FindController.SignalSignatures.failed_to_find_text | WebKit2.FindController::failed-to-find-text} or
-     * {@link WebKit2.FindController.SignalSignatures.counted_matches | WebKit2.FindController::counted-matches}<!-- -->.
+     * {@link WebKit2.FindController.SignalSignatures.counted_matches | WebKit2.FindController::counted-matches}.
      * @gir-type Class
      */
     class FindController extends GObject.Object {
@@ -4557,13 +4559,13 @@ export namespace WebKit2 {
         get text(): string;
 
         /**
-         * The {@link WebKit2.WebView} this controller is associated to.
+         * The {@link WebKit2.WebView} this controller is associated with.
          * @construct-only
          */
         get web_view(): WebView;
 
         /**
-         * The {@link WebKit2.WebView} this controller is associated to.
+         * The {@link WebKit2.WebView} this controller is associated with.
          * @construct-only
          */
         get webView(): WebView;
@@ -4638,7 +4640,7 @@ export namespace WebKit2 {
         get_search_text(): string;
 
         /**
-         * Gets the {@link WebKit2.WebView} this find controller is associated to.
+         * Gets the {@link WebKit2.WebView} this find controller is associated with.
          * 
          * Do
          * not dereference the returned instance as it belongs to the
@@ -4753,22 +4755,22 @@ export namespace WebKit2 {
 
         // Methods
         /**
-         * Get the values of the text fields contained in the form associated to `request`.
+         * Get the values of the text fields contained in the form associated with `request`.
          * 
          * Get a {@link GLib.HashTable} with the values of the text fields contained in the form
-         * associated to `request`. Note that fields will be missing if the form
+         * associated with `request`. Note that fields will be missing if the form
          * contains multiple text input elements with the same name, so this
          * function does not reliably return all text fields.
          * @returns a {@link GLib.HashTable} with the form    text fields, or `null` if the form doesn't contain text fields.
-         * @deprecated since 2.20.: Use `webkit_form_submission_request_list_text_fields()` instead.
+         * @deprecated since 2.20: Use `webkit_form_submission_request_list_text_fields()` instead.
          */
         get_text_fields(): never | null;
 
         /**
-         * Get lists of the text fields contained in the form associated to `request`.
+         * Get lists of the text fields contained in the form associated with `request`.
          * 
          * Get lists with the names and values of the text fields contained in
-         * the form associated to `request`. Note that names and values may be
+         * the form associated with `request`. Note that names and values may be
          * `null`.
          * 
          * If this function returns `false`, then both `field_names` and
@@ -6170,7 +6172,7 @@ export namespace WebKit2 {
      * 
      * When a select element in a {@link WebKit2.WebView} needs to display a dropdown menu, the signal
      * {@link WebKit2.WebView.SignalSignatures.show_option_menu | WebKit2.WebView::show-option-menu} is emitted, providing a WebKitOptionMenu with the
-     * {@link WebKit2.OptionMenuItem}<!-- -->s that should be displayed.
+     * {@link WebKit2.OptionMenuItem} objects that should be displayed.
      * @gir-type Class
      * @since 2.18
      */
@@ -6245,7 +6247,7 @@ export namespace WebKit2 {
 
         /**
          * Gets the length of the `menu`.
-         * @returns the number of {@link WebKit2.OptionMenuItem}<!-- -->s in `menu`
+         * @returns the number of {@link WebKit2.OptionMenuItem} objects in `menu`
          * @since 2.18
          */
         get_n_items(): number;
@@ -6255,7 +6257,7 @@ export namespace WebKit2 {
          * 
          * Selecting an item changes the
          * text shown by the combo button, but it doesn't change the value of the element. You need to
-         * explicitly activate the item with `webkit_option_menu_select_item()` or close the menu with
+         * explicitly activate the item with `webkit_option_menu_activate_item()` or close the menu with
          * `webkit_option_menu_close()` in which case the currently selected item will be activated.
          * @param index the index of the item
          * @since 2.18
@@ -6472,7 +6474,7 @@ export namespace WebKit2 {
         download(): void;
 
         /**
-         * {@link WebKit2.ResponsePolicyDecision}, this would cancel the request.
+         * Ignore the action which triggered this decision.
          * 
          * Ignore the action which triggered this decision. For instance, for a
          * {@link WebKit2.ResponsePolicyDecision}, this would cancel the request.
@@ -6492,7 +6494,7 @@ export namespace WebKit2 {
          * in the origin associated with the accepted navigation action.
          * 
          * For example, a navigation decision to a video sharing website may
-         * be accepted under the priviso no movies are allowed to autoplay. The
+         * be accepted under the proviso no movies are allowed to autoplay. The
          * autoplay policy in this case would be set in the `policies`.
          * @param policies a {@link WebKit2.WebsitePolicies}
          * @since 2.30
@@ -6516,7 +6518,7 @@ export namespace WebKit2 {
             apply: () => void;
             /**
              * Emitted after change of selected printer in the dialog. The actual page setup
-             * and print settings are available and the custom widget can actualize itself
+             * and print settings are available and the custom widget can update itself
              * according to their values.
              * @signal
              * @since 2.16
@@ -6536,9 +6538,9 @@ export namespace WebKit2 {
     }
 
     /**
-     * Allows to embed a custom widget in print dialog.
+     * Allows embedding a custom widget in the print dialog.
      * 
-     * A WebKitPrintCustomWidget allows to embed a custom widget in the print
+     * A WebKitPrintCustomWidget allows embedding a custom widget in the print
      * dialog by connecting to the {@link WebKit2.PrintOperation.SignalSignatures.create_custom_widget | WebKit2.PrintOperation::create-custom-widget}
      * signal, creating a new WebKitPrintCustomWidget with
      * `webkit_print_custom_widget_new()` and returning it from there. You can later
@@ -6651,7 +6653,7 @@ export namespace WebKit2 {
              * Emitted when displaying the print dialog with `webkit_print_operation_run_dialog()`.
              * The returned {@link WebKit2.PrintCustomWidget} will be added to the print dialog and
              * it will be owned by the `print_operation`. However, the object is guaranteed
-             * to be alive until the {@link WebKit2.PrintCustomWidget.SignalSignatures.apply | WebKit2.PrintCustomWidget::apply} is emitted.
+             * to be alive until the {@link WebKit2.PrintCustomWidget.SignalSignatures.apply | WebKit2.PrintCustomWidget::apply} signal is emitted.
              * @signal
              * @since 2.16
              * @deprecated since 2.40
@@ -6814,8 +6816,8 @@ export namespace WebKit2 {
          * is returned and the print operation starts. In this case, the {@link WebKit2.PrintOperation.SignalSignatures.finished | WebKit2.PrintOperation::finished}
          * signal is emitted when the operation finishes. If an error occurs while printing, the signal
          * {@link WebKit2.PrintOperation.SignalSignatures.failed | WebKit2.PrintOperation::failed} is emitted before {@link WebKit2.PrintOperation.SignalSignatures.finished | WebKit2.PrintOperation::finished}.
-         * If the print dialog is not cancelled current print settings and page setup of `print_operation`
-         * are updated with options selected by the user when Print button is pressed in print dialog.
+         * If the print dialog is not cancelled, the current print settings and page setup of `print_operation`
+         * are updated with the options selected by the user when the Print button is pressed in the print dialog.
          * You can get the updated print settings and page setup by calling
          * `webkit_print_operation_get_print_settings()` and `webkit_print_operation_get_page_setup()`
          * after this method.
@@ -6914,7 +6916,7 @@ export namespace WebKit2 {
         /**
          * Return the {@link WebKit2.URIRequest} associated with the response decision.
          * 
-         * Modifications to the returned object are <emphasis>not</emphasis> taken
+         * Modifications to the returned object are *not* taken
          * into account when the request is sent over the network, and is intended
          * only to aid in evaluating whether a response decision should be taken or
          * not. To modify requests before they are sent over the network the
@@ -6931,7 +6933,7 @@ export namespace WebKit2 {
 
         /**
          * Gets whether the request is the main frame main resource
-         * @returns `true` if the request is the main frame main resouce or `false` otherwise
+         * @returns `true` if the request is the main frame main resource or `false` otherwise
          * @since 2.40
          */
         is_main_frame_main_resource(): boolean;
@@ -7310,7 +7312,7 @@ export namespace WebKit2 {
     }
 
     /**
-     * Control the behaviour of a {@link WebKit2.WebView}.
+     * Control the behavior of a {@link WebKit2.WebView}.
      * 
      * {@link WebKit2.Settings} can be applied to a {@link WebKit2.WebView} to control text charset,
      * color, font sizes, printing mode, script support, loading of images and various
@@ -7332,7 +7334,7 @@ export namespace WebKit2 {
          * Whether file access is allowed from file URLs. By default, when
          * something is loaded in a {@link WebKit2.WebView} using a file URI, cross
          * origin requests to other file resources are not allowed. This
-         * setting allows you to change that behaviour, so that it would be
+         * setting allows you to change that behavior, so that it would be
          * possible to do a XMLHttpRequest of a local file, for example.
          * @since 2.10
          * @default false
@@ -7344,7 +7346,7 @@ export namespace WebKit2 {
          * Whether file access is allowed from file URLs. By default, when
          * something is loaded in a {@link WebKit2.WebView} using a file URI, cross
          * origin requests to other file resources are not allowed. This
-         * setting allows you to change that behaviour, so that it would be
+         * setting allows you to change that behavior, so that it would be
          * possible to do a XMLHttpRequest of a local file, for example.
          * @since 2.10
          * @default false
@@ -7355,7 +7357,7 @@ export namespace WebKit2 {
         /**
          * Determine whether it's allowed to create and run modal dialogs
          * from a {@link WebKit2.WebView} through JavaScript with
-         * <function>window.showModalDialog</function>. If it's set to
+         * `window.showModalDialog`. If it's set to
          * `false`, the associated {@link WebKit2.WebView} won't be able to create
          * new modal dialogs, so not even the {@link WebKit2.WebView.SignalSignatures.create | WebKit2.WebView::create}
          * signal will be emitted.
@@ -7367,7 +7369,7 @@ export namespace WebKit2 {
         /**
          * Determine whether it's allowed to create and run modal dialogs
          * from a {@link WebKit2.WebView} through JavaScript with
-         * <function>window.showModalDialog</function>. If it's set to
+         * `window.showModalDialog`. If it's set to
          * `false`, the associated {@link WebKit2.WebView} won't be able to create
          * new modal dialogs, so not even the {@link WebKit2.WebView.SignalSignatures.create | WebKit2.WebView::create}
          * signal will be emitted.
@@ -7380,7 +7382,7 @@ export namespace WebKit2 {
          * Whether or not the top frame is allowed to navigate to data URLs. It is disabled by default
          * due to the risk it poses when loading untrusted URLs, with data URLs being used in scamming
          * and phishing attacks. In contrast, a scenario where it could be enabled could be an app that
-         * embeds a WebView and you have control of the pages being show instead of a generic browser.
+         * embeds a WebView and you have control of the pages being shown instead of a generic browser.
          * @since 2.28
          * @default false
          */
@@ -7391,7 +7393,7 @@ export namespace WebKit2 {
          * Whether or not the top frame is allowed to navigate to data URLs. It is disabled by default
          * due to the risk it poses when loading untrusted URLs, with data URLs being used in scamming
          * and phishing attacks. In contrast, a scenario where it could be enabled could be an app that
-         * embeds a WebView and you have control of the pages being show instead of a generic browser.
+         * embeds a WebView and you have control of the pages being shown instead of a generic browser.
          * @since 2.28
          * @default false
          */
@@ -7403,7 +7405,7 @@ export namespace WebKit2 {
          * should be allowed to access content from any origin.  By default, when
          * something is loaded in a {@link WebKit2.WebView} using a file scheme URL,
          * access to the local file system and arbitrary local storage is not
-         * allowed. This setting allows you to change that behaviour, so that
+         * allowed. This setting allows you to change that behavior, so that
          * it would be possible to use local storage, for example.
          * @since 2.14
          * @default false
@@ -7416,7 +7418,7 @@ export namespace WebKit2 {
          * should be allowed to access content from any origin.  By default, when
          * something is loaded in a {@link WebKit2.WebView} using a file scheme URL,
          * access to the local file system and arbitrary local storage is not
-         * allowed. This setting allows you to change that behaviour, so that
+         * allowed. This setting allows you to change that behavior, so that
          * it would be possible to use local storage, for example.
          * @since 2.14
          * @default false
@@ -8021,7 +8023,7 @@ export namespace WebKit2 {
         /**
          * Determines whether or not private browsing is enabled. Private browsing
          * will disable history, cache and form auto-fill for any pages visited.
-         * @deprecated since 2.16.: Use {@link WebKit2.WebView.is_ephemeral} or {@link WebKit2.WebsiteDataManager.is_ephemeral} instead.
+         * @deprecated since 2.16: Use {@link WebKit2.WebView.is_ephemeral} or {@link WebKit2.WebsiteDataManager.is_ephemeral} instead.
          * @default false
          */
         get enable_private_browsing(): boolean;
@@ -8030,7 +8032,7 @@ export namespace WebKit2 {
         /**
          * Determines whether or not private browsing is enabled. Private browsing
          * will disable history, cache and form auto-fill for any pages visited.
-         * @deprecated since 2.16.: Use {@link WebKit2.WebView.is_ephemeral} or {@link WebKit2.WebsiteDataManager.is_ephemeral} instead.
+         * @deprecated since 2.16: Use {@link WebKit2.WebView.is_ephemeral} or {@link WebKit2.WebsiteDataManager.is_ephemeral} instead.
          * @default false
          */
         get enablePrivateBrowsing(): boolean;
@@ -8092,9 +8094,9 @@ export namespace WebKit2 {
          * Whether to enable Spatial Navigation. This feature consists in the ability
          * to navigate between focusable elements in a Web page, such as hyperlinks
          * and form controls, by using Left, Right, Up and Down arrow keys.
-         * For example, if an user presses the Right key, heuristics determine whether
+         * For example, if a user presses the Right key, heuristics determine whether
          * there is an element they might be trying to reach towards the right, and if
-         * there are multiple elements, which element they probably wants.
+         * there are multiple elements, which element they probably want.
          * @since 2.4
          * @default false
          */
@@ -8105,9 +8107,9 @@ export namespace WebKit2 {
          * Whether to enable Spatial Navigation. This feature consists in the ability
          * to navigate between focusable elements in a Web page, such as hyperlinks
          * and form controls, by using Left, Right, Up and Down arrow keys.
-         * For example, if an user presses the Right key, heuristics determine whether
+         * For example, if a user presses the Right key, heuristics determine whether
          * there is an element they might be trying to reach towards the right, and if
-         * there are multiple elements, which element they probably wants.
+         * there are multiple elements, which element they probably want.
          * @since 2.4
          * @default false
          */
@@ -8339,7 +8341,7 @@ export namespace WebKit2 {
         set mathFontFamily(val: string | null);
 
         /**
-         * List of media content types requiring hardware support, split by semicolons (:).
+         * List of media content types requiring hardware support, split by colons (:).
          * For example: 'video/webm; codecs="vp*":video/mp4; codecs="avc*":video/&ast; codecs="av1*"'.
          * @since 2.30
          * @default null
@@ -8348,7 +8350,7 @@ export namespace WebKit2 {
         set media_content_types_requiring_hardware_support(val: string);
 
         /**
-         * List of media content types requiring hardware support, split by semicolons (:).
+         * List of media content types requiring hardware support, split by colons (:).
          * For example: 'video/webm; codecs="vp*":video/mp4; codecs="avc*":video/&ast; codecs="av1*"'.
          * @since 2.30
          * @default null
@@ -8515,8 +8517,8 @@ export namespace WebKit2 {
         /**
          * Allow customization of the WebRTC UDP ports range.
          * 
-         * In some constrained environments where a firewall blocks UDP network traffic excepted on a
-         * specific port range, this settings can be used to give hints to the WebRTC backend regarding
+         * In some constrained environments where a firewall blocks UDP network traffic except on a
+         * specific port range, this setting can be used to give hints to the WebRTC backend regarding
          * which ports to allocate. The format is min-port:max-port, so for instance 20000:30000. The
          * default empty string value means the OS will use no hints from the WebRTC backend. Using 0
          * for one of the values is allowed and means the value is unspecified.
@@ -8529,8 +8531,8 @@ export namespace WebKit2 {
         /**
          * Allow customization of the WebRTC UDP ports range.
          * 
-         * In some constrained environments where a firewall blocks UDP network traffic excepted on a
-         * specific port range, this settings can be used to give hints to the WebRTC backend regarding
+         * In some constrained environments where a firewall blocks UDP network traffic except on a
+         * specific port range, this setting can be used to give hints to the WebRTC backend regarding
          * which ports to allocate. The format is min-port:max-port, so for instance 20000:30000. The
          * default empty string value means the OS will use no hints from the WebRTC backend. Using 0
          * for one of the values is allowed and means the value is unspecified.
@@ -8627,7 +8629,7 @@ export namespace WebKit2 {
          * Gets the list of available development WebKit features.
          * 
          * The returned features are a subset of those returned by
-         * {@link Settings.get_all_features}, and includes those which
+         * {@link Settings.get_all_features}, and include those which
          * web and WebKit developers might find useful, but in general should
          * *not* be exposed to end users; see {@link FeatureStatus} for
          * more details.
@@ -8639,7 +8641,7 @@ export namespace WebKit2 {
          * Gets the list of available experimental WebKit features.
          * 
          * The returned features are a subset of those returned by
-         * {@link Settings.get_all_features}, and includes those which
+         * {@link Settings.get_all_features}, and include those which
          * certain applications may want to expose to end users; see
          * {@link FeatureStatus} for more details.
          * @since 2.42
@@ -8648,7 +8650,7 @@ export namespace WebKit2 {
 
         // Methods
         /**
-         * Reads the contents of the given `group_name` from the given `key_file` and apply the value of
+         * Reads the contents of the given `group_name` from the given `key_file` and applies the value of
          * each key/value to the corresponding property on the `settings`.
          * 
          * Value types have to match with the corresponding setting property type and the group keys have to
@@ -8679,7 +8681,7 @@ export namespace WebKit2 {
 
         /**
          * Get the {@link WebKit2.Settings.allow_top_navigation_to_data_urls} property.
-         * @returns `true` If navigation to data URLs from the top frame is allowed or `false`\ otherwise.
+         * @returns `true` If navigation to data URLs from the top frame is allowed or `false` otherwise.
          * @since 2.28
          */
         get_allow_top_navigation_to_data_urls(): boolean;
@@ -8757,7 +8759,7 @@ export namespace WebKit2 {
 
         /**
          * Get the {@link WebKit2.Settings.enable_back_forward_navigation_gestures} property.
-         * @returns `true` if horizontal swipe gesture will trigger back-forward navigaiton or `false` otherwise.
+         * @returns `true` if horizontal swipe gesture will trigger back-forward navigation or `false` otherwise.
          * @since 2.24
          */
         get_enable_back_forward_navigation_gestures(): boolean;
@@ -8823,7 +8825,7 @@ export namespace WebKit2 {
         /**
          * Get the {@link WebKit2.Settings.enable_java} property.
          * @returns `false` always.
-         * @deprecated since 2.38.: This function always returns `false`.
+         * @deprecated since 2.38: This function always returns `false`.
          */
         get_enable_java(): boolean;
 
@@ -8884,7 +8886,7 @@ export namespace WebKit2 {
 
         /**
          * Get the {@link WebKit2.Settings.enable_page_cache} property.
-         * @returns `true` if page cache enabled or `false` otherwise.
+         * @returns `true` if page cache is enabled or `false` otherwise.
          */
         get_enable_page_cache(): boolean;
 
@@ -8898,7 +8900,7 @@ export namespace WebKit2 {
         /**
          * Get the {@link WebKit2.Settings.enable_private_browsing} property.
          * @returns `true` If private browsing is enabled or `false` otherwise.
-         * @deprecated since 2.16.: Use {@link WebKit2.WebView.is_ephemeral} or {@link WebKit2.WebContext.is_ephemeral} instead.
+         * @deprecated since 2.16: Use {@link WebKit2.WebView.is_ephemeral} or {@link WebKit2.WebsiteDataManager.is_ephemeral} instead.
          */
         get_enable_private_browsing(): boolean;
 
@@ -8962,7 +8964,7 @@ export namespace WebKit2 {
         /**
          * The XSS auditor has been removed. This function returns `false`.
          * @returns `false`
-         * @deprecated since 2.38.: This function does nothing.
+         * @deprecated since 2.38: This function does nothing.
          */
         get_enable_xss_auditor(): boolean;
 
@@ -8974,7 +8976,7 @@ export namespace WebKit2 {
 
         /**
          * Gets whether a feature is enabled.
-         * @param feature the feature to toggle.
+         * @param feature the feature to query.
          * @returns Whether the feature is enabled.
          * @since 2.42
          */
@@ -8995,7 +8997,7 @@ export namespace WebKit2 {
 
         /**
          * Get the {@link WebKit2.Settings.javascript_can_open_windows_automatically} property.
-         * @returns `true` If JavaScript can open window automatically or `false` otherwise.
+         * @returns `true` If JavaScript can open windows automatically or `false` otherwise.
          */
         get_javascript_can_open_windows_automatically(): boolean;
 
@@ -9008,7 +9010,8 @@ export namespace WebKit2 {
 
         /**
          * Gets the {@link WebKit2.Settings.math_font_family} property.
-         * @returns The default font family used to display content marked with math font. Since 2.52
+         * @returns The default font family used to display content marked with math font.
+         * @since 2.52
          */
         get_math_font_family(): string | null;
 
@@ -9027,7 +9030,7 @@ export namespace WebKit2 {
 
         /**
          * Get the {@link WebKit2.Settings.media_playback_requires_user_gesture} property.
-         * @returns `true` If an user gesture is needed to play or load media    or `false` if no user gesture is needed.
+         * @returns `true` If a user gesture is needed to play or load media    or `false` if no user gesture is needed.
          */
         get_media_playback_requires_user_gesture(): boolean;
 
@@ -9247,7 +9250,7 @@ export namespace WebKit2 {
          * 
          * Deprecated function that does nothing.
          * @param enabled Value to be set
-         * @deprecated since 2.38.: This function does nothing.
+         * @deprecated since 2.38: This function does nothing.
          */
         set_enable_java(enabled: boolean): void;
 
@@ -9295,7 +9298,7 @@ export namespace WebKit2 {
         /**
          * Set the {@link WebKit2.Settings.enable_mock_capture_devices} property.
          * @param enabled Value to be set
-         * @since 2.4
+         * @since 2.24
          */
         set_enable_mock_capture_devices(enabled: boolean): void;
 
@@ -9322,7 +9325,7 @@ export namespace WebKit2 {
         /**
          * Set the {@link WebKit2.Settings.enable_private_browsing} property.
          * @param enabled Value to be set
-         * @deprecated since 2.16.: Use {@link WebKit2.WebView.is_ephemeral} or {@link WebKit2.WebContext.is_ephemeral} instead.
+         * @deprecated since 2.16: Use {@link WebKit2.WebView.is_ephemeral} or {@link WebKit2.WebsiteDataManager.is_ephemeral} instead.
          */
         set_enable_private_browsing(enabled: boolean): void;
 
@@ -9388,7 +9391,7 @@ export namespace WebKit2 {
         /**
          * The XSS auditor has been removed. This function does nothing.
          * @param enabled Value to be set
-         * @deprecated since 2.38.: This function does nothing.
+         * @deprecated since 2.38: This function does nothing.
          */
         set_enable_xss_auditor(enabled: boolean): void;
 
@@ -9439,15 +9442,14 @@ export namespace WebKit2 {
 
         /**
          * Set the {@link WebKit2.Settings.math_font_family} property.
-         * 
-         * Since 2.52
          * @param math_font_family the new default math font family
+         * @since 2.52
          */
         set_math_font_family(math_font_family: string | null): void;
 
         /**
          * Set the {@link WebKit2.Settings.media_content_types_requiring_hardware_support} property.
-         * @param content_types list of media content types requiring hardware support split by semicolons (:) or `null` to use the default value.
+         * @param content_types list of media content types requiring hardware support split by colons (:) or `null` to use the default value.
          * @since 2.30
          */
         set_media_content_types_requiring_hardware_support(content_types: string | null): void;
@@ -9510,10 +9512,10 @@ export namespace WebKit2 {
          * Set the {@link WebKit2.Settings.user_agent} property by appending the application details.
          * 
          * Set the {@link WebKit2.Settings.user_agent} property by appending the application details to the default user
-         * agent. If no application name or version is given, the default user agent used will be used. If only
-         * the version is given, the default engine version is used with the given application name.
+         * agent. If no application name is given, the default user agent will be used and `application_version`
+         * is ignored. If only the name is given, the default engine version is used with the given application name.
          * @param application_name The application name used for the user agent or `null` to use the default user agent.
-         * @param application_version The application version for the user agent or `null` to user the default version.
+         * @param application_version The application version for the user agent or `null` to use the default version.
          */
         set_user_agent_with_application_details(application_name: string | null, application_version: string | null): void;
 
@@ -9881,10 +9883,10 @@ export namespace WebKit2 {
 
         /**
          * Get the request body.
-         * @returns (nullable): the body of the `request`.
+         * @returns the body of the `request`.
          * @since 2.40
          */
-        get_http_body(): Gio.InputStream;
+        get_http_body(): Gio.InputStream | null;
 
         /**
          * Get the {@link Soup.MessageHeaders} of the request.
@@ -9949,11 +9951,11 @@ export namespace WebKit2 {
      * a {@link WebKit2.URISchemeRequestCallback}. After that, when a URI response
      * is made with that particular scheme, your callback will be
      * called. There you will be able to provide more response parameters
-     * when the methods and properties of a {@link WebKit2.URISchemeRequest} is not
+     * when the methods and properties of a {@link WebKit2.URISchemeRequest} are not
      * enough.
      * 
      * When you finished setting up your {@link WebKit2.URISchemeResponse}, call
-     * `webkit_uri_request_finish_with_response()` with it to return the response.
+     * `webkit_uri_scheme_request_finish_with_response()` with it to return the response.
      * @gir-type Class
      */
     class URISchemeResponse extends GObject.Object {
@@ -10127,7 +10129,7 @@ export namespace WebKit2 {
          * `webkit_user_content_filter_store_fetch_identifiers_finish()` to obtain the list of
          * filter identifiers.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback} to call when the removal is completed
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the identifiers have been fetched
          * @since 2.24
          */
         fetch_identifiers(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
@@ -10139,7 +10141,7 @@ export namespace WebKit2 {
          * `webkit_user_content_filter_store_fetch_identifiers_finish()` to obtain the list of
          * filter identifiers.
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
-         * @param callback a {@link Gio.AsyncReadyCallback} to call when the removal is completed
+         * @param callback a {@link Gio.AsyncReadyCallback} to call when the identifiers have been fetched
          * @since 2.24
          */
         fetch_identifiers(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<string[]> | void;
@@ -10265,10 +10267,10 @@ export namespace WebKit2 {
         remove_finish(result: Gio.AsyncResult): boolean;
 
         /**
-         * Asynchronously save a content filter from a set source rule.
+         * Asynchronously save a content filter from a source rule set.
          * 
          * Asynchronously save a content filter from a source rule set in the
-         * [WebKit content extesions JSON format](https://webkit.org/blog/3476/content-blockers-first-look/).
+         * [WebKit content extensions JSON format](https://webkit.org/blog/3476/content-blockers-first-look/).
          * 
          * The `identifier` can be used afterwards to refer to the filter when using
          * `webkit_user_content_filter_store_remove()` and `webkit_user_content_filter_store_load()`.
@@ -10285,10 +10287,10 @@ export namespace WebKit2 {
         save(identifier: string, source: GLib.Bytes | Uint8Array, cancellable: Gio.Cancellable | null): globalThis.Promise<UserContentFilter>;
 
         /**
-         * Asynchronously save a content filter from a set source rule.
+         * Asynchronously save a content filter from a source rule set.
          * 
          * Asynchronously save a content filter from a source rule set in the
-         * [WebKit content extesions JSON format](https://webkit.org/blog/3476/content-blockers-first-look/).
+         * [WebKit content extensions JSON format](https://webkit.org/blog/3476/content-blockers-first-look/).
          * 
          * The `identifier` can be used afterwards to refer to the filter when using
          * `webkit_user_content_filter_store_remove()` and `webkit_user_content_filter_store_load()`.
@@ -10306,10 +10308,10 @@ export namespace WebKit2 {
         save(identifier: string, source: GLib.Bytes | Uint8Array, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
-         * Asynchronously save a content filter from a set source rule.
+         * Asynchronously save a content filter from a source rule set.
          * 
          * Asynchronously save a content filter from a source rule set in the
-         * [WebKit content extesions JSON format](https://webkit.org/blog/3476/content-blockers-first-look/).
+         * [WebKit content extensions JSON format](https://webkit.org/blog/3476/content-blockers-first-look/).
          * 
          * The `identifier` can be used afterwards to refer to the filter when using
          * `webkit_user_content_filter_store_remove()` and `webkit_user_content_filter_store_load()`.
@@ -10387,7 +10389,7 @@ export namespace WebKit2 {
         save_from_file(identifier: string, file: Gio.File, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<UserContentFilter> | void;
 
         /**
-         * Finishes and asynchronous filter save previously started with
+         * Finishes an asynchronous filter save previously started with
          * `webkit_user_content_filter_store_save_from_file()`.
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link WebKit2.UserContentFilter}, or `null` if saving failed.
@@ -10403,8 +10405,8 @@ export namespace WebKit2 {
         interface SignalSignatures extends GObject.Object.SignalSignatures {
             /**
              * This signal is emitted when JavaScript in a web view calls
-             * <code>window.webkit.messageHandlers.<name>.postMessage()</code>, after registering
-             * <code><name></code> using
+             * `window.webkit.messageHandlers.<name>.postMessage()`, after registering
+             * `<name>` using
              * `webkit_user_content_manager_register_script_message_handler()`
              * @signal
              * @since 2.8
@@ -10414,8 +10416,8 @@ export namespace WebKit2 {
             "script-message-received": (value: JavascriptResult) => void;
             /**
              * This signal is emitted when JavaScript in a web view calls
-             * <code>window.webkit.messageHandlers.<name>.postMessage()</code>, after registering
-             * <code><name></code> using
+             * `window.webkit.messageHandlers.<name>.postMessage()`, after registering
+             * `<name>` using
              * `webkit_user_content_manager_register_script_message_handler_with_reply()`
              * 
              * The given `reply` can be used to send a return value with
@@ -10532,7 +10534,7 @@ export namespace WebKit2 {
          * 
          * ```c
          * WebKitWebView *view = webkit_web_view_new ();
-         * WebKitUserContentManager *manager = webkit_web_view_get_user_content_manager ();
+         * WebKitUserContentManager *manager = webkit_web_view_get_user_content_manager (view);
          * g_signal_connect (manager, "script-message-received::foobar",
          *                   G_CALLBACK (handle_script_message), NULL);
          * webkit_user_content_manager_register_script_message_handler (manager, "foobar");
@@ -10606,9 +10608,8 @@ export namespace WebKit2 {
 
         /**
          * Removes a filter from the given {@link WebKit2.UserContentManager}.
-         * 
-         * Since 2.24
          * @param filter A {@link WebKit2.UserContentFilter}
+         * @since 2.24
          */
         remove_filter(filter: UserContentFilter): void;
 
@@ -10981,8 +10982,8 @@ export namespace WebKit2 {
             memoryPressureSettings: MemoryPressureSettings;
             process_swap_on_cross_site_navigation_enabled: boolean;
             processSwapOnCrossSiteNavigationEnabled: boolean;
-            time_zone_override: string;
-            timeZoneOverride: string;
+            time_zone_override: string | null;
+            timeZoneOverride: string | null;
             use_system_appearance_for_scrollbars: boolean;
             useSystemAppearanceForScrollbars: boolean;
             website_data_manager: WebsiteDataManager;
@@ -10991,15 +10992,15 @@ export namespace WebKit2 {
     }
 
     /**
-     * Manages aspects common to all {@link WebKit2.WebView}<!-- -->s
+     * Manages aspects common to all {@link WebKit2.WebView} objects
      * 
      * The {@link WebKit2.WebContext} manages all aspects common to all
-     * {@link WebKit2.WebView}<!-- -->s.
+     * {@link WebKit2.WebView} objects.
      * 
      * You can define the {@link WebKit2.CacheModel} with
      * `webkit_web_context_set_cache_model()`, depending on the needs of
      * your application. You can access the {@link WebKit2.SecurityManager} to specify
-     * the behaviour of your application regarding security using
+     * the behavior of your application regarding security using
      * `webkit_web_context_get_security_manager()`.
      * 
      * It is also possible to change your preferred language or enable
@@ -11025,7 +11026,7 @@ export namespace WebKit2 {
         /**
          * The directory where local storage data will be saved.
          * @since 2.8
-         * @deprecated since 2.10.: Use {@link WebKit2.WebsiteDataManager.local_storage_directory} instead.
+         * @deprecated since 2.10: Use {@link WebKit2.WebsiteDataManager.local_storage_directory} instead.
          * @construct-only
          * @default null
          */
@@ -11034,7 +11035,7 @@ export namespace WebKit2 {
         /**
          * The directory where local storage data will be saved.
          * @since 2.8
-         * @deprecated since 2.10.: Use {@link WebKit2.WebsiteDataManager.local_storage_directory} instead.
+         * @deprecated since 2.10: Use {@link WebKit2.WebsiteDataManager.local_storage_directory} instead.
          * @construct-only
          * @default null
          */
@@ -11055,7 +11056,7 @@ export namespace WebKit2 {
         set memoryPressureSettings(val: MemoryPressureSettings);
 
         /**
-         * Whether swap Web processes on cross-site navigations is enabled.
+         * Whether swapping Web processes on cross-site navigations is enabled.
          * 
          * When enabled, pages from each security origin will be handled by
          * their own separate Web processes, which are started (and
@@ -11069,7 +11070,7 @@ export namespace WebKit2 {
         get process_swap_on_cross_site_navigation_enabled(): boolean;
 
         /**
-         * Whether swap Web processes on cross-site navigations is enabled.
+         * Whether swapping Web processes on cross-site navigations is enabled.
          * 
          * When enabled, pages from each security origin will be handled by
          * their own separate Web processes, which are started (and
@@ -11095,7 +11096,7 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get time_zone_override(): string;
+        get time_zone_override(): string | null;
 
         /**
          * The timezone override for this web context. Setting this property provides a better
@@ -11110,13 +11111,13 @@ export namespace WebKit2 {
          * @construct-only
          * @default null
          */
-        get timeZoneOverride(): string;
+        get timeZoneOverride(): string | null;
 
         /**
          * Whether to use system appearance for rendering scrollbars.
          * 
          * This is enabled by default for backwards compatibility, but it's only
-         * recommened to use when the application includes other widgets to ensure
+         * recommended to use when the application includes other widgets to ensure
          * consistency, or when consistency with other applications is required too.
          * @since 2.30
          * @deprecated since 2.46
@@ -11129,7 +11130,7 @@ export namespace WebKit2 {
          * Whether to use system appearance for rendering scrollbars.
          * 
          * This is enabled by default for backwards compatibility, but it's only
-         * recommened to use when the application includes other widgets to ensure
+         * recommended to use when the application includes other widgets to ensure
          * consistency, or when consistency with other applications is required too.
          * @since 2.30
          * @deprecated since 2.46
@@ -11236,7 +11237,7 @@ export namespace WebKit2 {
         add_path_to_sandbox(path: string, read_only: boolean): void;
 
         /**
-         * Ignore further TLS errors on the `host` for the certificate present in `info`.
+         * Ignore further TLS errors on the `host` for `certificate`.
          * 
          * If `host` is an IPv6 address, it should not be surrounded by brackets. This
          * expectation matches `g_uri_get_host()`.
@@ -11256,7 +11257,7 @@ export namespace WebKit2 {
         /**
          * Requests downloading of the specified URI string.
          * 
-         * The download operation will not be associated to any {@link WebKit2.WebView},
+         * The download operation will not be associated with any {@link WebKit2.WebView},
          * if you are interested in starting a download from a particular {@link WebKit2.WebView} use
          * `webkit_web_view_download_uri()` instead.
          * @param uri the URI to download
@@ -11346,7 +11347,7 @@ export namespace WebKit2 {
         /**
          * Finish an asynchronous operation started with webkit_web_context_get_plugins.
          * @param result a {@link Gio.AsyncResult}
-         * @returns a {@link GLib.List} of {@link WebKit2.Plugin}. You must free the {@link GLib.List} with    `g_list_free()` and unref the {@link WebKit2.Plugin}<!-- -->s with `g_object_unref()` when you're done with them.
+         * @returns a {@link GLib.List} of {@link WebKit2.Plugin}. You must free the {@link GLib.List} with    `g_list_free()` and unref the {@link WebKit2.Plugin} objects with `g_object_unref()` when you're done with them.
          * @deprecated since 2.32
          * @throws GLib.Error
          */
@@ -11383,9 +11384,9 @@ export namespace WebKit2 {
         get_spell_checking_enabled(): boolean;
 
         /**
-         * Get the the list of spell checking languages.
+         * Get the list of spell checking languages.
          * 
-         * Get the the list of spell checking languages associated with
+         * Get the list of spell checking languages associated with
          * `context`, or `null` if no languages have been previously set.
          * 
          * See `webkit_web_context_set_spell_checking_languages()` for more
@@ -11396,20 +11397,21 @@ export namespace WebKit2 {
 
         /**
          * Get the {@link WebKit2.WebContext.time_zone_override} property.
+         * @returns the time zone override, or `null` if none was set.
          * @since 2.38
          */
-        get_time_zone_override(): string;
+        get_time_zone_override(): string | null;
 
         /**
          * Get the TLS errors policy of `context`.
          * @returns a {@link WebKit2.TLSErrorsPolicy}
-         * @deprecated since 2.32.: Use `webkit_website_data_manager_get_tls_errors_policy()` instead.
+         * @deprecated since 2.32: Use `webkit_website_data_manager_get_tls_errors_policy()` instead.
          */
         get_tls_errors_policy(): TLSErrorsPolicy;
 
         /**
          * Get the {@link WebKit2.WebContext.use_system_appearance_for_scrollbars} property.
-         * @returns `true` if scrollbars are rendering using the system appearance, or `false` otherwise
+         * @returns `true` if scrollbars are rendered using the system appearance, or `false` otherwise
          * @since 2.30
          * @deprecated since 2.46
          */
@@ -11483,7 +11485,7 @@ export namespace WebKit2 {
         /**
          * Register `scheme` in `context`.
          * 
-         * Register `scheme` in `context`, so that when an URI request with `scheme` is made in the
+         * Register `scheme` in `context`, so that when a URI request with `scheme` is made in the
          * {@link WebKit2.WebContext}, the {@link WebKit2.URISchemeRequestCallback} registered will be called with a
          * {@link WebKit2.URISchemeRequest}.
          * It is possible to handle URI scheme requests asynchronously, by calling `g_object_ref()` on the
@@ -11524,7 +11526,7 @@ export namespace WebKit2 {
         register_uri_scheme(scheme: string, callback: URISchemeRequestCallback): void;
 
         /**
-         * Send `message` to all web process extensions associated to `context`.
+         * Send `message` to all web process extensions associated with `context`.
          * 
          * If `message` is floating, it's consumed.
          * @param message a {@link WebKit2.UserMessage}
@@ -11561,7 +11563,7 @@ export namespace WebKit2 {
          * Specifies a usage model for WebViews, which WebKit will use to
          * determine its caching behavior. All web views follow the cache
          * model. This cache model determines the RAM and disk space to use
-         * for caching previously viewed content .
+         * for caching previously viewed content.
          * 
          * Research indicates that users tend to browse within clusters of
          * documents that hold resources in common, and to revisit previously
@@ -11590,7 +11592,7 @@ export namespace WebKit2 {
          * but it doesn't change the value returned by `webkit_website_data_manager_get_disk_cache_directory()`
          * since the {@link WebKit2.WebsiteDataManager} is immutable.
          * @param directory the directory to set
-         * @deprecated since 2.10.: Use `webkit_web_context_new_with_website_data_manager()` instead.
+         * @deprecated since 2.10: Use `webkit_web_context_new_with_website_data_manager()` instead.
          */
         set_disk_cache_directory(directory: string): void;
 
@@ -11622,7 +11624,7 @@ export namespace WebKit2 {
          * @param proxy_mode a {@link WebKit2.NetworkProxyMode}
          * @param proxy_settings a {@link WebKit2.NetworkProxySettings}, or `null`
          * @since 2.16
-         * @deprecated since 2.32.: Use `webkit_website_data_manager_set_network_proxy_settings()` instead.
+         * @deprecated since 2.32: Use `webkit_website_data_manager_set_network_proxy_settings()` instead.
          */
         set_network_proxy_settings(proxy_mode: NetworkProxyMode, proxy_settings: NetworkProxySettings | null): void;
 
@@ -11690,7 +11692,7 @@ export namespace WebKit2 {
         /**
          * Set the TLS errors policy of `context` as `policy`.
          * @param policy a {@link WebKit2.TLSErrorsPolicy}
-         * @deprecated since 2.32.: Use `webkit_website_data_manager_set_tls_errors_policy()` instead.
+         * @deprecated since 2.32: Use `webkit_website_data_manager_set_tls_errors_policy()` instead.
          */
         set_tls_errors_policy(policy: TLSErrorsPolicy): void;
 
@@ -11952,7 +11954,7 @@ export namespace WebKit2 {
         detach(): void;
 
         /**
-         * Get the height that the inspector view when attached.
+         * Get the height that the inspector view should have when attached.
          * 
          * Get the height that the inspector view should have when
          * it's attached. If the inspector view is not attached this
@@ -11974,7 +11976,7 @@ export namespace WebKit2 {
          * 
          * This can be `null` if
          * nothing has been loaded yet in the inspected view, if the inspector
-         * has been closed or when inspected view was loaded from a HTML string
+         * has been closed or when the inspected view was loaded from an HTML string
          * instead of a URI.
          * @returns the URI that is currently being inspected or `null`
          */
@@ -12033,7 +12035,7 @@ export namespace WebKit2 {
              * every time new data has been received. It's
              * useful to know the progress of the resource load operation.
              * 
-             * This is signal is deprecated since version 2.40 and it's never emitted.
+             * This signal is deprecated since version 2.40 and it's never emitted.
              * @signal
              * @deprecated since 2.40
              * @run-last
@@ -12156,7 +12158,7 @@ export namespace WebKit2 {
         /**
          * Finish an asynchronous operation started with `webkit_web_resource_get_data()`.
          * @param result a {@link Gio.AsyncResult}
-         * @returns a    string with the data of `resource`, or `null` in case of error. if `length`    is not `null`, the size of the data will be assigned to it.
+         * @returns a    string with the data of `resource`, or `null` in case of error. If `length`    is not `null`, the size of the data will be assigned to it.
          * @throws GLib.Error
          */
         get_data_finish(result: Gio.AsyncResult): Uint8Array;
@@ -12177,25 +12179,15 @@ export namespace WebKit2 {
          * The active URI might change during
          * a load operation:
          * 
-         * <orderedlist>
-         * <listitem><para>
-         *   When the resource load starts, the active URI is the requested URI
-         * </para></listitem>
-         * <listitem><para>
-         *   When the initial request is sent to the server, {@link WebKit2.WebResource.SignalSignatures.sent_request | WebKit2.WebResource::sent-request}
-         *   signal is emitted without a redirected response, the active URI is the URI of
-         *   the request sent to the server.
-         * </para></listitem>
-         * <listitem><para>
-         *   In case of a server redirection, {@link WebKit2.WebResource.SignalSignatures.sent_request | WebKit2.WebResource::sent-request} signal
-         *   is emitted again with a redirected response, the active URI is the URI the request
-         *   was redirected to.
-         * </para></listitem>
-         * <listitem><para>
-         *   When the response is received from the server, the active URI is the final
-         *   one and it will not change again.
-         * </para></listitem>
-         * </orderedlist>
+         * 1. When the resource load starts, the active URI is the requested URI
+         * 2. When the initial request is sent to the server, {@link WebKit2.WebResource.SignalSignatures.sent_request | WebKit2.WebResource::sent-request}
+         *    signal is emitted without a redirected response, the active URI is the URI of
+         *    the request sent to the server.
+         * 3. In case of a server redirection, {@link WebKit2.WebResource.SignalSignatures.sent_request | WebKit2.WebResource::sent-request} signal
+         *    is emitted again with a redirected response, the active URI is the URI the request
+         *    was redirected to.
+         * 4. When the response is received from the server, the active URI is the final
+         *    one and it will not change again.
          * 
          * You can monitor the active URI by connecting to the notify::uri
          * signal of `resource`.
@@ -12228,7 +12220,7 @@ export namespace WebKit2 {
             authenticate: (request: AuthenticationRequest) => boolean | void;
             /**
              * Emitted when closing a {@link WebKit2.WebView} is requested. This occurs when a
-             * call is made from JavaScript's <function>window.close</function> function or
+             * call is made from JavaScript's `window.close` function or
              * after trying to close the `web_view` with `webkit_web_view_try_close()`.
              * It is the owner's responsibility to handle this signal to hide or
              * destroy the {@link WebKit2.WebView}, if necessary.
@@ -12240,36 +12232,27 @@ export namespace WebKit2 {
              * Emitted when a context menu is about to be displayed to give the application
              * a chance to customize the proposed menu, prevent the menu from being displayed,
              * or build its own context menu.
-             * <itemizedlist>
-             * <listitem><para>
-             *  To customize the proposed menu you can use `webkit_context_menu_prepend()`,
+             * 
+             * - To customize the proposed menu you can use `webkit_context_menu_prepend()`,
              *  `webkit_context_menu_append()` or `webkit_context_menu_insert()` to add new
-             *  {@link WebKit2.ContextMenuItem}<!-- -->s to `context_menu`, `webkit_context_menu_move_item()`
+             *  {@link WebKit2.ContextMenuItem} objects to `context_menu`, `webkit_context_menu_move_item()`
              *  to reorder existing items, or `webkit_context_menu_remove()` to remove an
              *  existing item. The signal handler should return `false`, and the menu represented
              *  by `context_menu` will be shown.
-             * </para></listitem>
-             * <listitem><para>
-             *  To prevent the menu from being displayed you can just connect to this signal
+             * - To prevent the menu from being displayed you can just connect to this signal
              *  and return `true` so that the proposed menu will not be shown.
-             * </para></listitem>
-             * <listitem><para>
-             *  To build your own menu, you can remove all items from the proposed menu with
+             * - To build your own menu, you can remove all items from the proposed menu with
              *  `webkit_context_menu_remove_all()`, add your own items and return `false` so
              *  that the menu will be shown. You can also ignore the proposed {@link WebKit2.ContextMenu},
              *  build your own {@link Gtk.Menu} and return `true` to prevent the proposed menu from being shown.
-             * </para></listitem>
-             * <listitem><para>
-             *  If you just want the default menu to be shown always, simply don't connect to this
-             *  signal because showing the proposed context menu is the default behaviour.
-             * </para></listitem>
-             * </itemizedlist>
+             * - If you just want the default menu to be shown always, simply don't connect to this
+             *  signal because showing the proposed context menu is the default behavior.
              * 
              * The `event` parameter is now deprecated. Use `webkit_context_menu_get_event()` to get the
              * {@link Gdk.Event} that triggered the context menu.
              * 
              * If the signal handler returns `false` the context menu represented by `context_menu`
-             * will be shown, if it return `true` the context menu will not be shown.
+             * will be shown, if it returns `true` the context menu will not be shown.
              * 
              * The proposed {@link WebKit2.ContextMenu} passed in `context_menu` argument is only valid
              * during the signal emission.
@@ -12307,8 +12290,8 @@ export namespace WebKit2 {
             /**
              * This signal is emitted when WebKit is requesting the client to decide a policy
              * decision, such as whether to navigate to a page, open a new window or whether or
-             * not to download a resource. The {@link WebKit2.NavigationPolicyDecision} passed in the
-             * `decision` argument is a generic type, but should be casted to a more
+             * not to download a resource. The {@link WebKit2.PolicyDecision} passed in the
+             * `decision` argument is a generic type, but should be cast to a more
              * specific type when making the decision. For example:
              * 
              * ```c
@@ -12345,17 +12328,17 @@ export namespace WebKit2 {
              * If the last reference is removed on a {@link WebKit2.PolicyDecision} and no decision has been
              * made explicitly, `webkit_policy_decision_use()` will be the default policy decision. The
              * default signal handler will simply call `webkit_policy_decision_use()`. Only the first
-             * policy decision chosen for a given {@link WebKit2.PolicyDecision} will have any affect.
+             * policy decision chosen for a given {@link WebKit2.PolicyDecision} will have any effect.
              * @signal
              * @run-last
              */
             "decide-policy": (decision: PolicyDecision, decision_type: PolicyDecisionType) => boolean | void;
             /**
              * Emitted when JavaScript code calls
-             * <function>element.webkitRequestFullScreen</function>. If the
+             * `element.webkitRequestFullScreen`. If the
              * signal is not handled the {@link WebKit2.WebView} will proceed to full screen
              * its top level window. This signal can be used by client code to
-             * request permission to the user prior doing the full screen
+             * request permission to the user prior to doing the full screen
              * transition and eventually prepare the top-level window
              * (e.g. hide some widgets that would otherwise be part of the
              * full screen window).
@@ -12480,7 +12463,7 @@ export namespace WebKit2 {
              * operations.
              * 
              * A possible way to use this signal could be through a dialog
-             * allowing the user decide what to do with the request:
+             * allowing the user to decide what to do with the request:
              * 
              * ```c
              * static gboolean permission_request_cb (WebKitWebView *web_view,
@@ -12545,7 +12528,7 @@ export namespace WebKit2 {
              * 
              * You can handle the query asynchronously by calling `webkit_permission_state_query_ref()` on
              * `query` and returning `true`. If the last reference of `query` is removed and the query has not
-             * been handled, the query result will be set to `WEBKIT_QUERY_PERMISSION_PROMPT`.
+             * been handled, the query result will be set to {@link WebKit2.PermissionState.PROMPT}.
              * @signal
              * @since 2.40
              * @run-last
@@ -12574,7 +12557,7 @@ export namespace WebKit2 {
             /**
              * Emitted after {@link WebKit2.WebView.SignalSignatures.ready_to_show | WebKit2.WebView::ready-to-show} on the newly
              * created {@link WebKit2.WebView} when JavaScript code calls
-             * <function>window.showModalDialog</function>. The purpose of
+             * `window.showModalDialog`. The purpose of
              * this signal is to allow the client application to prepare the
              * new view to behave as modal. Once the signal is emitted a new
              * main loop will be run to block user interaction in the parent
@@ -12619,30 +12602,21 @@ export namespace WebKit2 {
              */
             "run-file-chooser": (request: FileChooserRequest) => boolean | void;
             /**
-             * Emitted when JavaScript code calls <function>window.alert</function>,
-             * <function>window.confirm</function> or <function>window.prompt</function>,
-             * or when <function>onbeforeunload</function> event is fired.
+             * Emitted when JavaScript code calls `window.alert`,
+             * `window.confirm` or `window.prompt`,
+             * or when `onbeforeunload` event is fired.
              * The `dialog` parameter should be used to build the dialog.
              * If the signal is not handled a different dialog will be built and shown depending
              * on the dialog type:
-             * <itemizedlist>
-             * <listitem><para>
-             *  {@link WebKit2.ScriptDialogType.ALERT}: message dialog with a single Close button.
-             * </para></listitem>
-             * <listitem><para>
-             *  {@link WebKit2.ScriptDialogType.CONFIRM}: message dialog with OK and Cancel buttons.
-             * </para></listitem>
-             * <listitem><para>
-             *  {@link WebKit2.ScriptDialogType.PROMPT}: message dialog with OK and Cancel buttons and
-             *  a text entry with the default text.
-             * </para></listitem>
-             * <listitem><para>
-             *  {@link WebKit2.ScriptDialogType.BEFORE_UNLOAD_CONFIRM}: message dialog with Stay and Leave buttons.
-             * </para></listitem>
-             * </itemizedlist>
+             * 
+             * - {@link WebKit2.ScriptDialogType.ALERT}: message dialog with a single Close button.
+             * - {@link WebKit2.ScriptDialogType.CONFIRM}: message dialog with OK and Cancel buttons.
+             * - {@link WebKit2.ScriptDialogType.PROMPT}: message dialog with OK and Cancel buttons and
+             *   a text entry with the default text.
+             * - {@link WebKit2.ScriptDialogType.BEFORE_UNLOAD_CONFIRM}: message dialog with Stay and Leave buttons.
              * 
              * It is possible to handle the script dialog request asynchronously, by simply
-             * caling `webkit_script_dialog_ref()` on the `dialog` argument and calling
+             * calling `webkit_script_dialog_ref()` on the `dialog` argument and calling
              * `webkit_script_dialog_close()` when done.
              * If the last reference is removed on a {@link WebKit2.ScriptDialog} and the dialog has not been
              * closed, `webkit_script_dialog_close()` will be called.
@@ -12898,7 +12872,7 @@ export namespace WebKit2 {
          * {@link WebKit2.MediaCaptureState.NONE} or {@link WebKit2.MediaCaptureState.MUTED}.
          * 
          * If the capture state of the device is set to {@link WebKit2.MediaCaptureState.NONE} the web-page
-         * can still re-request the permission to the user. Permission desision caching is left to the
+         * can still re-request the permission to the user. Permission decision caching is left to the
          * application.
          * @since 2.34
          * @default WebKit2.MediaCaptureState.NONE
@@ -12916,7 +12890,7 @@ export namespace WebKit2 {
          * {@link WebKit2.MediaCaptureState.NONE} or {@link WebKit2.MediaCaptureState.MUTED}.
          * 
          * If the capture state of the device is set to {@link WebKit2.MediaCaptureState.NONE} the web-page
-         * can still re-request the permission to the user. Permission desision caching is left to the
+         * can still re-request the permission to the user. Permission decision caching is left to the
          * application.
          * @since 2.34
          * @default WebKit2.MediaCaptureState.NONE
@@ -12960,7 +12934,7 @@ export namespace WebKit2 {
 
         /**
          * Capture state of the display device. Whenever the user grants a media-request sent by the web
-         * page, requesting screencasting capabilities (`navigator.mediaDevices.getDisplayMedia() this
+         * page, requesting screencasting capabilities (`navigator.mediaDevices.getDisplayMedia()`) this
          * property will be set to {@link WebKit2.MediaCaptureState.ACTIVE}.
          * 
          * The application can monitor this property and provide a visual indicator allowing to
@@ -12968,7 +12942,7 @@ export namespace WebKit2 {
          * {@link WebKit2.MediaCaptureState.NONE} or {@link WebKit2.MediaCaptureState.MUTED}.
          * 
          * If the capture state of the device is set to {@link WebKit2.MediaCaptureState.NONE} the web-page
-         * can still re-request the permission to the user. Permission desision caching is left to the
+         * can still re-request the permission to the user. Permission decision caching is left to the
          * application.
          * @since 2.34
          * @default WebKit2.MediaCaptureState.NONE
@@ -12978,7 +12952,7 @@ export namespace WebKit2 {
 
         /**
          * Capture state of the display device. Whenever the user grants a media-request sent by the web
-         * page, requesting screencasting capabilities (`navigator.mediaDevices.getDisplayMedia() this
+         * page, requesting screencasting capabilities (`navigator.mediaDevices.getDisplayMedia()`) this
          * property will be set to {@link WebKit2.MediaCaptureState.ACTIVE}.
          * 
          * The application can monitor this property and provide a visual indicator allowing to
@@ -12986,7 +12960,7 @@ export namespace WebKit2 {
          * {@link WebKit2.MediaCaptureState.NONE} or {@link WebKit2.MediaCaptureState.MUTED}.
          * 
          * If the capture state of the device is set to {@link WebKit2.MediaCaptureState.NONE} the web-page
-         * can still re-request the permission to the user. Permission desision caching is left to the
+         * can still re-request the permission to the user. Permission decision caching is left to the
          * application.
          * @since 2.34
          * @default WebKit2.MediaCaptureState.NONE
@@ -13030,7 +13004,7 @@ export namespace WebKit2 {
         get estimatedLoadProgress(): number;
 
         /**
-         * The favicon currently associated to the {@link WebKit2.WebView}.
+         * The favicon currently associated with the {@link WebKit2.WebView}.
          * See `webkit_web_view_get_favicon()` for more details.
          * @read-only
          */
@@ -13077,10 +13051,10 @@ export namespace WebKit2 {
          * This is a {@link GObject.ParamFlags.CONSTRUCT_ONLY} property, so you have to create an ephemeral
          * {@link WebKit2.WebView} and it can't be changed. The ephemeral {@link WebKit2.WebsiteDataManager}
          * created for the {@link WebKit2.WebView} will inherit the network settings from the
-         * {@link WebKit2.WebContext}<!-- -->'s {@link WebKit2.WebsiteDataManager}. To use different settings
+         * {@link WebKit2.WebContext}'s {@link WebKit2.WebsiteDataManager}. To use different settings
          * you can get the {@link WebKit2.WebsiteDataManager} with `webkit_web_view_get_website_data_manager()`
          * and set the new ones.
-         * Note that all {@link WebKit2.WebView}<!-- -->s created with an ephemeral {@link WebKit2.WebContext}
+         * Note that all {@link WebKit2.WebView} objects created with an ephemeral {@link WebKit2.WebContext}
          * will be ephemeral automatically.
          * See also `webkit_web_context_new_ephemeral()`.
          * @since 2.16
@@ -13096,10 +13070,10 @@ export namespace WebKit2 {
          * This is a {@link GObject.ParamFlags.CONSTRUCT_ONLY} property, so you have to create an ephemeral
          * {@link WebKit2.WebView} and it can't be changed. The ephemeral {@link WebKit2.WebsiteDataManager}
          * created for the {@link WebKit2.WebView} will inherit the network settings from the
-         * {@link WebKit2.WebContext}<!-- -->'s {@link WebKit2.WebsiteDataManager}. To use different settings
+         * {@link WebKit2.WebContext}'s {@link WebKit2.WebsiteDataManager}. To use different settings
          * you can get the {@link WebKit2.WebsiteDataManager} with `webkit_web_view_get_website_data_manager()`
          * and set the new ones.
-         * Note that all {@link WebKit2.WebView}<!-- -->s created with an ephemeral {@link WebKit2.WebContext}
+         * Note that all {@link WebKit2.WebView} objects created with an ephemeral {@link WebKit2.WebContext}
          * will be ephemeral automatically.
          * See also `webkit_web_context_new_ephemeral()`.
          * @since 2.16
@@ -13189,7 +13163,7 @@ export namespace WebKit2 {
         get isPlayingAudio(): boolean;
 
         /**
-         * Whether the web process currently associated to the {@link WebKit2.WebView} is responsive.
+         * Whether the web process currently associated with the {@link WebKit2.WebView} is responsive.
          * @since 2.34
          * @read-only
          * @default true
@@ -13197,7 +13171,7 @@ export namespace WebKit2 {
         get is_web_process_responsive(): boolean;
 
         /**
-         * Whether the web process currently associated to the {@link WebKit2.WebView} is responsive.
+         * Whether the web process currently associated with the {@link WebKit2.WebView} is responsive.
          * @since 2.34
          * @read-only
          * @default true
@@ -13227,7 +13201,7 @@ export namespace WebKit2 {
          * {@link WebKit2.MediaCaptureState.NONE} or {@link WebKit2.MediaCaptureState.MUTED}.
          * 
          * If the capture state of the device is set to {@link WebKit2.MediaCaptureState.NONE} the web-page
-         * can still re-request the permission to the user. Permission desision caching is left to the
+         * can still re-request the permission to the user. Permission decision caching is left to the
          * application.
          * @since 2.34
          * @default WebKit2.MediaCaptureState.NONE
@@ -13245,7 +13219,7 @@ export namespace WebKit2 {
          * {@link WebKit2.MediaCaptureState.NONE} or {@link WebKit2.MediaCaptureState.MUTED}.
          * 
          * If the capture state of the device is set to {@link WebKit2.MediaCaptureState.NONE} the web-page
-         * can still re-request the permission to the user. Permission desision caching is left to the
+         * can still re-request the permission to the user. Permission decision caching is left to the
          * application.
          * @since 2.34
          * @default WebKit2.MediaCaptureState.NONE
@@ -13614,7 +13588,7 @@ export namespace WebKit2 {
          * Asynchronously call `body` with `arguments` in the script world with name `world_name` of the main frame current context in `web_view`.
          * The `arguments` values must be one of the following types, or contain only the following GVariant types: number, string and dictionary.
          * The result of the operation can be a Promise that will be properly passed to the callback.
-         * If `world_name` is `null`, the default world is used. Any value that is not `null` is a distin ct world.
+         * If `world_name` is `null`, the default world is used. Any value that is not `null` is a distinct world.
          * The `source_uri` will be shown in exceptions and doesn't affect the behavior of the script.
          * When not provided, the document URL is used.
          * 
@@ -13682,7 +13656,7 @@ export namespace WebKit2 {
          * Asynchronously call `body` with `arguments` in the script world with name `world_name` of the main frame current context in `web_view`.
          * The `arguments` values must be one of the following types, or contain only the following GVariant types: number, string and dictionary.
          * The result of the operation can be a Promise that will be properly passed to the callback.
-         * If `world_name` is `null`, the default world is used. Any value that is not `null` is a distin ct world.
+         * If `world_name` is `null`, the default world is used. Any value that is not `null` is a distinct world.
          * The `source_uri` will be shown in exceptions and doesn't affect the behavior of the script.
          * When not provided, the document URL is used.
          * 
@@ -13751,7 +13725,7 @@ export namespace WebKit2 {
          * Asynchronously call `body` with `arguments` in the script world with name `world_name` of the main frame current context in `web_view`.
          * The `arguments` values must be one of the following types, or contain only the following GVariant types: number, string and dictionary.
          * The result of the operation can be a Promise that will be properly passed to the callback.
-         * If `world_name` is `null`, the default world is used. Any value that is not `null` is a distin ct world.
+         * If `world_name` is `null`, the default world is used. Any value that is not `null` is a distinct world.
          * The `source_uri` will be shown in exceptions and doesn't affect the behavior of the script.
          * When not provided, the document URL is used.
          * 
@@ -14142,7 +14116,7 @@ export namespace WebKit2 {
 
         /**
          * Get the camera capture state of a {@link WebKit2.WebView}.
-         * @returns The {@link WebKit2.MediaCaptureState} of the camera device. If {@link WebKit2.Settings.enable_mediastream} is `false`, this method will return {@link WebKit2.MediaCaptureState.NONE}.
+         * @returns The {@link WebKit2.MediaCaptureState} of the camera device. If {@link WebKit2.Settings.enable_media_stream} is `false`, this method will return {@link WebKit2.MediaCaptureState.NONE}.
          * @since 2.34
          */
         get_camera_capture_state(): MediaCaptureState;
@@ -14168,7 +14142,7 @@ export namespace WebKit2 {
 
         /**
          * Get the display capture state of a {@link WebKit2.WebView}.
-         * @returns The {@link WebKit2.MediaCaptureState} of the display device. If {@link WebKit2.Settings.enable_mediastream} is `false`, this method will return {@link WebKit2.MediaCaptureState.NONE}.
+         * @returns The {@link WebKit2.MediaCaptureState} of the display device. If {@link WebKit2.Settings.enable_media_stream} is `false`, this method will return {@link WebKit2.MediaCaptureState.NONE}.
          * @since 2.34
          */
         get_display_capture_state(): MediaCaptureState;
@@ -14185,14 +14159,14 @@ export namespace WebKit2 {
          * 
          * You can monitor the estimated progress of a load operation by
          * connecting to the notify::estimated-load-progress signal of `web_view`.
-         * @returns an estimate of the of the percent complete for a document     load as a range from 0.0 to 1.0.
+         * @returns an estimate of the percent complete for a document     load as a range from 0.0 to 1.0.
          */
         get_estimated_load_progress(): number;
 
         /**
-         * Returns favicon currently associated to `web_view`.
+         * Returns favicon currently associated with `web_view`.
          * 
-         * Returns favicon currently associated to `web_view`, if any. You can
+         * Returns favicon currently associated with `web_view`, if any. You can
          * connect to notify::favicon signal of `web_view` to be notified when
          * the favicon is available.
          * @returns the favicon image or `null` if there's no    icon associated with `web_view`.
@@ -14204,7 +14178,7 @@ export namespace WebKit2 {
          * 
          * Gets the {@link WebKit2.FindController} that will allow the caller to query
          * the {@link WebKit2.WebView} for the text to look for.
-         * @returns the {@link WebKit2.FindController} associated to this particular {@link WebKit2.WebView}.
+         * @returns the {@link WebKit2.FindController} associated with this particular {@link WebKit2.WebView}.
          */
         get_find_controller(): FindController;
 
@@ -14218,14 +14192,14 @@ export namespace WebKit2 {
         get_input_method_context(): InputMethodContext | null;
 
         /**
-         * Get the {@link WebKit2.WebInspector} associated to `web_view`
+         * Get the {@link WebKit2.WebInspector} associated with `web_view`
          * @returns the {@link WebKit2.WebInspector} of `web_view`
          */
         get_inspector(): WebInspector;
 
         /**
          * Gets the mute state of `web_view`.
-         * @returns `true` if `web_view` audio is muted or `false` is audio is not muted.
+         * @returns `true` if `web_view` audio is muted or `false` if audio is not muted.
          * @since 2.30
          */
         get_is_muted(): boolean;
@@ -14256,7 +14230,7 @@ export namespace WebKit2 {
 
         /**
          * Get the microphone capture state of a {@link WebKit2.WebView}.
-         * @returns The {@link WebKit2.MediaCaptureState} of the microphone device. If {@link WebKit2.Settings.enable_mediastream} is `false`, this method will return {@link WebKit2.MediaCaptureState.NONE}.
+         * @returns The {@link WebKit2.MediaCaptureState} of the microphone device. If {@link WebKit2.Settings.enable_media_stream} is `false`, this method will return {@link WebKit2.MediaCaptureState.NONE}.
          * @since 2.34
          */
         get_microphone_capture_state(): MediaCaptureState;
@@ -14287,9 +14261,9 @@ export namespace WebKit2 {
          * the desired preferences, and then replace the existing `web_view`
          * settings with `webkit_web_view_set_settings()` or get the existing
          * `web_view` settings and update it directly. {@link WebKit2.Settings} objects
-         * can be shared by multiple {@link WebKit2.WebView}<!-- -->s, so modifying
+         * can be shared by multiple {@link WebKit2.WebView} objects, so modifying
          * the settings of a {@link WebKit2.WebView} would affect other
-         * {@link WebKit2.WebView}<!-- -->s using the same {@link WebKit2.Settings}.
+         * {@link WebKit2.WebView} objects using the same {@link WebKit2.Settings}.
          * @returns the {@link WebKit2.Settings} attached to `web_view`
          */
         get_settings(): Settings;
@@ -14398,50 +14372,30 @@ export namespace WebKit2 {
          * The active URI might change during
          * a load operation:
          * 
-         * <orderedlist>
-         * <listitem><para>
-         *   When nothing has been loaded yet on `web_view` the active URI is `null`.
-         * </para></listitem>
-         * <listitem><para>
-         *   When a new load operation starts the active URI is the requested URI:
-         *   <itemizedlist>
-         *   <listitem><para>
-         *     If the load operation was started by `webkit_web_view_load_uri()`,
-         *     the requested URI is the given one.
-         *   </para></listitem>
-         *   <listitem><para>
-         *     If the load operation was started by `webkit_web_view_load_html()`,
-         *     the requested URI is "about:blank".
-         *   </para></listitem>
-         *   <listitem><para>
-         *     If the load operation was started by `webkit_web_view_load_alternate_html()`,
-         *     the requested URI is content URI provided.
-         *   </para></listitem>
-         *   <listitem><para>
-         *     If the load operation was started by `webkit_web_view_go_back()` or
-         *     `webkit_web_view_go_forward()`, the requested URI is the original URI
-         *     of the previous/next item in the {@link WebKit2.BackForwardList} of `web_view`.
-         *   </para></listitem>
-         *   <listitem><para>
-         *     If the load operation was started by
-         *     `webkit_web_view_go_to_back_forward_list_item()`, the requested URI
-         *     is the opriginal URI of the given {@link WebKit2.BackForwardListItem}.
-         *   </para></listitem>
-         *   </itemizedlist>
-         * </para></listitem>
-         * <listitem><para>
-         *   If there is a server redirection during the load operation,
-         *   the active URI is the redirected URI. When the signal
-         *   {@link WebKit2.WebView.SignalSignatures.load_changed | WebKit2.WebView::load-changed} is emitted with {@link WebKit2.LoadEvent.REDIRECTED}
-         *   event, the active URI is already updated to the redirected URI.
-         * </para></listitem>
-         * <listitem><para>
-         *   When the signal {@link WebKit2.WebView.SignalSignatures.load_changed | WebKit2.WebView::load-changed} is emitted
-         *   with {@link WebKit2.LoadEvent.COMMITTED} event, the active URI is the final
-         *   one and it will not change unless a new load operation is started
-         *   or a navigation action within the same page is performed.
-         * </para></listitem>
-         * </orderedlist>
+         * 1. When nothing has been loaded yet on `web_view` the active URI is `null`.
+         * 2. When a new load operation starts the active URI is the requested URI:
+         * 
+         *    - If the load operation was started by `webkit_web_view_load_uri()`,
+         *      the requested URI is the given one.
+         *    - If the load operation was started by `webkit_web_view_load_html()`,
+         *      the requested URI is "about:blank".
+         *    - If the load operation was started by `webkit_web_view_load_alternate_html()`,
+         *      the requested URI is content URI provided.
+         *    - If the load operation was started by `webkit_web_view_go_back()` or
+         *      `webkit_web_view_go_forward()`, the requested URI is the original URI
+         *      of the previous/next item in the {@link WebKit2.BackForwardList} of `web_view`.
+         *    - If the load operation was started by
+         *      `webkit_web_view_go_to_back_forward_list_item()`, the requested URI
+         *      is the original URI of the given {@link WebKit2.BackForwardListItem}.
+         * 
+         * 3. If there is a server redirection during the load operation,
+         *    the active URI is the redirected URI. When the signal
+         *    {@link WebKit2.WebView.SignalSignatures.load_changed | WebKit2.WebView::load-changed} is emitted with {@link WebKit2.LoadEvent.REDIRECTED}
+         *    event, the active URI is already updated to the redirected URI.
+         * 4. When the signal {@link WebKit2.WebView.SignalSignatures.load_changed | WebKit2.WebView::load-changed} is emitted
+         *    with {@link WebKit2.LoadEvent.COMMITTED} event, the active URI is the final
+         *    one and it will not change unless a new load operation is started
+         *    or a navigation action within the same page is performed.
          * 
          * You can monitor the active URI by connecting to the notify::uri
          * signal of `web_view`.
@@ -14450,7 +14404,7 @@ export namespace WebKit2 {
         get_uri(): string;
 
         /**
-         * Gets the user content manager associated to `web_view`.
+         * Gets the user content manager associated with `web_view`.
          * @returns the {@link WebKit2.UserContentManager} associated with the view
          * @since 2.6
          */
@@ -14464,7 +14418,7 @@ export namespace WebKit2 {
         get_web_extension_mode(): WebExtensionMode;
 
         /**
-         * Get the {@link WebKit2.WebsiteDataManager} associated to `web_view`.
+         * Get the {@link WebKit2.WebsiteDataManager} associated with `web_view`.
          * 
          * If `web_view` is not ephemeral,
          * the returned {@link WebKit2.WebsiteDataManager} will be the same as the {@link WebKit2.WebsiteDataManager}
@@ -14497,7 +14451,7 @@ export namespace WebKit2 {
         get_window_properties(): WindowProperties;
 
         /**
-         * Set the zoom level of `web_view`.
+         * Get the zoom level of `web_view`.
          * 
          * Get the zoom level of `web_view`, i.e. the factor by which the
          * view contents are scaled with respect to their original size.
@@ -14621,7 +14575,7 @@ export namespace WebKit2 {
          * 
          * You can monitor the load operation by connecting to
          * {@link WebKit2.WebView.SignalSignatures.load_changed | WebKit2.WebView::load-changed} signal.
-         * @param uri an URI string
+         * @param uri a URI string
          */
         load_uri(uri: string): void;
 
@@ -14667,7 +14621,7 @@ export namespace WebKit2 {
          *     JSCValue               *value;
          *     GError                 *error = NULL;
          * 
-         *     js_result = webkit_web_view_run_javascript_finish (WEBKIT_WEB_VIEW (object), result, &error);
+         *     js_result = webkit_web_view_run_javascript_in_world_finish (WEBKIT_WEB_VIEW (object), result, &error);
          *     if (!js_result) {
          *         g_warning ("Error running javascript: %s", error->message);
          *         g_error_free (error);
@@ -14676,13 +14630,12 @@ export namespace WebKit2 {
          * 
          *     value = webkit_javascript_result_get_js_value (js_result);
          *     if (jsc_value_is_number (value)) {
-         *         gint32        int_value = jsc_value_to_string (value);
+         *         gint32        int_value = jsc_value_to_int32 (value);
          *         JSCException *exception = jsc_context_get_exception (jsc_value_get_context (value));
          *         if (exception)
          *             g_warning ("Error running javascript: %s", jsc_exception_get_message (exception));
          *         else
          *             g_print ("Script result: %d\n", int_value);
-         *         g_free (str_value);
          *     } else {
          *         g_warning ("Error running javascript: unexpected return value");
          *     }
@@ -14857,7 +14810,7 @@ export namespace WebKit2 {
          * 
          * Check `webkit_web_view_run_javascript_finish()` for a usage example.
          * @param result a {@link Gio.AsyncResult}
-         * @returns a {@link WebKit2.JavascriptResult} with the result of the last executed statement in `script`    or `null` in case of error
+         * @returns a {@link WebKit2.JavascriptResult} with the result of the last executed statement in the script    or `null` in case of error
          * @deprecated since 2.40: Use `webkit_web_view_evaluate_javascript_finish()` instead.
          * @throws GLib.Error
          */
@@ -14918,7 +14871,7 @@ export namespace WebKit2 {
          * @param result a {@link Gio.AsyncResult}
          * @returns a {@link WebKit2.JavascriptResult} with the result of the last executed statement in `script`    or `null` in case of error
          * @since 2.22
-         * @deprecated since 2.40: Use `webkit_web_view_call_async_javascript_function_finish()` instead.
+         * @deprecated since 2.40: Use `webkit_web_view_evaluate_javascript_finish()` instead.
          * @throws GLib.Error
          */
         run_javascript_in_world_finish(result: Gio.AsyncResult): JavascriptResult;
@@ -14926,7 +14879,7 @@ export namespace WebKit2 {
         /**
          * Asynchronously save the current web page.
          * 
-         * Asynchronously save the current web page associated to the
+         * Asynchronously save the current web page associated with the
          * {@link WebKit2.WebView} into a self-contained format using the mode
          * specified in `save_mode`.
          * 
@@ -14941,7 +14894,7 @@ export namespace WebKit2 {
         /**
          * Asynchronously save the current web page.
          * 
-         * Asynchronously save the current web page associated to the
+         * Asynchronously save the current web page associated with the
          * {@link WebKit2.WebView} into a self-contained format using the mode
          * specified in `save_mode`.
          * 
@@ -14957,7 +14910,7 @@ export namespace WebKit2 {
         /**
          * Asynchronously save the current web page.
          * 
-         * Asynchronously save the current web page associated to the
+         * Asynchronously save the current web page associated with the
          * {@link WebKit2.WebView} into a self-contained format using the mode
          * specified in `save_mode`.
          * 
@@ -14981,7 +14934,7 @@ export namespace WebKit2 {
         /**
          * Asynchronously save the current web page.
          * 
-         * Asynchronously save the current web page associated to the
+         * Asynchronously save the current web page associated with the
          * {@link WebKit2.WebView} into a self-contained format using the mode
          * specified in `save_mode` and writing it to `file`.
          * 
@@ -14997,7 +14950,7 @@ export namespace WebKit2 {
         /**
          * Asynchronously save the current web page.
          * 
-         * Asynchronously save the current web page associated to the
+         * Asynchronously save the current web page associated with the
          * {@link WebKit2.WebView} into a self-contained format using the mode
          * specified in `save_mode` and writing it to `file`.
          * 
@@ -15014,7 +14967,7 @@ export namespace WebKit2 {
         /**
          * Asynchronously save the current web page.
          * 
-         * Asynchronously save the current web page associated to the
+         * Asynchronously save the current web page associated with the
          * {@link WebKit2.WebView} into a self-contained format using the mode
          * specified in `save_mode` and writing it to `file`.
          * 
@@ -15058,7 +15011,7 @@ export namespace WebKit2 {
          * `webkit_web_view_send_message_to_page_finish()` to get the message reply.
          * @param message a {@link WebKit2.UserMessage}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
-         * @param callback (nullable): A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`
+         * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`
          * @since 2.28
          */
         send_message_to_page(message: UserMessage, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
@@ -15072,7 +15025,7 @@ export namespace WebKit2 {
          * `webkit_web_view_send_message_to_page_finish()` to get the message reply.
          * @param message a {@link WebKit2.UserMessage}
          * @param cancellable a {@link Gio.Cancellable} or `null` to ignore
-         * @param callback (nullable): A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`
+         * @param callback A {@link Gio.AsyncReadyCallback} to call when the request is satisfied or `null`
          * @since 2.28
          */
         send_message_to_page(message: UserMessage, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<UserMessage> | void;
@@ -15093,8 +15046,8 @@ export namespace WebKit2 {
          * the actual contents are rendered. Note that if the web page loaded in `web_view`
          * specifies a background color, it will take precedence over the `rgba` color.
          * By default the `web_view` background color is opaque white.
-         * Note that the parent window must have a RGBA visual and
-         * {@link Gtk.Widget.app_paintable} property set to `true` for backgrounds colors to work.
+         * Note that the parent window must have an RGBA visual and
+         * {@link Gtk.Widget.app_paintable} property set to `true` for background colors to work.
          * 
          * ```c
          * static void browser_window_set_background_color (BrowserWindow *window,
@@ -15122,7 +15075,7 @@ export namespace WebKit2 {
         /**
          * Set the camera capture state of a {@link WebKit2.WebView}.
          * 
-         * If {@link WebKit2.Settings.enable_mediastream} is `false`, this method will have no visible effect. Once the
+         * If {@link WebKit2.Settings.enable_media_stream} is `false`, this method will have no visible effect. Once the
          * state of the device has been set to {@link WebKit2.MediaCaptureState.NONE} it cannot be changed
          * anymore. The page can however request capture again using the mediaDevices API.
          * @param state a {@link WebKit2.MediaCaptureState}
@@ -15166,7 +15119,7 @@ export namespace WebKit2 {
         /**
          * Set the display capture state of a {@link WebKit2.WebView}.
          * 
-         * If {@link WebKit2.Settings.enable_mediastream} is `false`, this method will have no visible effect. Once the
+         * If {@link WebKit2.Settings.enable_media_stream} is `false`, this method will have no visible effect. Once the
          * state of the device has been set to {@link WebKit2.MediaCaptureState.NONE} it cannot be changed
          * anymore. The page can however request capture again using the mediaDevices API.
          * @param state a {@link WebKit2.MediaCaptureState}
@@ -15182,7 +15135,7 @@ export namespace WebKit2 {
          * CONTENTEDITABLE attribute has been set on the element or one of its parent
          * elements. By default a {@link WebKit2.WebView} is not editable.
          * 
-         * Normally, a HTML document is not editable unless the elements within the
+         * Normally, an HTML document is not editable unless the elements within the
          * document are editable. This function provides a way to make the contents
          * of a {@link WebKit2.WebView} editable without altering the document or DOM structure.
          * @param editable a `gboolean` indicating the editable state
@@ -15223,7 +15176,7 @@ export namespace WebKit2 {
         /**
          * Set the microphone capture state of a {@link WebKit2.WebView}.
          * 
-         * If {@link WebKit2.Settings.enable_mediastream} is `false`, this method will have no visible effect. Once the
+         * If {@link WebKit2.Settings.enable_media_stream} is `false`, this method will have no visible effect. Once the
          * state of the device has been set to {@link WebKit2.MediaCaptureState.NONE} it cannot be changed
          * anymore. The page can however request capture again using the mediaDevices API.
          * @param state a {@link WebKit2.MediaCaptureState}
@@ -15238,7 +15191,7 @@ export namespace WebKit2 {
          * existing {@link WebKit2.Settings} of `web_view` will be replaced by
          * `settings`. New settings are applied immediately on `web_view`.
          * The same {@link WebKit2.Settings} object can be shared
-         * by multiple {@link WebKit2.WebView}<!-- -->s.
+         * by multiple {@link WebKit2.WebView} objects.
          * @param settings a {@link WebKit2.Settings}
          */
         set_settings(settings: Settings): void;
@@ -15263,7 +15216,7 @@ export namespace WebKit2 {
         stop_loading(): void;
 
         /**
-         * Terminates the web process associated to `web_view`.
+         * Terminates the web process associated with `web_view`.
          * 
          * When the web process gets terminated
          * using this method, the {@link WebKit2.WebView.SignalSignatures.web_process_terminated | WebKit2.WebView::web-process-terminated} signal is emitted with
@@ -15380,7 +15333,7 @@ export namespace WebKit2 {
      * A permission request for accessing website data from third-party domains.
      * 
      * WebKitWebsiteDataAccessPermissionRequest represents a request for
-     * permission to allow a third-party domain access its cookies.
+     * permission to allow a third-party domain to access its cookies.
      * 
      * When a WebKitWebsiteDataAccessPermissionRequest is not handled by the user,
      * it is denied by default.
@@ -15510,7 +15463,7 @@ export namespace WebKit2 {
      * 
      * You can use WebKitWebsiteDataManager to configure the local directories
      * where website data will be stored. Use {@link WebKit2.WebsiteDataManager.base_data_directory}
-     * and {@link WebKit2.WebsiteDataManager.base_cache_directory} set a common base directory for all
+     * and {@link WebKit2.WebsiteDataManager.base_cache_directory} to set a common base directory for all
      * website data and caches.
      * 
      * A WebKitWebsiteDataManager can be ephemeral, in which case all the directory configuration
@@ -15562,7 +15515,7 @@ export namespace WebKit2 {
         /**
          * The directory where HTTP disk cache will be stored.
          * @since 2.10
-         * @deprecated since 2.40.: Use WebKitWebsiteDataManager:base-cache-directory instead.
+         * @deprecated since 2.40: Use WebKitWebsiteDataManager:base-cache-directory instead.
          * @construct-only
          * @default null
          */
@@ -15571,7 +15524,7 @@ export namespace WebKit2 {
         /**
          * The directory where HTTP disk cache will be stored.
          * @since 2.10
-         * @deprecated since 2.40.: Use WebKitWebsiteDataManager:base-cache-directory instead.
+         * @deprecated since 2.40: Use WebKitWebsiteDataManager:base-cache-directory instead.
          * @construct-only
          * @default null
          */
@@ -15580,7 +15533,7 @@ export namespace WebKit2 {
         /**
          * The directory where DOM cache will be stored.
          * @since 2.30
-         * @deprecated since 2.40.: Use WebKitWebsiteDataManager:base-cache-directory instead.
+         * @deprecated since 2.40: Use WebKitWebsiteDataManager:base-cache-directory instead.
          * @construct-only
          * @default null
          */
@@ -15589,7 +15542,7 @@ export namespace WebKit2 {
         /**
          * The directory where DOM cache will be stored.
          * @since 2.30
-         * @deprecated since 2.40.: Use WebKitWebsiteDataManager:base-cache-directory instead.
+         * @deprecated since 2.40: Use WebKitWebsiteDataManager:base-cache-directory instead.
          * @construct-only
          * @default null
          */
@@ -15598,7 +15551,7 @@ export namespace WebKit2 {
         /**
          * The directory where the HTTP Strict-Transport-Security (HSTS) cache will be stored.
          * @since 2.26
-         * @deprecated since 2.40.: Use WebKitWebsiteDataManager:base-cache-directory instead.
+         * @deprecated since 2.40: Use WebKitWebsiteDataManager:base-cache-directory instead.
          * @construct-only
          * @default null
          */
@@ -15607,7 +15560,7 @@ export namespace WebKit2 {
         /**
          * The directory where the HTTP Strict-Transport-Security (HSTS) cache will be stored.
          * @since 2.26
-         * @deprecated since 2.40.: Use WebKitWebsiteDataManager:base-cache-directory instead.
+         * @deprecated since 2.40: Use WebKitWebsiteDataManager:base-cache-directory instead.
          * @construct-only
          * @default null
          */
@@ -15616,7 +15569,7 @@ export namespace WebKit2 {
         /**
          * The directory where IndexedDB databases will be stored.
          * @since 2.10
-         * @deprecated since 2.40.: Use WebKitWebsiteDataManager:base-data-directory instead.
+         * @deprecated since 2.40: Use WebKitWebsiteDataManager:base-data-directory instead.
          * @construct-only
          * @default null
          */
@@ -15625,7 +15578,7 @@ export namespace WebKit2 {
         /**
          * The directory where IndexedDB databases will be stored.
          * @since 2.10
-         * @deprecated since 2.40.: Use WebKitWebsiteDataManager:base-data-directory instead.
+         * @deprecated since 2.40: Use WebKitWebsiteDataManager:base-data-directory instead.
          * @construct-only
          * @default null
          */
@@ -15656,7 +15609,7 @@ export namespace WebKit2 {
         /**
          * The directory where Intelligent Tracking Prevention (ITP) data will be stored.
          * @since 2.30
-         * @deprecated since 2.40.: Use WebKitWebsiteDataManager:base-data-directory instead.
+         * @deprecated since 2.40: Use WebKitWebsiteDataManager:base-data-directory instead.
          * @construct-only
          * @default null
          */
@@ -15665,7 +15618,7 @@ export namespace WebKit2 {
         /**
          * The directory where Intelligent Tracking Prevention (ITP) data will be stored.
          * @since 2.30
-         * @deprecated since 2.40.: Use WebKitWebsiteDataManager:base-data-directory instead.
+         * @deprecated since 2.40: Use WebKitWebsiteDataManager:base-data-directory instead.
          * @construct-only
          * @default null
          */
@@ -15674,7 +15627,7 @@ export namespace WebKit2 {
         /**
          * The directory where local storage data will be stored.
          * @since 2.10
-         * @deprecated since 2.40.: Use WebKitWebsiteDataManager:base-data-directory instead.
+         * @deprecated since 2.40: Use WebKitWebsiteDataManager:base-data-directory instead.
          * @construct-only
          * @default null
          */
@@ -15683,7 +15636,7 @@ export namespace WebKit2 {
         /**
          * The directory where local storage data will be stored.
          * @since 2.10
-         * @deprecated since 2.40.: Use WebKitWebsiteDataManager:base-data-directory instead.
+         * @deprecated since 2.40: Use WebKitWebsiteDataManager:base-data-directory instead.
          * @construct-only
          * @default null
          */
@@ -15692,7 +15645,7 @@ export namespace WebKit2 {
         /**
          * The directory where offline web application cache will be stored.
          * @since 2.10
-         * @deprecated since 2.40.: Use WebKitWebsiteDataManager:base-cache-directory instead.
+         * @deprecated since 2.40: Use WebKitWebsiteDataManager:base-cache-directory instead.
          * @construct-only
          * @default null
          */
@@ -15701,7 +15654,7 @@ export namespace WebKit2 {
         /**
          * The directory where offline web application cache will be stored.
          * @since 2.10
-         * @deprecated since 2.40.: Use WebKitWebsiteDataManager:base-cache-directory instead.
+         * @deprecated since 2.40: Use WebKitWebsiteDataManager:base-cache-directory instead.
          * @construct-only
          * @default null
          */
@@ -15730,18 +15683,18 @@ export namespace WebKit2 {
         set originStorageRatio(val: number);
 
         /**
-         * The directory where service workers registrations will be stored.
+         * The directory where service worker registrations will be stored.
          * @since 2.30
-         * @deprecated since 2.40.: Use WebKitWebsiteDataManager:base-data-directory instead.
+         * @deprecated since 2.40: Use WebKitWebsiteDataManager:base-data-directory instead.
          * @construct-only
          * @default null
          */
         get service_worker_registrations_directory(): string | null;
 
         /**
-         * The directory where service workers registrations will be stored.
+         * The directory where service worker registrations will be stored.
          * @since 2.30
-         * @deprecated since 2.40.: Use WebKitWebsiteDataManager:base-data-directory instead.
+         * @deprecated since 2.40: Use WebKitWebsiteDataManager:base-data-directory instead.
          * @construct-only
          * @default null
          */
@@ -15772,7 +15725,7 @@ export namespace WebKit2 {
         /**
          * The directory where WebSQL databases will be stored.
          * @since 2.10
-         * @deprecated since 2.24.: WebSQL is no longer supported. Use IndexedDB instead.
+         * @deprecated since 2.24: WebSQL is no longer supported. Use IndexedDB instead.
          * @construct-only
          * @default null
          */
@@ -15781,7 +15734,7 @@ export namespace WebKit2 {
         /**
          * The directory where WebSQL databases will be stored.
          * @since 2.10
-         * @deprecated since 2.24.: WebSQL is no longer supported. Use IndexedDB instead.
+         * @deprecated since 2.24: WebSQL is no longer supported. Use IndexedDB instead.
          * @construct-only
          * @default null
          */
@@ -15937,7 +15890,7 @@ export namespace WebKit2 {
         /**
          * Finish an asynchronous operation started with `webkit_website_data_manager_fetch()`.
          * @param result a {@link Gio.AsyncResult}
-         * @returns a {@link GLib.List} of {@link WebKit2.WebsiteData}. You must free the {@link GLib.List} with    `g_list_free()` and unref the {@link WebKit2.WebsiteData}<!-- -->s with `webkit_website_data_unref()` when you're done with them.
+         * @returns a {@link GLib.List} of {@link WebKit2.WebsiteData}. You must free the {@link GLib.List} with    `g_list_free()` and unref the {@link WebKit2.WebsiteData} objects with `webkit_website_data_unref()` when you're done with them.
          * @since 2.16
          * @throws GLib.Error
          */
@@ -15968,7 +15921,7 @@ export namespace WebKit2 {
          * Get the {@link WebKit2.WebsiteDataManager.disk_cache_directory} property.
          * @returns the directory where HTTP disk cache is stored or `null` if `manager` is ephemeral.
          * @since 2.10
-         * @deprecated since 2.40: , use `webkit_website_data_manager_get_base_cache_directory()` instead.
+         * @deprecated since 2.40: Use `webkit_website_data_manager_get_base_cache_directory()` instead.
          */
         get_disk_cache_directory(): string | null;
 
@@ -15976,7 +15929,7 @@ export namespace WebKit2 {
          * Get the {@link WebKit2.WebsiteDataManager.dom_cache_directory} property.
          * @returns the directory where DOM cache is stored or `null` if `manager` is ephemeral.
          * @since 2.30
-         * @deprecated since 2.40: , use `webkit_website_data_manager_get_base_cache_directory()` instead.
+         * @deprecated since 2.40: Use `webkit_website_data_manager_get_base_cache_directory()` instead.
          */
         get_dom_cache_directory(): string | null;
 
@@ -15998,7 +15951,7 @@ export namespace WebKit2 {
          * Get the {@link WebKit2.WebsiteDataManager.hsts_cache_directory} property.
          * @returns the directory where the HSTS cache is stored or `null` if `manager` is ephemeral.
          * @since 2.26
-         * @deprecated since 2.40: , use `webkit_website_data_manager_get_base_cache_directory()` instead.
+         * @deprecated since 2.40: Use `webkit_website_data_manager_get_base_cache_directory()` instead.
          */
         get_hsts_cache_directory(): string | null;
 
@@ -16006,7 +15959,7 @@ export namespace WebKit2 {
          * Get the {@link WebKit2.WebsiteDataManager.indexeddb_directory} property.
          * @returns the directory where IndexedDB databases are stored or `null` if `manager` is ephemeral.
          * @since 2.10
-         * @deprecated since 2.40: , use `webkit_website_data_manager_get_base_data_directory()` instead.
+         * @deprecated since 2.40: Use `webkit_website_data_manager_get_base_data_directory()` instead.
          */
         get_indexeddb_directory(): string | null;
 
@@ -16014,7 +15967,7 @@ export namespace WebKit2 {
          * Get the {@link WebKit2.WebsiteDataManager.itp_directory} property.
          * @returns the directory where Intelligent Tracking Prevention data is stored or `null` if `manager` is ephemeral.
          * @since 2.30
-         * @deprecated since 2.40: , use `webkit_website_data_manager_get_base_data_directory()` instead.
+         * @deprecated since 2.40: Use `webkit_website_data_manager_get_base_data_directory()` instead.
          */
         get_itp_directory(): string | null;
 
@@ -16069,7 +16022,7 @@ export namespace WebKit2 {
         /**
          * Finish an asynchronous operation started with `webkit_website_data_manager_get_itp_summary()`.
          * @param result a {@link Gio.AsyncResult}
-         * @returns a {@link GLib.List} of {@link WebKit2.ITPThirdParty}.    You must free the {@link GLib.List} with `g_list_free()` and unref the {@link WebKit2.ITPThirdParty}<!-- -->s with    `webkit_itp_third_party_unref()` when you're done with them.
+         * @returns a {@link GLib.List} of {@link WebKit2.ITPThirdParty}.    You must free the {@link GLib.List} with `g_list_free()` and unref the {@link WebKit2.ITPThirdParty} objects with    `webkit_itp_third_party_unref()` when you're done with them.
          * @since 2.30
          * @throws GLib.Error
          */
@@ -16079,7 +16032,7 @@ export namespace WebKit2 {
          * Get the {@link WebKit2.WebsiteDataManager.local_storage_directory} property.
          * @returns the directory where local storage data is stored or `null` if `manager` is ephemeral.
          * @since 2.10
-         * @deprecated since 2.40: , use `webkit_website_data_manager_get_base_data_directory()` instead.
+         * @deprecated since 2.40: Use `webkit_website_data_manager_get_base_data_directory()` instead.
          */
         get_local_storage_directory(): string | null;
 
@@ -16087,7 +16040,7 @@ export namespace WebKit2 {
          * Get the {@link WebKit2.WebsiteDataManager.offline_application_cache_directory} property.
          * @returns the directory where offline web application cache is stored or `null` if `manager` is ephemeral.
          * @since 2.10
-         * @deprecated since 2.40: , use `webkit_website_data_manager_get_base_cache_directory()` instead.
+         * @deprecated since 2.40: Use `webkit_website_data_manager_get_base_cache_directory()` instead.
          */
         get_offline_application_cache_directory(): string | null;
 
@@ -16104,7 +16057,7 @@ export namespace WebKit2 {
          * Get the {@link WebKit2.WebsiteDataManager.service_worker_registrations_directory} property.
          * @returns the directory where service worker registrations are stored or `null` if `manager` is ephemeral.
          * @since 2.30
-         * @deprecated since 2.40: , use `webkit_website_data_manager_get_base_data_directory()` instead.
+         * @deprecated since 2.40: Use `webkit_website_data_manager_get_base_data_directory()` instead.
          */
         get_service_worker_registrations_directory(): string | null;
 
@@ -16119,7 +16072,7 @@ export namespace WebKit2 {
          * Get the {@link WebKit2.WebsiteDataManager.websql_directory} property.
          * @returns the directory where WebSQL databases are stored or `null` if `manager` is ephemeral.
          * @since 2.10
-         * @deprecated since 2.24.: WebSQL is no longer supported. Use IndexedDB instead.
+         * @deprecated since 2.24: WebSQL is no longer supported. Use IndexedDB instead.
          */
         get_websql_directory(): string | null;
 
@@ -16222,7 +16175,7 @@ export namespace WebKit2 {
          * Enable or disable persistent credential storage.
          * 
          * When enabled, which is the default for
-         * non-ephemeral sessions, the network process will try to read and write HTTP authentiacation
+         * non-ephemeral sessions, the network process will try to read and write HTTP authentication
          * credentials from persistent storage.
          * @param enabled value to set
          * @since 2.30
@@ -17066,14 +17019,14 @@ export namespace WebKit2 {
      *   for details): {@link Feature.get_status}.
      * - A category, which may be used to group features together:
      *   {@link Feature.get_category}.
-     * - An optional short “name” which can be presented to an user:
+     * - An optional short “name” which can be presented to a user:
      *   {@link Feature.get_name}.
      * - An optional longer “detailed” description:
      *   {@link Feature.get_details}.
      * 
      * The lists of available features can be obtained with
      * {@link Settings.get_all_features}, {@link Settings.get_experimental_features},
-     * and {@link Settings.get_development_features}). As a rule of thumb,
+     * and {@link Settings.get_development_features}. As a rule of thumb,
      * applications which may want to allow users (i.e. web developers) to test
      * WebKit features should use the list of experimental features. Additionally,
      * applications might want to expose development features *when targeting
@@ -17123,7 +17076,7 @@ export namespace WebKit2 {
          * The returned string is suitable to be displayed to end users, but it
          * should not be relied upon being localized.
          * 
-         * Note that some *features may not* have a detailed description, and `NULL`
+         * Note that some *features may not* have a detailed description, and `null`
          * is returned in this case.
          * @returns Feature description.
          * @since 2.42
@@ -17143,7 +17096,7 @@ export namespace WebKit2 {
          * The returned string is suitable to be displayed to end users, but it
          * should not be relied upon being localized.
          * 
-         * Note that some *features may not* have a short name, and `NULL`
+         * Note that some *features may not* have a short name, and `null`
          * is returned in this case.
          * @returns Short feature name.
          * @since 2.42
@@ -17169,7 +17122,7 @@ export namespace WebKit2 {
         /**
          * Atomically releases a reference on the given `feature`.
          * 
-         * If the reference was the last, the resources associated to the
+         * If the reference was the last, the resources associated with the
          * `feature` are freed. This function is MT-safe and may be called from
          * any thread.
          * @since 2.42
@@ -17186,7 +17139,7 @@ export namespace WebKit2 {
      * 
      * ```c
      * g_autoptr(WebKitFeatureList) list = `webkit_settings_get_experimental_features()`;
-     * for (gsize i = 0; i < webkit_feature_list_get_length(list): i++) {
+     * for (gsize i = 0; i < webkit_feature_list_get_length(list); i++) {
      *     WebKitFeature *feature = webkit_feature_list_get(list, i);
      *     // Do something with "feature".
      * }
@@ -17206,7 +17159,7 @@ export namespace WebKit2 {
         /**
          * Finds a feature given its identifier.
          * @param identifier a {@link WebKit2.Feature} identifier
-         * @returns The feature with the given     `identifier`, or `NULL` if it cannot be found.
+         * @returns The feature with the given     `identifier`, or `null` if it cannot be found.
          * @since 2.54
          */
         find(identifier: string): Feature | null;
@@ -17221,7 +17174,8 @@ export namespace WebKit2 {
 
         /**
          * Gets the number of elements in the feature list.
-         * @returns number of elements. Since 2.42
+         * @returns number of elements.
+         * @since 2.42
          */
         get_length(): number;
 
@@ -17237,7 +17191,7 @@ export namespace WebKit2 {
         /**
          * Atomically releases a reference on the given `feature_list`.
          * 
-         * If the reference was the last, the resources associated to the
+         * If the reference was the last, the resources associated with the
          * `feature_list` are freed. This function is MT-safe and may be called
          * from any thread.
          * @since 2.42
@@ -17415,7 +17369,7 @@ export namespace WebKit2 {
         /**
          * Get the last time a {@link WebKit2.ITPThirdParty} has been seen under `itp_first_party`.
          * 
-         * Each `WebKitITPFirstParty` is created by `webkit_itp_third_party_get_first_parties()` and
+         * Each {@link WebKit2.ITPFirstParty} is created by `webkit_itp_third_party_get_first_parties()` and
          * therefore corresponds to exactly one {@link WebKit2.ITPThirdParty}.
          * @returns the last update time as a {@link GLib.DateTime}
          * @since 2.30
@@ -17425,7 +17379,7 @@ export namespace WebKit2 {
         /**
          * Get whether `itp_first_party` has granted website data access to its {@link WebKit2.ITPThirdParty}.
          * 
-         * Each `WebKitITPFirstParty` is created by `webkit_itp_third_party_get_first_parties()` and
+         * Each {@link WebKit2.ITPFirstParty} is created by `webkit_itp_third_party_get_first_parties()` and
          * therefore corresponds to exactly one {@link WebKit2.ITPThirdParty}.
          * @returns `true` if website data access has been granted, or `false` otherwise
          * @since 2.30
@@ -17511,7 +17465,7 @@ export namespace WebKit2 {
 
 
     /**
-     * Range of text in an preedit string to be shown underlined.
+     * Range of text in a preedit string to be shown underlined.
      * @gir-type Struct
      * @since 2.28
      */
@@ -17616,10 +17570,10 @@ export namespace WebKit2 {
      * {@link WebKit2.MemoryPressureSettings} is a boxed type that can be used to provide some custom settings
      * to control how the memory pressure situations are handled by the different processes.
      * 
-     * The memory pressure system implemented inside the different process will try to keep the memory usage
+     * The memory pressure system implemented inside the different processes will try to keep the memory usage
      * under the defined memory limit. In order to do that, it will check the used memory with a user defined
      * frequency and decide whether it should try to release memory. The thresholds passed will define how urgent
-     * is to release that memory.
+     * it is to release that memory.
      * 
      * Take into account that badly defined parameters can greatly reduce the performance of the engine. For
      * example, setting memory limit too low with a fast poll interval can cause the process to constantly
@@ -17645,7 +17599,7 @@ export namespace WebKit2 {
         // Methods
         /**
          * Make a copy of `settings`.
-         * @returns A copy of of the passed {@link WebKit2.MemoryPressureSettings}.
+         * @returns A copy of the passed {@link WebKit2.MemoryPressureSettings}.
          * @since 2.34
          */
         copy(): MemoryPressureSettings;
@@ -17709,7 +17663,7 @@ export namespace WebKit2 {
          * Sets `value` as the fraction of the defined memory limit where the process will be
          * killed.
          * 
-         * The threshold must be a value bigger or equal to 0. A value of 0 means that the process
+         * The threshold must be a value bigger than or equal to 0. A value of 0 means that the process
          * is never killed. If the threshold is not 0, then it must be bigger than the strict threshold
          * defined in `settings`. The threshold can also have values bigger than 1. The default value is 0.
          * @param value fraction of the memory limit where the process will be killed because   of excessive memory usage.
@@ -17718,7 +17672,7 @@ export namespace WebKit2 {
         set_kill_threshold(value: number): void;
 
         /**
-         * Sets `memory_limit` the memory limit value to `settings`.
+         * Sets `memory_limit` as the memory limit value of `settings`.
          * 
          * The default value is the system's RAM size with a maximum of 3GB.
          * @param memory_limit amount of memory (in MB) that the process is allowed to use.
@@ -17768,7 +17722,7 @@ export namespace WebKit2 {
         get_description(): string | null;
 
         /**
-         * Get the list of file extensions associated to the MIME type.
+         * Get the list of file extensions associated with the MIME type.
          * @returns a     `null`-terminated array of strings
          * @deprecated since 2.32
          */
@@ -17862,8 +17816,8 @@ export namespace WebKit2 {
         /**
          * Return the {@link WebKit2.URIRequest} associated with the navigation action.
          * 
-         * Modifications to the returned object are <emphasis>not</emphasis> taken
-         * into account when the request is sent over the network, and is intended
+         * Modifications to the returned object are *not* taken
+         * into account when the request is sent over the network, and the object is intended
          * only to aid in evaluating whether a navigation action should be taken or
          * not. To modify requests before they are sent over the network the
          * `WebKitPage::send-request` signal can be used instead.
@@ -17922,11 +17876,11 @@ export namespace WebKit2 {
         /**
          * Adds a URI-scheme-specific proxy.
          * 
-         * URIs whose scheme matches `uri_scheme` will be proxied via `proxy_uri`.
+         * URIs whose scheme matches `scheme` will be proxied via `proxy_uri`.
          * As with the default proxy URI, if `proxy_uri` starts with "socks://", it will be treated as referring to
          * all three of the socks5, socks4a, and socks4 proxy types.
          * @param scheme the URI scheme to add a proxy for
-         * @param proxy_uri the proxy URI to use for `uri_scheme`
+         * @param proxy_uri the proxy URI to use for `scheme`
          * @since 2.16
          */
         add_proxy_for_scheme(scheme: string, proxy_uri: string): void;
@@ -17980,7 +17934,7 @@ export namespace WebKit2 {
     /**
      * One item of a {@link WebKit2.OptionMenu}.
      * 
-     * The {@link WebKit2.OptionMenu} is composed of WebKitOptionMenuItem<!-- -->s.
+     * The {@link WebKit2.OptionMenu} is composed of WebKitOptionMenuItem objects.
      * A WebKitOptionMenuItem always has a label and can contain a tooltip text.
      * You can use the WebKitOptionMenuItem of a {@link WebKit2.OptionMenu} to build your
      * own menus.
@@ -18278,7 +18232,7 @@ export namespace WebKit2 {
          * Atomically decrements the reference count of `dialog` by one.
          * 
          * If the
-         * reference count drops to 0, all memory allocated by the `WebKitScriptdialog` is
+         * reference count drops to 0, all memory allocated by the {@link WebKit2.ScriptDialog} is
          * released. This function is MT-safe and may be called from any
          * thread.
          * @since 2.24
@@ -18290,7 +18244,7 @@ export namespace WebKit2 {
     /**
      * A reply for a script message received.
      * If no reply has been sent by the user, an automatically generated reply with
-     * undefined value with be sent.
+     * undefined value will be sent.
      * @gir-type Struct
      * @since 2.40
      */
@@ -18315,7 +18269,8 @@ export namespace WebKit2 {
         /**
          * Reply to a script message with a value.
          * 
-         * This function can be called twice for passing the reply value in.
+         * This function can only be called once. Further calls to it or to
+         * `webkit_script_message_reply_return_error_message()` emit a critical warning and are ignored.
          * @param reply_value Reply value of the provided script message
          * @since 2.40
          */
@@ -18511,7 +18466,7 @@ export namespace WebKit2 {
 
 
     /**
-     * A compiled set of rules which applied to resource loads.
+     * A compiled set of rules which are applied to resource loads.
      * @gir-type Struct
      * @since 2.24
      */

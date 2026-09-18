@@ -1443,6 +1443,7 @@ export namespace Gly {
         // Signal signatures
         interface SignalSignatures extends GObject.Object.SignalSignatures {
             "notify::color-icc-profile": (pspec: GObject.ParamSpec) => void;
+            "notify::encoding-progressive": (pspec: GObject.ParamSpec) => void;
             "notify::height": (pspec: GObject.ParamSpec) => void;
             "notify::memory-format": (pspec: GObject.ParamSpec) => void;
             "notify::stride": (pspec: GObject.ParamSpec) => void;
@@ -1454,6 +1455,8 @@ export namespace Gly {
         interface ConstructorProps extends GObject.Object.ConstructorProps {
             color_icc_profile: GLib.Bytes | Uint8Array;
             colorIccProfile: GLib.Bytes | Uint8Array;
+            encoding_progressive: number;
+            encodingProgressive: number;
             height: number;
             memory_format: MemoryFormat;
             memoryFormat: MemoryFormat;
@@ -1472,11 +1475,27 @@ export namespace Gly {
         static $gtype: GObject.GType<NewFrame>;
 
         // Properties
+        /**
+         * @read-only
+         */
         get color_icc_profile(): GLib.Bytes;
-        set color_icc_profile(val: GLib.Bytes | Uint8Array);
 
+        /**
+         * @read-only
+         */
         get colorIccProfile(): GLib.Bytes;
-        set colorIccProfile(val: GLib.Bytes | Uint8Array);
+
+        /**
+         * @read-only
+         * @default 0
+         */
+        get encoding_progressive(): number;
+
+        /**
+         * @read-only
+         * @default 0
+         */
+        get encodingProgressive(): number;
 
         /**
          * @construct-only
@@ -1546,10 +1565,16 @@ export namespace Gly {
         set_color_icc_profile(icc_profile: GLib.Bytes | Uint8Array): boolean;
 
         /**
+         * @param progressive Enable with `1`, disable with `1`, and use default with `-1`.
+         * @since 2.3
+         */
+        set_encoding_progressive(progressive: number): boolean;
+
+        /**
          * @param pixel_density 
          * @since 2.2
          */
-        set_pixel_density(pixel_density: PixelDensity): void;
+        set_pixel_density(pixel_density: PixelDensity): boolean;
     }
 
 

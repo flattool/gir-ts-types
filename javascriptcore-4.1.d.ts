@@ -90,11 +90,11 @@ export namespace JavaScriptCore {
          */
         UINT = 2,
         /**
-         * A `gsize` options type.
+         * A `gsize` option type.
          */
         SIZE = 3,
         /**
-         * A `gdouble` options type.
+         * A `gdouble` option type.
          */
         DOUBLE = 4,
         /**
@@ -177,7 +177,7 @@ export namespace JavaScriptCore {
      * Like `jsc_get_micro_version()`, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 92
+     * @default 0
      */
     const MICRO_VERSION: number;
 
@@ -185,7 +185,7 @@ export namespace JavaScriptCore {
      * Like `jsc_get_minor_version()`, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 53
+     * @default 54
      */
     const MINOR_VERSION: number;
 
@@ -263,7 +263,7 @@ export namespace JavaScriptCore {
 
     /**
      * Iterates all available options calling `function` for each one. Iteration can
-     * stop early if `function` returns `false`.
+     * stop early if `function` returns `true`.
      * @param _function a {@link JavaScriptCore.OptionsFunc} callback
      * @since 2.24
      */
@@ -296,11 +296,11 @@ export namespace JavaScriptCore {
     /**
      * Create a {@link GLib.OptionGroup} to handle JSCOptions as command line arguments.
      * The options will be exposed as command line arguments with the form
-     * <emphasis>--jsc-&lt;option&gt;=&lt;value&gt;</emphasis>.
+     * `--jsc-<option>=<value>`.
      * Each entry in the returned {@link GLib.OptionGroup} is configured to apply the
      * corresponding option during command line parsing. Applications only need to
      * pass the returned group to `g_option_context_add_group()`, and the rest will
-     * be taken care for automatically.
+     * be taken care of automatically.
      * @returns a {@link GLib.OptionGroup} for the JSCOptions
      * @since 2.24
      */
@@ -308,9 +308,9 @@ export namespace JavaScriptCore {
 
     /**
      * Get `option` as a range string. The string must be in the
-     * format <emphasis>[!]&lt;low&gt;[:&lt;high&gt;]</emphasis> where low and high are `guint` values.
+     * format `[!]<low>[:<high>]` where low and high are `guint` values.
      * Values between low and high (both included) will be considered in
-     * the range, unless <emphasis>!</emphasis> is used to invert the range.
+     * the range, unless `!` is used to invert the range.
      * @param option the option identifier
      * @returns `true` if `value` has been set or `false` if the option doesn't exist
      * @since 2.24
@@ -370,9 +370,9 @@ export namespace JavaScriptCore {
 
     /**
      * Set `option` as a range string. The string must be in the
-     * format <emphasis>[!]&lt;low&gt;[:&lt;high&gt;]</emphasis> where low and high are `guint` values.
+     * format `[!]<low>[:<high>]` where low and high are `guint` values.
      * Values between low and high (both included) will be considered in
-     * the range, unless <emphasis>!</emphasis> is used to invert the range.
+     * the range, unless `!` is used to invert the range.
      * @param option the option identifier
      * @param value the value to set
      * @returns `true` if option was correctly set or `false` otherwise.
@@ -504,11 +504,11 @@ export namespace JavaScriptCore {
     }
 
     /**
-     * A JSSClass represents a custom JavaScript class registered by the user in a {@link JavaScriptCore.Context}.
-     * It allows to create new JavaScripts objects whose instances are created by the user using
+     * A JSCClass represents a custom JavaScript class registered by the user in a {@link JavaScriptCore.Context}.
+     * It allows creating new JavaScript objects whose instances are created by the user using
      * this API.
-     * It's possible to add constructors, properties and methods for a JSSClass by providing
-     * {@link GObject.Callback}<!-- -->s to implement them.
+     * It's possible to add constructors, properties and methods for a JSCClass by providing
+     * {@link GObject.Callback} functions to implement them.
      * @gir-type Class
      */
     class Class extends GObject.Object {
@@ -560,9 +560,9 @@ export namespace JavaScriptCore {
 
         // Methods
         /**
-         * Add a constructor to `jsc_class`. If `name` is `null`, the class name will be used. When <function>new</function>
+         * Add a constructor to `jsc_class`. If `name` is `null`, the class name will be used. When `new`
          * is used with the constructor or `jsc_value_constructor_call()` is called, `callback` is invoked receiving
-         * a {@link GLib.PtrArray} of {@link JavaScriptCore.Value}<!-- -->s as arguments and `user_data` as the last parameter. When the constructor object
+         * a {@link GLib.PtrArray} of {@link JavaScriptCore.Value} objects as arguments and `user_data` as the last parameter. When the constructor object
          * is cleared in the {@link JavaScriptCore.Class} context, `destroy_notify` is called with `user_data` as parameter.
          * 
          * This function creates the constructor, which needs to be added to an object as a property to be able to use it. Use
@@ -578,7 +578,7 @@ export namespace JavaScriptCore {
         add_constructor_variadic(name: string | null, callback: GObject.Callback, return_type: GObject.GType): Value;
 
         /**
-         * Add a constructor to `jsc_class`. If `name` is `null`, the class name will be used. When <function>new</function>
+         * Add a constructor to `jsc_class`. If `name` is `null`, the class name will be used. When `new`
          * is used with the constructor or `jsc_value_constructor_call()` is called, `callback` is invoked receiving the
          * parameters and `user_data` as the last parameter. When the constructor object is cleared in the {@link JavaScriptCore.Class} context,
          * `destroy_notify` is called with `user_data` as parameter.
@@ -591,14 +591,14 @@ export namespace JavaScriptCore {
          * @param name the constructor name or `null`
          * @param callback a {@link GObject.Callback} to be called to create an instance of `jsc_class`
          * @param return_type the {@link GObject.GType} of the constructor return value
-         * @param parameter_types a list of {@link GObject.GType}<!-- -->s, one for each parameter, or `null`
+         * @param parameter_types a list of {@link GObject.GType} values, one for each parameter, or `null`
          * @returns a {@link JavaScriptCore.Value} representing the class constructor.
          */
         add_constructor(name: string | null, callback: GObject.Callback, return_type: GObject.GType, parameter_types: GObject.GType[] | null): Value;
 
         /**
          * Add method with `name` to `jsc_class`. When the method is called by JavaScript or `jsc_value_object_invoke_method()`,
-         * `callback` is called receiving the class instance as first parameter, followed by a {@link GLib.PtrArray} of {@link JavaScriptCore.Value}<!-- -->s
+         * `callback` is called receiving the class instance as first parameter, followed by a {@link GLib.PtrArray} of {@link JavaScriptCore.Value} objects
          * with the method arguments and then `user_data` as last parameter. When the method is cleared in the {@link JavaScriptCore.Class} context,
          * `destroy_notify` is called with `user_data` as parameter.
          * 
@@ -625,14 +625,14 @@ export namespace JavaScriptCore {
          * @param name the method name
          * @param callback a {@link GObject.Callback} to be called to invoke method `name` of `jsc_class`
          * @param return_type the {@link GObject.GType} of the method return value, or `G_TYPE_NONE` if the method is void.
-         * @param parameter_types a list of {@link GObject.GType}<!-- -->s, one for each parameter, or `null`
+         * @param parameter_types a list of {@link GObject.GType} values, one for each parameter, or `null`
          */
         add_method(name: string, callback: GObject.Callback, return_type: GObject.GType, parameter_types: GObject.GType[] | null): void;
 
         /**
          * Add a property with `name` to `jsc_class`. When the property value is read, `getter` is called
-         * receiving the the class instance as first parameter and `user_data` as last parameter. When the property
-         * value needs to be set, `setter` is called receiving the the class instance as first parameter, followed
+         * receiving the class instance as first parameter and `user_data` as last parameter. When the property
+         * value needs to be set, `setter` is called receiving the class instance as first parameter, followed
          * by the value to be set and then `user_data` as the last parameter. When the property is cleared in the
          * {@link JavaScriptCore.Class} context, `destroy_notify` is called with `user_data` as parameter.
          * 
@@ -764,7 +764,7 @@ export namespace JavaScriptCore {
         evaluate(code: string, length: bigint | number): Value;
 
         /**
-         * Evaluate `code` and create an new object where symbols defined in `code` will be added as properties,
+         * Evaluate `code` and create a new object where symbols defined in `code` will be added as properties,
          * instead of being added to `context` global object. The new object is returned as `object` parameter.
          * Similar to how `jsc_value_new_object()` works, if `object_instance` is not `null` `object_class` must be provided too.
          * The `line_number` is the starting line number in `uri`; the value is one-based so the first line is 1.
@@ -792,7 +792,7 @@ export namespace JavaScriptCore {
         evaluate_with_source_uri(code: string, length: bigint | number, uri: string, line_number: number): Value;
 
         /**
-         * Get the last unhandled exception thrown in `context` by API functions calls.
+         * Get the last unhandled exception thrown in `context` by API function calls.
          * @returns a {@link JavaScriptCore.Exception} or `null` if there isn't any    unhandled exception in the {@link JavaScriptCore.Context}.
          */
         get_exception(): Exception | null;
@@ -838,7 +838,7 @@ export namespace JavaScriptCore {
         /**
          * Register a custom class in `context` using the given `name`. If the new class inherits from
          * another {@link JavaScriptCore.Class}, the parent should be passed as `parent_class`, otherwise `null` should be
-         * used. The optional `vtable` parameter allows to provide a custom implementation for handling
+         * used. The optional `vtable` parameter allows providing a custom implementation for handling
          * the class, for example, to handle external properties not added to the prototype.
          * When an instance of the {@link JavaScriptCore.Class} is cleared in the context, `destroy_notify` is called with
          * the instance as parameter.
@@ -955,12 +955,12 @@ export namespace JavaScriptCore {
 
         /**
          * Get the source URI of `exception`.
-         * @returns the the source URI of `exception`, or `null`.
+         * @returns the source URI of `exception`, or `null`.
          */
         get_source_uri(): string | null;
 
         /**
-         * Return a report message of `exception`, containing all the possible details such us
+         * Return a report message of `exception`, containing all the possible details such as
          * source URI, line, column and backtrace, and formatted to be printed.
          * @returns a new string with the exception report
          */
@@ -1088,9 +1088,9 @@ export namespace JavaScriptCore {
         array_buffer_get_size(): number;
 
         /**
-         * Invoke <function>new</function> with constructor referenced by `value`. If `n_parameters`
+         * Invoke `new` with constructor referenced by `value`. If `n_parameters`
          * is 0 no parameters will be passed to the constructor.
-         * @param parameters the {@link JavaScriptCore.Value}<!-- -->s to pass as parameters to the constructor, or `null`
+         * @param parameters the {@link JavaScriptCore.Value} objects to pass as parameters to the constructor, or `null`
          * @returns a {@link JavaScriptCore.Value} referencing the newly created object instance.
          */
         constructor_call(parameters: Value[] | null): Value;
@@ -1100,8 +1100,8 @@ export namespace JavaScriptCore {
          * is 0 no parameters will be passed to the function.
          * 
          * This function always returns a {@link JavaScriptCore.Value}, in case of void functions a {@link JavaScriptCore.Value} referencing
-         * <function>undefined</function> is returned
-         * @param parameters the {@link JavaScriptCore.Value}<!-- -->s to pass as parameters to the function, or `null`
+         * `undefined` is returned
+         * @param parameters the {@link JavaScriptCore.Value} objects to pass as parameters to the function, or `null`
          * @returns a {@link JavaScriptCore.Value} with the return value of the function.
          */
         function_call(parameters: Value[] | null): Value;
@@ -1144,8 +1144,8 @@ export namespace JavaScriptCore {
         is_function(): boolean;
 
         /**
-         * Get whether the value referenced by `value` is <function>null</function>.
-         * @returns whether the value is null.
+         * Get whether the value referenced by `value` is `null`.
+         * @returns whether the value is `null`.
          */
         is_null(): boolean;
 
@@ -1175,7 +1175,7 @@ export namespace JavaScriptCore {
         is_typed_array(): boolean;
 
         /**
-         * Get whether the value referenced by `value` is <function>undefined</function>.
+         * Get whether the value referenced by `value` is `undefined`.
          * @returns whether the value is undefined.
          */
         is_undefined(): boolean;
@@ -1207,7 +1207,7 @@ export namespace JavaScriptCore {
          * Define or modify a property with `property_name` in object referenced by `value`. When the
          * property value is read or set, `getter` and `setter` callbacks will be called.
          * When the property is cleared in the {@link JavaScriptCore.Class} context, `destroy_notify` is called with
-         * `user_data` as parameter. This is equivalent to JavaScript <function>Object.defineProperty()</function>
+         * `user_data` as parameter. This is equivalent to JavaScript `Object.defineProperty()`
          * when used with an accessor descriptor.
          * 
          * Note that the value returned by `getter` must be fully transferred. In case of boxed types, you could use
@@ -1227,7 +1227,7 @@ export namespace JavaScriptCore {
 
         /**
          * Define or modify a property with `property_name` in object referenced by `value`. This is equivalent to
-         * JavaScript <function>Object.defineProperty()</function> when used with a data descriptor.
+         * JavaScript `Object.defineProperty()` when used with a data descriptor.
          * @param property_name the name of the property to define
          * @param flags {@link JavaScriptCore.ValuePropertyFlags}
          * @param property_value the default property value
@@ -1278,9 +1278,9 @@ export namespace JavaScriptCore {
          * of this function.
          * 
          * This function always returns a {@link JavaScriptCore.Value}, in case of void methods a {@link JavaScriptCore.Value} referencing
-         * <function>undefined</function> is returned.
+         * `undefined` is returned.
          * @param name the method name
-         * @param parameters the {@link JavaScriptCore.Value}<!-- -->s to pass as parameters to the method, or `null`
+         * @param parameters the {@link JavaScriptCore.Value} objects to pass as parameters to the method, or `null`
          * @returns a {@link JavaScriptCore.Value} with the return value of the method.
          */
         object_invoke_method(name: string, parameters: Value[] | null): Value;
@@ -1358,9 +1358,9 @@ export namespace JavaScriptCore {
          * Obtains a pointer to the memory region that holds the elements of the typed
          * array; modifications done to them will be visible to JavaScript code. If
          * `length` is not `null`, the number of elements contained in the typed array
-         * are also stored in the pointed location.
+         * is also stored in the pointed location.
          * 
-         * The returned pointer needs to be casted to the appropriate type (see
+         * The returned pointer needs to be cast to the appropriate type (see
          * {@link JavaScriptCore.TypedArrayType}), and has the `offset` over the underlying array
          * buffer data applied—that is, points to the first element of the typed
          * array:
@@ -1424,11 +1424,11 @@ export namespace JavaScriptCore {
     }
 
     /**
-     * JSCVirtualMachine represents a group of JSCContext<!-- -->s. It allows
+     * JSCVirtualMachine represents a group of JSCContext objects. It allows
      * concurrent JavaScript execution by creating a different instance of
      * JSCVirtualMachine in each thread.
      * 
-     * To create a group of JSCContext<!-- -->s pass the same JSCVirtualMachine
+     * To create a group of JSCContext objects pass the same JSCVirtualMachine
      * instance to every JSCContext constructor.
      * @gir-type Class
      */
