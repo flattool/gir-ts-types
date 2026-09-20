@@ -124,7 +124,7 @@ export namespace WebKit2WebExtension {
 
     /**
      * Enum values used to denote the stock actions for
-     * {@link WebKit2WebExtension.ContextMenuItem}<!-- -->s
+     * {@link WebKit2WebExtension.ContextMenuItem} objects
      * @gir-type Enum
      */
     enum ContextMenuAction {
@@ -185,7 +185,7 @@ export namespace WebKit2WebExtension {
          */
         RELOAD = 13,
         /**
-         * Copy current selection the clipboard.
+         * Copy current selection to the clipboard.
          */
         COPY = 14,
         /**
@@ -265,11 +265,11 @@ export namespace WebKit2WebExtension {
          */
         OPEN_AUDIO_IN_NEW_WINDOW = 33,
         /**
-         * Copy video link location in to the clipboard.
+         * Copy video link location to the clipboard.
          */
         COPY_VIDEO_LINK_TO_CLIPBOARD = 34,
         /**
-         * Copy audio link location in to the clipboard.
+         * Copy audio link location to the clipboard.
          */
         COPY_AUDIO_LINK_TO_CLIPBOARD = 35,
         /**
@@ -667,7 +667,7 @@ export namespace WebKit2WebExtension {
     const DOM_NODE_ENTITY_REFERENCE_NODE: number;
 
     /**
-     * Accept the node. Use this macro as return value of `webkit_dom_node_filter_accept_node()`
+     * Accept the node. Use this macro as the return value of a `webkit_dom_node_filter_accept_node()`
      * implementation to accept the given {@link WebKit2WebExtension.DOMNode}
      * @since 2.6
      * @deprecated since 2.22: Use JavaScriptCore API instead
@@ -676,7 +676,7 @@ export namespace WebKit2WebExtension {
     const DOM_NODE_FILTER_ACCEPT: number;
 
     /**
-     * Reject the node. Use this macro as return value of `webkit_dom_node_filter_accept_node()`
+     * Reject the node. Use this macro as the return value of a `webkit_dom_node_filter_accept_node()`
      * implementation to reject the given {@link WebKit2WebExtension.DOMNode}. The children of the given node will
      * be rejected too.
      * @since 2.6
@@ -790,7 +790,7 @@ export namespace WebKit2WebExtension {
     const DOM_NODE_FILTER_SHOW_TEXT: number;
 
     /**
-     * Skip the node. Use this macro as return value of `webkit_dom_node_filter_accept_node()`
+     * Skip the node. Use this macro as the return value of a `webkit_dom_node_filter_accept_node()`
      * implementation to skip the given {@link WebKit2WebExtension.DOMNode}. The children of the given node will
      * not be skipped.
      * @since 2.6
@@ -1455,7 +1455,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_add_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -1474,7 +1474,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_remove_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -2365,7 +2365,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_add_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -2384,7 +2384,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_remove_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -4024,14 +4024,17 @@ export namespace WebKit2WebExtension {
         stop(): void;
 
         /**
-         * @param handler 
-         * @param message 
+         * @param handler Name of the user message handler.
+         * @param message JavaScript value to be sent.
+         * @returns Whether the message was successfully sent.
+         * @since 2.8
+         * @deprecated since 2.22: Use JavaScriptCore API instead
          */
         webkit_message_handlers_post_message(handler: string, message: string): boolean;
 
         /**
          * Version of `webkit_dom_event_target_add_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -4050,7 +4053,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_remove_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -5402,7 +5405,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_add_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -5421,7 +5424,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_remove_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -5616,7 +5619,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_add_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -5635,7 +5638,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_remove_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -5824,7 +5827,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_add_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -5843,7 +5846,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_remove_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -6422,7 +6425,7 @@ export namespace WebKit2WebExtension {
         get_client_left(): number;
 
         /**
-         * Returns a collection of {@link WebKit2WebExtension.DOMClientRect} objects, each of which describe
+         * Returns a collection of {@link WebKit2WebExtension.DOMClientRect} objects, each of which describes
          * the size and position of a CSS border box relative to the viewport.
          * @returns A {@link WebKit2WebExtension.DOMClientRectList}
          * @since 2.18
@@ -6884,7 +6887,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_add_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -6903,7 +6906,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_remove_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -6993,7 +6996,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_add_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -7012,7 +7015,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_remove_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -21099,7 +21102,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_add_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -21118,7 +21121,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_remove_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -21260,7 +21263,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * This function has been removed from the DOM spec and it just returns `false`.
-         * @returns A `gboolean`                                                                                                                                                                       *
+         * @returns A `gboolean`
          * @deprecated since 2.12
          */
         get_expand_entity_references(): boolean;
@@ -23165,7 +23168,7 @@ export namespace WebKit2WebExtension {
         get_uri(): string;
 
         /**
-         * Gets whether `frame` is the main frame of a {@link WebKit2WebExtension.WebPage}
+         * Gets whether `frame` is the main frame of a {@link WebKit2WebExtension.WebPage}.
          * @returns `true` if `frame` is a main frame or `false` otherwise
          * @since 2.2
          */
@@ -23480,7 +23483,7 @@ export namespace WebKit2WebExtension {
          * Get the default {@link WebKit2WebExtension.ScriptWorld}. This is the normal script world
          * where all scripts are executed by default.
          * You can get the JavaScript execution context of a {@link WebKit2WebExtension.ScriptWorld}
-         * for a given {@link WebKit2WebExtension.Frame} with `webkit_frame_get_javascript_context_for_script_world()`.
+         * for a given {@link WebKit2WebExtension.Frame} with `webkit_frame_get_js_context_for_script_world()`.
          * @since 2.2
          */
         static get_default(): ScriptWorld;
@@ -23926,7 +23929,7 @@ export namespace WebKit2WebExtension {
      * Access to editing capabilities of a {@link WebKit2WebExtension.WebPage}.
      * 
      * The WebKitWebEditor provides access to various editing capabilities of
-     * a {@link WebKit2WebExtension.WebPage} such as a possibility to react to the current selection in
+     * a {@link WebKit2WebExtension.WebPage} such as the possibility to react to the current selection in
      * {@link WebKit2WebExtension.WebPage}.
      * @gir-type Class
      * @since 2.10
@@ -23981,7 +23984,7 @@ export namespace WebKit2WebExtension {
             /**
              * This signal is emitted when a {@link WebKit2WebExtension.UserMessage} is received from the
              * `WebKitWebContext` corresponding to `extension`. Messages sent by `WebKitWebContext`
-             * are always broadcasted to all {@link WebKit2WebExtension.WebExtension}<!-- -->s and they can't be
+             * are always broadcast to all web extensions and they can't be
              * replied to. Calling `webkit_user_message_send_reply()` will do nothing.
              * @signal
              * @since 2.28
@@ -23998,7 +24001,7 @@ export namespace WebKit2WebExtension {
      * Represents an extension of the WebProcess.
      * 
      * WebKitWebExtension is a loadable module for the WebProcess. It allows you to execute code in the
-     * WebProcess and being able to use the DOM API, to change any request or to inject custom
+     * WebProcess and to use the DOM API, to change any request or to inject custom
      * JavaScript code, for example.
      * 
      * To create a WebKitWebExtension you should write a module with an initialization function that could
@@ -24106,7 +24109,7 @@ export namespace WebKit2WebExtension {
         /**
          * Send `message` to the `WebKitWebContext` corresponding to `extension`. If `message` is floating, it's consumed.
          * 
-         * If you don't expect any reply, or you simply want to ignore it, you can pass `null` as `calback`.
+         * If you don't expect any reply, or you simply want to ignore it, you can pass `null` as `callback`.
          * When the operation is finished, `callback` will be called. You can then call
          * `webkit_web_extension_send_message_to_context_finish()` to get the message reply.
          * @param message a {@link WebKit2WebExtension.UserMessage}
@@ -24118,7 +24121,7 @@ export namespace WebKit2WebExtension {
         /**
          * Send `message` to the `WebKitWebContext` corresponding to `extension`. If `message` is floating, it's consumed.
          * 
-         * If you don't expect any reply, or you simply want to ignore it, you can pass `null` as `calback`.
+         * If you don't expect any reply, or you simply want to ignore it, you can pass `null` as `callback`.
          * When the operation is finished, `callback` will be called. You can then call
          * `webkit_web_extension_send_message_to_context_finish()` to get the message reply.
          * @param message a {@link WebKit2WebExtension.UserMessage}
@@ -24131,7 +24134,7 @@ export namespace WebKit2WebExtension {
         /**
          * Send `message` to the `WebKitWebContext` corresponding to `extension`. If `message` is floating, it's consumed.
          * 
-         * If you don't expect any reply, or you simply want to ignore it, you can pass `null` as `calback`.
+         * If you don't expect any reply, or you simply want to ignore it, you can pass `null` as `callback`.
          * When the operation is finished, `callback` will be called. You can then call
          * `webkit_web_extension_send_message_to_context_finish()` to get the message reply.
          * @param message a {@link WebKit2WebExtension.UserMessage}
@@ -24156,7 +24159,7 @@ export namespace WebKit2WebExtension {
         // Signal signatures
         interface SignalSignatures extends GObject.Object.SignalSignatures {
             /**
-             * Emitted after form elements (or form associated elements) are associated to `frame`.
+             * Emitted after form elements (or form associated elements) are associated with `frame`.
              * This is useful to implement form auto filling for web pages where form fields are added
              * dynamically. This signal might be emitted multiple times for the same frame.
              * 
@@ -24206,7 +24209,7 @@ export namespace WebKit2WebExtension {
     }
 
     /**
-     * Form manager of a {@link WebKit2WebExtension.WebPage} in a {@link WebKit2WebExtension.ScriptWorld}
+     * Form manager of a {@link WebKit2WebExtension.WebPage} in a {@link WebKit2WebExtension.ScriptWorld}.
      * @gir-type Class
      * @since 2.40
      */
@@ -24295,7 +24298,7 @@ export namespace WebKit2WebExtension {
 
         // Properties
         /**
-         * The {@link WebKit2WebExtension.DOMNode}
+         * The {@link WebKit2WebExtension.DOMNode}.
          * @deprecated since 2.40
          * @construct-only
          */
@@ -24351,7 +24354,7 @@ export namespace WebKit2WebExtension {
              * Emitted when a message is sent to the console. This can be a message
              * produced by the use of JavaScript console API, a JavaScript exception,
              * a security error or other errors, warnings, debug or log messages.
-             * The `console_message` contains information of the message.
+             * The `console_message` contains information about the message.
              * @signal
              * @since 2.12
              * @run-last
@@ -24375,13 +24378,13 @@ export namespace WebKit2WebExtension {
              * This signal is emitted when the DOM document of a {@link WebKit2WebExtension.WebPage} has been
              * loaded.
              * 
-             * You can wait for this signal to get the DOM document
+             * You can wait for this signal to get the DOM document.
              * @signal
              * @run-last
              */
             "document-loaded": () => void;
             /**
-             * Emitted after form elements (or form associated elements) are associated to a particular web
+             * Emitted after form elements (or form associated elements) are associated with a particular web
              * page. This is useful to implement form auto filling for web pages where form fields are added
              * dynamically. This signal might be emitted multiple times for the same web page.
              * 
@@ -24392,12 +24395,12 @@ export namespace WebKit2WebExtension {
              * keep them alive after the signal handler returns.
              * @signal
              * @since 2.16
-             * @deprecated since 2.26: , use {@link WebKit2WebExtension.WebPage.SignalSignatures.form_controls_associated_for_frame | WebKit2WebExtension.WebPage::form-controls-associated-for-frame} instead.
+             * @deprecated since 2.26: Use {@link WebKit2WebExtension.WebPage.SignalSignatures.form_controls_associated_for_frame | WebKit2WebExtension.WebPage::form-controls-associated-for-frame} instead.
              * @run-last
              */
             "form-controls-associated": (elements: DOMElement[]) => void;
             /**
-             * Emitted after form elements (or form associated elements) are associated to a particular web
+             * Emitted after form elements (or form associated elements) are associated with a particular web
              * page. This is useful to implement form auto filling for web pages where form fields are added
              * dynamically. This signal might be emitted multiple times for the same web page.
              * 
@@ -24422,7 +24425,7 @@ export namespace WebKit2WebExtension {
              * emitted again with the `request` argument containing the new
              * request to be sent to the server due to the redirection and the
              * `redirected_response` parameter containing the response
-             * received by the server for the initial request.
+             * received from the server for the initial request.
              * 
              * Modifications to the {@link WebKit2WebExtension.URIRequest} and its associated
              * {@link Soup.MessageHeaders} will be taken into account when the request
@@ -24438,7 +24441,7 @@ export namespace WebKit2WebExtension {
              * 
              * You can handle the user message asynchronously by calling `g_object_ref()` on
              * `message` and returning `true`. If the last reference of `message` is removed
-             * and the message has been replied, the operation in the `WebKitWebView` will
+             * and the message has not been replied to, the operation in the `WebKitWebView` will
              * finish with error {@link WebKit2WebExtension.UserMessageError.USER_MESSAGE_UNHANDLED_MESSAGE}.
              * @signal
              * @since 2.28
@@ -24529,9 +24532,9 @@ export namespace WebKit2WebExtension {
 
         // Methods
         /**
-         * Get the {@link WebKit2WebExtension.DOMDocument} currently loaded in `web_page`
+         * Get the {@link WebKit2WebExtension.DOMDocument} currently loaded in `web_page`.
          * @returns the {@link WebKit2WebExtension.DOMDocument} currently loaded, or `null`    if no document is currently loaded.
-         * @deprecated since 2.40.: Use JavaScriptCore API instead.
+         * @deprecated since 2.40: Use JavaScriptCore API instead.
          */
         get_dom_document(): DOMDocument;
 
@@ -24551,7 +24554,7 @@ export namespace WebKit2WebExtension {
         get_form_manager(world: ScriptWorld | null): WebFormManager;
 
         /**
-         * Get the identifier of the {@link WebKit2WebExtension.WebPage}
+         * Get the identifier of the {@link WebKit2WebExtension.WebPage}.
          * @returns the identifier of `web_page`
          */
         get_id(): number;
@@ -24569,7 +24572,7 @@ export namespace WebKit2WebExtension {
          * 
          * You can monitor the active URI by connecting to the notify::uri
          * signal of `web_page`.
-         * @returns the current active URI of `web_view` or `null` if nothing has been    loaded yet.
+         * @returns the current active URI of `web_page` or `null` if nothing has been    loaded yet.
          */
         get_uri(): string;
 
@@ -24637,41 +24640,41 @@ export namespace WebKit2WebExtension {
         copy(): ConsoleMessage;
 
         /**
-         * Free the {@link WebKit2WebExtension.ConsoleMessage}
+         * Free the {@link WebKit2WebExtension.ConsoleMessage}.
          * @since 2.12
          */
         free(): void;
 
         /**
-         * Gets the log level of a {@link WebKit2WebExtension.ConsoleMessage}
+         * Gets the log level of a {@link WebKit2WebExtension.ConsoleMessage}.
          * @returns a {@link WebKit2WebExtension.ConsoleMessageLevel} indicating the log level of `console_message`
          * @since 2.12
          */
         get_level(): ConsoleMessageLevel;
 
         /**
-         * Gets the line number of a {@link WebKit2WebExtension.ConsoleMessage}
+         * Gets the line number of a {@link WebKit2WebExtension.ConsoleMessage}.
          * @returns the line number of `console_message`
          * @since 2.12
          */
         get_line(): number;
 
         /**
-         * Gets the source of a {@link WebKit2WebExtension.ConsoleMessage}
+         * Gets the source of a {@link WebKit2WebExtension.ConsoleMessage}.
          * @returns a {@link WebKit2WebExtension.ConsoleMessageSource} indicating the source of `console_message`
          * @since 2.12
          */
         get_source(): ConsoleMessageSource;
 
         /**
-         * Gets the source identifier of a {@link WebKit2WebExtension.ConsoleMessage}
+         * Gets the source identifier of a {@link WebKit2WebExtension.ConsoleMessage}.
          * @returns the source identifier of `console_message`
          * @since 2.12
          */
         get_source_id(): string;
 
         /**
-         * Gets the text message of a {@link WebKit2WebExtension.ConsoleMessage}
+         * Gets the text message of a {@link WebKit2WebExtension.ConsoleMessage}.
          * @returns the text message of `console_message`
          * @since 2.12
          */
@@ -25405,7 +25408,7 @@ export namespace WebKit2WebExtension {
         // Methods
         /**
          * Version of `webkit_dom_event_target_add_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -25424,7 +25427,7 @@ export namespace WebKit2WebExtension {
 
         /**
          * Version of `webkit_dom_event_target_remove_event_listener()` using a closure
-         * instead of a callbacks for easier binding in other languages.
+         * instead of callbacks for easier binding in other languages.
          * @param event_name A `gchar`
          * @param handler A {@link GObject.Closure}
          * @param use_capture A `gboolean`
@@ -25492,7 +25495,7 @@ export namespace WebKit2WebExtension {
 
             // Virtual methods
             /**
-             * @param prefix The prefix to lookup
+             * @param prefix The prefix to look up
              * @deprecated since 2.22: Use JavaScriptCore API instead
              * @virtual
              */
@@ -25515,7 +25518,7 @@ export namespace WebKit2WebExtension {
 
         // Methods
         /**
-         * @param prefix The prefix to lookup
+         * @param prefix The prefix to look up
          * @returns a `gchar`
          * @deprecated since 2.22: Use JavaScriptCore API instead
          */
