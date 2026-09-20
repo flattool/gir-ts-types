@@ -126,7 +126,7 @@ export namespace WebKitWebProcessExtension {
 
     /**
      * Enum values used to denote the stock actions for
-     * {@link WebKitWebProcessExtension.ContextMenuItem}<!-- -->s
+     * {@link WebKitWebProcessExtension.ContextMenuItem} objects
      * @gir-type Enum
      */
     enum ContextMenuAction {
@@ -187,7 +187,7 @@ export namespace WebKitWebProcessExtension {
          */
         RELOAD = 13,
         /**
-         * Copy current selection the clipboard.
+         * Copy current selection to the clipboard.
          */
         COPY = 14,
         /**
@@ -267,11 +267,11 @@ export namespace WebKitWebProcessExtension {
          */
         OPEN_AUDIO_IN_NEW_WINDOW = 33,
         /**
-         * Copy video link location in to the clipboard.
+         * Copy video link location to the clipboard.
          */
         COPY_VIDEO_LINK_TO_CLIPBOARD = 34,
         /**
-         * Copy audio link location in to the clipboard.
+         * Copy audio link location to the clipboard.
          */
         COPY_AUDIO_LINK_TO_CLIPBOARD = 35,
         /**
@@ -762,7 +762,7 @@ export namespace WebKitWebProcessExtension {
         get_uri(): string;
 
         /**
-         * Gets whether `frame` is the main frame of a {@link WebKitWebProcessExtension.WebPage}
+         * Gets whether `frame` is the main frame of a {@link WebKitWebProcessExtension.WebPage}.
          * @returns `true` if `frame` is a main frame or `false` otherwise
          * @since 2.2
          */
@@ -1077,7 +1077,7 @@ export namespace WebKitWebProcessExtension {
          * Get the default {@link WebKitWebProcessExtension.ScriptWorld}. This is the normal script world
          * where all scripts are executed by default.
          * You can get the JavaScript execution context of a {@link WebKitWebProcessExtension.ScriptWorld}
-         * for a given {@link WebKitWebProcessExtension.Frame} with `webkit_frame_get_javascript_context_for_script_world()`.
+         * for a given {@link WebKitWebProcessExtension.Frame} with `webkit_frame_get_js_context_for_script_world()`.
          * @since 2.2
          */
         static get_default(): ScriptWorld;
@@ -1523,7 +1523,7 @@ export namespace WebKitWebProcessExtension {
      * Access to editing capabilities of a {@link WebKitWebProcessExtension.WebPage}.
      * 
      * The WebKitWebEditor provides access to various editing capabilities of
-     * a {@link WebKitWebProcessExtension.WebPage} such as a possibility to react to the current selection in
+     * a {@link WebKitWebProcessExtension.WebPage} such as the possibility to react to the current selection in
      * {@link WebKitWebProcessExtension.WebPage}.
      * @gir-type Class
      * @since 2.10
@@ -1569,7 +1569,7 @@ export namespace WebKitWebProcessExtension {
         // Signal signatures
         interface SignalSignatures extends GObject.Object.SignalSignatures {
             /**
-             * Emitted after form elements (or form associated elements) are associated to `frame`.
+             * Emitted after form elements (or form associated elements) are associated with `frame`.
              * This is useful to implement form auto filling for web pages where form fields are added
              * dynamically. This signal might be emitted multiple times for the same frame.
              * 
@@ -1619,7 +1619,7 @@ export namespace WebKitWebProcessExtension {
     }
 
     /**
-     * Form manager of a {@link WebKitWebProcessExtension.WebPage} in a {@link WebKitWebProcessExtension.ScriptWorld}
+     * Form manager of a {@link WebKitWebProcessExtension.WebPage} in a {@link WebKitWebProcessExtension.ScriptWorld}.
      * @gir-type Class
      * @since 2.40
      */
@@ -1776,7 +1776,7 @@ export namespace WebKitWebProcessExtension {
         context_is_selection(): boolean;
 
         /**
-         * Gets the the context flags for the hit test result.
+         * Gets the context flags for the hit test result.
          * @returns a bitmask of {@link WebKitWebProcessExtension.HitTestResultContext} flags
          */
         get_context(): number;
@@ -1828,7 +1828,7 @@ export namespace WebKitWebProcessExtension {
              * Emitted when a message is sent to the console. This can be a message
              * produced by the use of JavaScript console API, a JavaScript exception,
              * a security error or other errors, warnings, debug or log messages.
-             * The `console_message` contains information of the message.
+             * The `console_message` contains information about the message.
              * @signal
              * @since 2.12
              * @run-last
@@ -1852,7 +1852,7 @@ export namespace WebKitWebProcessExtension {
              * This signal is emitted when the DOM document of a {@link WebKitWebProcessExtension.WebPage} has been
              * loaded.
              * 
-             * You can wait for this signal to get the DOM document
+             * You can wait for this signal to get the DOM document.
              * @signal
              * @run-last
              */
@@ -1867,7 +1867,7 @@ export namespace WebKitWebProcessExtension {
              * emitted again with the `request` argument containing the new
              * request to be sent to the server due to the redirection and the
              * `redirected_response` parameter containing the response
-             * received by the server for the initial request.
+             * received from the server for the initial request.
              * 
              * Modifications to the {@link WebKitWebProcessExtension.URIRequest} and its associated
              * {@link Soup.MessageHeaders} will be taken into account when the request
@@ -1883,7 +1883,7 @@ export namespace WebKitWebProcessExtension {
              * 
              * You can handle the user message asynchronously by calling `g_object_ref()` on
              * `message` and returning `true`. If the last reference of `message` is removed
-             * and the message has been replied, the operation in the `WebKitWebView` will
+             * and the message has not been replied to, the operation in the `WebKitWebView` will
              * finish with error {@link WebKitWebProcessExtension.UserMessageError.USER_MESSAGE_UNHANDLED_MESSAGE}.
              * @signal
              * @since 2.28
@@ -1955,7 +1955,7 @@ export namespace WebKitWebProcessExtension {
         get_form_manager(world: ScriptWorld | null): WebFormManager;
 
         /**
-         * Get the identifier of the {@link WebKitWebProcessExtension.WebPage}
+         * Get the identifier of the {@link WebKitWebProcessExtension.WebPage}.
          * @returns the identifier of `web_page`
          */
         get_id(): number;
@@ -1973,7 +1973,7 @@ export namespace WebKitWebProcessExtension {
          * 
          * You can monitor the active URI by connecting to the notify::uri
          * signal of `web_page`.
-         * @returns the current active URI of `web_view` or `null` if nothing has been    loaded yet.
+         * @returns the current active URI of `web_page` or `null` if nothing has been    loaded yet.
          */
         get_uri(): string;
 
@@ -2040,7 +2040,7 @@ export namespace WebKitWebProcessExtension {
             /**
              * This signal is emitted when a {@link WebKitWebProcessExtension.UserMessage} is received from the
              * `WebKitWebContext` corresponding to `extension`. Messages sent by `WebKitWebContext`
-             * are always broadcasted to all web extensions and they can't be
+             * are always broadcast to all web extensions and they can't be
              * replied to. Calling `webkit_user_message_send_reply()` will do nothing.
              * @signal
              * @since 2.40
@@ -2057,7 +2057,7 @@ export namespace WebKitWebProcessExtension {
      * Represents an extension of the web process.
      * 
      * WebKitWebProcessExtension is a loadable module for the web process. It allows you to execute code in the
-     * web process and being able to use the DOM API, to change any request or to inject custom
+     * web process and to use the DOM API, to change any request or to inject custom
      * JavaScript code, for example.
      * 
      * To create a WebKitWebProcessExtension you should write a module with an initialization function that could
@@ -2090,37 +2090,38 @@ export namespace WebKitWebProcessExtension {
      * a {@link WebKitWebProcessExtension.WebPage} is created.
      * 
      * WebKit has to know where it can find the created WebKitWebProcessExtension. To do so you
-     * should use the `webkit_web_context_set_web_extensions_directory()` function. The signal
-     * `WebKitWebContext::initialize-web-extensions` is the recommended place to call it.
+     * should use the `webkit_web_context_set_web_process_extensions_directory()` function. The signal
+     * `WebKitWebContext::initialize-web-process-extensions` is the recommended place to call it.
      * 
      * To provide the initialization data used by the `webkit_web_process_extension_initialize_with_user_data()`
-     * function, you have to call `webkit_web_context_set_web_extensions_initialization_user_data()` with
+     * function, you have to call `webkit_web_context_set_web_process_extensions_initialization_user_data()` with
      * the desired data as parameter. You can see an example of this in the following piece of code:
      * 
      * ```c
-     * #define WEB_EXTENSIONS_DIRECTORY // ...
+     * #define WEB_PROCESS_EXTENSIONS_DIRECTORY // ...
      * 
      * static void
-     * initialize_web_extensions (WebKitWebContext *context,
-     *                            gpointer          user_data)
+     * initialize_web_process_extensions (WebKitWebContext *context,
+     *                                    gpointer          user_data)
      * {
-     *   // Web Extensions get a different ID for each Web Process
+     *   // Web process extensions get a different ID for each web process
      *   static guint32 unique_id = 0;
      * 
-     *   webkit_web_context_set_web_extensions_directory (
-     *      context, WEB_EXTENSIONS_DIRECTORY);
-     *   webkit_web_context_set_web_extensions_initialization_user_data (
+     *   webkit_web_context_set_web_process_extensions_directory (
+     *      context, WEB_PROCESS_EXTENSIONS_DIRECTORY);
+     *   webkit_web_context_set_web_process_extensions_initialization_user_data (
      *      context, g_variant_new_uint32 (unique_id++));
      * }
      * 
      * int main (int argc, char **argv)
      * {
      *   g_signal_connect (webkit_web_context_get_default (),
-     *                    "initialize-web-extensions",
-     *                     G_CALLBACK (initialize_web_extensions),
+     *                     "initialize-web-process-extensions",
+     *                     G_CALLBACK (initialize_web_process_extensions),
      *                     NULL);
      * 
-     *   GtkWidget *view = webkit_web_view_new ();
+     *   // With the legacy libwpe backend, WPE also needs the "backend" property
+     *   WebKitWebView *view = g_object_new (WEBKIT_TYPE_WEB_VIEW, NULL);
      * 
      *   // ...
      * }
@@ -2167,7 +2168,7 @@ export namespace WebKitWebProcessExtension {
         /**
          * Send `message` to the `WebKitWebContext` corresponding to `extension`. If `message` is floating, it's consumed.
          * 
-         * If you don't expect any reply, or you simply want to ignore it, you can pass `null` as `calback`.
+         * If you don't expect any reply, or you simply want to ignore it, you can pass `null` as `callback`.
          * When the operation is finished, `callback` will be called. You can then call
          * `webkit_web_process_extension_send_message_to_context_finish()` to get the message reply.
          * @param message a {@link WebKitWebProcessExtension.UserMessage}
@@ -2179,7 +2180,7 @@ export namespace WebKitWebProcessExtension {
         /**
          * Send `message` to the `WebKitWebContext` corresponding to `extension`. If `message` is floating, it's consumed.
          * 
-         * If you don't expect any reply, or you simply want to ignore it, you can pass `null` as `calback`.
+         * If you don't expect any reply, or you simply want to ignore it, you can pass `null` as `callback`.
          * When the operation is finished, `callback` will be called. You can then call
          * `webkit_web_process_extension_send_message_to_context_finish()` to get the message reply.
          * @param message a {@link WebKitWebProcessExtension.UserMessage}
@@ -2192,7 +2193,7 @@ export namespace WebKitWebProcessExtension {
         /**
          * Send `message` to the `WebKitWebContext` corresponding to `extension`. If `message` is floating, it's consumed.
          * 
-         * If you don't expect any reply, or you simply want to ignore it, you can pass `null` as `calback`.
+         * If you don't expect any reply, or you simply want to ignore it, you can pass `null` as `callback`.
          * When the operation is finished, `callback` will be called. You can then call
          * `webkit_web_process_extension_send_message_to_context_finish()` to get the message reply.
          * @param message a {@link WebKitWebProcessExtension.UserMessage}
@@ -2228,41 +2229,41 @@ export namespace WebKitWebProcessExtension {
         copy(): ConsoleMessage;
 
         /**
-         * Free the {@link WebKitWebProcessExtension.ConsoleMessage}
+         * Free the {@link WebKitWebProcessExtension.ConsoleMessage}.
          * @since 2.12
          */
         free(): void;
 
         /**
-         * Gets the log level of a {@link WebKitWebProcessExtension.ConsoleMessage}
+         * Gets the log level of a {@link WebKitWebProcessExtension.ConsoleMessage}.
          * @returns a {@link WebKitWebProcessExtension.ConsoleMessageLevel} indicating the log level of `console_message`
          * @since 2.12
          */
         get_level(): ConsoleMessageLevel;
 
         /**
-         * Gets the line number of a {@link WebKitWebProcessExtension.ConsoleMessage}
+         * Gets the line number of a {@link WebKitWebProcessExtension.ConsoleMessage}.
          * @returns the line number of `console_message`
          * @since 2.12
          */
         get_line(): number;
 
         /**
-         * Gets the source of a {@link WebKitWebProcessExtension.ConsoleMessage}
+         * Gets the source of a {@link WebKitWebProcessExtension.ConsoleMessage}.
          * @returns a {@link WebKitWebProcessExtension.ConsoleMessageSource} indicating the source of `console_message`
          * @since 2.12
          */
         get_source(): ConsoleMessageSource;
 
         /**
-         * Gets the source identifier of a {@link WebKitWebProcessExtension.ConsoleMessage}
+         * Gets the source identifier of a {@link WebKitWebProcessExtension.ConsoleMessage}.
          * @returns the source identifier of `console_message`
          * @since 2.12
          */
         get_source_id(): string;
 
         /**
-         * Gets the text message of a {@link WebKitWebProcessExtension.ConsoleMessage}
+         * Gets the text message of a {@link WebKitWebProcessExtension.ConsoleMessage}.
          * @returns the text message of `console_message`
          * @since 2.12
          */
