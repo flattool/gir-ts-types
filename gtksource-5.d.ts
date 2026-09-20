@@ -416,7 +416,7 @@ export namespace GtkSource {
      * Like `gtk_source_get_minor_version()`, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 21
+     * @default 22
      */
     const MINOR_VERSION: number;
 
