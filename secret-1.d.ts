@@ -264,7 +264,7 @@ export namespace Secret {
 
     /**
      * The micro version of libsecret.
-     * @default 7
+     * @default 8
      */
     const MICRO_VERSION: number;
 

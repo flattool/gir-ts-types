@@ -1041,7 +1041,7 @@ export namespace Adw {
 
     /**
      * Adwaita micro version component (e.g. 3 if the version is 1.2.3).
-     * @default 3
+     * @default 4
      */
     const MICRO_VERSION: number;
 
@@ -1054,7 +1054,7 @@ export namespace Adw {
     /**
      * Adwaita version, encoded as a string, useful for printing and
      * concatenation.
-     * @default 1.9.3
+     * @default 1.9.4
      */
     const VERSION_S: string;
 

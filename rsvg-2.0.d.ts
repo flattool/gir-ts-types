@@ -159,7 +159,7 @@ export namespace Rsvg {
      * program is running with (e.g. the version which the linker used for
      * your program), or for programs not written in C, use
      * `rsvg_micro_version` instead.
-     * @default 3
+     * @default 4
      */
     const MICRO_VERSION: number;
 
@@ -198,7 +198,7 @@ export namespace Rsvg {
      * program is running with (e.g. the version which the linker used for
      * your program), or for programs not written in C, use
      * `rsvg_version` instead.
-     * @default 2.62.3
+     * @default 2.62.4
      */
     const VERSION: string;
 
