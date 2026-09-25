@@ -346,10 +346,11 @@ export namespace Rsvg {
          */
         FLAGS_NONE = 0,
         /**
-         * Disable safety limits in the XML parser.  Libxml2 has
+         * Disable safety limits in the XML parser and on embedded images.  Libxml2 has
          * [several limits](https://gitlab.gnome.org/GNOME/libxml2/blob/master/include/libxml/parserInternals.h)
-         * designed to keep malicious XML content from consuming too much memory while parsing.
-         * For security reasons, this should only be used for trusted input!  Since: 2.40.3
+         * designed to keep malicious XML content from consuming too much memory while parsing.  The image crate
+         * also limits per-image allocations to 512 MB by default.  For security reasons, this should only be used
+         * for trusted input!  Since: 2.40.3
          */
         FLAG_UNLIMITED = 1,
         /**
