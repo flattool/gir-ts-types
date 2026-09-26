@@ -20905,23 +20905,55 @@ export namespace Adw {
      *   <img src="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/header-bar.png" alt="header-bar">
      * </picture>
      * 
-     * {@link Adw.HeaderBar} is similar to {@link Gtk.HeaderBar}, but provides additional
-     * features compared to it. Refer to {@link Gtk.HeaderBar} for details. It is typically
-     * used as a top bar within {@link ToolbarView}.
+     * {@link Adw.HeaderBar} displays a title and allows to place children at the start and
+     * end of it. It also displays the window control buttons on each side. It is
+     * typically used as a top bar within {@link ToolbarView}.
      * 
-     * ## Dialog Integration
+     * ## Title
      * 
-     * When placed inside an {@link Dialog}, {@link Adw.HeaderBar} will display the dialog
-     * title instead of window title. It will also adjust the decoration layout to
-     * ensure it always has a close button and nothing else. Set
-     * {@link HeaderBar.show_start_title_buttons} and
-     * {@link HeaderBar.show_end_title_buttons} to `FALSE` to remove it if it's
-     * unwanted.
+     * By default, {@link Adw.HeaderBar} displays the title, specifically:
      * 
-     * ## Navigation View Integration
+     * - {@link NavigationPage.title} when placed in a navigation page;
+     * - {@link Dialog.title} when placed in a dialog;
+     * - {@link Gtk.Window.title} when placed in a window.
      * 
-     * When placed inside an {@link NavigationPage}, {@link Adw.HeaderBar} will display the
-     * page title instead of window title.
+     * To replace the title with a custom widget, use the
+     * {@link HeaderBar.title_widget} property. This is frequently used with
+     * widgets like {@link ViewSwitcher} or {@link WindowTitle}.
+     * 
+     * To hide the title (either default or custom) using the
+     * {@link HeaderBar.show_title} property.
+     * 
+     * :::note
+     *     When placed inside {@link BottomSheet} with the
+     *     {@link BottomSheet.show_drag_handle} property set to `TRUE`,
+     *     {@link Adw.HeaderBar} hides the default title. Custom title widgets will still
+     *     be shown.
+     * 
+     * ### Centering Policy
+     * 
+     * {@link HeaderBar.centering_policy} allows to enforce strict centering of
+     * the title widget. This can be useful for entries inside {@link Clamp}.
+     * 
+     * ## Window Controls
+     * 
+     * By default, {@link Adw.HeaderBar} shows the window controls, according to the
+     * system layout.
+     * 
+     * When placed in a {@link Dialog}, it will only show a close button, regardless
+     * of the system button layout. The close button will be on the same side as the
+     * system one. If the system layout doesn't have a close button, it will be on
+     * the right.
+     * 
+     * When placed inside {@link NavigationSplitView} or {@link OverlaySplitView},
+     * it will automatically hide the title buttons other than at the edges of the
+     * window.
+     * 
+     * To remove the window controls from the start or end side respectively, set
+     * the {@link HeaderBar.show_start_title_buttons} and
+     * {@link HeaderBar.show_end_title_buttons} properties to `FALSE`.
+     * 
+     * ## Back Button
      * 
      * When used together with {@link NavigationView} or {@link NavigationSplitView},
      * it will also display a back button that can be used to go back to the previous
@@ -20929,32 +20961,61 @@ export namespace Adw {
      * once, potentially across multiple navigation views.
      * 
      * Set {@link HeaderBar.show_back_button} to `FALSE` to disable this behavior
-     * in rare scenarios where it's unwanted.
+     * if it's unwanted, such as when replacing it with a custom back button.
      * 
-     * ## Split View Integration
+     * ## Adding Children
      * 
-     * When placed inside {@link NavigationSplitView} or {@link OverlaySplitView},
-     * {@link Adw.HeaderBar} will automatically hide the title buttons other than at the
-     * edges of the window.
+     * To add children on the start or the end side respectively, use
+     * {@link HeaderBar.pack_start} or {@link HeaderBar.pack_end} respectively.
      * 
-     * ## Bottom Sheet Integration
+     * {@link Adw.HeaderBar} supports multiple children on each side, so there's no need
+     * to wrap them into {@link Gtk.Box} manually.
      * 
-     * When played inside {@link BottomSheet}, {@link Adw.HeaderBar} will not show the title
-     * unless {@link BottomSheet.show_drag_handle} is set to `FALSE`, regardless
-     * of {@link HeaderBar.show_title}. This only applies to the default title,
-     * titles set with {@link HeaderBar.title_widget} will still be shown.
+     * They can be removed using {@link HeaderBar.remove}.
      * 
-     * ## Centering Policy
+     * ## {@link Adw.HeaderBar} as {@link Gtk.Buildable}
      * 
-     * {@link HeaderBar.centering_policy} allows to enforce strict centering of
-     * the title widget. This can be useful for entries inside {@link Clamp}.
+     * {@link Adw.HeaderBar} supports adding children at the start or end sides by
+     * specifying “start“ or “end” as the “type” attribute of a `<child>` element.
      * 
-     * ## Title Buttons
+     * If the child type is not specified, the child will be added at the end.
      * 
-     * Unlike {@link Gtk.HeaderBar}, {@link Adw.HeaderBar} allows to toggle title button
-     * visibility for each side individually, using the
-     * {@link HeaderBar.show_start_title_buttons} and
-     * {@link HeaderBar.show_end_title_buttons} properties.
+     * An example of an {@link Adw.HeaderBar} UI definition:
+     * 
+     * ```xml
+     * <object class="AdwHeaderBar">
+     *   <property name="title-widget">
+     *     <object class="AdwWindowTitle">
+     *       <property name="title" translatable="yes">Title</property>
+     *       <property name="subtitle" translatable="yes">Subtitle</property>
+     *     </object>
+     *   </property>
+     *   <child type="start">
+     *     <object class="GtkButton">
+     *       <property name="icon-name">list-add-symbolic</property>
+     *       <property name="tooltip-text" translatable="yes">New Item</property>
+     *     </object>
+     *   </child>
+     *   <child type="end">
+     *     <object class="GtkMenuButton">
+     *       <property name="icon-name">open-menu-symbolic</property>
+     *       <property name="tooltip-text" translatable="yes">Menu</property>
+     *       <property name="primary">True</property>
+     *     </object>
+     *   </child>
+     *   <child type="end">
+     *     <object class="GtkButton">
+     *       <property name="icon-name">edit-find-symbolic</property>
+     *       <property name="tooltip-text" translatable="yes">Search</property>
+     *     </object>
+     *   </child>
+     * </object>
+     * ```
+     * 
+     * <picture>
+     *   <source srcset="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/header-bar-children-dark.png" media="(prefers-color-scheme: dark)">
+     *   <img src="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/header-bar-children.png" alt="header-bar-children">
+     * </picture>
      * 
      * ## CSS nodes
      * 
@@ -20992,6 +21053,8 @@ export namespace Adw {
      * ## Accessibility
      * 
      * {@link Adw.HeaderBar} uses the {@link Gtk.AccessibleRole.GROUP} role.
+     * 
+     * See also: {@link Gtk.HeaderBar}, {@link Gtk.WindowControls}.
      * @gir-type Class
      */
     class HeaderBar extends Gtk.Widget implements Gtk.Accessible, Gtk.Buildable, Gtk.ConstraintTarget {
@@ -21792,7 +21855,35 @@ export namespace Adw {
      * </picture>
      * 
      * A view switcher showing pages of an {@link ViewStack} within an
-     * {@link ToggleGroup}, similar to {@link ViewSwitcher}.
+     * {@link ToggleGroup}, similar to {@link ViewSwitcher}. It automatically
+     * creates and populates toggles, matching the stack's pages.
+     * 
+     * Example of an {@link Adw.InlineViewSwitcher} UI definition:
+     * 
+     * ```xml
+     * <object class="AdwInlineViewSwitcher">
+     *   <property name="stack">stack</property>
+     * </object>
+     * ```
+     * ```xml
+     * <object class="AdwViewStack" id="stack">
+     *   <child>
+     *     <object class="AdwViewStackPage">
+     *       <!-- page 1 -->
+     *     </object>
+     *   </child>
+     *   <child>
+     *     <object class="AdwViewStackPage">
+     *       <!-- page 2 -->
+     *     </object>
+     *   </child>
+     *   <child>
+     *     <object class="AdwViewStackPage">
+     *       <!-- page 3 -->
+     *     </object>
+     *   </child>
+     * </object>
+     * ```
      * 
      * The toggles can display either an icon, a label or both. Use the
      * {@link InlineViewSwitcher.display_mode} to control this.
@@ -53556,8 +53647,8 @@ export namespace Adw {
      * </picture>
      * 
      * An adaptive view switcher designed to switch between multiple views
-     * contained in a {@link ViewStack} in a similar fashion to
-     * {@link Gtk.StackSwitcher}.
+     * contained in a {@link ViewStack}. It automatically creates and populates a
+     * row of buttons, matching the stack's pages.
      * 
      * {@link Adw.ViewSwitcher} buttons always have an icon and a label. They can be
      * displayed side by side, or icon on top of the label. This can be controlled
@@ -53590,7 +53681,23 @@ export namespace Adw {
      *         </object>
      *       </child>
      *       <property name="content">
-     *         <object class="AdwViewStack" id="stack"/>
+     *         <object class="AdwViewStack" id="stack">
+     *           <child>
+     *             <object class="AdwViewStackPage">
+     *               <!-- page 1 -->
+     *             </object>
+     *           </child>
+     *           <child>
+     *             <object class="AdwViewStackPage">
+     *               <!-- page 2 -->
+     *             </object>
+     *           </child>
+     *           <child>
+     *             <object class="AdwViewStackPage">
+     *               <!-- page 3 -->
+     *             </object>
+     *           </child>
+     *         </object>
      *       </property>
      *       <child type="bottom">
      *         <object class="AdwViewSwitcherBar" id="switcher_bar">
@@ -53601,6 +53708,8 @@ export namespace Adw {
      *   </property>
      * </object>
      * ```
+     * 
+     * See {@link ViewStack} documentation for info on how to add pages.
      * 
      * It's recommended to set {@link ViewSwitcher.policy} to
      * {@link Adw.ViewSwitcherPolicy.WIDE} in this case.
@@ -54144,7 +54253,23 @@ export namespace Adw {
      *         </object>
      *       </child>
      *       <property name="content">
-     *         <object class="AdwViewStack" id="stack"/>
+     *         <object class="AdwViewStack" id="stack">
+     *           <child>
+     *             <object class="AdwViewStackPage">
+     *               <!-- page 1 -->
+     *             </object>
+     *           </child>
+     *           <child>
+     *             <object class="AdwViewStackPage">
+     *               <!-- page 2 -->
+     *             </object>
+     *           </child>
+     *           <child>
+     *             <object class="AdwViewStackPage">
+     *               <!-- page 3 -->
+     *             </object>
+     *           </child>
+     *         </object>
      *       </property>
      *       <child type="bottom">
      *         <object class="AdwViewSwitcherBar" id="switcher_bar">
@@ -54155,6 +54280,8 @@ export namespace Adw {
      *   </property>
      * </object>
      * ```
+     * 
+     * See {@link ViewStack} documentation for info on how to add pages.
      * 
      * It's recommended to set {@link ViewSwitcher.policy} to
      * {@link Adw.ViewSwitcherPolicy.WIDE} in this case.
@@ -54675,11 +54802,76 @@ export namespace Adw {
      *   <img src="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/view-switcher-sidebar.png" alt="view-switcher-sidebar">
      * </picture>
      * 
-     * {@link Adw.ViewSwitcherSidebar} is a view switcher implemented using a
-     * {@link Sidebar}, in a similar fashion to {@link Gtk.StackSidebar}.
+     * {@link Adw.ViewSwitcherSidebar} is a sidebar that displays pages contained in a
+     * {@link ViewStack}. It automatically creates and populates rows from the
+     * stack's pages.
      * 
      * {@link Adw.ViewSwitcherSidebar} items have an icon, a label, as well as an unread
      * dot or a badge.
+     * 
+     * Example of a UI definition for a window with {@link Adw.ViewSwitcherSidebar}:
+     * 
+     * ```xml
+     * <object class="AdwWindow">
+     *   <child>
+     *     <object class="AdwBreakpoint">
+     *       <condition>max-width: 400sp</condition>
+     *       <setter object="split_view" property="collapsed">True</setter>
+     *       <setter object="sidebar" property="mode">page</setter>
+     *     </object>
+     *   </child>
+     *   <property name="content">
+     *     <object class="AdwNavigationSplitView" id="split_view">
+     *       <property name="sidebar">
+     *         <object class="AdwNavigationPage">
+     *           <property name="title" translatable="yes">Sidebar</property>
+     *           <property name="tag">sidebar</property>
+     *           <property name="child">
+     *             <object class="AdwToolbarView">
+     *               <child type="top">
+     *                 <object class="AdwHeaderBar"/>
+     *               </child>
+     *               <property name="content">
+     *                 <object class="AdwViewSwitcherSidebar" id="sidebar">
+     *                   <property name="stack">stack</property>
+     *                   <signal name="activated" handler="sidebar_activated_cb" swapped="yes"/>
+     *                 </object>
+     *               </property>
+     *             </object>
+     *           </property>
+     *         </object>
+     *       </property>
+     *       <property name="content">
+     *         <object class="AdwNavigationPage">
+     *           <property name="title" translatable="yes">Content</property>
+     *           <property name="tag">content</property>
+     *           <property name="child">
+     *             <object class="AdwViewStack" id="stack">
+     *               <child>
+     *                 <object class="AdwViewStackPage">
+     *                   <!-- page 1 -->
+     *                 </object>
+     *               </child>
+     *               <child>
+     *                 <object class="AdwViewStackPage">
+     *                   <!-- page 2 -->
+     *                 </object>
+     *               </child>
+     *               <child>
+     *                 <object class="AdwViewStackPage">
+     *                   <!-- page 3 -->
+     *                 </object>
+     *               </child>
+     *             </object>
+     *           </property>
+     *         </object>
+     *       </property>
+     *     </object>
+     *   </property>
+     * </object>
+     * ```
+     * 
+     * See {@link ViewStack} documentation for info on how to add pages.
      * 
      * Unlike other switchers, {@link Adw.ViewSwitcherSidebar} supports grouping pages into
      * sections, using the {@link ViewStackPage.starts_section} and
@@ -55419,7 +55611,23 @@ export namespace Adw {
      *         </object>
      *       </child>
      *       <property name="content">
-     *         <object class="AdwViewStack" id="stack"/>
+     *         <object class="AdwViewStack" id="stack">
+     *           <child>
+     *             <object class="AdwViewStackPage">
+     *               <!-- page 1 -->
+     *             </object>
+     *           </child>
+     *           <child>
+     *             <object class="AdwViewStackPage">
+     *               <!-- page 2 -->
+     *             </object>
+     *           </child>
+     *           <child>
+     *             <object class="AdwViewStackPage">
+     *               <!-- page 3 -->
+     *             </object>
+     *           </child>
+     *         </object>
      *       </property>
      *       <child type="bottom">
      *         <object class="AdwViewSwitcherBar">
@@ -55433,6 +55641,8 @@ export namespace Adw {
      *   </property>
      * </object>
      * ```
+     * 
+     * See {@link ViewStack} documentation for info on how to add pages.
      * 
      * ## CSS nodes
      * 

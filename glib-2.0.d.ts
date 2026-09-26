@@ -23336,7 +23336,7 @@ export class VariantType<S extends string = any> {
          * 
          * The match is done on the string passed to the match function, so you
          * cannot free it before calling this function.
-         * @returns `true` is the string matched, `false` otherwise
+         * @returns `true` if the string matched, `false` otherwise
          * @since 2.14
          * @throws GLib.Error
          */
@@ -25478,7 +25478,7 @@ export class VariantType<S extends string = any> {
          * freeing or modifying `string` then the behaviour is undefined.
          * @param string the string to scan for matches
          * @param match_options match options
-         * @returns `true` is the string matched, `false` otherwise
+         * @returns `true` if the string matched, `false` otherwise
          * @since 2.14
          */
         match(string: string, match_options: RegexMatchFlags): [boolean, MatchInfo | null];
@@ -25500,7 +25500,7 @@ export class VariantType<S extends string = any> {
          * freeing or modifying `string` then the behaviour is undefined.
          * @param string the string to scan for matches
          * @param match_options match options
-         * @returns `true` is the string matched, `false` otherwise
+         * @returns `true` if the string matched, `false` otherwise
          * @since 2.14
          */
         match_all(string: string, match_options: RegexMatchFlags): [boolean, MatchInfo | null];
@@ -25548,7 +25548,7 @@ export class VariantType<S extends string = any> {
          * @param string_len the length of `string`, in bytes, or -1 if `string` is nul-terminated
          * @param start_position starting index of the string to match, in bytes
          * @param match_options match options
-         * @returns `true` is the string matched, `false` otherwise
+         * @returns `true` if the string matched, `false` otherwise
          * @since 2.14
          * @throws GLib.Error
          */
@@ -25612,7 +25612,7 @@ export class VariantType<S extends string = any> {
          * @param string_len the length of `string`, in bytes, or -1 if `string` is nul-terminated
          * @param start_position starting index of the string to match, in bytes
          * @param match_options match options
-         * @returns `true` is the string matched, `false` otherwise
+         * @returns `true` if the string matched, `false` otherwise
          * @since 2.14
          * @throws GLib.Error
          */

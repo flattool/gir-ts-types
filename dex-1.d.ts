@@ -3272,6 +3272,7 @@ export namespace Dex {
          * 
          * If `group` is `null`, then the future will be disowned.
          * Otherwise, `future` will be added to `group`.
+         * A future may only be tracked by one task group at a time.
          * @param future a {@link Dex.Future}
          * @returns `false` if the group is closed or cancelled;   otherwise `true`.
          * @since 1.2

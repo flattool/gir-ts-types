@@ -21010,29 +21010,29 @@ export const _LocalFilePrototype: typeof File.prototype;
         /**
          * Asynchronously closes the file enumerator.
          * 
-         * If `cancellable` is not `null`, then the operation can be cancelled by
+         * If `cancellable` is not `NULL`, then the operation can be cancelled by
          * triggering the cancellable object from another thread. If the operation
-         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned in
-         * `g_file_enumerator_close_finish()`.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned
+         * by [method@Gio.FileEnumerator.close_finish()].
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the   request
+         * @param cancellable optional cancellable object
+         * @param callback a callback to call when the   request is satisfied
          * @virtual
          */
         vfunc_close_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
-         * Finishes closing a file enumerator, started from `g_file_enumerator_close_async()`.
+         * Finishes closing a file enumerator, started by
+         * {@link Gio.FileEnumerator.close_async}.
          * 
-         * If the file enumerator was already closed when `g_file_enumerator_close_async()`
-         * was called, then this function will report {@link Gio.IOErrorEnum.CLOSED} in `error`, and
-         * return `false`. If the file enumerator had pending operation when the close
-         * operation was started, then this function will report {@link Gio.IOErrorEnum.PENDING}, and
-         * return `false`.  If `cancellable` was not `null`, then the operation may have been
-         * cancelled by triggering the cancellable object from another thread. If the operation
-         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be set, and `false` will be
-         * returned.
-         * @param result a {@link Gio.AsyncResult}.
+         * If the file enumerator was already closed when
+         * {@link Gio.FileEnumerator.close_async} was called, then this function will
+         * report {@link Gio.IOErrorEnum.CLOSED} in `error`. If the file enumerator had a
+         * pending operation when the close operation was started, then
+         * {@link Gio.IOErrorEnum.PENDING} will be reported. If the operation was
+         * cancelled from another thread using `cancellable`,
+         * {@link Gio.IOErrorEnum.CANCELLED} will be reported.
+         * @param result an async result
          * @virtual
          */
         vfunc_close_finish(result: AsyncResult): boolean;
@@ -21045,23 +21045,25 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         /**
          * Returns information for the next file in the enumerated object.
+         * 
          * Will block until the information is available. The {@link Gio.FileInfo}
          * returned from this function will contain attributes that match the
-         * attribute string that was passed when the {@link Gio.FileEnumerator} was created.
+         * attribute string that was passed when the file enumerator was created.
          * 
          * See the documentation of {@link Gio.FileEnumerator} for information about the
          * order of returned files.
          * 
-         * On error, returns `null` and sets `error` to the error. If the
-         * enumerator is at the end, `null` will be returned and `error` will
+         * On error, returns `NULL` and sets `error` to the error. If the
+         * enumerator is at the end, `NULL` will be returned and `error` will
          * be unset.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param cancellable optional cancellable object
          * @virtual
          */
         vfunc_next_file(cancellable: Cancellable | null): FileInfo | null;
 
         /**
          * Request information for a number of files from the enumerator asynchronously.
+         * 
          * When all I/O for the operation is finished the `callback` will be called with
          * the requested information.
          * 
@@ -21070,15 +21072,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * 
          * Once the end of the enumerator is reached, or if an error occurs, the
          * `callback` will be called with an empty list. In this case, the previous call
-         * to `g_file_enumerator_next_files_async()` will typically have returned fewer
-         * than `num_files` items.
+         * to {@link Gio.FileEnumerator.next_files_async} will typically have returned
+         * fewer than `num_files` items.
          * 
          * If a request is cancelled the callback will be called with
          * {@link Gio.IOErrorEnum.CANCELLED}.
          * 
          * This leads to the following pseudo-code usage:
-         * 
-         * ```
+         * ```c
          * g_autoptr(GFile) dir = get_directory ();
          * g_autoptr(GFileEnumerator) enumerator = NULL;
          * g_autolist(GFileInfo) files = NULL;
@@ -21120,38 +21121,40 @@ export const _LocalFilePrototype: typeof File.prototype;
          *   g_error ("Error while enumerating: %s", local_error->message);
          * ```
          * 
-         * 
          * During an async request no other sync and async calls are allowed, and will
          * result in {@link Gio.IOErrorEnum.PENDING} errors.
          * 
          * Any outstanding I/O request with higher priority (lower numerical value) will
          * be executed before an outstanding request with lower priority. Default
-         * priority is `G_PRIORITY_DEFAULT`.
+         * priority is {@link GLib.PRIORITY_DEFAULT}.
          * @param num_files the number of file info objects to request
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the   request
+         * @param cancellable optional cancellable object
+         * @param callback callback to call when the   request is satisfied
          * @virtual
          */
         vfunc_next_files_async(num_files: number, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
-         * Finishes the asynchronous operation started with `g_file_enumerator_next_files_async()`.
-         * @param result a {@link Gio.AsyncResult}.
+         * Finishes the asynchronous operation started with
+         * [method@Gio.FileEnumerator.next_files_async()].
+         * @param result an async result
          * @virtual
          */
         vfunc_next_files_finish(result: AsyncResult): FileInfo[];
 
         // Methods
         /**
-         * Releases all resources used by this enumerator, making the
-         * enumerator return {@link Gio.IOErrorEnum.CLOSED} on all calls.
+         * Releases all resources used by this enumerator.
+         * 
+         * The enumerator will return {@link Gio.IOErrorEnum.CLOSED} on all subsequent
+         * calls.
          * 
          * This will be automatically called when the last reference
          * is dropped, but you might want to call this function to make
          * sure resources are released as early as possible.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @returns `TRUE` on success or `FALSE` on error.
+         * @param cancellable optional cancellable object
+         * @returns true on success; false otherwise
          * @throws GLib.Error
          */
         close(cancellable: Cancellable | null): boolean;
@@ -21159,108 +21162,109 @@ export const _LocalFilePrototype: typeof File.prototype;
         /**
          * Asynchronously closes the file enumerator.
          * 
-         * If `cancellable` is not `null`, then the operation can be cancelled by
+         * If `cancellable` is not `NULL`, then the operation can be cancelled by
          * triggering the cancellable object from another thread. If the operation
-         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned in
-         * `g_file_enumerator_close_finish()`.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned
+         * by [method@Gio.FileEnumerator.close_finish()].
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the   request
+         * @param cancellable optional cancellable object
          */
         close_async(io_priority: number, cancellable: Cancellable | null): globalThis.Promise<boolean>;
 
         /**
          * Asynchronously closes the file enumerator.
          * 
-         * If `cancellable` is not `null`, then the operation can be cancelled by
+         * If `cancellable` is not `NULL`, then the operation can be cancelled by
          * triggering the cancellable object from another thread. If the operation
-         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned in
-         * `g_file_enumerator_close_finish()`.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned
+         * by [method@Gio.FileEnumerator.close_finish()].
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the   request
+         * @param cancellable optional cancellable object
+         * @param callback a callback to call when the   request is satisfied
          */
         close_async(io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Asynchronously closes the file enumerator.
          * 
-         * If `cancellable` is not `null`, then the operation can be cancelled by
+         * If `cancellable` is not `NULL`, then the operation can be cancelled by
          * triggering the cancellable object from another thread. If the operation
-         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned in
-         * `g_file_enumerator_close_finish()`.
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be returned
+         * by [method@Gio.FileEnumerator.close_finish()].
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the   request
+         * @param cancellable optional cancellable object
+         * @param callback a callback to call when the   request is satisfied
          */
         close_async(io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
 
         /**
-         * Finishes closing a file enumerator, started from `g_file_enumerator_close_async()`.
+         * Finishes closing a file enumerator, started by
+         * {@link Gio.FileEnumerator.close_async}.
          * 
-         * If the file enumerator was already closed when `g_file_enumerator_close_async()`
-         * was called, then this function will report {@link Gio.IOErrorEnum.CLOSED} in `error`, and
-         * return `false`. If the file enumerator had pending operation when the close
-         * operation was started, then this function will report {@link Gio.IOErrorEnum.PENDING}, and
-         * return `false`.  If `cancellable` was not `null`, then the operation may have been
-         * cancelled by triggering the cancellable object from another thread. If the operation
-         * was cancelled, the error {@link Gio.IOErrorEnum.CANCELLED} will be set, and `false` will be
-         * returned.
-         * @param result a {@link Gio.AsyncResult}.
-         * @returns `true` if the close operation has finished successfully.
+         * If the file enumerator was already closed when
+         * {@link Gio.FileEnumerator.close_async} was called, then this function will
+         * report {@link Gio.IOErrorEnum.CLOSED} in `error`. If the file enumerator had a
+         * pending operation when the close operation was started, then
+         * {@link Gio.IOErrorEnum.PENDING} will be reported. If the operation was
+         * cancelled from another thread using `cancellable`,
+         * {@link Gio.IOErrorEnum.CANCELLED} will be reported.
+         * @param result an async result
+         * @returns true on success; false otherwise
          * @throws GLib.Error
          */
         close_finish(result: AsyncResult): boolean;
 
         /**
-         * Return a new {@link Gio.File} which refers to the file named by `info` in the source
-         * directory of `enumerator`.  This function is primarily intended to be used
-         * inside loops with `g_file_enumerator_next_file()`.
+         * Returns a new {@link Gio.File} which refers to the file named by `info` in the
+         * source directory of `enumerator`.
          * 
-         * To use this, `G_FILE_ATTRIBUTE_STANDARD_NAME` must have been listed in the
-         * attributes list used when creating the {@link Gio.FileEnumerator}.
+         * This function is primarily intended to be used inside loops with
+         * {@link Gio.FileEnumerator.next_file}.
+         * 
+         * To use this, {@link Gio.FILE_ATTRIBUTE_STANDARD_NAME} must have been listed
+         * in the attributes list used when creating the {@link Gio.FileEnumerator}.
          * 
          * This is a convenience method that's equivalent to:
-         * 
          * ```c
-         *   gchar *name = g_file_info_get_name (info);
-         *   GFile *child = g_file_get_child (g_file_enumerator_get_container (enumr),
-         *                                    name);
+         * char *name = g_file_info_get_name (info);
+         * GFile *child = g_file_get_child (g_file_enumerator_get_container (enumerator), name);
          * ```
-         * 
-         * @param info a {@link Gio.FileInfo} gotten from `g_file_enumerator_next_file()`   or the async equivalents.
-         * @returns a {@link Gio.File} for the {@link Gio.FileInfo} passed it.
+         * @param info a file info object received from {@link Gio.FileEnumerator.next_file}   or the async equivalent
+         * @returns a file object for the file info object passed to it
          * @since 2.36
          */
         get_child(info: FileInfo): File;
 
         /**
          * Get the {@link Gio.File} container which is being enumerated.
-         * @returns the {@link Gio.File} which is being enumerated.
+         * @returns the file which is being enumerated
          * @since 2.18
          */
         get_container(): File;
 
         /**
          * Checks if the file enumerator has pending operations.
-         * @returns `true` if the `enumerator` has pending operations.
+         * @returns true if the `enumerator` has pending operations
          */
         has_pending(): boolean;
 
         /**
          * Checks if the file enumerator has been closed.
-         * @returns `true` if the `enumerator` is closed.
+         * @returns true if the `enumerator` is closed
          */
         is_closed(): boolean;
 
         /**
-         * This is a version of `g_file_enumerator_next_file()` that's easier to
-         * use correctly from C programs.  With `g_file_enumerator_next_file()`,
-         * the gboolean return value signifies "end of iteration or error", which
-         * requires allocation of a temporary {@link GLib.Error}.
+         * A version of {@link Gio.FileEnumerator.next_file} that’s easier to use
+         * correctly from C programs.
          * 
-         * In contrast, with this function, a `false` return from
-         * `g_file_enumerator_iterate()` *always* means
-         * "error".  End of iteration is signaled by `out_info` or `out_child` being `null`.
+         * With {@link Gio.FileEnumerator.next_file}, the boolean return value
+         * signifies “end of iteration or error”, which requires allocation of a
+         * temporary {@link GLib.Error} to distinguish which one.
+         * 
+         * In contrast, with this function, a false return from
+         * {@link Gio.FileEnumerator.iterate} *always* means “error”.  End of iteration
+         * is signaled by `out_info` or `out_child` being `NULL`.
          * 
          * Another crucial difference is that the references for `out_info` and
          * `out_child` are owned by `direnum` (they are cached as hidden
@@ -21268,32 +21272,37 @@ export const _LocalFilePrototype: typeof File.prototype;
          * memory management significantly easier for C code in combination
          * with loops.
          * 
-         * Finally, this function optionally allows retrieving a {@link Gio.File} as
-         * well.
+         * Finally, this function optionally allows retrieving a corresponding
+         * {@link Gio.File} as well as each {@link Gio.FileInfo}.
+         * 
+         * To use this, {@link Gio.FILE_ATTRIBUTE_STANDARD_NAME} must have been listed
+         * in the attributes list used when creating the {@link Gio.FileEnumerator}.
          * 
          * You must specify at least one of `out_info` or `out_child`.
          * 
-         * The code pattern for correctly using `g_file_enumerator_iterate()` from C
-         * is:
+         * The code pattern for correctly using {@link Gio.FileEnumerator.iterate} from
+         * C is:
          * 
-         * 
-         * ```
+         * ```c
          * direnum = g_file_enumerate_children (file, ...);
          * while (TRUE)
          *   {
-         *     GFileInfo *info;
+         *     GFileInfo *info = NULL;
+         * 
          *     if (!g_file_enumerator_iterate (direnum, &info, NULL, cancellable, error))
          *       goto out;
-         *     if (!info)
+         * 
+         *     if (info == NULL)
          *       break;
-         *     ... do stuff with "info"; do not unref it! ...
+         * 
+         *     // do stuff with "info"; do not unref it! ...
          *   }
          * 
          * out:
          *   g_object_unref (direnum); // Note: frees the last `info`
          * ```
-         * 
-         * @param cancellable a {@link Gio.Cancellable}
+         * @param cancellable optional cancellable object
+         * @returns true on success or “end of iteration”; false on error
          * @since 2.44
          * @throws GLib.Error
          */
@@ -21301,24 +21310,26 @@ export const _LocalFilePrototype: typeof File.prototype;
 
         /**
          * Returns information for the next file in the enumerated object.
+         * 
          * Will block until the information is available. The {@link Gio.FileInfo}
          * returned from this function will contain attributes that match the
-         * attribute string that was passed when the {@link Gio.FileEnumerator} was created.
+         * attribute string that was passed when the file enumerator was created.
          * 
          * See the documentation of {@link Gio.FileEnumerator} for information about the
          * order of returned files.
          * 
-         * On error, returns `null` and sets `error` to the error. If the
-         * enumerator is at the end, `null` will be returned and `error` will
+         * On error, returns `NULL` and sets `error` to the error. If the
+         * enumerator is at the end, `NULL` will be returned and `error` will
          * be unset.
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @returns A {@link Gio.FileInfo} or `null` on error    or end of enumerator.  Free the returned object with    `g_object_unref()` when no longer needed.
+         * @param cancellable optional cancellable object
+         * @returns A file info object, or `NULL` on error   or end of enumerator
          * @throws GLib.Error
          */
         next_file(cancellable: Cancellable | null): FileInfo | null;
 
         /**
          * Request information for a number of files from the enumerator asynchronously.
+         * 
          * When all I/O for the operation is finished the `callback` will be called with
          * the requested information.
          * 
@@ -21327,15 +21338,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * 
          * Once the end of the enumerator is reached, or if an error occurs, the
          * `callback` will be called with an empty list. In this case, the previous call
-         * to `g_file_enumerator_next_files_async()` will typically have returned fewer
-         * than `num_files` items.
+         * to {@link Gio.FileEnumerator.next_files_async} will typically have returned
+         * fewer than `num_files` items.
          * 
          * If a request is cancelled the callback will be called with
          * {@link Gio.IOErrorEnum.CANCELLED}.
          * 
          * This leads to the following pseudo-code usage:
-         * 
-         * ```
+         * ```c
          * g_autoptr(GFile) dir = get_directory ();
          * g_autoptr(GFileEnumerator) enumerator = NULL;
          * g_autolist(GFileInfo) files = NULL;
@@ -21377,21 +21387,21 @@ export const _LocalFilePrototype: typeof File.prototype;
          *   g_error ("Error while enumerating: %s", local_error->message);
          * ```
          * 
-         * 
          * During an async request no other sync and async calls are allowed, and will
          * result in {@link Gio.IOErrorEnum.PENDING} errors.
          * 
          * Any outstanding I/O request with higher priority (lower numerical value) will
          * be executed before an outstanding request with lower priority. Default
-         * priority is `G_PRIORITY_DEFAULT`.
+         * priority is {@link GLib.PRIORITY_DEFAULT}.
          * @param num_files the number of file info objects to request
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the   request
+         * @param cancellable optional cancellable object
          */
         next_files_async(num_files: number, io_priority: number, cancellable: Cancellable | null): globalThis.Promise<FileInfo[]>;
 
         /**
          * Request information for a number of files from the enumerator asynchronously.
+         * 
          * When all I/O for the operation is finished the `callback` will be called with
          * the requested information.
          * 
@@ -21400,15 +21410,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * 
          * Once the end of the enumerator is reached, or if an error occurs, the
          * `callback` will be called with an empty list. In this case, the previous call
-         * to `g_file_enumerator_next_files_async()` will typically have returned fewer
-         * than `num_files` items.
+         * to {@link Gio.FileEnumerator.next_files_async} will typically have returned
+         * fewer than `num_files` items.
          * 
          * If a request is cancelled the callback will be called with
          * {@link Gio.IOErrorEnum.CANCELLED}.
          * 
          * This leads to the following pseudo-code usage:
-         * 
-         * ```
+         * ```c
          * g_autoptr(GFile) dir = get_directory ();
          * g_autoptr(GFileEnumerator) enumerator = NULL;
          * g_autolist(GFileInfo) files = NULL;
@@ -21450,22 +21459,22 @@ export const _LocalFilePrototype: typeof File.prototype;
          *   g_error ("Error while enumerating: %s", local_error->message);
          * ```
          * 
-         * 
          * During an async request no other sync and async calls are allowed, and will
          * result in {@link Gio.IOErrorEnum.PENDING} errors.
          * 
          * Any outstanding I/O request with higher priority (lower numerical value) will
          * be executed before an outstanding request with lower priority. Default
-         * priority is `G_PRIORITY_DEFAULT`.
+         * priority is {@link GLib.PRIORITY_DEFAULT}.
          * @param num_files the number of file info objects to request
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the   request
+         * @param cancellable optional cancellable object
+         * @param callback callback to call when the   request is satisfied
          */
         next_files_async(num_files: number, io_priority: number, cancellable: Cancellable | null, callback: AsyncReadyCallback<this> | null): void;
 
         /**
          * Request information for a number of files from the enumerator asynchronously.
+         * 
          * When all I/O for the operation is finished the `callback` will be called with
          * the requested information.
          * 
@@ -21474,15 +21483,14 @@ export const _LocalFilePrototype: typeof File.prototype;
          * 
          * Once the end of the enumerator is reached, or if an error occurs, the
          * `callback` will be called with an empty list. In this case, the previous call
-         * to `g_file_enumerator_next_files_async()` will typically have returned fewer
-         * than `num_files` items.
+         * to {@link Gio.FileEnumerator.next_files_async} will typically have returned
+         * fewer than `num_files` items.
          * 
          * If a request is cancelled the callback will be called with
          * {@link Gio.IOErrorEnum.CANCELLED}.
          * 
          * This leads to the following pseudo-code usage:
-         * 
-         * ```
+         * ```c
          * g_autoptr(GFile) dir = get_directory ();
          * g_autoptr(GFileEnumerator) enumerator = NULL;
          * g_autolist(GFileInfo) files = NULL;
@@ -21524,31 +21532,31 @@ export const _LocalFilePrototype: typeof File.prototype;
          *   g_error ("Error while enumerating: %s", local_error->message);
          * ```
          * 
-         * 
          * During an async request no other sync and async calls are allowed, and will
          * result in {@link Gio.IOErrorEnum.PENDING} errors.
          * 
          * Any outstanding I/O request with higher priority (lower numerical value) will
          * be executed before an outstanding request with lower priority. Default
-         * priority is `G_PRIORITY_DEFAULT`.
+         * priority is {@link GLib.PRIORITY_DEFAULT}.
          * @param num_files the number of file info objects to request
-         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the request
-         * @param cancellable optional {@link Gio.Cancellable} object, `null` to ignore.
-         * @param callback a {@link Gio.AsyncReadyCallback}   to call when the request is satisfied
+         * @param io_priority the [I/O priority](https://docs.gtk.org/gio/iface.AsyncResult.html#io-priority) of the   request
+         * @param cancellable optional cancellable object
+         * @param callback callback to call when the   request is satisfied
          */
         next_files_async(num_files: number, io_priority: number, cancellable: Cancellable | null, callback?: AsyncReadyCallback<this> | null): globalThis.Promise<FileInfo[]> | void;
 
         /**
-         * Finishes the asynchronous operation started with `g_file_enumerator_next_files_async()`.
-         * @param result a {@link Gio.AsyncResult}.
-         * @returns a {@link GLib.List} of `GFileInfos`. You must free the list with     `g_list_free()` and unref the infos with `g_object_unref()` when you're     done with them.
+         * Finishes the asynchronous operation started with
+         * [method@Gio.FileEnumerator.next_files_async()].
+         * @param result an async result
+         * @returns a list of file info   objects
          * @throws GLib.Error
          */
         next_files_finish(result: AsyncResult): FileInfo[];
 
         /**
          * Sets the file enumerator as having pending operations.
-         * @param pending a boolean value.
+         * @param pending a boolean value
          */
         set_pending(pending: boolean): void;
     }
