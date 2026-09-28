@@ -299,7 +299,7 @@ export namespace Gcr {
 
     /**
      * The micro version number of the Gcr library.
-     * @default 0
+     * @default 1
      */
     const MICRO_VERSION: number;
 
@@ -5728,7 +5728,7 @@ export namespace Gcr {
          * displayed by the prompt allowing the user to select or deselect it.
          * 
          * The initial value of the choice can be set with the
-         * `gcr_prompt_set_choice_label()` method.
+         * `gcr_prompt_set_choice_chosen()` method.
          * 
          * If this is `null`, then no additional choice is being displayed.
          * @param choice_label the additional choice or `null`
@@ -7893,7 +7893,7 @@ export namespace Gcr {
          * displayed by the prompt allowing the user to select or deselect it.
          * 
          * The initial value of the choice can be set with the
-         * `gcr_prompt_set_choice_label()` method.
+         * `gcr_prompt_set_choice_chosen()` method.
          * 
          * If this is `null`, then no additional choice is being displayed.
          * @param choice_label the additional choice or `null`

@@ -131,7 +131,7 @@ export namespace Gck {
 
     /**
      * The micro version number of the Gck library.
-     * @default 0
+     * @default 1
      */
     const MICRO_VERSION: number;
 

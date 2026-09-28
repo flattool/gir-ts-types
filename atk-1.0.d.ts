@@ -1525,7 +1525,7 @@ export namespace Atk {
      * application compile time, rather than from the library linked
      * against at application run time.
      * @since 2.7.4
-     * @default 25818
+     * @default 25819
      */
     const BINARY_AGE: number;
 
@@ -1552,7 +1552,7 @@ export namespace Atk {
      * application compile time, rather than from the library linked
      * against at application run time.
      * @since 2.7.4
-     * @default 8
+     * @default 9
      */
     const MICRO_VERSION: number;
 
