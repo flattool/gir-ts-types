@@ -1687,7 +1687,7 @@ export namespace WebKit2 {
      * Like `webkit_get_micro_version()`, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 0
+     * @default 1
      */
     const MICRO_VERSION: number;
 
