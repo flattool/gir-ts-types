@@ -5541,7 +5541,7 @@ export interface Builder {
      * Like {@link get_binary_age}, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 2401
+     * @default 2500
      */
     const BINARY_AGE: number;
 
@@ -5564,7 +5564,7 @@ export interface Builder {
      * Like {@link get_interface_age}, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 1
+     * @default 0
      */
     const INTERFACE_AGE: number;
 
@@ -5626,7 +5626,7 @@ export interface Builder {
      * Like {@link get_micro_version}, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 1
+     * @default 0
      */
     const MICRO_VERSION: number;
 
@@ -5634,7 +5634,7 @@ export interface Builder {
      * Like {@link get_minor_version}, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 24
+     * @default 25
      */
     const MINOR_VERSION: number;
 

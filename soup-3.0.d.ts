@@ -1078,7 +1078,7 @@ export namespace Soup {
      * Like {@link get_micro_version}, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 3
+     * @default 0
      */
     const MICRO_VERSION: number;
 
@@ -1086,7 +1086,7 @@ export namespace Soup {
      * Like {@link get_minor_version}, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 7
+     * @default 8
      */
     const MINOR_VERSION: number;
 

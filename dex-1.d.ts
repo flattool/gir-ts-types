@@ -716,6 +716,18 @@ export namespace Dex {
     function file_set_display_name(file: Gio.File, display_name: string, io_priority: number): Future;
 
     /**
+     * Tests `filename` using the same flags as `g_file_test()`. The result is `true`
+     * if any requested test succeeds. All tests except
+     * {@link GLib.FileTest.IS_SYMLINK} follow symbolic links. A dangling symbolic link
+     * matches only {@link GLib.FileTest.IS_SYMLINK}. Query failures resolve to `false`.
+     * @param filename a filename in the GLib filename encoding
+     * @param test bitfield of {@link GLib.FileTest} flags
+     * @returns a {@link Dex.Future} that resolves to a boolean
+     * @since 1.3
+     */
+    function file_test(filename: string, test: GLib.FileTest): Future;
+
+    /**
      * Wraps {@link Gio.File.trash_async}.
      * @param file a {@link Gio.File}
      * @param io_priority priority for the IO operation

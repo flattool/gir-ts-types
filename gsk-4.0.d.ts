@@ -4231,6 +4231,22 @@ export namespace Gsk {
         get_tight_bounds(): [boolean, Graphene.Rect];
 
         /**
+         * Generates a hash value for the path suitable for use in a {@link GLib.HashTable}.
+         * 
+         * Paths that compare equal with {@link Gsk.Path.equal} will have the same
+         * hash value and so will paths that compare equal with
+         * {@link Gsk.Path.translatable}. If it is important to generate different
+         * hash values for translatable paths, consider xor-ing a hash of the path's
+         * bounds.
+         * 
+         * The returned hash values may not be identical across multiple runs
+         * of the same program.
+         * @returns The path's hash value.
+         * @since 4.26
+         */
+        hash(): number;
+
+        /**
          * Returns whether a point is inside the fill area of a path.
          * 
          * Note that this function assumes that filling a contour
@@ -4299,6 +4315,21 @@ export namespace Gsk {
          * @since 4.14
          */
         to_string(): string;
+
+        /**
+         * Returns whether 2 paths only differ by an x/y translation and
+         * compare {@link Gsk.Path.equal} otherwise.
+         * 
+         * If you want to know the translation, you can use
+         * {@link Gsk.Path.get_bounds} and compare the bounds.
+         * 
+         * Note that this function may return false for otherwise translatable
+         * paths due to floating point quantization.
+         * @param path2 another path
+         * @returns true if `path1` and `path2` are equal when applying a     translation
+         * @since 4.26
+         */
+        translatable(path2: Path): boolean;
 
         /**
          * Decreases the reference count of a path by one.
