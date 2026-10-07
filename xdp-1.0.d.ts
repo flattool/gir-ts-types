@@ -369,6 +369,10 @@ export namespace Xdp {
          * an input capture session.
          */
         INPUT_CAPTURE = 2,
+        /**
+         * a global shortcuts session.
+         */
+        GLOBAL_SHORTCUTS = 3,
     }
 
 
@@ -646,7 +650,8 @@ export namespace Xdp {
          */
         MULTIPLE = 1,
         /**
-         * Select folders instead of files (Since: 0.10)
+         * Select folders instead of files.
+         * @since 0.10
          */
         DIRECTORY = 2,
     }
@@ -840,6 +845,188 @@ export namespace Xdp {
          * Request the preview to be shown
          */
         PREVIEW = 4,
+    }
+
+
+    namespace GlobalShortcutsSession {
+        // Signal signatures
+        interface SignalSignatures extends GObject.Object.SignalSignatures {
+            /**
+             * Emitted when a GlobalShortcuts shortcut of this session was activated.
+             * @signal
+             * @run-cleanup
+             */
+            activated: (shortcut_id: string, timestamp: number, options: GLib.Variant) => void;
+            /**
+             * Emitted when a GlobalShortcuts shortcut of this session was deactivated.
+             * @signal
+             * @run-cleanup
+             */
+            deactivated: (shortcut_id: string, timestamp: number, options: GLib.Variant) => void;
+            /**
+             * Emitted when a GlobalShortcuts session's shortcuts have changed. This
+             * signal is emitted after new shortcuts have already become effective.
+             * 
+             * The `shortcuts` array is only valid for the duration of the signal emission.
+             * @signal
+             * @run-cleanup
+             */
+            "shortcuts-changed": (shortcuts: GlobalShortcutAssigned[]) => void;
+        }
+
+        // Constructor properties interface
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
+    }
+
+    /**
+     * A representation of a long-lived global shortcuts portal interaction.
+     * 
+     * The {@link GlobalShortcutsSession} object is used to represent portal
+     * interactions with the global shortcuts desktop portal that extend over
+     * multiple portal calls. Usually a caller creates a global shortcuts session,
+     * binds shortcuts, and then starts listening to activations.
+     * 
+     * To list current assignments after {@link GlobalShortcutsSession.bind_shortcuts} returns,
+     * call {@link GlobalShortcutsSession.list_shortcuts}.
+     * 
+     * The {@link GlobalShortcutsSession} wraps a {@link Session} object.
+     * @gir-type Class
+     */
+    class GlobalShortcutsSession extends GObject.Object {
+        static $gtype: GObject.GType<GlobalShortcutsSession>;
+
+        /**
+         * Compile-time signal type information.
+         *
+         * This instance property is generated only for TypeScript type checking.
+         * It is not defined at runtime and should not be accessed in JS code.
+         * @internal
+         */
+        $signals: GlobalShortcutsSession.SignalSignatures;
+
+        // Constructors
+        constructor(properties?: Partial<GlobalShortcutsSession.ConstructorProps>, ...args: any[]);
+
+        _init(...args: any[]): void;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof GlobalShortcutsSession.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GlobalShortcutsSession.SignalSignatures[K]>): number;
+
+        /** @signal */
+        connect_after<K extends keyof GlobalShortcutsSession.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, GlobalShortcutsSession.SignalSignatures[K]>): number;
+
+        /** @signal */
+        emit<K extends keyof GlobalShortcutsSession.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<GlobalShortcutsSession.SignalSignatures[K]>): void;
+
+        // Methods
+        /**
+         * Bind shortcuts and list triggers.
+         * @param shortcuts array of shortcuts to bind
+         * @param parent_window parent window identifier, or `null`
+         * @param cancellable optional {@link Gio.Cancellable}
+         */
+        bind_shortcuts(shortcuts: GlobalShortcut[], parent_window: string | null, cancellable: Gio.Cancellable | null): globalThis.Promise<GlobalShortcutAssigned[]>;
+
+        /**
+         * Bind shortcuts and list triggers.
+         * @param shortcuts array of shortcuts to bind
+         * @param parent_window parent window identifier, or `null`
+         * @param cancellable optional {@link Gio.Cancellable}
+         * @param callback a callback to call when the request is done
+         */
+        bind_shortcuts(shortcuts: GlobalShortcut[], parent_window: string | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Bind shortcuts and list triggers.
+         * @param shortcuts array of shortcuts to bind
+         * @param parent_window parent window identifier, or `null`
+         * @param cancellable optional {@link Gio.Cancellable}
+         * @param callback a callback to call when the request is done
+         */
+        bind_shortcuts(shortcuts: GlobalShortcut[], parent_window: string | null, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<GlobalShortcutAssigned[]> | void;
+
+        /**
+         * Finishes the GlobalShortcuts BindShortcuts request.
+         * @param result a {@link Gio.AsyncResult}
+         * @returns array of assigned shortcuts.
+         * @throws GLib.Error
+         */
+        bind_shortcuts_finish(result: Gio.AsyncResult): GlobalShortcutAssigned[];
+
+        close(): void;
+
+        /**
+         * Requests that the portal show configuration UI for all shortcuts of this
+         * session.
+         * @param parent_window parent window identifier
+         * @param activation_token token used to activate the configuration window
+         * @param cancellable optional {@link Gio.Cancellable}
+         */
+        configure_shortcuts(parent_window: string | null, activation_token: string | null, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
+
+        /**
+         * Requests that the portal show configuration UI for all shortcuts of this
+         * session.
+         * @param parent_window parent window identifier
+         * @param activation_token token used to activate the configuration window
+         * @param cancellable optional {@link Gio.Cancellable}
+         * @param callback callback called when the method call is done
+         */
+        configure_shortcuts(parent_window: string | null, activation_token: string | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Requests that the portal show configuration UI for all shortcuts of this
+         * session.
+         * @param parent_window parent window identifier
+         * @param activation_token token used to activate the configuration window
+         * @param cancellable optional {@link Gio.Cancellable}
+         * @param callback callback called when the method call is done
+         */
+        configure_shortcuts(parent_window: string | null, activation_token: string | null, cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
+
+        /**
+         * Finishes the ConfigureShortcuts method call.
+         * @param result a {@link Gio.AsyncResult}
+         * @returns `true` if the call succeeded, `false` otherwise.
+         * @throws GLib.Error
+         */
+        configure_shortcuts_finish(result: Gio.AsyncResult): boolean;
+
+        /**
+         * Return the {@link XdpSession} for this GlobalShortcuts session.
+         * @returns a {@link Session} object
+         */
+        get_session(): Session;
+
+        /**
+         * List currently registered shortcuts and triggers.
+         * @param cancellable 
+         */
+        list_shortcuts(cancellable: Gio.Cancellable | null): globalThis.Promise<GlobalShortcutAssigned[]>;
+
+        /**
+         * List currently registered shortcuts and triggers.
+         * @param cancellable 
+         * @param callback 
+         */
+        list_shortcuts(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * List currently registered shortcuts and triggers.
+         * @param cancellable 
+         * @param callback 
+         */
+        list_shortcuts(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<GlobalShortcutAssigned[]> | void;
+
+        /**
+         * Finishes the list-shortcuts request, and returns a GPtrArray
+         * with the shortcuts.
+         * @param result a {@link Gio.AsyncResult}
+         * @returns array of assigned shortcuts.
+         * @throws GLib.Error
+         */
+        list_shortcuts_finish(result: Gio.AsyncResult): GlobalShortcutAssigned[];
     }
 
 
@@ -1786,6 +1973,45 @@ export namespace Xdp {
          * @throws GLib.Error
          */
         compose_email_finish(result: Gio.AsyncResult): boolean;
+
+        /**
+         * Creates a session for global shortcuts
+         * 
+         * When the request is done, `callback` will be called. You can then
+         * call {@link Portal.create_global_shortcuts_session_finish} to get the results.
+         * @param cancellable optional {@link Gio.Cancellable}
+         */
+        create_global_shortcuts_session(cancellable: Gio.Cancellable | null): globalThis.Promise<GlobalShortcutsSession>;
+
+        /**
+         * Creates a session for global shortcuts
+         * 
+         * When the request is done, `callback` will be called. You can then
+         * call {@link Portal.create_global_shortcuts_session_finish} to get the results.
+         * @param cancellable optional {@link Gio.Cancellable}
+         * @param callback a callback to call when the request is done
+         */
+        create_global_shortcuts_session(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Creates a session for global shortcuts
+         * 
+         * When the request is done, `callback` will be called. You can then
+         * call {@link Portal.create_global_shortcuts_session_finish} to get the results.
+         * @param cancellable optional {@link Gio.Cancellable}
+         * @param callback a callback to call when the request is done
+         */
+        create_global_shortcuts_session(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<GlobalShortcutsSession> | void;
+
+        /**
+         * Finishes the GlobalShortcuts CreateSession request, and returns a
+         * {@link GlobalShortcutsSession}. To get to the {@link Session} within use
+         * `xdp_global_shortcuts_session_get_session()`.
+         * @param result a {@link Gio.AsyncResult}
+         * @returns a {@link GlobalShortcutsSession}
+         * @throws GLib.Error
+         */
+        create_global_shortcuts_session_finish(result: Gio.AsyncResult): GlobalShortcutsSession;
 
         /**
          * Creates a session for input capture
@@ -4004,6 +4230,64 @@ export namespace Xdp {
         read_value(namespace_: string, key: string, cancellable: Gio.Cancellable | null): GLib.Variant;
     }
 
+
+    /**
+     * @gir-type Struct
+     */
+    class GlobalShortcut {
+        static $gtype: GObject.GType<GlobalShortcut>;
+
+        // Constructors
+        constructor(shortcut_id: string, description: string, preferred_trigger: string);
+
+        static ["new"](shortcut_id: string, description: string, preferred_trigger: string): GlobalShortcut;
+
+        // Methods
+        copy(): GlobalShortcut;
+
+        free(): void;
+
+        get_description(): string;
+
+        get_preferred_trigger(): string;
+
+        get_shortcut_id(): string;
+
+        /**
+         * @param description 
+         */
+        set_description(description: string): void;
+
+        /**
+         * @param preferred_trigger 
+         */
+        set_preferred_trigger(preferred_trigger: string): void;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    abstract class GlobalShortcutAssigned {
+        static $gtype: GObject.GType<GlobalShortcutAssigned>;
+
+        // Methods
+        copy(): GlobalShortcutAssigned;
+
+        free(): void;
+
+        get_description(): string;
+
+        get_shortcut_id(): string;
+
+        get_trigger_description(): string;
+    }
+
+
+    /**
+     * @gir-type Alias
+     */
+    type GlobalShortcutsSessionClass = typeof GlobalShortcutsSession;
 
     /**
      * @gir-type Alias
