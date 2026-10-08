@@ -61960,6 +61960,7 @@ export interface Builder {
             activate: (position: number) => void;
             "notify::enable-rubberband": (pspec: GObject.ParamSpec) => void;
             "notify::factory": (pspec: GObject.ParamSpec) => void;
+            "notify::header-factory": (pspec: GObject.ParamSpec) => void;
             "notify::max-columns": (pspec: GObject.ParamSpec) => void;
             "notify::min-columns": (pspec: GObject.ParamSpec) => void;
             "notify::model": (pspec: GObject.ParamSpec) => void;
@@ -62012,6 +62013,8 @@ export interface Builder {
             enable_rubberband: boolean;
             enableRubberband: boolean;
             factory: ListItemFactory | null;
+            header_factory: ListItemFactory | null;
+            headerFactory: ListItemFactory | null;
             max_columns: number;
             maxColumns: number;
             min_columns: number;
@@ -62030,6 +62033,11 @@ export interface Builder {
      * {@link Gtk.GridView} uses its factory to generate one child widget for each
      * visible item and shows them in a grid. The orientation of the grid view
      * determines if the grid reflows vertically or horizontally.
+     * 
+     * Setting {@link Gtk.GridView.header_factory} displays section headers
+     * supplied by the model's {@link Gtk.SectionModel} implementation. Each
+     * section starts a new row and its header spans all columns. Headers scroll
+     * with the items and do not participate in selection.
      * 
      * {@link Gtk.GridView} allows the user to select items according to the selection
      * characteristics of the model. For models that allow multiple selected items,
@@ -62050,8 +62058,10 @@ export interface Builder {
      * 
      * ```
      * gridview
+     * ├── header
      * ├── child[.activatable]
      * │
+     * ├── header
      * ├── child[.activatable]
      * │
      * ┊
@@ -62061,7 +62071,8 @@ export interface Builder {
      * {@link Gtk.GridView} uses a single CSS node with name `gridview`. Each child uses
      * a single CSS node with name `child`. If the {@link Gtk.ListItem.activatable}
      * property is set, the corresponding row will have the `.activatable` style
-     * class. For rubberband selection, a subnode with name `rubberband` is used.
+     * class. Section headers use CSS nodes with name `header`. For rubberband
+     * selection, a subnode with name `rubberband` is used.
      * 
      * # Accessibility
      * 
@@ -62094,6 +62105,24 @@ export interface Builder {
          */
         get factory(): ListItemFactory | null;
         set factory(val: ListItemFactory | null);
+
+        /**
+         * Factory for creating header widgets.
+         * 
+         * The factory must be for configuring {@link Gtk.ListHeader} objects.
+         * @since 4.26
+         */
+        get header_factory(): ListItemFactory | null;
+        set header_factory(val: ListItemFactory | null);
+
+        /**
+         * Factory for creating header widgets.
+         * 
+         * The factory must be for configuring {@link Gtk.ListHeader} objects.
+         * @since 4.26
+         */
+        get headerFactory(): ListItemFactory | null;
+        set headerFactory(val: ListItemFactory | null);
 
         /**
          * Maximum number of columns per row.
@@ -62205,6 +62234,13 @@ export interface Builder {
         get_factory(): ListItemFactory | null;
 
         /**
+         * Gets the factory that's currently used to populate section headers.
+         * @returns The factory in use
+         * @since 4.26
+         */
+        get_header_factory(): ListItemFactory | null;
+
+        /**
          * Gets the maximum number of columns that the grid will use.
          * @returns The maximum number of columns
          */
@@ -62260,6 +62296,17 @@ export interface Builder {
          * @param factory the factory to use
          */
         set_factory(factory: ListItemFactory | null): void;
+
+        /**
+         * Sets the {@link Gtk.ListItemFactory} to use for populating the
+         * {@link Gtk.ListHeader} objects used in section headers.
+         * 
+         * If this factory is set to `NULL`, the list will not show
+         * section headers.
+         * @param factory the factory to use
+         * @since 4.26
+         */
+        set_header_factory(factory: ListItemFactory | null): void;
 
         /**
          * Sets the maximum number of columns to use.

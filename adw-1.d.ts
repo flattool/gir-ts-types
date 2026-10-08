@@ -2447,8 +2447,9 @@ export namespace Adw {
          * 
          * The application will be displayed at the bottom of the main page, in a
          * separate section. Each added application will be presented as a row with
-         * `title` and `summary`, as well as an icon with the name `appid`. Clicking the
-         * row will show `appid` in the software center app.
+         * `title` and `summary`, as well as an icon with the name `appid`. The icon must
+         * be bundled with the app. Clicking the row will show `appid` in the software
+         * center app.
          * 
          * This can be used to link to your other applications if you have multiple.
          * 
@@ -36656,8 +36657,10 @@ export namespace Adw {
             "notify::prefix": (pspec: GObject.ParamSpec) => void;
             "notify::section": (pspec: GObject.ParamSpec) => void;
             "notify::subtitle": (pspec: GObject.ParamSpec) => void;
+            "notify::subtitle-lines": (pspec: GObject.ParamSpec) => void;
             "notify::suffix": (pspec: GObject.ParamSpec) => void;
             "notify::title": (pspec: GObject.ParamSpec) => void;
+            "notify::title-lines": (pspec: GObject.ParamSpec) => void;
             "notify::tooltip": (pspec: GObject.ParamSpec) => void;
             "notify::use-underline": (pspec: GObject.ParamSpec) => void;
             "notify::visible": (pspec: GObject.ParamSpec) => void;
@@ -36675,8 +36678,12 @@ export namespace Adw {
             prefix: Gtk.Widget | null;
             section: SidebarSection | null;
             subtitle: string | null;
+            subtitle_lines: number;
+            subtitleLines: number;
             suffix: Gtk.Widget | null;
             title: string | null;
+            title_lines: number;
+            titleLines: number;
             tooltip: string | null;
             use_underline: boolean;
             useUnderline: boolean;
@@ -36821,6 +36828,32 @@ export namespace Adw {
         set subtitle(val: string | null);
 
         /**
+         * Maximum number of lines for the subtitle.
+         * 
+         * If the subtitle takes more lines than specified, it will be
+         * ellipsized. If set to 0, the number of lines won't be limited.
+         * 
+         * By default, only one line is shown.
+         * @since 1.11
+         * @default 1
+         */
+        get subtitle_lines(): number;
+        set subtitle_lines(val: number);
+
+        /**
+         * Maximum number of lines for the subtitle.
+         * 
+         * If the subtitle takes more lines than specified, it will be
+         * ellipsized. If set to 0, the number of lines won't be limited.
+         * 
+         * By default, only one line is shown.
+         * @since 1.11
+         * @default 1
+         */
+        get subtitleLines(): number;
+        set subtitleLines(val: number);
+
+        /**
          * The suffix widget for this item.
          * 
          * Suffix will be shown at the end of the item's row, or before the arrow in
@@ -36836,6 +36869,32 @@ export namespace Adw {
          */
         get title(): string | null;
         set title(val: string | null);
+
+        /**
+         * Maximum number of lines for the title.
+         * 
+         * If the title takes more lines than specified, it will be
+         * ellipsized. If set to 0, the number of lines won't be limited.
+         * 
+         * By default, only one line is shown.
+         * @since 1.11
+         * @default 1
+         */
+        get title_lines(): number;
+        set title_lines(val: number);
+
+        /**
+         * Maximum number of lines for the title.
+         * 
+         * If the title takes more lines than specified, it will be
+         * ellipsized. If set to 0, the number of lines won't be limited.
+         * 
+         * By default, only one line is shown.
+         * @since 1.11
+         * @default 1
+         */
+        get titleLines(): number;
+        set titleLines(val: number);
 
         /**
          * The tooltip of the item.
@@ -36978,6 +37037,13 @@ export namespace Adw {
         get_subtitle(): string | null;
 
         /**
+         * Gets the maximum number of lines for the subtitle of `self`.
+         * @returns the maximum number of lines for the subtitle
+         * @since 1.11
+         */
+        get_subtitle_lines(): number;
+
+        /**
          * Gets the suffix widget for `self`.
          * @returns the suffix widget
          * @since 1.9
@@ -36990,6 +37056,13 @@ export namespace Adw {
          * @since 1.9
          */
         get_title(): string | null;
+
+        /**
+         * Gets the maximum number of lines for the title of `self`.
+         * @returns the maximum number of lines for the title
+         * @since 1.11
+         */
+        get_title_lines(): number;
 
         /**
          * Gets the tooltip of `self`.
@@ -37067,6 +37140,18 @@ export namespace Adw {
         set_subtitle(subtitle: string | null): void;
 
         /**
+         * Sets the maximum number of lines for the subtitle of `self`.
+         * 
+         * If the subtitle takes more lines than specified, it will be
+         * ellipsized. If set to 0, the number of lines won't be limited.
+         * 
+         * By default, only one line is shown.
+         * @param subtitle_lines the maximum number of lines for the subtitle
+         * @since 1.11
+         */
+        set_subtitle_lines(subtitle_lines: number): void;
+
+        /**
          * Sets the suffix widget for `self`.
          * 
          * Suffix will be shown at the end of the item's row, or before the arrow in
@@ -37082,6 +37167,18 @@ export namespace Adw {
          * @since 1.9
          */
         set_title(title: string | null): void;
+
+        /**
+         * Sets the maximum number of lines for the title of `self`.
+         * 
+         * If the title takes more lines than specified, it will be
+         * ellipsized. If set to 0, the number of lines won't be limited.
+         * 
+         * By default, only one line is shown.
+         * @param title_lines the maximum number of lines for the title
+         * @since 1.11
+         */
+        set_title_lines(title_lines: number): void;
 
         /**
          * Sets the tooltip of `self`.
