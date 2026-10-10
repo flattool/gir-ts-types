@@ -4986,7 +4986,7 @@ export class VariantType<S extends string = any> {
      * Like `gtk_minor_version`, but from the headers used at
      * application compile time, rather than from the library
      * linked against at application run time.
-     * @default 90
+     * @default 91
      */
     const MINOR_VERSION: number;
 

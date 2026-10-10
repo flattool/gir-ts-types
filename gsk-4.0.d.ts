@@ -1298,6 +1298,16 @@ export namespace Gsk {
 
         // Methods
         /**
+         * Retrieves the blur radius of the `node`.
+         * 
+         * The blur radius is the standard deviation of the blur to apply
+         * in the horizontal and vertical direction respectively.
+         * @returns the blur radius
+         * @since 4.26
+         */
+        get_blur_radius(): Graphene.Size;
+
+        /**
          * Retrieves the child {@link Gsk.RenderNode} of the blur `node`.
          * @returns the blurred child node
          */
@@ -1305,7 +1315,11 @@ export namespace Gsk {
 
         /**
          * Retrieves the blur radius of the `node`.
+         * 
+         * The blur radius is 2x the standard deviation of the blur,
+         * which, uhm, don't ask.
          * @returns the blur radius
+         * @deprecated since 4.26: Use {@link Gsk.BlurNode.get_blur_radius} to   get the separate horizontal and vertical radius.   And to not get confused by this function multiplying the std   deviation by 2.
          */
         get_radius(): number;
     }

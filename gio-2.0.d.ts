@@ -6903,6 +6903,10 @@ export const _LocalFilePrototype: typeof File.prototype;
          * No flags set.
          */
         NONE = 0,
+        /**
+         * Mount the volume read-only. Since: 2.92
+         */
+        READ_ONLY = 1,
     }
 
 

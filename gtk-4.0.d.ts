@@ -109148,10 +109148,12 @@ export interface Builder {
         push_blend(blend_mode: Gsk.BlendMode): void;
 
         /**
-         * Blurs an image.
+         * Blurs an image using a gaussian blur.
+         * 
+         * The blur radius has to be set to 2x the std deviation of the blur.
          * 
          * The image is recorded until the next call to {@link Gtk.Snapshot.pop}.
-         * @param radius the blur radius to use. Must be positive
+         * @param radius the blur radius to use. Must be positive. May be 0
          */
         push_blur(radius: number): void;
 
