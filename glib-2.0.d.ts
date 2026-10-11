@@ -8474,6 +8474,20 @@ export class VariantType<S extends string = any> {
     function get_prgname(): string | null;
 
     /**
+     * Gets the absolute path to the directory containing the currently running
+     * executable.
+     * 
+     * This is useful for locating application resources relative to the
+     * installation directory.
+     * 
+     * The returned path is cached on first call and remains constant for the
+     * lifetime of the program. So, it must not be freed or modified.
+     * @returns the absolute path   to the directory containing the program's executable, or `NULL` if   not found
+     * @since 2.92
+     */
+    function get_process_executable_dir(): string | null;
+
+    /**
      * Gets the real name of the user. This usually comes from the user's
      * entry in the `passwd` file. The encoding of the returned string is
      * system-defined. (On Windows, it is, however, always UTF-8.) If the

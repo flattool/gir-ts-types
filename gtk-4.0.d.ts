@@ -44062,7 +44062,7 @@ export interface Builder {
          * to have a list displaying all (and just) strings in the completion list,
          * and to get those strings from `column` in the model of `completion`.
          * 
-         * This functions creates and adds a {@link Gtk.CellRendererText} for the selected
+         * This function creates and adds a {@link Gtk.CellRendererText} for the selected
          * column. If you need to set the text column, but don't want the cell
          * renderer, use `g_object_set()` to set the
          * {@link Gtk.EntryCompletion.text_column} property directly.
@@ -110582,7 +110582,7 @@ export interface Builder {
         get_increments(): [number, number];
 
         /**
-         * Returns whether non-numeric text can be typed into the spin button.
+         * Returns whether only numeric text can be typed into the spin button.
          * @returns `true` if only numeric text can be entered
          */
         get_numeric(): boolean;
@@ -110670,7 +110670,7 @@ export interface Builder {
         set_increments(step: number, page: number): void;
 
         /**
-         * Sets the flag that determines if non-numeric text can be typed
+         * Sets the flag that determines if only numeric text can be typed
          * into the spin button.
          * @param numeric flag indicating if only numeric entry is allowed
          */
@@ -129966,7 +129966,7 @@ export interface Builder {
          * {@link Gtk.TreeStore}, and should only be used when constructing a new
          * {@link Gtk.TreeStore}.
          * 
-         * This functions cannot be called after a row has been added,
+         * This function cannot be called after a row has been added,
          * or a method on the {@link Gtk.TreeModel} interface is called on the
          * tree store.
          * @param types An array of {@link GObject.GType} types, one for each column
@@ -136964,7 +136964,7 @@ export interface Builder {
          * Measures `widget` in the orientation `orientation` and for the given `for_size`.
          * 
          * As an example, if `orientation` is {@link Gtk.Orientation.HORIZONTAL} and `for_size`
-         * is 300, this functions will compute the minimum and natural width of `widget`
+         * is 300, this function will compute the minimum and natural width of `widget`
          * if it is allocated at a height of 300 pixels.
          * 
          * See [GtkWidget’s geometry management section](https://docs.gtk.org/gtk4/class.Widget.html#height-for-width-geometry-management) for
@@ -138380,7 +138380,7 @@ export interface Builder {
          * Measures `widget` in the orientation `orientation` and for the given `for_size`.
          * 
          * As an example, if `orientation` is {@link Gtk.Orientation.HORIZONTAL} and `for_size`
-         * is 300, this functions will compute the minimum and natural width of `widget`
+         * is 300, this function will compute the minimum and natural width of `widget`
          * if it is allocated at a height of 300 pixels.
          * 
          * See [GtkWidget’s geometry management section](https://docs.gtk.org/gtk4/class.Widget.html#height-for-width-geometry-management) for
@@ -138813,7 +138813,7 @@ export interface Builder {
          * Setting a name allows you to refer to the widget from a
          * CSS file. You can apply a style to widgets with a particular name
          * in the CSS file. See the documentation for the CSS syntax (on the
-         * same page as the docs for {@link Gtk.StyleContext}.
+         * same page as the docs for {@link Gtk.StyleContext}).
          * 
          * Note that the CSS syntax has certain special characters to delimit
          * and represent elements in a selector (period, #, >, *...), so using

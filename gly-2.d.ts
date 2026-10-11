@@ -199,6 +199,22 @@ export namespace Gly {
          * 16-bit gray
          */
         G16 = 22,
+        /**
+         * CMYK 16-bit
+         */
+        C16M16Y16K16 = 28,
+        /**
+         * CMYKA 16-bit
+         */
+        C16M16Y16K16A16 = 29,
+        /**
+         * CMYK 8-bit
+         */
+        C8M8Y8K8 = 30,
+        /**
+         * CMYKA 8-bit
+         */
+        C8M8Y8K8A8 = 31,
     }
 
 
@@ -405,6 +421,22 @@ export namespace Gly {
          * 16-bit gray
          */
         G16 = 4194304,
+        /**
+         * CMYK 16-bit
+         */
+        C16M16Y16K16 = 268435456,
+        /**
+         * CMYKA 16-bit
+         */
+        C16M16Y16K16A16 = 536870912,
+        /**
+         * 8-bit CMYK
+         */
+        C8M8Y8K8 = 1073741824,
+        /**
+         * 8-bit CMYK with alpha
+         */
+        C8M8Y8K8A8 = 2147483648,
     }
 
 

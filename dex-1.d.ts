@@ -3424,6 +3424,8 @@ export namespace Dex {
          * This function is useful to allow programs and libraries to share
          * an off-main-thread scheduler without having to coordinate on where
          * the scheduler instance is created or owned.
+         * The pool is created on the first call, so its workers inherit that
+         * caller's CPU affinity mask when they start.
          */
         static get_default(): Scheduler;
     }

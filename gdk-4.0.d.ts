@@ -23450,8 +23450,8 @@ export namespace Gdk {
              * Emitted when the size of `surface` is changed, or when relayout should
              * be performed.
              * 
-             * Surface size is reported in ”application pixels”, not
-             * ”device pixels” (see `gdk_surface_get_scale_factor()`).
+             * Surface size is reported in “application pixels”, not
+             * “device pixels” (see `gdk_surface_get_scale_factor()`).
              * @signal
              * @run-first
              */

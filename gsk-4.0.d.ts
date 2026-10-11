@@ -3176,7 +3176,7 @@ export namespace Gsk {
          * `gsk_render_node_deserialize()` will correctly reject files it cannot open
          * that were created with previous versions of GTK.
          * 
-         * The intended use of this functions is testing, benchmarking and debugging.
+         * The intended use of this function is testing, benchmarking and debugging.
          * The format is not meant as a permanent storage format.
          * @returns a {@link GLib.Bytes} representing the node.
          */
