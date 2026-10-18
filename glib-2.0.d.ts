@@ -4922,7 +4922,7 @@ export class VariantType<S extends string = any> {
      * Like `gtk_micro_version`, but from the headers used at
      * application compile time, rather than from the library
      * linked against at application run time.
-     * @default 3
+     * @default 4
      */
     const MICRO_VERSION: number;
 
