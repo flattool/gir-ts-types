@@ -3556,19 +3556,6 @@ export namespace Dex {
      */
     abstract class CoroutineContext {
         static $gtype: GObject.GType<CoroutineContext>;
-
-        // Methods
-        /**
-         * @param pc 
-         * @param future 
-         */
-        resume(pc: number, future: Future): void;
-
-        /**
-         * @param pc 
-         * @param future 
-         */
-        suspend(pc: number, future: Future): void;
     }
 
 

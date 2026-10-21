@@ -290,7 +290,7 @@ export namespace Notify {
 
     /**
      * Notify micro version component (e.g. 3 if the version is 1.2.3).
-     * @default 8
+     * @default 9
      */
     const VERSION_MICRO: number;
 

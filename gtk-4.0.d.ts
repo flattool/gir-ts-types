@@ -7640,6 +7640,16 @@ export interface Builder {
          * @since 4.24
          */
         GENERAL_INFO = 8388608,
+        /**
+         * Print GtkSvg errors.
+         * @since 4.26
+         */
+        SVG_ERRORS = 16777216,
+        /**
+         * Make GtkSvg run animations in continuous mode.
+         * @since 4.26
+         */
+        SVG_CONTINUOUS = 33554432,
     }
 
 
@@ -51839,7 +51849,7 @@ export interface Builder {
          * Sets the transformation of the child of a {@link Gtk.FixedLayout}.
          * @param transform a {@link Gsk.Transform}
          */
-        set_transform(transform: Gsk.Transform): void;
+        set_transform(transform: Gsk.Transform | null): void;
     }
 
 
