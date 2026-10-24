@@ -9105,6 +9105,10 @@ export class VariantType<S extends string = any> {
      * (Eg, "192.168.0.1".)
      * 
      * Since 2.66, IPv6 addresses with a zone-id are accepted (RFC6874).
+     * 
+     * Note that this function only checks the syntax. It does not guarantee that
+     * the string will be accepted by the current OS and in particular by
+     * {@link gio.InetAddress.new_from_string}.
      * @param hostname a hostname (or IP address in string form)
      * @returns `true` if `hostname` is an IP address
      * @since 2.22
