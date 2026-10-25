@@ -1709,14 +1709,6 @@ export namespace Gsk {
         /** @signal */
         emit<K extends keyof ComponentTransferNode.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<ComponentTransferNode.SignalSignatures[K]>): void;
 
-        // Static methods
-        /**
-         * Retrieves the snap value for this node.
-         * @param node a {@link Gsk.ColorMatrixNode}
-         * @since 4.26
-         */
-        static get_snap(node: ColorMatrixNode): RectSnap;
-
         // Methods
         /**
          * Gets the child node that is getting drawn by the given `node`.
@@ -1724,6 +1716,13 @@ export namespace Gsk {
          * @since 4.20
          */
         get_child(): RenderNode;
+
+        /**
+         * Retrieves the snap value for this node.
+         * @returns the snap value
+         * @since 4.26
+         */
+        get_snap(): RectSnap;
 
         /**
          * Gets the component transfer for one of the components.
