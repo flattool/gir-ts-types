@@ -1078,7 +1078,7 @@ export namespace Soup {
      * Like {@link get_micro_version}, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 0
+     * @default 1
      */
     const MICRO_VERSION: number;
 
@@ -8323,8 +8323,8 @@ export namespace Soup {
          * 
          * This behaves like {@link WebsocketExtension.process_incoming_message},
          * but extensions that expand their input (such as `permessage-deflate`)
-         * stop and return an error with {@link WebsocketError.CLOSE_TOO_BIG}
-         * instead of producing output larger than `max_output_size`. Extensions
+         * stop and return a {@link WebsocketError} error with the code
+         * {@link WebsocketCloseCode.TOO_BIG} instead of producing output larger than `max_output_size`. Extensions
          * that don't implement this fall back to
          * {@link WebsocketExtension.process_incoming_message}.
          * @param header the message header
@@ -8398,8 +8398,8 @@ export namespace Soup {
          * 
          * This behaves like {@link WebsocketExtension.process_incoming_message},
          * but extensions that expand their input (such as `permessage-deflate`)
-         * stop and return an error with {@link WebsocketError.CLOSE_TOO_BIG}
-         * instead of producing output larger than `max_output_size`. Extensions
+         * stop and return a {@link WebsocketError} error with the code
+         * {@link WebsocketCloseCode.TOO_BIG} instead of producing output larger than `max_output_size`. Extensions
          * that don't implement this fall back to
          * {@link WebsocketExtension.process_incoming_message}.
          * @param header the message header
