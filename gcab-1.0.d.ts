@@ -95,8 +95,17 @@ export namespace GCab {
     }
 
 
+    function error_quark(): GLib.Quark;
+
     /**
-     * @gir-type Enum
+     * @gir-type Callback
+     */
+    interface FileCallback {
+        (file: File): boolean;
+    }
+
+    /**
+     * @gir-type Flags
      */
     export namespace FileAttribute {
         export const $gtype: GObject.GType<FileAttribute>;
@@ -104,7 +113,7 @@ export namespace GCab {
 
     /**
      * Attributes associated with the {@link GCab.File}.
-     * @gir-type Enum
+     * @gir-type Flags
      */
     enum FileAttribute {
         /**
@@ -133,15 +142,6 @@ export namespace GCab {
         NAME_IS_UTF = 128,
     }
 
-
-    function error_quark(): GLib.Quark;
-
-    /**
-     * @gir-type Callback
-     */
-    interface FileCallback {
-        (file: File): boolean;
-    }
 
     namespace Cabinet {
         // Signal signatures
@@ -218,8 +218,22 @@ export namespace GCab {
         /**
          * Extract files to given path.
          * 
+         * If `cabinet` is part of a chained multi-cabinet set, all cabinets in the
+         * set are extracted, starting from the first cabinet.
+         * 
          * If `path` is NULL then the files are decompressed to memory blobs stored on
          * each {@link GCab.File}.
+         * 
+         * When extracting to a directory, `path` must be controlled by the caller and
+         * must not be writable by untrusted users. Existing path components are
+         * checked for symbolic links on a best-effort basis, but this cannot prevent
+         * another process from replacing a component after it has been checked. For
+         * hostile archives, extract into a private directory or a sandbox.
+         * 
+         * Extraction is limited to 4 GiB of output and an uncompressed-to-compressed
+         * ratio of 1024:1 by default, which prevents decompression bombs. Use
+         * `gcab_cabinet_set_extract_size_limit()` and
+         * `gcab_cabinet_set_extract_ratio_limit()` to change or disable the limits.
          * @param path the path to extract files
          * @param file_callback an optional {@link GCab.File} callback,     return `false` to filter out or skip files.
          * @param progress_callback a progress callback
@@ -231,6 +245,9 @@ export namespace GCab {
 
         /**
          * Extract files to given path.
+         * 
+         * See `gcab_cabinet_extract()` for the security considerations when extracting
+         * to a directory.
          * @param path the path to extract files
          * @param file_callback an optional {@link GCab.File} callback,     return `false` to filter out or skip files.
          * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
@@ -240,12 +257,60 @@ export namespace GCab {
         extract_simple(path: Gio.File, file_callback: FileCallback | null, cancellable: Gio.Cancellable | null): boolean;
 
         /**
+         * Get the maximum uncompressed-to-compressed extraction ratio.
+         * @returns the ratio limit, or 0 if unlimited
+         * @since 1.7
+         */
+        get_extract_ratio_limit(): number;
+
+        /**
+         * Get the maximum number of bytes written during extraction.
+         * @returns the limit in bytes, or 0 if unlimited
+         * @since 1.7
+         */
+        get_extract_size_limit(): number;
+
+        /**
          * Get the Cabinet folders within the `cabinet`.
          * Note that Cabinet folders are not like filesystem path, they are
          * group of files sharing some layout parameters.
          * @returns an array of {@link GCab.Folder}
          */
         get_folders(): Folder[];
+
+        /**
+         * Get the next cabinet in a multi-cabinet set, or `null` if not set.
+         * Use `gcab_cabinet_set_next()` or `gcab_cabinet_load_from_file()` to set up
+         * the chain.
+         * @returns the next {@link GCab.Cabinet}, or `null`
+         * @since 1.7
+         */
+        get_next(): Cabinet | null;
+
+        /**
+         * Get the filename of the next cabinet in a multi-cabinet set, as stored
+         * in the cabinet header, or `null` if this is the last cabinet.
+         * @returns the next cabinet filename, or `null`
+         * @since 1.7
+         */
+        get_next_name(): string | null;
+
+        /**
+         * Get the previous cabinet in a multi-cabinet set, or `null` if not set.
+         * Use `gcab_cabinet_set_prev()` or `gcab_cabinet_load_from_file()` to set up
+         * the chain.
+         * @returns the previous {@link GCab.Cabinet}, or `null`
+         * @since 1.7
+         */
+        get_prev(): Cabinet | null;
+
+        /**
+         * Get the filename of the previous cabinet in a multi-cabinet set, as stored
+         * in the cabinet header, or `null` if this is the first cabinet.
+         * @returns the previous cabinet filename, or `null`
+         * @since 1.7
+         */
+        get_prev_name(): string | null;
 
         /**
          * Lookup the cabinet authenticode signature if any.
@@ -271,6 +336,60 @@ export namespace GCab {
          * @throws GLib.Error
          */
         load(stream: Gio.InputStream, cancellable: Gio.Cancellable | null): boolean;
+
+        /**
+         * Load a cabinet archive from `file`. If the cabinet references
+         * adjacent cabinets in a multi-cabinet set, they are automatically
+         * loaded and chained from the same directory.
+         * @param file a {@link Gio.File} to load
+         * @param cancellable optional {@link Gio.Cancellable} object,     `null` to ignore
+         * @returns `true` on success
+         * @since 1.7
+         * @throws GLib.Error
+         */
+        load_from_file(file: Gio.File, cancellable: Gio.Cancellable | null): boolean;
+
+        /**
+         * Set an upper bound on the ratio between bytes written during extraction
+         * and the size of the cabinet set.  The default is 1024.  A low ratio
+         * catches archives that expand far beyond their on-disk size.  Set `limit`
+         * to 0 to disable the ratio limit.
+         * @param limit maximum uncompressed-to-compressed ratio, or 0 for no limit
+         * @since 1.7
+         */
+        set_extract_ratio_limit(limit: bigint | number): void;
+
+        /**
+         * Set an upper bound on the total number of uncompressed bytes written by
+         * `gcab_cabinet_extract()`.  The default is 4 GiB.  This limits decompression
+         * bombs and runaway extraction into memory or disk.  Set `limit` to 0 to
+         * disable the absolute limit and rely only on the ratio limit.
+         * @param limit maximum number of bytes to write while extracting, or 0 for no limit
+         * @since 1.7
+         */
+        set_extract_size_limit(limit: bigint | number): void;
+
+        /**
+         * Set the next cabinet in a multi-cabinet set.  When set, extraction
+         * of files that span into the next cabinet (CONTINUED_TO_NEXT) will
+         * automatically continue reading data from `next`.
+         * 
+         * The reference is weak: `next` is not kept alive by `cabinet`.
+         * @param next the next {@link GCab.Cabinet} in the set, or `null`
+         * @since 1.7
+         */
+        set_next(next: Cabinet | null): void;
+
+        /**
+         * Set the previous cabinet in a multi-cabinet set.  When set, extraction
+         * of files that span from the previous cabinet (CONTINUED_FROM_PREV)
+         * will automatically start reading data from `prev`.
+         * 
+         * The reference is weak: `prev` is not kept alive by `cabinet`.
+         * @param prev the previous {@link GCab.Cabinet} in the set, or `null`
+         * @since 1.7
+         */
+        set_prev(prev: Cabinet | null): void;
 
         /**
          * Save `cabinet` to the output stream `out`. `out` must be a {@link Gio.Seekable}.
@@ -421,6 +540,24 @@ export namespace GCab {
         get_size(): number;
 
         /**
+         * Check whether the file data begins in the previous cabinet of a
+         * multi-cabinet set.  If `true`, extracting the file from this cabinet
+         * alone will not yield complete data.
+         * @returns `true` if the file continues from a previous cabinet
+         * @since 1.7
+         */
+        is_continued_from_prev(): boolean;
+
+        /**
+         * Check whether the file data continues into the next cabinet of a
+         * multi-cabinet set.  If `true`, extracting the file from this cabinet
+         * alone will not yield complete data.
+         * @returns `true` if the file continues to a next cabinet
+         * @since 1.7
+         */
+        is_continued_to_next(): boolean;
+
+        /**
          * Set the file attributes.
          * @param attr the attributes, e.g. {@link GCab.FileAttribute.RDONLY}
          * @since 1.0
@@ -431,10 +568,10 @@ export namespace GCab {
          * Replace the {@link GLib.Bytes} associated with `self`.
          * This is most usefule when the {@link GCab.File} has been created using
          * `gcab_file_new_with_bytes()` and the data needs to be modified.
-         * @param bytes a {@link GLib.Bytes}
+         * @param bytes a {@link GLib.Bytes}, or `null` to clear the data
          * @since 1.5
          */
-        set_bytes(bytes: GLib.Bytes | Uint8Array): void;
+        set_bytes(bytes: GLib.Bytes | Uint8Array | null): void;
 
         /**
          * Sets the file modification date, instead of the value provided by the GFile.
