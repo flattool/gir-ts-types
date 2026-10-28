@@ -509,6 +509,57 @@ export namespace GioUnix {
 
         // Static methods
         /**
+         * Gets the default {@link Gio.AppInfo} that implements `interface` and, if `scope`
+         * is not `NULL`, also supports `scope`.
+         * 
+         * An application implements an interface if that interface is listed in
+         * the `Implements` line of the desktop file, as per the
+         * [Desktop Entry Specification](https://specifications.freedesktop.org/desktop-entry/latest/interfaces.html).
+         * 
+         * An application implements a scope of an interface, if the scope is listed in
+         * the [`Supports` line](https://specifications.freedesktop.org/intent-apps/latest/#scopes)
+         * of the section of the desktop file named after `interface`. Scopes are specific
+         * to each `interface` and are defined in the specification which defines that intent
+         * interface. A URI handler intent might have `https`, `http` and `ftp` as scopes,
+         * for example.
+         * 
+         * Application priority can be adjusted via
+         * [`intentapps.list` files](https://specifications.freedesktop.org/intent-apps/latest/#file).
+         * @param _interface the intent interface to find an app for
+         * @param scope an optional scope
+         * @since 2.92
+         */
+        static get_default_for_intent(_interface: string, scope: string | null): Gio.AppInfo | null;
+
+        /**
+         * Gets all {@link Gio.AppInfo}s that implement `interface` and, if `scope` is not
+         * `NULL`, also supports `scope`.
+         * 
+         * Applications earlier in the list have higher priority.
+         * 
+         * An application implements an interface if that interface is listed in
+         * the `Implements` line of the desktop file, as per the
+         * [Desktop Entry Specification](https://specifications.freedesktop.org/desktop-entry/latest/interfaces.html).
+         * 
+         * An application implements a scope of an interface, if the scope is listed in
+         * the [`Supports` line](https://specifications.freedesktop.org/intent-apps/latest/#scopes)
+         * of the section of the desktop file named after `interface`. Scopes are specific
+         * to each `interface` and are defined in the specification which defines that intent
+         * interface. A URI handler intent might have `https`, `http` and `ftp` as scopes,
+         * for example.
+         * 
+         * Application priority can be adjusted via
+         * [`intentapps.list` files](https://specifications.freedesktop.org/intent-apps/latest/#file).
+         * 
+         * The list is guaranteed to be `NULL` terminated. The `NULL` terminator is not
+         * counted in `out_n_results`.
+         * @param _interface the intent interface to find an app for
+         * @param scope an optional scope
+         * @since 2.92
+         */
+        static get_for_intent(_interface: string, scope: string | null): Gio.AppInfo[] | null;
+
+        /**
          * Gets all applications that implement `interface`.
          * 
          * An application implements an interface if that interface is listed in
@@ -602,6 +653,16 @@ export namespace GioUnix {
         get_generic_name(): string | null;
 
         /**
+         * Gets the implemented intents from the desktop file.
+         * 
+         * As per the specification, this is the list of intents that are
+         * explicitly listed in the [`Implements` key](https://specifications.freedesktop.org/desktop-entry/latest/recognized-keys.html) of the `Desktop Entry` group.
+         * @returns a list of strings, always non-`NULL`
+         * @since 2.92
+         */
+        get_intents(): string[];
+
+        /**
          * A desktop file is hidden if the
          * [`Hidden` key](https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html#key-hidden)
          * in it is set to `True`.
@@ -685,6 +746,17 @@ export namespace GioUnix {
          * @since 2.60
          */
         get_string_list(key: string): string[] | null;
+
+        /**
+         * Returns whether `intent` is implemented by the application.
+         * 
+         * As per specification, an intent implemented by the application is listed in
+         * the [`Implements` key](https://specifications.freedesktop.org/desktop-entry/latest/recognized-keys.html) of the `Desktop Entry` group.
+         * @param intent the intent to look up
+         * @returns true if the `intent` is implemented by the application
+         * @since 2.92
+         */
+        has_intent(intent: string): boolean;
 
         /**
          * Returns whether `key` exists in the `Desktop Entry` group
@@ -777,6 +849,24 @@ export namespace GioUnix {
          * @since 2.38
          */
         list_actions(): string[];
+
+        /**
+         * Sets the application as the default handler for an intent interface, or for
+         * a scope of the intent interface.
+         * 
+         * If `scope` is provided, the default handler for that scope of the intent
+         * interface will be set. Additionally, the application will be added to the
+         * list of the default handlers for the intent interface.
+         * 
+         * If `scope` is not provided, the default handler for the intent interface will
+         * be set to the application.
+         * @param _interface the intent interface to set the app as default for
+         * @param scope an optional scope
+         * @returns true on success; false otherwise
+         * @since 2.92
+         * @throws GLib.Error
+         */
+        set_as_default_for_intent(_interface: string, scope: string | null): boolean;
 
         /**
          * Adds a content type to the application information to indicate the

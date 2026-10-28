@@ -4675,6 +4675,16 @@ export class VariantType<S extends string = any> {
     const KEY_FILE_DESKTOP_KEY_ICON: string;
 
     /**
+     * A key under {@link GLib.KEY_FILE_DESKTOP_GROUP}, whose value is a string list
+     * giving the available intents.
+     * 
+     * Intents are defined in the [Intents Specification](https://specifications.freedesktop.org/intent-apps/latest/).
+     * @since 2.92
+     * @default Implements
+     */
+    const KEY_FILE_DESKTOP_KEY_IMPLEMENTS: string;
+
+    /**
      * A key under {@link GLib.KEY_FILE_DESKTOP_GROUP}, whose value is a list
      * of strings giving the MIME types supported by this desktop entry.
      * @since 2.14
