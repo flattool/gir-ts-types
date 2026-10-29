@@ -14706,6 +14706,18 @@ export namespace Gdk {
     function keyval_get_aliases(keyval: number): number[] | null;
 
     /**
+     * Checks whether `keyval_a` and `keyval_b` are 'aliases' of one another.
+     * 
+     * See {@link Gdk.keyval_get_aliases} for more information
+     * on aliases.
+     * @param keyval_a a keyval
+     * @param keyval_b another keyval
+     * @returns whether `keyval_a` and `keyval_b` are 'aliases' of one another.
+     * @since 4.26
+     */
+    function keyval_is_alias(keyval_a: number, keyval_b: number): boolean;
+
+    /**
      * Returns true if the given key value is in lower case.
      * @param keyval a key value.
      * @returns true if `keyval` is in lower case, or if `keyval` is not   subject to case conversion.

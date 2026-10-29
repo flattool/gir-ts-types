@@ -14588,7 +14588,7 @@ export class VariantType<S extends string = any> {
      * 
      * The result will be nul-terminated.
      * @param str a UTF-16 encoded string
-     * @returns a pointer to a newly allocated UCS-4 string.   This value must be freed with {@link GLib.free}.
+     * @returns a pointer to a newly   allocated UCS-4 string. This value must be freed with {@link GLib.free}.
      * @throws GLib.Error
      */
     function utf16_to_ucs4(str: number[]): [string, number, number];
@@ -14963,7 +14963,7 @@ export class VariantType<S extends string = any> {
      * converted text.
      * @param str a UTF-8 encoded string
      * @param len the maximum length of `str` to use, in bytes. If `len` is negative,   then the string is nul-terminated.
-     * @returns a pointer to a newly allocated UCS-4 string.   This value must be freed with {@link GLib.free}.
+     * @returns a pointer to a newly   allocated UCS-4 string. This value must be freed with {@link GLib.free}.
      * @throws GLib.Error
      */
     function utf8_to_ucs4(str: string, len: bigint | number): [string, number, number];
@@ -14977,7 +14977,7 @@ export class VariantType<S extends string = any> {
      * will be added to the string after the converted text.
      * @param str a UTF-8 encoded string
      * @param len the maximum length of `str` to use, in bytes. If `len` is negative,   then the string is nul-terminated.
-     * @returns a pointer to a newly allocated UCS-4 string.   This value must be freed with {@link GLib.free}.
+     * @returns a pointer to a newly   allocated UCS-4 string. This value must be freed with {@link GLib.free}.
      */
     function utf8_to_ucs4_fast(str: string, len: bigint | number): [string, number];
 
@@ -19913,7 +19913,7 @@ export class VariantType<S extends string = any> {
          * filenames, the returned name is in UTF-8.
          * @returns The entry's name or `null` if there are no   more entries. The return value is owned by GLib and   must not be modified or freed.
          */
-        read_name(): string;
+        read_name(): string | null;
 
         /**
          * Increment the reference count of `dir`.

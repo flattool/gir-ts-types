@@ -37353,7 +37353,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * a {@link GLib.Bytes} rather than a plain buffer.
          * 
          * If `address` is non-`null` then `address` will be set equal to the
-         * source address of the received packet.
+         * source address of the received packet, or `null` if it is not available.
          * 
          * The `address` is owned by the caller.
          * 
@@ -37374,7 +37374,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * Receive data (up to `size` bytes) from a socket.
          * 
          * If `address` is non-`null` then `address` will be set equal to the
-         * source address of the received packet.
+         * source address of the received packet, or `null` if it is not available.
          * `address` is owned by the caller.
          * 
          * See `g_socket_receive()` for additional information.
@@ -37391,7 +37391,7 @@ export const _LocalFilePrototype: typeof File.prototype;
          * `g_socket_receive()` and `g_socket_receive_from()`.
          * 
          * If `address` is non-`null` then `address` will be set equal to the
-         * source address of the received packet.
+         * source address of the received packet, or `null` if it is not available.
          * `address` is owned by the caller.
          * 
          * `vector` must point to an array of {@link Gio.InputVector} structs and
@@ -49114,7 +49114,8 @@ export const _LocalFilePrototype: typeof File.prototype;
      * the POSIX sockets API (see `man 2 recvmmsg`).
      * 
      * If `address` is non-`null` then it is set to the source address the message
-     * was received from, and the caller must free it afterwards.
+     * was received from (or `null` if it is not available), and the caller must
+     * free it afterwards.
      * 
      * If `control_messages` is non-`null` then it is set to an array of control
      * messages received with the message (if any), and the caller must free it
