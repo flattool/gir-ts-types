@@ -1763,7 +1763,7 @@ export namespace Pango {
     const GLYPH_UNKNOWN_FLAG: Glyph;
 
     /**
-     * @default 62
+     * @default 63
      */
     const RENDER_COMPONENT_ALL: number;
 
@@ -3305,15 +3305,15 @@ export namespace Pango {
         /**
          * The plain glyphs of the layout
          */
-        PLAIN_GLYPH = 2,
+        PLAIN_GLYPH = 1,
         /**
          * The color glyphs of the layout
          */
-        COLOR_GLYPH = 4,
+        COLOR_GLYPH = 2,
         /**
          * Background of the layout
          */
-        BACKGROUND = 8,
+        BACKGROUND = 4,
         /**
          * Underlines of the layout
          */

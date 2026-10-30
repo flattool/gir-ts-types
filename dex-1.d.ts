@@ -77,6 +77,8 @@ export namespace Dex {
 
         static INVALID_TRANSITION: number;
 
+        static NO_RESULT: number;
+
         // Constructors
         constructor(options: { message: string; code: number });
     }
@@ -1278,6 +1280,13 @@ export namespace Dex {
     /**
      * @gir-type Callback
      */
+    interface DeferredFunc {
+        (user_data: null): Future | null;
+    }
+
+    /**
+     * @gir-type Callback
+     */
     interface FiberFunc {
         (user_data: null): Future | null;
     }
@@ -1957,6 +1966,51 @@ export namespace Dex {
          * @virtual
          */
         vfunc_set_object(object: Gio.DBusObject | null): void;
+    }
+
+
+    namespace Deferred {
+        // Signal signatures
+        interface SignalSignatures extends Future.SignalSignatures {}
+    }
+
+    /**
+     * A future whose work starts when another future observes it, such as through
+     * {@link Dex.Future.then} or {@link Dex.Future.await}. Its work starts once.
+     * Querying its status or value does not start the work.
+     * Dropping it without observing it releases its callback data without
+     * invoking the callback.
+     * If its last observer is discarded before the work starts, the deferred
+     * rejects with {@link Gio.IOErrorEnum.CANCELLED}. Work that has already started may
+     * still run while cancellation propagates.
+     * @gir-type Class
+     * @since 1.3
+     */
+    class Deferred extends Future {
+        static $gtype: GObject.GType<Deferred>;
+
+        // Constructors
+        _init(...args: any[]): void;
+
+        static ["new"](scheduler: Scheduler | null, func: DeferredFunc): Deferred;
+
+        static new_coroutine(scheduler: Scheduler | null, func: CoroutineFunc): Deferred;
+
+        static new_fiber(scheduler: Scheduler | null, stack_size: bigint | number, func: FiberFunc): Deferred;
+
+        static new_on_thread_pool(pool: ThreadPool, name: string | null, func: ThreadFunc): Deferred;
+
+        static new_thread(thread_name: string | null, func: ThreadFunc): Deferred;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof Deferred.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Deferred.SignalSignatures[K]>): number;
+
+        /** @signal */
+        connect_after<K extends keyof Deferred.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Deferred.SignalSignatures[K]>): number;
+
+        /** @signal */
+        emit<K extends keyof Deferred.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Deferred.SignalSignatures[K]>): void;
     }
 
 
@@ -3568,6 +3622,78 @@ export namespace Dex {
      * @gir-type Alias
      */
     type FutureListModelClass = typeof FutureListModel;
+
+    /**
+     * Collects futures and the dependencies between them before building a graph.
+     * @gir-type Struct
+     * @since 1.3
+     */
+    class GraphBuilder {
+        static $gtype: GObject.GType<GraphBuilder>;
+
+        // Constructors
+        constructor(scheduler: Scheduler | null);
+
+        static ["new"](scheduler: Scheduler | null): GraphBuilder;
+
+        // Methods
+        /**
+         * Adds an operation without observing it. Name `future` before adding it if
+         * a diagnostic label is useful. Node indices identify operations even when
+         * names are absent or repeated.
+         * @param future the operation to observe when the node is ready
+         * @returns the node
+         * @since 1.3
+         */
+        add(future: Future): GraphNode | null;
+
+        /**
+         * Makes `node` wait for `dependency` to resolve. Duplicate relationships are
+         * ignored. Both handles must belong to `builder`.
+         * @param node the operation that must wait
+         * @param dependency the operation that must finish first
+         * @returns `true` if the relationship was accepted
+         * @since 1.3
+         */
+        add_dependency(node: GraphNode, dependency: GraphNode): boolean;
+
+        /**
+         * Validates the dependency graph and creates a future that starts its ready
+         * operations when observed. Each operation runs once, after all of its
+         * dependencies resolve. A rejected dependency prevents its dependents from
+         * starting. The graph resolves after every operation resolves, and rejects
+         * if any operation rejects.
+         * 
+         * A successful build consumes the nodes from `builder`. The builder may then
+         * be freed. Node handles are only used while configuring the builder.
+         * @returns the graph future, or `null` on a cycle
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        build(): Future | null;
+
+        /**
+         * Frees `builder`. A successfully built graph keeps its nodes independently.
+         * @since 1.3
+         */
+        free(): void;
+
+        /**
+         * Adds a reference to `builder`.
+         * @returns `builder`
+         * @since 1.3
+         */
+        ref(): GraphBuilder;
+    }
+
+
+    /**
+     * @gir-type Struct
+     */
+    abstract class GraphNode {
+        static $gtype: GObject.GType<GraphNode>;
+    }
+
 
     /**
      * Describes one supported transition edge in a {@link Dex.StateMachine}.
