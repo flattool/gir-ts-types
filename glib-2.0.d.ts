@@ -21739,7 +21739,8 @@ export class VariantType<S extends string = any> {
          * {@link GLib.KeyFile.to_data}.
          * 
          * This function can fail for any of the reasons that
-         * {@link GLib.file_set_contents} may fail.
+         * {@link GLib.file_set_contents} may fail, or with
+         * {@link GLib.FileError.FAILED} if the contents are too long to write.
          * @param filename the name of the file to write to
          * @returns true if successful, false otherwise
          * @since 2.40

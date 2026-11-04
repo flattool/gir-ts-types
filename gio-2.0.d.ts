@@ -11092,8 +11092,8 @@ export const _LocalFilePrototype: typeof File.prototype;
              *     id = 0;
              *     if (cancellable)
              *       id = g_cancellable_connect (cancellable,
-             *     			      G_CALLBACK (cancelled_handler)
-             *     			      data, NULL);
+             *                                  G_CALLBACK (cancelled_handler)
+             *                                  data, NULL);
              * 
              *     // cancellable operation here...
              * 
@@ -53053,8 +53053,8 @@ export const _LocalFilePrototype: typeof File.prototype;
      * 
      * static void
      * frobnitz_result_func (GObject      *source_object,
-     * 		 GAsyncResult *res,
-     * 		 gpointer      user_data)
+     *                       GAsyncResult *res,
+     *                       gpointer      user_data)
      * {
      *   gboolean success = FALSE;
      * 

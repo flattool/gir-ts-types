@@ -1024,7 +1024,8 @@ export namespace Gsk {
     function rect_snap_get_direction(snap: RectSnap, side: Side): SnapDirection;
 
     /**
-     * Creates a new way to snap rectangles for the 4 given sides.
+     * Creates a new way to snap rectangles with individual values for the
+     * top, right, bottom, and left side.
      * @param top How to snap the top edge
      * @param right How to snap the right edge
      * @param bottom How to snap the bottom edge
@@ -6037,6 +6038,16 @@ export namespace Gsk {
 
     /**
      * The ways a rectangle can be snapped to a grid.
+     * 
+     * A {@link Gsk.RectSnap} describes how the 4 edges of a rectangle should be adjusted
+     * to fit a grid - usually the rectangle describes the bounds or clip region
+     * of a render operation and the grid is the pixel grid of a display.
+     * 
+     * You can see [some use cases on the GTK blog](https://blogs.gnome.org/gtk/2026/05/28/snapping/).
+     * 
+     * Commonly, you will want to use constants such as {@link Gsk.RECT_SNAP_ROUND},
+     * {@link Gsk.RECT_SNAP_GROW}, or {@link Gsk.RECT_SNAP_SHRINK}, but you can
+     * also construct an individual way to snap using {@link Gsk.rect_snap_new}.
      * @gir-type Alias
      */
     type RectSnap = number;
