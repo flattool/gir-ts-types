@@ -408,7 +408,7 @@ export namespace GtkSource {
      * Like `gtk_source_get_micro_version()`, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 1
+     * @default 0
      */
     const MICRO_VERSION: number;
 
@@ -416,7 +416,7 @@ export namespace GtkSource {
      * Like `gtk_source_get_minor_version()`, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 22
+     * @default 23
      */
     const MINOR_VERSION: number;
 
@@ -1184,6 +1184,7 @@ export namespace GtkSource {
      * tag = gtk_text_tag_table_lookup (tag_table, "gtksourceview:context-classes:string");
      * ```
      * ```python
+     * # In Python...
      * buffer = GtkSource.Buffer()
      * 
      * tag_table = buffer.get_tag_table()
@@ -6908,11 +6909,12 @@ export namespace GtkSource {
          * ```c
          * GtkSourceLanguage *lang;
          * GtkSourceLanguageManager *manager;
-         * lm = gtk_source_language_manager_get_default ();
+         * manager = gtk_source_language_manager_get_default ();
          * lang = gtk_source_language_manager_guess_language (manager, filename, NULL);
          * gtk_source_buffer_set_language (buffer, lang);
          * ```
          * ```python
+         * # In Python...
          * manager = GtkSource.LanguageManager.get_default()
          * language = manager.guess_language(filename=filename, content_type=None)
          * buffer.set_language(language=language)
@@ -6940,6 +6942,7 @@ export namespace GtkSource {
          * g_free (content_type);
          * ```
          * ```python
+         * # In Python...
          * content_type, uncertain = Gio.content_type_guess(filename=filename, data=None)
          * if uncertain:
          *     content_type = None
@@ -7884,6 +7887,7 @@ export namespace GtkSource {
          * }
          * ```
          * ```python
+         * # In Python...
          * def on_draw_page(
          *     operation: Gtk.PrintOperation,
          *     context: Gtk.PrintContext,
@@ -8076,6 +8080,7 @@ export namespace GtkSource {
          * }
          * ```
          * ```python
+         * # In Python...
          * def on_paginate(
          *     operation: Gtk.PrintOperation,
          *     context: Gtk.PrintContext,
@@ -8112,6 +8117,7 @@ export namespace GtkSource {
          * }
          * ```
          * ```python
+         * # In Python...
          * def on_begin_print(
          *     operation: Gtk.PrintOperation,
          *     context: Gtk.PrintContext,
@@ -8394,6 +8400,7 @@ export namespace GtkSource {
      * }
      * ```
      * ```python
+     * # In Python...
      * buffer: GtkSource.Buffer = GtkSource.Buffer()
      * region: GtkSource.Region = GtkSource.Region(buffer=buffer)
      * region_iter = region.get_start_region_iter()
@@ -9986,6 +9993,7 @@ export namespace GtkSource {
      * gtk_source_space_drawer_set_enable_matrix (space_drawer, TRUE);
      * ```
      * ```python
+     * # In Python...
      * space_drawer.set_types_for_locations(
      *     locations=GtkSource.SpaceLocationFlags.ALL,
      *     types=GtkSource.SpaceTypeFlags.NBSP,
@@ -12614,6 +12622,7 @@ export namespace GtkSource {
      * g_object_unref (provider);
      * ```
      * ```python
+     * # In Python...
      * provider = Gtk.CssProvider()
      * provider.load_from_string("textview { font-family: Monospace; font-size: 8pt; }")
      * style_context = view.get_style_context()
@@ -13660,6 +13669,7 @@ export namespace GtkSource {
      * g_object_bind_property (im_context, "command-text", command_label, "label", 0);
      * ```
      * ```python
+     * # In Python...
      * key = Gtk.EventControllerKey.new()
      * im_context = GtkSource.VimIMContext.new()
      * buffer = GtkSource.Buffer()
