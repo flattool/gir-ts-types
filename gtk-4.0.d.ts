@@ -6250,33 +6250,12 @@ export interface Builder {
     function dialog_error_quark(): GLib.Quark;
 
     /**
-     * Prevents GTK from using the specified portals.
-     * 
-     * This should only be used in portal implementations, apps must not call it.
-     * @param portal_interfaces a `null`-terminated array of portal interface names to disable
-     * @since 4.22
+     * @param portal_interfaces 
      */
-    function disable_portal_interfaces(portal_interfaces: string[]): void;
+    function disable_portal_interfaces(portal_interfaces: string): void;
 
-    /**
-     * Prevents GTK from using portals.
-     * 
-     * This is equivalent to setting `GDK_DEBUG=no-portals` in the environment.
-     * 
-     * This should only be used in portal implementations, apps must not call it.
-     * @since 4.18
-     */
     function disable_portals(): void;
 
-    /**
-     * Prevents {@link Gtk.init} and {@link Gtk.init_check} from calling `setlocale()`.
-     * 
-     * You would want to use this function if you wanted to set the locale for
-     * your program to something other than the user’s locale, or if you wanted
-     * to set different values for different locale categories.
-     * 
-     * Most programs should not need to call this function.
-     */
     function disable_setlocale(): void;
 
     /**
@@ -6486,52 +6465,10 @@ export interface Builder {
      */
     function icon_theme_error_quark(): GLib.Quark;
 
-    /**
-     * Initializes GTK.
-     * 
-     * This function must be called before using any other GTK functions
-     * in your GUI applications.
-     * 
-     * It will initialize everything needed to operate the toolkit. In particular,
-     * it will open the default display (see {@link Gdk.Display.get_default}).
-     * 
-     * If you are using {@link Gtk.Application}, you usually don't have to call this
-     * function; the {@link Gio.Application.startup} handler does it for you. Though,
-     * if you are using {@link Gio.Application} methods that will be invoked before `startup`,
-     * such as `local_command_line`, you may need to initialize GTK explicitly.
-     * 
-     * This function will terminate your program if it was unable to initialize
-     * the windowing system for some reason. If you want your program to fall back
-     * to a textual interface, call {@link Gtk.init_check} instead.
-     * 
-     * GTK calls `signal (SIGPIPE, SIG_IGN)` during initialization, to ignore
-     * SIGPIPE signals, since these are almost never wanted in graphical
-     * applications. If you do need to handle SIGPIPE for some reason, reset
-     * the handler after `gtk_init()`, but notice that other libraries (e.g.
-     * libdbus or gvfs) might do similar things.
-     */
     function init(): void;
 
-    /**
-     * Initializes GTK.
-     * 
-     * This function does the same work as {@link Gtk.init} with only a
-     * single change: It does not terminate the program if the windowing
-     * system can’t be initialized. Instead it returns false on failure.
-     * 
-     * This way the application can fall back to some other means of
-     * communication with the user - for example a curses or command line
-     * interface.
-     * @returns true if the windowing system has been successfully   initialized, false otherwise
-     */
     function init_check(): boolean;
 
-    /**
-     * Returns whether GTK has been initialized.
-     * 
-     * See {@link Gtk.init}.
-     * @returns the initialization status
-     */
     function is_initialized(): boolean;
 
     /**
@@ -145683,6 +145620,24 @@ export interface Builder {
          * @returns whether we found a tag toggle after `iter`
          */
         forward_to_tag_toggle(tag: TextTag | null): boolean;
+
+        /**
+         * Moves forward to the next tag toggle before `limit`.
+         * 
+         * Finds the next start or end of `tag`, or of any tag if `tag` is `null`.
+         * Toggles at the initial position of `iter` and at `limit` are excluded.
+         * If no toggle is found, sets `iter` to `limit` and returns `false`.
+         * If `limit` is at or before `iter`, returns `false` without moving `iter`.
+         * 
+         * If `limit` is `null`, searches to the end of the buffer, including any
+         * toggle at the end iterator, just like
+         * {@link Gtk.TextIter.forward_to_tag_toggle}.
+         * @param tag a {@link Gtk.TextTag}, or `null` to find any tag toggle
+         * @param limit the exclusive search limit, in the same buffer as `iter`
+         * @returns whether a matching tag toggle was found
+         * @since 4.26
+         */
+        forward_to_tag_toggle_with_limit(tag: TextTag | null, limit: TextIter | null): boolean;
 
         /**
          * Moves `iter` forward to the next visible cursor position.
