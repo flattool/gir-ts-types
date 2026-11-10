@@ -371,6 +371,9 @@ export namespace Dex {
      * 
      * This is primarily useful when integrating with legacy systems on a
      * fiber.
+     * 
+     * On non-Unix platforms, the future rejects with
+     * {@link Gio.IOErrorEnum.NOT_SUPPORTED}.
      * @param fd a file-descriptor
      * @param events the POLLOUT|POLLIN style bitmask to watch for
      * @returns a {@link Dex.Future} that resolves to the   revents value when `events` is satisfied.

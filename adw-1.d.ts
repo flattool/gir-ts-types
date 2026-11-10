@@ -4503,6 +4503,7 @@ export namespace Adw {
              */
             activated: () => void;
             "notify::activatable-widget": (pspec: GObject.ParamSpec) => void;
+            "notify::body": (pspec: GObject.ParamSpec) => void;
             "notify::icon-name": (pspec: GObject.ParamSpec) => void;
             "notify::subtitle": (pspec: GObject.ParamSpec) => void;
             "notify::subtitle-lines": (pspec: GObject.ParamSpec) => void;
@@ -4556,6 +4557,7 @@ export namespace Adw {
         interface ConstructorProps extends PreferencesRow.ConstructorProps, Gtk.Accessible.ConstructorProps, Gtk.Actionable.ConstructorProps, Gtk.Buildable.ConstructorProps, Gtk.ConstraintTarget.ConstructorProps {
             activatable_widget: Gtk.Widget | null;
             activatableWidget: Gtk.Widget | null;
+            body: Gtk.Widget | null;
             icon_name: string | null;
             iconName: string | null;
             subtitle: string | null;
@@ -4576,10 +4578,23 @@ export namespace Adw {
      *   <img src="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/action-row.png" alt="action-row">
      * </picture>
      * 
-     * The {@link Adw.ActionRow} widget can have a title, a subtitle and an icon. The row
-     * can receive additional widgets at its end, or prefix widgets at its start.
+     * {@link Adw.ActionRow} can have a title and a subtitle, as well as additional widgets
+     * at its end or start (added or removed using {@link ActionRow.add_suffix} or
+     * {@link ActionRow.add_prefix} respectively).
      * 
-     * It is convenient to present a preference and its related actions.
+     * <picture>
+     *   <source srcset="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/action-row-prefix-suffix-dark.png" media="(prefers-color-scheme: dark)">
+     *   <img src="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/action-row-prefix-suffix.png" alt="action-row-prefix-suffix">
+     * </picture>
+     * 
+     * {@link Adw.ActionRow} can also have a body widget, added using the
+     * {@link ActionRow.body} property. It can be used to add a full-width toggle
+     * group or an illustration below the row header.
+     * 
+     * <picture>
+     *   <source srcset="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/action-row-body-dark.png" media="(prefers-color-scheme: dark)">
+     *   <img src="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/action-row-body.png" alt="action-row-body">
+     * </picture>
      * 
      * {@link Adw.ActionRow} is unactivatable by default, giving it an activatable widget
      * will automatically make it activatable, but unsetting it won't change the
@@ -4598,8 +4613,9 @@ export namespace Adw {
      * 
      * {@link Adw.ActionRow} has a main CSS node with name `row`.
      * 
-     * It contains the subnode `box.header` for its main horizontal box, and
-     * `box.title` for the vertical box containing the title and subtitle labels.
+     * It contains the subnode `box.content` for its main content, which contains
+     * the node `box.header`, which contains `box.title` for the vertical box
+     * containing the title and subtitle labels.
      * 
      * It contains subnodes `label.title` and `label.subtitle` representing
      * respectively the title label and subtitle label.
@@ -4650,6 +4666,17 @@ export namespace Adw {
          */
         get activatableWidget(): Gtk.Widget | null;
         set activatableWidget(val: Gtk.Widget | null);
+
+        /**
+         * Thebody widget of the row.
+         * 
+         * <picture>
+         *   <source srcset="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/action-row-body-dark.png" media="(prefers-color-scheme: dark)">
+         *   <img src="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/action-row-body.png" alt="action-row-body">
+         * </picture>
+         */
+        get body(): Gtk.Widget | null;
+        set body(val: Gtk.Widget | null);
 
         /**
          * The icon name for this row.
@@ -4796,6 +4823,12 @@ export namespace Adw {
         get_activatable_widget(): Gtk.Widget | null;
 
         /**
+         * Gets the body widget of `self`.
+         * @returns the body widget of `self`
+         */
+        get_body(): Gtk.Widget | null;
+
+        /**
          * Gets the icon name for `self`.
          * @returns the icon name for `self`
          * @deprecated since 1.3: Use {@link ActionRow.add_prefix} to add an icon.
@@ -4847,6 +4880,17 @@ export namespace Adw {
          * @param widget the target widget
          */
         set_activatable_widget(widget: Gtk.Widget | null): void;
+
+        /**
+         * Sets the body widget of `self`.
+         * 
+         * <picture>
+         *   <source srcset="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/action-row-body-dark.png" media="(prefers-color-scheme: dark)">
+         *   <img src="https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/action-row-body.png" alt="action-row-body">
+         * </picture>
+         * @param body the body widget
+         */
+        set_body(body: Gtk.Widget | null): void;
 
         /**
          * Sets the icon name for `self`.
@@ -16226,6 +16270,7 @@ export namespace Adw {
             "notify::selected-item": (pspec: GObject.ParamSpec) => void;
             "notify::use-subtitle": (pspec: GObject.ParamSpec) => void;
             "notify::activatable-widget": (pspec: GObject.ParamSpec) => void;
+            "notify::body": (pspec: GObject.ParamSpec) => void;
             "notify::icon-name": (pspec: GObject.ParamSpec) => void;
             "notify::subtitle": (pspec: GObject.ParamSpec) => void;
             "notify::subtitle-lines": (pspec: GObject.ParamSpec) => void;
@@ -37689,6 +37734,7 @@ export namespace Adw {
             "notify::value": (pspec: GObject.ParamSpec) => void;
             "notify::wrap": (pspec: GObject.ParamSpec) => void;
             "notify::activatable-widget": (pspec: GObject.ParamSpec) => void;
+            "notify::body": (pspec: GObject.ParamSpec) => void;
             "notify::icon-name": (pspec: GObject.ParamSpec) => void;
             "notify::subtitle": (pspec: GObject.ParamSpec) => void;
             "notify::subtitle-lines": (pspec: GObject.ParamSpec) => void;
@@ -43357,6 +43403,7 @@ export namespace Adw {
         interface SignalSignatures extends ActionRow.SignalSignatures {
             "notify::active": (pspec: GObject.ParamSpec) => void;
             "notify::activatable-widget": (pspec: GObject.ParamSpec) => void;
+            "notify::body": (pspec: GObject.ParamSpec) => void;
             "notify::icon-name": (pspec: GObject.ParamSpec) => void;
             "notify::subtitle": (pspec: GObject.ParamSpec) => void;
             "notify::subtitle-lines": (pspec: GObject.ParamSpec) => void;
