@@ -131,7 +131,8 @@ export namespace Dex {
      * will get the default aio context for your scheduler.
      * 
      * The resulting future resolves to a file descriptor which can be consumed
-     * with {@link Dex.Future.await_fd}.
+     * with {@link Dex.Future.await_fd}. If the file descriptor is not consumed,
+     * it is closed asynchronously when the result is freed.
      * @param aio_context 
      * @param path the path to open
      * @param flags flags for `open()`
@@ -486,6 +487,26 @@ export namespace Dex {
      * @since 1.2
      */
     function file_find_enclosing_mount(file: Gio.File, io_priority: number): Future;
+
+    /**
+     * Reads a file asynchronously into a {@link GLib.Bytes}.
+     * 
+     * Uses the calling thread's io_uring context when available, falling back to
+     * GIO's asynchronous file operations. The calling thread must continue iterating
+     * its main context until the operation completes. This is always the case with
+     * scheduled threads (main, threadpool scheduler, etc).
+     * 
+     * The file is read until EOF. The contents are zero-terminated, but the trailing
+     * zero is not included in the size of the bytes. The result is not a snapshot
+     * if another process changes the file during reading.
+     * 
+     * No synchronous filesystem I/O is performed on the calling thread. Cancellation
+     * may be reported before outstanding I/O and asynchronous cleanup finish.
+     * @param filename the path of the file to read
+     * @returns a future that resolves to {@link GLib.Bytes},   or rejects with an error
+     * @since 1.3
+     */
+    function file_get_contents_bytes(filename: string): Future;
 
     /**
      * Wraps {@link Gio.FileInputStream.query_info_async}.
@@ -1796,10 +1817,13 @@ export namespace Dex {
      * {@link Dex.Coroutine} is a {@link Dex.Future} implemented as a stateful stackless
      * coroutine cooperatively scheduled on a {@link Dex.Scheduler}.
      * 
-     * Each coroutine stores stackful suspension state and optionally accepts user
+     * Each coroutine stores stackless suspension state and optionally accepts user
      * data via `user_data`.
      * 
      * Use user data passed at spawn time for stateful data.
+     * 
+     * Cancellation keeps user data alive until pending work completes.
+     * The destroy callback runs on the coroutine's scheduler thread and must not block.
      * @gir-type Class
      */
     class Coroutine extends Future {

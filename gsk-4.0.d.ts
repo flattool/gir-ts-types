@@ -762,6 +762,14 @@ export namespace Gsk {
          *   levels
          */
         TRILINEAR = 2,
+        /**
+         * Bicubic interpolation along each axis.
+         * 
+         * This is an experimental feature, the exact interpolation method has not
+         * been decided yet.
+         * @since 4.26
+         */
+        BICUBIC = 3,
     }
 
 

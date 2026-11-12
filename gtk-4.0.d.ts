@@ -5541,7 +5541,7 @@ export interface Builder {
      * Like {@link get_binary_age}, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 2500
+     * @default 2501
      */
     const BINARY_AGE: number;
 
@@ -5626,7 +5626,7 @@ export interface Builder {
      * Like {@link get_micro_version}, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 0
+     * @default 1
      */
     const MICRO_VERSION: number;
 
@@ -6250,12 +6250,33 @@ export interface Builder {
     function dialog_error_quark(): GLib.Quark;
 
     /**
-     * @param portal_interfaces 
+     * Prevents GTK from using the specified portals.
+     * 
+     * This should only be used in portal implementations, apps must not call it.
+     * @param portal_interfaces a `null`-terminated array of portal interface names to disable
+     * @since 4.22
      */
-    function disable_portal_interfaces(portal_interfaces: string): void;
+    function disable_portal_interfaces(portal_interfaces: string[]): void;
 
+    /**
+     * Prevents GTK from using portals.
+     * 
+     * This is equivalent to setting `GDK_DEBUG=no-portals` in the environment.
+     * 
+     * This should only be used in portal implementations, apps must not call it.
+     * @since 4.18
+     */
     function disable_portals(): void;
 
+    /**
+     * Prevents {@link Gtk.init} and {@link Gtk.init_check} from calling `setlocale()`.
+     * 
+     * You would want to use this function if you wanted to set the locale for
+     * your program to something other than the user’s locale, or if you wanted
+     * to set different values for different locale categories.
+     * 
+     * Most programs should not need to call this function.
+     */
     function disable_setlocale(): void;
 
     /**
@@ -6465,10 +6486,52 @@ export interface Builder {
      */
     function icon_theme_error_quark(): GLib.Quark;
 
+    /**
+     * Initializes GTK.
+     * 
+     * This function must be called before using any other GTK functions
+     * in your GUI applications.
+     * 
+     * It will initialize everything needed to operate the toolkit. In particular,
+     * it will open the default display (see {@link Gdk.Display.get_default}).
+     * 
+     * If you are using {@link Gtk.Application}, you usually don't have to call this
+     * function; the {@link Gio.Application.startup} handler does it for you. Though,
+     * if you are using {@link Gio.Application} methods that will be invoked before `startup`,
+     * such as `local_command_line`, you may need to initialize GTK explicitly.
+     * 
+     * This function will terminate your program if it was unable to initialize
+     * the windowing system for some reason. If you want your program to fall back
+     * to a textual interface, call {@link Gtk.init_check} instead.
+     * 
+     * GTK calls `signal (SIGPIPE, SIG_IGN)` during initialization, to ignore
+     * SIGPIPE signals, since these are almost never wanted in graphical
+     * applications. If you do need to handle SIGPIPE for some reason, reset
+     * the handler after `gtk_init()`, but notice that other libraries (e.g.
+     * libdbus or gvfs) might do similar things.
+     */
     function init(): void;
 
+    /**
+     * Initializes GTK.
+     * 
+     * This function does the same work as {@link Gtk.init} with only a
+     * single change: It does not terminate the program if the windowing
+     * system can’t be initialized. Instead it returns false on failure.
+     * 
+     * This way the application can fall back to some other means of
+     * communication with the user - for example a curses or command line
+     * interface.
+     * @returns true if the windowing system has been successfully   initialized, false otherwise
+     */
     function init_check(): boolean;
 
+    /**
+     * Returns whether GTK has been initialized.
+     * 
+     * See {@link Gtk.init}.
+     * @returns the initialization status
+     */
     function is_initialized(): boolean;
 
     /**
@@ -137206,6 +137269,27 @@ export interface Builder {
         allocate(width: number, height: number, baseline: number, transform: Gsk.Transform | null): void;
 
         /**
+         * Assigns size, position, and further details to a child widget.
+         * 
+         * The given allocation must be large enough for the widget's minimum
+         * size, as well as at least 0×0 in size. See {@link Gtk.Widget.measure}
+         * for querying a minimum size.
+         * 
+         * The transform given by the details is applied first, before
+         * the `x`, `y`, `width` and `height` arguments are considered.
+         * 
+         * This function is only used by widget implementations to allocate a size
+         * for their direct children.
+         * @param x new x coordinate
+         * @param y new y coordinate
+         * @param width new width
+         * @param height new height
+         * @param details details of the allocation
+         * @since 4.26
+         */
+        allocate_detailed(x: number, y: number, width: number, height: number, details: AllocationDetails | null): void;
+
+        /**
          * Called by widgets as the user moves around the window using
          * keyboard shortcuts.
          * 
@@ -142791,6 +142875,70 @@ export interface Builder {
      * @gir-type Alias
      */
     type AlertDialogClass = typeof AlertDialog;
+
+    /**
+     * Collects extra parameters that can be passed to {@link Gtk.Widget.allocate_detailed}.
+     * @gir-type Struct
+     * @since 4.26
+     */
+    class AllocationDetails {
+        static $gtype: GObject.GType<AllocationDetails>;
+
+        // Constructors
+        constructor(properties?: Partial<{}>);
+
+        static ["new"](): AllocationDetails;
+
+        // Methods
+        /**
+         * Creates a copy of a {@link Gtk.AllocationDetails}.
+         * @returns a new {@link Gtk.AllocationDetails}. Use {@link Gtk.AllocationDetails.free} to free it
+         * @since 4.26
+         */
+        copy(): AllocationDetails;
+
+        /**
+         * Frees a {@link Gtk.AllocationDetails}.
+         * @since 4.26
+         */
+        free(): void;
+
+        /**
+         * Gets the baseline that was set via {@link Gtk.AllocationDetails.set_baseline}
+         * @returns the baseline or -1 if unset
+         * @since 4.26
+         */
+        get_baseline(): number;
+
+        /**
+         * Gets the transform that was set via {@link Gtk.AllocationDetails.set_transform}
+         * @returns the transform
+         * @since 4.26
+         */
+        get_transform(): Gsk.Transform | null;
+
+        /**
+         * Sets or unsets the baseline to use.
+         * 
+         * A baseline of -1 unsets the baseline.
+         * 
+         * By default, the baseline is unset.
+         * @param baseline the baseline
+         * @since 4.26
+         */
+        set_baseline(baseline: number): void;
+
+        /**
+         * Sets the transform that will be applied to the parent's coordinate space
+         * before allocating the size.
+         * 
+         * By default, the identity transform is used.
+         * @param transform The transform to use
+         * @since 4.26
+         */
+        set_transform(transform: Gsk.Transform | null): void;
+    }
+
 
     /**
      * @gir-type Alias

@@ -1788,19 +1788,19 @@ export namespace Pango {
 
     /**
      * The micro component of the version of Pango available at compile-time.
-     * @default 2
+     * @default 0
      */
     const VERSION_MICRO: number;
 
     /**
      * The minor component of the version of Pango available at compile-time.
-     * @default 58
+     * @default 59
      */
     const VERSION_MINOR: number;
 
     /**
      * A string literal containing the version of Pango available at compile-time.
-     * @default 1.58.2
+     * @default 1.59.0
      */
     const VERSION_STRING: string;
 
@@ -2523,6 +2523,26 @@ export namespace Pango {
      * @since 1.4
      */
     function itemize_with_base_dir(context: Context, base_dir: Direction, text: string, start_index: number, length: number, attrs: AttrList, cached_iter: AttrIterator | null): Item[];
+
+    /**
+     * Itemizes a range using embedding levels computed for the complete paragraph.
+     * 
+     * This is useful when itemizing bounded ranges of a paragraph without changing
+     * the directional analysis at range boundaries. The embedding levels must
+     * contain one entry for every Unicode character in `text`. `start_index` and
+     * `length` must identify UTF-8 character boundaries.
+     * @param context a structure holding information that affects itemization
+     * @param base_dir base direction of the paragraph
+     * @param text valid UTF-8 paragraph text
+     * @param start_index first byte in `text` to process
+     * @param length number of bytes to process
+     * @param attrs attributes that apply to `text`
+     * @param cached_iter cached attribute iterator
+     * @param embedding_levels one embedding level   for each character in `text`
+     * @returns newly allocated items in logical order
+     * @since 1.60
+     */
+    function itemize_with_base_dir_and_embedding_levels(context: Context, base_dir: Direction, text: string, start_index: number, length: number, attrs: AttrList | null, cached_iter: AttrIterator | null, embedding_levels: Uint8Array | string): Item[];
 
     /**
      * Convert a language tag to a {@link Pango.Language}.
@@ -3353,6 +3373,16 @@ export namespace Pango {
          *   This option should be set if the target renderer can't do subpixel positioning of glyphs
          */
         ROUND_POSITIONS = 1,
+        /**
+         * The shaped text is not at the start of
+         *   the paragraph. Since 1.60
+         */
+        NOT_START_OF_PARAGRAPH = 4,
+        /**
+         * The shaped text is not at the end of the
+         *   paragraph. Since 1.60
+         */
+        NOT_END_OF_PARAGRAPH = 8,
     }
 
 
@@ -8310,7 +8340,7 @@ export namespace Pango {
      * A {@link Pango.GlyphVisAttr} structure communicates information between
      * the shaping and rendering phases.
      * 
-     * Currently, it contains cluster start and color information.
+     * Currently, it contains cluster start, color, and shaping-boundary information.
      * More attributes may be added in the future.
      * 
      * Clusters are stored in visual order, within the cluster, glyphs
@@ -8327,11 +8357,17 @@ export namespace Pango {
 
         is_color: number;
 
+        unsafe_to_break: number;
+
+        unsafe_to_concat: number;
+
         // Constructors
 
         constructor(properties?: Partial<{
             is_cluster_start: number;
             is_color: number;
+            unsafe_to_break: number;
+            unsafe_to_concat: number;
         }>);
     }
 
