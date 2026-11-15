@@ -12342,6 +12342,12 @@ export const _LocalFilePrototype: typeof File.prototype;
      * 
      * Since GLib 2.72, on Windows, the native credentials may contain the PID of a
      * process. This corresponds to `G_CREDENTIALS_TYPE_WIN32_PID`.
+     * 
+     * Since GLib 2.92, on Windows, {@link Gio.Credentials.is_same_user} looks up
+     * the user who owns each of the processes in the credentials, and compares the
+     * two.  The lookup is made when the method is called.  A process that is gone,
+     * or that cannot be inspected (as it is more privileged than the caller), is
+     * not the same user as anyone.
      * @gir-type Class
      * @since 2.26
      */
@@ -12410,6 +12416,10 @@ export const _LocalFilePrototype: typeof File.prototype;
          * 
          * This operation can fail if {@link Gio.Credentials} is not supported on the
          * the OS.
+         * 
+         * On Windows, since 2.92, the owners of the two processes are compared.  If
+         * one of the processes cannot be inspected, the result is `false` and `error`
+         * is not set.
          * @param other_credentials A {@link Gio.Credentials}.
          * @returns `true` if `credentials` and `other_credentials` has the same user, `false` otherwise or if `error` is set.
          * @since 2.26
@@ -13255,6 +13265,7 @@ export const _LocalFilePrototype: typeof File.prototype;
             "notify::exit-on-close": (pspec: GObject.ParamSpec) => void;
             "notify::flags": (pspec: GObject.ParamSpec) => void;
             "notify::guid": (pspec: GObject.ParamSpec) => void;
+            "notify::max-message-unix-fds": (pspec: GObject.ParamSpec) => void;
             "notify::stream": (pspec: GObject.ParamSpec) => void;
             "notify::unique-name": (pspec: GObject.ParamSpec) => void;
         }
@@ -13270,6 +13281,8 @@ export const _LocalFilePrototype: typeof File.prototype;
             exitOnClose: boolean;
             flags: DBusConnectionFlags;
             guid: string;
+            max_message_unix_fds: number;
+            maxMessageUnixFds: number;
             stream: IOStream;
             unique_name: string | null;
             uniqueName: string | null;
@@ -13438,6 +13451,24 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @default null
          */
         get guid(): string;
+
+        /**
+         * The maximum number of Unix file descriptors that may be received in a
+         * single D-Bus message.
+         * @since 2.92
+         * @construct-only
+         * @default 253
+         */
+        get max_message_unix_fds(): number;
+
+        /**
+         * The maximum number of Unix file descriptors that may be received in a
+         * single D-Bus message.
+         * @since 2.92
+         * @construct-only
+         * @default 253
+         */
+        get maxMessageUnixFds(): number;
 
         /**
          * The underlying {@link Gio.IOStream} used for I/O.
@@ -19041,6 +19072,7 @@ export const _LocalFilePrototype: typeof File.prototype;
             "notify::client-address": (pspec: GObject.ParamSpec) => void;
             "notify::flags": (pspec: GObject.ParamSpec) => void;
             "notify::guid": (pspec: GObject.ParamSpec) => void;
+            "notify::max-message-unix-fds": (pspec: GObject.ParamSpec) => void;
         }
 
         // Constructor properties interface
@@ -19053,6 +19085,8 @@ export const _LocalFilePrototype: typeof File.prototype;
             clientAddress: string;
             flags: DBusServerFlags;
             guid: string;
+            max_message_unix_fds: number;
+            maxMessageUnixFds: number;
         }
     }
 
@@ -19147,6 +19181,24 @@ export const _LocalFilePrototype: typeof File.prototype;
          * @default null
          */
         get guid(): string;
+
+        /**
+         * The maximum number of Unix file descriptors that may be received in a
+         * single D-Bus message on connections accepted by the server.
+         * @since 2.92
+         * @construct-only
+         * @default 253
+         */
+        get max_message_unix_fds(): number;
+
+        /**
+         * The maximum number of Unix file descriptors that may be received in a
+         * single D-Bus message on connections accepted by the server.
+         * @since 2.92
+         * @construct-only
+         * @default 253
+         */
+        get maxMessageUnixFds(): number;
 
         /**
          * Compile-time signal type information.
