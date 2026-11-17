@@ -1135,7 +1135,9 @@ export namespace Dex {
      * Spawns a new thread named `thread_name` running `thread_func` with
      * `user_data` passed to it.
      * 
-     * `thread_func` must return a {@link Dex.Future}.
+     * `thread_func` must return a {@link Dex.Future}. Callback data remains alive
+     * until that future completes, even if the returned thread future is dropped.
+     * Destruction is queued on the captured scheduler and may run after completion.
      * 
      * If this function is called from a thread that is not running a
      * {@link Dex.Scheduler} then the default scheduler will be used
@@ -1320,6 +1322,13 @@ export namespace Dex {
      */
     interface FutureCallback {
         (future: Future): Future | null;
+    }
+
+    /**
+     * @gir-type Callback
+     */
+    interface GeneratorFunc {
+        (user_data: null): Future | null;
     }
 
     /**
@@ -1642,11 +1651,14 @@ export namespace Dex {
     }
 
     /**
-     * {@link Dex.Block} represents a callback closure that can be scheduled to run
+     * {@link Dex.Block} represents a callback thunk that can be scheduled to run
      * within a specific {@link GLib.MainContext}.
      * 
      * You create these by chaining futures together using {@link Dex.Future.then},
      * {@link Dex.Future.catch}, {@link Dex.Future.finally} and similar.
+     * 
+     * Callback data destruction is queued on the captured scheduler, including when
+     * the block is discarded before invocation. It may run after future completion.
      * @gir-type Class
      */
     class Block extends Future {
@@ -2006,7 +2018,9 @@ export namespace Dex {
      * {@link Dex.Future.then} or {@link Dex.Future.await}. Its work starts once.
      * Querying its status or value does not start the work.
      * Dropping it without observing it releases its callback data without
-     * invoking the callback.
+     * invoking the callback. Scheduler-backed deferreds queue data destruction on
+     * their captured scheduler, including when never observed. Native thread-pool
+     * deferreds capture their cleanup scheduler at construction too.
      * If its last observer is discarded before the work starts, the deferred
      * rejects with {@link Gio.IOErrorEnum.CANCELLED}. Work that has already started may
      * still run while cancellation propagates.
@@ -2141,6 +2155,130 @@ export namespace Dex {
          * @since 1.2
          */
         static ["yield"](): boolean;
+
+        /**
+         * Like `dex_fiber_yield_value()`, for boolean values.
+         * @param value the item to publish
+         * @since 1.3
+         */
+        static yield_boolean(value: boolean): boolean;
+
+        /**
+         * Like `dex_fiber_yield_value()`, for boxed values.
+         * @param expected_type expected item type
+         * @param value the item to publish
+         * @since 1.3
+         */
+        static yield_boxed(expected_type: GObject.GType, value: null): boolean;
+
+        /**
+         * Like `dex_fiber_yield_value()`, for double values.
+         * @param value the item to publish
+         * @since 1.3
+         */
+        static yield_double(value: number): boolean;
+
+        /**
+         * Like `dex_fiber_yield_value()`, for enum values.
+         * @param expected_type expected item type
+         * @param value the item to publish
+         * @since 1.3
+         */
+        static yield_enum(expected_type: GObject.GType, value: number): boolean;
+
+        /**
+         * Publishes a file descriptor, taking ownership of `value`.
+         * @param value the file descriptor to take ownership of
+         * @since 1.3
+         */
+        static yield_fd(value: number): boolean;
+
+        /**
+         * Like `dex_fiber_yield_value()`, for flags values.
+         * @param expected_type expected item type
+         * @param value the item to publish
+         * @since 1.3
+         */
+        static yield_flags(expected_type: GObject.GType, value: number): boolean;
+
+        /**
+         * Like `dex_fiber_yield_value()`, for float values.
+         * @param value the item to publish
+         * @since 1.3
+         */
+        static yield_float(value: number): boolean;
+
+        /**
+         * Publishes a future as an item without observing it. The future is retained.
+         * @param value the item to publish
+         * @since 1.3
+         */
+        static yield_future(value: Future | null): boolean;
+
+        /**
+         * Like `dex_fiber_yield_value()`, for int values.
+         * @param value the item to publish
+         * @since 1.3
+         */
+        static yield_int(value: number): boolean;
+
+        /**
+         * Like `dex_fiber_yield_value()`, for int64 values.
+         * @param value the item to publish
+         * @since 1.3
+         */
+        static yield_int64(value: bigint | number): boolean;
+
+        /**
+         * Like `dex_fiber_yield_value()`, for object values.
+         * @param value the item to publish
+         * @since 1.3
+         */
+        static yield_object(value: GObject.Object | null): boolean;
+
+        /**
+         * Like `dex_fiber_yield_value()`, for pointer values.
+         * @param value the item to publish
+         * @since 1.3
+         */
+        static yield_pointer(value: null): boolean;
+
+        /**
+         * Like `dex_fiber_yield_value()`, for string values.
+         * @param value the item to publish
+         * @since 1.3
+         */
+        static yield_string(value: string | null): boolean;
+
+        /**
+         * Like `dex_fiber_yield_value()`, for uint values.
+         * @param value the item to publish
+         * @since 1.3
+         */
+        static yield_uint(value: number): boolean;
+
+        /**
+         * Like `dex_fiber_yield_value()`, for uint64 values.
+         * @param value the item to publish
+         * @since 1.3
+         */
+        static yield_uint64(value: bigint | number): boolean;
+
+        /**
+         * Yields a copy of `value` and waits for the next pull. Only valid in a
+         * generator producer fiber. Return from the producer if yielding fails.
+         * Future values are retained without observing them.
+         * @param value the item to copy
+         * @since 1.3
+         */
+        static yield_value(value: GObject.Value | any): boolean;
+
+        /**
+         * Like `dex_fiber_yield_value()`, for variant values.
+         * @param value the item to publish
+         * @since 1.3
+         */
+        static yield_variant(value: GLib.Variant | null): boolean;
     }
 
 
@@ -2666,6 +2804,221 @@ export namespace Dex {
          * @throws GLib.Error
          */
         get_value_at(position: number): unknown;
+    }
+
+
+    namespace Generator {
+        // Signal signatures
+        interface SignalSignatures extends Object.SignalSignatures {}
+    }
+
+    /**
+     * A pull-driven sequence of futures. Ordinary generators transfer each future
+     * directly to the caller without observing it. Sequential consumers finish each
+     * pull before requesting another and check exhaustion after awaiting the pull.
+     * @gir-type Class
+     * @since 1.3
+     */
+    class Generator extends Object {
+        static $gtype: GObject.GType<Generator>;
+
+        // Constructors
+        _init(...args: any[]): void;
+
+        static ["new"](producer: GeneratorFunc): Generator;
+
+        static new_coroutine(scheduler: Scheduler | null, func: CoroutineFunc): Generator;
+
+        static new_fiber(scheduler: Scheduler | null, stack_size: bigint | number, func: FiberFunc): Generator;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof Generator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Generator.SignalSignatures[K]>): number;
+
+        /** @signal */
+        connect_after<K extends keyof Generator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Generator.SignalSignatures[K]>): number;
+
+        /** @signal */
+        emit<K extends keyof Generator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Generator.SignalSignatures[K]>): void;
+
+        // Methods
+        /**
+         * Consumes one sequential pull. Rejection is checked before exhaustion. On
+         * success, unset `value` after use. On exhaustion or error it stays uninitialized.
+         * Completed pulls can be consumed outside fibers; pending work requires a fiber.
+         * @returns `true` for an item, including false, zero, and null payloads
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next(): [boolean, unknown];
+
+        /**
+         * Like `dex_generator_await_next()`, for boolean values.
+         * @returns whether an item was received
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next_boolean(): [boolean, boolean];
+
+        /**
+         * Like `dex_generator_await_next()`, for boxed values.
+         * @param expected_type expected item type
+         * @returns whether an item was received
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next_boxed(expected_type: GObject.GType): [boolean, null];
+
+        /**
+         * Like `dex_generator_await_next()`, for double values.
+         * @returns whether an item was received
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next_double(): [boolean, number];
+
+        /**
+         * Like `dex_generator_await_next()`, for enum values.
+         * @param expected_type expected item type
+         * @returns whether an item was received
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next_enum(expected_type: GObject.GType): [boolean, number];
+
+        /**
+         * Consumes a sequential fd item. See `dex_generator_await_next()`.
+         * The caller owns the returned file descriptor.
+         * @returns whether an item was received
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next_fd(): [boolean, number];
+
+        /**
+         * Like `dex_generator_await_next()`, for flags values.
+         * @param expected_type expected item type
+         * @returns whether an item was received
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next_flags(expected_type: GObject.GType): [boolean, number];
+
+        /**
+         * Like `dex_generator_await_next()`, for float values.
+         * @returns whether an item was received
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next_float(): [boolean, number];
+
+        /**
+         * Like `dex_generator_await_next()`, for future values.
+         * @returns whether an item was received
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next_future(): [boolean, Future | null];
+
+        /**
+         * Like `dex_generator_await_next()`, for int values.
+         * @returns whether an item was received
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next_int(): [boolean, number];
+
+        /**
+         * Like `dex_generator_await_next()`, for int64 values.
+         * @returns whether an item was received
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next_int64(): [boolean, number];
+
+        /**
+         * Like `dex_generator_await_next()`, for object values.
+         * @returns whether an item was received
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next_object(): [boolean, GObject.Object | null];
+
+        /**
+         * Like `dex_generator_await_next()`, for pointer values.
+         * @returns whether an item was received
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next_pointer(): [boolean, null];
+
+        /**
+         * Like `dex_generator_await_next()`, for string values.
+         * @returns whether an item was received
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next_string(): [boolean, string];
+
+        /**
+         * Like `dex_generator_await_next()`, for uint values.
+         * @returns whether an item was received
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next_uint(): [boolean, number];
+
+        /**
+         * Like `dex_generator_await_next()`, for uint64 values.
+         * @returns whether an item was received
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next_uint64(): [boolean, number];
+
+        /**
+         * Like `dex_generator_await_next()`, for variant values.
+         * @returns whether an item was received
+         * @since 1.3
+         * @throws GLib.Error
+         */
+        await_next_variant(): [boolean, GLib.Variant | null];
+
+        /**
+         * Requests shutdown without blocking. Ordinary item futures remain independent.
+         * Adapter cancellation is cooperative; producers must honor failed yields and
+         * awaits. Cleanup runs on the adapter scheduler, or on the thread closing an
+         * ordinary generator (the callback thread if a callback is still active).
+         * @since 1.3
+         */
+        close(): void;
+
+        /**
+         * Closes and waits for callback data destruction. Repeated calls share a result.
+         * Production errors are reported by pulls, not drain. Drain can remain pending
+         * while a producer or coroutine-owned external operation is still running.
+         * @returns a future resolving to `true` after cleanup
+         * @since 1.3
+         */
+        close_after_drain(): Future;
+
+        /**
+         * Tests natural exhaustion. Close and producer failure do not imply exhaustion.
+         * This flag classifies sequential pulls, not previously prefetched items.
+         * @returns whether production ended normally
+         * @since 1.3
+         */
+        is_exhausted(): boolean;
+
+        /**
+         * Pulls an item. Concurrent or recursive factory execution is rejected.
+         * Adapter generators allow only one outstanding pull. Their terminal pull
+         * resolves after setting exhaustion; check exhaustion before reading its value.
+         * Explicitly closed generators reject with {@link Gio.IOErrorEnum.CLOSED}.
+         * @returns the item future, or `null` when exhausted
+         * @since 1.3
+         */
+        next(): Future | null;
     }
 
 
@@ -3444,6 +3797,9 @@ export namespace Dex {
 
         /**
          * Queues blocking work to run on one of the pool's reusable threads.
+         * 
+         * Callback data is freed on the submitting thread's scheduler, or the default
+         * scheduler if there is none. This may happen after the future completes.
          * 
          * The provided `thread_name` is applied to the returned future using
          * `dex_future_set_static_name()` so that tracing and debugging tools can
