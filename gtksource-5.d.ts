@@ -433,7 +433,7 @@ export namespace GtkSource {
     function check_version(major: number, minor: number, micro: number): boolean;
 
     /**
-     * Gets all encodings.
+     * Gets all encodings for which conversion to and from UTF-8 is available.
      * @returns a list of all {@link GtkSource.Encoding}'s. Free with `g_slist_free()`.
      */
     function encoding_get_all(): Encoding[];
@@ -879,9 +879,8 @@ export namespace GtkSource {
      * It is used to provide annotations and display them on {@link View} and also populate
      * {@link HoverDisplay} when the user hovers over an annotation.
      * 
-     * You can subclass this object and implement {@link AnnotationProvider.populate_hover_async} and
-     * {@link AnnotationProvider.populate_hover_finish} or connect to `GtkSource.AnnotationProvider::populate`
-     * and call {@link AnnotationProvider.populate} or do it asynchronously.
+     * Subclasses can implement {@link AnnotationProvider.populate_hover_async} and
+     * {@link AnnotationProvider.populate_hover_finish} to populate the hover display.
      * @gir-type Class
      * @since 5.18
      */
@@ -916,8 +915,7 @@ export namespace GtkSource {
 
         // Virtual methods
         /**
-         * Used to populate the {@link HoverDisplay} asynchronously, use
-         * {@link AnnotationProvider.populate_hover} to do it synchronously.
+         * Populates the {@link HoverDisplay} asynchronously.
          * @param annotation a {@link GtkSource.Annotation}
          * @param display a {@link GtkSource.HoverDisplay} to populate
          * @param cancellable 
@@ -944,8 +942,7 @@ export namespace GtkSource {
         add_annotation(annotation: Annotation): void;
 
         /**
-         * Used to populate the {@link HoverDisplay} asynchronously, use
-         * {@link AnnotationProvider.populate_hover} to do it synchronously.
+         * Populates the {@link HoverDisplay} asynchronously.
          * @param annotation a {@link GtkSource.Annotation}
          * @param display a {@link GtkSource.HoverDisplay} to populate
          * @param cancellable 
@@ -954,8 +951,7 @@ export namespace GtkSource {
         populate_hover_async(annotation: Annotation, display: HoverDisplay, cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
 
         /**
-         * Used to populate the {@link HoverDisplay} asynchronously, use
-         * {@link AnnotationProvider.populate_hover} to do it synchronously.
+         * Populates the {@link HoverDisplay} asynchronously.
          * @param annotation a {@link GtkSource.Annotation}
          * @param display a {@link GtkSource.HoverDisplay} to populate
          * @param cancellable 
@@ -965,8 +961,7 @@ export namespace GtkSource {
         populate_hover_async(annotation: Annotation, display: HoverDisplay, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
 
         /**
-         * Used to populate the {@link HoverDisplay} asynchronously, use
-         * {@link AnnotationProvider.populate_hover} to do it synchronously.
+         * Populates the {@link HoverDisplay} asynchronously.
          * @param annotation a {@link GtkSource.Annotation}
          * @param display a {@link GtkSource.HoverDisplay} to populate
          * @param cancellable 
@@ -1372,6 +1367,10 @@ export namespace GtkSource {
         /**
          * Forces buffer to analyze and highlight the given area synchronously.
          * 
+         * If language preparation is still pending, syntax highlighting is deferred.
+         * Wait for {@link Language.prepare_async} to complete before calling this
+         * method when highlighted results are required immediately.
+         * 
          * **Note**:
          * 
          * This is a potentially slow operation and should be used only
@@ -1446,6 +1445,10 @@ export namespace GtkSource {
          * 
          * For very long ranges this function can take long enough that you could
          * potentially miss frame renderings.
+         * 
+         * If language preparation is pending, syntax styling is not yet available.
+         * Wait for {@link Language.prepare_async} to complete when syntax-styled
+         * markup is required.
          * @param start start of range as a {@link Gtk.TextIter}
          * @param end end of range as a {@link Gtk.TextIter}
          * @returns a newly-allocated string containing the text   with Pango markup, or `null` if `start` and `end` are invalid.
@@ -1590,6 +1593,12 @@ export namespace GtkSource {
          * syntax highlighting, see {@link Buffer.set_highlight_syntax}.
          * 
          * The buffer holds a reference to `language`.
+         * 
+         * Since 5.24, an unprepared language is prepared asynchronously. Highlighting
+         * and context classes become available after preparation completes. The buffer
+         * remains editable while preparation is pending. Use
+         * {@link Language.prepare_async} to wait for readiness before requesting
+         * synchronous highlighting.
          * @param language a {@link GtkSource.Language} to set, or `null`.
          */
         set_language(language: Language | null): void;
@@ -6650,6 +6659,11 @@ export namespace GtkSource {
      * 
      * Use {@link LanguageManager} to obtain a {@link GtkSource.Language} instance, and
      * {@link Buffer.set_language} to apply it to a {@link Buffer}.
+     * 
+     * Since 5.24, assigning a language to a buffer prepares it asynchronously.
+     * Use {@link Language.prepare_async} to wait until its highlighting data and
+     * styles are available. Style queries return `null` while preparation is pending;
+     * when no preparation is pending, they can load the language synchronously.
      * @gir-type Class
      */
     class Language extends GObject.Object {
@@ -6768,6 +6782,9 @@ export namespace GtkSource {
         /**
          * Returns the ID of the style to use if the specified `style_id`
          * is not present in the current style scheme.
+         * 
+         * If preparation is pending, returns `null`. Wait for
+         * {@link Language.prepare_async} to complete before querying styles.
          * @param style_id a style ID.
          * @returns the ID of the style to use if the specified `style_id` is not present in the current style scheme or `null` if the style has no fallback defined. The returned string is owned by the `language` and must not be modified.
          */
@@ -6775,16 +6792,90 @@ export namespace GtkSource {
 
         /**
          * Returns the ids of the styles defined by this `language`.
+         * 
+         * If preparation is pending, returns `null`. Wait for
+         * {@link Language.prepare_async} to complete before querying styles.
          * @returns a newly-allocated `null` terminated array containing ids of the styles defined by this `language` or `null` if no style is defined. The returned array must be freed with `g_strfreev()`.
          */
         get_style_ids(): string[] | null;
 
         /**
          * Returns the name of the style with ID `style_id` defined by this `language`.
+         * 
+         * If preparation is pending, returns `null`. Wait for
+         * {@link Language.prepare_async} to complete before querying styles.
          * @param style_id a style ID.
          * @returns the name of the style with ID `style_id` defined by this `language` or `null` if the style has no name or there is no style with ID `style_id` defined by this `language`. The returned string is owned by the `language` and must not be modified.
          */
         get_style_name(style_id: string): string | null;
+
+        /**
+         * Prepares the language for highlighting without blocking the main loop.
+         * 
+         * Parsing and regex compilation run on a worker thread. Concurrent requests
+         * share preparation, and the language retains the prepared data for its lifetime.
+         * Cancelling a request cancels that caller's result, not the shared preparation.
+         * 
+         * {@link Buffer.set_language} starts preparation automatically. This method can
+         * also be used to prepare a language before assigning it to a buffer, or to wait
+         * until synchronous highlighting and context-class queries can be used.
+         * 
+         * Call this method on the main thread. The callback runs in the thread-default
+         * main context of the caller. Call {@link Language.prepare_finish} to obtain
+         * the result.
+         * @param cancellable a {@link Gio.Cancellable}
+         * @since 5.24
+         */
+        prepare_async(cancellable: Gio.Cancellable | null): globalThis.Promise<boolean>;
+
+        /**
+         * Prepares the language for highlighting without blocking the main loop.
+         * 
+         * Parsing and regex compilation run on a worker thread. Concurrent requests
+         * share preparation, and the language retains the prepared data for its lifetime.
+         * Cancelling a request cancels that caller's result, not the shared preparation.
+         * 
+         * {@link Buffer.set_language} starts preparation automatically. This method can
+         * also be used to prepare a language before assigning it to a buffer, or to wait
+         * until synchronous highlighting and context-class queries can be used.
+         * 
+         * Call this method on the main thread. The callback runs in the thread-default
+         * main context of the caller. Call {@link Language.prepare_finish} to obtain
+         * the result.
+         * @param cancellable a {@link Gio.Cancellable}
+         * @param callback callback invoked when preparation completes
+         * @since 5.24
+         */
+        prepare_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback<this> | null): void;
+
+        /**
+         * Prepares the language for highlighting without blocking the main loop.
+         * 
+         * Parsing and regex compilation run on a worker thread. Concurrent requests
+         * share preparation, and the language retains the prepared data for its lifetime.
+         * Cancelling a request cancels that caller's result, not the shared preparation.
+         * 
+         * {@link Buffer.set_language} starts preparation automatically. This method can
+         * also be used to prepare a language before assigning it to a buffer, or to wait
+         * until synchronous highlighting and context-class queries can be used.
+         * 
+         * Call this method on the main thread. The callback runs in the thread-default
+         * main context of the caller. Call {@link Language.prepare_finish} to obtain
+         * the result.
+         * @param cancellable a {@link Gio.Cancellable}
+         * @param callback callback invoked when preparation completes
+         * @since 5.24
+         */
+        prepare_async(cancellable: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback<this> | null): globalThis.Promise<boolean> | void;
+
+        /**
+         * Finishes preparing a language for highlighting.
+         * @param result the {@link Gio.AsyncResult} passed to the callback
+         * @returns `true` if the language is ready, or `false` on failure
+         * @since 5.24
+         * @throws GLib.Error
+         */
+        prepare_finish(result: Gio.AsyncResult): boolean;
     }
 
 
@@ -7179,6 +7270,9 @@ export namespace GtkSource {
      * A {@link GtkSource.Mark} marks a position in the text where you want to display
      * additional info. It is based on {@link Gtk.TextMark} and thus is still valid after
      * the text has changed though its position may change.
+     * 
+     * Source marks are ordered by their position in the buffer. The order of marks
+     * at the same position is undefined.
      * 
      * {@link GtkSource.Mark}s are organized in categories which you have to set
      * when you create the mark. Each category can have a priority, a pixbuf and
@@ -12407,8 +12501,8 @@ export namespace GtkSource {
             /**
              * The signal is a keybinding which gets emitted when the user initiates moving a word.
              * 
-             * The default binding key is Alt+Left/Right Arrow and moves the current selection, or the current
-             * word by one word.
+             * The default binding key is Alt+Left/Right Arrow on platforms other than macOS.
+             * It moves the current selection, or the current word by one word.
              * @signal
              * @action
              * @run-last
@@ -13845,7 +13939,7 @@ export namespace GtkSource {
 
         // Static methods
         /**
-         * Gets all encodings.
+         * Gets all encodings for which conversion to and from UTF-8 is available.
          */
         static get_all(): Encoding[];
 
