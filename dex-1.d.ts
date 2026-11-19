@@ -1327,8 +1327,22 @@ export namespace Dex {
     /**
      * @gir-type Callback
      */
+    interface GeneratorFilterFunc {
+        (value: unknown): boolean;
+    }
+
+    /**
+     * @gir-type Callback
+     */
     interface GeneratorFunc {
         (user_data: null): Future | null;
+    }
+
+    /**
+     * @gir-type Callback
+     */
+    interface GeneratorMapFunc {
+        (value: unknown): void;
     }
 
     /**
@@ -2841,6 +2855,18 @@ export namespace Dex {
         /** @signal */
         emit<K extends keyof Generator.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<Generator.SignalSignatures[K]>): void;
 
+        // Static methods
+        /**
+         * Zips sources lazily, pulling left to right, one at a time. Like Python's
+         * `zip()`, it stops at the shortest input. An earlier input can advance once
+         * before a later input reports exhaustion. The sources are closed when the
+         * result ends, fails, or closes. The result takes a reference to each source.
+         * Zero inputs produce an empty generator.
+         * @param generators sources
+         * @since 1.3
+         */
+        static zipv(generators: Generator[] | null): Generator;
+
         // Methods
         /**
          * Consumes one sequential pull. Rejection is checked before exhaustion. On
@@ -3003,12 +3029,31 @@ export namespace Dex {
         close_after_drain(): Future;
 
         /**
+         * Selects input values lazily using a synchronous predicate. Source rejection
+         * terminates the adapter.
+         * @param callback predicate
+         * @returns the filtered generator
+         * @since 1.3
+         */
+        filter(callback: GeneratorFilterFunc): Generator;
+
+        /**
          * Tests natural exhaustion. Close and producer failure do not imply exhaustion.
          * This flag classifies sequential pulls, not previously prefetched items.
          * @returns whether production ended normally
          * @since 1.3
          */
         is_exhausted(): boolean;
+
+        /**
+         * Maps each input lazily. The callback initializes an output {@link GObject.Value}, which
+         * may have any type. Leaving it uninitialized fails with {@link Dex.Error.NO_RESULT}.
+         * Source rejection terminates the adapter.
+         * @param callback mapper
+         * @returns the mapped generator
+         * @since 1.3
+         */
+        map(callback: GeneratorMapFunc): Generator;
 
         /**
          * Pulls an item. Concurrent or recursive factory execution is rejected.
@@ -4194,6 +4239,46 @@ export namespace Dex {
          * @since 1.2
          */
         wait_for_interrupt(): Future;
+    }
+
+
+    /**
+     * An immutable row of owned values.
+     * @gir-type Struct
+     * @since 1.3
+     */
+    class Tuple {
+        static $gtype: GObject.GType<Tuple>;
+
+        // Constructors
+        constructor(values: (GObject.Value | any)[] | null);
+
+        static newv(values: (GObject.Value | any)[] | null): Tuple;
+
+        // Methods
+        /**
+         * @returns the number of values
+         * @since 1.3
+         */
+        get_size(): number;
+
+        /**
+         * @param position zero-based position
+         * @returns the borrowed value, or `null` if out of bounds
+         * @since 1.3
+         */
+        get_value_at(position: number): unknown | null;
+
+        /**
+         * @returns `self`
+         * @since 1.3
+         */
+        ref(): Tuple;
+
+        /**
+         * @since 1.3
+         */
+        unref(): void;
     }
 
 

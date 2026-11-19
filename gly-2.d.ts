@@ -226,7 +226,7 @@ export namespace Gly {
     }
 
     /**
-     * Sandbox mechanisms
+     * Physical dimension units
      * @gir-type Enum
      * @since 2.2
      */

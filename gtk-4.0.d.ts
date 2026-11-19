@@ -116378,6 +116378,15 @@ export interface Builder {
      * 
      * In contrast to SVG 1.1 and 2.0, we allow the `transform` attribute
      * to be animated with `<animate>`.
+     * 
+     * 
+     * ## On untrusted data
+     * 
+     * Note that GtkSvg is an-process parser for a complex format and is
+     * written in C. It was specifically created to support animated icons
+     * and theme resources, not for general content. If you need to load SVG
+     * data from untrusted sources, we recommend using frameworks that were
+     * designed to handle such data, like [glycin](https://lib.rs/crates/glycin).
      * @gir-type Class
      * @since 4.22
      */

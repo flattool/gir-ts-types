@@ -246,11 +246,48 @@ export namespace GtkSource {
          */
         static CONVERSION_FALLBACK: number;
 
+        /**
+         * A line length decision was declined.
+         */
+        static LINE_TOO_LONG: number;
+
+        /**
+         * A line count decision was declined.
+         */
+        static TOO_MANY_LINES: number;
+
         // Constructors
         constructor(options: { message: string; code: number });
 
         // Static methods
         static quark(): GLib.Quark;
+    }
+
+
+    /**
+     * @gir-type Enum
+     */
+    export namespace FileLoaderPolicyReason {
+        export const $gtype: GObject.GType<FileLoaderPolicyReason>;
+    }
+
+    /**
+     * @gir-type Enum
+     * @since 5.24
+     */
+    enum FileLoaderPolicyReason {
+        /**
+         * Expanded size in bytes.
+         */
+        SIZE = 0,
+        /**
+         * Decoded characters on a line.
+         */
+        LINE_LENGTH = 1,
+        /**
+         * Number of lines.
+         */
+        LINE_COUNT = 2,
     }
 
 
@@ -3712,11 +3749,24 @@ export namespace GtkSource {
     namespace FileLoader {
         // Signal signatures
         interface SignalSignatures extends GObject.Object.SignalSignatures {
+            /**
+             * Return `true` to claim the decision. The handler may retain `decision` and
+             * answer later with {@link FileLoaderPolicyDecision.use} or
+             * {@link FileLoaderPolicyDecision.ignore}. Return `false` to continue loading.
+             * With no handler, loading continues. Only the first answer takes effect.
+             * @signal
+             * @since 5.24
+             * @run-last
+             */
+            "decide-policy": (decision: FileLoaderPolicyDecision) => boolean | void;
             "notify::buffer": (pspec: GObject.ParamSpec) => void;
             "notify::file": (pspec: GObject.ParamSpec) => void;
             "notify::input-stream": (pspec: GObject.ParamSpec) => void;
+            "notify::line-count-threshold": (pspec: GObject.ParamSpec) => void;
+            "notify::line-length-threshold": (pspec: GObject.ParamSpec) => void;
             "notify::location": (pspec: GObject.ParamSpec) => void;
             "notify::max-size": (pspec: GObject.ParamSpec) => void;
+            "notify::size-threshold": (pspec: GObject.ParamSpec) => void;
         }
 
         // Constructor properties interface
@@ -3725,9 +3775,15 @@ export namespace GtkSource {
             file: File;
             input_stream: Gio.InputStream | null;
             inputStream: Gio.InputStream | null;
+            line_count_threshold: bigint | number;
+            lineCountThreshold: bigint | number;
+            line_length_threshold: bigint | number;
+            lineLengthThreshold: bigint | number;
             location: Gio.File | null;
             max_size: bigint | number;
             maxSize: bigint | number;
+            size_threshold: bigint | number;
+            sizeThreshold: bigint | number;
         }
     }
 
@@ -3750,6 +3806,54 @@ export namespace GtkSource {
      * saved somewhere (for example if you load from stdin), then you should
      * probably call {@link Gtk.TextBuffer.set_modified} with `true` after calling
      * {@link FileLoader.load_finish}.
+     * 
+     * A load asks for an application decision when its expanded size, decoded line
+     * length, or line count exceeds the configured threshold. The
+     * `GtkSource.FileLoader::decide-policy` handler may answer immediately or retain
+     * the decision while showing a dialog. If no handler claims it, loading
+     * continues. The default thresholds are 32 MiB, 65,536 characters, and
+     * 750,000 lines. Setting a threshold to zero disables that policy check.
+     * The existing `max-size` limit always rejects oversized input,
+     * regardless of policy decisions.
+     * 
+     * For example, a dialog handler can retain the decision until its callback:
+     * 
+     * ```c
+     * static void
+     * policy_dialog_done (GObject      *source,
+     *                     GAsyncResult *result,
+     *                     gpointer      user_data)
+     * {
+     *   GtkSourceFileLoaderPolicyDecision *decision = user_data;
+     *   int response = gtk_alert_dialog_choose_finish (GTK_ALERT_DIALOG (source), result, NULL);
+     * 
+     *   if (response == 0)
+     *     gtk_source_file_loader_policy_decision_use (decision);
+     *   else
+     *     gtk_source_file_loader_policy_decision_ignore (decision);
+     * 
+     *   g_object_unref (decision);
+     * }
+     * 
+     * static gboolean
+     * decide_policy (GtkSourceFileLoader               *loader,
+     *                GtkSourceFileLoaderPolicyDecision *decision,
+     *                GtkWindow                         *parent)
+     * {
+     *   GtkAlertDialog *dialog = gtk_alert_dialog_new ("Continue loading this file?");
+     *   const char *buttons[] = { "Continue", "Cancel", NULL };
+     * 
+     *   gtk_alert_dialog_set_buttons (dialog, buttons);
+     *   gtk_alert_dialog_choose (dialog, parent, NULL, policy_dialog_done,
+     *                            g_object_ref (decision));
+     *   g_object_unref (dialog);
+     *   return TRUE;
+     * }
+     * ```
+     * 
+     * A declined decision after insertion leaves partial text marked modified and
+     * clears the {@link File} location. The application should offer Save As if the
+     * user wants to keep that text.
      * @gir-type Class
      */
     class FileLoader extends GObject.Object {
@@ -3785,6 +3889,42 @@ export namespace GtkSource {
         get inputStream(): Gio.InputStream | null;
 
         /**
+         * The buffer line count at which a policy decision is requested.
+         * Zero disables the check.
+         * @since 5.24
+         * @default 750000
+         */
+        get line_count_threshold(): number;
+        set line_count_threshold(val: bigint | number);
+
+        /**
+         * The buffer line count at which a policy decision is requested.
+         * Zero disables the check.
+         * @since 5.24
+         * @default 750000
+         */
+        get lineCountThreshold(): number;
+        set lineCountThreshold(val: bigint | number);
+
+        /**
+         * The decoded character count on one line at which a policy decision is
+         * requested. Zero disables the check.
+         * @since 5.24
+         * @default 65536
+         */
+        get line_length_threshold(): number;
+        set line_length_threshold(val: bigint | number);
+
+        /**
+         * The decoded character count on one line at which a policy decision is
+         * requested. Zero disables the check.
+         * @since 5.24
+         * @default 65536
+         */
+        get lineLengthThreshold(): number;
+        set lineLengthThreshold(val: bigint | number);
+
+        /**
          * The {@link Gio.File} to load. If the {@link GtkSource.FileLoader.input_stream} is
          * `null`, by default the location is taken from the {@link GtkSource.File} at
          * construction time.
@@ -3809,6 +3949,24 @@ export namespace GtkSource {
          */
         get maxSize(): number;
         set maxSize(val: bigint | number);
+
+        /**
+         * The expanded size in bytes at which a policy decision is requested.
+         * Zero disables the check.
+         * @since 5.24
+         * @default 33554432
+         */
+        get size_threshold(): number;
+        set size_threshold(val: bigint | number);
+
+        /**
+         * The expanded size in bytes at which a policy decision is requested.
+         * Zero disables the check.
+         * @since 5.24
+         * @default 33554432
+         */
+        get sizeThreshold(): number;
+        set sizeThreshold(val: bigint | number);
 
         /**
          * Compile-time signal type information.
@@ -3865,6 +4023,18 @@ export namespace GtkSource {
         get_input_stream(): Gio.InputStream | null;
 
         /**
+         * @returns the line count threshold.
+         * @since 5.24
+         */
+        get_line_count_threshold(): number;
+
+        /**
+         * @returns the line length threshold in decoded characters.
+         * @since 5.24
+         */
+        get_line_length_threshold(): number;
+
+        /**
          * @returns the {@link Gio.File} to load, or `null` if an input stream is used.
          */
         get_location(): Gio.File | null;
@@ -3880,6 +4050,12 @@ export namespace GtkSource {
          * @returns the detected newline type.
          */
         get_newline_type(): NewlineType;
+
+        /**
+         * @returns the size threshold in expanded bytes.
+         * @since 5.24
+         */
+        get_size_threshold(): number;
 
         /**
          * Loads asynchronously the file or input stream contents into the {@link Buffer}.
@@ -3922,6 +4098,13 @@ export namespace GtkSource {
          * If the contents has been loaded, the following {@link File} properties will
          * be updated: the location, the encoding, the newline type and the compression
          * type.
+         * 
+         * Declining a size policy decision returns {@link GtkSource.FileLoaderError.TOO_BIG}.
+         * Declining a line length or line count decision returns
+         * {@link GtkSource.FileLoaderError.LINE_TOO_LONG} or
+         * {@link GtkSource.FileLoaderError.TOO_MANY_LINES}, respectively. A decision made
+         * after text insertion leaves the partial buffer modified and clears the file
+         * location.
          * @param result a {@link Gio.AsyncResult}.
          * @returns whether the contents has been loaded successfully.
          * @throws GLib.Error
@@ -3945,6 +4128,20 @@ export namespace GtkSource {
         set_candidate_encodings(candidate_encodings: Encoding[]): void;
 
         /**
+         * Sets the line count at which an application decision is requested.
+         * @param threshold lines, or 0 to disable the policy check.
+         * @since 5.24
+         */
+        set_line_count_threshold(threshold: bigint | number): void;
+
+        /**
+         * Sets the line length at which an application decision is requested.
+         * @param threshold decoded characters on a line, or 0 to disable the policy check.
+         * @since 5.24
+         */
+        set_line_length_threshold(threshold: bigint | number): void;
+
+        /**
          * Sets the maximum expanded size that `loader` will insert into the buffer.
          * 
          * The limit is checked after decompression, so compressed files are limited by
@@ -3953,6 +4150,92 @@ export namespace GtkSource {
          * @since 5.22
          */
         set_max_size(max_size: bigint | number): void;
+
+        /**
+         * Sets the size at which an application decision is requested.
+         * @param threshold expanded bytes, or 0 to disable the policy check.
+         * @since 5.24
+         */
+        set_size_threshold(threshold: bigint | number): void;
+    }
+
+
+    namespace FileLoaderPolicyDecision {
+        // Signal signatures
+        interface SignalSignatures extends GObject.Object.SignalSignatures {}
+
+        // Constructor properties interface
+        interface ConstructorProps extends GObject.Object.ConstructorProps {}
+    }
+
+    /**
+     * An application decision requested by {@link FileLoader}.
+     * 
+     * The signal argument is borrowed. Retain it with `g_object_ref()` before
+     * returning `true` from the signal handler if it will be answered later.
+     * Answer with {@link FileLoaderPolicyDecision.use} or
+     * {@link FileLoaderPolicyDecision.ignore}. The decision becomes inert after
+     * the load completes.
+     * @gir-type Class
+     * @since 5.24
+     */
+    class FileLoaderPolicyDecision extends GObject.Object {
+        static $gtype: GObject.GType<FileLoaderPolicyDecision>;
+
+        /**
+         * Compile-time signal type information.
+         *
+         * This instance property is generated only for TypeScript type checking.
+         * It is not defined at runtime and should not be accessed in JS code.
+         * @internal
+         */
+        $signals: FileLoaderPolicyDecision.SignalSignatures;
+
+        // Constructors
+        constructor(properties?: Partial<FileLoaderPolicyDecision.ConstructorProps>, ...args: any[]);
+
+        _init(...args: any[]): void;
+
+        // Signals
+        /** @signal */
+        connect<K extends keyof FileLoaderPolicyDecision.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileLoaderPolicyDecision.SignalSignatures[K]>): number;
+
+        /** @signal */
+        connect_after<K extends keyof FileLoaderPolicyDecision.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, FileLoaderPolicyDecision.SignalSignatures[K]>): number;
+
+        /** @signal */
+        emit<K extends keyof FileLoaderPolicyDecision.SignalSignatures>(signal: K, ...args: GObject.GjsParameters<FileLoaderPolicyDecision.SignalSignatures[K]>): void;
+
+        // Methods
+        /**
+         * @returns the reason for this decision.
+         * @since 5.24
+         */
+        get_reason(): FileLoaderPolicyReason;
+
+        /**
+         * @returns the configured threshold in the units of the reason.
+         * @since 5.24
+         */
+        get_threshold(): number;
+
+        /**
+         * @returns the observed value in the units of the reason.
+         * @since 5.24
+         */
+        get_value(): number;
+
+        /**
+         * Stops loading. Only the first answer has an effect.
+         * @since 5.24
+         */
+        ignore(): void;
+
+        /**
+         * Continues loading. Only the first answer has an effect.
+         * @since 5.24
+         */
+        use(): void;
     }
 
 
@@ -14011,6 +14294,11 @@ export namespace GtkSource {
      * @gir-type Alias
      */
     type FileLoaderClass = typeof FileLoader;
+
+    /**
+     * @gir-type Alias
+     */
+    type FileLoaderPolicyDecisionClass = typeof FileLoaderPolicyDecision;
 
     /**
      * @gir-type Alias
