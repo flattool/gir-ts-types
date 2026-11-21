@@ -2845,6 +2845,8 @@ export namespace Dex {
 
         static new_fiber(scheduler: Scheduler | null, stack_size: bigint | number, func: FiberFunc): Generator;
 
+        static new_for_channel(channel: Channel, completion: Future | null): Generator;
+
         // Signals
         /** @signal */
         connect<K extends keyof Generator.SignalSignatures>(signal: K, callback: GObject.SignalCallback<this, Generator.SignalSignatures[K]>): number;
