@@ -3348,7 +3348,7 @@ export namespace Gsk {
          * 
          * The renderer will acquire a reference on the {@link Gsk.RenderNode} tree while
          * the rendering is in progress.
-         * @param root the render node to render
+         * @param root the render node to render. Since 4.26 `NULL` is also accepted for   full transparency
          * @param region the `cairo_region_t` that must be redrawn or `NULL`   for the whole surface
          */
         render(root: RenderNode, region: cairo.Region | null): void;
