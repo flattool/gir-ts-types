@@ -1693,7 +1693,7 @@ export namespace WebKit {
      * Like `webkit_get_micro_version()`, but from the headers used at
      * application compile time, rather than from the library linked
      * against at application run time.
-     * @default 1
+     * @default 3
      */
     const MICRO_VERSION: number;
 
@@ -5557,7 +5557,14 @@ export namespace WebKit {
             committed: (text: string) => void;
             /**
              * Emitted when the input method wants to delete the context surrounding the cursor.
-             * If `offset` is a negative value, it means a position before the cursor.
+             * If `offset` is a negative value, it means a position before the start of the selection,
+             * or before the cursor if there is no selection. The text to be deleted can include
+             * part of the selection. If `n_chars` is 0, nothing is deleted and the cursor is moved
+             * by `offset`.
+             * 
+             * Both `offset` and `n_chars` are counted in UTF-16 code units, not in characters:
+             * a character outside the Basic Multilingual Plane, like most emoji, counts as 2.
+             * Note that the indexes passed to `webkit_input_method_context_notify_surrounding()` are in bytes instead.
              * @signal
              * @since 2.28
              * @run-last
@@ -7854,7 +7861,7 @@ export namespace WebKit {
          * simple synchronous storage access.
          * 
          * HTML5 local storage specification is available at
-         * http://dev.w3.org/html5/webstorage/.
+         * https://html.spec.whatwg.org/multipage/webstorage.html.
          * @default true
          */
         get enable_html5_local_storage(): boolean;
@@ -7865,7 +7872,7 @@ export namespace WebKit {
          * simple synchronous storage access.
          * 
          * HTML5 local storage specification is available at
-         * http://dev.w3.org/html5/webstorage/.
+         * https://html.spec.whatwg.org/multipage/webstorage.html.
          * @default true
          */
         get enableHtml5LocalStorage(): boolean;
