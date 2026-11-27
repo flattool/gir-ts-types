@@ -14153,8 +14153,9 @@ export class VariantType<S extends string = any> {
     /**
      * Computes the canonical ordering of a string in-place.
      * This rearranges decomposed characters in the string
-     * according to their combining classes.  See the Unicode
-     * manual for more information.
+     * according to their combining classes.  See the [Unicode
+     * manual](https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-3/`G49591`)
+     * for more information.
      * @param string a UCS-4 encoded string.
      */
     function unicode_canonical_ordering(string: string): void;
