@@ -111,6 +111,11 @@ export namespace Dex {
 
 
     /**
+     * @default 4
+     */
+    const BLOCK_KIND_LOOP: number;
+
+    /**
      * An asynchronous `close()` wrapper.
      * 
      * This function takes ownership of `fd` and will close it asynchronously.
@@ -1671,7 +1676,7 @@ export namespace Dex {
      * You create these by chaining futures together using {@link Dex.Future.then},
      * {@link Dex.Future.catch}, {@link Dex.Future.finally} and similar.
      * 
-     * Callback data destruction is queued on the captured scheduler, including when
+     * Callback data destruction is queued on the destruction scheduler, including when
      * the block is discarded before invocation. It may run after future completion.
      * @gir-type Class
      */
@@ -1680,6 +1685,10 @@ export namespace Dex {
 
         // Constructors
         _init(...args: any[]): void;
+
+        static ["new"](future: Future, scheduler: Scheduler | null, kind: BlockKind, callback: FutureCallback): Block;
+
+        static new_full(future: Future, scheduler: Scheduler | null, destroy_scheduler: Scheduler | null, kind: BlockKind, callback: FutureCallback): Block;
 
         // Signals
         /** @signal */
@@ -2373,6 +2382,8 @@ export namespace Dex {
         static new_take_object(value: GObject.Object | null): Future;
 
         static new_take_string(string: string): Future;
+
+        static select(future: Future, position: number): Future;
 
         static then(future: Future, callback: FutureCallback): Future;
 

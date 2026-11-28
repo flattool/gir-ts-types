@@ -27459,6 +27459,13 @@ export class VariantType<S extends string = any> {
      * indicate that it doesn't mind how long the `poll()` call blocks. In the
      * check function, it tests the results of the `poll()` call to see if the
      * required condition has been met, and returns `true` if so.
+     * 
+     * For purely poll-driven sources (file descriptor/Win32 OS handle polling),
+     * defining custom `prepare` and `check` implementations is discouraged.
+     * The default behavior (set the functions to `NULL`) automatically checks the
+     * returned poll events (`revents`). Custom `prepare` and `check` should only be
+     * implemented if the source manages additional non-poll conditions, such as
+     * internal user-space buffers or timeouts.
      * @gir-type Struct
      */
     class SourceFuncs {
